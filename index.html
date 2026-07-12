@@ -13,7 +13,7 @@
 <body>
 
 <div class="grain"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
+<div class="cursor-dot" id="cursorDot"><span id="cursorLabel"></span></div>
 
 <!-- NAV -->
 <nav class="nav">
@@ -37,9 +37,9 @@
 <header class="hero">
   <div class="hero-bg"></div>
   <p class="eyebrow">Content agency · South Africa</p>
-  <h1 class="hero-title">
-    <span class="line" data-reveal>We build the hooks</span>
-    <span class="line" data-reveal>that hold attention.</span>
+  <h1 class="hero-title" id="kineticTitle">
+    <span class="kline">We build the hooks</span>
+    <span class="kline">that hold attention.</span>
   </h1>
   <p class="hero-sub" data-reveal>
     Scripts, strategy, and production for creators and brands who are tired of guessing why their content isn't working.
@@ -53,6 +53,24 @@
   </div>
 </header>
 
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>SCRIPTS</span><span class="dot">●</span>
+    <span>STRATEGY</span><span class="dot">●</span>
+    <span>PRODUCTION</span><span class="dot">●</span>
+    <span>HOOKS</span><span class="dot">●</span>
+    <span>RETENTION</span><span class="dot">●</span>
+    <span>MONETISATION</span><span class="dot">●</span>
+    <span>SCRIPTS</span><span class="dot">●</span>
+    <span>STRATEGY</span><span class="dot">●</span>
+    <span>PRODUCTION</span><span class="dot">●</span>
+    <span>HOOKS</span><span class="dot">●</span>
+    <span>RETENTION</span><span class="dot">●</span>
+    <span>MONETISATION</span><span class="dot">●</span>
+  </div>
+</div>
+
 <!-- FLIP DEMO -->
 <section class="flip-section" id="flip">
   <p class="eyebrow center">The framework, live</p>
@@ -61,7 +79,7 @@
 
   <div class="flip-grid">
 
-    <div class="flip-card">
+    <div class="flip-card" data-cursor="Tap to flip">
       <div class="flip-inner">
         <div class="flip-face flip-front">
           <span class="flip-tag weak">Original hook</span>
@@ -76,7 +94,7 @@
       </div>
     </div>
 
-    <div class="flip-card">
+    <div class="flip-card" data-cursor="Tap to flip">
       <div class="flip-inner">
         <div class="flip-face flip-front">
           <span class="flip-tag weak">Original hook</span>
@@ -91,7 +109,7 @@
       </div>
     </div>
 
-    <div class="flip-card">
+    <div class="flip-card" data-cursor="Tap to flip">
       <div class="flip-inner">
         <div class="flip-face flip-front">
           <span class="flip-tag weak">Original hook</span>
@@ -139,11 +157,11 @@
 </section>
 
 <!-- PROCESS -->
-<section class="process">
+<section class="process" id="process">
   <p class="eyebrow center">How a script gets made</p>
   <h2 class="section-title center">The framework, step by step.</h2>
 
-  <div class="process-list">
+  <div class="process-list" id="processList">
     <div class="process-step">
       <span class="process-num">01</span>
       <div>
@@ -194,6 +212,8 @@
   <span>Built in South Africa</span>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
