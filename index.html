@@ -40,7 +40,7 @@
             padding: 0 24px;
         }
 
-        /* ===== BUTTONS — ALL BLACK ===== */
+        /* ===== BUTTONS ===== */
         .btn-primary {
             background: var(--black);
             color: white;
@@ -96,7 +96,7 @@
             transform: scale(1.02);
         }
 
-        /* ===== PILL STYLES (no icons) ===== */
+        /* ===== PILL STYLES ===== */
         .pill {
             display: inline-block;
             background: var(--gradient-subtle);
@@ -111,7 +111,7 @@
             border: 1px solid rgba(139, 92, 246, 0.2);
         }
 
-        /* ===== SECTION HEADERS (CENTERED) ===== */
+        /* ===== SECTION HEADERS ===== */
         .section-header {
             text-align: center;
             margin-bottom: 32px;
@@ -218,8 +218,6 @@
             max-width: 600px;
             margin: 0 auto 28px;
         }
-
-        /* ===== VIDEO PLACEHOLDER ===== */
         .video-wrapper {
             max-width: 900px;
             margin: 0 auto 24px;
@@ -253,7 +251,6 @@
             padding: 6px 16px;
             border-radius: 40px;
         }
-
         .hero-actions {
             display: flex;
             gap: 16px;
@@ -265,6 +262,129 @@
         .section {
             padding: 60px 0 40px;
             border-top: 1px solid #e5e7eb;
+        }
+
+        /* ===== SHOWCASE (3 cards) ===== */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 16px;
+        }
+        .showcase-card {
+            background: #f9fafb;
+            border-radius: 24px;
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .showcase-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.08);
+        }
+        .showcase-media {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            background: var(--gradient-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .showcase-media .play-icon {
+            font-size: 48px;
+            color: var(--purple);
+            opacity: 0.6;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .showcase-media .play-icon:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        .showcase-media .media-label {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 11px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .showcase-media .media-label i {
+            margin-right: 4px;
+        }
+        .showcase-content {
+            padding: 20px 24px 24px;
+        }
+        .showcase-content .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            padding: 2px 12px;
+            border-radius: 40px;
+            margin-bottom: 8px;
+        }
+        .badge-before {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        .badge-after {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+        .badge-video {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+        .badge-founder {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .showcase-content h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .showcase-content p {
+            color: #4b5563;
+            font-size: 14px;
+        }
+        .showcase-content .stats {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+            font-size: 13px;
+            font-weight: 500;
+            flex-wrap: wrap;
+        }
+        .showcase-content .stats span {
+            background: #f3f4f6;
+            padding: 4px 14px;
+            border-radius: 40px;
+        }
+        .stats .increase {
+            color: #16a34a;
+        }
+        .showcase-cta {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .showcase-cta h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .showcase-cta p {
+            color: #4b5563;
+            margin-bottom: 20px;
         }
 
         /* ===== TRUSTED BY ===== */
@@ -314,6 +434,10 @@
             font-weight: 600;
             color: var(--black);
             margin-top: 8px;
+        }
+        .trusted-card .follower-count i {
+            margin-right: 4px;
+            color: var(--purple);
         }
         .trusted-card .link-arrow {
             display: inline-block;
@@ -384,7 +508,7 @@
             border: 1px solid rgba(139, 92, 246, 0.15);
         }
 
-        /* ===== FOUNDER ===== */
+        /* ===== TEAM / FOUNDER ===== */
         .founder-card {
             max-width: 700px;
             margin: 0 auto;
@@ -444,49 +568,10 @@
             transform: scale(1.1);
         }
 
-        /* ===== SERVICES ===== */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .service-card {
-            background: #f9fafb;
-            padding: 32px 24px;
-            border-radius: 24px;
-            border: 1px solid #f3f4f6;
-            transition: 0.3s;
-            text-align: center;
-        }
-        .service-card:hover {
-            border-color: var(--purple);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.08);
-        }
-        .service-card .icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-            display: block;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .service-card h4 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-        .service-card p {
-            color: #4b5563;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
         /* ===== PROCESS ===== */
         .process-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             margin-top: 32px;
         }
@@ -515,7 +600,7 @@
             color: #4b5563;
         }
 
-        /* ===== PRICING — Individual Services ===== */
+        /* ===== PRICING — Individual ===== */
         .pricing-individual-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -544,16 +629,11 @@
             font-weight: 700;
             color: var(--purple);
         }
-        .pricing-item .price small {
-            font-size: 13px;
-            font-weight: 400;
-            color: #6b7280;
-        }
 
-        /* ===== PRICING — Bundles (no prices, just dates) ===== */
+        /* ===== PRICING — Bundles ===== */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 32px;
             margin-top: 16px;
         }
@@ -602,13 +682,8 @@
             width: 18px;
             font-size: 13px;
         }
-        .pricing-card .price-note {
-            font-size: 13px;
-            color: #6b7280;
-            margin-top: 8px;
-        }
 
-        /* ===== FAQ DROPDOWNS ===== */
+        /* ===== FAQ ===== */
         .faq-grid {
             display: flex;
             flex-direction: column;
@@ -783,9 +858,6 @@
 
         .grid .reveal:nth-child(2) { transition-delay: 0.1s; }
         .grid .reveal:nth-child(3) { transition-delay: 0.2s; }
-        .grid .reveal:nth-child(4) { transition-delay: 0.3s; }
-        .grid .reveal:nth-child(5) { transition-delay: 0.4s; }
-        .grid .reveal:nth-child(6) { transition-delay: 0.5s; }
 
         .hero-reveal {
             opacity: 0;
@@ -822,9 +894,14 @@
         /* ================================================ */
 
         @media (max-width: 992px) {
-            .services-grid {
+            .showcase-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+            }
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -842,12 +919,13 @@
             .founder-card {
                 padding: 32px 20px;
             }
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 16px;
+            .showcase-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
-            .service-card {
-                padding: 24px 20px;
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
             .process-steps {
                 grid-template-columns: 1fr;
@@ -867,36 +945,23 @@
             .pricing-individual-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .trusted-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 32px;
             }
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            .service-card {
-                padding: 24px 20px;
-            }
             .container {
                 padding: 0 16px;
             }
-            .trusted-grid {
-                grid-template-columns: 1fr;
-            }
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
             .pricing-individual-grid {
                 grid-template-columns: 1fr 1fr;
-            }
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-            .founder-card .bio {
-                font-size: 15px;
             }
             .footer {
                 flex-direction: column;
@@ -929,7 +994,7 @@
 <body>
     <div class="container">
 
-        <!-- ====== NAV — CENTERED LOGO ONLY ====== -->
+        <!-- ====== NAV ====== -->
         <header class="navbar">
             <a href="#" class="logo">
                 <span class="logo-icon">F</span>
@@ -943,16 +1008,95 @@
             <h1>The content system that grew <span class="highlight">200K+ followers</span>.<br>Now it's yours.</h1>
             <p>We build the hooks, retention, and cultural fluency that turn views into qualified leads. Built for the African content landscape.</p>
 
-            <!-- Video Placeholder -->
             <div class="video-wrapper">
                 <div class="play-icon"><i class="fas fa-play-circle"></i></div>
                 <span class="video-placeholder-text">Watch: The Framework System in Action</span>
-                <!-- Replace the above with actual video embed when ready -->
             </div>
 
             <div class="hero-actions">
                 <a href="#contact" class="btn-primary">Apply Now</a>
                 <a href="#process" class="btn-outline">See how it works</a>
+            </div>
+        </section>
+
+        <!-- ====== SHOWCASE (3 cards) ====== -->
+        <section class="section" id="showcase">
+            <div class="section-header">
+                <span class="pill pill-reveal">Our Work</span>
+                <h2 class="section-title">Before &amp; After</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Real transformations — including my own. See the difference the Framework system makes.</p>
+            </div>
+
+            <div class="showcase-grid">
+
+                <!-- Card 1: Katlego Unfiltered (Founder Case Study) -->
+                <div class="showcase-card reveal">
+                    <div class="showcase-media">
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                            <i class="fas fa-play-circle play-icon"></i>
+                            <span style="font-size: 13px; color: #6b7280;">Watch: My 200K+ journey</span>
+                        </div>
+                        <span class="media-label"><i class="fas fa-video"></i> Video</span>
+                    </div>
+                    <div class="showcase-content">
+                        <span class="badge badge-founder">Founder Case Study</span>
+                        <h4>Katlego Unfiltered</h4>
+                        <p>From 0 to 60K+ followers on Katlego Unfiltered — and 200K+ total reach — using the same system I now build for clients.</p>
+                        <div class="stats">
+                            <span><i class="fas fa-arrow-up" style="color: #16a34a; margin-right: 4px;"></i> 200K+ Total Reach</span>
+                            <span class="increase"><i class="fas fa-users" style="margin-right: 4px;"></i> 60K+ Followers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Our Goated Lunchbox -->
+                <div class="showcase-card reveal">
+                    <div class="showcase-media">
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                            <i class="fas fa-image" style="font-size: 40px; color: var(--purple); opacity: 0.5;"></i>
+                            <span style="font-size: 13px; color: #6b7280;">TikTok page growth</span>
+                        </div>
+                        <span class="media-label"><i class="fas fa-image"></i> Image</span>
+                    </div>
+                    <div class="showcase-content">
+                        <span class="badge badge-after">Brand Case Study</span>
+                        <h4>Our Goated Lunchbox</h4>
+                        <p>A TikTok page dedicated to street culture, lifestyle, and African youth content — grown to 150K+ followers.</p>
+                        <div class="stats">
+                            <span><i class="fas fa-arrow-up" style="color: #16a34a; margin-right: 4px;"></i> 150K+ Followers</span>
+                            <span class="increase"><i class="fab fa-tiktok" style="margin-right: 4px;"></i> TikTok</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Client Case Study (Placeholder) -->
+                <div class="showcase-card reveal">
+                    <div class="showcase-media">
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                            <i class="fas fa-image" style="font-size: 40px; color: var(--purple); opacity: 0.5;"></i>
+                            <span style="font-size: 13px; color: #6b7280;">Client transformation</span>
+                        </div>
+                        <span class="media-label"><i class="fas fa-image"></i> Image</span>
+                    </div>
+                    <div class="showcase-content">
+                        <span class="badge badge-before">Before</span>
+                        <span class="badge badge-after" style="margin-left: 4px;">After</span>
+                        <h4>Client: @examplecreator</h4>
+                        <p>From 2K views to 50K+ views in 30 days using the Hook–Body–CTA framework.</p>
+                        <div class="stats">
+                            <span><i class="fas fa-arrow-up" style="color: #16a34a; margin-right: 4px;"></i> +2,400% Views</span>
+                            <span class="increase"><i class="fas fa-fire" style="margin-right: 4px;"></i> +180% Engagement</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="showcase-cta">
+                <h3>Ready to be our next case study?</h3>
+                <p>Apply now and start seeing real results.</p>
+                <a href="#contact" class="btn-primary">Apply Now</a>
             </div>
         </section>
 
@@ -1014,7 +1158,7 @@
             </div>
         </section>
 
-        <!-- ====== MEET THE FOUNDER ====== -->
+        <!-- ====== TEAM (MEET THE FOUNDER) ====== -->
         <section class="section" id="team">
             <div class="section-header">
                 <span class="pill pill-reveal">Team</span>
@@ -1034,48 +1178,6 @@
             </div>
         </section>
 
-        <!-- ====== OUR SERVICES ====== -->
-        <section class="section" id="services">
-            <div class="section-header">
-                <span class="pill pill-reveal">Our Services</span>
-                <h2 class="section-title">What We Do</h2>
-                <div class="accent-line"></div>
-                <p class="section-sub">Scripts. Strategy. Production. Consulting.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <span class="icon"><i class="fas fa-pen-fancy"></i></span>
-                    <h4>Script Writing</h4>
-                    <p>High‑converting scripts built on the Hook–Body–CTA framework. For TikTok, Instagram Reels, YouTube, and LinkedIn.</p>
-                </div>
-                <div class="service-card reveal">
-                    <span class="icon"><i class="fas fa-search"></i></span>
-                    <h4>Content Audit</h4>
-                    <p>A forensic review of your existing content. We break down what's working, what's not, and exactly how to fix it.</p>
-                </div>
-                <div class="service-card reveal">
-                    <span class="icon"><i class="fas fa-bullseye"></i></span>
-                    <h4>Hook Diagnosis</h4>
-                    <p>The first 3 seconds make or break a video. We rewrite your hooks to stop the scroll and boost retention instantly.</p>
-                </div>
-                <div class="service-card reveal">
-                    <span class="icon"><i class="fas fa-film"></i></span>
-                    <h4>Video Editing</h4>
-                    <p>Done‑for‑you editing for YouTube long‑form and short‑form (Reels/TikToks). We handle pacing, cuts, and retention.</p>
-                </div>
-                <div class="service-card reveal">
-                    <span class="icon"><i class="fas fa-chart-line"></i></span>
-                    <h4>Monetisation Consulting</h4>
-                    <p>Rate cards, pitch sequences, and deal tracking — built from real experience closing brand deals across platforms.</p>
-                </div>
-                <div class="service-card reveal">
-                    <span class="icon"><i class="fas fa-brain"></i></span>
-                    <h4>Coaching‑Lite</h4>
-                    <p>Personal brand positioning advice. We align your messaging, voice, and strategy so you attract the right audience.</p>
-                </div>
-            </div>
-        </section>
-
         <!-- ====== PROCESS ====== -->
         <section class="section" id="process">
             <div class="section-header">
@@ -1088,7 +1190,7 @@
                 <div class="step reveal">
                     <div class="num">01</div>
                     <h4>Map</h4>
-                    <p>We audit your current content, define your pillars, and map a content system that fits your goals and audience.</p>
+                    <p>We map your offer, audience, and message into a plan.</p>
                 </div>
                 <div class="step reveal">
                     <div class="num">02</div>
@@ -1103,18 +1205,14 @@
             </div>
         </section>
 
-        <!-- ====== PRICING ====== -->
+        <!-- ====== PRICING — INDIVIDUAL ====== -->
         <section class="section" id="pricing">
             <div class="section-header">
                 <span class="pill pill-reveal">Pricing</span>
-                <h2 class="section-title">Choose the plan that fits your pipeline.</h2>
+                <h2 class="section-title">Individual Services</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Individual services and bundle packages available.</p>
+                <p class="section-sub">Pay-as-you-go — no commitment required.</p>
             </div>
-
-            <!-- Individual Services -->
-            <h3 style="text-align: center; font-size: 24px; font-weight: 700; margin-bottom: 8px;">Individual Services</h3>
-            <p style="text-align: center; color: #4b5563; margin-bottom: 16px; font-size: 15px;">Pay-as-you-go — no commitment required.</p>
             <div class="pricing-individual-grid">
                 <div class="pricing-item reveal">
                     <h4>Script (single)</h4>
@@ -1154,9 +1252,13 @@
                 </div>
             </div>
 
-            <!-- Bundle Packages -->
-            <h3 style="text-align: center; font-size: 24px; font-weight: 700; margin-bottom: 8px; margin-top: 16px;">Bundle Packages</h3>
-            <p style="text-align: center; color: #4b5563; margin-bottom: 16px; font-size: 15px;">Save with our done-for-you content systems.</p>
+            <!-- ====== BUNDLE PACKAGES ====== -->
+            <div class="section-header" style="margin-top: 40px; padding-top: 40px; border-top: 1px solid #e5e7eb;">
+                <span class="pill pill-reveal">Bundles</span>
+                <h2 class="section-title">Bundle Packages</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Save with our done-for-you content systems.</p>
+            </div>
             <div class="pricing-grid">
                 <div class="pricing-card reveal">
                     <h3>Starter</h3>
@@ -1348,7 +1450,6 @@
             const answer = button.nextElementSibling;
             const isOpen = answer.classList.contains('open');
 
-            // Close all other FAQs
             document.querySelectorAll('.faq-answer').forEach(el => {
                 if (el !== answer) {
                     el.classList.remove('open');
@@ -1356,7 +1457,6 @@
                 }
             });
 
-            // Toggle this one
             if (isOpen) {
                 answer.classList.remove('open');
                 button.classList.remove('active');
