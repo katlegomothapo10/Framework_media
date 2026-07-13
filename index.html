@@ -1,292 +1,1710 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Framework Media — Content systems that earn attention.</title>
-<meta name="description" content="Framework Media builds repeatable content systems for hooks, retention, scripting, editing, and monetisation — for African creators, coaches, and brands.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/iconfont/tabler-icons.min.css">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<header class="navbar">
 
-<div class="grain"></div>
-<div class="cursor-dot" id="cursorDot"><span id="cursorLabel"></span></div>
+    <div class="container nav-container">
 
-<nav class="nav">
-  <div class="nav-logo">
-    <svg class="logo-icon" width="28" height="28" viewBox="0 0 100 100" fill="none">
-      <path d="M50 8 L88 35 L74 80 L26 80 L12 35 Z" stroke="url(#navGrad)" stroke-width="9" stroke-linejoin="round"/>
-      <defs><linearGradient id="navGrad" x1="0" y1="0" x2="100" y2="100">
-        <stop offset="0%" stop-color="#F0189C"/><stop offset="55%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#2E5CFF"/>
-      </linearGradient></defs>
-    </svg>
-    <span>Framework<span class="nav-media">Media</span></span>
-  </div>
-  <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#results">Work</a>
-    <a href="#faq">FAQ</a>
-  </div>
-  <a href="#contact" class="nav-cta">Book a call</a>
-</nav>
+        <!-- Logo -->
 
-<header class="hero">
-  <div class="hero-bg"></div>
-  <p class="eyebrow">Framework Media · South Africa</p>
-  <h1 class="hero-title" id="kineticTitle">
-    <span class="kline">We build the content</span>
-    <span class="kline">systems that earn attention.</span>
-  </h1>
-  <p class="hero-sub" data-reveal>
-    Framework Media helps creators, coaches, and brands stop guessing what to post. We build repeatable systems for hooks, retention, scripting, editing, and monetisation — based on the same framework used to grow our own audience.
-  </p>
-  <div class="hero-actions" data-reveal>
-    <a href="#contact" class="btn-primary">Start a project</a>
-    <a href="#process" class="btn-ghost">See how it works →</a>
-  </div>
-  <div class="hero-scroll"><span></span></div>
+        <a href="#" class="logo">
+
+            <div class="logo-icon">
+
+                <svg width="38" height="38" viewBox="0 0 100 100" fill="none">
+
+                    <defs>
+
+                        <linearGradient id="logoGradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="100%">
+
+                            <stop offset="0%" stop-color="#FF4FD8"/>
+                            <stop offset="50%" stop-color="#7C5CFF"/>
+                            <stop offset="100%" stop-color="#45C8FF"/>
+
+                        </linearGradient>
+
+                    </defs>
+
+                    <path
+                        d="M25 15
+                           L75 15
+                           L90 50
+                           L75 85
+                           L25 85
+                           L10 50 Z"
+                        fill="url(#logoGradient)"
+                        opacity=".95"/>
+
+                </svg>
+
+            </div>
+
+            <div class="logo-text">
+
+                <strong>Framework</strong>
+
+                <span>Media</span>
+
+            </div>
+
+        </a>
+
+        <!-- Navigation -->
+
+        <nav>
+
+            <ul>
+
+                <li><a href="#framework">Framework</a></li>
+
+                <li><a href="#services">Services</a></li>
+
+                <li><a href="#pricing">Pricing</a></li>
+
+                <li><a href="#faq">FAQ</a></li>
+
+            </ul>
+
+        </nav>
+
+        <!-- CTA -->
+
+        <a href="#contact" class="button nav-button">
+
+            Start Project
+
+        </a>
+
+    </div>
+
 </header>
 
-<div class="marquee">
-  <div class="marquee-track">
-    <span>HOOKS</span><span class="dot">●</span><span>RETENTION</span><span class="dot">●</span>
-    <span>STRATEGY</span><span class="dot">●</span><span>SCRIPTING</span><span class="dot">●</span>
-    <span>CONTENT AUDITS</span><span class="dot">●</span><span>PRODUCTION</span><span class="dot">●</span>
-    <span>MONETISATION</span><span class="dot">●</span><span>CREATOR SYSTEMS</span><span class="dot">●</span>
-    <span>HOOKS</span><span class="dot">●</span><span>RETENTION</span><span class="dot">●</span>
-    <span>STRATEGY</span><span class="dot">●</span><span>SCRIPTING</span><span class="dot">●</span>
-    <span>CONTENT AUDITS</span><span class="dot">●</span><span>PRODUCTION</span><span class="dot">●</span>
-    <span>MONETISATION</span><span class="dot">●</span><span>CREATOR SYSTEMS</span><span class="dot">●</span>
-  </div>
-</div>
+<section class="hero">
 
-<!-- INTRO STATEMENT -->
-<section class="intro-statement">
-  <h2 class="section-title center">Content that drives growth.</h2>
-  <p class="section-sub center">We work with creators and brands who need more than a nice-looking video. You get a system that understands your audience, your goals, and how retention actually works.</p>
-  <div class="intro-cta"><a href="#contact" class="btn-primary">Let's build it</a></div>
-</section>
+    <div class="container hero-grid">
 
-<!-- FEATURE GRID -->
-<section class="services">
-  <div class="services-grid">
-    <div class="service-card">
-      <span class="service-mark"><i class="ti ti-target-arrow"></i></span>
-      <h3>Hook-driven scripts</h3>
-      <p>Every script is built to earn the next second, not just fill a minute.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-mark"><i class="ti ti-chart-line"></i></span>
-      <h3>Retention-tested</h3>
-      <p>Structure, pacing, and cadence built from what actually keeps people watching.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-mark"><i class="ti ti-stack-2"></i></span>
-      <h3>Systems that scale</h3>
-      <p>One repeatable framework, not a one-off video that gets lucky.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-mark"><i class="ti ti-trending-up"></i></span>
-      <h3>Real audience results</h3>
-      <p>Tested on a real account first — never sold before it was proven.</p>
-    </div>
-  </div>
-</section>
+        <div class="hero-content">
 
-<!-- FOUNDER INTRO -->
-<section class="founder-story">
-  <div class="founder-inner">
-    <p class="eyebrow">The person behind it</p>
-    <p class="story-line story-emph">Hey, I'm Katlego — founder of Framework Media.</p>
-    <p class="story-line">I didn't start as an agency. I started by asking why some videos keep people watching while others lose attention instantly — and testing hundreds of hooks until patterns appeared.</p>
-    <p class="story-line">That became a repeatable framework. The same one that grew my own audience past 50,000 followers, before it ever became something I offered to other people.</p>
-    <p class="story-line story-emph">Good content isn't luck. It's engineered — and I'll show you exactly how.</p>
-  </div>
-</section>
+            <div class="eyebrow">
 
-<!-- RESULTS / MINI CASE STUDIES -->
-<section class="results" id="results">
-  <p class="eyebrow center">Proof, not promises</p>
-  <h2 class="section-title center">The numbers behind the framework.</h2>
-  <p class="section-sub center">No client case studies yet — because the framework was tested here first.</p>
+                🇿🇦 South African Content Systems Studio
 
-  <div class="results-grid">
-    <div class="result-card">
-      <span class="result-num">125K+</span>
-      <span class="result-label">Views in 20 hours on a single video, using this exact hook framework</span>
-    </div>
-    <div class="result-card">
-      <span class="result-num">50,000+</span>
-      <span class="result-label">Followers built organically across TikTok and Instagram</span>
-    </div>
-    <div class="result-card">
-      <span class="result-num">1</span>
-      <span class="result-label">Paid corporate speaking engagement booked directly from content-driven credibility</span>
-    </div>
-  </div>
-</section>
+            </div>
 
-<!-- FLIP DEMO -->
-<section class="flip-section" id="flip">
-  <p class="eyebrow center">The framework, live</p>
-  <h2 class="section-title center">Why one video gets ignored while another keeps people watching.</h2>
-  <p class="section-sub center">Tap each example to compare an average opening with a Framework rewrite.</p>
+            <h1 class="hero-title">
 
-  <div class="flip-grid">
-    <div class="flip-card" data-cursor="Tap to flip">
-      <div class="flip-inner">
-        <div class="flip-face flip-front">
-          <span class="flip-tag weak">Average hook · Dating</span>
-          <p class="flip-text">"Hey guys, today I want to talk about something important..."</p>
-          <span class="flip-hint">Tap to see the rewrite ↻</span>
+                We build the
+                <span>content systems</span>
+                that earn attention.
+
+            </h1>
+
+            <p class="hero-description">
+
+                Framework Media helps creators, coaches and brands
+                stop guessing what to post.
+
+                We build repeatable systems for hooks,
+                scripting,
+                retention,
+                production,
+                and monetisation.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#contact" class="primary-btn">
+
+                    Build My System
+
+                </a>
+
+                <a href="#framework" class="secondary-btn">
+
+                    See The Framework →
+
+                </a>
+
+            </div>
+
         </div>
-        <div class="flip-face flip-back">
-          <span class="flip-tag strong">Framework rewrite</span>
-          <p class="flip-text">"Nobody told you this before you started dating — and it's costing you."</p>
-          <span class="flip-note">Names the problem in 3 seconds. No wasted words before the payoff.</span>
+
+        <!-- Floating Cards -->
+
+        <div class="hero-visual">
+
+            <div class="glass-card card-one">
+
+                <span>Retention</span>
+
+                <h3>+43%</h3>
+
+                <p>Average watch time increase.</p>
+
+            </div>
+
+            <div class="glass-card card-two">
+
+                <span>Hook Score</span>
+
+                <h3>9.4/10</h3>
+
+                <p>Built using our Framework.</p>
+
+            </div>
+
+            <div class="glass-card card-three">
+
+                <span>Framework</span>
+
+                <h3>Hook → Body → CTA</h3>
+
+            </div>
+
         </div>
-      </div>
+
     </div>
-    <div class="flip-card" data-cursor="Tap to flip">
-      <div class="flip-inner">
-        <div class="flip-face flip-front">
-          <span class="flip-tag weak">Average hook · Investing</span>
-          <p class="flip-text">"So I've been thinking about investing lately and wanted to share..."</p>
-          <span class="flip-hint">Tap to see the rewrite ↻</span>
-        </div>
-        <div class="flip-face flip-back">
-          <span class="flip-tag strong">Framework rewrite</span>
-          <p class="flip-text">"I put R500 into this on Luno two years ago. Here's what it's worth now."</p>
-          <span class="flip-note">Specific, personal, and stakes a claim in the first line.</span>
-        </div>
-      </div>
+
+    <div class="scroll-indicator">
+
+        <span></span>
+
     </div>
-    <div class="flip-card" data-cursor="Tap to flip">
-      <div class="flip-inner">
-        <div class="flip-face flip-front">
-          <span class="flip-tag weak">Average hook · Confidence</span>
-          <p class="flip-text">"A lot of guys struggle with confidence, and here are some tips..."</p>
-          <span class="flip-hint">Tap to see the rewrite ↻</span>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Marquee -->
+<!-- ========================================= -->
+
+<section class="marquee-section">
+
+    <div class="marquee">
+
+        <div class="marquee-track">
+
+            <span>HOOK ENGINEERING</span>
+            <span>•</span>
+
+            <span>RETENTION</span>
+            <span>•</span>
+
+            <span>CONTENT STRATEGY</span>
+            <span>•</span>
+
+            <span>PRODUCTION</span>
+            <span>•</span>
+
+            <span>SHORT-FORM</span>
+            <span>•</span>
+
+            <span>MONETISATION</span>
+            <span>•</span>
+
+            <span>CONTENT AUDITS</span>
+            <span>•</span>
+
+            <span>HOOK ENGINEERING</span>
+            <span>•</span>
+
+            <span>RETENTION</span>
+            <span>•</span>
+
+            <span>CONTENT STRATEGY</span>
+            <span>•</span>
+
+            <span>PRODUCTION</span>
+            <span>•</span>
+
+            <span>SHORT-FORM</span>
+            <span>•</span>
+
+            <span>MONETISATION</span>
+
         </div>
-        <div class="flip-face flip-back">
-          <span class="flip-tag strong">Framework rewrite</span>
-          <p class="flip-text">"Confidence isn't a personality trait. It's a habit you've been skipping."</p>
-          <span class="flip-note">Reframes a cliché into a claim worth arguing with.</span>
-        </div>
-      </div>
+
     </div>
-  </div>
+
 </section>
 
-<!-- SERVICES DETAIL -->
-<section class="services" id="services-detail">
-  <p class="eyebrow center">Built around one repeatable system</p>
-  <h2 class="section-title center">What we do.</h2>
-  <div class="services-grid">
-    <div class="service-card"><span class="service-mark">Sc</span><h3>Script writing</h3><p>Hook-first scripts designed around your voice, audience, and goals.</p></div>
-    <div class="service-card"><span class="service-mark">St</span><h3>Content strategy</h3><p>Content pillars, positioning, and monthly planning so every post has a purpose.</p></div>
-    <div class="service-card"><span class="service-mark">Hd</span><h3>Hook diagnostics</h3><p>We'll rebuild your first three seconds so people actually keep watching.</p></div>
-    <div class="service-card"><span class="service-mark">Ca</span><h3>Content audits</h3><p>We identify what's costing you retention and give you a practical roadmap.</p></div>
-    <div class="service-card"><span class="service-mark">Vp</span><h3>Video production</h3><p>Editing with pacing, captions, B-roll, and retention cues built in.</p></div>
-    <div class="service-card"><span class="service-mark">Mc</span><h3>Monetisation consulting</h3><p>Positioning, rate cards, and creator offers that turn attention into income.</p></div>
-  </div>
-</section>
+<!-- ========================================= -->
+<!-- Credibility -->
+<!-- ========================================= -->
 
-<!-- BUILT FOR CREATORS -->
-<section class="services">
-  <p class="eyebrow center">Built for creators</p>
-  <h2 class="section-title center">We work like part of your team.</h2>
-  <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
-    <div class="service-card"><span class="service-mark"><i class="ti ti-adjustments"></i></span><h3>Flexible scope</h3><p>Content pivot? No problem. We adapt as your platform mix and goals change.</p></div>
-    <div class="service-card"><span class="service-mark"><i class="ti ti-message-circle"></i></span><h3>Your content partner</h3><p>Scripts, strategy, or full production — whatever your growth needs next.</p></div>
-    <div class="service-card"><span class="service-mark"><i class="ti ti-users"></i></span><h3>Hands-on collaboration</h3><p>Direct access to the founder, not an account manager relaying messages.</p></div>
-  </div>
-</section>
+<section class="credibility">
 
-<!-- COMPARISON -->
-<section class="difference">
-  <p class="eyebrow center">The framework difference</p>
-  <h2 class="section-title center">Most agencies vs. Framework Media.</h2>
-  <p class="section-sub center">Direct founder access. No account managers, no generic templates, no trend-chasing.</p>
-  <div class="diff-table">
-    <div class="diff-row diff-head"><span>Most agencies</span><span>Framework Media</span></div>
-    <div class="diff-row"><span class="diff-no"><i class="ti ti-x"></i>Generic scripts</span><span class="diff-yes"><i class="ti ti-check"></i>Founder-tested framework</span></div>
-    <div class="diff-row"><span class="diff-no"><i class="ti ti-x"></i>Trend chasing</span><span class="diff-yes"><i class="ti ti-check"></i>Repeatable content systems</span></div>
-    <div class="diff-row"><span class="diff-no"><i class="ti ti-x"></i>Focus on views</span><span class="diff-yes"><i class="ti ti-check"></i>Focus on retention &amp; conversion</span></div>
-    <div class="diff-row"><span class="diff-no"><i class="ti ti-x"></i>One-off projects</span><span class="diff-yes"><i class="ti ti-check"></i>Long-term growth systems</span></div>
-    <div class="diff-row"><span class="diff-no"><i class="ti ti-x"></i>Global approach</span><span class="diff-yes"><i class="ti ti-check"></i>Built for African creators &amp; businesses</span></div>
-  </div>
-</section>
+    <div class="container">
 
-<!-- PROCESS -->
-<section class="process" id="process">
-  <p class="eyebrow center">The framework process</p>
-  <h2 class="section-title center">Every piece of content follows the same system.</h2>
-  <div class="process-list" id="processList">
-    <div class="process-step"><span class="process-num">01</span><div><h3>Research</h3><p>Audience, competitors, and positioning.</p></div></div>
-    <div class="process-step"><span class="process-num">02</span><div><h3>Hook engineering</h3><p>Build an opening that earns the next second.</p></div></div>
-    <div class="process-step"><span class="process-num">03</span><div><h3>Retention mapping</h3><p>Every section keeps curiosity alive.</p></div></div>
-    <div class="process-step"><span class="process-num">04</span><div><h3>Production</h3><p>Editing, captions, pacing, and delivery.</p></div></div>
-    <div class="process-step"><span class="process-num">05</span><div><h3>Optimisation</h3><p>Review performance and improve the next video.</p></div></div>
-  </div>
-</section>
+        <div class="section-heading">
 
-<!-- OFFER -->
-<section class="offer">
-  <p class="eyebrow center">The flagship offer</p>
-  <h2 class="section-title center">The Content System</h2>
-  <p class="section-sub center">Everything needed to consistently publish high-performing short-form content.</p>
-  <div class="offer-included">
-    <div class="offer-item"><i class="ti ti-check"></i>Monthly strategy</div>
-    <div class="offer-item"><i class="ti ti-check"></i>Hook engineering</div>
-    <div class="offer-item"><i class="ti ti-check"></i>Script writing</div>
-    <div class="offer-item"><i class="ti ti-check"></i>Video editing</div>
-    <div class="offer-item"><i class="ti ti-check"></i>Content audit</div>
-    <div class="offer-item"><i class="ti ti-check"></i>Performance review</div>
-  </div>
-  <div class="offer-tiers">
-    <div class="offer-tier"><h3>Starter</h3><p>For creators posting consistently who need a sharper system.</p></div>
-    <div class="offer-tier"><h3>Growth</h3><p>For accounts scaling volume across Reels, TikTok, and YouTube.</p></div>
-    <div class="offer-tier"><h3>Full System</h3><p>For brands and creators who want the entire pipeline run for them.</p></div>
-  </div>
-  <div class="offer-cta"><a href="#contact" class="btn-primary large">Start a project</a></div>
-</section>
+            <span class="section-label">
 
+                Why Framework?
+
+            </span>
+
+            <h2>
+
+                Built on real experience,
+                <br>
+                not agency theory.
+
+            </h2>
+
+            <p>
+
+                Everything we deliver comes from a framework developed by
+                building a real audience, testing hundreds of content ideas,
+                and refining what consistently earns attention.
+
+            </p>
+
+        </div>
+
+        <div class="credibility-grid">
+
+            <!-- Card -->
+
+            <article class="cred-card featured">
+
+                <div class="card-number">
+
+                    50K+
+
+                </div>
+
+                <h3>
+
+                    Followers Built
+
+                </h3>
+
+                <p>
+
+                    Across TikTok and Instagram using our own
+                    Hook → Body → CTA framework.
+
+                </p>
+
+            </article>
+
+            <!-- Card -->
+
+            <article class="cred-card">
+
+                <div class="icon">
+
+                    ✦
+
+                </div>
+
+                <h3>
+
+                    Founder-Tested
+
+                </h3>
+
+                <p>
+
+                    Every strategy was tested on a real audience before
+                    becoming part of our system.
+
+                </p>
+
+            </article>
+
+            <!-- Card -->
+
+            <article class="cred-card">
+
+                <div class="icon">
+
+                    📘
+
+                </div>
+
+                <h3>
+
+                    Published Author
+
+                </h3>
+
+                <p>
+
+                    Proven expertise beyond social media through
+                    long-form educational work.
+
+                </p>
+
+            </article>
+
+            <!-- Card -->
+
+            <article class="cred-card">
+
+                <div class="icon">
+
+                    🎤
+
+                </div>
+
+                <h3>
+
+                    Paid Speaker
+
+                </h3>
+
+                <p>
+
+                    Trusted to speak on communication,
+                    personal development,
+                    and digital growth.
+
+                </p>
+
+            </article>
+
+            <!-- Card -->
+
+            <article class="cred-card wide">
+
+                <div class="icon">
+
+                    ⚡
+
+                </div>
+
+                <h3>
+
+                    Built for African Creators & Brands
+
+                </h3>
+
+                <p>
+
+                    We don't copy overseas content.
+                    We build systems that understand African audiences,
+                    businesses, and creator ecosystems.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- FRAMEWORK -->
+<!-- ========================================= -->
+
+<section id="framework" class="framework">
+
+    <div class="framework-sticky">
+
+        <div class="container">
+
+            <div class="framework-intro">
+
+                <span class="section-label">
+                    The Framework
+                </span>
+
+                <h2>
+
+                    Attention
+                    <br>
+                    isn't luck.
+
+                    <span>
+                        It's engineered.
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    Every high-performing video follows the same psychology.
+
+                    Here's how we build ours.
+
+                </p>
+
+            </div>
+
+            <div class="framework-cards">
+
+                <!-- Example -->
+
+                <div class="framework-card">
+
+                    <div class="card-side bad">
+
+                        <small>Average Hook</small>
+
+                        <h3>
+
+                            Nobody talks about this investing mistake...
+
+                        </h3>
+
+                        <p>
+
+                            Generic.
+                            Predictable.
+                            Easy to scroll past.
+
+                        </p>
+
+                    </div>
+
+                    <div class="arrow">
+
+                        →
+
+                    </div>
+
+                    <div class="card-side good">
+
+                        <small>Framework Rewrite</small>
+
+                        <h3>
+
+                            If you invest before understanding this one number,
+                            you're probably losing money.
+
+                        </h3>
+
+                        <p>
+
+                            Specific.
+
+                            Creates curiosity.
+
+                            Gives a reason to stay.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="framework-note">
+
+                    <h4>
+
+                        Why it works
+
+                    </h4>
+
+                    <p>
+
+                        We don't chase virality.
+
+                        We engineer curiosity,
+                        clarity,
+                        and momentum within the first
+                        three seconds.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section id="services" class="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                Services
+
+            </span>
+
+            <h2>
+
+                Everything needed to
+                build a high-performing
+                content system.
+
+            </h2>
+
+        </div>
+
+        <div class="bento-grid">
+
+            <article class="bento large">
+
+                <h3>
+
+                    Script Writing
+
+                </h3>
+
+                <p>
+
+                    Hook-first scripts written specifically for your voice,
+                    audience,
+                    and business goals.
+
+                </p>
+
+            </article>
+
+            <article class="bento">
+
+                <h3>
+
+                    Hook Diagnostics
+
+                </h3>
+
+                <p>
+
+                    Rewrite the first three seconds of your content.
+
+                </p>
+
+            </article>
+
+            <article class="bento">
+
+                <h3>
+
+                    Content Audits
+
+                </h3>
+
+                <p>
+
+                    Discover what's costing you retention.
+
+                </p>
+
+            </article>
+
+            <article class="bento large">
+
+                <h3>
+
+                    Strategy
+
+                </h3>
+
+                <p>
+
+                    Content pillars,
+                    positioning,
+                    monthly planning,
+                    and publishing systems.
+
+                </p>
+
+            </article>
+
+            <article class="bento">
+
+                <h3>
+
+                    Production
+
+                </h3>
+
+                <p>
+
+                    Editing,
+                    captions,
+                    pacing,
+                    delivery.
+
+                </p>
+
+            </article>
+
+            <article class="bento">
+
+                <h3>
+
+                    Monetisation
+
+                </h3>
+
+                <p>
+
+                    Turn attention into business.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+<section id="services" class="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                Services
+
+            </span>
+
+            <h2>
+
+                Everything needed to
+                build a high-performing
+                content system.
+
+            </h2>
+
+        </div>
+
+        <div class="bento-grid">
+
+            <article class="bento large">
+
+                <h3>
+
+                    Script Writing
+
+                </h3>
+
+                <p>
+
+                    Hook-first scripts written specifically for your voice,
+                    audience,
+                    and business goals.
+
+                </p>
+
+            </article>
+
+            <article class="bento">
+
+                <h3>
+
+                    Hook Diagnostics
+
+                </h3>
+
+                <p>
+
+                    Rewrite the first three seconds of your content.
+
+                </p>
+
+            </article>
+
+            <article class="bento">
+
+                <h3>
+
+                    Content Audits
+
+                </h3>
+
+                <p>
+
+                    Discover what's costing you retention.
+
+                </p>
+
+            </article>
+
+            <article class="bento large">
+
+                <h3>
+
+                    Strategy
+
+                </h3>
+
+                <p>
+
+                    Content pillars,
+                    positioning,
+                    monthly planning,
+                    and publishing systems.
+
+                </p>
+
+            </article>
+
+            <article class="bento">
+
+                <h3>
+
+                    Production
+
+                </h3>
+
+                <p>
+
+                    Editing,
+                    captions,
+                    pacing,
+                    delivery.
+
+                </p>
+
+            </article>
+
+            <article class="bento">
+
+                <h3>
+
+                    Monetisation
+
+                </h3>
+
+                <p>
+
+                    Turn attention into business.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+<section id="process" class="process">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                Our Process
+
+            </span>
+
+            <h2>
+
+                One repeatable system.
+
+                Every project.
+
+            </h2>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="step">
+
+                <div class="step-number">
+
+                    01
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Research
+
+                    </h3>
+
+                    <p>
+
+                        Audience,
+                        positioning,
+                        competitors,
+                        and opportunities.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-number">
+
+                    02
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Hook Engineering
+
+                    </h3>
+
+                    <p>
+
+                        We build the first three seconds before
+                        anything else.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-number">
+
+                    03
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Script
+
+                    </h3>
+
+                    <p>
+
+                        Every sentence earns the next.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-number">
+
+                    04
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Production
+
+                    </h3>
+
+                    <p>
+
+                        Editing,
+                        captions,
+                        pacing,
+                        delivery.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-number">
+
+                    05
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Optimisation
+
+                    </h3>
+
+                    <p>
+
+                        Review.
+                        Improve.
+                        Repeat.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- RESULTS -->
+<!-- ========================================= -->
+
+<section class="results">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Results
+            </span>
+
+            <h2>
+
+                Better content starts
+                with better systems.
+
+            </h2>
+
+            <p>
+
+                We don't promise viral videos.
+
+                We build repeatable systems that improve
+                retention, clarity and consistency over time.
+
+            </p>
+
+        </div>
+
+        <div class="results-grid">
+
+            <!-- Result -->
+
+            <article class="result-card">
+
+                <span class="result-tag">
+
+                    BEFORE
+
+                </span>
+
+                <h3>
+
+                    Generic Hook
+
+                </h3>
+
+                <p>
+
+                    "Nobody talks about this..."
+
+                </p>
+
+            </article>
+
+            <div class="result-arrow">
+
+                →
+
+            </div>
+
+            <article class="result-card featured">
+
+                <span class="result-tag">
+
+                    AFTER
+
+                </span>
+
+                <h3>
+
+                    Framework Rewrite
+
+                </h3>
+
+                <p>
+
+                    "If you don't understand this one investing number,
+                    you're probably losing money."
+
+                </p>
+
+            </article>
+
+        </div>
+
+        <div class="metrics">
+
+            <div>
+
+                <h3>
+
+                    3 sec
+
+                </h3>
+
+                <p>
+
+                    Our first priority is earning
+                    the next second.
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>
+
+                    1 System
+
+                </h3>
+
+                <p>
+
+                    Every client follows the
+                    same proven framework.
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>
+
+                    50K+
+
+                </h3>
+
+                <p>
+
+                    Followers grown using
+                    the same methodology.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- CONTENT SYSTEM -->
+<!-- ========================================= -->
+
+<section class="flagship">
+
+    <div class="container">
+
+        <div class="flagship-wrapper">
+
+            <div class="flagship-left">
+
+                <span class="section-label">
+
+                    Signature Offer
+
+                </span>
+
+                <h2>
+
+                    The Content
+                    System
+
+                </h2>
+
+                <p>
+
+                    Instead of buying random services,
+                    build an entire content engine.
+
+                    Strategy.
+
+                    Scripts.
+
+                    Editing.
+
+                    Reviews.
+
+                    Continuous optimisation.
+
+                </p>
+
+            </div>
+
+            <div class="flagship-right">
+
+                <div class="feature">
+
+                    ✓ Weekly scripting
+
+                </div>
+
+                <div class="feature">
+
+                    ✓ Hook engineering
+
+                </div>
+
+                <div class="feature">
+
+                    ✓ Video editing
+
+                </div>
+
+                <div class="feature">
+
+                    ✓ Monthly audit
+
+                </div>
+
+                <div class="feature">
+
+                    ✓ Strategy calls
+
+                </div>
+
+                <div class="feature">
+
+                    ✓ Performance reviews
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- PRICING -->
+<!-- ========================================= -->
+
+<section id="pricing" class="pricing">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                Pricing
+
+            </span>
+
+            <h2>
+
+                Built around
+                how you create.
+
+            </h2>
+
+        </div>
+
+        <div class="pricing-grid">
+
+            <!-- Starter -->
+
+            <article class="price-card">
+
+                <span class="plan">
+
+                    Starter
+
+                </span>
+
+                <h3>
+
+                    From
+
+                    <strong>
+
+                        R6 000
+
+                    </strong>
+
+                </h3>
+
+                <p>
+
+                    Perfect for creators
+                    building consistency.
+
+                </p>
+
+                <ul>
+
+                    <li>6–8 Reels Scripts</li>
+
+                    <li>1–2 YouTube Scripts</li>
+
+                    <li>Content Audit</li>
+
+                    <li>Hook Optimisation</li>
+
+                </ul>
+
+                <a href="#contact">
+
+                    Get Started
+
+                </a>
+
+            </article>
+
+            <!-- Growth -->
+
+            <article class="price-card featured">
+
+                <span class="popular">
+
+                    MOST POPULAR
+
+                </span>
+
+                <span class="plan">
+
+                    Growth
+
+                </span>
+
+                <h3>
+
+                    From
+
+                    <strong>
+
+                        R16 000
+
+                    </strong>
+
+                </h3>
+
+                <p>
+
+                    Built for businesses
+                    publishing consistently.
+
+                </p>
+
+                <ul>
+
+                    <li>10–12 Reels</li>
+
+                    <li>Video Editing</li>
+
+                    <li>Monthly Audit</li>
+
+                    <li>Strategy Support</li>
+
+                </ul>
+
+                <a href="#contact">
+
+                    Choose Growth
+
+                </a>
+
+            </article>
+
+            <!-- Full -->
+
+            <article class="price-card">
+
+                <span class="plan">
+
+                    Full System
+
+                </span>
+
+                <h3>
+
+                    From
+
+                    <strong>
+
+                        R32 000
+
+                    </strong>
+
+                </h3>
+
+                <p>
+
+                    A complete content
+                    operation.
+
+                </p>
+
+                <ul>
+
+                    <li>15+ Reels</li>
+
+                    <li>YouTube Scripts</li>
+
+                    <li>Strategy Calls</li>
+
+                    <li>Monetisation Consulting</li>
+
+                </ul>
+
+                <a href="#contact">
+
+                    Scale My Content
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
 <!-- FAQ -->
-<section class="faq" id="faq">
-  <p class="eyebrow center">Questions</p>
-  <h2 class="section-title center">FAQ</h2>
-  <div class="faq-list">
-    <div class="faq-item"><button class="faq-q">Is this only for creators? <i class="ti ti-plus"></i></button><div class="faq-a"><p>No. We also work with coaches, consultants, and businesses building authority online.</p></div></div>
-    <div class="faq-item"><button class="faq-q">Can I hire you just for scripts? <i class="ti ti-plus"></i></button><div class="faq-a"><p>Yes. You can buy individual scripts or a complete monthly system.</p></div></div>
-    <div class="faq-item"><button class="faq-q">Do you edit the videos too? <i class="ti ti-plus"></i></button><div class="faq-a"><p>Yes. We offer script-only, editing-only, or complete production.</p></div></div>
-    <div class="faq-item"><button class="faq-q">How quickly can we start? <i class="ti ti-plus"></i></button><div class="faq-a"><p>Most projects begin within a week after onboarding.</p></div></div>
-    <div class="faq-item"><button class="faq-q">Do you guarantee viral videos? <i class="ti ti-plus"></i></button><div class="faq-a"><p>No. We build systems that maximise retention and consistency. Long-term growth comes from execution and testing.</p></div></div>
-  </div>
-</section>
+<!-- ========================================= -->
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <p class="eyebrow center">Ready to stop guessing?</p>
-  <h2 class="section-title center">Book a 15-minute call that might change how you post.</h2>
-  <a href="mailto:hello@frameworkmedia.co" class="btn-primary large">Start a project</a>
-  <p class="contact-email">Or send an email → <a href="mailto:hello@frameworkmedia.co">hello@frameworkmedia.co</a></p>
-  <div class="contact-links"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">LinkedIn</a></div>
-</section>
+<section id="faq" class="faq">
 
-<footer class="footer">
-  <div class="footer-col"><p class="footer-brand">Framework Media</p><p class="footer-tag">Content systems for African creators &amp; brands</p></div>
-  <div class="footer-col footer-links"><span>Scripts</span><span>Strategy</span><span>Production</span><span>Monetisation</span></div>
-  <div class="footer-col footer-links"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">LinkedIn</a></div>
-  <div class="footer-col"><span>© 2026 Framework Media</span><span>Built in South Africa</span></div>
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Frequently Asked Questions
+            </span>
+
+            <h2>
+
+                Everything you
+                need to know.
+
+            </h2>
+
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        Do you only work with creators?
+                    </span>
+
+                    <span class="faq-icon">+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        No. We work with creators,
+                        coaches,
+                        consultants,
+                        startups,
+                        and businesses looking to build authority
+                        through short-form content.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        Can I buy individual services?
+
+                    </span>
+
+                    <span class="faq-icon">
+
+                        +
+
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Absolutely.
+
+                        You can purchase script writing,
+                        hook diagnostics,
+                        audits,
+                        editing,
+                        or our complete Content System.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        Do you guarantee viral videos?
+
+                    </span>
+
+                    <span class="faq-icon">
+
+                        +
+
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        No.
+
+                        We focus on building repeatable systems
+                        that improve retention,
+                        consistency,
+                        and long-term performance.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        How quickly can we start?
+
+                    </span>
+
+                    <span class="faq-icon">
+
+                        +
+
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Most projects begin within
+                        one week after onboarding.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- CTA -->
+<!-- ========================================= -->
+
+<section id="contact" class="cta">
+
+    <div class="container">
+
+        <div class="cta-card">
+
+            <span class="section-label">
+
+                Let's Build
+
+            </span>
+
+            <h2>
+
+                Ready to stop
+                guessing?
+
+            </h2>
+
+            <p>
+
+                Whether you're a creator,
+                coach,
+                or business,
+
+                we'll build a content system
+                designed around your goals.
+
+            </p>
+
+            <div class="cta-buttons">
+
+                <a href="mailto:hello@frameworkmedia.co"
+                   class="primary-btn">
+
+                    Start a Project
+
+                </a>
+
+                <a href="mailto:hello@frameworkmedia.co"
+                   class="secondary-btn">
+
+                    hello@frameworkmedia.co
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- FOOTER -->
+<!-- ========================================= -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <h3>
+
+                Framework Media
+
+            </h3>
+
+            <p>
+
+                We build content systems
+                that earn attention.
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>
+
+                Navigation
+
+            </h4>
+
+            <ul>
+
+                <li>
+
+                    <a href="#framework">
+
+                        Framework
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#services">
+
+                        Services
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#pricing">
+
+                        Pricing
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#faq">
+
+                        FAQ
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h4>
+
+                Contact
+
+            </h4>
+
+            <a href="mailto:hello@frameworkmedia.co">
+
+                hello@frameworkmedia.co
+
+            </a>
+
+            <p>
+
+                Johannesburg, South Africa
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © 2026 Framework Media.
+            All rights reserved.
+
+        </p>
+
+    </div>
+
 </footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="script.js"></script>
-</body>
-</html>
