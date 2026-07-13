@@ -17,10 +17,21 @@
             box-sizing: border-box;
         }
 
+        /* ===== COLOR VARIABLES ===== */
+        :root {
+            --black: #0f1419;
+            --pink: #ec4899;
+            --purple: #8b5cf6;
+            --blue: #3b82f6;
+            --gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
+            --gradient-subtle: linear-gradient(135deg, rgba(236, 72, 153, 0.12), rgba(139, 92, 246, 0.12), rgba(59, 130, 246, 0.12));
+            --gradient-dark: linear-gradient(135deg, #be185d, #7c3aed, #2563eb);
+        }
+
         body {
             background: #ffffff;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #0f1419;
+            color: var(--black);
             line-height: 1.5;
         }
 
@@ -30,9 +41,9 @@
             padding: 0 24px;
         }
 
-        /* buttons */
+        /* ===== BUTTONS ===== */
         .btn-primary {
-            background: #0f1419;
+            background: var(--gradient);
             color: white;
             border: none;
             padding: 14px 36px;
@@ -40,49 +51,88 @@
             font-weight: 600;
             font-size: 16px;
             cursor: pointer;
-            transition: 0.2s;
+            transition: 0.3s;
             display: inline-block;
             text-decoration: none;
         }
         .btn-primary:hover {
-            background: #2a2f35;
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
         }
 
         .btn-outline {
             background: transparent;
-            color: #0f1419;
-            border: 1.5px solid #0f1419;
+            color: var(--black);
+            border: 1.5px solid var(--purple);
             padding: 14px 36px;
             border-radius: 40px;
             font-weight: 600;
             font-size: 16px;
             cursor: pointer;
-            transition: 0.2s;
+            transition: 0.3s;
             display: inline-block;
             text-decoration: none;
         }
         .btn-outline:hover {
-            background: #0f1419;
+            background: var(--gradient);
             color: white;
+            border-color: transparent;
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
         }
 
+        /* ===== PILL STYLES ===== */
+        .pill {
+            display: inline-block;
+            background: var(--gradient-subtle);
+            color: var(--black);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        .pill i {
+            color: var(--purple);
+            margin-right: 4px;
+        }
+
+        /* ===== SECTION HEADERS (CENTERED) ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
         .section-title {
             font-size: 40px;
             font-weight: 700;
             letter-spacing: -0.02em;
             line-height: 1.1;
-            margin-bottom: 8px;
-            text-align: center;
+            margin-bottom: 6px;
+        }
+        .section-title .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .section-sub {
             font-size: 18px;
             color: #4b5563;
             max-width: 600px;
-            margin: 0 auto 32px;
-            text-align: center;
+            margin: 0 auto;
+        }
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 4px;
+            margin: 0 auto 16px;
         }
 
-        /* navbar */
+        /* ===== NAVBAR ===== */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -97,16 +147,28 @@
             font-weight: 800;
             letter-spacing: -0.5px;
             text-decoration: none;
-            color: #0f1419;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .logo span {
-            background: #0f1419;
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 800;
             color: white;
-            padding: 4px 12px;
-            border-radius: 40px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-left: 6px;
+        }
+        .logo .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-links {
@@ -119,13 +181,14 @@
             text-decoration: none;
             color: #1f2937;
             font-size: 16px;
+            transition: 0.2s;
         }
         .nav-links a:hover {
-            color: #0f1419;
+            color: var(--purple);
         }
 
         .nav-cta {
-            background: #0f1419;
+            background: var(--gradient);
             color: white;
             padding: 12px 28px;
             border-radius: 40px;
@@ -133,72 +196,79 @@
             font-size: 15px;
             border: none;
             cursor: pointer;
-            transition: 0.2s;
+            transition: 0.3s;
             text-decoration: none;
             display: inline-block;
         }
         .nav-cta:hover {
-            background: #2a2f35;
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.25);
         }
 
-        /* hero */
+        /* ===== HERO ===== */
         .hero {
             padding: 60px 0 70px;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             gap: 40px;
+            text-align: center;
         }
-
         .hero-content {
             flex: 1 1 500px;
         }
         .hero-tag {
-            background: #eef2ff;
-            color: #1e3a8a;
+            background: var(--gradient-subtle);
+            color: var(--purple);
             font-weight: 600;
             font-size: 14px;
             padding: 6px 18px;
             border-radius: 40px;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+        .hero-tag i {
+            color: var(--purple);
         }
         .hero-content h1 {
             font-size: 56px;
             font-weight: 800;
             letter-spacing: -0.03em;
             line-height: 1.05;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
         .hero-content h1 .highlight {
-            background: #fde047;
-            padding: 0 8px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .hero-content p {
             font-size: 20px;
             color: #374151;
             max-width: 540px;
-            margin-bottom: 28px;
+            margin: 0 auto 24px;
         }
         .hero-badge {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 12px;
-            background: #f3f4f6;
+            background: var(--gradient-subtle);
             padding: 12px 24px;
             border-radius: 60px;
             font-weight: 500;
             font-size: 15px;
-            margin-top: 16px;
-            width: fit-content;
+            margin-top: 8px;
+            border: 1px solid rgba(139, 92, 246, 0.12);
         }
         .hero-badge i {
-            color: #0f1419;
+            color: var(--purple);
         }
         .hero-image {
             flex: 1 1 400px;
-            background: #e5e7eb;
+            background: var(--gradient-subtle);
             border-radius: 32px;
             min-height: 320px;
             display: flex;
@@ -207,57 +277,29 @@
             font-weight: 600;
             color: #4b5563;
             font-size: 18px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="%239ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.5"/><path d="M8 2v20M16 2v20M2 8h20M2 16h20"/></svg>');
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="%238b5cf6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.5"/><path d="M8 2v20M16 2v20M2 8h20M2 16h20"/></svg>');
             background-repeat: no-repeat;
             background-position: center;
             background-size: 80px;
         }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-        /* Services */
-        .services-section {
+        /* ===== SECTIONS ===== */
+        .section {
             padding: 60px 0 40px;
             border-top: 1px solid #e5e7eb;
         }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .service-card {
-            background: #f9fafb;
-            padding: 32px 24px;
-            border-radius: 24px;
-            border: 1px solid #f3f4f6;
-            transition: 0.25s ease;
-            text-align: left;
-        }
-        .service-card:hover {
-            border-color: #0f1419;
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-        }
-        .service-card .icon {
-            font-size: 28px;
-            color: #0f1419;
-            margin-bottom: 12px;
-            display: block;
-        }
-        .service-card h4 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-        .service-card p {
-            color: #4b5563;
-            font-size: 15px;
-            line-height: 1.6;
+        .section:first-of-type {
+            border-top: none;
         }
 
-        /* trusted by cards */
-        .trusted-section {
-            padding: 40px 0 60px;
-            border-top: 1px solid #e5e7eb;
-        }
+        /* ===== TRUSTED BY ===== */
         .trusted-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -269,15 +311,16 @@
             border-radius: 24px;
             padding: 32px 28px;
             border: 1px solid #e5e7eb;
-            transition: 0.2s;
+            transition: 0.3s;
             text-decoration: none;
             color: inherit;
             display: block;
+            text-align: left;
         }
         .trusted-card:hover {
-            border-color: #0f1419;
+            border-color: var(--purple);
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.08);
         }
         .trusted-card h4 {
             font-size: 22px;
@@ -296,19 +339,19 @@
             color: #6b7280;
         }
         .trusted-card .platform-icons i:hover {
-            color: #0f1419;
+            color: var(--purple);
         }
         .trusted-card .follower-count {
             font-size: 14px;
             font-weight: 600;
-            color: #0f1419;
+            color: var(--black);
             margin-top: 8px;
         }
         .trusted-card .link-arrow {
             display: inline-block;
             margin-top: 12px;
             font-weight: 600;
-            color: #0f1419;
+            color: var(--purple);
         }
         .trusted-card .link-arrow i {
             transition: 0.2s;
@@ -317,11 +360,7 @@
             transform: translateX(4px);
         }
 
-        /* testimonials */
-        .testimonials {
-            padding: 60px 0 40px;
-            border-top: 1px solid #e5e7eb;
-        }
+        /* ===== TESTIMONIALS ===== */
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -333,6 +372,12 @@
             padding: 28px 24px;
             border-radius: 24px;
             border: 1px solid #f3f4f6;
+            text-align: left;
+            transition: 0.3s;
+        }
+        .testimonial-card:hover {
+            border-color: var(--purple);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.06);
         }
         .testimonial-card .stars {
             color: #fbbf24;
@@ -342,6 +387,8 @@
             font-size: 16px;
             color: #1f2937;
             margin-bottom: 16px;
+            border-left: 3px solid var(--purple);
+            padding-left: 16px;
         }
         .testimonial-card .author {
             font-weight: 600;
@@ -352,13 +399,13 @@
         .author-avatar {
             width: 40px;
             height: 40px;
-            background: #d1d5db;
+            background: var(--gradient);
             border-radius: 50%;
             display: inline-block;
         }
         .coming-soon-badge {
-            background: #e5e7eb;
-            color: #4b5563;
+            background: var(--gradient-subtle);
+            color: var(--purple);
             font-size: 12px;
             font-weight: 600;
             padding: 2px 12px;
@@ -366,28 +413,36 @@
             display: inline-block;
             margin-left: 12px;
             vertical-align: middle;
+            border: 1px solid rgba(139, 92, 246, 0.15);
         }
 
-        /* team - single founder */
-        .team {
-            padding: 60px 0;
-            border-top: 1px solid #e5e7eb;
-        }
+        /* ===== FOUNDER ===== */
         .founder-card {
             max-width: 700px;
-            margin: 32px auto 0;
+            margin: 0 auto;
             background: #f9fafb;
             border-radius: 32px;
             padding: 48px 40px;
             border: 1px solid #e5e7eb;
             text-align: center;
+            transition: 0.3s;
+        }
+        .founder-card:hover {
+            border-color: var(--purple);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.06);
         }
         .founder-avatar {
             width: 120px;
             height: 120px;
-            background: #d1d5db;
+            background: var(--gradient);
             border-radius: 50%;
             margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: 800;
+            color: white;
         }
         .founder-card h4 {
             font-size: 28px;
@@ -414,17 +469,53 @@
         .founder-card .social-links a {
             color: inherit;
             text-decoration: none;
-            transition: 0.2s;
+            transition: 0.3s;
         }
         .founder-card .social-links a:hover {
-            color: #0f1419;
+            color: var(--purple);
+            transform: scale(1.1);
         }
 
-        /* process */
-        .process {
-            padding: 60px 0 40px;
-            border-top: 1px solid #e5e7eb;
+        /* ===== SERVICES ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
+        .service-card {
+            background: #f9fafb;
+            padding: 32px 24px;
+            border-radius: 24px;
+            border: 1px solid #f3f4f6;
+            transition: 0.3s;
+            text-align: center;
+        }
+        .service-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.08);
+        }
+        .service-card .icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .service-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .service-card p {
+            color: #4b5563;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ===== PROCESS ===== */
         .process-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -432,14 +523,19 @@
             margin-top: 32px;
         }
         .step {
-            border-left: 3px solid #0f1419;
+            border-left: 3px solid var(--purple);
             padding-left: 20px;
+            text-align: left;
+            transition: 0.3s;
+        }
+        .step:hover {
+            border-left-color: var(--pink);
         }
         .step .num {
             font-size: 36px;
             font-weight: 800;
-            color: #0f1419;
-            opacity: 0.2;
+            color: var(--purple);
+            opacity: 0.3;
             line-height: 1;
         }
         .step h4 {
@@ -451,11 +547,7 @@
             color: #4b5563;
         }
 
-        /* pricing (no prices shown) */
-        .pricing {
-            padding: 60px 0 40px;
-            border-top: 1px solid #e5e7eb;
-        }
+        /* ===== PRICING ===== */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -468,9 +560,14 @@
             border-radius: 32px;
             border: 1px solid #e5e7eb;
             text-align: center;
+            transition: 0.3s;
+        }
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.06);
         }
         .pricing-card.popular {
-            border: 2px solid #0f1419;
+            border: 2px solid var(--purple);
             background: white;
         }
         .pricing-card h3 {
@@ -487,6 +584,8 @@
             list-style: none;
             text-align: left;
             margin: 20px 0 24px;
+            display: inline-block;
+            text-align: left;
         }
         .pricing-card ul li {
             padding: 6px 0;
@@ -495,7 +594,7 @@
             align-items: center;
         }
         .pricing-card ul li i {
-            color: #0f1419;
+            color: var(--purple);
             width: 20px;
         }
         .pricing-card .price-note {
@@ -508,16 +607,24 @@
             margin-top: 32px;
         }
 
-        /* faq */
-        .faq {
-            padding: 60px 0 40px;
-            border-top: 1px solid #e5e7eb;
-        }
+        /* ===== FAQ ===== */
         .faq-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 24px 48px;
             margin-top: 32px;
+        }
+        .faq-item {
+            text-align: left;
+            padding: 20px 24px;
+            background: #f9fafb;
+            border-radius: 16px;
+            border-left: 3px solid var(--purple);
+            transition: 0.3s;
+        }
+        .faq-item:hover {
+            border-left-color: var(--pink);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.06);
         }
         .faq-item h4 {
             font-weight: 700;
@@ -527,7 +634,7 @@
             color: #4b5563;
         }
 
-        /* contact */
+        /* ===== CONTACT ===== */
         .contact-section {
             padding: 60px 0;
             display: grid;
@@ -535,7 +642,8 @@
             gap: 60px;
             border-top: 1px solid #e5e7eb;
         }
-        .contact-form input, .contact-form textarea {
+        .contact-form input,
+        .contact-form textarea {
             width: 100%;
             padding: 14px 18px;
             border: 1px solid #d1d5db;
@@ -543,13 +651,24 @@
             margin: 10px 0;
             font-family: inherit;
             font-size: 16px;
+            transition: 0.3s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--purple);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
         }
         .contact-form textarea {
             min-height: 100px;
         }
+        .contact-form h3,
+        .contact-form p {
+            text-align: left;
+        }
 
         .calendar-box {
-            background: #f3f4f6;
+            background: var(--gradient-subtle);
             border-radius: 32px;
             padding: 40px 30px;
             min-height: 300px;
@@ -558,6 +677,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            border: 1px solid rgba(139, 92, 246, 0.1);
         }
         .calendar-box .fake-cal {
             background: white;
@@ -568,8 +688,18 @@
             margin: 20px auto;
             border: 1px solid #e5e7eb;
         }
+        .calendar-box .fake-cal .selected-date {
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+        }
 
-        /* footer */
+        /* ===== FOOTER ===== */
         .footer {
             border-top: 1px solid #e5e7eb;
             padding: 32px 0;
@@ -583,16 +713,87 @@
         .footer a {
             color: #6b7280;
             text-decoration: none;
+            transition: 0.3s;
         }
         .footer a:hover {
-            color: #0f1419;
+            color: var(--purple);
         }
         .footer .social-icons {
             display: flex;
             gap: 16px;
         }
+        .footer .social-icons a:hover {
+            transform: scale(1.1);
+        }
+        .footer .social-icons a:nth-child(1):hover { color: var(--pink); }
+        .footer .social-icons a:nth-child(2):hover { color: var(--pink); }
+        .footer .social-icons a:nth-child(3):hover { color: var(--blue); }
+        .footer .social-icons a:nth-child(4):hover { color: var(--blue); }
 
-        /* ===== RESPONSIVE TWEAKS ===== */
+        /* ================================================ */
+        /* ===== ANIMATIONS ===== */
+        /* ================================================ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .grid .reveal:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+        .grid .reveal:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+        .grid .reveal:nth-child(4) {
+            transition-delay: 0.3s;
+        }
+        .grid .reveal:nth-child(5) {
+            transition-delay: 0.4s;
+        }
+        .grid .reveal:nth-child(6) {
+            transition-delay: 0.5s;
+        }
+
+        .hero-reveal {
+            opacity: 0;
+            transform: scale(0.96) translateY(30px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hero-reveal.is-visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        .founder-reveal {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .founder-reveal.is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .pill-reveal {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .pill-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================================================ */
+        /* ===== RESPONSIVE ===== */
+        /* ================================================ */
+
         @media (max-width: 992px) {
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -604,10 +805,11 @@
             .navbar {
                 flex-direction: column;
                 gap: 16px;
-                align-items: flex-start;
+                align-items: center;
+                text-align: center;
             }
             .nav-links {
-                flex-wrap: wrap;
+                justify-content: center;
                 gap: 20px;
             }
             .hero-content h1 {
@@ -638,6 +840,21 @@
                 width: 100%;
                 justify-content: center;
             }
+            .process-steps {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 32px auto 0;
+            }
+            .step {
+                text-align: center;
+                border-left: none;
+                border-top: 3px solid var(--purple);
+                padding-left: 0;
+                padding-top: 16px;
+            }
+            .step:hover {
+                border-top-color: var(--pink);
+            }
         }
 
         @media (max-width: 480px) {
@@ -650,10 +867,6 @@
             }
             .service-card {
                 padding: 24px 20px;
-                text-align: center;
-            }
-            .service-card .icon {
-                text-align: center;
             }
             .container {
                 padding: 0 16px;
@@ -681,6 +894,16 @@
             .hero {
                 padding: 40px 0 50px;
             }
+            .section {
+                padding: 40px 0 30px;
+            }
+            .contact-form h3,
+            .contact-form p {
+                text-align: center;
+            }
+            .faq-item {
+                padding: 16px;
+            }
         }
     </style>
 </head>
@@ -689,7 +912,10 @@
 
         <!-- ====== NAV ====== -->
         <header class="navbar">
-            <a href="#" class="logo">Framework <span>Media</span></a>
+            <a href="#" class="logo">
+                <span class="logo-icon">F</span>
+                Framework <span class="gradient-text">Media</span>
+            </a>
             <div class="nav-links">
                 <a href="#trusted">Trusted By</a>
                 <a href="#testimonials">Testimonials</a>
@@ -704,12 +930,12 @@
         </header>
 
         <!-- ====== HERO ====== -->
-        <section class="hero">
+        <section class="hero hero-reveal">
             <div class="hero-content">
                 <span class="hero-tag"><i class="fas fa-bolt" style="margin-right: 6px;"></i> For creators, coaches & small brands</span>
                 <h1>The content system that grew <span class="highlight">200K+ followers</span>.<br>Now it's yours.</h1>
                 <p>We build the hooks, retention, and cultural fluency that turn views into qualified leads. Built for the African content landscape.</p>
-                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <div class="hero-actions">
                     <a href="#contact" class="btn-primary">Get the Framework</a>
                     <a href="#process" class="btn-outline">See how it works</a>
                 </div>
@@ -723,12 +949,15 @@
         </section>
 
         <!-- ====== TRUSTED BY ====== -->
-        <section class="trusted-section" id="trusted">
-            <h2 class="section-title">Trusted By</h2>
-            <p class="section-sub">Our work speaks for itself.</p>
+        <section class="section" id="trusted">
+            <div class="section-header">
+                <span class="pill pill-reveal"><i class="fas fa-users"></i> Social Proof</span>
+                <h2 class="section-title">Trusted By</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Our work speaks for itself.</p>
+            </div>
             <div class="trusted-grid">
-                <!-- Card 1: Our Goated Lunchbox -->
-                <a href="#" target="_blank" class="trusted-card" style="text-decoration: none; color: inherit;">
+                <a href="#" target="_blank" class="trusted-card reveal">
                     <h4>Our Goated Lunchbox</h4>
                     <p>A TikTok page dedicated to street culture, lifestyle, and African youth content.</p>
                     <div class="platform-icons">
@@ -737,8 +966,7 @@
                     <div class="follower-count"><i class="fas fa-users"></i> 152K followers</div>
                     <div class="link-arrow">Visit page <i class="fas fa-arrow-right"></i></div>
                 </a>
-                <!-- Card 2: Katlego Unfiltered -->
-                <a href="#" target="_blank" class="trusted-card" style="text-decoration: none; color: inherit;">
+                <a href="#" target="_blank" class="trusted-card reveal">
                     <h4>Katlego Unfiltered</h4>
                     <p>A personal brand built on self-development, relationships, masculinity, and finance — grown across TikTok and Instagram.</p>
                     <div class="platform-icons">
@@ -751,242 +979,26 @@
             </div>
         </section>
 
-        <!-- ====== TESTIMONIALS (placeholder) ====== -->
-        <section class="testimonials" id="testimonials">
-            <h2 class="section-title">What our clients say <span class="coming-soon-badge">Coming soon</span></h2>
-            <p class="section-sub">Real results from real people.</p>
+        <!-- ====== TESTIMONIALS ====== -->
+        <section class="section" id="testimonials">
+            <div class="section-header">
+                <span class="pill pill-reveal"><i class="fas fa-star"></i> Testimonials</span>
+                <h2 class="section-title">What our clients say <span class="coming-soon-badge">Coming soon</span></h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Real results from real people.</p>
+            </div>
             <div class="testimonial-grid">
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p>“Working with Framework Media completely changed how I approach content. My engagement doubled in the first month.”</p>
                     <div class="author"><span class="author-avatar"></span> Client Name · Creator</div>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p>“Finally, someone who actually understands the African creator landscape. My DMs are flooded with leads.”</p>
                     <div class="author"><span class="author-avatar"></span> Client Name · Coach</div>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p>“The Hook Diagnostics alone was worth it. My views went from 2K to 50K on the very next post.”</p>
-                    <div class="author"><span class="author-avatar"></span> Client Name · Brand</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====== MEET THE FOUNDER ====== -->
-        <section class="team" id="team">
-            <h2 class="section-title" style="text-align: center;">Meet The Founder</h2>
-            <p class="section-sub" style="text-align: center; margin: 0 auto;">Built from experience, not theory.</p>
-            <div class="founder-card">
-                <div class="founder-avatar"></div>
-                <h4>Katlego Mothapo</h4>
-                <div class="title">Founder &amp; CEO, Framework Media</div>
-                <p class="bio">5 years of personal experience building personal brands. Grew Katlego Unfiltered to 200K+ followers across TikTok and Instagram using the same system that Framework Media now runs for clients. Published author, Content Creator, speaker, and operator.</p>
-                <div class="social-links">
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====== OUR SERVICES (MOVED HERE) ====== -->
-        <section class="services-section" id="services">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-sub">Scripts. Strategy. Production. Consulting.</p>
-
-            <div class="services-grid">
-
-                <!-- 1. Script Writing -->
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-pen-fancy"></i></span>
-                    <h4>Script Writing</h4>
-                    <p>High‑converting scripts built on the Hook–Body–CTA framework. For TikTok, Instagram Reels, YouTube, and LinkedIn.</p>
-                </div>
-
-                <!-- 2. Content Audit -->
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-search"></i></span>
-                    <h4>Content Audit</h4>
-                    <p>A forensic review of your existing content. We break down what's working, what's not, and exactly how to fix it.</p>
-                </div>
-
-                <!-- 3. Hook Diagnosis -->
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-bullseye"></i></span>
-                    <h4>Hook Diagnosis</h4>
-                    <p>The first 3 seconds make or break a video. We rewrite your hooks to stop the scroll and boost retention instantly.</p>
-                </div>
-
-                <!-- 4. Video Editing -->
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-film"></i></span>
-                    <h4>Video Editing</h4>
-                    <p>Done‑for‑you editing for YouTube long‑form and short‑form (Reels/TikToks). We handle pacing, cuts, and retention.</p>
-                </div>
-
-                <!-- 5. Monetisation Consulting -->
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-chart-line"></i></span>
-                    <h4>Monetisation Consulting</h4>
-                    <p>Rate cards, pitch sequences, and deal tracking — built from real experience closing brand deals across platforms.</p>
-                </div>
-
-                <!-- 6. Coaching-Lite -->
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-brain"></i></span>
-                    <h4>Coaching‑Lite</h4>
-                    <p>Personal brand positioning advice. We align your messaging, voice, and strategy so you attract the right audience.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ====== PROCESS ====== -->
-        <section class="process" id="process">
-            <h2 class="section-title">How it works</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="num">01</div>
-                    <h4>Map</h4>
-                    <p>We audit your current content, define your pillars, and map a content system that fits your goals and audience.</p>
-                </div>
-                <div class="step">
-                    <div class="num">02</div>
-                    <h4>Build</h4>
-                    <p>We write, edit, and produce — using the same Hook–Body–CTA structure that's been proven across 200K+ followers.</p>
-                </div>
-                <div class="step">
-                    <div class="num">03</div>
-                    <h4>Launch</h4>
-                    <p>We hand over everything you need to post. Or we keep going — whatever fits your workflow.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====== PRICING (no prices shown) ====== -->
-        <section class="pricing" id="pricing">
-            <h2 class="section-title">Choose the plan that fits your pipeline.</h2>
-            <p class="section-sub">No lock-in contracts. Just results. Pricing available on request.</p>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Starter</h3>
-                    <div class="price-label">Starting from</div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> 6–8 Reels scripts</li>
-                        <li><i class="fas fa-check"></i> 1–2 YouTube scripts</li>
-                        <li><i class="fas fa-check"></i> 1 content audit</li>
-                    </ul>
-                    <p style="font-size: 14px; color: #6b7280; font-style: italic;">Perfect for creators getting serious about consistency.</p>
-                    <div class="price-note">Contact for quote</div>
-                </div>
-                <div class="pricing-card popular">
-                    <h3>Growth</h3>
-                    <div style="background: #0f1419; color: white; padding: 2px 12px; border-radius: 40px; font-size: 12px; display: inline-block; margin-bottom: 4px;">popular</div>
-                    <div class="price-label">Starting from</div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> 10–12 Reels scripts + edits</li>
-                        <li><i class="fas fa-check"></i> 2–3 YouTube scripts + edits</li>
-                        <li><i class="fas fa-check"></i> Monthly audit</li>
-                    </ul>
-                    <p style="font-size: 14px; color: #6b7280; font-style: italic;">For brands and creators ready to scale.</p>
-                    <div class="price-note">Contact for quote</div>
-                </div>
-                <div class="pricing-card">
-                    <h3>Full System</h3>
-                    <div class="price-label">Custom</div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> 15+ Reels scripts + edits</li>
-                        <li><i class="fas fa-check"></i> 4 YouTube scripts + edits</li>
-                        <li><i class="fas fa-check"></i> Strategy calls</li>
-                        <li><i class="fas fa-check"></i> Monetisation consulting</li>
-                    </ul>
-                    <p style="font-size: 14px; color: #6b7280; font-style: italic;">The complete system. For well-funded operators.</p>
-                    <div class="price-note">Contact for quote</div>
-                </div>
-            </div>
-            <div class="pricing-cta-center">
-                <a href="#contact" class="btn-primary">Get a custom quote <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </section>
-
-        <!-- ====== FAQ ====== -->
-        <section class="faq" id="faq">
-            <h2 class="section-title">Questions, answered</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h4>Who is this for?</h4>
-                    <p>African creators (5K–100K followers), coaches, and small brands who need consistent, high-performing content but don't have time to script and edit themselves.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>How is this different from a regular agency?</h4>
-                    <p>We use the exact system that grew our own audience. We're not guessing — we're repeating a proven process. And we actually understand the African content landscape.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>How long does it take to get started?</h4>
-                    <p>Most clients have their first batch of scripts or edits within 3–5 days of onboarding.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>Do I need to be on a retainer?</h4>
-                    <p>Nope. Single scripts, audits, and Hook Diagnostics are all available as one-off services. Retainers just get you better rates and priority.</p>
-                </div>
-                <div class="faq-item" style="grid-column: 1 / -1;">
-                    <h4>What if I'm not happy?</h4>
-                    <p>We work in short, flexible terms. Your business is earned through results, not locked-in contracts.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====== CONTACT + CALENDAR ====== -->
-        <section class="contact-section" id="contact">
-            <div class="contact-form">
-                <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">Send us a message.</h3>
-                <p style="color: #4b5563; margin-bottom: 20px;">We read every message personally and reply within 24 hours (usually less).</p>
-                <form>
-                    <input type="text" placeholder="Name" />
-                    <input type="email" placeholder="Email" />
-                    <input type="text" placeholder="Instagram/TikTok handle" />
-                    <textarea placeholder="What do you need help with?"></textarea>
-                    <button type="submit" class="btn-primary" style="width: 100%;">Send message</button>
-                </form>
-            </div>
-            <div class="calendar-box">
-                <h3 style="font-size: 24px; font-weight: 700;">Or let's map your content system.</h3>
-                <p style="color: #374151; margin: 8px 0 12px;">Free 30-minute strategy calls. No pressure, just a clear plan for your content.</p>
-                <div class="fake-cal">
-                    <div style="display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 12px;">
-                        <span>April 2026</span>
-                        <span><i class="fas fa-chevron-left"></i> <i class="fas fa-chevron-right"></i></span>
-                    </div>
-                    <div style="display: grid; grid-template-columns: repeat(7,1fr); gap: 4px; font-size: 13px; text-align: center;">
-                        <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
-                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
-                        <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
-                        <span>15</span><span style="background: #0f1419; color: white; border-radius: 50%;">16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
-                    </div>
-                    <div style="margin-top: 12px; background: #f3f4f6; border-radius: 30px; padding: 6px 12px; font-size: 14px;">
-                        <i class="far fa-calendar-alt"></i> Strategy call · 30 min · Free
-                    </div>
-                </div>
-                <a href="#" class="btn-primary" style="margin-top: 16px;">Book a strategy call <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </section>
-
-        <!-- ====== FOOTER ====== -->
-        <footer class="footer">
-            <div>Framework Media — Content that hooks, holds, converts. 🇿🇦 SA-built</div>
-            <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center;">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <div class="social-icons">
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </footer>
-
-    </div> <!-- end container -->
-</body>
-</html>
+                    <div class="author"><span class
