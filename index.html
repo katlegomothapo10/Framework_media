@@ -25,7 +25,6 @@
             --blue: #3b82f6;
             --gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
             --gradient-subtle: linear-gradient(135deg, rgba(236, 72, 153, 0.12), rgba(139, 92, 246, 0.12), rgba(59, 130, 246, 0.12));
-            --gradient-dark: linear-gradient(135deg, #be185d, #7c3aed, #2563eb);
         }
 
         body {
@@ -41,9 +40,9 @@
             padding: 0 24px;
         }
 
-        /* ===== BUTTONS ===== */
+        /* ===== BUTTONS — ALL BLACK ===== */
         .btn-primary {
-            background: var(--gradient);
+            background: var(--black);
             color: white;
             border: none;
             padding: 14px 36px;
@@ -56,14 +55,14 @@
             text-decoration: none;
         }
         .btn-primary:hover {
+            background: #2a2f35;
             transform: scale(1.02);
-            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
         }
 
         .btn-outline {
             background: transparent;
             color: var(--black);
-            border: 1.5px solid var(--purple);
+            border: 1.5px solid var(--black);
             padding: 14px 36px;
             border-radius: 40px;
             font-weight: 600;
@@ -74,11 +73,26 @@
             text-decoration: none;
         }
         .btn-outline:hover {
-            background: var(--gradient);
+            background: var(--black);
             color: white;
-            border-color: transparent;
             transform: scale(1.02);
-            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+        }
+
+        /* ===== CTA DIVIDER SECTION ===== */
+        .cta-divider {
+            text-align: center;
+            padding: 50px 0 30px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .cta-divider h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .cta-divider p {
+            color: #4b5563;
+            margin-bottom: 20px;
+            font-size: 16px;
         }
 
         /* ===== PILL STYLES ===== */
@@ -188,7 +202,7 @@
         }
 
         .nav-cta {
-            background: var(--gradient);
+            background: var(--black);
             color: white;
             padding: 12px 28px;
             border-radius: 40px;
@@ -201,8 +215,8 @@
             display: inline-block;
         }
         .nav-cta:hover {
+            background: #2a2f35;
             transform: scale(1.02);
-            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.25);
         }
 
         /* ===== HERO ===== */
@@ -240,10 +254,9 @@
             margin-bottom: 16px;
         }
         .hero-content h1 .highlight {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background: #fde047;
+            padding: 0 8px;
+            -webkit-text-fill-color: var(--black);
         }
         .hero-content p {
             font-size: 20px;
@@ -601,10 +614,6 @@
             font-size: 14px;
             color: #6b7280;
             margin-top: 8px;
-        }
-        .pricing-cta-center {
-            text-align: center;
-            margin-top: 32px;
         }
 
         /* ===== FAQ ===== */
@@ -1004,6 +1013,13 @@
                     <div class="author"><span class="author-avatar"></span> Client Name · Brand</div>
                 </div>
             </div>
+
+            <!-- CTA after Testimonials -->
+            <div class="cta-divider">
+                <h3>Ready to get results like these?</h3>
+                <p>Join the creators and brands already using the Framework system.</p>
+                <a href="#contact" class="btn-primary">Apply Now — Get the Framework</a>
+            </div>
         </section>
 
         <!-- ====== MEET THE FOUNDER ====== -->
@@ -1023,6 +1039,13 @@
                     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
+            </div>
+
+            <!-- CTA after Founder -->
+            <div class="cta-divider">
+                <h3>Work with someone who's done it himself.</h3>
+                <p>Get the same system that grew 200K+ followers — now built for you.</p>
+                <a href="#contact" class="btn-primary">Apply Now — Get the Framework</a>
             </div>
         </section>
 
@@ -1117,7 +1140,7 @@
                 </div>
                 <div class="pricing-card popular reveal">
                     <h3>Growth</h3>
-                    <div style="background: var(--gradient); color: white; padding: 2px 12px; border-radius: 40px; font-size: 12px; display: inline-block; margin-bottom: 4px;">popular</div>
+                    <div style="background: var(--black); color: white; padding: 2px 12px; border-radius: 40px; font-size: 12px; display: inline-block; margin-bottom: 4px;">popular</div>
                     <div class="price-label">Starting from</div>
                     <ul>
                         <li><i class="fas fa-check"></i> 10–12 Reels scripts + edits</li>
@@ -1140,8 +1163,12 @@
                     <div class="price-note">Contact for quote</div>
                 </div>
             </div>
-            <div class="pricing-cta-center">
-                <a href="#contact" class="btn-primary">Get a custom quote <i class="fas fa-arrow-right"></i></a>
+
+            <!-- CTA after Pricing -->
+            <div class="cta-divider" style="border-top: none; padding-top: 20px;">
+                <h3>Not sure which plan fits?</h3>
+                <p>Let's chat about your goals and find the right system for you.</p>
+                <a href="#contact" class="btn-primary">Apply Now — Get the Framework</a>
             </div>
         </section>
 
