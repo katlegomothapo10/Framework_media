@@ -78,24 +78,25 @@
             transform: scale(1.02);
         }
 
-        /* ===== CTA DIVIDER SECTION ===== */
-        .cta-divider {
-            text-align: center;
-            padding: 50px 0 30px;
-            border-top: 1px solid #e5e7eb;
+        .btn-small {
+            background: var(--black);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
         }
-        .cta-divider h3 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .cta-divider p {
-            color: #4b5563;
-            margin-bottom: 20px;
-            font-size: 16px;
+        .btn-small:hover {
+            background: #2a2f35;
+            transform: scale(1.02);
         }
 
-        /* ===== PILL STYLES ===== */
+        /* ===== PILL STYLES (no icons) ===== */
         .pill {
             display: inline-block;
             background: var(--gradient-subtle);
@@ -108,10 +109,6 @@
             border-radius: 40px;
             margin-bottom: 10px;
             border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-        .pill i {
-            color: var(--purple);
-            margin-right: 4px;
         }
 
         /* ===== SECTION HEADERS (CENTERED) ===== */
@@ -146,18 +143,17 @@
             margin: 0 auto 16px;
         }
 
-        /* ===== NAVBAR ===== */
+        /* ===== NAVBAR — CENTERED LOGO ONLY ===== */
         .navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 20px 0;
+            padding: 24px 0;
             border-bottom: 1px solid #e5e7eb;
-            flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 800;
             letter-spacing: -0.5px;
             text-decoration: none;
@@ -167,14 +163,14 @@
             gap: 10px;
         }
         .logo-icon {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             background: var(--gradient);
             border-radius: 10px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 800;
             color: white;
         }
@@ -185,52 +181,10 @@
             background-clip: text;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 36px;
-            font-weight: 500;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #1f2937;
-            font-size: 16px;
-            transition: 0.2s;
-        }
-        .nav-links a:hover {
-            color: var(--purple);
-        }
-
-        .nav-cta {
-            background: var(--black);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 15px;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .nav-cta:hover {
-            background: #2a2f35;
-            transform: scale(1.02);
-        }
-
         /* ===== HERO ===== */
         .hero {
-            padding: 60px 0 70px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
+            padding: 60px 0 40px;
             text-align: center;
-        }
-        .hero-content {
-            flex: 1 1 500px;
         }
         .hero-tag {
             background: var(--gradient-subtle);
@@ -243,59 +197,63 @@
             margin-bottom: 16px;
             border: 1px solid rgba(139, 92, 246, 0.15);
         }
-        .hero-tag i {
-            color: var(--purple);
-        }
-        .hero-content h1 {
-            font-size: 56px;
+        .hero h1 {
+            font-size: 64px;
             font-weight: 800;
             letter-spacing: -0.03em;
             line-height: 1.05;
             margin-bottom: 16px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .hero-content h1 .highlight {
+        .hero h1 .highlight {
             background: #fde047;
             padding: 0 8px;
             -webkit-text-fill-color: var(--black);
         }
-        .hero-content p {
+        .hero p {
             font-size: 20px;
             color: #374151;
-            max-width: 540px;
+            max-width: 600px;
+            margin: 0 auto 28px;
+        }
+
+        /* ===== VIDEO PLACEHOLDER ===== */
+        .video-wrapper {
+            max-width: 900px;
             margin: 0 auto 24px;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
+            border-radius: 24px;
+            overflow: hidden;
             background: var(--gradient-subtle);
-            padding: 12px 24px;
-            border-radius: 60px;
-            font-weight: 500;
-            font-size: 15px;
-            margin-top: 8px;
-            border: 1px solid rgba(139, 92, 246, 0.12);
-        }
-        .hero-badge i {
-            color: var(--purple);
-        }
-        .hero-image {
-            flex: 1 1 400px;
-            background: var(--gradient-subtle);
-            border-radius: 32px;
-            min-height: 320px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            position: relative;
+            aspect-ratio: 16 / 9;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            color: #4b5563;
-            font-size: 18px;
-            border: 1px solid rgba(139, 92, 246, 0.1);
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="%238b5cf6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.5"/><path d="M8 2v20M16 2v20M2 8h20M2 16h20"/></svg>');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 80px;
         }
+        .video-wrapper .play-icon {
+            font-size: 64px;
+            color: var(--purple);
+            opacity: 0.6;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .video-wrapper .play-icon:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        .video-wrapper .video-placeholder-text {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+            color: #6b7280;
+            background: rgba(255,255,255,0.8);
+            padding: 6px 16px;
+            border-radius: 40px;
+        }
+
         .hero-actions {
             display: flex;
             gap: 16px;
@@ -307,9 +265,6 @@
         .section {
             padding: 60px 0 40px;
             border-top: 1px solid #e5e7eb;
-        }
-        .section:first-of-type {
-            border-top: none;
         }
 
         /* ===== TRUSTED BY ===== */
@@ -468,7 +423,7 @@
         }
         .founder-card .bio {
             color: #374151;
-            max-width: 500px;
+            max-width: 550px;
             margin: 0 auto 16px;
             font-size: 16px;
         }
@@ -560,12 +515,47 @@
             color: #4b5563;
         }
 
-        /* ===== PRICING ===== */
+        /* ===== PRICING — Individual Services ===== */
+        .pricing-individual-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+            margin-bottom: 40px;
+        }
+        .pricing-item {
+            background: #f9fafb;
+            padding: 16px 20px;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .pricing-item:hover {
+            border-color: var(--purple);
+        }
+        .pricing-item h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .pricing-item .price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--purple);
+        }
+        .pricing-item .price small {
+            font-size: 13px;
+            font-weight: 400;
+            color: #6b7280;
+        }
+
+        /* ===== PRICING — Bundles (no prices, just dates) ===== */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 32px;
-            margin-top: 32px;
+            margin-top: 16px;
         }
         .pricing-card {
             background: #f9fafb;
@@ -591,56 +581,94 @@
             font-size: 18px;
             font-weight: 500;
             color: #4b5563;
-            margin: 8px 0 16px;
+            margin: 8px 0 4px;
         }
         .pricing-card ul {
             list-style: none;
             text-align: left;
-            margin: 20px 0 24px;
+            margin: 16px 0 20px;
             display: inline-block;
             text-align: left;
         }
         .pricing-card ul li {
-            padding: 6px 0;
+            padding: 4px 0;
             display: flex;
             gap: 10px;
             align-items: center;
+            font-size: 14px;
         }
         .pricing-card ul li i {
             color: var(--purple);
-            width: 20px;
+            width: 18px;
+            font-size: 13px;
         }
         .pricing-card .price-note {
-            font-size: 14px;
+            font-size: 13px;
             color: #6b7280;
             margin-top: 8px;
         }
 
-        /* ===== FAQ ===== */
+        /* ===== FAQ DROPDOWNS ===== */
         .faq-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
             margin-top: 32px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .faq-item {
-            text-align: left;
-            padding: 20px 24px;
             background: #f9fafb;
             border-radius: 16px;
-            border-left: 3px solid var(--purple);
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
             transition: 0.3s;
         }
         .faq-item:hover {
-            border-left-color: var(--pink);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.06);
+            border-color: var(--purple);
         }
-        .faq-item h4 {
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            cursor: pointer;
             font-weight: 700;
-            margin-bottom: 6px;
+            font-size: 16px;
+            transition: 0.3s;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+            color: var(--black);
         }
-        .faq-item p {
+        .faq-question:hover {
+            background: var(--gradient-subtle);
+        }
+        .faq-question .faq-toggle {
+            font-size: 20px;
+            color: var(--purple);
+            transition: 0.3s;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+        .faq-question.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 24px;
             color: #4b5563;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .faq-answer.open {
+            max-height: 300px;
+            padding: 0 24px 20px;
         }
 
         /* ===== CONTACT ===== */
@@ -753,21 +781,11 @@
             transform: translateY(0);
         }
 
-        .grid .reveal:nth-child(2) {
-            transition-delay: 0.1s;
-        }
-        .grid .reveal:nth-child(3) {
-            transition-delay: 0.2s;
-        }
-        .grid .reveal:nth-child(4) {
-            transition-delay: 0.3s;
-        }
-        .grid .reveal:nth-child(5) {
-            transition-delay: 0.4s;
-        }
-        .grid .reveal:nth-child(6) {
-            transition-delay: 0.5s;
-        }
+        .grid .reveal:nth-child(2) { transition-delay: 0.1s; }
+        .grid .reveal:nth-child(3) { transition-delay: 0.2s; }
+        .grid .reveal:nth-child(4) { transition-delay: 0.3s; }
+        .grid .reveal:nth-child(5) { transition-delay: 0.4s; }
+        .grid .reveal:nth-child(6) { transition-delay: 0.5s; }
 
         .hero-reveal {
             opacity: 0;
@@ -811,25 +829,11 @@
         }
 
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 16px;
-                align-items: center;
-                text-align: center;
-            }
-            .nav-links {
-                justify-content: center;
-                gap: 20px;
-            }
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 38px;
             }
             .section-title {
                 font-size: 32px;
-            }
-            .faq-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
             }
             .contact-section {
                 grid-template-columns: 1fr;
@@ -844,10 +848,6 @@
             }
             .service-card {
                 padding: 24px 20px;
-            }
-            .hero-badge {
-                width: 100%;
-                justify-content: center;
             }
             .process-steps {
                 grid-template-columns: 1fr;
@@ -864,10 +864,13 @@
             .step:hover {
                 border-top-color: var(--pink);
             }
+            .pricing-individual-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 32px;
             }
             .services-grid {
@@ -886,6 +889,9 @@
             .pricing-grid {
                 grid-template-columns: 1fr;
             }
+            .pricing-individual-grid {
+                grid-template-columns: 1fr 1fr;
+            }
             .testimonial-grid {
                 grid-template-columns: 1fr;
             }
@@ -901,7 +907,7 @@
                 padding: 24px 16px;
             }
             .hero {
-                padding: 40px 0 50px;
+                padding: 40px 0 30px;
             }
             .section {
                 padding: 40px 0 30px;
@@ -910,8 +916,12 @@
             .contact-form p {
                 text-align: center;
             }
-            .faq-item {
-                padding: 16px;
+            .faq-question {
+                font-size: 14px;
+                padding: 14px 18px;
+            }
+            .faq-answer {
+                font-size: 14px;
             }
         }
     </style>
@@ -919,48 +929,37 @@
 <body>
     <div class="container">
 
-        <!-- ====== NAV ====== -->
+        <!-- ====== NAV — CENTERED LOGO ONLY ====== -->
         <header class="navbar">
             <a href="#" class="logo">
                 <span class="logo-icon">F</span>
                 Framework <span class="gradient-text">Media</span>
             </a>
-            <div class="nav-links">
-                <a href="#trusted">Trusted By</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#team">Founder</a>
-                <a href="#services">Services</a>
-                <a href="#process">Process</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <a href="#contact" class="nav-cta">Book a call</a>
         </header>
 
         <!-- ====== HERO ====== -->
         <section class="hero hero-reveal">
-            <div class="hero-content">
-                <span class="hero-tag"><i class="fas fa-bolt" style="margin-right: 6px;"></i> For creators, coaches & small brands</span>
-                <h1>The content system that grew <span class="highlight">200K+ followers</span>.<br>Now it's yours.</h1>
-                <p>We build the hooks, retention, and cultural fluency that turn views into qualified leads. Built for the African content landscape.</p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn-primary">Get the Framework</a>
-                    <a href="#process" class="btn-outline">See how it works</a>
-                </div>
-                <div class="hero-badge">
-                    <i class="fas fa-check-circle"></i> Founder-grown · 200K+ followers · SA-built
-                </div>
+            <span class="hero-tag">For creators, coaches & small brands</span>
+            <h1>The content system that grew <span class="highlight">200K+ followers</span>.<br>Now it's yours.</h1>
+            <p>We build the hooks, retention, and cultural fluency that turn views into qualified leads. Built for the African content landscape.</p>
+
+            <!-- Video Placeholder -->
+            <div class="video-wrapper">
+                <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                <span class="video-placeholder-text">Watch: The Framework System in Action</span>
+                <!-- Replace the above with actual video embed when ready -->
             </div>
-            <div class="hero-image">
-                <span style="background: white; padding: 12px 24px; border-radius: 60px; font-weight: 600;">Framework Media</span>
+
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">Apply Now</a>
+                <a href="#process" class="btn-outline">See how it works</a>
             </div>
         </section>
 
         <!-- ====== TRUSTED BY ====== -->
         <section class="section" id="trusted">
             <div class="section-header">
-                <span class="pill pill-reveal"><i class="fas fa-users"></i> Social Proof</span>
+                <span class="pill pill-reveal">Social Proof</span>
                 <h2 class="section-title">Trusted By</h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Our work speaks for itself.</p>
@@ -972,7 +971,7 @@
                     <div class="platform-icons">
                         <i class="fab fa-tiktok"></i>
                     </div>
-                    <div class="follower-count"><i class="fas fa-users"></i> 152K followers</div>
+                    <div class="follower-count"><i class="fas fa-users"></i> 150K+ followers</div>
                     <div class="link-arrow">Visit page <i class="fas fa-arrow-right"></i></div>
                 </a>
                 <a href="#" target="_blank" class="trusted-card reveal">
@@ -982,7 +981,7 @@
                         <i class="fab fa-tiktok"></i>
                         <i class="fab fa-instagram"></i>
                     </div>
-                    <div class="follower-count"><i class="fas fa-users"></i> 60K combined followers</div>
+                    <div class="follower-count"><i class="fas fa-users"></i> 60K+ combined followers</div>
                     <div class="link-arrow">Visit page <i class="fas fa-arrow-right"></i></div>
                 </a>
             </div>
@@ -991,7 +990,7 @@
         <!-- ====== TESTIMONIALS ====== -->
         <section class="section" id="testimonials">
             <div class="section-header">
-                <span class="pill pill-reveal"><i class="fas fa-star"></i> Testimonials</span>
+                <span class="pill pill-reveal">Testimonials</span>
                 <h2 class="section-title">What our clients say <span class="coming-soon-badge">Coming soon</span></h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Real results from real people.</p>
@@ -1013,19 +1012,12 @@
                     <div class="author"><span class="author-avatar"></span> Client Name · Brand</div>
                 </div>
             </div>
-
-            <!-- CTA after Testimonials -->
-            <div class="cta-divider">
-                <h3>Ready to get results like these?</h3>
-                <p>Join the creators and brands already using the Framework system.</p>
-                <a href="#contact" class="btn-primary">Apply Now — Get the Framework</a>
-            </div>
         </section>
 
         <!-- ====== MEET THE FOUNDER ====== -->
         <section class="section" id="team">
             <div class="section-header">
-                <span class="pill pill-reveal"><i class="fas fa-user"></i> Founder</span>
+                <span class="pill pill-reveal">Team</span>
                 <h2 class="section-title">Meet The Founder</h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Built from experience, not theory.</p>
@@ -1034,25 +1026,18 @@
                 <div class="founder-avatar">K</div>
                 <h4>Katlego Mothapo</h4>
                 <div class="title">Founder &amp; CEO, Framework Media</div>
-                <p class="bio">5 years of personal experience building personal brands. Grew Katlego Unfiltered to 200K+ followers across TikTok and Instagram using the same system that Framework Media now runs for clients. Published author, Content Creator, speaker, and operator.</p>
+                <p class="bio">5 years of personal experience building personal brands. Built his own personal brand Katlego Unfiltered to 60K+ followers across TikTok and Instagram using the same system that Framework Media now runs for clients. Published author, Content Creator &amp; speaker.</p>
                 <div class="social-links">
                     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
-            </div>
-
-            <!-- CTA after Founder -->
-            <div class="cta-divider">
-                <h3>Work with someone who's done it himself.</h3>
-                <p>Get the same system that grew 200K+ followers — now built for you.</p>
-                <a href="#contact" class="btn-primary">Apply Now — Get the Framework</a>
             </div>
         </section>
 
         <!-- ====== OUR SERVICES ====== -->
         <section class="section" id="services">
             <div class="section-header">
-                <span class="pill pill-reveal"><i class="fas fa-cogs"></i> Our Services</span>
+                <span class="pill pill-reveal">Our Services</span>
                 <h2 class="section-title">What We Do</h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Scripts. Strategy. Production. Consulting.</p>
@@ -1094,7 +1079,7 @@
         <!-- ====== PROCESS ====== -->
         <section class="section" id="process">
             <div class="section-header">
-                <span class="pill pill-reveal"><i class="fas fa-road"></i> Process</span>
+                <span class="pill pill-reveal">Process</span>
                 <h2 class="section-title">How it works</h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Map. Build. Launch.</p>
@@ -1108,12 +1093,12 @@
                 <div class="step reveal">
                     <div class="num">02</div>
                     <h4>Build</h4>
-                    <p>We write, edit, and produce — using the same Hook–Body–CTA structure that's been proven across 200K+ followers.</p>
+                    <p>We write, edit, and produce using the same "Hook–Body–CTA" structure that's been proven across 200K+ followers.</p>
                 </div>
                 <div class="step reveal">
                     <div class="num">03</div>
                     <h4>Launch</h4>
-                    <p>We hand over everything you need to post. Or we keep going — whatever fits your workflow.</p>
+                    <p>We hand over everything you need to post fitted and tailored to your preferred workflow.</p>
                 </div>
             </div>
         </section>
@@ -1121,38 +1106,84 @@
         <!-- ====== PRICING ====== -->
         <section class="section" id="pricing">
             <div class="section-header">
-                <span class="pill pill-reveal"><i class="fas fa-tag"></i> Pricing</span>
+                <span class="pill pill-reveal">Pricing</span>
                 <h2 class="section-title">Choose the plan that fits your pipeline.</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">No lock-in contracts. Just results. Pricing available on request.</p>
+                <p class="section-sub">Individual services and bundle packages available.</p>
             </div>
+
+            <!-- Individual Services -->
+            <h3 style="text-align: center; font-size: 24px; font-weight: 700; margin-bottom: 8px;">Individual Services</h3>
+            <p style="text-align: center; color: #4b5563; margin-bottom: 16px; font-size: 15px;">Pay-as-you-go — no commitment required.</p>
+            <div class="pricing-individual-grid">
+                <div class="pricing-item reveal">
+                    <h4>Script (single)</h4>
+                    <div class="price">R350</div>
+                </div>
+                <div class="pricing-item reveal">
+                    <h4>Content Audit (full)</h4>
+                    <div class="price">R1,500</div>
+                </div>
+                <div class="pricing-item reveal">
+                    <h4>Hook Diagnosis (single)</h4>
+                    <div class="price">R200</div>
+                </div>
+                <div class="pricing-item reveal">
+                    <h4>Video Editing — Reels/TikTok</h4>
+                    <div class="price">R600</div>
+                </div>
+                <div class="pricing-item reveal">
+                    <h4>Video Editing — YouTube</h4>
+                    <div class="price">R1,200</div>
+                </div>
+                <div class="pricing-item reveal">
+                    <h4>Full Production — Shortform</h4>
+                    <div class="price">R1,000</div>
+                </div>
+                <div class="pricing-item reveal">
+                    <h4>Full Production — YouTube</h4>
+                    <div class="price">R2,000</div>
+                </div>
+                <div class="pricing-item reveal">
+                    <h4>Monetisation Consulting</h4>
+                    <div class="price">R1,500</div>
+                </div>
+                <div class="pricing-item reveal">
+                    <h4>Coaching-Lite (per call)</h4>
+                    <div class="price">R800</div>
+                </div>
+            </div>
+
+            <!-- Bundle Packages -->
+            <h3 style="text-align: center; font-size: 24px; font-weight: 700; margin-bottom: 8px; margin-top: 16px;">Bundle Packages</h3>
+            <p style="text-align: center; color: #4b5563; margin-bottom: 16px; font-size: 15px;">Save with our done-for-you content systems.</p>
             <div class="pricing-grid">
                 <div class="pricing-card reveal">
                     <h3>Starter</h3>
-                    <div class="price-label">Starting from</div>
+                    <div class="price-label">15-day cycle</div>
                     <ul>
                         <li><i class="fas fa-check"></i> 6–8 Reels scripts</li>
                         <li><i class="fas fa-check"></i> 1–2 YouTube scripts</li>
-                        <li><i class="fas fa-check"></i> 1 content audit</li>
+                        <li><i class="fas fa-check"></i> 1 audit with edits</li>
                     </ul>
                     <p style="font-size: 14px; color: #6b7280; font-style: italic;">Perfect for creators getting serious about consistency.</p>
-                    <div class="price-note">Contact for quote</div>
+                    <a href="#contact" class="btn-small" style="margin-top: 8px;">Get Starter Quote</a>
                 </div>
                 <div class="pricing-card popular reveal">
                     <h3>Growth</h3>
                     <div style="background: var(--black); color: white; padding: 2px 12px; border-radius: 40px; font-size: 12px; display: inline-block; margin-bottom: 4px;">popular</div>
-                    <div class="price-label">Starting from</div>
+                    <div class="price-label">21-day cycle</div>
                     <ul>
                         <li><i class="fas fa-check"></i> 10–12 Reels scripts + edits</li>
                         <li><i class="fas fa-check"></i> 2–3 YouTube scripts + edits</li>
                         <li><i class="fas fa-check"></i> Monthly audit</li>
                     </ul>
                     <p style="font-size: 14px; color: #6b7280; font-style: italic;">For brands and creators ready to scale.</p>
-                    <div class="price-note">Contact for quote</div>
+                    <a href="#contact" class="btn-small" style="margin-top: 8px;">Get Growth Quote</a>
                 </div>
                 <div class="pricing-card reveal">
                     <h3>Full System</h3>
-                    <div class="price-label">Custom</div>
+                    <div class="price-label">30-day cycle</div>
                     <ul>
                         <li><i class="fas fa-check"></i> 15+ Reels scripts + edits</li>
                         <li><i class="fas fa-check"></i> 4 YouTube scripts + edits</li>
@@ -1160,46 +1191,61 @@
                         <li><i class="fas fa-check"></i> Monetisation consulting</li>
                     </ul>
                     <p style="font-size: 14px; color: #6b7280; font-style: italic;">The complete system. For well-funded operators.</p>
-                    <div class="price-note">Contact for quote</div>
+                    <a href="#contact" class="btn-small" style="margin-top: 8px;">Get Full System Quote</a>
                 </div>
-            </div>
-
-            <!-- CTA after Pricing -->
-            <div class="cta-divider" style="border-top: none; padding-top: 20px;">
-                <h3>Not sure which plan fits?</h3>
-                <p>Let's chat about your goals and find the right system for you.</p>
-                <a href="#contact" class="btn-primary">Apply Now — Get the Framework</a>
             </div>
         </section>
 
         <!-- ====== FAQ ====== -->
         <section class="section" id="faq">
             <div class="section-header">
-                <span class="pill pill-reveal"><i class="fas fa-question-circle"></i> FAQ</span>
+                <span class="pill pill-reveal">FAQ</span>
                 <h2 class="section-title">Questions, answered</h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Everything you need to know before getting started.</p>
             </div>
             <div class="faq-grid">
                 <div class="faq-item reveal">
-                    <h4>Who is this for?</h4>
-                    <p>African creators (5K–100K followers), coaches, and small brands who need consistent, high-performing content but don't have time to script and edit themselves.</p>
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Who is this for?
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">Creators, coaches, and small brands/businesses who need consistent, high-performing content but don't have time to script and edit themselves.</div>
                 </div>
                 <div class="faq-item reveal">
-                    <h4>How is this different from a regular agency?</h4>
-                    <p>We use the exact system that grew our own audience. We're not guessing — we're repeating a proven process. And we actually understand the African content landscape.</p>
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How is this different from a regular agency?
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">We use the exact system that grew our own audience. We're not guessing — we're repeating a proven process. And we actually understand the content landscape.</div>
                 </div>
                 <div class="faq-item reveal">
-                    <h4>How long does it take to get started?</h4>
-                    <p>Most clients have their first batch of scripts or edits within 3–5 days of onboarding.</p>
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How long does it take to get started?
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">Most clients have their first batch of scripts or edits within 3–5 days of onboarding or video submissions.</div>
                 </div>
                 <div class="faq-item reveal">
-                    <h4>Do I need to be on a retainer?</h4>
-                    <p>Nope. Single scripts, audits, and Hook Diagnostics are all available as one-off services. Retainers just get you better rates and priority.</p>
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Do I need to be on a retainer?
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">No. Single scripts, audits, and Hook Diagnostics are all available as one-off services. Retainers just get you better rates and priority.</div>
                 </div>
-                <div class="faq-item reveal" style="grid-column: 1 / -1;">
-                    <h4>What if I'm not happy?</h4>
-                    <p>We work in short, flexible terms. Your business is earned through results, not locked-in contracts.</p>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can we guarantee results?
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">We guarantee a system that works — the same one that grew our own audience and has been proven across multiple brands. We can't guarantee specific numbers, but we can guarantee that if you follow the system, you'll see measurable improvement in your content performance.</div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What if I'm not happy?
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">We work in short, flexible terms. Your business is earned through results, not locked-in contracts.</div>
                 </div>
             </div>
         </section>
@@ -1214,7 +1260,7 @@
                     <input type="email" placeholder="Email" />
                     <input type="text" placeholder="Instagram/TikTok handle" />
                     <textarea placeholder="What do you need help with?"></textarea>
-                    <button type="submit" class="btn-primary" style="width: 100%;">Send message</button>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Apply Now</button>
                 </form>
             </div>
             <div class="calendar-box">
@@ -1296,6 +1342,29 @@
                 });
             }, 100);
         })();
+
+        // ===== FAQ DROPDOWN =====
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const isOpen = answer.classList.contains('open');
+
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(el => {
+                if (el !== answer) {
+                    el.classList.remove('open');
+                    el.previousElementSibling.classList.remove('active');
+                }
+            });
+
+            // Toggle this one
+            if (isOpen) {
+                answer.classList.remove('open');
+                button.classList.remove('active');
+            } else {
+                answer.classList.add('open');
+                button.classList.add('active');
+            }
+        }
     </script>
 
 </body>
