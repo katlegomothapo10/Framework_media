@@ -123,6 +123,25 @@ if (cursorDot && window.matchMedia('(hover: hover)').matches) {
   });
 }
 
+// ===== FAQ accordion =====
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.parentElement.classList.toggle('open');
+  });
+});
+
+// ===== Extra reveal: proof items, diff rows, offer items, why rows =====
+const extraReveal = document.querySelectorAll('.proof-item, .diff-row:not(.diff-head), .offer-item, .offer-tier, .why-row, .story-line');
+if (hasGSAP && !reduceMotion) {
+  extraReveal.forEach((el) => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 92%' } }
+    );
+  });
+}
+
 // ===== Nav background on scroll =====
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
