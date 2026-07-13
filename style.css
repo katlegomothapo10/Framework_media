@@ -12,8 +12,8 @@
   --border: #242038;
   --gradient: linear-gradient(120deg, #f0189c 0%, #7c3aed 55%, #2e5cff 100%);
   --gradient-soft: linear-gradient(120deg, rgba(240,24,156,0.15) 0%, rgba(124,58,237,0.15) 55%, rgba(46,92,255,0.15) 100%);
-  --display: 'Space Grotesk', sans-serif;
-  --body: 'Inter', sans-serif;
+  --display: 'Plus Jakarta Sans', sans-serif;
+  --body: 'Plus Jakarta Sans', sans-serif;
   --mono: 'JetBrains Mono', monospace;
 }
 
@@ -560,3 +560,10 @@ section { padding-top: 140px; padding-bottom: 140px; }
 
 /* Slightly larger, heavier eyebrow tags like a premium sales page */
 .eyebrow { font-weight: 600; letter-spacing: 0.14em; }
+
+/* ===== FONT PASS: Plus Jakarta Sans tuning ===== */
+.hero-title { font-weight: 800; letter-spacing: -0.04em; }
+.section-title { font-weight: 800 !important; letter-spacing: -0.035em !important; }
+.story-line { font-weight: 600; }
+.nav-logo { letter-spacing: -0.03em; }
+h3, .flip-text, .sf-panel-inner h3 { letter-spacing: -0.02em; }
