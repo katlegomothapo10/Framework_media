@@ -16,28 +16,27 @@
 <div class="grain"></div>
 <div class="cursor-dot" id="cursorDot"><span id="cursorLabel"></span></div>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-logo">
     <svg class="logo-icon" width="28" height="28" viewBox="0 0 100 100" fill="none">
       <path d="M50 8 L88 35 L74 80 L26 80 L12 35 Z" stroke="url(#navGrad)" stroke-width="9" stroke-linejoin="round"/>
-      <defs>
-        <linearGradient id="navGrad" x1="0" y1="0" x2="100" y2="100">
-          <stop offset="0%" stop-color="#F0189C"/>
-          <stop offset="55%" stop-color="#7C3AED"/>
-          <stop offset="100%" stop-color="#2E5CFF"/>
-        </linearGradient>
-      </defs>
+      <defs><linearGradient id="navGrad" x1="0" y1="0" x2="100" y2="100">
+        <stop offset="0%" stop-color="#F0189C"/><stop offset="55%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#2E5CFF"/>
+      </linearGradient></defs>
     </svg>
     <span>Framework<span class="nav-media">Media</span></span>
   </div>
-  <a href="#contact" class="nav-cta">Build my system</a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#results">Work</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="#contact" class="nav-cta">Book a call</a>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
   <div class="hero-bg"></div>
-  <p class="eyebrow">South African content systems studio</p>
+  <p class="eyebrow">Framework Media · South Africa</p>
   <h1 class="hero-title" id="kineticTitle">
     <span class="kline">We build the content</span>
     <span class="kline">systems that earn attention.</span>
@@ -46,54 +45,98 @@
     Framework Media helps creators, coaches, and brands stop guessing what to post. We build repeatable systems for hooks, retention, scripting, editing, and monetisation — based on the same framework used to grow our own audience.
   </p>
   <div class="hero-actions" data-reveal>
-    <a href="#contact" class="btn-primary">Build my system</a>
+    <a href="#contact" class="btn-primary">Start a project</a>
     <a href="#process" class="btn-ghost">See how it works →</a>
   </div>
   <div class="hero-scroll"><span></span></div>
 </header>
 
-<!-- MARQUEE -->
 <div class="marquee">
   <div class="marquee-track">
-    <span>HOOKS</span><span class="dot">●</span>
-    <span>RETENTION</span><span class="dot">●</span>
-    <span>STRATEGY</span><span class="dot">●</span>
-    <span>SCRIPTING</span><span class="dot">●</span>
-    <span>CONTENT AUDITS</span><span class="dot">●</span>
-    <span>PRODUCTION</span><span class="dot">●</span>
-    <span>MONETISATION</span><span class="dot">●</span>
-    <span>CREATOR SYSTEMS</span><span class="dot">●</span>
-    <span>HOOKS</span><span class="dot">●</span>
-    <span>RETENTION</span><span class="dot">●</span>
-    <span>STRATEGY</span><span class="dot">●</span>
-    <span>SCRIPTING</span><span class="dot">●</span>
-    <span>CONTENT AUDITS</span><span class="dot">●</span>
-    <span>PRODUCTION</span><span class="dot">●</span>
-    <span>MONETISATION</span><span class="dot">●</span>
-    <span>CREATOR SYSTEMS</span><span class="dot">●</span>
+    <span>HOOKS</span><span class="dot">●</span><span>RETENTION</span><span class="dot">●</span>
+    <span>STRATEGY</span><span class="dot">●</span><span>SCRIPTING</span><span class="dot">●</span>
+    <span>CONTENT AUDITS</span><span class="dot">●</span><span>PRODUCTION</span><span class="dot">●</span>
+    <span>MONETISATION</span><span class="dot">●</span><span>CREATOR SYSTEMS</span><span class="dot">●</span>
+    <span>HOOKS</span><span class="dot">●</span><span>RETENTION</span><span class="dot">●</span>
+    <span>STRATEGY</span><span class="dot">●</span><span>SCRIPTING</span><span class="dot">●</span>
+    <span>CONTENT AUDITS</span><span class="dot">●</span><span>PRODUCTION</span><span class="dot">●</span>
+    <span>MONETISATION</span><span class="dot">●</span><span>CREATOR SYSTEMS</span><span class="dot">●</span>
   </div>
 </div>
 
-<!-- SOCIAL PROOF -->
-<section class="proof-list">
-  <p class="eyebrow center">Proof behind the framework</p>
-  <div class="proof-grid">
-    <div class="proof-item"><i class="ti ti-check"></i><span>50,000+ followers built across TikTok &amp; Instagram</span></div>
-    <div class="proof-item"><i class="ti ti-check"></i><span>Founder-tested framework — not agency theory</span></div>
-    <div class="proof-item"><i class="ti ti-check"></i><span>Published author</span></div>
-    <div class="proof-item"><i class="ti ti-check"></i><span>Paid corporate speaker</span></div>
-    <div class="proof-item"><i class="ti ti-check"></i><span>Built specifically for African creators &amp; businesses</span></div>
+<!-- INTRO STATEMENT -->
+<section class="intro-statement">
+  <h2 class="section-title center">Content that drives growth.</h2>
+  <p class="section-sub center">We work with creators and brands who need more than a nice-looking video. You get a system that understands your audience, your goals, and how retention actually works.</p>
+  <div class="intro-cta"><a href="#contact" class="btn-primary">Let's build it</a></div>
+</section>
+
+<!-- FEATURE GRID -->
+<section class="services">
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-mark"><i class="ti ti-target-arrow"></i></span>
+      <h3>Hook-driven scripts</h3>
+      <p>Every script is built to earn the next second, not just fill a minute.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-mark"><i class="ti ti-chart-line"></i></span>
+      <h3>Retention-tested</h3>
+      <p>Structure, pacing, and cadence built from what actually keeps people watching.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-mark"><i class="ti ti-stack-2"></i></span>
+      <h3>Systems that scale</h3>
+      <p>One repeatable framework, not a one-off video that gets lucky.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-mark"><i class="ti ti-trending-up"></i></span>
+      <h3>Real audience results</h3>
+      <p>Tested on a real account first — never sold before it was proven.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER INTRO -->
+<section class="founder-story">
+  <div class="founder-inner">
+    <p class="eyebrow">The person behind it</p>
+    <p class="story-line story-emph">Hey, I'm Katlego — founder of Framework Media.</p>
+    <p class="story-line">I didn't start as an agency. I started by asking why some videos keep people watching while others lose attention instantly — and testing hundreds of hooks until patterns appeared.</p>
+    <p class="story-line">That became a repeatable framework. The same one that grew my own audience past 50,000 followers, before it ever became something I offered to other people.</p>
+    <p class="story-line story-emph">Good content isn't luck. It's engineered — and I'll show you exactly how.</p>
+  </div>
+</section>
+
+<!-- RESULTS / MINI CASE STUDIES -->
+<section class="results" id="results">
+  <p class="eyebrow center">Proof, not promises</p>
+  <h2 class="section-title center">The numbers behind the framework.</h2>
+  <p class="section-sub center">No client case studies yet — because the framework was tested here first.</p>
+
+  <div class="results-grid">
+    <div class="result-card">
+      <span class="result-num">125K+</span>
+      <span class="result-label">Views in 20 hours on a single video, using this exact hook framework</span>
+    </div>
+    <div class="result-card">
+      <span class="result-num">50,000+</span>
+      <span class="result-label">Followers built organically across TikTok and Instagram</span>
+    </div>
+    <div class="result-card">
+      <span class="result-num">1</span>
+      <span class="result-label">Paid corporate speaking engagement booked directly from content-driven credibility</span>
+    </div>
   </div>
 </section>
 
 <!-- FLIP DEMO -->
 <section class="flip-section" id="flip">
-  <p class="eyebrow center">The framework</p>
+  <p class="eyebrow center">The framework, live</p>
   <h2 class="section-title center">Why one video gets ignored while another keeps people watching.</h2>
-  <p class="section-sub center">Tap each example to compare an average opening with a Framework rewrite. Same topic. Completely different retention.</p>
+  <p class="section-sub center">Tap each example to compare an average opening with a Framework rewrite.</p>
 
   <div class="flip-grid">
-
     <div class="flip-card" data-cursor="Tap to flip">
       <div class="flip-inner">
         <div class="flip-face flip-front">
@@ -108,7 +151,6 @@
         </div>
       </div>
     </div>
-
     <div class="flip-card" data-cursor="Tap to flip">
       <div class="flip-inner">
         <div class="flip-face flip-front">
@@ -119,11 +161,10 @@
         <div class="flip-face flip-back">
           <span class="flip-tag strong">Framework rewrite</span>
           <p class="flip-text">"I put R500 into this on Luno two years ago. Here's what it's worth now."</p>
-          <span class="flip-note">Specific, personal, and stakes a claim in the first line — curiosity does the rest.</span>
+          <span class="flip-note">Specific, personal, and stakes a claim in the first line.</span>
         </div>
       </div>
     </div>
-
     <div class="flip-card" data-cursor="Tap to flip">
       <div class="flip-inner">
         <div class="flip-face flip-front">
@@ -134,50 +175,50 @@
         <div class="flip-face flip-back">
           <span class="flip-tag strong">Framework rewrite</span>
           <p class="flip-text">"Confidence isn't a personality trait. It's a habit you've been skipping."</p>
-          <span class="flip-note">Reframes a cliché into a claim worth arguing with — that's what keeps people watching.</span>
+          <span class="flip-note">Reframes a cliché into a claim worth arguing with.</span>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
+<!-- SERVICES DETAIL -->
+<section class="services" id="services-detail">
   <p class="eyebrow center">Built around one repeatable system</p>
   <h2 class="section-title center">What we do.</h2>
-
   <div class="services-grid">
-    <div class="service-card">
-      <span class="service-mark">Sc</span>
-      <h3>Script writing</h3>
-      <p>Hook-first scripts designed around your voice, audience, and goals — not generic AI templates.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-mark">St</span>
-      <h3>Content strategy</h3>
-      <p>Content pillars, audience positioning, and monthly planning so every post has a purpose.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-mark">Hd</span>
-      <h3>Hook diagnostics</h3>
-      <p>Already have content? We'll rebuild your first three seconds so people actually keep watching.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-mark">Ca</span>
-      <h3>Content audits</h3>
-      <p>We'll analyse your existing content, identify what's costing you retention, and give you a practical roadmap.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-mark">Vp</span>
-      <h3>Video production</h3>
-      <p>Professional editing with pacing, captions, B-roll, and retention cues built into every video.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-mark">Mc</span>
-      <h3>Monetisation consulting</h3>
-      <p>Turn attention into income with positioning, rate cards, sponsorship strategy, and creator offers.</p>
-    </div>
+    <div class="service-card"><span class="service-mark">Sc</span><h3>Script writing</h3><p>Hook-first scripts designed around your voice, audience, and goals.</p></div>
+    <div class="service-card"><span class="service-mark">St</span><h3>Content strategy</h3><p>Content pillars, positioning, and monthly planning so every post has a purpose.</p></div>
+    <div class="service-card"><span class="service-mark">Hd</span><h3>Hook diagnostics</h3><p>We'll rebuild your first three seconds so people actually keep watching.</p></div>
+    <div class="service-card"><span class="service-mark">Ca</span><h3>Content audits</h3><p>We identify what's costing you retention and give you a practical roadmap.</p></div>
+    <div class="service-card"><span class="service-mark">Vp</span><h3>Video production</h3><p>Editing with pacing, captions, B-roll, and retention cues built in.</p></div>
+    <div class="service-card"><span class="service-mark">Mc</span><h3>Monetisation consulting</h3><p>Positioning, rate cards, and creator offers that turn attention into income.</p></div>
+  </div>
+</section>
+
+<!-- BUILT FOR CREATORS -->
+<section class="services">
+  <p class="eyebrow center">Built for creators</p>
+  <h2 class="section-title center">We work like part of your team.</h2>
+  <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="service-card"><span class="service-mark"><i class="ti ti-adjustments"></i></span><h3>Flexible scope</h3><p>Content pivot? No problem. We adapt as your platform mix and goals change.</p></div>
+    <div class="service-card"><span class="service-mark"><i class="ti ti-message-circle"></i></span><h3>Your content partner</h3><p>Scripts, strategy, or full production — whatever your growth needs next.</p></div>
+    <div class="service-card"><span class="service-mark"><i class="ti ti-users"></i></span><h3>Hands-on collaboration</h3><p>Direct access to the founder, not an account manager relaying messages.</p></div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="difference">
+  <p class="eyebrow center">The framework difference</p>
+  <h2 class="section-title center">Most agencies vs. Framework Media.</h2>
+  <p class="section-sub center">Direct founder access. No account managers, no generic templates, no trend-chasing.</p>
+  <div class="diff-table">
+    <div class="diff-row diff-head"><span>Most agencies</span><span>Framework Media</span></div>
+    <div class="diff-row"><span class="diff-no"><i class="ti ti-x"></i>Generic scripts</span><span class="diff-yes"><i class="ti ti-check"></i>Founder-tested framework</span></div>
+    <div class="diff-row"><span class="diff-no"><i class="ti ti-x"></i>Trend chasing</span><span class="diff-yes"><i class="ti ti-check"></i>Repeatable content systems</span></div>
+    <div class="diff-row"><span class="diff-no"><i class="ti ti-x"></i>Focus on views</span><span class="diff-yes"><i class="ti ti-check"></i>Focus on retention &amp; conversion</span></div>
+    <div class="diff-row"><span class="diff-no"><i class="ti ti-x"></i>One-off projects</span><span class="diff-yes"><i class="ti ti-check"></i>Long-term growth systems</span></div>
+    <div class="diff-row"><span class="diff-no"><i class="ti ti-x"></i>Global approach</span><span class="diff-yes"><i class="ti ti-check"></i>Built for African creators &amp; businesses</span></div>
   </div>
 </section>
 
@@ -185,90 +226,20 @@
 <section class="process" id="process">
   <p class="eyebrow center">The framework process</p>
   <h2 class="section-title center">Every piece of content follows the same system.</h2>
-
   <div class="process-list" id="processList">
-    <div class="process-step">
-      <span class="process-num">01</span>
-      <div><h3>Research</h3><p>Audience, competitors, and positioning.</p></div>
-    </div>
-    <div class="process-step">
-      <span class="process-num">02</span>
-      <div><h3>Hook engineering</h3><p>Build an opening that earns the next second.</p></div>
-    </div>
-    <div class="process-step">
-      <span class="process-num">03</span>
-      <div><h3>Retention mapping</h3><p>Every section keeps curiosity alive.</p></div>
-    </div>
-    <div class="process-step">
-      <span class="process-num">04</span>
-      <div><h3>Production</h3><p>Editing, captions, pacing, and delivery.</p></div>
-    </div>
-    <div class="process-step">
-      <span class="process-num">05</span>
-      <div><h3>Optimisation</h3><p>Review performance and improve the next video.</p></div>
-    </div>
+    <div class="process-step"><span class="process-num">01</span><div><h3>Research</h3><p>Audience, competitors, and positioning.</p></div></div>
+    <div class="process-step"><span class="process-num">02</span><div><h3>Hook engineering</h3><p>Build an opening that earns the next second.</p></div></div>
+    <div class="process-step"><span class="process-num">03</span><div><h3>Retention mapping</h3><p>Every section keeps curiosity alive.</p></div></div>
+    <div class="process-step"><span class="process-num">04</span><div><h3>Production</h3><p>Editing, captions, pacing, and delivery.</p></div></div>
+    <div class="process-step"><span class="process-num">05</span><div><h3>Optimisation</h3><p>Review performance and improve the next video.</p></div></div>
   </div>
 </section>
 
-<!-- FOUNDER STORY -->
-<section class="founder-story">
-  <div class="founder-inner">
-    <p class="eyebrow">Built from testing — not theory</p>
-    <p class="story-line">Framework Media didn't start as an agency.</p>
-    <p class="story-line">It started as a question.</p>
-    <p class="story-line story-q">Why do some videos keep people watching while others lose attention instantly?</p>
-    <p class="story-line">So I stopped chasing trends and started testing. Hundreds of hooks. Different structures. Different pacing. Different calls-to-action.</p>
-    <p class="story-line">Eventually, patterns appeared.</p>
-    <p class="story-line">That became a repeatable framework.</p>
-    <p class="story-line">The same framework helped grow my own audience to over 50,000 followers across TikTok and Instagram — and now it's the system we build for creators and brands who want content that consistently performs.</p>
-    <p class="story-line story-emph">Because good content isn't luck.</p>
-    <p class="story-line story-emph">It's engineered.</p>
-  </div>
-</section>
-
-<!-- FRAMEWORK DIFFERENCE -->
-<section class="difference">
-  <p class="eyebrow center">The framework difference</p>
-  <h2 class="section-title center">Most agencies vs. Framework Media.</h2>
-
-  <div class="diff-table">
-    <div class="diff-row diff-head">
-      <span>Most agencies</span>
-      <span>Framework Media</span>
-    </div>
-    <div class="diff-row">
-      <span class="diff-no"><i class="ti ti-x"></i>Generic scripts</span>
-      <span class="diff-yes"><i class="ti ti-check"></i>Founder-tested framework</span>
-    </div>
-    <div class="diff-row">
-      <span class="diff-no"><i class="ti ti-x"></i>Trend chasing</span>
-      <span class="diff-yes"><i class="ti ti-check"></i>Repeatable content systems</span>
-    </div>
-    <div class="diff-row">
-      <span class="diff-no"><i class="ti ti-x"></i>Focus on views</span>
-      <span class="diff-yes"><i class="ti ti-check"></i>Focus on retention &amp; conversion</span>
-    </div>
-    <div class="diff-row">
-      <span class="diff-no"><i class="ti ti-x"></i>One-off projects</span>
-      <span class="diff-yes"><i class="ti ti-check"></i>Long-term growth systems</span>
-    </div>
-    <div class="diff-row">
-      <span class="diff-no"><i class="ti ti-x"></i>Generic AI prompts</span>
-      <span class="diff-yes"><i class="ti ti-check"></i>Human strategy + AI efficiency</span>
-    </div>
-    <div class="diff-row">
-      <span class="diff-no"><i class="ti ti-x"></i>Global approach</span>
-      <span class="diff-yes"><i class="ti ti-check"></i>Built for African creators &amp; businesses</span>
-    </div>
-  </div>
-</section>
-
-<!-- FLAGSHIP OFFER -->
+<!-- OFFER -->
 <section class="offer">
   <p class="eyebrow center">The flagship offer</p>
   <h2 class="section-title center">The Content System</h2>
   <p class="section-sub center">Everything needed to consistently publish high-performing short-form content.</p>
-
   <div class="offer-included">
     <div class="offer-item"><i class="ti ti-check"></i>Monthly strategy</div>
     <div class="offer-item"><i class="ti ti-check"></i>Hook engineering</div>
@@ -277,86 +248,41 @@
     <div class="offer-item"><i class="ti ti-check"></i>Content audit</div>
     <div class="offer-item"><i class="ti ti-check"></i>Performance review</div>
   </div>
-
   <div class="offer-tiers">
     <div class="offer-tier"><h3>Starter</h3><p>For creators posting consistently who need a sharper system.</p></div>
     <div class="offer-tier"><h3>Growth</h3><p>For accounts scaling volume across Reels, TikTok, and YouTube.</p></div>
     <div class="offer-tier"><h3>Full System</h3><p>For brands and creators who want the entire pipeline run for them.</p></div>
   </div>
-
-  <div class="offer-cta">
-    <a href="#contact" class="btn-primary large">Start a project</a>
-  </div>
-</section>
-
-<!-- RESULTS / WHY IT WORKS -->
-<section class="why">
-  <p class="eyebrow center">Why creators work with us</p>
-  <div class="why-grid">
-    <div class="why-row"><span class="why-not">Instead of chasing trends...</span><span class="why-arrow">→</span><span class="why-yes">We build systems.</span></div>
-    <div class="why-row"><span class="why-not">Instead of posting randomly...</span><span class="why-arrow">→</span><span class="why-yes">We build repeatable content pillars.</span></div>
-    <div class="why-row"><span class="why-not">Instead of hoping videos perform...</span><span class="why-arrow">→</span><span class="why-yes">We engineer them for retention.</span></div>
-    <div class="why-row"><span class="why-not">Instead of creating more...</span><span class="why-arrow">→</span><span class="why-yes">We create better.</span></div>
-  </div>
+  <div class="offer-cta"><a href="#contact" class="btn-primary large">Start a project</a></div>
 </section>
 
 <!-- FAQ -->
-<section class="faq">
+<section class="faq" id="faq">
   <p class="eyebrow center">Questions</p>
   <h2 class="section-title center">FAQ</h2>
-
   <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-q">Is this only for creators? <i class="ti ti-plus"></i></button>
-      <div class="faq-a"><p>No. We also work with coaches, consultants, and businesses building authority online.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">Can I hire you just for scripts? <i class="ti ti-plus"></i></button>
-      <div class="faq-a"><p>Yes. You can buy individual scripts or a complete monthly system.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">Do you edit the videos too? <i class="ti ti-plus"></i></button>
-      <div class="faq-a"><p>Yes. We offer script-only, editing-only, or complete production.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">How quickly can we start? <i class="ti ti-plus"></i></button>
-      <div class="faq-a"><p>Most projects begin within a week after onboarding.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">Do you guarantee viral videos? <i class="ti ti-plus"></i></button>
-      <div class="faq-a"><p>No. We build systems that maximise retention and consistency. Long-term growth comes from execution and testing.</p></div>
-    </div>
+    <div class="faq-item"><button class="faq-q">Is this only for creators? <i class="ti ti-plus"></i></button><div class="faq-a"><p>No. We also work with coaches, consultants, and businesses building authority online.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Can I hire you just for scripts? <i class="ti ti-plus"></i></button><div class="faq-a"><p>Yes. You can buy individual scripts or a complete monthly system.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Do you edit the videos too? <i class="ti ti-plus"></i></button><div class="faq-a"><p>Yes. We offer script-only, editing-only, or complete production.</p></div></div>
+    <div class="faq-item"><button class="faq-q">How quickly can we start? <i class="ti ti-plus"></i></button><div class="faq-a"><p>Most projects begin within a week after onboarding.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Do you guarantee viral videos? <i class="ti ti-plus"></i></button><div class="faq-a"><p>No. We build systems that maximise retention and consistency. Long-term growth comes from execution and testing.</p></div></div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <p class="eyebrow center">Ready to stop guessing?</p>
-  <h2 class="section-title center">If you're serious about growing with short-form content, let's build a system that works long after one viral video.</h2>
-  <a href="#contact" class="btn-primary large">Start a project</a>
-  <p class="contact-email"><a href="mailto:hello@frameworkmedia.co">hello@frameworkmedia.co</a></p>
-  <div class="contact-links">
-    <a href="#">Instagram</a>
-    <a href="#">TikTok</a>
-    <a href="#">LinkedIn</a>
-  </div>
+  <h2 class="section-title center">Book a 15-minute call that might change how you post.</h2>
+  <a href="mailto:hello@frameworkmedia.co" class="btn-primary large">Start a project</a>
+  <p class="contact-email">Or send an email → <a href="mailto:hello@frameworkmedia.co">hello@frameworkmedia.co</a></p>
+  <div class="contact-links"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">LinkedIn</a></div>
 </section>
 
 <footer class="footer">
-  <div class="footer-col">
-    <p class="footer-brand">Framework Media</p>
-    <p class="footer-tag">Content systems for African creators &amp; brands</p>
-  </div>
-  <div class="footer-col footer-links">
-    <span>Scripts</span><span>Strategy</span><span>Production</span><span>Monetisation</span>
-  </div>
-  <div class="footer-col footer-links">
-    <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">LinkedIn</a>
-  </div>
-  <div class="footer-col">
-    <span>© 2026 Framework Media</span>
-    <span>Built in South Africa</span>
-  </div>
+  <div class="footer-col"><p class="footer-brand">Framework Media</p><p class="footer-tag">Content systems for African creators &amp; brands</p></div>
+  <div class="footer-col footer-links"><span>Scripts</span><span>Strategy</span><span>Production</span><span>Monetisation</span></div>
+  <div class="footer-col footer-links"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">LinkedIn</a></div>
+  <div class="footer-col"><span>© 2026 Framework Media</span><span>Built in South Africa</span></div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
