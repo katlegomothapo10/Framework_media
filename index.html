@@ -72,12 +72,14 @@
             letter-spacing: -0.02em;
             line-height: 1.1;
             margin-bottom: 8px;
+            text-align: center;
         }
         .section-sub {
             font-size: 18px;
             color: #4b5563;
             max-width: 600px;
-            margin-bottom: 32px;
+            margin: 0 auto 32px;
+            text-align: center;
         }
 
         /* navbar */
@@ -227,6 +229,7 @@
             border-radius: 24px;
             border: 1px solid #f3f4f6;
             transition: 0.25s ease;
+            text-align: left;
         }
         .service-card:hover {
             border-color: #0f1419;
@@ -589,20 +592,95 @@
             gap: 16px;
         }
 
-        /* responsive */
-        @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 16px; align-items: flex-start; }
-            .nav-links { flex-wrap: wrap; gap: 20px; }
-            .hero-content h1 { font-size: 38px; }
-            .section-title { font-size: 32px; }
-            .faq-grid { grid-template-columns: 1fr; }
-            .contact-section { grid-template-columns: 1fr; }
-            .founder-card { padding: 32px 20px; }
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        /* ===== RESPONSIVE TWEAKS ===== */
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
         }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .hero-content h1 {
+                font-size: 38px;
+            }
+            .section-title {
+                font-size: 32px;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .contact-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .founder-card {
+                padding: 32px 20px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .service-card {
+                padding: 24px 20px;
+            }
+            .hero-badge {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
         @media (max-width: 480px) {
-            .services-grid { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 32px; }
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .service-card {
+                padding: 24px 20px;
+                text-align: center;
+            }
+            .service-card .icon {
+                text-align: center;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .trusted-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            .founder-card .bio {
+                font-size: 15px;
+            }
+            .footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .calendar-box {
+                padding: 24px 16px;
+            }
+            .hero {
+                padding: 40px 0 50px;
+            }
         }
     </style>
 </head>
@@ -613,9 +691,11 @@
         <header class="navbar">
             <a href="#" class="logo">Framework <span>Media</span></a>
             <div class="nav-links">
+                <a href="#trusted">Trusted By</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#team">Founder</a>
                 <a href="#services">Services</a>
                 <a href="#process">Process</a>
-                <a href="#testimonials">Testimonials</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#faq">FAQ</a>
                 <a href="#contact">Contact</a>
@@ -642,60 +722,8 @@
             </div>
         </section>
 
-        <!-- ====== SERVICES ====== -->
-        <section class="services-section" id="services">
-            <h2 class="section-title">What We Do</h2>
-            <p class="section-sub">Scripts. Strategy. Production. Consulting.</p>
-
-            <div class="services-grid">
-
-                <!-- 1. Script Writing -->
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-pen-fancy"></i></span>
-                    <h4>Script Writing</h4>
-                    <p>High‑converting scripts built on the Hook–Body–CTA framework. For TikTok, Instagram Reels, YouTube, and LinkedIn.</p>
-                </div>
-
-                <!-- 2. Content Audit -->
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-search"></i></span>
-                    <h4>Content Audit</h4>
-                    <p>A forensic review of your existing content. We break down what's working, what's not, and exactly how to fix it.</p>
-                </div>
-
-                <!-- 3. Hook Diagnosis -->
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-bullseye"></i></span>
-                    <h4>Hook Diagnosis</h4>
-                    <p>The first 3 seconds make or break a video. We rewrite your hooks to stop the scroll and boost retention instantly.</p>
-                </div>
-
-                <!-- 4. Video Editing -->
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-film"></i></span>
-                    <h4>Video Editing</h4>
-                    <p>Done‑for‑you editing for YouTube long‑form and short‑form (Reels/TikToks). We handle pacing, cuts, and retention.</p>
-                </div>
-
-                <!-- 5. Monetisation Consulting -->
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-chart-line"></i></span>
-                    <h4>Monetisation Consulting</h4>
-                    <p>Rate cards, pitch sequences, and deal tracking — built from real experience closing brand deals across platforms.</p>
-                </div>
-
-                <!-- 6. Coaching-Lite -->
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-brain"></i></span>
-                    <h4>Coaching‑Lite</h4>
-                    <p>Personal brand positioning advice. We align your messaging, voice, and strategy so you attract the right audience.</p>
-                </div>
-
-            </div>
-        </section>
-
         <!-- ====== TRUSTED BY ====== -->
-        <section class="trusted-section">
+        <section class="trusted-section" id="trusted">
             <h2 class="section-title">Trusted By</h2>
             <p class="section-sub">Our work speaks for itself.</p>
             <div class="trusted-grid">
@@ -759,6 +787,58 @@
                     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
+            </div>
+        </section>
+
+        <!-- ====== OUR SERVICES (MOVED HERE) ====== -->
+        <section class="services-section" id="services">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-sub">Scripts. Strategy. Production. Consulting.</p>
+
+            <div class="services-grid">
+
+                <!-- 1. Script Writing -->
+                <div class="service-card">
+                    <span class="icon"><i class="fas fa-pen-fancy"></i></span>
+                    <h4>Script Writing</h4>
+                    <p>High‑converting scripts built on the Hook–Body–CTA framework. For TikTok, Instagram Reels, YouTube, and LinkedIn.</p>
+                </div>
+
+                <!-- 2. Content Audit -->
+                <div class="service-card">
+                    <span class="icon"><i class="fas fa-search"></i></span>
+                    <h4>Content Audit</h4>
+                    <p>A forensic review of your existing content. We break down what's working, what's not, and exactly how to fix it.</p>
+                </div>
+
+                <!-- 3. Hook Diagnosis -->
+                <div class="service-card">
+                    <span class="icon"><i class="fas fa-bullseye"></i></span>
+                    <h4>Hook Diagnosis</h4>
+                    <p>The first 3 seconds make or break a video. We rewrite your hooks to stop the scroll and boost retention instantly.</p>
+                </div>
+
+                <!-- 4. Video Editing -->
+                <div class="service-card">
+                    <span class="icon"><i class="fas fa-film"></i></span>
+                    <h4>Video Editing</h4>
+                    <p>Done‑for‑you editing for YouTube long‑form and short‑form (Reels/TikToks). We handle pacing, cuts, and retention.</p>
+                </div>
+
+                <!-- 5. Monetisation Consulting -->
+                <div class="service-card">
+                    <span class="icon"><i class="fas fa-chart-line"></i></span>
+                    <h4>Monetisation Consulting</h4>
+                    <p>Rate cards, pitch sequences, and deal tracking — built from real experience closing brand deals across platforms.</p>
+                </div>
+
+                <!-- 6. Coaching-Lite -->
+                <div class="service-card">
+                    <span class="icon"><i class="fas fa-brain"></i></span>
+                    <h4>Coaching‑Lite</h4>
+                    <p>Personal brand positioning advice. We align your messaging, voice, and strategy so you attract the right audience.</p>
+                </div>
+
             </div>
         </section>
 
