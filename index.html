@@ -71,12 +71,13 @@
             font-weight: 700;
             letter-spacing: -0.02em;
             line-height: 1.1;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
         }
         .section-sub {
             font-size: 18px;
             color: #4b5563;
             max-width: 600px;
+            margin-bottom: 32px;
         }
 
         /* navbar */
@@ -131,6 +132,8 @@
             border: none;
             cursor: pointer;
             transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
         }
         .nav-cta:hover {
             background: #2a2f35;
@@ -208,6 +211,45 @@
             background-size: 80px;
         }
 
+        /* Services */
+        .services-section {
+            padding: 60px 0 40px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .service-card {
+            background: #f9fafb;
+            padding: 32px 24px;
+            border-radius: 24px;
+            border: 1px solid #f3f4f6;
+            transition: 0.25s ease;
+        }
+        .service-card:hover {
+            border-color: #0f1419;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        }
+        .service-card .icon {
+            font-size: 28px;
+            color: #0f1419;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .service-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .service-card p {
+            color: #4b5563;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
         /* trusted by cards */
         .trusted-section {
             padding: 40px 0 60px;
@@ -275,6 +317,7 @@
         /* testimonials */
         .testimonials {
             padding: 60px 0 40px;
+            border-top: 1px solid #e5e7eb;
         }
         .testimonial-grid {
             display: grid;
@@ -319,11 +362,13 @@
             border-radius: 40px;
             display: inline-block;
             margin-left: 12px;
+            vertical-align: middle;
         }
 
         /* team - single founder */
         .team {
             padding: 60px 0;
+            border-top: 1px solid #e5e7eb;
         }
         .founder-card {
             max-width: 700px;
@@ -375,6 +420,7 @@
         /* process */
         .process {
             padding: 60px 0 40px;
+            border-top: 1px solid #e5e7eb;
         }
         .process-steps {
             display: grid;
@@ -405,6 +451,7 @@
         /* pricing (no prices shown) */
         .pricing {
             padding: 60px 0 40px;
+            border-top: 1px solid #e5e7eb;
         }
         .pricing-grid {
             display: grid;
@@ -461,6 +508,7 @@
         /* faq */
         .faq {
             padding: 60px 0 40px;
+            border-top: 1px solid #e5e7eb;
         }
         .faq-grid {
             display: grid;
@@ -550,6 +598,11 @@
             .faq-grid { grid-template-columns: 1fr; }
             .contact-section { grid-template-columns: 1fr; }
             .founder-card { padding: 32px 20px; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 32px; }
         }
     </style>
 </head>
@@ -567,14 +620,14 @@
                 <a href="#faq">FAQ</a>
                 <a href="#contact">Contact</a>
             </div>
-            <button class="nav-cta">Book a call</button>
+            <a href="#contact" class="nav-cta">Book a call</a>
         </header>
 
         <!-- ====== HERO ====== -->
         <section class="hero">
             <div class="hero-content">
                 <span class="hero-tag"><i class="fas fa-bolt" style="margin-right: 6px;"></i> For creators, coaches & small brands</span>
-                <h1>The content system that grew <span class="highlight">200K followers</span>.<br>Now it's yours.</h1>
+                <h1>The content system that grew <span class="highlight">200K+ followers</span>.<br>Now it's yours.</h1>
                 <p>We build the hooks, retention, and cultural fluency that turn views into qualified leads. Built for the African content landscape.</p>
                 <div style="display: flex; gap: 16px; flex-wrap: wrap;">
                     <a href="#contact" class="btn-primary">Get the Framework</a>
@@ -589,33 +642,82 @@
             </div>
         </section>
 
+        <!-- ====== SERVICES ====== -->
+        <section class="services-section" id="services">
+            <h2 class="section-title">What We Do</h2>
+            <p class="section-sub">Scripts. Strategy. Production. Consulting.</p>
+
+            <div class="services-grid">
+
+                <!-- 1. Script Writing -->
+                <div class="service-card">
+                    <span class="icon"><i class="fas fa-pen-fancy"></i></span>
+                    <h4>Script Writing</h4>
+                    <p>High‑converting scripts built on the Hook–Body–CTA framework. For TikTok, Instagram Reels, YouTube, and LinkedIn.</p>
+                </div>
+
+                <!-- 2. Content Audit -->
+                <div class="service-card">
+                    <span class="icon"><i class="fas fa-search"></i></span>
+                    <h4>Content Audit</h4>
+                    <p>A forensic review of your existing content. We break down what's working, what's not, and exactly how to fix it.</p>
+                </div>
+
+                <!-- 3. Hook Diagnosis -->
+                <div class="service-card">
+                    <span class="icon"><i class="fas fa-bullseye"></i></span>
+                    <h4>Hook Diagnosis</h4>
+                    <p>The first 3 seconds make or break a video. We rewrite your hooks to stop the scroll and boost retention instantly.</p>
+                </div>
+
+                <!-- 4. Video Editing -->
+                <div class="service-card">
+                    <span class="icon"><i class="fas fa-film"></i></span>
+                    <h4>Video Editing</h4>
+                    <p>Done‑for‑you editing for YouTube long‑form and short‑form (Reels/TikToks). We handle pacing, cuts, and retention.</p>
+                </div>
+
+                <!-- 5. Monetisation Consulting -->
+                <div class="service-card">
+                    <span class="icon"><i class="fas fa-chart-line"></i></span>
+                    <h4>Monetisation Consulting</h4>
+                    <p>Rate cards, pitch sequences, and deal tracking — built from real experience closing brand deals across platforms.</p>
+                </div>
+
+                <!-- 6. Coaching-Lite -->
+                <div class="service-card">
+                    <span class="icon"><i class="fas fa-brain"></i></span>
+                    <h4>Coaching‑Lite</h4>
+                    <p>Personal brand positioning advice. We align your messaging, voice, and strategy so you attract the right audience.</p>
+                </div>
+
+            </div>
+        </section>
+
         <!-- ====== TRUSTED BY ====== -->
-        <section class="trusted-section" id="services">
+        <section class="trusted-section">
             <h2 class="section-title">Trusted By</h2>
             <p class="section-sub">Our work speaks for itself.</p>
             <div class="trusted-grid">
                 <!-- Card 1: Our Goated Lunchbox -->
                 <a href="#" target="_blank" class="trusted-card" style="text-decoration: none; color: inherit;">
                     <h4>Our Goated Lunchbox</h4>
-                    <p>A social media page dedicated to street culture, lifestyle, and African youth content.</p>
+                    <p>A TikTok page dedicated to street culture, lifestyle, and African youth content.</p>
                     <div class="platform-icons">
-                        <i class="fab fa-instagram"></i>
                         <i class="fab fa-tiktok"></i>
-                        <i class="fab fa-youtube"></i>
                     </div>
-                    <div class="follower-count"><i class="fas fa-users"></i> 10K+ followers</div>
+                    <div class="follower-count"><i class="fas fa-users"></i> 152K followers</div>
                     <div class="link-arrow">Visit page <i class="fas fa-arrow-right"></i></div>
                 </a>
                 <!-- Card 2: Katlego Unfiltered -->
                 <a href="#" target="_blank" class="trusted-card" style="text-decoration: none; color: inherit;">
                     <h4>Katlego Unfiltered</h4>
-                    <p>A personal brand built on self-development, relationships, masculinity, and finance — grown to 200K+ followers.</p>
+                    <p>A personal brand built on self-development, relationships, masculinity, and finance — grown across TikTok and Instagram.</p>
                     <div class="platform-icons">
-                        <i class="fab fa-instagram"></i>
                         <i class="fab fa-tiktok"></i>
-                        <i class="fab fa-youtube"></i>
+                        <i class="fab fa-instagram"></i>
                     </div>
-                    <div class="follower-count"><i class="fas fa-users"></i> 200K+ followers</div>
+                    <div class="follower-count"><i class="fas fa-users"></i> 60K combined followers</div>
                     <div class="link-arrow">Visit page <i class="fas fa-arrow-right"></i></div>
                 </a>
             </div>
