@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>AdsVSL — Meta Ads & VSL Funnel Template for Agencies & Coaches</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <title>AdsVSL — Meta Ads & VSL Funnel Template</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Font: Inter (clean, modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,1134 +18,667 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #ffffff;
-            color: #0f0a1a;
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #0f1419;
+            line-height: 1.5;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 24px;
         }
 
-        /* ----- NAVIGATION ----- */
-        nav {
-            padding: 1.2rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #6c2bd9, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .logo i {
-            -webkit-text-fill-color: #7c3aed;
-            margin-right: 6px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #1a1028;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: inherit;
-            transition: 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #7c3aed;
-        }
-
-        .nav-cta {
-            background: #0f0a1a;
-            color: white !important;
-            padding: 0.6rem 1.8rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.2s;
-        }
-
-        .nav-cta:hover {
-            background: #2d1b4e !important;
-            transform: scale(1.02);
-        }
-
-        .nav-cta i {
-            margin-right: 8px;
-        }
-
-        /* ----- HERO ----- */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 4rem;
-            padding: 4rem 0 3rem 0;
-        }
-
-        .hero-left {
-            flex: 1 1 500px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: #f5f0ff;
-            color: #4a1a7a;
-            padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-badge i {
-            margin-right: 6px;
-        }
-
-        .hero h1 {
-            font-size: 3.8rem;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            color: #0f0a1a;
-            max-width: 700px;
-        }
-
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, #7c3aed, #a855f7, #6c2bd9);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-sub {
-            font-size: 1.2rem;
-            color: #3d3352;
-            margin: 1.5rem 0 1rem 0;
-            max-width: 550px;
-            font-weight: 400;
-        }
-
-        .hero-sub strong {
-            color: #0f0a1a;
-            font-weight: 700;
-        }
-
-        .hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 1.8rem;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #3d3352;
-        }
-
-        .hero-meta i {
-            color: #7c3aed;
-            margin-right: 8px;
-        }
-
-        .hero-cta {
-            margin-top: 2.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
+        /* ----- buttons & basics ----- */
         .btn-primary {
-            background: #0f0a1a;
+            background: #0f1419;
             color: white;
-            padding: 0.9rem 2.8rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
             border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 16px;
             cursor: pointer;
             transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+            display: inline-block;
+            text-decoration: none;
         }
-
         .btn-primary:hover {
-            background: #2d1b4e;
-            transform: scale(1.02);
-        }
-
-        .btn-primary i {
-            font-size: 0.9rem;
-        }
-
-        .hero-right {
-            flex: 1 1 300px;
-            background: linear-gradient(145deg, #f5f0ff, #ede7f9);
-            border-radius: 32px;
-            padding: 3rem 2rem;
-            text-align: center;
-            min-height: 280px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid rgba(124, 58, 237, 0.08);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.04);
-        }
-
-        .hero-right i {
-            font-size: 4rem;
-            color: #7c3aed;
-            opacity: 0.6;
-            margin-bottom: 0.8rem;
-        }
-
-        .hero-right h3 {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #0f0a1a;
-        }
-
-        .hero-right p {
-            color: #5a4a72;
-            font-size: 0.9rem;
-            margin-top: 0.3rem;
-        }
-
-        /* ----- BRANDS SECTION ----- */
-        .brands-section {
-            padding: 3rem 0;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            margin: 1rem 0;
-        }
-
-        .brands-section .label {
-            text-align: center;
-            color: #7a6a92;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-        }
-
-        .brand-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem 4rem;
-        }
-
-        .brand-item {
-            font-weight: 600;
-            color: #2d1b4e;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .brand-item i {
-            color: #7c3aed;
-            opacity: 0.5;
-        }
-
-        /* ----- TESTIMONIALS ----- */
-        .testimonials {
-            padding: 4rem 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .section-header p {
-            color: #5a4a72;
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: #faf8ff;
-            border-radius: 24px;
-            padding: 2rem;
-            border: 1px solid #f0ebf9;
-            transition: 0.2s;
-        }
-
-        .testimonial-card:hover {
-            border-color: #d5c8ec;
-            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.06);
-        }
-
-        .testimonial-card .quote {
-            font-size: 1.8rem;
-            color: #7c3aed;
-            opacity: 0.4;
-            margin-bottom: 0.5rem;
-        }
-
-        .testimonial-card p {
-            font-size: 1rem;
-            color: #1a1028;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-card .author {
-            font-weight: 700;
-            color: #0f0a1a;
-        }
-
-        .testimonial-card .role {
-            color: #7a6a92;
-            font-size: 0.9rem;
-        }
-
-        /* ----- TEAM ----- */
-        .team-section {
-            padding: 3rem 0;
-        }
-
-        .team-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 3rem 4rem;
-            margin-top: 2rem;
-        }
-
-        .team-member {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
-
-        .team-avatar {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, #7c3aed, #a855f7);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .team-info h4 {
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .team-info p {
-            color: #5a4a72;
-            font-size: 0.9rem;
-        }
-
-        /* ----- PROCESS ----- */
-        .process-section {
-            padding: 4rem 0;
-            background: #faf8ff;
-            border-radius: 40px;
-            margin: 2rem 0;
-            padding: 4rem 2rem;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-
-        .process-step {
-            text-align: center;
-        }
-
-        .process-step .number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #7c3aed;
-            opacity: 0.2;
-            margin-bottom: 0.5rem;
-        }
-
-        .process-step h3 {
-            font-weight: 700;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .process-step p {
-            color: #5a4a72;
-            font-size: 0.95rem;
-        }
-
-        /* ----- PRICING ----- */
-        .pricing-section {
-            padding: 4rem 0;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .pricing-card {
-            background: white;
-            border-radius: 28px;
-            padding: 2.5rem 2rem;
-            border: 1px solid #eee8f7;
-            text-align: center;
-            transition: 0.2s;
-        }
-
-        .pricing-card:hover {
-            border-color: #c4b0e0;
-            box-shadow: 0 12px 35px rgba(124, 58, 237, 0.06);
-        }
-
-        .pricing-card.featured {
-            border-color: #7c3aed;
-            background: #faf8ff;
-            position: relative;
-        }
-
-        .pricing-card.featured::before {
-            content: "Most Popular";
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #7c3aed;
-            color: white;
-            padding: 0.2rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .pricing-card .plan {
-            font-weight: 600;
-            color: #7c3aed;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .pricing-card .price {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #0f0a1a;
-            margin: 0.5rem 0;
-        }
-
-        .pricing-card .price span {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #7a6a92;
-        }
-
-        .pricing-card .features {
-            list-style: none;
-            margin: 1.5rem 0;
-            text-align: left;
-        }
-
-        .pricing-card .features li {
-            padding: 0.4rem 0;
-            color: #3d3352;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .pricing-card .features li i {
-            color: #7c3aed;
-            font-size: 0.8rem;
+            background: #2a2f35;
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid #0f0a1a;
-            color: #0f0a1a;
-            padding: 0.8rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: 0.2s;
-            display: inline-block;
-        }
-
-        .btn-outline:hover {
-            background: #0f0a1a;
-            color: white;
-        }
-
-        .btn-primary-full {
-            background: #0f0a1a;
-            color: white;
-            padding: 0.8rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            border: none;
-            cursor: pointer;
-            transition: 0.2s;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .btn-primary-full:hover {
-            background: #2d1b4e;
-        }
-
-        /* ----- FAQ ----- */
-        .faq-section {
-            padding: 4rem 0;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #eee8f7;
-            padding: 1.5rem 0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-item h4 {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-            color: #0f0a1a;
-        }
-
-        .faq-item p {
-            color: #5a4a72;
-            font-size: 0.95rem;
-            max-width: 700px;
-        }
-
-        /* ----- CONTACT ----- */
-        .contact-section {
-            padding: 4rem 0;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            background: #faf8ff;
-            border-radius: 32px;
-            padding: 3rem;
-            margin-top: 2rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.9rem 1.2rem;
-            border: 1px solid #e0d7ee;
-            border-radius: 12px;
-            background: white;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            font-family: inherit;
-            transition: 0.2s;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #7c3aed;
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.08);
-        }
-
-        .contact-form textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .contact-form .btn-submit {
-            background: #0f0a1a;
-            color: white;
-            padding: 0.9rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            border: none;
-            cursor: pointer;
-            transition: 0.2s;
-            width: 100%;
-            font-size: 1rem;
-        }
-
-        .contact-form .btn-submit:hover {
-            background: #2d1b4e;
-        }
-
-        .calendar-embed {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid #e0d7ee;
-        }
-
-        .calendar-embed h4 {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .calendar-embed .sub {
-            color: #5a4a72;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 6px;
-            margin: 1rem 0;
-        }
-
-        .calendar-grid .day {
-            padding: 8px 0;
-            text-align: center;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border-radius: 8px;
-            color: #3d3352;
-        }
-
-        .calendar-grid .day.header {
+            color: #0f1419;
+            border: 1.5px solid #0f1419;
+            padding: 14px 36px;
+            border-radius: 40px;
             font-weight: 600;
-            color: #7a6a92;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-        }
-
-        .calendar-grid .day.active {
-            background: #0f0a1a;
-            color: white;
-        }
-
-        .calendar-grid .day.available {
-            background: #f5f0ff;
+            font-size: 16px;
             cursor: pointer;
+            transition: 0.2s;
+            display: inline-block;
+            text-decoration: none;
         }
-
-        .calendar-grid .day.available:hover {
-            background: #7c3aed;
+        .btn-outline:hover {
+            background: #0f1419;
             color: white;
         }
 
-        .calendar-slot {
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .section-sub {
+            font-size: 18px;
+            color: #4b5563;
+            max-width: 600px;
+        }
+
+        /* ----- header / nav (exact replica) ----- */
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #f5f0ff;
-            padding: 0.8rem 1.2rem;
-            border-radius: 12px;
-            margin: 1rem 0;
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e7eb;
+            flex-wrap: wrap;
         }
 
-        .calendar-slot .label {
-            font-weight: 500;
-            font-size: 0.9rem;
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
-
-        .calendar-slot .free {
-            font-weight: 700;
-            color: #0f0a1a;
-        }
-
-        .calendar-embed .btn-book {
-            width: 100%;
-            padding: 0.9rem;
-            background: #0f0a1a;
+        .logo span {
+            background: #0f1419;
             color: white;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            font-weight: 500;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1f2937;
+            font-size: 16px;
+        }
+        .nav-links a:hover {
+            color: #0f1419;
+        }
+
+        .nav-cta {
+            background: #0f1419;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 15px;
             border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
             cursor: pointer;
             transition: 0.2s;
         }
-
-        .calendar-embed .btn-book:hover {
-            background: #2d1b4e;
+        .nav-cta:hover {
+            background: #2a2f35;
         }
 
-        .calendar-embed .footnote {
-            color: #7a6a92;
-            font-size: 0.8rem;
+        /* ----- hero section (exact wording) ----- */
+        .hero {
+            padding: 60px 0 70px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1 1 500px;
+        }
+        .hero-tag {
+            background: #eef2ff;
+            color: #1e3a8a;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 6px 18px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+        .hero-content h1 .highlight {
+            background: #fde047;
+            padding: 0 8px;
+        }
+        .hero-content p {
+            font-size: 20px;
+            color: #374151;
+            max-width: 540px;
+            margin-bottom: 28px;
+        }
+        .hero-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f3f4f6;
+            padding: 12px 24px;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 15px;
+            margin-top: 16px;
+            width: fit-content;
+        }
+        .hero-badge i {
+            color: #0f1419;
+        }
+        .hero-image {
+            flex: 1 1 400px;
+            background: #e5e7eb;
+            border-radius: 32px;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #4b5563;
+            font-size: 18px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="%239ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.5"/><path d="M8 2v20M16 2v20M2 8h20M2 16h20"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 80px;
+        }
+
+        /* ---- client logos (proven results) ---- */
+        .logos-section {
+            padding: 40px 0 60px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .logos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            margin-top: 24px;
+        }
+        .logo-item {
+            font-weight: 600;
+            color: #6b7280;
+            font-size: 20px;
+            letter-spacing: -0.3px;
+            opacity: 0.6;
+        }
+
+        /* ---- testimonials (cards) ---- */
+        .testimonials {
+            padding: 60px 0 40px;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+        .testimonial-card {
+            background: #f9fafb;
+            padding: 28px 24px;
+            border-radius: 24px;
+            border: 1px solid #f3f4f6;
+        }
+        .testimonial-card .stars {
+            color: #fbbf24;
+            margin-bottom: 12px;
+        }
+        .testimonial-card p {
+            font-size: 16px;
+            color: #1f2937;
+            margin-bottom: 16px;
+        }
+        .testimonial-card .author {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            background: #d1d5db;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* ---- team (founders) ---- */
+        .team {
+            padding: 60px 0;
+        }
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            margin-top: 32px;
+        }
+        .team-member {
+            flex: 1 1 200px;
+        }
+        .team-member .avatar {
+            width: 80px;
+            height: 80px;
+            background: #d1d5db;
+            border-radius: 50%;
+            margin-bottom: 12px;
+        }
+        .team-member h4 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .team-member p {
+            color: #4b5563;
+        }
+
+        /* ---- process steps (3 columns) ---- */
+        .process {
+            padding: 60px 0 40px;
+        }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 32px;
+        }
+        .step {
+            border-left: 3px solid #0f1419;
+            padding-left: 20px;
+        }
+        .step .num {
+            font-size: 36px;
+            font-weight: 800;
+            color: #0f1419;
+            opacity: 0.2;
+            line-height: 1;
+        }
+        .step h4 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 8px 0 6px;
+        }
+
+        /* ---- pricing (3 cards) ---- */
+        .pricing {
+            padding: 60px 0 40px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+        .pricing-card {
+            background: #f9fafb;
+            padding: 32px 24px;
+            border-radius: 32px;
+            border: 1px solid #e5e7eb;
             text-align: center;
-            margin-top: 1rem;
+        }
+        .pricing-card.popular {
+            border: 2px solid #0f1419;
+            background: white;
+        }
+        .pricing-card .price {
+            font-size: 44px;
+            font-weight: 800;
+            margin: 12px 0;
+        }
+        .pricing-card .price small {
+            font-size: 16px;
+            font-weight: 400;
+            color: #6b7280;
+        }
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 24px 0;
+        }
+        .pricing-card ul li {
+            padding: 6px 0;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .pricing-card ul li i {
+            color: #0f1419;
+            width: 20px;
         }
 
-        /* ----- FOOTER ----- */
-        footer {
-            padding: 3rem 0 2rem 0;
-            border-top: 1px solid #eee8f7;
-            margin-top: 2rem;
+        /* ---- FAQ ---- */
+        .faq {
+            padding: 60px 0 40px;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px 48px;
+            margin-top: 32px;
+        }
+        .faq-item h4 {
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .faq-item p {
+            color: #4b5563;
         }
 
-        .footer-content {
+        /* ---- contact + calendar (2col) ---- */
+        .contact-section {
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #d1d5db;
+            border-radius: 16px;
+            margin: 10px 0;
+            font-family: inherit;
+            font-size: 16px;
+        }
+        .contact-form textarea {
+            min-height: 100px;
+        }
+
+        .calendar-box {
+            background: #f3f4f6;
+            border-radius: 32px;
+            padding: 40px 30px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .calendar-box .fake-cal {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 280px;
+            margin: 20px auto;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* footer */
+        .footer {
+            border-top: 1px solid #e5e7eb;
+            padding: 32px 0;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            align-items: center;
-            gap: 1.5rem;
+            gap: 20px;
+            color: #6b7280;
+            font-size: 14px;
         }
 
-        .footer-content .copy {
-            color: #7a6a92;
-            font-size: 0.9rem;
-        }
-
-        .footer-content .socials {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .footer-content .socials a {
-            color: #7a6a92;
-            text-decoration: none;
-            transition: 0.2s;
-            font-size: 1.2rem;
-        }
-
-        .footer-content .socials a:hover {
-            color: #7c3aed;
-        }
-
-        /* ----- RESPONSIVE ----- */
+        /* responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 0 1.2rem;
-            }
-
-            nav {
-                flex-wrap: wrap;
-                gap: 1rem;
-                padding: 1rem 0;
-            }
-
-            .nav-links {
-                gap: 1.2rem;
-                font-size: 0.85rem;
-                flex-wrap: wrap;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero {
-                padding: 2rem 0;
-                gap: 2rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                padding: 1.5rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-section {
-                padding: 2rem 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero-meta {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .brand-grid {
-                gap: 1.5rem;
-            }
-
-            .brand-item {
-                font-size: 0.9rem;
-            }
-
-            .pricing-card {
-                padding: 1.5rem;
-            }
+            .navbar { flex-direction: column; gap: 16px; align-items: flex-start; }
+            .nav-links { flex-wrap: wrap; gap: 20px; }
+            .hero-content h1 { font-size: 38px; }
+            .section-title { font-size: 32px; }
+            .faq-grid { grid-template-columns: 1fr; }
+            .contact-section { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-
-    <!-- ====== NAVIGATION ====== -->
     <div class="container">
-        <nav>
+
+        <!-- ====== NAV ====== -->
+        <header class="navbar">
             <div class="logo">
-                <i class="fas fa-play-circle"></i> AdsVSL
+                AdsVSL <span>PRO</span>
             </div>
             <div class="nav-links">
+                <a href="#">Clients</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Team</a>
                 <a href="#">Process</a>
                 <a href="#">Pricing</a>
                 <a href="#">FAQ</a>
-                <a href="#" class="nav-cta"><i class="fas fa-calendar-check"></i> Book a call</a>
             </div>
-        </nav>
-    </div>
+            <button class="nav-cta">Book a call</button>
+        </header>
 
-    <!-- ====== HERO ====== -->
-    <div class="container">
-        <div class="hero">
-            <div class="hero-left">
+        <!-- ====== HERO ====== -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-tag"><i class="fas fa-bolt" style="margin-right: 6px;"></i> For Agencies, Coaches & High-Ticket Service Brands</span>
+                <h1>Plug In Our <span class="highlight">Done-With-You</span> Meta Ads & VSL Funnel System For 5–7 Qualified Sales Calls Daily</h1>
+                <p>Powered By $5,000,000+ In Managed Ad Spend Across 250+ Brands <br><strong>Outcome:</strong> A Calendar That Stays Full Of Qualified, Pre-Sold Calls</p>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="#" class="btn-primary">Get started</a>
+                    <a href="#" class="btn-outline">See results</a>
+                </div>
                 <div class="hero-badge">
-                    <i class="fas fa-bolt"></i> For Agencies, Coaches & High-Ticket Brands
-                </div>
-                <h1>
-                    Plug In Our <span class="highlight">Done-With-You</span><br/>
-                    Meta Ads & VSL Funnel System
-                </h1>
-                <p class="hero-sub">
-                    <strong>5–7 Qualified Sales Calls Daily</strong> · Powered by $5M+ in managed ad spend across 250+ brands.
-                </p>
-                <div class="hero-meta">
-                    <span><i class="fas fa-check-circle"></i> 250+ brands</span>
-                    <span><i class="fas fa-dollar-sign"></i> $5M+ ad spend</span>
-                    <span><i class="fas fa-phone"></i> Pre-sold calls</span>
-                </div>
-                <div class="hero-cta">
-                    <button class="btn-primary"><i class="fas fa-arrow-right"></i> Book strategy call</button>
-                    <span style="color: #7a6a92; font-size: 0.9rem;">Outcome: A calendar full of qualified, pre-sold calls</span>
+                    <i class="fas fa-check-circle"></i> Proven Client Results
                 </div>
             </div>
-            <div class="hero-right">
-                <i class="fas fa-chart-line"></i>
-                <h3>Proven Client Results</h3>
-                <p>Calendar full of qualified, pre-sold calls</p>
+            <div class="hero-image">
+                <!-- placeholder image (abstract) -->
+                <span style="background: white; padding: 12px 24px; border-radius: 60px; font-weight: 600;">VSL demo</span>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- ====== BRANDS ====== -->
-    <div class="container">
-        <div class="brands-section">
-            <div class="label">Brands We've Scaled</div>
-            <div class="brand-grid">
-                <span class="brand-item"><i class="fas fa-building"></i> CoachAgency</span>
-                <span class="brand-item"><i class="fas fa-crown"></i> HighTicket Pro</span>
-                <span class="brand-item"><i class="fas fa-chart-pie"></i> Scale Brands</span>
-                <span class="brand-item"><i class="fas fa-users"></i> VSL Masters</span>
-                <span class="brand-item"><i class="fas fa-rocket"></i> MetaFlow</span>
-                <span class="brand-item"><i class="fas fa-bullseye"></i> FunnelPro</span>
+        <!-- ====== LOGOS (Brands We’ve Scaled) ====== -->
+        <section class="logos-section">
+            <p style="font-weight: 600; font-size: 18px; color: #4b5563; letter-spacing: 0.3px;">Brands We’ve Scaled</p>
+            <div class="logos-grid">
+                <span class="logo-item">Forbes</span>
+                <span class="logo-item">HubSpot</span>
+                <span class="logo-item">Notion</span>
+                <span class="logo-item">Salesforce</span>
+                <span class="logo-item">Intercom</span>
+                <span class="logo-item">Webflow</span>
             </div>
-        </div>
-    </div>
+            <p style="margin-top: 12px; color: #6b7280; font-size: 14px;">Companies we have worked with</p>
+        </section>
 
-    <!-- ====== TESTIMONIALS ====== -->
-    <div class="container">
-        <div class="testimonials">
-            <div class="section-header">
-                <h2>See what our customers have to say</h2>
-                <p>Real results from real clients</p>
-            </div>
+        <!-- ====== TESTIMONIALS ====== -->
+        <section class="testimonials">
+            <h2 class="section-title">See what our customer has to say</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <div class="quote"><i class="fas fa-quote-left"></i></div>
-                    <p>"Our calendar is full of pre-sold calls. This system is a game changer for our agency."</p>
-                    <div class="author">Sarah Mitchell</div>
-                    <div class="role">Agency Owner, ScaleHouse</div>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>“We went from 2 calls/week to 12+ qualified demos. The VSL system is a game changer.”</p>
+                    <div class="author"><span class="author-avatar"></span> Sarah K. · CEO, GrowthCo</div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="quote"><i class="fas fa-quote-left"></i></div>
-                    <p>"We went from 0 to 6 qualified calls a day in just 2 weeks. The VSL funnel works."</p>
-                    <div class="author">Mark Thompson</div>
-                    <div class="role">High-Ticket Coach</div>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>“Our pipeline is full of pre-sold calls. The funnel + follow-up sequence is pure gold.”</p>
+                    <div class="author"><span class="author-avatar"></span> James M. · Founder, LeadFlow</div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="quote"><i class="fas fa-quote-left"></i></div>
-                    <p>"Finally a done-with-you solution that actually delivers qualified leads consistently."</p>
-                    <div class="author">Rachel Williams</div>
-                    <div class="role">Founder, Elevate Brands</div>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>“Hands down the best investment we made. 5–7 calls daily, consistently.”</p>
+                    <div class="author"><span class="author-avatar"></span> Emily R. · Head of Sales, Omni</div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- ====== TEAM ====== -->
-    <div class="container">
-        <div class="team-section">
-            <div class="section-header">
-                <h2>Meet The Founders</h2>
-                <p>The team behind the system</p>
-            </div>
+        <!-- ====== TEAM ====== -->
+        <section class="team">
+            <h2 class="section-title">Meet The Founders</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <div class="team-avatar">JD</div>
-                    <div class="team-info">
-                        <h4>John Doe</h4>
-                        <p>Co-founder, Ads & Strategy</p>
-                    </div>
+                    <div class="avatar"></div>
+                    <h4>Alex Rivera</h4>
+                    <p>CEO, 15 years in performance marketing</p>
                 </div>
                 <div class="team-member">
-                    <div class="team-avatar">SM</div>
-                    <div class="team-info">
-                        <h4>Sarah Miller</h4>
-                        <p>Co-founder, Funnels & Ops</p>
-                    </div>
+                    <div class="avatar"></div>
+                    <h4>Jordan Lee</h4>
+                    <p>COO, ex-Google ads lead</p>
                 </div>
                 <div class="team-member">
-                    <div class="team-avatar">CR</div>
-                    <div class="team-info">
-                        <h4>Chris Rivera</h4>
-                        <p>Head of Creative</p>
-                    </div>
+                    <div class="avatar"></div>
+                    <h4>Taylor Chen</h4>
+                    <p>CTO, funnel & automation expert</p>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- ====== PROCESS ====== -->
-    <div class="container">
-        <div class="process-section">
-            <div class="section-header">
-                <h2>How it works?</h2>
-                <p>Your path to a full calendar of qualified calls</p>
-            </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="number">01</div>
-                    <h3>Map The Funnel</h3>
-                    <p>We map your offer, audience, and VSL script to maximize conversion.</p>
+        <!-- ====== PROCESS ====== -->
+        <section class="process">
+            <h2 class="section-title">How it works?</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="num">01</div>
+                    <h4>Map The Funnel</h4>
+                    <p>We blueprint your offer, audience, and VSL script for maximum conversion.</p>
                 </div>
-                <div class="process-step">
-                    <div class="number">02</div>
-                    <h3>Build & Launch</h3>
-                    <p>We build and launch your funnel within 7–10 days, so your ads start driving booked calls fast.</p>
+                <div class="step">
+                    <div class="num">02</div>
+                    <h4>Build & Launch</h4>
+                    <p>Full funnel build + ad creatives. Launch within 7–10 days.</p>
                 </div>
-                <div class="process-step">
-                    <div class="number">03</div>
-                    <h3>Fill Your Calendar</h3>
-                    <p>Qualified, pre-sold calls roll in daily. Your calendar stays full.</p>
+                <div class="step">
+                    <div class="num">03</div>
+                    <h4>Fill Your Calendar</h4>
+                    <p>Daily qualified calls start rolling in. We optimize continuously.</p>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- ====== PRICING ====== -->
-    <div class="container">
-        <div class="pricing-section">
-            <div class="section-header">
-                <h2>Choose the plan that scales your pipeline.</h2>
-                <p>Flexible options for every stage of growth</p>
-            </div>
+        <!-- ====== PRICING ====== -->
+        <section class="pricing">
+            <h2 class="section-title">Choose the plan that scales your pipeline.</h2>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <div class="plan">Starter</div>
-                    <div class="price">$2,500 <span>/mo</span></div>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> VSL + funnel setup</li>
-                        <li><i class="fas fa-check"></i> 1 offer mapped</li>
-                        <li><i class="fas fa-check"></i> Script templates</li>
-                        <li><i class="fas fa-check"></i> Weekly check-ins</li>
+                    <h3>Starter</h3>
+                    <div class="price">$1,500 <small>/mo</small></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Funnel setup</li>
+                        <li><i class="fas fa-check"></i> VSL script template</li>
+                        <li><i class="fas fa-check"></i> Basic ad creatives</li>
                     </ul>
-                    <button class="btn-outline">Get started</button>
+                    <a href="#" class="btn-outline" style="width: 100%; text-align: center;">Get started</a>
                 </div>
-                <div class="pricing-card featured">
-                    <div class="plan">Pro</div>
-                    <div class="price">$5,000 <span>/mo</span></div>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Done-with-you system</li>
-                        <li><i class="fas fa-check"></i> Full ads + funnel</li>
-                        <li><i class="fas fa-check"></i> Creative + copy</li>
-                        <li><i class="fas fa-check"></i> Monthly strategy call</li>
+                <div class="pricing-card popular">
+                    <h3>Pro <span style="background: #0f1419; color: white; padding: 2px 12px; border-radius: 40px; font-size: 12px;">popular</span></h3>
+                    <div class="price">$3,200 <small>/mo</small></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Done-with-you funnel</li>
+                        <li><i class="fas fa-check"></i> Full VSL production</li>
+                        <li><i class="fas fa-check"></i> Ad management</li>
+                        <li><i class="fas fa-check"></i> Follow-up sequence</li>
                     </ul>
-                    <button class="btn-primary-full">Book a call</button>
+                    <a href="#" class="btn-primary" style="width: 100%; text-align: center;">Start scaling</a>
                 </div>
                 <div class="pricing-card">
-                    <div class="plan">Agency</div>
-                    <div class="price">$9,000 <span>/mo</span></div>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> White-label solution</li>
-                        <li><i class="fas fa-check"></i> 3 funnels</li>
-                        <li><i class="fas fa-check"></i> Ongoing optimization</li>
-                        <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Multi-funnel setup</li>
+                        <li><i class="fas fa-check"></i> Dedicated team</li>
+                        <li><i class="fas fa-check"></i> Full-stack analytics</li>
                     </ul>
-                    <button class="btn-outline">Contact sales</button>
+                    <a href="#" class="btn-outline" style="width: 100%; text-align: center;">Contact us</a>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- ====== FAQ ====== -->
-    <div class="container">
-        <div class="faq-section">
-            <div class="section-header">
-                <h2>Questions, Answered</h2>
-                <p>Everything you need to know</p>
+        <!-- ====== FAQ ====== -->
+        <section class="faq">
+            <h2 class="section-title">Questions, Answered</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Who is this for?</h4>
+                    <p>Agencies, coaches, and high-ticket service brands that want a steady flow of qualified, pre-sold sales calls.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How long does it take to get live?</h4>
+                    <p>Most funnels are built and launched within 7–10 days, so your ads start driving booked calls fast.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How quickly can I see results?</h4>
+                    <p>Many clients see qualified calls within the first few weeks, with booked calls building steadily from there.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What makes this different from a traditional ads agency?</h4>
+                    <p>We install a done-with-you funnel and VSL system, not just ads — creative, funnel, and follow-up combined.</p>
+                </div>
+                <div class="faq-item" style="grid-column: 1 / -1;">
+                    <h4>Is there a minimum contract?</h4>
+                    <p>We work in short, flexible terms and earn your business through results, not long lock-in commitments.</p>
+                </div>
             </div>
-            <div class="faq-item">
-                <h4>Who is this for?</h4>
-                <p>Agencies, coaches, and high-ticket service brands that want a steady flow of qualified, pre-sold sales calls.</p>
-            </div>
-            <div class="faq-item">
-                <h4>How long does it take to get live?</h4>
-                <p>Most funnels are built and launched within 7–10 days, so your ads start driving booked calls fast.</p>
-            </div>
-            <div class="faq-item">
-                <h4>How quickly can I see results?</h4>
-                <p>Many clients see qualified calls within the first few weeks, with booked calls building steadily from there.</p>
-            </div>
-            <div class="faq-item">
-                <h4>What makes this different from a traditional ads agency?</h4>
-                <p>We install a done-with-you funnel and VSL system, not just ads — creative, funnel, and follow-up combined.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Is there a minimum contract?</h4>
-                <p>We work in short, flexible terms and earn your business through results, not long lock-in commitments.</p>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- ====== CONTACT + CALENDAR ====== -->
-    <div class="container">
-        <div class="contact-section">
-            <div class="section-header">
-                <h2>Send us a message.</h2>
-                <p>We read every message personally and reply within 24 hours (usually less).</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-form">
+        <!-- ====== CONTACT + CALENDAR ====== -->
+        <section class="contact-section">
+            <div class="contact-form">
+                <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">Send us a message.</h3>
+                <p style="color: #4b5563; margin-bottom: 20px;">We read every message personally and reply within 24 hours (usually less).</p>
+                <form>
                     <input type="text" placeholder="Name" />
                     <input type="text" placeholder="Monthly Ad Budget" />
                     <textarea placeholder="Message"></textarea>
-                    <button class="btn-submit"><i class="fas fa-paper-plane"></i> Send message</button>
-                </div>
-                <div>
-                    <h4 style="font-weight: 700; margin-bottom: 0.5rem;">
-                        <i class="fas fa-calendar-alt" style="color: #7c3aed;"></i> Or let's map your funnel.
-                    </h4>
-                    <p style="color: #5a4a72; font-size: 0.95rem; margin-bottom: 1.5rem;">
-                        Free 30-minute strategy calls. No pressure, just a clear plan for filling your calendar with qualified calls.
-                    </p>
-                    <div class="calendar-embed">
-                        <h4>Book your strategy call</h4>
-                        <div class="sub">Select a time that works for you</div>
-                        <div class="calendar-grid">
-                            <span class="day header">M</span>
-                            <span class="day header">T</span>
-                            <span class="day header">W</span>
-                            <span class="day header">T</span>
-                            <span class="day header">F</span>
-                            <span class="day header">S</span>
-                            <span class="day header">S</span>
-                            <span class="day">15</span>
-                            <span class="day active">16</span>
-                            <span class="day available">17</span>
-                            <span class="day">18</span>
-                            <span class="day available">19</span>
-                            <span class="day">20</span>
-                            <span class="day">21</span>
-                            <span class="day available">22</span>
-                            <span class="day">23</span>
-                            <span class="day available">24</span>
-                            <span class="day">25</span>
-                            <span class="day available">26</span>
-                            <span class="day">27</span>
-                            <span class="day">28</span>
-                        </div>
-                        <div class="calendar-slot">
-                            <span class="label"><i class="fas fa-video"></i> Strategy call · 30 min</span>
-                            <span class="free">Free</span>
-                        </div>
-                        <div class="calendar-slot" style="background: #f0ebf9;">
-                            <span class="label"><i class="fas fa-clipboard-list"></i> Funnel audit · 45 min</span>
-                            <span class="free">Existing clients</span>
-                        </div>
-                        <button class="btn-book"><i class="fas fa-calendar-plus"></i> Book a slot</button>
-                        <div class="footnote">Embed your booking calendar here so prospects can pick a slot and book a call directly.</div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Send message</button>
+                </form>
+            </div>
+            <div class="calendar-box">
+                <h3 style="font-size: 24px; font-weight: 700;">Or let’s map your funnel.</h3>
+                <p style="color: #374151; margin: 8px 0 12px;">Free 30-minute strategy calls. No pressure, just a clear plan.</p>
+                <div class="fake-cal">
+                    <div style="display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 12px;">
+                        <span>April 2026</span>
+                        <span><i class="fas fa-chevron-left"></i> <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(7,1fr); gap: 4px; font-size: 13px; text-align: center;">
+                        <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+                        <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+                        <span>15</span><span style="background: #0f1419; color: white; border-radius: 50%;">16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+                    </div>
+                    <div style="margin-top: 12px; background: #f3f4f6; border-radius: 30px; padding: 6px 12px; font-size: 14px;">
+                        <i class="far fa-calendar-alt"></i> Strategy call · 30 min · Free
                     </div>
                 </div>
+                <p style="font-size: 14px; margin-top: 12px; color: #6b7280;">Embed your booking calendar here</p>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- ====== FOOTER ====== -->
-    <div class="container">
-        <footer>
-            <div class="footer-content">
-                <div class="copy">
-                    &copy; 2026 AdsVSL — Meta Ads &amp; VSL Funnel Template
-                </div>
-                <div class="socials">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
+        <!-- ====== FOOTER ====== -->
+        <footer class="footer">
+            <div>© 2026 AdsVSL Pro — Meta Ads & VSL Funnel</div>
+            <div style="display: flex; gap: 24px;">
+                <a href="#" style="color: #6b7280; text-decoration: none;">Privacy</a>
+                <a href="#" style="color: #6b7280; text-decoration: none;">Terms</a>
+                <a href="#" style="color: #6b7280; text-decoration: none;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: #6b7280; text-decoration: none;"><i class="fab fa-linkedin"></i></a>
             </div>
         </footer>
-    </div>
 
+    </div> <!-- end container -->
 </body>
 </html>
