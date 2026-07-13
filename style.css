@@ -431,3 +431,25 @@ section { position: relative; z-index: 2; padding: 120px 6vw; }
 .footer-brand { font-family: var(--display); font-weight: 600; font-size: 14px; color: var(--text); }
 .footer-tag { color: var(--text-dimmer); }
 .footer-links { flex-direction: row; gap: 16px; }
+
+/* ===== NAV LINKS ===== */
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { font-size: 14px; color: var(--text-dim); transition: color 0.25s ease; }
+.nav-links a:hover { color: var(--text); }
+@media (max-width: 760px) { .nav-links { display: none; } }
+
+/* ===== INTRO STATEMENT ===== */
+.intro-statement { padding: 100px 6vw 60px; text-align: center; }
+.intro-cta { margin-top: 32px; }
+
+/* ===== RESULTS / MINI CASE STUDIES ===== */
+.results { background: var(--bg-elev); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 130px 6vw; }
+.results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1000px; margin: 56px auto 0; }
+@media (max-width: 800px) { .results-grid { grid-template-columns: 1fr; } }
+.result-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px 26px; text-align: center; }
+.result-num {
+  display: block; font-family: var(--display); font-weight: 700; font-size: clamp(36px, 5vw, 52px);
+  color: transparent; background: var(--gradient); -webkit-background-clip: text; background-clip: text;
+  margin-bottom: 14px;
+}
+.result-label { font-size: 14px; color: var(--text-dim); line-height: 1.5; }
