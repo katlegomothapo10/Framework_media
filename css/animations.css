@@ -1,0 +1,144 @@
+/*==========================================================
+GLOW
+==========================================================*/
+
+@keyframes glow{
+
+    0%{
+
+        box-shadow:0 0 0 rgba(124,92,255,0);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 35px rgba(124,92,255,.35);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 rgba(124,92,255,0);
+
+    }
+
+}
+
+.primary-btn:hover{
+
+    animation:
+
+    gradientShift 8s linear infinite,
+
+    glow 2s ease infinite;
+
+}
+
+/*==========================================================
+SECTION REVEAL
+==========================================================*/
+
+.show{
+
+    animation:
+
+    fadeUp .9s var(--ease);
+
+}
+
+/*==========================================================
+GLASS SHIMMER
+==========================================================*/
+
+@keyframes shimmer{
+
+    from{
+
+        background-position:-300px;
+
+    }
+
+    to{
+
+        background-position:300px;
+
+    }
+
+}
+
+.glass::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.05),
+
+        transparent
+
+    );
+
+    background-size:300px 100%;
+
+    animation:shimmer 5s linear infinite;
+
+    pointer-events:none;
+
+}
+
+/*==========================================================
+PULSE
+==========================================================*/
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.04);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.timeline-number{
+
+    animation:pulse 5s infinite;
+
+}
+
+/*==========================================================
+SMOOTH HOVER
+==========================================================*/
+
+button,
+a,
+.service-card,
+.pricing-card,
+.result-card,
+.credibility-card{
+
+    will-change:transform;
+
+}
