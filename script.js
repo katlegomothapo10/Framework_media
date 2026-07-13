@@ -131,7 +131,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 });
 
 // ===== Extra reveal: proof items, diff rows, offer items, why rows =====
-const extraReveal = document.querySelectorAll('.proof-item, .diff-row:not(.diff-head), .offer-item, .offer-tier, .why-row, .story-line');
+const extraReveal = document.querySelectorAll('.proof-item, .diff-row:not(.diff-head), .offer-item, .offer-tier, .why-row, .story-line, .result-card');
 if (hasGSAP && !reduceMotion) {
   extraReveal.forEach((el) => {
     gsap.fromTo(el,
