@@ -31,7 +31,7 @@
             background: #ffffff;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--black);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .container {
@@ -82,14 +82,15 @@
             background: var(--black);
             color: white;
             border: none;
-            padding: 10px 24px;
+            padding: 8px 20px;
             border-radius: 40px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             cursor: pointer;
             transition: 0.3s;
             display: inline-block;
             text-decoration: none;
+            margin-top: 12px;
         }
         .btn-small:hover {
             background: #2a2f35;
@@ -143,7 +144,7 @@
             margin: 0 auto 16px;
         }
 
-        /* ===== NAVBAR — CENTERED LOGO ONLY ===== */
+        /* ===== NAVBAR ===== */
         .navbar {
             display: flex;
             justify-content: center;
@@ -264,7 +265,7 @@
             border-top: 1px solid #e5e7eb;
         }
 
-        /* ===== SHOWCASE (3 cards) ===== */
+        /* ===== SHOWCASE ===== */
         .showcase-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -600,37 +601,53 @@
             color: #4b5563;
         }
 
-        /* ===== PRICING — Individual ===== */
-        .pricing-individual-grid {
+        /* ===== INDIVIDUAL SERVICES ===== */
+        .services-detailed-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
             margin-top: 16px;
-            margin-bottom: 40px;
         }
-        .pricing-item {
+        .service-detailed-card {
             background: #f9fafb;
-            padding: 16px 20px;
-            border-radius: 16px;
+            padding: 28px 24px;
+            border-radius: 20px;
             border: 1px solid #e5e7eb;
-            text-align: center;
             transition: 0.3s;
+            text-align: left;
         }
-        .pricing-item:hover {
+        .service-detailed-card:hover {
             border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.08);
         }
-        .pricing-item h4 {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 4px;
+        .service-detailed-card .icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+            display: block;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .pricing-item .price {
+        .service-detailed-card h4 {
             font-size: 18px;
             font-weight: 700;
+            margin-bottom: 2px;
+        }
+        .service-detailed-card .price {
+            font-size: 20px;
+            font-weight: 700;
             color: var(--purple);
+            margin-bottom: 8px;
+        }
+        .service-detailed-card .description {
+            color: #4b5563;
+            font-size: 14px;
+            line-height: 1.7;
         }
 
-        /* ===== PRICING — Bundles ===== */
+        /* ===== BUNDLE PACKAGES ===== */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -897,6 +914,9 @@
             .showcase-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .services-detailed-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
             .pricing-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -923,6 +943,10 @@
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
+            .services-detailed-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
             .pricing-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -942,9 +966,6 @@
             .step:hover {
                 border-top-color: var(--pink);
             }
-            .pricing-individual-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
             .trusted-grid {
                 grid-template-columns: 1fr;
             }
@@ -959,9 +980,6 @@
             }
             .container {
                 padding: 0 16px;
-            }
-            .pricing-individual-grid {
-                grid-template-columns: 1fr 1fr;
             }
             .footer {
                 flex-direction: column;
@@ -1205,51 +1223,116 @@
             </div>
         </section>
 
-        <!-- ====== PRICING — INDIVIDUAL ====== -->
+        <!-- ====== INDIVIDUAL SERVICES ====== -->
         <section class="section" id="pricing">
             <div class="section-header">
-                <span class="pill pill-reveal">Pricing</span>
-                <h2 class="section-title">Individual Services</h2>
+                <span class="pill pill-reveal">Individual Services</span>
+                <h2 class="section-title">Pay-as-you-go — no commitment required.</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Pay-as-you-go — no commitment required.</p>
+                <p class="section-sub">Pick and choose exactly what you need. All services are delivered within 3–5 days.</p>
             </div>
-            <div class="pricing-individual-grid">
-                <div class="pricing-item reveal">
-                    <h4>Script (single)</h4>
+
+            <div class="services-detailed-grid">
+
+                <!-- 1. Script Writing -->
+                <div class="service-detailed-card reveal">
+                    <span class="icon"><i class="fas fa-pen-fancy"></i></span>
+                    <h4>Script Writing</h4>
                     <div class="price">R350</div>
+                    <div class="description">
+                        A high‑converting script written using our proven Hook–Body–CTA framework. Perfect for a single video. Includes retention engineering notes and is delivered in 24–48 hours.
+                    </div>
+                    <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-                <div class="pricing-item reveal">
-                    <h4>Content Audit (full)</h4>
+
+                <!-- 2. Content Audit -->
+                <div class="service-detailed-card reveal">
+                    <span class="icon"><i class="fas fa-search"></i></span>
+                    <h4>Content Audit</h4>
                     <div class="price">R1,500</div>
+                    <div class="description">
+                        A forensic review of your last 10–15 posts. We break down what's working, what's not, and exactly how to fix it. Includes a full improvement plan delivered in 3–5 days.
+                    </div>
+                    <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-                <div class="pricing-item reveal">
-                    <h4>Hook Diagnosis (single)</h4>
+
+                <!-- 3. Hook Diagnosis -->
+                <div class="service-detailed-card reveal">
+                    <span class="icon"><i class="fas fa-bullseye"></i></span>
+                    <h4>Hook Diagnosis</h4>
                     <div class="price">R200</div>
+                    <div class="description">
+                        The first 3 seconds make or break a video. We analyse your current hook and rewrite it to stop the scroll instantly. Delivered in 12–24 hours.
+                    </div>
+                    <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-                <div class="pricing-item reveal">
+
+                <!-- 4. Video Editing — Reels/TikTok -->
+                <div class="service-detailed-card reveal">
+                    <span class="icon"><i class="fas fa-film"></i></span>
                     <h4>Video Editing — Reels/TikTok</h4>
                     <div class="price">R600</div>
+                    <div class="description">
+                        Done‑for‑you editing for short‑form content. We handle pacing, retention, captions, and sound design to keep viewers watching. Delivered in 48–72 hours.
+                    </div>
+                    <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-                <div class="pricing-item reveal">
+
+                <!-- 5. Video Editing — YouTube -->
+                <div class="service-detailed-card reveal">
+                    <span class="icon"><i class="fas fa-video"></i></span>
                     <h4>Video Editing — YouTube</h4>
                     <div class="price">R1,200</div>
+                    <div class="description">
+                        Full‑length YouTube video editing. We handle pacing, B‑roll, transitions, and thumbnail creation to keep viewers engaged. Delivered in 3–5 days.
+                    </div>
+                    <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-                <div class="pricing-item reveal">
+
+                <!-- 6. Full Production — Shortform -->
+                <div class="service-detailed-card reveal">
+                    <span class="icon"><i class="fas fa-play-circle"></i></span>
                     <h4>Full Production — Shortform</h4>
                     <div class="price">R1,000</div>
+                    <div class="description">
+                        The complete package: script + edit for a Reel or TikTok. We handle everything from idea to final output — including retention engineering. Delivered in 3–5 days.
+                    </div>
+                    <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-                <div class="pricing-item reveal">
+
+                <!-- 7. Full Production — YouTube -->
+                <div class="service-detailed-card reveal">
+                    <span class="icon"><i class="fas fa-play-circle"></i></span>
                     <h4>Full Production — YouTube</h4>
                     <div class="price">R2,000</div>
+                    <div class="description">
+                        End‑to‑end production for YouTube: script, edit, B‑roll, transitions, and thumbnail. Everything you need for a high‑performing video. Delivered in 5–7 days.
+                    </div>
+                    <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-                <div class="pricing-item reveal">
+
+                <!-- 8. Monetisation Consulting -->
+                <div class="service-detailed-card reveal">
+                    <span class="icon"><i class="fas fa-chart-line"></i></span>
                     <h4>Monetisation Consulting</h4>
                     <div class="price">R1,500</div>
+                    <div class="description">
+                        Rate cards, pitch sequences, and deal tracking — built from real experience closing brand deals across platforms. Includes a 45‑minute strategy call.
+                    </div>
+                    <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-                <div class="pricing-item reveal">
-                    <h4>Coaching-Lite (per call)</h4>
+
+                <!-- 9. Coaching-Lite -->
+                <div class="service-detailed-card reveal">
+                    <span class="icon"><i class="fas fa-brain"></i></span>
+                    <h4>Coaching‑Lite</h4>
                     <div class="price">R800</div>
+                    <div class="description">
+                        Personal brand positioning advice. We align your messaging, voice, and strategy so you attract the right audience. Includes a 60‑minute strategy call.
+                    </div>
+                    <a href="#contact" class="btn-small">Order Now</a>
                 </div>
+
             </div>
 
             <!-- ====== BUNDLE PACKAGES ====== -->
@@ -1259,6 +1342,7 @@
                 <div class="accent-line"></div>
                 <p class="section-sub">Save with our done-for-you content systems.</p>
             </div>
+
             <div class="pricing-grid">
                 <div class="pricing-card reveal">
                     <h3>Starter</h3>
@@ -1269,7 +1353,7 @@
                         <li><i class="fas fa-check"></i> 1 audit with edits</li>
                     </ul>
                     <p style="font-size: 14px; color: #6b7280; font-style: italic;">Perfect for creators getting serious about consistency.</p>
-                    <a href="#contact" class="btn-small" style="margin-top: 8px;">Get Starter Quote</a>
+                    <a href="#contact" class="btn-small">Get Starter Quote</a>
                 </div>
                 <div class="pricing-card popular reveal">
                     <h3>Growth</h3>
@@ -1281,7 +1365,7 @@
                         <li><i class="fas fa-check"></i> Monthly audit</li>
                     </ul>
                     <p style="font-size: 14px; color: #6b7280; font-style: italic;">For brands and creators ready to scale.</p>
-                    <a href="#contact" class="btn-small" style="margin-top: 8px;">Get Growth Quote</a>
+                    <a href="#contact" class="btn-small">Get Growth Quote</a>
                 </div>
                 <div class="pricing-card reveal">
                     <h3>Full System</h3>
@@ -1293,7 +1377,7 @@
                         <li><i class="fas fa-check"></i> Monetisation consulting</li>
                     </ul>
                     <p style="font-size: 14px; color: #6b7280; font-style: italic;">The complete system. For well-funded operators.</p>
-                    <a href="#contact" class="btn-small" style="margin-top: 8px;">Get Full System Quote</a>
+                    <a href="#contact" class="btn-small">Get Full System Quote</a>
                 </div>
             </div>
         </section>
