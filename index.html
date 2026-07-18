@@ -484,7 +484,7 @@
             opacity: 0.6;
         }
 
-        /* ===== PROCESS — 4 STEPS ===== */
+        /* ===== PROCESS — 4 STEPS (Bigger Images) ===== */
         .process-steps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -496,7 +496,7 @@
             text-align: center;
             background: #f9fafb;
             border-radius: 24px;
-            padding: 28px 20px 24px;
+            padding: 32px 20px 28px;
             border: 1px solid #e5e7eb;
             transition: 0.3s;
         }
@@ -508,13 +508,19 @@
         }
 
         .step-image {
-            margin: -48px auto 12px;
+            margin: -56px auto 16px;
             width: 100%;
-            max-width: 200px;
-            border-radius: 16px;
+            max-width: 260px;
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .step-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
         }
 
         .step-image img {
@@ -533,15 +539,17 @@
         }
 
         .step h4 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
             margin: 4px 0 8px;
         }
 
         .step p {
             color: #4b5563;
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.7;
+            max-width: 280px;
+            margin: 0 auto;
         }
 
         /* ===== FOUNDER ===== */
@@ -765,36 +773,133 @@
             padding: 0 24px 20px;
         }
 
-        /* ===== CONTACT — CALENDAR ONLY ===== */
+        /* ===== CONTACT — QUESTIONNAIRE + CALENDAR ===== */
         .contact-section {
             padding: 60px 0;
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             border-top: 1px solid #e5e7eb;
         }
+
+        .contact-form input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #d1d5db;
+            border-radius: 16px;
+            margin: 8px 0;
+            font-family: inherit;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .contact-form input:focus {
+            border-color: var(--purple);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+        .contact-form h3,
+        .contact-form p {
+            text-align: left;
+        }
+
+        .service-btn {
+            background: #f3f4f6;
+            border: 2px solid #e5e7eb;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+            color: #4b5563;
+            font-family: inherit;
+        }
+        .service-btn:hover {
+            border-color: var(--purple);
+            background: var(--gradient-subtle);
+        }
+        .service-btn.selected {
+            background: var(--gradient);
+            color: white;
+            border-color: var(--purple);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+        }
+
         .calendar-box {
             background: var(--gradient-subtle);
             border-radius: 32px;
-            padding: 48px 40px;
-            max-width: 600px;
-            width: 100%;
+            padding: 40px 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             border: 2px solid var(--purple);
         }
+        .calendar-box .mandatory-badge {
+            font-size: 12px;
+            color: var(--purple);
+            font-weight: 600;
+            background: rgba(139, 92, 246, 0.1);
+            padding: 4px 16px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
         .calendar-box h3 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
         }
         .calendar-box p {
             color: #374151;
-            margin: 8px 0 16px;
+            margin: 8px 0 12px;
         }
-        .calendar-box .btn-primary {
+        .calendar-box .fake-cal {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
             width: 100%;
+            max-width: 320px;
+            margin: 12px auto;
+            border: 1px solid #e5e7eb;
+        }
+        .calendar-box .fake-cal .selected-date {
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
             text-align: center;
+        }
+        .calendar-box .time-slots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            max-width: 320px;
+            width: 100%;
+            margin: 12px auto 0;
+        }
+        .calendar-box .time-slots .time-btn {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 40px;
+            padding: 6px 10px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+            color: var(--black);
+            font-family: inherit;
+        }
+        .calendar-box .time-slots .time-btn:hover {
+            border-color: var(--purple);
+            background: var(--gradient-subtle);
+        }
+        .calendar-box .time-slots .time-btn.selected {
+            background: var(--gradient);
+            color: white;
+            border-color: var(--purple);
         }
 
         /* ===== FOOTER ===== */
@@ -883,6 +988,7 @@
             .services-detailed-grid { grid-template-columns: repeat(2, 1fr); }
             .pricing-grid { grid-template-columns: repeat(2, 1fr); }
             .process-steps { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            .contact-section { grid-template-columns: 1fr; gap: 40px; }
         }
 
         @media (max-width: 768px) {
@@ -894,14 +1000,16 @@
             .services-detailed-grid { grid-template-columns: 1fr; gap: 16px; }
             .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
             .process-steps { grid-template-columns: 1fr; max-width: 400px; margin: 32px auto 0; }
-            .step { padding: 20px 16px 20px; }
-            .step-image { max-width: 140px; margin-top: -36px; }
+            .step { padding: 24px 16px 20px; }
+            .step-image { max-width: 200px; margin-top: -48px; }
             .calendar-box { padding: 32px 20px; }
             .carousel-slide { grid-template-columns: 1fr !important; }
             .slide-item { border-right: none; border-bottom: 1px solid #e5e7eb; padding: 20px 16px; }
             .slide-item:last-child { border-bottom: none; }
             .carousel-btn { width: 40px; height: 40px; font-size: 14px; }
             .slide-item img, .slide-item video { max-height: 300px; }
+            .contact-form h3, .contact-form p { text-align: center; }
+            .calendar-box .time-slots { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 480px) {
@@ -916,7 +1024,9 @@
             .founder-image { width: 120px; height: 120px; }
             .slide-item { padding: 16px 12px; }
             .slide-item img, .slide-item video { max-height: 200px; }
-            .step-image { max-width: 120px; margin-top: -30px; }
+            .step-image { max-width: 160px; margin-top: -40px; }
+            .service-btn { font-size: 11px; padding: 5px 12px; }
+            .calendar-box .time-slots { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -943,8 +1053,8 @@
             </div>
 
             <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Apply Now</a>
-                <a href="#process" class="btn-outline">See how it works</a>
+                <a href="#contact" class="btn-primary">Start Your Project</a>
+                <a href="#process" class="btn-outline">Explore Our Framework</a>
             </div>
         </section>
 
@@ -996,7 +1106,7 @@
             <div class="showcase-cta">
                 <h3>Ready to be our next case study?</h3>
                 <p>Apply now and start seeing real results.</p>
-                <a href="#contact" class="btn-primary">Apply Now</a>
+                <a href="#contact" class="btn-primary">See What's Possible</a>
             </div>
         </section>
 
@@ -1076,7 +1186,7 @@
             </div>
         </section>
 
-        <!-- ====== HOW IT WORKS — 4 STEPS ====== -->
+        <!-- ====== PROCESS — 4 STEPS (Fixed Copy, Bigger Images) ====== -->
         <section class="section" id="process">
             <div class="section-header">
                 <span class="pill pill-reveal">Process</span>
@@ -1324,13 +1434,76 @@
             </div>
         </section>
 
-        <!-- ====== CONTACT — CALENDAR ONLY ====== -->
+        <!-- ====== CONTACT — QUESTIONNAIRE + CALENDAR ====== -->
         <section class="contact-section" id="contact">
+            <div class="contact-form">
+                <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">Let's map your content system.</h3>
+                <p style="color: #4b5563; margin-bottom: 20px;">Fill in your details and tell us what you need — we'll get back to you within 24 hours.</p>
+
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <input type="text" id="firstName" placeholder="First Name" required />
+                        <input type="text" id="lastName" placeholder="Surname" required />
+                    </div>
+                    <input type="email" id="email" placeholder="Email Address" required />
+
+                    <label style="font-weight: 600; font-size: 14px; display: block; margin-top: 12px; margin-bottom: 6px; color: #0f1419;">Which service are you interested in?</label>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+                        <button type="button" class="service-btn" data-value="script-writing" onclick="toggleService(this)">Script Writing</button>
+                        <button type="button" class="service-btn" data-value="content-audit" onclick="toggleService(this)">Content Audit</button>
+                        <button type="button" class="service-btn" data-value="hook-diagnosis" onclick="toggleService(this)">Hook Diagnosis</button>
+                        <button type="button" class="service-btn" data-value="video-editing" onclick="toggleService(this)">Video Editing</button>
+                        <button type="button" class="service-btn" data-value="production" onclick="toggleService(this)">Full Production</button>
+                        <button type="button" class="service-btn" data-value="monetisation" onclick="toggleService(this)">Monetisation</button>
+                        <button type="button" class="service-btn" data-value="coaching" onclick="toggleService(this)">Coaching‑Lite</button>
+                        <button type="button" class="service-btn" data-value="bundle" onclick="toggleService(this)">Bundle Package</button>
+                        <button type="button" class="service-btn" data-value="not-sure" onclick="toggleService(this)">Not Sure Yet</button>
+                    </div>
+                    <input type="hidden" id="selectedService" value="" />
+
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">Send Enquiry</button>
+                </form>
+            </div>
+
+            <!-- Calendar Box -->
             <div class="calendar-box">
+                <span class="mandatory-badge"><i class="fas fa-asterisk" style="font-size: 10px; margin-right: 4px;"></i> Required</span>
                 <h3>Book your strategy call.</h3>
                 <p>Free 30-minute calls. No pressure, just a clear plan for your content.</p>
-                <a href="https://calendly.com/your-link-here" target="_blank" class="btn-primary">
-                    Book a strategy call <i class="fas fa-arrow-right"></i>
+
+                <div class="fake-cal">
+                    <div style="display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 12px;">
+                        <span>April 2026</span>
+                        <span><i class="fas fa-chevron-left"></i> <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(7,1fr); gap: 4px; font-size: 13px; text-align: center;">
+                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">Mo</span>
+                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">Tu</span>
+                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">We</span>
+                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">Th</span>
+                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">Fr</span>
+                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">Sa</span>
+                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">Su</span>
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+                        <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+                        <span>15</span><span class="selected-date">16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+                    </div>
+                    <div style="margin-top: 12px; background: var(--gradient-subtle); border-radius: 30px; padding: 6px 12px; font-size: 14px; border: 1px solid rgba(139, 92, 246, 0.1);">
+                        <i class="far fa-calendar-alt" style="color: var(--purple);"></i> Strategy call · 30 min · Free
+                    </div>
+                </div>
+
+                <div class="time-slots">
+                    <button class="time-btn" onclick="selectTime(this)">9:00 AM</button>
+                    <button class="time-btn" onclick="selectTime(this)">10:00 AM</button>
+                    <button class="time-btn" onclick="selectTime(this)">11:00 AM</button>
+                    <button class="time-btn" onclick="selectTime(this)">1:00 PM</button>
+                    <button class="time-btn" onclick="selectTime(this)">2:00 PM</button>
+                    <button class="time-btn" onclick="selectTime(this)">3:00 PM</button>
+                </div>
+
+                <a href="https://calendly.com/your-link-here" target="_blank" class="btn-primary" style="margin-top: 16px; width: 100%;">
+                    Book a Discovery Call <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </section>
@@ -1479,6 +1652,58 @@
                 if (e.key === 'ArrowLeft') prevSlide();
             });
         })();
+
+        // ===== SERVICE BUTTON TOGGLE =====
+        function toggleService(button) {
+            document.querySelectorAll('.service-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            button.classList.add('selected');
+            document.getElementById('selectedService').value = button.getAttribute('data-value');
+        }
+
+        // ===== TIME SLOT SELECTION =====
+        function selectTime(button) {
+            document.querySelectorAll('.time-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            button.classList.add('selected');
+        }
+
+        // ===== FORM SUBMISSION =====
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('selectedService').value;
+            const selectedTime = document.querySelector('.time-btn.selected');
+
+            if (!firstName || !lastName || !email) {
+                alert('Please fill in your name, surname, and email.');
+                return;
+            }
+
+            if (!service) {
+                alert('Please select a service you\'re interested in.');
+                return;
+            }
+
+            if (!selectedTime) {
+                alert('Please select a time for your strategy call.');
+                return;
+            }
+
+            const timeText = selectedTime.textContent;
+            const message = `New Inquiry from Framework Media:%0A%0AName: ${firstName} ${lastName}%0AEmail: ${email}%0AService Interested In: ${service.replace(/-/g, ' ').toUpperCase()}%0APreferred Call Time: ${timeText}%0A%0APlease follow up within 24 hours.`;
+
+            window.location.href = `mailto:hello@frameworkmedia.co.za?subject=New Inquiry from ${firstName} ${lastName}&body=${message}`;
+
+            alert('Thank you! We\'ll get back to you within 24 hours.');
+            document.getElementById('contactForm').reset();
+            document.querySelectorAll('.service-btn, .time-btn').forEach(btn => btn.classList.remove('selected'));
+        }
     </script>
 
 </body>
