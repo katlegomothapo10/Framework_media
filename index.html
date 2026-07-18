@@ -382,6 +382,10 @@
             text-align: center;
             min-height: 380px;
             background: #f9fafb;
+            border-right: 1px solid #e5e7eb;
+        }
+        .slide-item:last-child {
+            border-right: none;
         }
 
         .slide-item .label {
@@ -413,15 +417,17 @@
 
         .slide-item img {
             width: 100%;
-            max-width: 500px;
+            max-width: 420px;
             border-radius: 16px;
             border: 1px solid #e5e7eb;
         }
 
-        .slide-item .wide-img {
-            max-width: 100%;
-            border-radius: 0;
-            border: none;
+        .slide-item video {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            background: #000;
         }
 
         .carousel-controls {
@@ -859,7 +865,7 @@
             .slide-item { min-height: 280px; padding: 24px 20px; border-right: none; border-bottom: 1px solid #e5e7eb; }
             .slide-item:last-child { border-bottom: none; }
             .carousel-btn { width: 40px; height: 40px; font-size: 14px; }
-            .slide-item img { max-width: 100%; }
+            .slide-item img, .slide-item video { max-width: 100%; }
         }
 
         @media (max-width: 480px) {
@@ -967,10 +973,15 @@
             <div class="carousel-wrapper">
                 <div class="carousel-track" id="carouselTrack">
 
-                    <!-- ===== SLIDE 1: HOOK TRANSFORMATION (Wide Image) ===== -->
-                    <div class="carousel-slide" style="grid-template-columns: 1fr;">
-                        <div class="slide-item" style="padding: 0; background: transparent; min-height: auto; border: none;">
-                            <img src="images/hook-comparison-wide.png" alt="Hook Transformation — Weak vs Strong" class="wide-img" style="max-width: 100%; border-radius: 0; border: none;" />
+                    <!-- ===== SLIDE 1: HOOK TRANSFORMATION (2 images) ===== -->
+                    <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
+                        <div class="slide-item">
+                            <span class="label label-before">Weak Hook</span>
+                            <img src="images/weak-hook.png" alt="Weak Hook" />
+                        </div>
+                        <div class="slide-item">
+                            <span class="label label-after">Strong Hook</span>
+                            <img src="images/strong-hook.png" alt="Strong Hook" />
                         </div>
                     </div>
 
@@ -986,22 +997,33 @@
                         </div>
                     </div>
 
-                    <!-- ===== SLIDE 3: VIDEOS ===== -->
+                    <!-- ===== SLIDE 3: VIDEOS (Autoplay) ===== -->
                     <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
                         <div class="slide-item">
                             <span class="label label-video">Video Work</span>
-                            <img src="images/video-thumb-1.png" alt="Video Work 1" style="cursor: pointer;" />
+                            <video autoplay muted loop playsinline>
+                                <source src="images/video-1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div class="slide-item">
                             <span class="label label-video">Video Work</span>
-                            <img src="images/video-thumb-2.png" alt="Video Work 2" style="cursor: pointer;" />
+                            <video autoplay muted loop playsinline>
+                                <source src="images/video-2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     </div>
 
-                    <!-- ===== SLIDE 4: SCRIPT WRITING (Wide Image) ===== -->
-                    <div class="carousel-slide" style="grid-template-columns: 1fr;">
-                        <div class="slide-item" style="padding: 0; background: transparent; min-height: auto; border: none;">
-                            <img src="images/script-comparison-wide.png" alt="Script Writing — Weak vs Strong" class="wide-img" style="max-width: 100%; border-radius: 0; border: none;" />
+                    <!-- ===== SLIDE 4: SCRIPT WRITING (2 images) ===== -->
+                    <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
+                        <div class="slide-item">
+                            <span class="label label-before">Weak Script</span>
+                            <img src="images/weak-script.png" alt="Weak Script" />
+                        </div>
+                        <div class="slide-item">
+                            <span class="label label-after">Strong Script</span>
+                            <img src="images/strong-script.png" alt="Strong Script" />
                         </div>
                     </div>
 
