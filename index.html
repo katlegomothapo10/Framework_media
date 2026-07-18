@@ -702,99 +702,6 @@
             font-size: 13px;
         }
 
-        /* ===== INSIGHTS ===== */
-        .insights-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 16px;
-        }
-        .insight-card {
-            background: #f9fafb;
-            border-radius: 20px;
-            padding: 28px 24px;
-            border: 1px solid #e5e7eb;
-            transition: 0.3s;
-            text-align: left;
-        }
-        .insight-card:hover {
-            border-color: var(--purple);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.08);
-        }
-        .insight-card .tag {
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--purple);
-            background: var(--gradient-subtle);
-            padding: 2px 12px;
-            border-radius: 40px;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-        .insight-card h4 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        .insight-card p {
-            color: #4b5563;
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        .insight-card .read-more {
-            color: var(--purple);
-            font-weight: 600;
-            font-size: 14px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 12px;
-            transition: 0.3s;
-        }
-        .insight-card .read-more:hover {
-            transform: translateX(4px);
-        }
-
-        /* ===== TIPS ===== */
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 16px;
-        }
-        .tip-card {
-            background: #f9fafb;
-            border-radius: 20px;
-            padding: 24px 24px;
-            border: 1px solid #e5e7eb;
-            transition: 0.3s;
-            text-align: left;
-        }
-        .tip-card:hover {
-            border-color: var(--purple);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.08);
-        }
-        .tip-card .tip-number {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--purple);
-            opacity: 0.15;
-            margin-bottom: 4px;
-        }
-        .tip-card h4 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        .tip-card p {
-            color: #4b5563;
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
         /* ===== FAQ ===== */
         .faq-grid {
             display: flex;
@@ -976,8 +883,6 @@
             .services-detailed-grid { grid-template-columns: repeat(2, 1fr); }
             .pricing-grid { grid-template-columns: repeat(2, 1fr); }
             .process-steps { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-            .insights-grid { grid-template-columns: repeat(2, 1fr); }
-            .tips-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
@@ -997,8 +902,6 @@
             .slide-item:last-child { border-bottom: none; }
             .carousel-btn { width: 40px; height: 40px; font-size: 14px; }
             .slide-item img, .slide-item video { max-height: 300px; }
-            .insights-grid { grid-template-columns: 1fr; }
-            .tips-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
@@ -1097,7 +1000,7 @@
             </div>
         </section>
 
-        <!-- ====== CLIENT SHOWCASE CAROUSEL ====== -->
+        <!-- ====== CAROUSEL ====== -->
         <section class="section" id="carousel">
             <div class="section-header">
                 <span class="pill pill-reveal">Our Work</span>
@@ -1183,37 +1086,37 @@
             </div>
 
             <div class="process-steps">
-                <!-- Step 1: Discovery -->
+                <!-- Step 1 -->
                 <div class="step reveal">
                     <div class="step-image">
                         <img src="images/process-discovery.png" alt="Discovery" />
                     </div>
                     <div class="num">01</div>
-                    <h4>Discovery</h4>
+                    <h4>Map</h4>
                     <p>We map your offer, audience, and message into a plan.</p>
                 </div>
 
-                <!-- Step 2: Strategy -->
+                <!-- Step 2 -->
                 <div class="step reveal">
                     <div class="step-image">
                         <img src="images/process-strategy.png" alt="Strategy" />
                     </div>
                     <div class="num">02</div>
-                    <h4>Strategy</h4>
+                    <h4>Build</h4>
                     <p>We write, edit, and produce using the same "Hook–Body–CTA" structure that's been proven across 200K+ followers.</p>
                 </div>
 
-                <!-- Step 3: Production -->
+                <!-- Step 3 -->
                 <div class="step reveal">
                     <div class="step-image">
                         <img src="images/process-production.png" alt="Production" />
                     </div>
                     <div class="num">03</div>
-                    <h4>Production</h4>
+                    <h4>Build</h4>
                     <p>We write, edit, and produce using the same "Hook–Body–CTA" structure that's been proven across 200K+ followers.</p>
                 </div>
 
-                <!-- Step 4: Launch -->
+                <!-- Step 4 -->
                 <div class="step reveal">
                     <div class="step-image">
                         <img src="images/process-review.png" alt="Launch" />
@@ -1363,65 +1266,6 @@
                     </ul>
                     <p style="font-size: 14px; color: #6b7280; font-style: italic;">The complete system. For well-funded operators.</p>
                     <a href="#contact" class="btn-small">Get Full System Quote</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====== LATEST INSIGHTS ====== -->
-        <section class="section" id="insights">
-            <div class="section-header">
-                <span class="pill pill-reveal">Insights</span>
-                <h2 class="section-title">Latest Insights</h2>
-                <div class="accent-line"></div>
-                <p class="section-sub">We share what we're learning — about content, marketing, and building a personal brand.</p>
-            </div>
-
-            <div class="insights-grid">
-                <div class="insight-card reveal">
-                    <span class="tag">Strategy</span>
-                    <h4>Why Most Creators Quit — And How to Avoid It</h4>
-                    <p>Most creators stop because they don't see results. But the real reason isn't lack of skill — it's lack of a system. Here's how to build one.</p>
-                    <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="insight-card reveal">
-                    <span class="tag">Hooks</span>
-                    <h4>The Hook That Grew 200K Followers</h4>
-                    <p>We break down the exact hook structure that turned a struggling account into a 200K+ follower brand. Plus, how to apply it to your content.</p>
-                    <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="insight-card reveal">
-                    <span class="tag">Retention</span>
-                    <h4>Retention Engineering — The Hidden Metric of Viral Content</h4>
-                    <p>Reach is vanity. Retention is value. We explain why keeping people watching matters more than getting them there — and how to do it.</p>
-                    <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====== QUICK CONTENT TIPS ====== -->
-        <section class="section" id="tips">
-            <div class="section-header">
-                <span class="pill pill-reveal">Quick Tips</span>
-                <h2 class="section-title">Content Tips You Can Use Today</h2>
-                <div class="accent-line"></div>
-                <p class="section-sub">Short, practical advice from the Framework Media team. No fluff, no theory — just actionable steps you can apply immediately.</p>
-            </div>
-
-            <div class="tips-grid">
-                <div class="tip-card reveal">
-                    <div class="tip-number">01</div>
-                    <h4>Your hook matters more than your content</h4>
-                    <p>If the first 3 seconds don't grab attention, the rest doesn't matter. Start with a bold statement, a question, or a counterintuitive idea.</p>
-                </div>
-                <div class="tip-card reveal">
-                    <div class="tip-number">02</div>
-                    <h4>Retention beats reach</h4>
-                    <p>Getting 100K views with 10% retention isn't as valuable as 20K views with 60% retention. Focus on keeping people watching.</p>
-                </div>
-                <div class="tip-card reveal">
-                    <div class="tip-number">03</div>
-                    <h4>System beats strategy</h4>
-                    <p>Having a plan is good — having a repeatable system is better. Build a workflow, test it, measure it, and repeat what works.</p>
                 </div>
             </div>
         </section>
