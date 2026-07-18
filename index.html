@@ -124,12 +124,6 @@
             line-height: 1.1;
             margin-bottom: 6px;
         }
-        .section-title .gradient-text {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
         .section-sub {
             font-size: 18px;
             color: #4b5563;
@@ -268,7 +262,7 @@
         /* ===== SHOWCASE ===== */
         .showcase-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
             margin-top: 16px;
         }
@@ -293,16 +287,10 @@
             justify-content: center;
             overflow: hidden;
         }
-        .showcase-media .play-icon {
-            font-size: 48px;
-            color: var(--purple);
-            opacity: 0.6;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .showcase-media .play-icon:hover {
-            opacity: 1;
-            transform: scale(1.05);
+        .showcase-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .showcase-media .media-label {
             position: absolute;
@@ -331,21 +319,13 @@
             border-radius: 40px;
             margin-bottom: 8px;
         }
-        .badge-before {
-            background: #fee2e2;
-            color: #dc2626;
+        .badge-founder {
+            background: #fef3c7;
+            color: #d97706;
         }
         .badge-after {
             background: #dcfce7;
             color: #16a34a;
-        }
-        .badge-video {
-            background: #dbeafe;
-            color: #2563eb;
-        }
-        .badge-founder {
-            background: #fef3c7;
-            color: #d97706;
         }
         .showcase-content h4 {
             font-size: 18px;
@@ -527,15 +507,11 @@
         .founder-avatar {
             width: 120px;
             height: 120px;
-            background: var(--gradient);
             border-radius: 50%;
+            object-fit: cover;
             margin: 0 auto 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            font-weight: 800;
-            color: white;
+            display: block;
+            background: var(--gradient);
         }
         .founder-card h4 {
             font-size: 28px;
@@ -763,7 +739,7 @@
             padding: 0 24px 20px;
         }
 
-        /* ===== CONTACT ===== */
+        /* ===== CONTACT — BUTTON-BASED QUESTIONNAIRE ===== */
         .contact-section {
             padding: 60px 0;
             display: grid;
@@ -771,29 +747,48 @@
             gap: 60px;
             border-top: 1px solid #e5e7eb;
         }
-        .contact-form input,
-        .contact-form textarea {
+        .contact-form input {
             width: 100%;
             padding: 14px 18px;
             border: 1px solid #d1d5db;
             border-radius: 16px;
-            margin: 10px 0;
+            margin: 8px 0;
             font-family: inherit;
             font-size: 16px;
             transition: 0.3s;
         }
-        .contact-form input:focus,
-        .contact-form textarea:focus {
+        .contact-form input:focus {
             border-color: var(--purple);
             outline: none;
             box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
         }
-        .contact-form textarea {
-            min-height: 100px;
-        }
         .contact-form h3,
         .contact-form p {
             text-align: left;
+        }
+
+        /* ===== SERVICE & CALL BUTTONS ===== */
+        .service-btn, .call-btn {
+            background: #f3f4f6;
+            border: 2px solid #e5e7eb;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+            color: #4b5563;
+            font-family: inherit;
+        }
+        .service-btn:hover, .call-btn:hover {
+            border-color: var(--purple);
+            background: var(--gradient-subtle);
+        }
+        .service-btn.selected, .call-btn.selected {
+            background: var(--gradient);
+            color: white;
+            border-color: var(--purple);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
         }
 
         .calendar-box {
@@ -874,7 +869,6 @@
         }
 
         .grid .reveal:nth-child(2) { transition-delay: 0.1s; }
-        .grid .reveal:nth-child(3) { transition-delay: 0.2s; }
 
         .hero-reveal {
             opacity: 0;
@@ -972,6 +966,17 @@
             .testimonial-grid {
                 grid-template-columns: 1fr;
             }
+            .contact-form h3,
+            .contact-form p {
+                text-align: center;
+            }
+            .contact-form input {
+                text-align: center;
+            }
+            .service-btn, .call-btn {
+                font-size: 12px;
+                padding: 6px 14px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -995,16 +1000,16 @@
             .section {
                 padding: 40px 0 30px;
             }
-            .contact-form h3,
-            .contact-form p {
-                text-align: center;
-            }
             .faq-question {
                 font-size: 14px;
                 padding: 14px 18px;
             }
             .faq-answer {
                 font-size: 14px;
+            }
+            .service-btn, .call-btn {
+                font-size: 11px;
+                padding: 5px 12px;
             }
         }
     </style>
@@ -1037,7 +1042,7 @@
             </div>
         </section>
 
-        <!-- ====== SHOWCASE (3 cards) ====== -->
+        <!-- ====== SHOWCASE (2 cards) ====== -->
         <section class="section" id="showcase">
             <div class="section-header">
                 <span class="pill pill-reveal">Our Work</span>
@@ -1048,14 +1053,11 @@
 
             <div class="showcase-grid">
 
-                <!-- Card 1: Katlego Unfiltered (Founder Case Study) -->
+                <!-- Card 1: Katlego Unfiltered -->
                 <div class="showcase-card reveal">
                     <div class="showcase-media">
-                        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                            <i class="fas fa-play-circle play-icon"></i>
-                            <span style="font-size: 13px; color: #6b7280;">Watch: My 200K+ journey</span>
-                        </div>
-                        <span class="media-label"><i class="fas fa-video"></i> Video</span>
+                        <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered — 60K+ followers" />
+                        <span class="media-label"><i class="fas fa-image"></i> PNG</span>
                     </div>
                     <div class="showcase-content">
                         <span class="badge badge-founder">Founder Case Study</span>
@@ -1071,11 +1073,8 @@
                 <!-- Card 2: Our Goated Lunchbox -->
                 <div class="showcase-card reveal">
                     <div class="showcase-media">
-                        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                            <i class="fas fa-image" style="font-size: 40px; color: var(--purple); opacity: 0.5;"></i>
-                            <span style="font-size: 13px; color: #6b7280;">TikTok page growth</span>
-                        </div>
-                        <span class="media-label"><i class="fas fa-image"></i> Image</span>
+                        <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox — 150K+ followers" />
+                        <span class="media-label"><i class="fas fa-image"></i> PNG</span>
                     </div>
                     <div class="showcase-content">
                         <span class="badge badge-after">Brand Case Study</span>
@@ -1084,27 +1083,6 @@
                         <div class="stats">
                             <span><i class="fas fa-arrow-up" style="color: #16a34a; margin-right: 4px;"></i> 150K+ Followers</span>
                             <span class="increase"><i class="fab fa-tiktok" style="margin-right: 4px;"></i> TikTok</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: Client Case Study (Placeholder) -->
-                <div class="showcase-card reveal">
-                    <div class="showcase-media">
-                        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                            <i class="fas fa-image" style="font-size: 40px; color: var(--purple); opacity: 0.5;"></i>
-                            <span style="font-size: 13px; color: #6b7280;">Client transformation</span>
-                        </div>
-                        <span class="media-label"><i class="fas fa-image"></i> Image</span>
-                    </div>
-                    <div class="showcase-content">
-                        <span class="badge badge-before">Before</span>
-                        <span class="badge badge-after" style="margin-left: 4px;">After</span>
-                        <h4>Client: @examplecreator</h4>
-                        <p>From 2K views to 50K+ views in 30 days using the Hook–Body–CTA framework.</p>
-                        <div class="stats">
-                            <span><i class="fas fa-arrow-up" style="color: #16a34a; margin-right: 4px;"></i> +2,400% Views</span>
-                            <span class="increase"><i class="fas fa-fire" style="margin-right: 4px;"></i> +180% Engagement</span>
                         </div>
                     </div>
                 </div>
@@ -1185,7 +1163,7 @@
                 <p class="section-sub">Built from experience, not theory.</p>
             </div>
             <div class="founder-card founder-reveal">
-                <div class="founder-avatar">K</div>
+                <img src="images/founder.png" alt="Katlego Mothapo — Founder & CEO, Framework Media" class="founder-avatar" />
                 <h4>Katlego Mothapo</h4>
                 <div class="title">Founder &amp; CEO, Framework Media</div>
                 <p class="bio">5 years of personal experience building personal brands. Built his own personal brand Katlego Unfiltered to 60K+ followers across TikTok and Instagram using the same system that Framework Media now runs for clients. Published author, Content Creator &amp; speaker.</p>
@@ -1436,21 +1414,56 @@
             </div>
         </section>
 
-        <!-- ====== CONTACT ====== -->
+        <!-- ====== CONTACT — BUTTON-BASED QUESTIONNAIRE ====== -->
         <section class="contact-section" id="contact">
             <div class="contact-form">
-                <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">Send us a message.</h3>
-                <p style="color: #4b5563; margin-bottom: 20px;">We read every message personally and reply within 24 hours (usually less).</p>
-                <form>
-                    <input type="text" placeholder="Name" />
-                    <input type="email" placeholder="Email" />
-                    <input type="text" placeholder="Instagram/TikTok handle" />
-                    <textarea placeholder="What do you need help with?"></textarea>
-                    <button type="submit" class="btn-primary" style="width: 100%;">Apply Now</button>
+                <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">Let's map your content system.</h3>
+                <p style="color: #4b5563; margin-bottom: 20px;">Fill in your details and tell us what you need — we'll get back to you within 24 hours.</p>
+
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <!-- Name & Surname -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <input type="text" id="firstName" placeholder="First Name" required />
+                        <input type="text" id="lastName" placeholder="Surname" required />
+                    </div>
+
+                    <!-- Email -->
+                    <input type="email" id="email" placeholder="Email Address" required />
+
+                    <!-- Service Selection (Buttons) -->
+                    <label style="font-weight: 600; font-size: 14px; display: block; margin-top: 12px; margin-bottom: 6px; color: #0f1419;">Which service are you interested in?</label>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+                        <button type="button" class="service-btn" data-value="script-writing" onclick="toggleService(this)">Script Writing</button>
+                        <button type="button" class="service-btn" data-value="content-audit" onclick="toggleService(this)">Content Audit</button>
+                        <button type="button" class="service-btn" data-value="hook-diagnosis" onclick="toggleService(this)">Hook Diagnosis</button>
+                        <button type="button" class="service-btn" data-value="video-editing" onclick="toggleService(this)">Video Editing</button>
+                        <button type="button" class="service-btn" data-value="production" onclick="toggleService(this)">Full Production</button>
+                        <button type="button" class="service-btn" data-value="monetisation" onclick="toggleService(this)">Monetisation</button>
+                        <button type="button" class="service-btn" data-value="coaching" onclick="toggleService(this)">Coaching‑Lite</button>
+                        <button type="button" class="service-btn" data-value="bundle" onclick="toggleService(this)">Bundle Package</button>
+                        <button type="button" class="service-btn" data-value="not-sure" onclick="toggleService(this)">Not Sure Yet</button>
+                    </div>
+                    <input type="hidden" id="selectedService" value="" />
+
+                    <!-- Discovery Call Selection (Buttons) -->
+                    <label style="font-weight: 600; font-size: 14px; display: block; margin-top: 12px; margin-bottom: 6px; color: #0f1419;">When would you like to have a discovery call?</label>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+                        <button type="button" class="call-btn" data-value="asap" onclick="toggleCall(this)">ASAP</button>
+                        <button type="button" class="call-btn" data-value="this-week" onclick="toggleCall(this)">This Week</button>
+                        <button type="button" class="call-btn" data-value="next-week" onclick="toggleCall(this)">Next Week</button>
+                        <button type="button" class="call-btn" data-value="flexible" onclick="toggleCall(this)">I'm Flexible</button>
+                        <button type="button" class="call-btn" data-value="not-sure" onclick="toggleCall(this)">Not Sure</button>
+                    </div>
+                    <input type="hidden" id="selectedCall" value="" />
+
+                    <!-- Submit -->
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">Apply Now</button>
                 </form>
             </div>
+
+            <!-- Calendar Box -->
             <div class="calendar-box">
-                <h3 style="font-size: 24px; font-weight: 700;">Or let's map your content system.</h3>
+                <h3 style="font-size: 24px; font-weight: 700;">Or book directly.</h3>
                 <p style="color: #374151; margin: 8px 0 12px;">Free 30-minute strategy calls. No pressure, just a clear plan for your content.</p>
                 <div class="fake-cal">
                     <div style="display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 12px;">
@@ -1548,6 +1561,58 @@
                 answer.classList.add('open');
                 button.classList.add('active');
             }
+        }
+
+        // ===== SERVICE BUTTON TOGGLE =====
+        function toggleService(button) {
+            document.querySelectorAll('.service-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            button.classList.add('selected');
+            document.getElementById('selectedService').value = button.getAttribute('data-value');
+        }
+
+        // ===== CALL BUTTON TOGGLE =====
+        function toggleCall(button) {
+            document.querySelectorAll('.call-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            button.classList.add('selected');
+            document.getElementById('selectedCall').value = button.getAttribute('data-value');
+        }
+
+        // ===== FORM SUBMISSION =====
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('selectedService').value;
+            const call = document.getElementById('selectedCall').value;
+
+            if (!firstName || !lastName || !email) {
+                alert('Please fill in your name, surname, and email.');
+                return;
+            }
+
+            if (!service) {
+                alert('Please select at least one service you\'re interested in.');
+                return;
+            }
+
+            if (!call) {
+                alert('Please select when you\'d like to have a discovery call.');
+                return;
+            }
+
+            const message = `New Inquiry from Framework Media:%0A%0AName: ${firstName} ${lastName}%0AEmail: ${email}%0AService Interested In: ${service.replace(/-/g, ' ').toUpperCase()}%0ADiscovery Call Timing: ${call.replace(/-/g, ' ').toUpperCase()}%0A%0APlease follow up within 24 hours.`;
+
+            window.location.href = `mailto:hello@frameworkmedia.co.za?subject=New Inquiry from ${firstName} ${lastName}&body=${message}`;
+
+            alert('Thank you! We\'ll get back to you within 24 hours.');
+            document.getElementById('contactForm').reset();
+            document.querySelectorAll('.service-btn, .call-btn').forEach(btn => btn.classList.remove('selected'));
         }
     </script>
 
