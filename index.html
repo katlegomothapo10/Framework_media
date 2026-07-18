@@ -354,7 +354,7 @@
             margin-bottom: 20px;
         }
 
-        /* ===== CAROUSEL ===== */
+        /* ===== CAROUSEL — AUTO-FITTING ===== */
         .carousel-wrapper {
             position: relative;
             overflow: hidden;
@@ -374,60 +374,17 @@
         }
 
         .slide-item {
-            padding: 40px 36px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            min-height: 380px;
+            justify-content: center;
             background: #f9fafb;
-            border-right: 1px solid #e5e7eb;
+            overflow: hidden;
         }
-        .slide-item:last-child {
-            border-right: none;
-        }
-
-        .slide-item .label {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 4px 16px;
-            border-radius: 40px;
-            margin-bottom: 12px;
-            display: inline-block;
-        }
-        .label-before {
-            background: #fee2e2;
-            color: #dc2626;
-        }
-        .label-after {
-            background: #dcfce7;
-            color: #16a34a;
-        }
-        .label-video {
-            background: #dbeafe;
-            color: #2563eb;
-        }
-        .label-carousel {
-            background: #fef3c7;
-            color: #d97706;
-        }
-
-        .slide-item img {
-            width: 100%;
-            max-width: 420px;
-            border-radius: 16px;
-            border: 1px solid #e5e7eb;
-        }
-
+        .slide-item img,
         .slide-item video {
             width: 100%;
-            max-width: 420px;
-            border-radius: 16px;
-            border: 1px solid #e5e7eb;
-            background: #000;
+            height: auto;
+            display: block;
         }
 
         .carousel-controls {
@@ -862,10 +819,7 @@
             .step:hover { border-top-color: var(--pink); }
             .calendar-box { padding: 32px 20px; }
             .carousel-slide { grid-template-columns: 1fr !important; }
-            .slide-item { min-height: 280px; padding: 24px 20px; border-right: none; border-bottom: 1px solid #e5e7eb; }
-            .slide-item:last-child { border-bottom: none; }
             .carousel-btn { width: 40px; height: 40px; font-size: 14px; }
-            .slide-item img, .slide-item video { max-width: 100%; }
         }
 
         @media (max-width: 480px) {
@@ -878,7 +832,6 @@
             .faq-question { font-size: 14px; padding: 14px 18px; }
             .faq-answer { font-size: 14px; }
             .founder-image { width: 120px; height: 120px; }
-            .slide-item { padding: 16px; min-height: 200px; }
         }
     </style>
 </head>
@@ -920,7 +873,6 @@
             </div>
 
             <div class="showcase-grid">
-                <!-- Card 1: Katlego Unfiltered -->
                 <div class="showcase-card reveal">
                     <div class="showcase-media">
                         <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered" />
@@ -937,7 +889,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2: Our Goated Lunchbox -->
                 <div class="showcase-card reveal">
                     <div class="showcase-media">
                         <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox" />
@@ -973,41 +924,35 @@
             <div class="carousel-wrapper">
                 <div class="carousel-track" id="carouselTrack">
 
-                    <!-- ===== SLIDE 1: HOOK TRANSFORMATION (2 images) ===== -->
+                    <!-- SLIDE 1: HOOK TRANSFORMATION -->
                     <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
                         <div class="slide-item">
-                            <span class="label label-before">Weak Hook</span>
                             <img src="images/weak-hook.png" alt="Weak Hook" />
                         </div>
                         <div class="slide-item">
-                            <span class="label label-after">Strong Hook</span>
                             <img src="images/strong-hook.png" alt="Strong Hook" />
                         </div>
                     </div>
 
-                    <!-- ===== SLIDE 2: CAROUSELS ===== -->
+                    <!-- SLIDE 2: CAROUSELS -->
                     <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
                         <div class="slide-item">
-                            <span class="label label-carousel">Carousel Post</span>
                             <img src="images/carousel-1.png" alt="Carousel Post 1" />
                         </div>
                         <div class="slide-item">
-                            <span class="label label-carousel">Carousel Post</span>
                             <img src="images/carousel-2.png" alt="Carousel Post 2" />
                         </div>
                     </div>
 
-                    <!-- ===== SLIDE 3: VIDEOS (Autoplay) ===== -->
+                    <!-- SLIDE 3: VIDEOS (Autoplay) -->
                     <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
                         <div class="slide-item">
-                            <span class="label label-video">Video Work</span>
                             <video autoplay muted loop playsinline>
                                 <source src="images/video-1.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
                         <div class="slide-item">
-                            <span class="label label-video">Video Work</span>
                             <video autoplay muted loop playsinline>
                                 <source src="images/video-2.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
@@ -1015,14 +960,12 @@
                         </div>
                     </div>
 
-                    <!-- ===== SLIDE 4: SCRIPT WRITING (2 images) ===== -->
+                    <!-- SLIDE 4: SCRIPT WRITING -->
                     <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
                         <div class="slide-item">
-                            <span class="label label-before">Weak Script</span>
                             <img src="images/weak-script.png" alt="Weak Script" />
                         </div>
                         <div class="slide-item">
-                            <span class="label label-after">Strong Script</span>
                             <img src="images/strong-script.png" alt="Strong Script" />
                         </div>
                     </div>
