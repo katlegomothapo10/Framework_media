@@ -132,6 +132,13 @@
             margin: 0 auto 16px;
         }
 
+        /* ===== DIVIDER ===== */
+        .divider {
+            border: none;
+            border-top: 1px solid #e5e7eb;
+            margin: 0;
+        }
+
         .navbar {
             display: flex;
             justify-content: center;
@@ -362,7 +369,7 @@
             border-radius: 24px;
             background: #f9fafb;
             border: 1px solid #e5e7eb;
-            margin-top: 0;
+            margin-top: 16px;
         }
         .carousel-track {
             display: flex;
@@ -480,7 +487,7 @@
             opacity: 0.6;
         }
 
-        /* ===== PROCESS — 4 STEPS ===== */
+        /* ===== PROCESS — FIXED IMAGES ===== */
         .process-steps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -505,20 +512,19 @@
 
         .step-image {
             width: 100%;
-            max-width: 280px;
+            max-width: 240px;
             margin: -48px auto 12px;
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid #e5e7eb;
             box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            aspect-ratio: 16 / 10;
         }
 
         .step-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             display: block;
+            object-fit: cover;
         }
 
         .step .num {
@@ -935,7 +941,7 @@
             .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
             .process-steps { grid-template-columns: 1fr; max-width: 400px; margin: 32px auto 0; }
             .step { padding: 24px 16px 20px; }
-            .step-image { max-width: 220px; margin-top: -40px; }
+            .step-image { max-width: 200px; margin-top: -40px; }
             .contact-right { padding: 32px 20px; }
             .carousel-slide { grid-template-columns: 1fr !important; }
             .slide-item { border-right: none; border-bottom: 1px solid #e5e7eb; padding: 20px 16px; }
@@ -958,7 +964,7 @@
             .founder-card h4 { font-size: 22px; }
             .slide-item { padding: 16px 12px; }
             .slide-item img, .slide-item video { max-height: 200px; }
-            .step-image { max-width: 180px; margin-top: -32px; }
+            .step-image { max-width: 160px; margin-top: -32px; }
         }
     </style>
 </head>
@@ -1040,11 +1046,18 @@
             </div>
         </section>
 
-         </div>
-        </section>
+        <!-- ====== DIVIDER + OUR WORK PILL + CAROUSEL ====== -->
+        <section class="section" id="carousel">
+            <!-- Divider -->
+            <hr class="divider" />
 
-        <!-- ====== CAROUSEL ====== -->
-        <section class="section" id="carousel" style="padding-top: 0; border-top: none;">
+            <!-- Our Work Pill & Header -->
+            <div style="text-align: center; padding: 40px 0 8px;">
+                <span class="pill pill-reveal" style="margin-bottom: 8px;">Our Work</span>
+                <h2 class="section-title" style="margin-bottom: 4px;">What We've Done</h2>
+                <div class="accent-line"></div>
+            </div>
+
             <div class="carousel-wrapper">
                 <div class="carousel-track" id="carouselTrack">
 
@@ -1113,7 +1126,7 @@
             </div>
         </section>
 
-        <!-- ====== PROCESS — 4 STEPS (FIXED COPY) ====== -->
+        <!-- ====== PROCESS — 4 STEPS ====== -->
         <section class="section" id="process">
             <div class="section-header">
                 <span class="pill pill-reveal">Process</span>
