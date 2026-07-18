@@ -169,6 +169,11 @@
             background-clip: text;
         }
 
+        /* ===== NAV CTA ===== */
+        .nav-cta {
+            display: none;
+        }
+
         /* ===== HERO ===== */
         .hero {
             padding: 60px 0 40px;
@@ -324,6 +329,7 @@
         .showcase-content p {
             color: #4b5563;
             font-size: 14px;
+            line-height: 1.7;
         }
         .showcase-content .stats {
             display: flex;
@@ -338,6 +344,7 @@
             padding: 4px 14px;
             border-radius: 40px;
         }
+
         .showcase-cta {
             text-align: center;
             margin-top: 40px;
@@ -354,7 +361,7 @@
             margin-bottom: 20px;
         }
 
-        /* ===== CAROUSEL — AUTO-FIT WITH PILLS ===== */
+        /* ===== CAROUSEL ===== */
         .carousel-wrapper {
             position: relative;
             overflow: hidden;
@@ -430,7 +437,6 @@
             background: #000;
         }
 
-        /* ===== CAROUSEL CONTROLS ===== */
         .carousel-controls {
             display: flex;
             justify-content: center;
@@ -479,6 +485,66 @@
             opacity: 0.6;
         }
 
+        /* ===== PROCESS — 4 STEPS ===== */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .step {
+            text-align: center;
+            background: #f9fafb;
+            border-radius: 24px;
+            padding: 28px 20px 24px;
+            border: 1px solid #e5e7eb;
+            transition: 0.3s;
+        }
+
+        .step:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.08);
+        }
+
+        .step-image {
+            margin: -48px auto 12px;
+            width: 100%;
+            max-width: 200px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .step-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .step .num {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--purple);
+            opacity: 0.4;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        .step h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 4px 0 8px;
+        }
+
+        .step p {
+            color: #4b5563;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
         /* ===== FOUNDER ===== */
         .founder-card {
             max-width: 700px;
@@ -519,6 +585,7 @@
             max-width: 550px;
             margin: 0 auto 16px;
             font-size: 16px;
+            line-height: 1.8;
         }
         .founder-card .social-links {
             display: flex;
@@ -535,38 +602,6 @@
         .founder-card .social-links a:hover {
             color: var(--purple);
             transform: scale(1.1);
-        }
-
-        /* ===== PROCESS ===== */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 32px;
-        }
-        .step {
-            border-left: 3px solid var(--purple);
-            padding-left: 20px;
-            text-align: left;
-            transition: 0.3s;
-        }
-        .step:hover {
-            border-left-color: var(--pink);
-        }
-        .step .num {
-            font-size: 36px;
-            font-weight: 800;
-            color: var(--purple);
-            opacity: 0.3;
-            line-height: 1;
-        }
-        .step h4 {
-            font-size: 22px;
-            font-weight: 700;
-            margin: 8px 0 6px;
-        }
-        .step p {
-            color: #4b5563;
         }
 
         /* ===== INDIVIDUAL SERVICES ===== */
@@ -666,6 +701,98 @@
             color: var(--purple);
             width: 18px;
             font-size: 13px;
+        }
+
+        /* ===== INSIGHTS / RESOURCES / TIPS ===== */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 16px;
+        }
+        .insight-card {
+            background: #f9fafb;
+            border-radius: 20px;
+            padding: 28px 24px;
+            border: 1px solid #e5e7eb;
+            transition: 0.3s;
+            text-align: left;
+        }
+        .insight-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.08);
+        }
+        .insight-card .tag {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--purple);
+            background: var(--gradient-subtle);
+            padding: 2px 12px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .insight-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .insight-card p {
+            color: #4b5563;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .insight-card .read-more {
+            color: var(--purple);
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 12px;
+            transition: 0.3s;
+        }
+        .insight-card .read-more:hover {
+            transform: translateX(4px);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 16px;
+        }
+        .tip-card {
+            background: #f9fafb;
+            border-radius: 20px;
+            padding: 24px 24px;
+            border: 1px solid #e5e7eb;
+            transition: 0.3s;
+            text-align: left;
+        }
+        .tip-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.08);
+        }
+        .tip-card .tip-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--purple);
+            opacity: 0.15;
+            margin-bottom: 4px;
+        }
+        .tip-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .tip-card p {
+            color: #4b5563;
+            font-size: 14px;
+            line-height: 1.7;
         }
 
         /* ===== FAQ ===== */
@@ -808,6 +935,7 @@
             transform: translateY(0);
         }
         .grid .reveal:nth-child(2) { transition-delay: 0.1s; }
+        .grid .reveal:nth-child(3) { transition-delay: 0.2s; }
 
         .hero-reveal {
             opacity: 0;
@@ -847,7 +975,9 @@
             .showcase-grid { grid-template-columns: repeat(2, 1fr); }
             .services-detailed-grid { grid-template-columns: repeat(2, 1fr); }
             .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-            .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .process-steps { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            .insights-grid { grid-template-columns: repeat(2, 1fr); }
+            .tips-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
@@ -859,14 +989,16 @@
             .services-detailed-grid { grid-template-columns: 1fr; gap: 16px; }
             .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
             .process-steps { grid-template-columns: 1fr; max-width: 400px; margin: 32px auto 0; }
-            .step { text-align: center; border-left: none; border-top: 3px solid var(--purple); padding-left: 0; padding-top: 16px; }
-            .step:hover { border-top-color: var(--pink); }
+            .step { padding: 20px 16px 20px; }
+            .step-image { max-width: 140px; margin-top: -36px; }
             .calendar-box { padding: 32px 20px; }
             .carousel-slide { grid-template-columns: 1fr !important; }
             .slide-item { border-right: none; border-bottom: 1px solid #e5e7eb; padding: 20px 16px; }
             .slide-item:last-child { border-bottom: none; }
             .carousel-btn { width: 40px; height: 40px; font-size: 14px; }
             .slide-item img, .slide-item video { max-height: 300px; }
+            .insights-grid { grid-template-columns: 1fr; }
+            .tips-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
@@ -881,6 +1013,7 @@
             .founder-image { width: 120px; height: 120px; }
             .slide-item { padding: 16px 12px; }
             .slide-item img, .slide-item video { max-height: 200px; }
+            .step-image { max-width: 120px; margin-top: -30px; }
         }
     </style>
 </head>
@@ -897,9 +1030,9 @@
 
         <!-- ====== HERO ====== -->
         <section class="hero hero-reveal">
-            <span class="hero-tag">For creators, coaches & small brands</span>
-            <h1>The content system that grew <span class="highlight">200K+ followers</span>.<br>Now it's yours.</h1>
-            <p>We build the hooks, retention, and cultural fluency that turn views into qualified leads. Built for the African content landscape.</p>
+            <span class="hero-tag">For creators, coaches & brands</span>
+            <h1>A proven content system. Built from experience. <span class="highlight">Delivered for impact.</span></h1>
+            <p>Framework Media helps creators, coaches, and brands turn content into consistent visibility and qualified leads. We don't guess — we repeat what works.</p>
 
             <div class="video-wrapper">
                 <div class="play-icon"><i class="fas fa-play-circle"></i></div>
@@ -907,8 +1040,8 @@
             </div>
 
             <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Apply Now</a>
-                <a href="#process" class="btn-outline">See how it works</a>
+                <a href="#contact" class="btn-primary">Book a Discovery Call</a>
+                <a href="#process" class="btn-outline">Explore Our Framework</a>
             </div>
         </section>
 
@@ -916,12 +1049,13 @@
         <section class="section" id="showcase">
             <div class="section-header">
                 <span class="pill pill-reveal">Proof</span>
-                <h2 class="section-title">Proof of Performance</h2>
+                <h2 class="section-title">From Founder to Client — Real Results</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Real transformations — including my own. See the difference the Framework system makes.</p>
+                <p class="section-sub">We've built the system that delivers measurable growth. Here's the proof.</p>
             </div>
 
             <div class="showcase-grid">
+                <!-- Card 1: Katlego Unfiltered -->
                 <div class="showcase-card reveal">
                     <div class="showcase-media">
                         <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered" />
@@ -930,7 +1064,7 @@
                     <div class="showcase-content">
                         <span class="badge badge-founder">Founder Case Study</span>
                         <h4>Katlego Unfiltered</h4>
-                        <p>From 0 to 60K+ followers (Instagram + TikTok) using the same system we use at Framework Media.</p>
+                        <p>Zero to 60K+ followers across TikTok and Instagram using the same Hook–Body–CTA framework we now use for every client. Built a community of 200K+ in total reach by applying the system consistently.</p>
                         <div class="stats">
                             <span><i class="fas fa-arrow-up" style="color: #16a34a; margin-right: 4px;"></i> 60K+ Followers</span>
                             <span><i class="fab fa-instagram" style="margin-right: 4px;"></i> + <i class="fab fa-tiktok"></i></span>
@@ -938,6 +1072,7 @@
                     </div>
                 </div>
 
+                <!-- Card 2: Our Goated Lunchbox -->
                 <div class="showcase-card reveal">
                     <div class="showcase-media">
                         <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox" />
@@ -946,7 +1081,7 @@
                     <div class="showcase-content">
                         <span class="badge badge-after">Brand Case Study</span>
                         <h4>Our Goated Lunchbox</h4>
-                        <p>A TikTok page dedicated to street culture, lifestyle, and African youth content — grown to 150K+ followers.</p>
+                        <p>A TikTok page designed for street culture, lifestyle, and youth content — grown to 150K+ followers with a strategy-first approach.</p>
                         <div class="stats">
                             <span><i class="fas fa-arrow-up" style="color: #16a34a; margin-right: 4px;"></i> 150K+ Followers</span>
                             <span><i class="fab fa-tiktok" style="margin-right: 4px;"></i> TikTok</span>
@@ -956,18 +1091,19 @@
             </div>
 
             <div class="showcase-cta">
-                <h3>Ready to be our next case study?</h3>
-                <p>Apply now and start seeing real results.</p>
-                <a href="#contact" class="btn-primary">Apply Now</a>
+                <h3>Ready to see what's possible?</h3>
+                <p>Let's talk about your goals and map a system that delivers.</p>
+                <a href="#contact" class="btn-primary">See What's Possible</a>
             </div>
         </section>
 
-        <!-- ====== CAROUSEL ====== -->
+        <!-- ====== CLIENT SHOWCASE CAROUSEL ====== -->
         <section class="section" id="carousel">
             <div class="section-header">
-                <span class="pill pill-reveal">Our Work</span>
-                <h2 class="section-title">What We've Done</h2>
+                <span class="pill pill-reveal">Client Showcase</span>
+                <h2 class="section-title">Real Work, Real Results</h2>
                 <div class="accent-line"></div>
+                <p class="section-sub">Each project we take on becomes part of a track record we're proud to share. No stock footage, no vague promises — just actual client content and system outputs.</p>
             </div>
 
             <div class="carousel-wrapper">
@@ -1038,19 +1174,72 @@
             </div>
         </section>
 
+        <!-- ====== HOW IT WORKS — 4 STEPS ====== -->
+        <section class="section" id="process">
+            <div class="section-header">
+                <span class="pill pill-reveal">Our Framework</span>
+                <h2 class="section-title">How It Works</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">The 4-step content system we use to build visibility and leads.</p>
+            </div>
+
+            <div class="process-steps">
+                <!-- Step 1: Discovery -->
+                <div class="step reveal">
+                    <div class="step-image">
+                        <img src="images/process-discovery.png" alt="Discovery — Content Audit & Analysis" />
+                    </div>
+                    <div class="num">01</div>
+                    <h4>Discovery</h4>
+                    <p>We start with a deep dive into your current content, goals, audience, and ambition. We review what's working, what's not, and where the biggest opportunities lie. This isn't a generic audit — it's a roadmap for what comes next.</p>
+                </div>
+
+                <!-- Step 2: Strategy & System Design -->
+                <div class="step reveal">
+                    <div class="step-image">
+                        <img src="images/process-strategy.png" alt="Strategy & System Design" />
+                    </div>
+                    <div class="num">02</div>
+                    <h4>Strategy &amp; System Design</h4>
+                    <p>We design a tailored content system based on the discovery phase. This includes a content calendar, pillar strategy, Hook–Body–CTA structure, and a clear workflow for how your content gets built, reviewed, and delivered.</p>
+                </div>
+
+                <!-- Step 3: Production & Execution -->
+                <div class="step reveal">
+                    <div class="step-image">
+                        <img src="images/process-production.png" alt="Production & Execution" />
+                    </div>
+                    <div class="num">03</div>
+                    <h4>Production &amp; Execution</h4>
+                    <p>We execute the system — scripts are written, videos are edited, and content is structured for retention and conversion. Every asset is built to the same standards we used to grow our own platforms. No shortcuts, just consistent output.</p>
+                </div>
+
+                <!-- Step 4: Review, Optimise & Scale -->
+                <div class="step reveal">
+                    <div class="step-image">
+                        <img src="images/process-review.png" alt="Review, Optimise & Scale" />
+                    </div>
+                    <div class="num">04</div>
+                    <h4>Review, Optimise &amp; Scale</h4>
+                    <p>We track performance, review metrics, and refine the system based on what the data tells us. Then we scale — more content, more reach, more qualified leads. The system evolves as you grow.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- ====== FOUNDER ====== -->
         <section class="section" id="team">
             <div class="section-header">
-                <span class="pill pill-reveal">Team</span>
-                <h2 class="section-title">Meet The Founder</h2>
+                <span class="pill pill-reveal">Founder</span>
+                <h2 class="section-title">Founded by Experience, Not Theory</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Built from experience, not theory.</p>
             </div>
             <div class="founder-card founder-reveal">
                 <img src="images/founder.png" alt="Katlego Mothapo — Founder & CEO" class="founder-image" />
                 <h4>Katlego Mothapo</h4>
                 <div class="title">Founder &amp; CEO, Framework Media</div>
-                <p class="bio">5 years of personal experience building personal brands. Built his own personal brand Katlego Unfiltered to 60K+ followers across TikTok and Instagram using the same system that Framework Media now runs for clients. Published author, Content Creator &amp; speaker.</p>
+                <p class="bio">Framework Media exists because I built it for myself first — and watched it work. I grew my own brand Katlego Unfiltered to 60K+ followers using the same Hook–Body–CTA structure now used by clients across South Africa. That process is the foundation of everything we do.<br><br>
+                Before Framework Media, I spent years creating content without a system — inconsistent results, constant guesswork, and no clear path to growth. The shift came when I started treating content like a real process: build a system, test it, measure it, and repeat what works.<br><br>
+                Today, I help creators, coaches, and brands do the same thing — not as a consultant giving advice, but as someone who has run the playbook themselves.</p>
                 <div class="social-links">
                     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
@@ -1058,40 +1247,13 @@
             </div>
         </section>
 
-        <!-- ====== PROCESS ====== -->
-        <section class="section" id="process">
-            <div class="section-header">
-                <span class="pill pill-reveal">Process</span>
-                <h2 class="section-title">How it works</h2>
-                <div class="accent-line"></div>
-                <p class="section-sub">Map. Build. Launch.</p>
-            </div>
-            <div class="process-steps">
-                <div class="step reveal">
-                    <div class="num">01</div>
-                    <h4>Map</h4>
-                    <p>We map your offer, audience, and message into a plan.</p>
-                </div>
-                <div class="step reveal">
-                    <div class="num">02</div>
-                    <h4>Build</h4>
-                    <p>We write, edit, and produce using the same "Hook–Body–CTA" structure that's been proven across 200K+ followers.</p>
-                </div>
-                <div class="step reveal">
-                    <div class="num">03</div>
-                    <h4>Launch</h4>
-                    <p>We hand over everything you need to post fitted and tailored to your preferred workflow.</p>
-                </div>
-            </div>
-        </section>
-
         <!-- ====== INDIVIDUAL SERVICES ====== -->
         <section class="section" id="pricing">
             <div class="section-header">
-                <span class="pill pill-reveal">Individual Services</span>
-                <h2 class="section-title">Pay-as-you-go — no commitment required.</h2>
+                <span class="pill pill-reveal">Services</span>
+                <h2 class="section-title">Flexible Pricing — Services Designed to Fit Every Stage</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Pick and choose exactly what you need. All services are delivered within 3–5 days.</p>
+                <p class="section-sub">Choose the service that matches your stage — from testing to full production. No lock-in. No over-commitment. Just clarity and execution.</p>
             </div>
 
             <div class="services-detailed-grid">
@@ -1163,9 +1325,9 @@
             <!-- BUNDLE PACKAGES -->
             <div class="section-header" style="margin-top: 40px; padding-top: 40px; border-top: 1px solid #e5e7eb;">
                 <span class="pill pill-reveal">Bundles</span>
-                <h2 class="section-title">Bundle Packages</h2>
+                <h2 class="section-title">Bundle Packages — Done-for-You Content Systems</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Save with our done-for-you content systems.</p>
+                <p class="section-sub">Save with our done-for-you content systems. Designed to scale with your ambition.</p>
             </div>
 
             <div class="pricing-grid">
@@ -1178,7 +1340,7 @@
                         <li><i class="fas fa-check"></i> 1 audit with edits</li>
                     </ul>
                     <p style="font-size: 14px; color: #6b7280; font-style: italic;">Perfect for creators getting serious about consistency.</p>
-                    <a href="#contact" class="btn-small">Get Starter Quote</a>
+                    <a href="#contact" class="btn-small">Get Your Custom Quote</a>
                 </div>
                 <div class="pricing-card popular reveal">
                     <h3>Growth</h3>
@@ -1190,7 +1352,7 @@
                         <li><i class="fas fa-check"></i> Monthly audit</li>
                     </ul>
                     <p style="font-size: 14px; color: #6b7280; font-style: italic;">For brands and creators ready to scale.</p>
-                    <a href="#contact" class="btn-small">Get Growth Quote</a>
+                    <a href="#contact" class="btn-small">Get Your Custom Quote</a>
                 </div>
                 <div class="pricing-card reveal">
                     <h3>Full System</h3>
@@ -1202,7 +1364,66 @@
                         <li><i class="fas fa-check"></i> Monetisation consulting</li>
                     </ul>
                     <p style="font-size: 14px; color: #6b7280; font-style: italic;">The complete system. For well-funded operators.</p>
-                    <a href="#contact" class="btn-small">Get Full System Quote</a>
+                    <a href="#contact" class="btn-small">Get Your Custom Quote</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== LATEST INSIGHTS ====== -->
+        <section class="section" id="insights">
+            <div class="section-header">
+                <span class="pill pill-reveal">Insights</span>
+                <h2 class="section-title">Latest Insights</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">We share what we're learning — about content, marketing, and building a personal brand. Not theory, not fluff. Just real insights from running the system every day.</p>
+            </div>
+
+            <div class="insights-grid">
+                <div class="insight-card reveal">
+                    <span class="tag">Strategy</span>
+                    <h4>Why Most Creators Quit — And How to Avoid It</h4>
+                    <p>Most creators stop because they don't see results. But the real reason isn't lack of skill — it's lack of a system. Here's how to build one.</p>
+                    <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="insight-card reveal">
+                    <span class="tag">Hooks</span>
+                    <h4>The Hook That Grew 200K Followers</h4>
+                    <p>We break down the exact hook structure that turned a struggling account into a 200K+ follower brand. Plus, how to apply it to your content.</p>
+                    <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="insight-card reveal">
+                    <span class="tag">Retention</span>
+                    <h4>Retention Engineering — The Hidden Metric of Viral Content</h4>
+                    <p>Reach is vanity. Retention is value. We explain why keeping people watching matters more than getting them there — and how to do it.</p>
+                    <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== QUICK CONTENT TIPS ====== -->
+        <section class="section" id="tips">
+            <div class="section-header">
+                <span class="pill pill-reveal">Quick Tips</span>
+                <h2 class="section-title">Content Tips You Can Use Today</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Short, practical advice from the Framework Media team. No fluff, no theory — just actionable steps you can apply immediately.</p>
+            </div>
+
+            <div class="tips-grid">
+                <div class="tip-card reveal">
+                    <div class="tip-number">01</div>
+                    <h4>Your hook matters more than your content</h4>
+                    <p>If the first 3 seconds don't grab attention, the rest doesn't matter. Start with a bold statement, a question, or a counterintuitive idea.</p>
+                </div>
+                <div class="tip-card reveal">
+                    <div class="tip-number">02</div>
+                    <h4>Retention beats reach</h4>
+                    <p>Getting 100K views with 10% retention isn't as valuable as 20K views with 60% retention. Focus on keeping people watching.</p>
+                </div>
+                <div class="tip-card reveal">
+                    <div class="tip-number">03</div>
+                    <h4>System beats strategy</h4>
+                    <p>Having a plan is good — having a repeatable system is better. Build a workflow, test it, measure it, and repeat what works.</p>
                 </div>
             </div>
         </section>
@@ -1264,10 +1485,10 @@
         <!-- ====== CONTACT — CALENDAR ONLY ====== -->
         <section class="contact-section" id="contact">
             <div class="calendar-box">
-                <h3>Book your strategy call.</h3>
-                <p>Free 30-minute calls. No pressure, just a clear plan for your content.</p>
+                <h3>Book Your Free Strategy Call</h3>
+                <p>30-minute calls. No pressure, just a clear plan for your content.</p>
                 <a href="https://calendly.com/your-link-here" target="_blank" class="btn-primary">
-                    Book a strategy call <i class="fas fa-arrow-right"></i>
+                    Book a Discovery Call <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </section>
