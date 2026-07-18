@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Framework Media — Content that hooks, holds, converts.</title>
-    <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Font: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -17,7 +15,6 @@
             box-sizing: border-box;
         }
 
-        /* ===== COLOR VARIABLES ===== */
         :root {
             --black: #0f1419;
             --pink: #ec4899;
@@ -40,7 +37,6 @@
             padding: 0 24px;
         }
 
-        /* ===== BUTTONS ===== */
         .btn-primary {
             background: var(--black);
             color: white;
@@ -97,7 +93,6 @@
             transform: scale(1.02);
         }
 
-        /* ===== PILL STYLES ===== */
         .pill {
             display: inline-block;
             background: var(--gradient-subtle);
@@ -112,7 +107,6 @@
             border: 1px solid rgba(139, 92, 246, 0.2);
         }
 
-        /* ===== SECTION HEADERS ===== */
         .section-header {
             text-align: center;
             margin-bottom: 32px;
@@ -138,7 +132,6 @@
             margin: 0 auto 16px;
         }
 
-        /* ===== NAVBAR ===== */
         .navbar {
             display: flex;
             justify-content: center;
@@ -253,7 +246,6 @@
             justify-content: center;
         }
 
-        /* ===== SECTIONS ===== */
         .section {
             padding: 60px 0 40px;
             border-top: 1px solid #e5e7eb;
@@ -489,7 +481,7 @@
             border: 1px solid rgba(139, 92, 246, 0.15);
         }
 
-        /* ===== TEAM / FOUNDER ===== */
+        /* ===== FOUNDER — BOX NOT CIRCLE ===== */
         .founder-card {
             max-width: 700px;
             margin: 0 auto;
@@ -504,14 +496,16 @@
             border-color: var(--purple);
             box-shadow: 0 8px 24px rgba(139, 92, 246, 0.06);
         }
-        .founder-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
+        .founder-image {
+            width: 200px;
+            height: 200px;
             object-fit: cover;
-            margin: 0 auto 16px;
+            border-radius: 20px;
+            margin: 0 auto 20px;
             display: block;
             background: var(--gradient);
+            border: 3px solid var(--purple);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
         }
         .founder-card h4 {
             font-size: 28px;
@@ -739,7 +733,7 @@
             padding: 0 24px 20px;
         }
 
-        /* ===== CONTACT — BUTTON-BASED QUESTIONNAIRE ===== */
+        /* ===== CONTACT — WITH MANDATORY CALENDAR ===== */
         .contact-section {
             padding: 60px 0;
             display: grid;
@@ -767,8 +761,7 @@
             text-align: left;
         }
 
-        /* ===== SERVICE & CALL BUTTONS ===== */
-        .service-btn, .call-btn {
+        .service-btn {
             background: #f3f4f6;
             border: 2px solid #e5e7eb;
             padding: 8px 16px;
@@ -780,17 +773,18 @@
             color: #4b5563;
             font-family: inherit;
         }
-        .service-btn:hover, .call-btn:hover {
+        .service-btn:hover {
             border-color: var(--purple);
             background: var(--gradient-subtle);
         }
-        .service-btn.selected, .call-btn.selected {
+        .service-btn.selected {
             background: var(--gradient);
             color: white;
             border-color: var(--purple);
             box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
         }
 
+        /* Calendar Box — now mandatory */
         .calendar-box {
             background: var(--gradient-subtle);
             border-radius: 32px;
@@ -801,7 +795,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            border: 1px solid rgba(139, 92, 246, 0.1);
+            border: 2px solid var(--purple);
         }
         .calendar-box .fake-cal {
             background: white;
@@ -821,6 +815,16 @@
             height: 28px;
             line-height: 28px;
             text-align: center;
+        }
+        .calendar-box .mandatory-badge {
+            font-size: 12px;
+            color: var(--purple);
+            font-weight: 600;
+            background: rgba(139, 92, 246, 0.1);
+            padding: 4px 16px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 8px;
         }
 
         /* ===== FOOTER ===== */
@@ -867,7 +871,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
         .grid .reveal:nth-child(2) { transition-delay: 0.1s; }
 
         .hero-reveal {
@@ -905,112 +908,42 @@
         /* ================================================ */
 
         @media (max-width: 992px) {
-            .showcase-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .services-detailed-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .pricing-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .process-steps {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .showcase-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-detailed-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 38px;
-            }
-            .section-title {
-                font-size: 32px;
-            }
-            .contact-section {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .founder-card {
-                padding: 32px 20px;
-            }
-            .showcase-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .services-detailed-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .process-steps {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-                margin: 32px auto 0;
-            }
-            .step {
-                text-align: center;
-                border-left: none;
-                border-top: 3px solid var(--purple);
-                padding-left: 0;
-                padding-top: 16px;
-            }
-            .step:hover {
-                border-top-color: var(--pink);
-            }
-            .trusted-grid {
-                grid-template-columns: 1fr;
-            }
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-form h3,
-            .contact-form p {
-                text-align: center;
-            }
-            .contact-form input {
-                text-align: center;
-            }
-            .service-btn, .call-btn {
-                font-size: 12px;
-                padding: 6px 14px;
-            }
+            .hero h1 { font-size: 38px; }
+            .section-title { font-size: 32px; }
+            .contact-section { grid-template-columns: 1fr; gap: 40px; }
+            .founder-card { padding: 32px 20px; }
+            .founder-image { width: 150px; height: 150px; }
+            .showcase-grid { grid-template-columns: 1fr; gap: 20px; }
+            .services-detailed-grid { grid-template-columns: 1fr; gap: 16px; }
+            .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
+            .process-steps { grid-template-columns: 1fr; max-width: 400px; margin: 32px auto 0; }
+            .step { text-align: center; border-left: none; border-top: 3px solid var(--purple); padding-left: 0; padding-top: 16px; }
+            .step:hover { border-top-color: var(--pink); }
+            .trusted-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .contact-form h3, .contact-form p { text-align: center; }
+            .contact-form input { text-align: center; }
+            .service-btn { font-size: 12px; padding: 6px 14px; }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-            .container {
-                padding: 0 16px;
-            }
-            .footer {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .calendar-box {
-                padding: 24px 16px;
-            }
-            .hero {
-                padding: 40px 0 30px;
-            }
-            .section {
-                padding: 40px 0 30px;
-            }
-            .faq-question {
-                font-size: 14px;
-                padding: 14px 18px;
-            }
-            .faq-answer {
-                font-size: 14px;
-            }
-            .service-btn, .call-btn {
-                font-size: 11px;
-                padding: 5px 12px;
-            }
+            .hero h1 { font-size: 32px; }
+            .container { padding: 0 16px; }
+            .footer { flex-direction: column; align-items: center; text-align: center; }
+            .calendar-box { padding: 24px 16px; }
+            .hero { padding: 40px 0 30px; }
+            .section { padding: 40px 0 30px; }
+            .faq-question { font-size: 14px; padding: 14px 18px; }
+            .faq-answer { font-size: 14px; }
+            .service-btn { font-size: 11px; padding: 5px 12px; }
+            .founder-image { width: 120px; height: 120px; }
         }
     </style>
 </head>
@@ -1042,7 +975,7 @@
             </div>
         </section>
 
-        <!-- ====== SHOWCASE (2 cards) ====== -->
+        <!-- ====== SHOWCASE ====== -->
         <section class="section" id="showcase">
             <div class="section-header">
                 <span class="pill pill-reveal">Our Work</span>
@@ -1052,11 +985,10 @@
             </div>
 
             <div class="showcase-grid">
-
                 <!-- Card 1: Katlego Unfiltered -->
                 <div class="showcase-card reveal">
                     <div class="showcase-media">
-                        <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered — 60K+ followers" />
+                        <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered" />
                         <span class="media-label"><i class="fas fa-image"></i> PNG</span>
                     </div>
                     <div class="showcase-content">
@@ -1073,7 +1005,7 @@
                 <!-- Card 2: Our Goated Lunchbox -->
                 <div class="showcase-card reveal">
                     <div class="showcase-media">
-                        <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox — 150K+ followers" />
+                        <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox" />
                         <span class="media-label"><i class="fas fa-image"></i> PNG</span>
                     </div>
                     <div class="showcase-content">
@@ -1086,7 +1018,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="showcase-cta">
@@ -1108,19 +1039,14 @@
                 <a href="#" target="_blank" class="trusted-card reveal">
                     <h4>Our Goated Lunchbox</h4>
                     <p>A TikTok page dedicated to street culture, lifestyle, and African youth content.</p>
-                    <div class="platform-icons">
-                        <i class="fab fa-tiktok"></i>
-                    </div>
+                    <div class="platform-icons"><i class="fab fa-tiktok"></i></div>
                     <div class="follower-count"><i class="fas fa-users"></i> 150K+ followers</div>
                     <div class="link-arrow">Visit page <i class="fas fa-arrow-right"></i></div>
                 </a>
                 <a href="#" target="_blank" class="trusted-card reveal">
                     <h4>Katlego Unfiltered</h4>
                     <p>A personal brand built on self-development, relationships, masculinity, and finance — grown across TikTok and Instagram.</p>
-                    <div class="platform-icons">
-                        <i class="fab fa-tiktok"></i>
-                        <i class="fab fa-instagram"></i>
-                    </div>
+                    <div class="platform-icons"><i class="fab fa-tiktok"></i> <i class="fab fa-instagram"></i></div>
                     <div class="follower-count"><i class="fas fa-users"></i> 60K+ combined followers</div>
                     <div class="link-arrow">Visit page <i class="fas fa-arrow-right"></i></div>
                 </a>
@@ -1154,7 +1080,7 @@
             </div>
         </section>
 
-        <!-- ====== TEAM (MEET THE FOUNDER) ====== -->
+        <!-- ====== FOUNDER — BOX NOT CIRCLE ====== -->
         <section class="section" id="team">
             <div class="section-header">
                 <span class="pill pill-reveal">Team</span>
@@ -1163,7 +1089,7 @@
                 <p class="section-sub">Built from experience, not theory.</p>
             </div>
             <div class="founder-card founder-reveal">
-                <img src="images/founder.png" alt="Katlego Mothapo — Founder & CEO, Framework Media" class="founder-avatar" />
+                <img src="images/founder.png" alt="Katlego Mothapo — Founder & CEO" class="founder-image" />
                 <h4>Katlego Mothapo</h4>
                 <div class="title">Founder &amp; CEO, Framework Media</div>
                 <p class="bio">5 years of personal experience building personal brands. Built his own personal brand Katlego Unfiltered to 60K+ followers across TikTok and Instagram using the same system that Framework Media now runs for clients. Published author, Content Creator &amp; speaker.</p>
@@ -1211,109 +1137,72 @@
             </div>
 
             <div class="services-detailed-grid">
-
-                <!-- 1. Script Writing -->
                 <div class="service-detailed-card reveal">
                     <span class="icon"><i class="fas fa-pen-fancy"></i></span>
                     <h4>Script Writing</h4>
                     <div class="price">R350</div>
-                    <div class="description">
-                        A high‑converting script written using our proven Hook–Body–CTA framework. Perfect for a single video. Includes retention engineering notes and is delivered in 24–48 hours.
-                    </div>
+                    <div class="description">A high‑converting script written using our proven Hook–Body–CTA framework. Perfect for a single video. Includes retention engineering notes and is delivered in 24–48 hours.</div>
                     <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-
-                <!-- 2. Content Audit -->
                 <div class="service-detailed-card reveal">
                     <span class="icon"><i class="fas fa-search"></i></span>
                     <h4>Content Audit</h4>
                     <div class="price">R1,500</div>
-                    <div class="description">
-                        A forensic review of your last 10–15 posts. We break down what's working, what's not, and exactly how to fix it. Includes a full improvement plan delivered in 3–5 days.
-                    </div>
+                    <div class="description">A forensic review of your last 10–15 posts. We break down what's working, what's not, and exactly how to fix it. Includes a full improvement plan delivered in 3–5 days.</div>
                     <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-
-                <!-- 3. Hook Diagnosis -->
                 <div class="service-detailed-card reveal">
                     <span class="icon"><i class="fas fa-bullseye"></i></span>
                     <h4>Hook Diagnosis</h4>
                     <div class="price">R200</div>
-                    <div class="description">
-                        The first 3 seconds make or break a video. We analyse your current hook and rewrite it to stop the scroll instantly. Delivered in 12–24 hours.
-                    </div>
+                    <div class="description">The first 3 seconds make or break a video. We analyse your current hook and rewrite it to stop the scroll instantly. Delivered in 12–24 hours.</div>
                     <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-
-                <!-- 4. Video Editing — Reels/TikTok -->
                 <div class="service-detailed-card reveal">
                     <span class="icon"><i class="fas fa-film"></i></span>
                     <h4>Video Editing — Reels/TikTok</h4>
                     <div class="price">R600</div>
-                    <div class="description">
-                        Done‑for‑you editing for short‑form content. We handle pacing, retention, captions, and sound design to keep viewers watching. Delivered in 48–72 hours.
-                    </div>
+                    <div class="description">Done‑for‑you editing for short‑form content. We handle pacing, retention, captions, and sound design to keep viewers watching. Delivered in 48–72 hours.</div>
                     <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-
-                <!-- 5. Video Editing — YouTube -->
                 <div class="service-detailed-card reveal">
                     <span class="icon"><i class="fas fa-video"></i></span>
                     <h4>Video Editing — YouTube</h4>
                     <div class="price">R1,200</div>
-                    <div class="description">
-                        Full‑length YouTube video editing. We handle pacing, B‑roll, transitions, and thumbnail creation to keep viewers engaged. Delivered in 3–5 days.
-                    </div>
+                    <div class="description">Full‑length YouTube video editing. We handle pacing, B‑roll, transitions, and thumbnail creation to keep viewers engaged. Delivered in 3–5 days.</div>
                     <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-
-                <!-- 6. Full Production — Shortform -->
                 <div class="service-detailed-card reveal">
                     <span class="icon"><i class="fas fa-play-circle"></i></span>
                     <h4>Full Production — Shortform</h4>
                     <div class="price">R1,000</div>
-                    <div class="description">
-                        The complete package: script + edit for a Reel or TikTok. We handle everything from idea to final output — including retention engineering. Delivered in 3–5 days.
-                    </div>
+                    <div class="description">The complete package: script + edit for a Reel or TikTok. We handle everything from idea to final output — including retention engineering. Delivered in 3–5 days.</div>
                     <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-
-                <!-- 7. Full Production — YouTube -->
                 <div class="service-detailed-card reveal">
                     <span class="icon"><i class="fas fa-play-circle"></i></span>
                     <h4>Full Production — YouTube</h4>
                     <div class="price">R2,000</div>
-                    <div class="description">
-                        End‑to‑end production for YouTube: script, edit, B‑roll, transitions, and thumbnail. Everything you need for a high‑performing video. Delivered in 5–7 days.
-                    </div>
+                    <div class="description">End‑to‑end production for YouTube: script, edit, B‑roll, transitions, and thumbnail. Everything you need for a high‑performing video. Delivered in 5–7 days.</div>
                     <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-
-                <!-- 8. Monetisation Consulting -->
                 <div class="service-detailed-card reveal">
                     <span class="icon"><i class="fas fa-chart-line"></i></span>
                     <h4>Monetisation Consulting</h4>
                     <div class="price">R1,500</div>
-                    <div class="description">
-                        Rate cards, pitch sequences, and deal tracking — built from real experience closing brand deals across platforms. Includes a 45‑minute strategy call.
-                    </div>
+                    <div class="description">Rate cards, pitch sequences, and deal tracking — built from real experience closing brand deals across platforms. Includes a 45‑minute strategy call.</div>
                     <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-
-                <!-- 9. Coaching-Lite -->
                 <div class="service-detailed-card reveal">
                     <span class="icon"><i class="fas fa-brain"></i></span>
                     <h4>Coaching‑Lite</h4>
                     <div class="price">R800</div>
-                    <div class="description">
-                        Personal brand positioning advice. We align your messaging, voice, and strategy so you attract the right audience. Includes a 60‑minute strategy call.
-                    </div>
+                    <div class="description">Personal brand positioning advice. We align your messaging, voice, and strategy so you attract the right audience. Includes a 60‑minute strategy call.</div>
                     <a href="#contact" class="btn-small">Order Now</a>
                 </div>
-
             </div>
 
-            <!-- ====== BUNDLE PACKAGES ====== -->
+            <!-- BUNDLE PACKAGES -->
             <div class="section-header" style="margin-top: 40px; padding-top: 40px; border-top: 1px solid #e5e7eb;">
                 <span class="pill pill-reveal">Bundles</span>
                 <h2 class="section-title">Bundle Packages</h2>
@@ -1414,23 +1303,19 @@
             </div>
         </section>
 
-        <!-- ====== CONTACT — BUTTON-BASED QUESTIONNAIRE ====== -->
+        <!-- ====== CONTACT — MANDATORY CALENDAR ====== -->
         <section class="contact-section" id="contact">
             <div class="contact-form">
                 <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">Let's map your content system.</h3>
-                <p style="color: #4b5563; margin-bottom: 20px;">Fill in your details and tell us what you need — we'll get back to you within 24 hours.</p>
+                <p style="color: #4b5563; margin-bottom: 20px;">Fill in your details and select a service — we'll get back to you within 24 hours.</p>
 
                 <form id="contactForm" onsubmit="handleSubmit(event)">
-                    <!-- Name & Surname -->
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                         <input type="text" id="firstName" placeholder="First Name" required />
                         <input type="text" id="lastName" placeholder="Surname" required />
                     </div>
-
-                    <!-- Email -->
                     <input type="email" id="email" placeholder="Email Address" required />
 
-                    <!-- Service Selection (Buttons) -->
                     <label style="font-weight: 600; font-size: 14px; display: block; margin-top: 12px; margin-bottom: 6px; color: #0f1419;">Which service are you interested in?</label>
                     <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
                         <button type="button" class="service-btn" data-value="script-writing" onclick="toggleService(this)">Script Writing</button>
@@ -1445,26 +1330,15 @@
                     </div>
                     <input type="hidden" id="selectedService" value="" />
 
-                    <!-- Discovery Call Selection (Buttons) -->
-                    <label style="font-weight: 600; font-size: 14px; display: block; margin-top: 12px; margin-bottom: 6px; color: #0f1419;">When would you like to have a discovery call?</label>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
-                        <button type="button" class="call-btn" data-value="asap" onclick="toggleCall(this)">ASAP</button>
-                        <button type="button" class="call-btn" data-value="this-week" onclick="toggleCall(this)">This Week</button>
-                        <button type="button" class="call-btn" data-value="next-week" onclick="toggleCall(this)">Next Week</button>
-                        <button type="button" class="call-btn" data-value="flexible" onclick="toggleCall(this)">I'm Flexible</button>
-                        <button type="button" class="call-btn" data-value="not-sure" onclick="toggleCall(this)">Not Sure</button>
-                    </div>
-                    <input type="hidden" id="selectedCall" value="" />
-
-                    <!-- Submit -->
                     <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">Apply Now</button>
                 </form>
             </div>
 
-            <!-- Calendar Box -->
+            <!-- Calendar Box — Mandatory -->
             <div class="calendar-box">
-                <h3 style="font-size: 24px; font-weight: 700;">Or book directly.</h3>
-                <p style="color: #374151; margin: 8px 0 12px;">Free 30-minute strategy calls. No pressure, just a clear plan for your content.</p>
+                <span class="mandatory-badge"><i class="fas fa-asterisk" style="font-size: 10px; margin-right: 4px;"></i> Required</span>
+                <h3 style="font-size: 24px; font-weight: 700;">Book your strategy call.</h3>
+                <p style="color: #374151; margin: 8px 0 12px;">Free 30-minute calls. No pressure, just a clear plan for your content.</p>
                 <div class="fake-cal">
                     <div style="display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 12px;">
                         <span>April 2026</span>
@@ -1501,7 +1375,6 @@
 
     </div>
 
-    <!-- ===== SCROLL ANIMATION JAVASCRIPT ===== -->
     <script>
         (function() {
             const reveals = document.querySelectorAll('.reveal');
@@ -1542,7 +1415,6 @@
             }, 100);
         })();
 
-        // ===== FAQ DROPDOWN =====
         function toggleFAQ(button) {
             const answer = button.nextElementSibling;
             const isOpen = answer.classList.contains('open');
@@ -1563,7 +1435,6 @@
             }
         }
 
-        // ===== SERVICE BUTTON TOGGLE =====
         function toggleService(button) {
             document.querySelectorAll('.service-btn').forEach(btn => {
                 btn.classList.remove('selected');
@@ -1572,16 +1443,6 @@
             document.getElementById('selectedService').value = button.getAttribute('data-value');
         }
 
-        // ===== CALL BUTTON TOGGLE =====
-        function toggleCall(button) {
-            document.querySelectorAll('.call-btn').forEach(btn => {
-                btn.classList.remove('selected');
-            });
-            button.classList.add('selected');
-            document.getElementById('selectedCall').value = button.getAttribute('data-value');
-        }
-
-        // ===== FORM SUBMISSION =====
         function handleSubmit(event) {
             event.preventDefault();
 
@@ -1589,7 +1450,6 @@
             const lastName = document.getElementById('lastName').value;
             const email = document.getElementById('email').value;
             const service = document.getElementById('selectedService').value;
-            const call = document.getElementById('selectedCall').value;
 
             if (!firstName || !lastName || !email) {
                 alert('Please fill in your name, surname, and email.');
@@ -1597,22 +1457,17 @@
             }
 
             if (!service) {
-                alert('Please select at least one service you\'re interested in.');
+                alert('Please select a service you\'re interested in.');
                 return;
             }
 
-            if (!call) {
-                alert('Please select when you\'d like to have a discovery call.');
-                return;
-            }
-
-            const message = `New Inquiry from Framework Media:%0A%0AName: ${firstName} ${lastName}%0AEmail: ${email}%0AService Interested In: ${service.replace(/-/g, ' ').toUpperCase()}%0ADiscovery Call Timing: ${call.replace(/-/g, ' ').toUpperCase()}%0A%0APlease follow up within 24 hours.`;
+            const message = `New Inquiry from Framework Media:%0A%0AName: ${firstName} ${lastName}%0AEmail: ${email}%0AService Interested In: ${service.replace(/-/g, ' ').toUpperCase()}%0A%0APlease follow up within 24 hours.`;
 
             window.location.href = `mailto:hello@frameworkmedia.co.za?subject=New Inquiry from ${firstName} ${lastName}&body=${message}`;
 
             alert('Thank you! We\'ll get back to you within 24 hours.');
             document.getElementById('contactForm').reset();
-            document.querySelectorAll('.service-btn, .call-btn').forEach(btn => btn.classList.remove('selected'));
+            document.querySelectorAll('.service-btn').forEach(btn => btn.classList.remove('selected'));
         }
     </script>
 
