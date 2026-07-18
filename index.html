@@ -251,7 +251,7 @@
             border-top: 1px solid #e5e7eb;
         }
 
-        /* ===== SHOWCASE ===== */
+        /* ===== PROOF SECTION ===== */
         .showcase-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -294,9 +294,6 @@
             padding: 4px 12px;
             border-radius: 20px;
             font-weight: 500;
-        }
-        .showcase-media .media-label i {
-            margin-right: 4px;
         }
         .showcase-content {
             padding: 20px 24px 24px;
@@ -341,9 +338,6 @@
             padding: 4px 14px;
             border-radius: 40px;
         }
-        .stats .increase {
-            color: #16a34a;
-        }
         .showcase-cta {
             text-align: center;
             margin-top: 40px;
@@ -360,128 +354,125 @@
             margin-bottom: 20px;
         }
 
-        /* ===== TRUSTED BY ===== */
-        .trusted-grid {
+        /* ===== CAROUSEL ===== */
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+        .carousel-slide {
+            min-width: 100%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 32px;
+            gap: 0;
+        }
+
+        .slide-item {
+            padding: 40px 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 380px;
+            background: #f9fafb;
+        }
+
+        .slide-item .label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        .label-before {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        .label-after {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+        .label-video {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+        .label-carousel {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .slide-item img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .slide-item .wide-img {
+            max-width: 100%;
+            border-radius: 0;
+            border: none;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
             margin-top: 24px;
         }
-        .trusted-card {
-            background: #f9fafb;
-            border-radius: 24px;
-            padding: 32px 28px;
+        .carousel-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
             border: 1px solid #e5e7eb;
+            background: white;
+            cursor: pointer;
             transition: 0.3s;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            text-align: left;
-        }
-        .trusted-card:hover {
-            border-color: var(--purple);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.08);
-        }
-        .trusted-card h4 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-        .trusted-card p {
-            color: #4b5563;
-            margin-bottom: 16px;
-            font-size: 15px;
-        }
-        .trusted-card .platform-icons {
-            display: flex;
-            gap: 16px;
-            font-size: 20px;
-            color: #6b7280;
-        }
-        .trusted-card .platform-icons i:hover {
-            color: var(--purple);
-        }
-        .trusted-card .follower-count {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--black);
-            margin-top: 8px;
-        }
-        .trusted-card .follower-count i {
-            margin-right: 4px;
-            color: var(--purple);
-        }
-        .trusted-card .link-arrow {
-            display: inline-block;
-            margin-top: 12px;
-            font-weight: 600;
-            color: var(--purple);
-        }
-        .trusted-card .link-arrow i {
-            transition: 0.2s;
-        }
-        .trusted-card:hover .link-arrow i {
-            transform: translateX(4px);
-        }
-
-        /* ===== TESTIMONIALS ===== */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 32px;
-            margin-top: 32px;
-        }
-        .testimonial-card {
-            background: #f9fafb;
-            padding: 28px 24px;
-            border-radius: 24px;
-            border: 1px solid #f3f4f6;
-            text-align: left;
-            transition: 0.3s;
-        }
-        .testimonial-card:hover {
-            border-color: var(--purple);
-            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.06);
-        }
-        .testimonial-card .stars {
-            color: #fbbf24;
-            margin-bottom: 12px;
-        }
-        .testimonial-card p {
-            font-size: 16px;
-            color: #1f2937;
-            margin-bottom: 16px;
-            border-left: 3px solid var(--purple);
-            padding-left: 16px;
-        }
-        .testimonial-card .author {
-            font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--black);
         }
-        .author-avatar {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: inline-block;
-        }
-        .coming-soon-badge {
+        .carousel-btn:hover {
+            border-color: var(--purple);
             background: var(--gradient-subtle);
-            color: var(--purple);
-            font-size: 12px;
-            font-weight: 600;
-            padding: 2px 12px;
-            border-radius: 40px;
-            display: inline-block;
-            margin-left: 12px;
-            vertical-align: middle;
-            border: 1px solid rgba(139, 92, 246, 0.15);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+        }
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+        .carousel-dots .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d1d5db;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+        }
+        .carousel-dots .dot.active {
+            background: var(--purple);
+            transform: scale(1.2);
+        }
+        .carousel-dots .dot:hover {
+            background: var(--purple);
+            opacity: 0.6;
         }
 
-        /* ===== FOUNDER — BOX NOT CIRCLE ===== */
+        /* ===== FOUNDER ===== */
         .founder-card {
             max-width: 700px;
             margin: 0 auto;
@@ -733,133 +724,36 @@
             padding: 0 24px 20px;
         }
 
-        /* ===== CONTACT — WITH CALENDAR & TIME SLOTS ===== */
+        /* ===== CONTACT — CALENDAR ONLY ===== */
         .contact-section {
             padding: 60px 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            display: flex;
+            justify-content: center;
             border-top: 1px solid #e5e7eb;
         }
-        .contact-form input {
-            width: 100%;
-            padding: 14px 18px;
-            border: 1px solid #d1d5db;
-            border-radius: 16px;
-            margin: 8px 0;
-            font-family: inherit;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-        .contact-form input:focus {
-            border-color: var(--purple);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-        }
-        .contact-form h3,
-        .contact-form p {
-            text-align: left;
-        }
-
-        .service-btn {
-            background: #f3f4f6;
-            border: 2px solid #e5e7eb;
-            padding: 8px 16px;
-            border-radius: 40px;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: 0.3s;
-            color: #4b5563;
-            font-family: inherit;
-        }
-        .service-btn:hover {
-            border-color: var(--purple);
-            background: var(--gradient-subtle);
-        }
-        .service-btn.selected {
-            background: var(--gradient);
-            color: white;
-            border-color: var(--purple);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
-        }
-
-        /* ===== CALENDAR BOX WITH TIME SLOTS ===== */
         .calendar-box {
             background: var(--gradient-subtle);
             border-radius: 32px;
-            padding: 40px 30px;
+            padding: 48px 40px;
+            max-width: 600px;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             border: 2px solid var(--purple);
         }
-        .calendar-box .mandatory-badge {
-            font-size: 12px;
-            color: var(--purple);
-            font-weight: 600;
-            background: rgba(139, 92, 246, 0.1);
-            padding: 4px 16px;
-            border-radius: 40px;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
         .calendar-box h3 {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
         }
         .calendar-box p {
             color: #374151;
-            margin: 8px 0 12px;
+            margin: 8px 0 16px;
         }
-        .calendar-box .fake-cal {
-            background: white;
-            border-radius: 20px;
-            padding: 20px;
+        .calendar-box .btn-primary {
             width: 100%;
-            max-width: 320px;
-            margin: 12px auto;
-            border: 1px solid #e5e7eb;
-        }
-        .calendar-box .fake-cal .selected-date {
-            background: var(--gradient);
-            color: white;
-            border-radius: 50%;
-            display: inline-block;
-            width: 28px;
-            height: 28px;
-            line-height: 28px;
             text-align: center;
-        }
-        .calendar-box .time-slots {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            max-width: 320px;
-            width: 100%;
-            margin: 12px auto 0;
-        }
-        .calendar-box .time-slots .time-btn {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 40px;
-            padding: 6px 10px;
-            font-size: 12px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: 0.3s;
-            color: var(--black);
-            font-family: inherit;
-        }
-        .calendar-box .time-slots .time-btn:hover {
-            border-color: var(--purple);
-            background: var(--gradient-subtle);
-        }
-        .calendar-box .time-slots .time-btn.selected {
-            background: var(--gradient);
-            color: white;
-            border-color: var(--purple);
         }
 
         /* ===== FOOTER ===== */
@@ -952,7 +846,6 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 38px; }
             .section-title { font-size: 32px; }
-            .contact-section { grid-template-columns: 1fr; gap: 40px; }
             .founder-card { padding: 32px 20px; }
             .founder-image { width: 140px; height: 140px; }
             .showcase-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -961,12 +854,12 @@
             .process-steps { grid-template-columns: 1fr; max-width: 400px; margin: 32px auto 0; }
             .step { text-align: center; border-left: none; border-top: 3px solid var(--purple); padding-left: 0; padding-top: 16px; }
             .step:hover { border-top-color: var(--pink); }
-            .trusted-grid { grid-template-columns: 1fr; }
-            .testimonial-grid { grid-template-columns: 1fr; }
-            .contact-form h3, .contact-form p { text-align: center; }
-            .contact-form input { text-align: center; }
-            .service-btn { font-size: 12px; padding: 6px 14px; }
-            .calendar-box .time-slots { grid-template-columns: repeat(2, 1fr); }
+            .calendar-box { padding: 32px 20px; }
+            .carousel-slide { grid-template-columns: 1fr !important; }
+            .slide-item { min-height: 280px; padding: 24px 20px; border-right: none; border-bottom: 1px solid #e5e7eb; }
+            .slide-item:last-child { border-bottom: none; }
+            .carousel-btn { width: 40px; height: 40px; font-size: 14px; }
+            .slide-item img { max-width: 100%; }
         }
 
         @media (max-width: 480px) {
@@ -978,9 +871,8 @@
             .section { padding: 40px 0 30px; }
             .faq-question { font-size: 14px; padding: 14px 18px; }
             .faq-answer { font-size: 14px; }
-            .service-btn { font-size: 11px; padding: 5px 12px; }
             .founder-image { width: 120px; height: 120px; }
-            .calendar-box .time-slots { grid-template-columns: repeat(2, 1fr); }
+            .slide-item { padding: 16px; min-height: 200px; }
         }
     </style>
 </head>
@@ -1012,11 +904,11 @@
             </div>
         </section>
 
-        <!-- ====== SHOWCASE ====== -->
+        <!-- ====== PROOF SECTION ====== -->
         <section class="section" id="showcase">
             <div class="section-header">
-                <span class="pill pill-reveal">Our Work</span>
-                <h2 class="section-title">Before &amp; After</h2>
+                <span class="pill pill-reveal">Proof</span>
+                <h2 class="section-title">Proof of Performance</h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Real transformations — including my own. See the difference the Framework system makes.</p>
             </div>
@@ -1031,10 +923,10 @@
                     <div class="showcase-content">
                         <span class="badge badge-founder">Founder Case Study</span>
                         <h4>Katlego Unfiltered</h4>
-                        <p>From 0 to 60K+ followers on Katlego Unfiltered — and 200K+ total reach — using the same system I now build for clients.</p>
+                        <p>From 0 to 60K+ followers (Instagram + TikTok) using the same system we use at Framework Media.</p>
                         <div class="stats">
-                            <span><i class="fas fa-arrow-up" style="color: #16a34a; margin-right: 4px;"></i> 200K+ Total Reach</span>
-                            <span class="increase"><i class="fas fa-users" style="margin-right: 4px;"></i> 60K+ Followers</span>
+                            <span><i class="fas fa-arrow-up" style="color: #16a34a; margin-right: 4px;"></i> 60K+ Followers</span>
+                            <span><i class="fab fa-instagram" style="margin-right: 4px;"></i> + <i class="fab fa-tiktok"></i></span>
                         </div>
                     </div>
                 </div>
@@ -1051,7 +943,7 @@
                         <p>A TikTok page dedicated to street culture, lifestyle, and African youth content — grown to 150K+ followers.</p>
                         <div class="stats">
                             <span><i class="fas fa-arrow-up" style="color: #16a34a; margin-right: 4px;"></i> 150K+ Followers</span>
-                            <span class="increase"><i class="fab fa-tiktok" style="margin-right: 4px;"></i> TikTok</span>
+                            <span><i class="fab fa-tiktok" style="margin-right: 4px;"></i> TikTok</span>
                         </div>
                     </div>
                 </div>
@@ -1064,56 +956,63 @@
             </div>
         </section>
 
-        <!-- ====== TRUSTED BY ====== -->
-        <section class="section" id="trusted">
+        <!-- ====== CAROUSEL ====== -->
+        <section class="section" id="carousel">
             <div class="section-header">
-                <span class="pill pill-reveal">Social Proof</span>
-                <h2 class="section-title">Trusted By</h2>
+                <span class="pill pill-reveal">Our Work</span>
+                <h2 class="section-title">What We've Done</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Our work speaks for itself.</p>
             </div>
-            <div class="trusted-grid">
-                <a href="#" target="_blank" class="trusted-card reveal">
-                    <h4>Our Goated Lunchbox</h4>
-                    <p>A TikTok page dedicated to street culture, lifestyle, and African youth content.</p>
-                    <div class="platform-icons"><i class="fab fa-tiktok"></i></div>
-                    <div class="follower-count"><i class="fas fa-users"></i> 150K+ followers</div>
-                    <div class="link-arrow">Visit page <i class="fas fa-arrow-right"></i></div>
-                </a>
-                <a href="#" target="_blank" class="trusted-card reveal">
-                    <h4>Katlego Unfiltered</h4>
-                    <p>A personal brand built on self-development, relationships, masculinity, and finance — grown across TikTok and Instagram.</p>
-                    <div class="platform-icons"><i class="fab fa-tiktok"></i> <i class="fab fa-instagram"></i></div>
-                    <div class="follower-count"><i class="fas fa-users"></i> 60K+ combined followers</div>
-                    <div class="link-arrow">Visit page <i class="fas fa-arrow-right"></i></div>
-                </a>
-            </div>
-        </section>
 
-        <!-- ====== TESTIMONIALS ====== -->
-        <section class="section" id="testimonials">
-            <div class="section-header">
-                <span class="pill pill-reveal">Testimonials</span>
-                <h2 class="section-title">What our clients say <span class="coming-soon-badge">Coming soon</span></h2>
-                <div class="accent-line"></div>
-                <p class="section-sub">Real results from real people.</p>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+
+                    <!-- ===== SLIDE 1: HOOK TRANSFORMATION (Wide Image) ===== -->
+                    <div class="carousel-slide" style="grid-template-columns: 1fr;">
+                        <div class="slide-item" style="padding: 0; background: transparent; min-height: auto; border: none;">
+                            <img src="images/hook-comparison-wide.png" alt="Hook Transformation — Weak vs Strong" class="wide-img" style="max-width: 100%; border-radius: 0; border: none;" />
+                        </div>
+                    </div>
+
+                    <!-- ===== SLIDE 2: CAROUSELS ===== -->
+                    <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
+                        <div class="slide-item">
+                            <span class="label label-carousel">Carousel Post</span>
+                            <img src="images/carousel-1.png" alt="Carousel Post 1" />
+                        </div>
+                        <div class="slide-item">
+                            <span class="label label-carousel">Carousel Post</span>
+                            <img src="images/carousel-2.png" alt="Carousel Post 2" />
+                        </div>
+                    </div>
+
+                    <!-- ===== SLIDE 3: VIDEOS ===== -->
+                    <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
+                        <div class="slide-item">
+                            <span class="label label-video">Video Work</span>
+                            <img src="images/video-thumb-1.png" alt="Video Work 1" style="cursor: pointer;" />
+                        </div>
+                        <div class="slide-item">
+                            <span class="label label-video">Video Work</span>
+                            <img src="images/video-thumb-2.png" alt="Video Work 2" style="cursor: pointer;" />
+                        </div>
+                    </div>
+
+                    <!-- ===== SLIDE 4: SCRIPT WRITING (Wide Image) ===== -->
+                    <div class="carousel-slide" style="grid-template-columns: 1fr;">
+                        <div class="slide-item" style="padding: 0; background: transparent; min-height: auto; border: none;">
+                            <img src="images/script-comparison-wide.png" alt="Script Writing — Weak vs Strong" class="wide-img" style="max-width: 100%; border-radius: 0; border: none;" />
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card reveal">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>“Working with Framework Media completely changed how I approach content. My engagement doubled in the first month.”</p>
-                    <div class="author"><span class="author-avatar"></span> Client Name · Creator</div>
-                </div>
-                <div class="testimonial-card reveal">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>“Finally, someone who actually understands the African creator landscape. My DMs are flooded with leads.”</p>
-                    <div class="author"><span class="author-avatar"></span> Client Name · Coach</div>
-                </div>
-                <div class="testimonial-card reveal">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>“The Hook Diagnostics alone was worth it. My views went from 2K to 50K on the very next post.”</p>
-                    <div class="author"><span class="author-avatar"></span> Client Name · Brand</div>
-                </div>
+
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots" id="dotsContainer"></div>
+                <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
 
@@ -1340,77 +1239,12 @@
             </div>
         </section>
 
-        <!-- ====== CONTACT — WITH CALENDAR & TIME SLOTS ====== -->
+        <!-- ====== CONTACT — CALENDAR ONLY ====== -->
         <section class="contact-section" id="contact">
-            <div class="contact-form">
-                <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">Let's map your content system.</h3>
-                <p style="color: #4b5563; margin-bottom: 20px;">Fill in your details and select a service — we'll get back to you within 24 hours.</p>
-
-                <form id="contactForm" onsubmit="handleSubmit(event)">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                        <input type="text" id="firstName" placeholder="First Name" required />
-                        <input type="text" id="lastName" placeholder="Surname" required />
-                    </div>
-                    <input type="email" id="email" placeholder="Email Address" required />
-
-                    <label style="font-weight: 600; font-size: 14px; display: block; margin-top: 12px; margin-bottom: 6px; color: #0f1419;">Which service are you interested in?</label>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
-                        <button type="button" class="service-btn" data-value="script-writing" onclick="toggleService(this)">Script Writing</button>
-                        <button type="button" class="service-btn" data-value="content-audit" onclick="toggleService(this)">Content Audit</button>
-                        <button type="button" class="service-btn" data-value="hook-diagnosis" onclick="toggleService(this)">Hook Diagnosis</button>
-                        <button type="button" class="service-btn" data-value="video-editing" onclick="toggleService(this)">Video Editing</button>
-                        <button type="button" class="service-btn" data-value="production" onclick="toggleService(this)">Full Production</button>
-                        <button type="button" class="service-btn" data-value="monetisation" onclick="toggleService(this)">Monetisation</button>
-                        <button type="button" class="service-btn" data-value="coaching" onclick="toggleService(this)">Coaching‑Lite</button>
-                        <button type="button" class="service-btn" data-value="bundle" onclick="toggleService(this)">Bundle Package</button>
-                        <button type="button" class="service-btn" data-value="not-sure" onclick="toggleService(this)">Not Sure Yet</button>
-                    </div>
-                    <input type="hidden" id="selectedService" value="" />
-
-                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">Apply Now</button>
-                </form>
-            </div>
-
-            <!-- Calendar Box with Time Slots -->
             <div class="calendar-box">
-                <span class="mandatory-badge"><i class="fas fa-asterisk" style="font-size: 10px; margin-right: 4px;"></i> Required</span>
                 <h3>Book your strategy call.</h3>
                 <p>Free 30-minute calls. No pressure, just a clear plan for your content.</p>
-
-                <!-- Calendar -->
-                <div class="fake-cal">
-                    <div style="display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 12px;">
-                        <span>April 2026</span>
-                        <span><i class="fas fa-chevron-left"></i> <i class="fas fa-chevron-right"></i></span>
-                    </div>
-                    <div style="display: grid; grid-template-columns: repeat(7,1fr); gap: 4px; font-size: 13px; text-align: center;">
-                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">Mo</span>
-                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">Tu</span>
-                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">We</span>
-                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">Th</span>
-                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">Fr</span>
-                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">Sa</span>
-                        <span style="font-weight: 600; font-size: 11px; color: #6b7280;">Su</span>
-                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
-                        <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
-                        <span>15</span><span class="selected-date">16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
-                    </div>
-                    <div style="margin-top: 12px; background: var(--gradient-subtle); border-radius: 30px; padding: 6px 12px; font-size: 14px; border: 1px solid rgba(139, 92, 246, 0.1);">
-                        <i class="far fa-calendar-alt" style="color: var(--purple);"></i> Strategy call · 30 min · Free
-                    </div>
-                </div>
-
-                <!-- Time Slots -->
-                <div class="time-slots">
-                    <button class="time-btn" onclick="selectTime(this)">9:00 AM</button>
-                    <button class="time-btn" onclick="selectTime(this)">10:00 AM</button>
-                    <button class="time-btn" onclick="selectTime(this)">11:00 AM</button>
-                    <button class="time-btn" onclick="selectTime(this)">1:00 PM</button>
-                    <button class="time-btn" onclick="selectTime(this)">2:00 PM</button>
-                    <button class="time-btn" onclick="selectTime(this)">3:00 PM</button>
-                </div>
-
-                <a href="https://calendly.com/your-link-here" target="_blank" class="btn-primary" style="margin-top: 16px; width: 100%;">
+                <a href="https://calendly.com/your-link-here" target="_blank" class="btn-primary">
                     Book a strategy call <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -1434,6 +1268,7 @@
     </div>
 
     <script>
+        // ===== SCROLL ANIMATIONS =====
         (function() {
             const reveals = document.querySelectorAll('.reveal');
             const hero = document.querySelector('.hero-reveal');
@@ -1473,6 +1308,7 @@
             }, 100);
         })();
 
+        // ===== FAQ DROPDOWN =====
         function toggleFAQ(button) {
             const answer = button.nextElementSibling;
             const isOpen = answer.classList.contains('open');
@@ -1493,54 +1329,71 @@
             }
         }
 
-        function toggleService(button) {
-            document.querySelectorAll('.service-btn').forEach(btn => {
-                btn.classList.remove('selected');
+        // ===== CAROUSEL =====
+        (function() {
+            const track = document.getElementById('carouselTrack');
+            const slides = track.querySelectorAll('.carousel-slide');
+            const totalSlides = slides.length;
+            let currentIndex = 0;
+            let isTransitioning = false;
+
+            const dotsContainer = document.getElementById('dotsContainer');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('data-index', i);
+                dot.addEventListener('click', function() {
+                    goToSlide(parseInt(this.getAttribute('data-index')));
+                });
+                dotsContainer.appendChild(dot);
+            }
+
+            const dots = dotsContainer.querySelectorAll('.dot');
+
+            function goToSlide(index) {
+                if (isTransitioning || index === currentIndex) return;
+                isTransitioning = true;
+
+                currentIndex = index;
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 500);
+            }
+
+            function nextSlide() {
+                const next = (currentIndex + 1) % totalSlides;
+                goToSlide(next);
+            }
+
+            function prevSlide() {
+                const prev = (currentIndex - 1 + totalSlides) % totalSlides;
+                goToSlide(prev);
+            }
+
+            document.getElementById('nextBtn').addEventListener('click', nextSlide);
+            document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+            let autoplayInterval = setInterval(nextSlide, 6000);
+
+            const wrapper = document.querySelector('.carousel-wrapper');
+            wrapper.addEventListener('mouseenter', () => {
+                clearInterval(autoplayInterval);
             });
-            button.classList.add('selected');
-            document.getElementById('selectedService').value = button.getAttribute('data-value');
-        }
-
-        function selectTime(button) {
-            document.querySelectorAll('.time-btn').forEach(btn => {
-                btn.classList.remove('selected');
+            wrapper.addEventListener('mouseleave', () => {
+                autoplayInterval = setInterval(nextSlide, 6000);
             });
-            button.classList.add('selected');
-        }
 
-        function handleSubmit(event) {
-            event.preventDefault();
-
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('selectedService').value;
-            const selectedTime = document.querySelector('.time-btn.selected');
-
-            if (!firstName || !lastName || !email) {
-                alert('Please fill in your name, surname, and email.');
-                return;
-            }
-
-            if (!service) {
-                alert('Please select a service you\'re interested in.');
-                return;
-            }
-
-            if (!selectedTime) {
-                alert('Please select a time for your strategy call.');
-                return;
-            }
-
-            const timeText = selectedTime.textContent;
-            const message = `New Inquiry from Framework Media:%0A%0AName: ${firstName} ${lastName}%0AEmail: ${email}%0AService Interested In: ${service.replace(/-/g, ' ').toUpperCase()}%0APreferred Call Time: ${timeText}%0A%0APlease follow up within 24 hours.`;
-
-            window.location.href = `mailto:hello@frameworkmedia.co.za?subject=New Inquiry from ${firstName} ${lastName}&body=${message}`;
-
-            alert('Thank you! We\'ll get back to you within 24 hours.');
-            document.getElementById('contactForm').reset();
-            document.querySelectorAll('.service-btn, .time-btn').forEach(btn => btn.classList.remove('selected'));
-        }
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            });
+        })();
     </script>
 
 </body>
