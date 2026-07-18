@@ -354,7 +354,7 @@
             margin-bottom: 20px;
         }
 
-        /* ===== CAROUSEL — AUTO-FITTING ===== */
+        /* ===== CAROUSEL — AUTO-FIT WITH PILLS ===== */
         .carousel-wrapper {
             position: relative;
             overflow: hidden;
@@ -371,22 +371,66 @@
             min-width: 100%;
             display: grid;
             gap: 0;
+            grid-template-columns: 1fr 1fr;
         }
 
         .slide-item {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 24px 20px;
             background: #f9fafb;
-            overflow: hidden;
+            border-right: 1px solid #e5e7eb;
+            text-align: center;
         }
+        .slide-item:last-child {
+            border-right: none;
+        }
+
+        .slide-item .label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        .label-before {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        .label-after {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+        .label-video {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+        .label-carousel {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
         .slide-item img,
         .slide-item video {
             width: 100%;
             height: auto;
             display: block;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            max-height: 500px;
+            object-fit: contain;
         }
 
+        .slide-item video {
+            background: #000;
+        }
+
+        /* ===== CAROUSEL CONTROLS ===== */
         .carousel-controls {
             display: flex;
             justify-content: center;
@@ -819,7 +863,10 @@
             .step:hover { border-top-color: var(--pink); }
             .calendar-box { padding: 32px 20px; }
             .carousel-slide { grid-template-columns: 1fr !important; }
+            .slide-item { border-right: none; border-bottom: 1px solid #e5e7eb; padding: 20px 16px; }
+            .slide-item:last-child { border-bottom: none; }
             .carousel-btn { width: 40px; height: 40px; font-size: 14px; }
+            .slide-item img, .slide-item video { max-height: 300px; }
         }
 
         @media (max-width: 480px) {
@@ -832,6 +879,8 @@
             .faq-question { font-size: 14px; padding: 14px 18px; }
             .faq-answer { font-size: 14px; }
             .founder-image { width: 120px; height: 120px; }
+            .slide-item { padding: 16px 12px; }
+            .slide-item img, .slide-item video { max-height: 200px; }
         }
     </style>
 </head>
@@ -925,34 +974,40 @@
                 <div class="carousel-track" id="carouselTrack">
 
                     <!-- SLIDE 1: HOOK TRANSFORMATION -->
-                    <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
+                    <div class="carousel-slide">
                         <div class="slide-item">
+                            <span class="label label-before">Weak Hook</span>
                             <img src="images/weak-hook.png" alt="Weak Hook" />
                         </div>
                         <div class="slide-item">
+                            <span class="label label-after">Strong Hook</span>
                             <img src="images/strong-hook.png" alt="Strong Hook" />
                         </div>
                     </div>
 
                     <!-- SLIDE 2: CAROUSELS -->
-                    <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
+                    <div class="carousel-slide">
                         <div class="slide-item">
+                            <span class="label label-carousel">Carousel Post</span>
                             <img src="images/carousel-1.png" alt="Carousel Post 1" />
                         </div>
                         <div class="slide-item">
+                            <span class="label label-carousel">Carousel Post</span>
                             <img src="images/carousel-2.png" alt="Carousel Post 2" />
                         </div>
                     </div>
 
-                    <!-- SLIDE 3: VIDEOS (Autoplay) -->
-                    <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
+                    <!-- SLIDE 3: VIDEOS -->
+                    <div class="carousel-slide">
                         <div class="slide-item">
+                            <span class="label label-video">Video Work</span>
                             <video autoplay muted loop playsinline>
                                 <source src="images/video-1.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
                         <div class="slide-item">
+                            <span class="label label-video">Video Work</span>
                             <video autoplay muted loop playsinline>
                                 <source src="images/video-2.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
@@ -961,11 +1016,13 @@
                     </div>
 
                     <!-- SLIDE 4: SCRIPT WRITING -->
-                    <div class="carousel-slide" style="grid-template-columns: 1fr 1fr;">
+                    <div class="carousel-slide">
                         <div class="slide-item">
+                            <span class="label label-before">Weak Script</span>
                             <img src="images/weak-script.png" alt="Weak Script" />
                         </div>
                         <div class="slide-item">
+                            <span class="label label-after">Strong Script</span>
                             <img src="images/strong-script.png" alt="Strong Script" />
                         </div>
                     </div>
