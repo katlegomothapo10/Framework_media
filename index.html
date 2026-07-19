@@ -132,7 +132,6 @@
             margin: 0 auto 16px;
         }
 
-        /* ===== DIVIDER ===== */
         .divider {
             border: none;
             border-top: 1px solid #e5e7eb;
@@ -257,7 +256,6 @@
             border-top: 1px solid #e5e7eb;
         }
 
-        /* ===== PROOF SECTION ===== */
         .showcase-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -362,7 +360,6 @@
             margin-bottom: 20px;
         }
 
-        /* ===== CAROUSEL ===== */
         .carousel-wrapper {
             position: relative;
             overflow: hidden;
@@ -487,7 +484,6 @@
             opacity: 0.6;
         }
 
-        /* ===== PROCESS — FIXED IMAGES ===== */
         .process-steps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -550,7 +546,7 @@
             margin: 0 auto;
         }
 
-        /* ===== FOUNDER ===== */
+        /* ===== FOUNDER — UPDATED SOCIAL LINKS ===== */
         .founder-card {
             max-width: 800px;
             margin: 0 auto;
@@ -610,7 +606,6 @@
             transform: scale(1.1);
         }
 
-        /* ===== INDIVIDUAL SERVICES ===== */
         .services-detailed-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -656,7 +651,6 @@
             line-height: 1.7;
         }
 
-        /* ===== BUNDLE PACKAGES ===== */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -709,7 +703,6 @@
             font-size: 13px;
         }
 
-        /* ===== FAQ ===== */
         .faq-grid {
             display: flex;
             flex-direction: column;
@@ -772,7 +765,6 @@
             padding: 0 24px 20px;
         }
 
-        /* ===== CONTACT ===== */
         .contact-section {
             padding: 60px 0;
             display: grid;
@@ -840,7 +832,6 @@
             text-align: center;
         }
 
-        /* ===== FOOTER ===== */
         .footer {
             border-top: 1px solid #e5e7eb;
             padding: 32px 0;
@@ -870,10 +861,6 @@
         .footer .social-icons a:nth-child(2):hover { color: var(--pink); }
         .footer .social-icons a:nth-child(3):hover { color: var(--blue); }
         .footer .social-icons a:nth-child(4):hover { color: var(--blue); }
-
-        /* ================================================ */
-        /* ===== ANIMATIONS ===== */
-        /* ================================================ */
 
         .reveal {
             opacity: 0;
@@ -916,10 +903,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* ================================================ */
-        /* ===== RESPONSIVE ===== */
-        /* ================================================ */
 
         @media (max-width: 992px) {
             .showcase-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1046,20 +1029,17 @@
             </div>
         </section>
 
-        <!-- ====== DIVIDER + OUR WORK PILL + CAROUSEL ====== -->
+        <!-- ====== CAROUSEL ====== -->
         <section class="section" id="carousel">
-
-            <!-- Our Work Pill & Header -->
+            <hr class="divider" />
             <div style="text-align: center; padding: 40px 0 8px;">
                 <span class="pill pill-reveal" style="margin-bottom: 8px;">Our Work</span>
-                <h2 class="section-title" style="margin-bottom: 4px;"></h2>
+                <h2 class="section-title" style="margin-bottom: 4px;">What We've Done</h2>
                 <div class="accent-line"></div>
             </div>
 
             <div class="carousel-wrapper">
                 <div class="carousel-track" id="carouselTrack">
-
-                    <!-- SLIDE 1: HOOK TRANSFORMATION -->
                     <div class="carousel-slide">
                         <div class="slide-item">
                             <span class="label label-before">Weak Hook</span>
@@ -1070,8 +1050,6 @@
                             <img src="images/strong-hook.png" alt="Strong Hook" />
                         </div>
                     </div>
-
-                    <!-- SLIDE 2: CAROUSELS -->
                     <div class="carousel-slide">
                         <div class="slide-item">
                             <span class="label label-carousel">Carousel Post</span>
@@ -1082,8 +1060,6 @@
                             <img src="images/carousel-2.png" alt="Carousel Post 2" />
                         </div>
                     </div>
-
-                    <!-- SLIDE 3: VIDEOS -->
                     <div class="carousel-slide">
                         <div class="slide-item">
                             <span class="label label-video">Video Work</span>
@@ -1100,8 +1076,6 @@
                             </video>
                         </div>
                     </div>
-
-                    <!-- SLIDE 4: SCRIPT WRITING -->
                     <div class="carousel-slide">
                         <div class="slide-item">
                             <span class="label label-before">Weak Script</span>
@@ -1112,11 +1086,9 @@
                             <img src="images/strong-script.png" alt="Strong Script" />
                         </div>
                     </div>
-
                 </div>
             </div>
 
-            <!-- Carousel Controls -->
             <div class="carousel-controls">
                 <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-dots" id="dotsContainer"></div>
@@ -1124,7 +1096,7 @@
             </div>
         </section>
 
-        <!-- ====== PROCESS — 4 STEPS ====== -->
+        <!-- ====== PROCESS ====== -->
         <section class="section" id="process">
             <div class="section-header">
                 <span class="pill pill-reveal">Process</span>
@@ -1134,7 +1106,6 @@
             </div>
 
             <div class="process-steps">
-                <!-- Step 1: Map -->
                 <div class="step reveal">
                     <div class="step-image">
                         <img src="images/process-discovery.png" alt="Discovery" />
@@ -1143,8 +1114,6 @@
                     <h4>Map</h4>
                     <p>We map your offer, audience, and message into a plan.</p>
                 </div>
-
-                <!-- Step 2: Build -->
                 <div class="step reveal">
                     <div class="step-image">
                         <img src="images/process-strategy.png" alt="Strategy" />
@@ -1153,8 +1122,6 @@
                     <h4>Build</h4>
                     <p>We write, edit, and produce using the same "Hook–Body–CTA" structure that's been proven across 200K+ followers.</p>
                 </div>
-
-                <!-- Step 3: Produce -->
                 <div class="step reveal">
                     <div class="step-image">
                         <img src="images/process-production.png" alt="Production" />
@@ -1163,8 +1130,6 @@
                     <h4>Produce</h4>
                     <p>We execute the system — scripts, edits, and content structured for retention and conversion.</p>
                 </div>
-
-                <!-- Step 4: Launch -->
                 <div class="step reveal">
                     <div class="step-image">
                         <img src="images/process-review.png" alt="Launch" />
@@ -1176,7 +1141,7 @@
             </div>
         </section>
 
-        <!-- ====== FOUNDER ====== -->
+        <!-- ====== FOUNDER — UPDATED WITH YOUR SOCIAL LINKS ====== -->
         <section class="section" id="team">
             <div class="section-header">
                 <span class="pill pill-reveal">Team</span>
@@ -1190,8 +1155,8 @@
                 <div class="title">Founder &amp; CEO, Framework Media</div>
                 <p class="bio">5 years of personal experience building personal brands. Built his own personal brand Katlego Unfiltered to 60K+ followers across TikTok and Instagram using the same system that Framework Media now runs for clients. Published author, Content Creator &amp; speaker.</p>
                 <div class="social-links">
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </section>
@@ -1390,7 +1355,7 @@
             <div class="contact-right">
                 <h3>Book a strategy call</h3>
                 <p>Free 30-minute strategy calls. No pressure, just a clear plan for your content.</p>
-                <a href="https://calendly.com/your-link-here" target="_blank" class="btn-primary">
+                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-primary">
                     Book a strategy call <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -1403,8 +1368,8 @@
                 <a href="#">Privacy</a>
                 <a href="#">Terms</a>
                 <div class="social-icons">
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
