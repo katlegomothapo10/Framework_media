@@ -92,15 +92,15 @@
             background: var(--black);
             color: white;
             border: none;
-            padding: 8px 20px;
+            padding: 6px 16px;
             border-radius: 40px;
-            font-weight: 600;
-            font-size: 13px;
+            font-weight: 500;
+            font-size: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: inline-block;
             text-decoration: none;
-            margin-top: 8px;
+            margin-top: 0;
         }
         .btn-small:hover {
             background: #2a2a2a;
@@ -728,107 +728,110 @@
         }
 
         /* ================================================ */
-        /* ===== SERVICES — DROPDOWN STYLE ===== */
+        /* ===== SERVICES — MINIMAL ACCORDION ===== */
         /* ================================================ */
 
-        .service-dropdown {
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            margin-bottom: 12px;
-            overflow: hidden;
-            background: #f9fafb;
-            transition: all 0.3s ease;
-        }
-        .service-dropdown:hover {
-            border-color: var(--purple);
+        .service-category {
+            margin-bottom: 48px;
         }
 
-        .service-dropdown-btn {
+        .service-category-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .service-category-desc {
+            font-size: 16px;
+            color: #4b5563;
+            max-width: 700px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .service-accordion {
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .service-accordion-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .service-accordion-btn {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             width: 100%;
-            padding: 18px 24px;
+            padding: 16px 0;
             background: transparent;
             border: none;
             cursor: pointer;
             font-family: inherit;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--black);
             transition: all 0.3s ease;
             text-align: left;
         }
-        .service-dropdown-btn:hover {
-            background: var(--gradient-subtle);
+        .service-accordion-btn:hover {
+            color: var(--purple);
         }
-        .service-dropdown-btn .dropdown-icon {
+        .service-accordion-btn .acc-icon {
             transition: transform 0.3s ease;
-            margin-right: 12px;
             color: var(--purple);
             font-size: 14px;
         }
-        .service-dropdown-btn.active .dropdown-icon {
-            transform: rotate(90deg);
-        }
-        .service-dropdown-btn .dropdown-title {
-            flex: 1;
-        }
-        .service-dropdown-btn .dropdown-count {
-            font-size: 12px;
-            font-weight: 500;
-            color: #6b7280;
-            background: #e5e7eb;
-            padding: 2px 12px;
-            border-radius: 40px;
+        .service-accordion-btn.active .acc-icon {
+            transform: rotate(180deg);
         }
 
-        .service-dropdown-content {
+        .service-accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 0 24px;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0;
+            color: #4b5563;
+            font-size: 15px;
+            line-height: 1.7;
         }
-        .service-dropdown-content.open {
-            max-height: 2000px;
-            padding: 0 24px 20px;
+        .service-accordion-content.open {
+            max-height: 300px;
+            padding: 0 0 20px;
         }
 
-        .service-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            border-bottom: 1px solid #e5e7eb;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .service-item:last-child {
-            border-bottom: none;
-        }
-        .service-item-info {
-            flex: 1;
-            min-width: 200px;
-        }
-        .service-item-info h4 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 2px;
-        }
-        .service-item-info .price {
-            font-size: 16px;
+        .service-accordion-content .price {
             font-weight: 700;
             color: var(--purple);
-            margin-bottom: 4px;
+            margin-top: 4px;
+            font-size: 15px;
         }
-        .service-item-info .description {
-            font-size: 14px;
+
+        .service-accordion-content .action-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .service-divider {
+            border: none;
+            border-top: 1px solid #e5e7eb;
+            margin: 12px 0;
+        }
+
+        .service-cta-block {
+            margin-top: 32px;
+            padding: 32px 24px;
+            background: var(--gradient-subtle);
+            border-radius: 20px;
+            border: 1px solid rgba(139,92,246,0.1);
+            text-align: center;
+        }
+        .service-cta-block p {
+            font-size: 16px;
             color: #4b5563;
-            line-height: 1.6;
-        }
-        .service-item .btn-small {
-            flex-shrink: 0;
-            margin-top: 0;
+            margin-bottom: 12px;
         }
 
         /* ================================================ */
@@ -1374,11 +1377,8 @@
             .contact-form input::placeholder,
             .contact-form textarea::placeholder { text-align: center; }
             .contact-right { padding: 32px 20px; }
-            .service-dropdown-btn { font-size: 14px; padding: 14px 16px; }
-            .service-item { flex-direction: column; align-items: flex-start; }
-            .service-item .btn-small { margin-top: 8px; }
-            .service-dropdown-content { padding: 0 16px; }
-            .service-dropdown-content.open { padding: 0 16px 16px; }
+            .service-accordion-btn { font-size: 15px; padding: 14px 0; }
+            .service-category-desc { font-size: 15px; }
         }
 
         @media (max-width: 480px) {
@@ -1406,10 +1406,9 @@
             .logo img { height: 28px; }
             .contact-form .btn-primary { font-size: 14px; padding: 14px; }
             .contact-right .btn-primary { font-size: 14px; padding: 14px; }
-            .service-dropdown-btn { font-size: 13px; padding: 12px 14px; flex-wrap: wrap; gap: 8px; }
-            .service-item-info h4 { font-size: 15px; }
-            .service-item-info .price { font-size: 15px; }
-            .service-item-info .description { font-size: 13px; }
+            .service-accordion-btn { font-size: 14px; padding: 12px 0; }
+            .service-accordion-content { font-size: 14px; }
+            .service-cta-block { padding: 24px 16px; }
         }
     </style>
 </head>
@@ -1611,244 +1610,359 @@
         </div>
     </section>
 
-    <!-- ====== SERVICES — DROPDOWN STYLE ====== -->
+    <!-- ====== SERVICES — MINIMAL ACCORDION ====== -->
     <section class="section-full section-full-white" id="services">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Our Services</span>
                 <h2 class="section-title">Strategy. Production. <span class="highlight">Systems.</span></h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Click on a category to explore the services we offer.</p>
+                <p class="section-sub">Click on a service to learn more.</p>
             </div>
 
-            <!-- ====== GROWTH STRATEGY DROPDOWN ====== -->
-            <div class="service-dropdown">
-                <button class="service-dropdown-btn" onclick="toggleDropdown(this)">
-                    <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-                    <span class="dropdown-title">Growth Strategy</span>
-                    <span class="dropdown-count">7 services</span>
-                </button>
-                <div class="service-dropdown-content">
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Content Strategy</h4>
-                            <div class="price">R2,500</div>
-                            <div class="description">A complete roadmap for your content. We identify your audience, messaging, content pillars, posting strategy, and growth opportunities so every piece of content has a clear purpose.</div>
+            <!-- ====== GROWTH STRATEGY ====== -->
+            <div class="service-category">
+                <div class="service-category-title">Growth Strategy</div>
+                <div class="service-category-desc">Every successful content system begins with a clear strategy. Before creating content, we define your goals, audience, positioning, messaging, and content direction to ensure every piece of content serves a business objective.</div>
+
+                <div class="service-accordion">
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Content Strategy
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            Build a roadmap for content that supports your business goals—not just your posting schedule.
+                            <div class="price">Starting from R2,500</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Content Audit</h4>
-                            <div class="price">R1,500</div>
-                            <div class="description">A forensic review of your recent content. We analyse performance, identify weaknesses, and provide practical recommendations to improve reach, engagement, and consistency.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Brand Positioning
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            Clarify what makes your business different and why customers should choose you.
+                            <div class="price">Starting from R3,000</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Hook Diagnosis</h4>
-                            <div class="price">R200</div>
-                            <div class="description">The first three seconds determine whether people keep watching. We analyse your hook and rewrite it to maximise retention.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Brand Messaging
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            Develop clear messaging that communicates your value consistently across every platform.
+                            <div class="price">Starting from R2,000</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Brand Messaging</h4>
-                            <div class="price">R1,800</div>
-                            <div class="description">Clarify what your brand stands for and how it communicates. We help you develop messaging that is consistent, memorable, and aligned with your audience.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Content Audit
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            Identify what's working, what's holding your content back, and where the biggest growth opportunities exist.
+                            <div class="price">Starting from R1,500</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Creator Growth Roadmap</h4>
-                            <div class="price">R3,000</div>
-                            <div class="description">A personalised 90-day growth plan outlining what to create, when to publish, and how to position yourself for long-term growth.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Hook Diagnosis
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            The first three seconds determine whether people keep watching. We rewrite your hooks for maximum retention.
+                            <div class="price">Starting from R200</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Monetisation Consulting</h4>
-                            <div class="price">R1,500</div>
-                            <div class="description">Build better partnerships and monetisation systems through pricing guidance, sponsorship strategy, and creator business consulting.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Creator Growth Roadmap
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            A personalised 90-day plan outlining what to create, when to publish, and how to position yourself for growth.
+                            <div class="price">Starting from R3,000</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Personal Brand Strategy</h4>
-                            <div class="price">R800</div>
-                            <div class="description">A one-on-one strategy session focused on positioning, messaging, and building a stronger personal brand.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Monetisation Consulting
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            Build better partnerships through pricing guidance, sponsorship strategy, and creator business consulting.
+                            <div class="price">Starting from R1,500</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Personal Brand Strategy
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            One-on-one coaching focused on positioning, messaging, and building a stronger personal brand.
+                            <div class="price">Starting from R800</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-cta-block">
+                    <p><strong>Not sure what you need?</strong><br>Book a free discovery call and we'll recommend the right solution based on your goals.</p>
+                    <a href="#contact" class="btn-primary" style="background: var(--black); color: white; padding: 12px 32px; font-size: 14px;">Book a Discovery Call</a>
                 </div>
             </div>
 
-            <!-- ====== CONTENT ENGINE DROPDOWN ====== -->
-            <div class="service-dropdown">
-                <button class="service-dropdown-btn" onclick="toggleDropdown(this)">
-                    <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-                    <span class="dropdown-title">Content Engine</span>
-                    <span class="dropdown-count">6 services</span>
-                </button>
-                <div class="service-dropdown-content">
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Script Writing</h4>
-                            <div class="price">R350</div>
-                            <div class="description">High-converting scripts written using our proven Hook–Body–CTA framework, engineered to maximise retention and clarity.</div>
+            <!-- ====== CONTENT ENGINE ====== -->
+            <div class="service-category">
+                <div class="service-category-title">Content Engine</div>
+                <div class="service-category-desc">Once the strategy is in place, we create content that earns attention and builds trust. Our production process is designed to support your brand—not simply increase your posting frequency.</div>
+
+                <div class="service-accordion">
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Script Writing
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            High-converting scripts using our proven Hook–Body–CTA framework, engineered for retention.
+                            <div class="price">Starting from R350</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Short-form Video Editing</h4>
-                            <div class="price">R600</div>
-                            <div class="description">Professional editing for TikTok, Instagram Reels, and YouTube Shorts, including pacing, captions, sound design, and retention-focused editing.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Short-form Video Editing
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            Professional editing for TikTok, Instagram Reels, and YouTube Shorts — pacing, captions, and sound design.
+                            <div class="price">Starting from R600</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>YouTube Editing</h4>
-                            <div class="price">R1,200</div>
-                            <div class="description">Long-form editing with storytelling, pacing, transitions, B-roll integration, captions, and thumbnail guidance.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            YouTube Editing
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            Long-form editing with storytelling, pacing, transitions, B-roll, and thumbnail guidance.
+                            <div class="price">Starting from R1,200</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Full Production</h4>
-                            <div class="price">R1,000+</div>
-                            <div class="description">Complete production from strategy and scripting to editing and final delivery. Available for short-form and long-form content.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Full Production
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            Complete production from strategy and scripting to editing and final delivery.
+                            <div class="price">Starting from R1,000+</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Content Repurposing</h4>
-                            <div class="price">R800</div>
-                            <div class="description">Turn one long-form video into multiple platform-specific short-form pieces for TikTok, Instagram Reels, YouTube Shorts, and LinkedIn.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Content Repurposing
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            Turn one long-form video into multiple platform-specific short-form pieces.
+                            <div class="price">Starting from R800</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Thumbnail Design</h4>
-                            <div class="price">R300</div>
-                            <div class="description">Professionally designed thumbnails focused on increasing click-through rates while maintaining a consistent visual identity.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Thumbnail Design
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            Professionally designed thumbnails focused on increasing click-through rates.
+                            <div class="price">Starting from R300</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
+                </div>
+
+                <div class="service-cta-block">
+                    <p><strong>Not sure what you need?</strong><br>Book a free discovery call and we'll recommend the right solution based on your goals.</p>
+                    <a href="#contact" class="btn-primary" style="background: var(--black); color: white; padding: 12px 32px; font-size: 14px;">Book a Discovery Call</a>
                 </div>
             </div>
 
-            <!-- ====== CREATIVE ASSETS DROPDOWN ====== -->
-            <div class="service-dropdown">
-                <button class="service-dropdown-btn" onclick="toggleDropdown(this)">
-                    <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-                    <span class="dropdown-title">Creative Assets</span>
-                    <span class="dropdown-count">4 services</span>
-                </button>
-                <div class="service-dropdown-content">
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Brand Guidelines</h4>
-                            <div class="price">R2,000</div>
-                            <div class="description">A professional guide covering colours, typography, visual identity, messaging, and content style.</div>
+            <!-- ====== CREATIVE ASSETS ====== -->
+            <div class="service-category">
+                <div class="service-category-title">Creative Assets</div>
+                <div class="service-category-desc">Strong brands are consistent. We create the supporting assets that help your business look as professional as the service you provide.</div>
+
+                <div class="service-accordion">
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Brand Guidelines
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            A professional guide covering colours, typography, visual identity, messaging, and content style.
+                            <div class="price">Starting from R2,000</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Creator Media Kits</h4>
-                            <div class="price">R1,200</div>
-                            <div class="description">A professionally designed media kit showcasing your audience, analytics, services, and partnership opportunities.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Creator Media Kits
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            A professionally designed media kit showcasing your audience, analytics, and partnership opportunities.
+                            <div class="price">Starting from R1,200</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Presentation Design</h4>
-                            <div class="price">R1,500</div>
-                            <div class="description">Professional presentations for client pitches, workshops, proposals, investor meetings, and keynote presentations.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Presentation Design
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            Professional presentations for client pitches, workshops, proposals, and investor meetings.
+                            <div class="price">Starting from R1,500</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <h4>Social Media Templates</h4>
-                            <div class="price">R600</div>
-                            <div class="description">Custom-designed templates for social media posts, stories, and carousels that maintain brand consistency.</div>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Social Media Templates
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            Custom-designed templates for posts, stories, and carousels that maintain brand consistency.
+                            <div class="price">Starting from R600</div>
+                            <div class="action-row">
+                                <a href="#contact" class="btn-small">Order Now</a>
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
                     </div>
+                </div>
+
+                <div class="service-cta-block">
+                    <p><strong>Not sure what you need?</strong><br>Book a free discovery call and we'll recommend the right solution based on your goals.</p>
+                    <a href="#contact" class="btn-primary" style="background: var(--black); color: white; padding: 12px 32px; font-size: 14px;">Book a Discovery Call</a>
                 </div>
             </div>
 
-            <!-- ====== GROWTH SYSTEMS DROPDOWN ====== -->
-            <div class="service-dropdown">
-                <button class="service-dropdown-btn" onclick="toggleDropdown(this)">
-                    <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-                    <span class="dropdown-title">Growth Systems</span>
-                    <span class="dropdown-count">3 packages</span>
-                </button>
-                <div class="service-dropdown-content">
-                    <div class="service-item" style="flex-direction: column; align-items: stretch; gap: 8px;">
-                        <div class="service-item-info" style="text-align: center;">
-                            <h4 style="font-size: 18px;">Starter</h4>
-                            <div style="font-size: 14px; color: #6b7280; margin-bottom: 4px;">15-Day Content Sprint</div>
-                            <div style="font-size: 14px; color: #6b7280; font-style: italic; margin-bottom: 8px;">Perfect for creators building consistency.</div>
-                            <ul style="list-style: none; text-align: left; max-width: 400px; margin: 0 auto; font-size: 14px; color: #4b5563;">
-                                <li style="padding: 3px 0;">✓ 6–8 Short-form Scripts</li>
-                                <li style="padding: 3px 0;">✓ 1–2 YouTube Scripts</li>
-                                <li style="padding: 3px 0;">✓ Content Audit</li>
-                                <li style="padding: 3px 0;">✓ Monthly Strategy Check-in</li>
-                            </ul>
+            <!-- ====== GROWTH SYSTEMS ====== -->
+            <div class="service-category">
+                <div class="service-category-title">Growth Systems</div>
+                <div class="service-category-desc">For clients who want an ongoing content engine. We become your outsourced content department—one structured system instead of five freelancers.</div>
+
+                <div class="service-accordion">
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Starter
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            15-Day Content Sprint — 6–8 scripts, 1–2 YouTube scripts, content audit, and strategy check-in.
+                            <div class="price">Starting from R6,000</div>
+                            <div class="action-row">
+                                <a href="mailto:hello@frameworkmedia.co.za?subject=Starter Bundle Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Starter bundle (15-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small">Get Quote</a>
+                            </div>
                         </div>
-                        <a href="mailto:hello@frameworkmedia.co.za?subject=Starter Bundle Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Starter bundle (15-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small" style="align-self: center;">Get Starter Quote</a>
                     </div>
-                    <div class="service-item" style="flex-direction: column; align-items: stretch; gap: 8px; border-top: 1px solid #e5e7eb; padding-top: 16px;">
-                        <div class="service-item-info" style="text-align: center;">
-                            <h4 style="font-size: 18px;">Growth</h4>
-                            <span style="background: var(--black); color: white; padding: 2px 12px; border-radius: 40px; font-size: 10px; display: inline-block; margin-bottom: 4px;">popular</span>
-                            <div style="font-size: 14px; color: #6b7280; margin-bottom: 4px;">21-Day Content System</div>
-                            <div style="font-size: 14px; color: #6b7280; font-style: italic; margin-bottom: 8px;">Ideal for creators and businesses ready to scale.</div>
-                            <ul style="list-style: none; text-align: left; max-width: 400px; margin: 0 auto; font-size: 14px; color: #4b5563;">
-                                <li style="padding: 3px 0;">✓ 10–12 Short-form Scripts</li>
-                                <li style="padding: 3px 0;">✓ Short-form Editing</li>
-                                <li style="padding: 3px 0;">✓ 2–3 YouTube Scripts</li>
-                                <li style="padding: 3px 0;">✓ YouTube Editing</li>
-                                <li style="padding: 3px 0;">✓ Monthly Content Audit</li>
-                                <li style="padding: 3px 0;">✓ Performance Review</li>
-                            </ul>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Growth
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            21-Day Content System — 10–12 scripts, editing, YouTube scripts and editing, monthly audit, and performance review.
+                            <div class="price">Starting from R16,000</div>
+                            <div class="action-row">
+                                <a href="mailto:hello@frameworkmedia.co.za?subject=Growth Bundle Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Growth bundle (21-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small">Get Quote</a>
+                            </div>
                         </div>
-                        <a href="mailto:hello@frameworkmedia.co.za?subject=Growth Bundle Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Growth bundle (21-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small" style="align-self: center;">Get Growth Quote</a>
                     </div>
-                    <div class="service-item" style="flex-direction: column; align-items: stretch; gap: 8px; border-top: 1px solid #e5e7eb; padding-top: 16px;">
-                        <div class="service-item-info" style="text-align: center;">
-                            <h4 style="font-size: 18px;">Full System</h4>
-                            <div style="font-size: 14px; color: #6b7280; margin-bottom: 4px;">30-Day Content Department</div>
-                            <div style="font-size: 14px; color: #6b7280; font-style: italic; margin-bottom: 8px;">Your complete outsourced content team.</div>
-                            <ul style="list-style: none; text-align: left; max-width: 400px; margin: 0 auto; font-size: 14px; color: #4b5563;">
-                                <li style="padding: 3px 0;">✓ Content Strategy</li>
-                                <li style="padding: 3px 0;">✓ Monthly Planning</li>
-                                <li style="padding: 3px 0;">✓ 15+ Short-form Videos</li>
-                                <li style="padding: 3px 0;">✓ 4 YouTube Videos</li>
-                                <li style="padding: 3px 0;">✓ Editing + Optimisation</li>
-                                <li style="padding: 3px 0;">✓ Analytics Review</li>
-                                <li style="padding: 3px 0;">✓ Strategy Calls</li>
-                                <li style="padding: 3px 0;">✓ Monetisation Consulting</li>
-                                <li style="padding: 3px 0;">✓ Priority Support</li>
-                                <li style="padding: 3px 0;">✓ Monthly Content Management</li>
-                            </ul>
+
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-btn" onclick="toggleAccordion(this)">
+                            Full System
+                            <span class="acc-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="service-accordion-content">
+                            30-Day Content Department — Complete outsourced content team with strategy, production, optimisation, and consulting.
+                            <div class="price">Starting from R32,000</div>
+                            <div class="action-row">
+                                <a href="mailto:hello@frameworkmedia.co.za?subject=Full System Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Full System bundle (30-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small">Get Quote</a>
+                            </div>
                         </div>
-                        <a href="mailto:hello@frameworkmedia.co.za?subject=Full System Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Full System bundle (30-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small" style="align-self: center;">Get Full System Quote</a>
                     </div>
+                </div>
+
+                <div class="service-cta-block">
+                    <p><strong>Not sure what you need?</strong><br>Book a free discovery call and we'll recommend the right solution based on your goals.</p>
+                    <a href="#contact" class="btn-primary" style="background: var(--black); color: white; padding: 12px 32px; font-size: 14px;">Book a Discovery Call</a>
                 </div>
             </div>
         </div>
@@ -2175,15 +2289,16 @@
         }
 
         // ================================================
-        // ===== SERVICE DROPDOWN TOGGLE =====
+        // ===== SERVICE ACCORDION TOGGLE =====
         // ================================================
 
-        function toggleDropdown(button) {
+        function toggleAccordion(button) {
             const content = button.nextElementSibling;
             const isOpen = content.classList.contains('open');
 
-            // Close all other dropdowns
-            document.querySelectorAll('.service-dropdown-content').forEach(el => {
+            // Close all other accordions in the same category
+            const parent = button.closest('.service-accordion');
+            parent.querySelectorAll('.service-accordion-content').forEach(el => {
                 if (el !== content) {
                     el.classList.remove('open');
                     el.previousElementSibling.classList.remove('active');
