@@ -9,10 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
-        /* ================================================ */
-        /* ===== BASE ===== */
-        /* ================================================ */
-
         * {
             margin: 0;
             padding: 0;
@@ -26,7 +22,12 @@
             --purple: #8b5cf6;
             --blue: #3b82f6;
             --gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
+            --gradient-hero: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e, #16213e);
             --gradient-subtle: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(139, 92, 246, 0.08), rgba(59, 130, 246, 0.08));
+            --bg-light-purple: #f5f0ff;
+            --bg-light-pink: #fdf2f8;
+            --bg-light-blue: #eff6ff;
         }
 
         html {
@@ -46,10 +47,6 @@
             margin: 0 auto;
             padding: 0 24px;
         }
-
-        /* ================================================ */
-        /* ===== BUTTONS ===== */
-        /* ================================================ */
 
         .btn-primary {
             background: var(--black);
@@ -111,13 +108,9 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
 
-        /* ================================================ */
-        /* ===== PILL ===== */
-        /* ================================================ */
-
         .pill {
             display: inline-block;
-            background: var(--gradient-subtle);
+            background: rgba(255,255,255,0.7);
             color: var(--black);
             font-size: 11px;
             font-weight: 600;
@@ -129,9 +122,11 @@
             border: 1px solid rgba(139, 92, 246, 0.15);
         }
 
-        /* ================================================ */
-        /* ===== SECTION HEADERS ===== */
-        /* ================================================ */
+        .pill-dark {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
 
         .section-header {
             text-align: center;
@@ -167,10 +162,7 @@
             margin: 16px auto 0;
         }
 
-        /* ================================================ */
         /* ===== NAVBAR ===== */
-        /* ================================================ */
-
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -185,7 +177,8 @@
             z-index: 1000;
             transition: transform 0.4s ease, box-shadow 0.3s ease;
             transform: translateY(0);
-            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+            padding-left: 24px;
+            padding-right: 24px;
         }
         .navbar.hidden {
             transform: translateY(-100%);
@@ -237,39 +230,72 @@
         }
 
         /* ================================================ */
-        /* ===== HERO ===== */
+        /* ===== HERO — FULL WIDTH ===== */
         /* ================================================ */
 
         .hero {
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
-            padding: 120px 0 80px;
+            padding: 160px 24px 100px;
             margin-top: 0;
-            background: url('images/hero-bg.jpg') center/cover no-repeat;
+            background: var(--gradient-hero);
+            overflow: hidden;
+            width: 100%;
         }
-        .hero::before {
-            content: '';
+
+        .hero .orb-1 {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.65);
-            z-index: 1;
+            width: 400px;
+            height: 400px;
+            background: var(--purple);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            filter: blur(80px);
+            opacity: 0.2;
+            z-index: 0;
         }
+        .hero .orb-2 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--pink);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -50px;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+        .hero .orb-3 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--blue);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(80px);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
+            width: 100%;
         }
+
         .hero-tag {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.08);
             color: #a78bfa;
             font-weight: 600;
             font-size: 13px;
@@ -277,8 +303,10 @@
             border-radius: 40px;
             display: inline-block;
             margin-bottom: 20px;
-            border: 1px solid rgba(167,139,250,0.2);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            backdrop-filter: blur(4px);
         }
+
         .hero h1 {
             font-size: 64px;
             font-weight: 800;
@@ -288,12 +316,14 @@
             color: white;
             text-align: center;
         }
+
         .hero h1 .highlight {
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .hero p {
             font-size: 20px;
             color: #d1d5db;
@@ -302,6 +332,7 @@
             line-height: 1.7;
             text-align: center;
         }
+
         .hero-actions {
             display: flex;
             gap: 16px;
@@ -310,12 +341,51 @@
         }
 
         /* ================================================ */
-        /* ===== SECTION ===== */
+        /* ===== FULL-WIDTH SECTIONS WITH COLORS ===== */
         /* ================================================ */
 
-        .section {
+        .section-full {
+            width: 100%;
             padding: 80px 0 60px;
-            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .section-full-white {
+            background: #ffffff;
+        }
+
+        .section-full-light-purple {
+            background: var(--bg-light-purple);
+        }
+
+        .section-full-light-pink {
+            background: var(--bg-light-pink);
+        }
+
+        .section-full-light-blue {
+            background: var(--bg-light-blue);
+        }
+
+        .section-full-dark {
+            background: var(--gradient-dark);
+            color: white;
+        }
+
+        .section-full-dark .section-title {
+            color: white;
+        }
+
+        .section-full-dark .section-sub {
+            color: #d1d5db;
+        }
+
+        .section-full-dark .pill {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .section-full-dark .accent-line {
+            background: var(--gradient);
         }
 
         /* ================================================ */
@@ -334,7 +404,7 @@
             font-size: 17px;
             line-height: 1.9;
             margin-bottom: 16px;
-            text-align: center;
+            text-align: left;
         }
         .who-content p:last-child {
             margin-bottom: 0;
@@ -348,7 +418,7 @@
             color: var(--black);
         }
         .who-visual {
-            background: var(--gradient-subtle);
+            background: rgba(255,255,255,0.7);
             border-radius: 24px;
             aspect-ratio: 4 / 3;
             display: flex;
@@ -391,10 +461,10 @@
             margin-top: 16px;
         }
         .problem-card {
-            background: #f8fafc;
+            background: rgba(255,255,255,0.8);
             border-radius: 20px;
             padding: 32px 28px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid rgba(139,92,246,0.1);
             transition: all 0.3s ease;
             text-align: center;
         }
@@ -428,12 +498,12 @@
 
         .showcase-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 24px;
             margin-top: 16px;
         }
         .showcase-card {
-            background: #f9fafb;
+            background: white;
             border-radius: 24px;
             border: 1px solid #e5e7eb;
             overflow: hidden;
@@ -540,8 +610,8 @@
             position: relative;
             overflow: hidden;
             border-radius: 24px;
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(139,92,246,0.1);
             margin-top: 16px;
         }
         .carousel-track {
@@ -563,8 +633,8 @@
             align-items: center;
             justify-content: center;
             padding: 24px 20px;
-            background: #f9fafb;
-            border-right: 1px solid #e5e7eb;
+            background: rgba(255,255,255,0.5);
+            border-right: 1px solid rgba(139,92,246,0.08);
             text-align: center;
         }
         .slide-item:last-child {
@@ -668,7 +738,7 @@
             margin-top: 16px;
         }
         .service-card {
-            background: #f9fafb;
+            background: white;
             padding: 28px 24px;
             border-radius: 20px;
             border: 1px solid #e5e7eb;
@@ -745,7 +815,7 @@
             margin-top: 16px;
         }
         .pricing-card {
-            background: #f9fafb;
+            background: white;
             padding: 32px 24px;
             border-radius: 32px;
             border: 1px solid #e5e7eb;
@@ -814,10 +884,10 @@
             margin-right: auto;
         }
         .help-item {
-            background: #f9fafb;
+            background: rgba(255,255,255,0.7);
             border-radius: 12px;
             padding: 16px 12px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid rgba(139,92,246,0.1);
             text-align: center;
             font-weight: 500;
             font-size: 14px;
@@ -825,7 +895,7 @@
         }
         .help-item:hover {
             border-color: var(--purple);
-            background: var(--gradient-subtle);
+            background: rgba(255,255,255,0.95);
             transform: translateY(-2px);
         }
 
@@ -840,7 +910,7 @@
             margin-top: 16px;
         }
         .why-card {
-            background: #f9fafb;
+            background: white;
             border-radius: 20px;
             padding: 28px 24px;
             border: 1px solid #e5e7eb;
@@ -888,10 +958,10 @@
             margin-right: auto;
         }
         .result-item {
-            background: #f9fafb;
+            background: rgba(255,255,255,0.7);
             border-radius: 16px;
             padding: 20px 16px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid rgba(139,92,246,0.1);
             text-align: center;
             transition: all 0.3s ease;
             display: flex;
@@ -901,7 +971,7 @@
         }
         .result-item:hover {
             border-color: var(--purple);
-            background: var(--gradient-subtle);
+            background: rgba(255,255,255,0.95);
             transform: translateY(-2px);
         }
         .result-item .icon {
@@ -927,10 +997,10 @@
             margin-right: auto;
         }
         .dont-item {
-            background: #f9fafb;
+            background: rgba(255,255,255,0.7);
             border-radius: 12px;
             padding: 16px 12px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid rgba(0,0,0,0.05);
             text-align: center;
             transition: all 0.3s ease;
         }
@@ -957,9 +1027,9 @@
         .founder-card {
             max-width: 800px;
             margin: 0 auto;
-            background: #f9fafb;
+            background: white;
             border-radius: 32px;
-            padding: 56px 48px;
+            padding: 48px 40px;
             border: 1px solid #e5e7eb;
             text-align: center;
             transition: all 0.3s ease;
@@ -970,17 +1040,17 @@
             transform: translateY(-4px);
         }
         .founder-image {
-            width: 400px;
-            height: 400px;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 50%;
             margin: 0 auto 24px;
             display: block;
             border: 4px solid var(--purple);
             box-shadow: 0 8px 30px rgba(139,92,246,0.12);
         }
         .founder-card h4 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             text-align: center;
         }
@@ -995,7 +1065,7 @@
             color: #374151;
             max-width: 600px;
             margin: 0 auto 16px;
-            font-size: 17px;
+            font-size: 16px;
             line-height: 1.8;
             text-align: center;
         }
@@ -1030,7 +1100,7 @@
             margin-right: auto;
         }
         .faq-item {
-            background: #f9fafb;
+            background: white;
             border-radius: 16px;
             border: 1px solid #e5e7eb;
             overflow: hidden;
@@ -1098,36 +1168,52 @@
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 4px;
-            text-align: center;
+            text-align: left;
+            color: white;
         }
         .contact-form p {
-            color: #4b5563;
+            color: #d1d5db;
             margin-bottom: 24px;
             font-size: 15px;
-            text-align: center;
+            text-align: left;
         }
         .contact-form input,
         .contact-form textarea {
             width: 100%;
             padding: 14px 18px;
-            border: 1px solid #d1d5db;
+            border: 1px solid rgba(255,255,255,0.2);
             border-radius: 16px;
             margin: 8px 0;
             font-family: inherit;
             font-size: 16px;
             transition: all 0.3s ease;
-            text-align: center;
+            background: rgba(255,255,255,0.05);
+            color: white;
+        }
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.5);
         }
         .contact-form input:focus,
         .contact-form textarea:focus {
             border-color: var(--purple);
             outline: none;
-            box-shadow: 0 0 0 4px rgba(139,92,246,0.1);
+            box-shadow: 0 0 0 4px rgba(139,92,246,0.2);
+            background: rgba(255,255,255,0.08);
         }
         .contact-form textarea {
             min-height: 120px;
             resize: vertical;
             text-align: left;
+        }
+        .contact-form .btn-primary {
+            background: white;
+            color: var(--black);
+            width: 100%;
+            margin-top: 4px;
+        }
+        .contact-form .btn-primary:hover {
+            background: #f0f0f0;
         }
 
         .contact-right {
@@ -1136,13 +1222,14 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: var(--gradient-subtle);
+            background: rgba(255,255,255,0.05);
             border-radius: 32px;
             padding: 48px 40px;
-            border: 2px solid var(--purple);
+            border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s ease;
         }
         .contact-right:hover {
+            border-color: var(--purple);
             box-shadow: 0 12px 40px rgba(139,92,246,0.08);
             transform: translateY(-4px);
         }
@@ -1151,9 +1238,10 @@
             font-weight: 700;
             margin-bottom: 8px;
             text-align: center;
+            color: white;
         }
         .contact-right p {
-            color: #4b5563;
+            color: #d1d5db;
             margin-bottom: 24px;
             font-size: 16px;
             max-width: 400px;
@@ -1162,6 +1250,11 @@
         .contact-right .btn-primary {
             width: 100%;
             text-align: center;
+            background: white;
+            color: var(--black);
+        }
+        .contact-right .btn-primary:hover {
+            background: #f0f0f0;
         }
 
         /* ================================================ */
@@ -1169,7 +1262,7 @@
         /* ================================================ */
 
         .footer {
-            border-top: 1px solid #e5e7eb;
+            border-top: 1px solid rgba(0,0,0,0.05);
             padding: 32px 0;
             display: flex;
             justify-content: space-between;
@@ -1177,6 +1270,7 @@
             gap: 20px;
             color: #6b7280;
             font-size: 14px;
+            background: #ffffff;
         }
         .footer a {
             color: #6b7280;
@@ -1278,7 +1372,7 @@
             .showcase-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-section { grid-template-columns: 1fr; gap: 40px; }
             .problem-grid { grid-template-columns: 1fr; }
-            .founder-image { width: 300px; height: 300px; }
+            .founder-image { width: 200px; height: 200px; }
             .help-grid { grid-template-columns: repeat(2, 1fr); }
             .results-grid { grid-template-columns: repeat(2, 1fr); }
             .dont-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1290,85 +1384,105 @@
             .navbar { padding: 16px 0; flex-wrap: wrap; justify-content: center; gap: 12px; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
             .nav-links a { font-size: 13px; }
-            .hero { padding: 100px 0 60px; min-height: 80vh; }
-            .hero h1 { font-size: 36px; }
+            .hero { padding: 120px 24px 60px; min-height: 80vh; }
+            .hero .orb-1, .hero .orb-2, .hero .orb-3 { display: none; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .hero-actions .btn-primary,
+            .hero-actions .btn-outline { width: 100%; max-width: 320px; text-align: center; padding: 16px 24px; font-size: 16px; }
             .section-title { font-size: 30px; }
-            .section { padding: 50px 0 30px; }
+            .section-full { padding: 50px 0 30px; }
             .services-grid { grid-template-columns: 1fr; }
             .why-grid { grid-template-columns: 1fr; }
             .showcase-grid { grid-template-columns: 1fr; gap: 20px; }
             .contact-right { padding: 32px 20px; }
             .carousel-slide { grid-template-columns: 1fr !important; }
-            .slide-item { border-right: none; border-bottom: 1px solid #e5e7eb; padding: 16px; }
+            .slide-item { border-right: none; border-bottom: 1px solid rgba(139,92,246,0.08); padding: 16px; }
             .slide-item:last-child { border-bottom: none; }
             .carousel-btn { width: 40px; height: 40px; font-size: 14px; }
             .slide-item img, .slide-item video { max-height: 250px; }
             .founder-card { padding: 32px 20px; }
-            .founder-image { width: 200px; height: 200px; }
-            .founder-card h4 { font-size: 26px; }
+            .founder-image { width: 160px; height: 160px; }
+            .founder-card h4 { font-size: 24px; }
             .help-grid { grid-template-columns: 1fr 1fr; }
             .results-grid { grid-template-columns: 1fr; }
             .dont-grid { grid-template-columns: 1fr 1fr; }
             .pricing-grid { grid-template-columns: 1fr; }
             .who-content p { text-align: center; }
             .logo img { height: 32px; }
+            .contact-form h3,
+            .contact-form p { text-align: center; color: white; }
+            .contact-form textarea { text-align: center; }
+            .contact-form input::placeholder,
+            .contact-form textarea::placeholder { text-align: center; }
+            .contact-right { padding: 32px 20px; }
         }
 
         @media (max-width: 480px) {
             .hero h1 { font-size: 28px; }
+            .hero p { font-size: 14px; }
+            .hero-tag { font-size: 10px; padding: 3px 12px; margin-bottom: 12px; }
+            .hero-actions .btn-primary,
+            .hero-actions .btn-outline { padding: 14px 20px; font-size: 14px; max-width: 280px; }
             .container { padding: 0 16px; }
-            .hero { padding: 80px 0 40px; min-height: 70vh; }
-            .section { padding: 40px 0 20px; }
+            .hero { padding: 100px 16px 40px; min-height: 60vh; }
+            .section-full { padding: 40px 0 20px; }
             .footer { flex-direction: column; align-items: center; text-align: center; }
             .contact-right { padding: 24px 16px; }
             .faq-question { font-size: 14px; padding: 14px 18px; }
             .faq-answer { font-size: 14px; }
-            .founder-image { width: 160px; height: 160px; }
-            .founder-card h4 { font-size: 22px; }
+            .founder-image { width: 140px; height: 140px; }
+            .founder-card h4 { font-size: 20px; }
             .slide-item { padding: 12px; }
             .slide-item img, .slide-item video { max-height: 180px; }
             .help-grid { grid-template-columns: 1fr; }
             .dont-grid { grid-template-columns: 1fr; }
             .who-visual { padding: 24px; }
             .nav-links { gap: 10px; }
-            .nav-links a { font-size: 12px; }
+            .nav-links a { font-size: 11px; }
             .logo img { height: 28px; }
+            .contact-form .btn-primary { font-size: 14px; padding: 14px; }
+            .contact-right .btn-primary { font-size: 14px; padding: 14px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
 
-        <!-- ====== NAV ====== -->
-        <header class="navbar" id="navbar">
-            <a href="#" class="logo">
-                <img src="images/logo.png" alt="Framework Media" />
-            </a>
-            <div class="nav-links">
-                <a href="#who">Who We Are</a>
-                <a href="#services">Services</a>
-                <a href="#process">How We Work</a>
-                <a href="#why">Why Us</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
+    <!-- ====== NAV ====== -->
+    <header class="navbar" id="navbar">
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="Framework Media" />
+        </a>
+        <div class="nav-links">
+            <a href="#who">Who We Are</a>
+            <a href="#services">Services</a>
+            <a href="#process">How We Work</a>
+            <a href="#why">Why Us</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <!-- ====== HERO — FULL WIDTH ====== -->
+    <section class="hero hero-reveal">
+        <div class="orb-1"></div>
+        <div class="orb-2"></div>
+        <div class="orb-3"></div>
+        <div class="hero-content">
+            <span class="hero-tag">Content Growth Agency</span>
+            <h1>Build a brand people notice.<br>Build a business <span class="highlight">people trust</span>.</h1>
+            <p>Framework Media helps service-based businesses, entrepreneurs, and creators build strategic content systems that increase visibility, establish authority, and create consistent opportunities for growth.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">Book a Discovery Call</a>
+                <a href="#services" class="btn-outline">View Our Services</a>
             </div>
-        </header>
+        </div>
+    </section>
 
-        <!-- ====== HERO ====== -->
-        <section class="hero hero-reveal">
-            <div class="hero-content">
-                <span class="hero-tag">Content Growth Agency</span>
-                <h1>Build a brand people notice.<br>Build a business <span class="highlight">people trust</span>.</h1>
-                <p>Framework Media helps service-based businesses, entrepreneurs, and creators build strategic content systems that increase visibility, establish authority, and create consistent opportunities for growth.</p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn-primary">Book a Discovery Call</a>
-                    <a href="#services" class="btn-outline">View Our Services</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====== WHO WE ARE ====== -->
-        <section class="section" id="who">
+    <!-- ====== WHO WE ARE — FULL WIDTH ====== -->
+    <section class="section-full section-full-white" id="who">
+        <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Who We Are</span>
                 <h2 class="section-title">Content isn't the goal. <span class="highlight">Growth is.</span></h2>
@@ -1389,10 +1503,12 @@
                     <p>Every piece of content is built to move your business forward.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ====== THE PROBLEM ====== -->
-        <section class="section" id="problem">
+    <!-- ====== THE PROBLEM — FULL WIDTH ====== -->
+    <section class="section-full section-full-light-purple" id="problem">
+        <div class="container">
             <div class="section-header">
                 <span class="pill reveal">The Problem</span>
                 <h2 class="section-title">Posting More <span class="highlight">Isn't the Answer</span>.</h2>
@@ -1411,17 +1527,18 @@
                     <p>Your brand gains direction, consistency, and momentum. Content compounds rather than resets.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ====== PROOF ====== -->
-        <section class="section" id="showcase">
+    <!-- ====== PROOF — FULL WIDTH ====== -->
+    <section class="section-full section-full-white" id="showcase">
+        <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Proof</span>
                 <h2 class="section-title">Proof of <span class="highlight">Performance</span></h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Real transformations using the Framework system.</p>
             </div>
-
             <div class="showcase-grid">
                 <div class="showcase-card reveal">
                     <div class="showcase-media">
@@ -1438,7 +1555,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="showcase-card reveal">
                     <div class="showcase-media">
                         <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox" />
@@ -1455,23 +1571,22 @@
                     </div>
                 </div>
             </div>
-
             <div class="showcase-cta">
                 <h3>Ready to build a content system that works?</h3>
                 <p>Let's talk about your goals and map a system that delivers.</p>
                 <a href="#contact" class="btn-primary">Book Your Discovery Call</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ====== CAROUSEL ====== -->
-        <section class="section" id="carousel">
-            <hr class="divider" style="border: none; border-top: 1px solid #e5e7eb; margin: 0;" />
+    <!-- ====== CAROUSEL — FULL WIDTH ====== -->
+    <section class="section-full section-full-light-pink" id="carousel">
+        <div class="container">
             <div style="text-align: center; padding: 40px 0 8px;">
                 <span class="pill pill-reveal" style="margin-bottom: 8px;">Our Work</span>
                 <h2 class="section-title" style="margin-bottom: 4px;">What We've Done</h2>
                 <div class="accent-line"></div>
             </div>
-
             <div class="carousel-wrapper">
                 <div class="carousel-track" id="carouselTrack">
                     <div class="carousel-slide">
@@ -1522,16 +1637,17 @@
                     </div>
                 </div>
             </div>
-
             <div class="carousel-controls">
                 <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-dots" id="dotsContainer"></div>
                 <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ====== WHAT WE DO ====== -->
-        <section class="section" id="services">
+    <!-- ====== WHAT WE DO — FULL WIDTH ====== -->
+    <section class="section-full section-full-white" id="services">
+        <div class="container">
             <div class="section-header">
                 <span class="pill reveal">What We Do</span>
                 <h2 class="section-title">Strategy. Production. <span class="highlight">Systems.</span></h2>
@@ -1679,7 +1795,6 @@
             <!-- Growth Systems -->
             <div class="service-group-title">Growth Systems</div>
             <p class="service-group-sub">Need more than occasional content? We become your outsourced content department. From planning and scripting to production and optimisation, we build and manage a content system that grows with your business.</p>
-
             <div class="pricing-grid stagger">
                 <div class="pricing-card">
                     <h3>Starter</h3>
@@ -1727,10 +1842,12 @@
                     <a href="mailto:hello@frameworkmedia.co.za?subject=Full System Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Full System bundle (30-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small">Get Full System Quote</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ====== WHO WE HELP ====== -->
-        <section class="section" id="help">
+    <!-- ====== WHO WE HELP — FULL WIDTH ====== -->
+    <section class="section-full section-full-light-blue" id="help">
+        <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Who We Help</span>
                 <h2 class="section-title">Built for Businesses That <span class="highlight">Grow Through Trust</span>.</h2>
@@ -1748,17 +1865,18 @@
                 <div class="help-item">Thought Leaders</div>
             </div>
             <p style="text-align: center; color: #4b5563; margin-top: 24px; font-size: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">Whether you're building a company or a personal brand, we help you create content that earns attention, builds authority, and creates opportunities.</p>
-        </section>
+        </div>
+    </section>
 
-        <!-- ====== WHY FRAMEWORK MEDIA ====== -->
-        <section class="section" id="why">
+    <!-- ====== WHY FRAMEWORK — FULL WIDTH ====== -->
+    <section class="section-full section-full-white" id="why">
+        <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Why Framework Media</span>
                 <h2 class="section-title">We Don't Just Produce Content.<br><span class="highlight">We Build Content Systems.</span></h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Anyone can create a video. Very few businesses have a repeatable system that consistently turns content into business growth.</p>
             </div>
-
             <div class="why-grid stagger">
                 <div class="why-card">
                     <span class="icon"><i class="fas fa-bullseye"></i></span>
@@ -1781,10 +1899,12 @@
                     <p>Our goal isn't to complete a job. It's to become your long-term content partner.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ====== RESULTS ====== -->
-        <section class="section" id="results">
+    <!-- ====== RESULTS — FULL WIDTH ====== -->
+    <section class="section-full section-full-light-purple" id="results">
+        <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Results</span>
                 <h2 class="section-title">What Better Content <span class="highlight">Creates</span></h2>
@@ -1799,10 +1919,12 @@
                 <div class="result-item"><span class="icon"><i class="fas fa-check-circle"></i></span> <span>More qualified opportunities</span></div>
                 <div class="result-item"><span class="icon"><i class="fas fa-check-circle"></i></span> <span>A business that grows consistently through content</span></div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ====== WHAT WE DON'T DO ====== -->
-        <section class="section" id="dont">
+    <!-- ====== WHAT WE DON'T DO — FULL WIDTH ====== -->
+    <section class="section-full section-full-white" id="dont">
+        <div class="container">
             <div class="section-header">
                 <span class="pill reveal">What We Don't Do</span>
                 <h2 class="section-title">Intentionally <span class="highlight">Focused</span>.</h2>
@@ -1828,10 +1950,12 @@
                 </div>
             </div>
             <p style="text-align: center; color: #4b5563; margin-top: 24px; font-size: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">Building strategic content systems that help businesses and creators grow.</p>
-        </section>
+        </div>
+    </section>
 
-        <!-- ====== FOUNDER ====== -->
-        <section class="section" id="team">
+    <!-- ====== FOUNDER — FULL WIDTH ====== -->
+    <section class="section-full section-full-light-pink" id="team">
+        <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Team</span>
                 <h2 class="section-title">Meet The Founder</h2>
@@ -1848,10 +1972,12 @@
                     <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ====== FAQ ====== -->
-        <section class="section" id="faq">
+    <!-- ====== FAQ — FULL WIDTH ====== -->
+    <section class="section-full section-full-white" id="faq">
+        <div class="container">
             <div class="section-header">
                 <span class="pill reveal">FAQ</span>
                 <h2 class="section-title">Questions, <span class="highlight">answered</span></h2>
@@ -1902,31 +2028,30 @@
                     <div class="faq-answer">We work in short, flexible terms. Your business is earned through results, not locked-in contracts.</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ====== FINAL CTA ====== -->
-        <section class="section" id="contact" style="border-top: none;">
+    <!-- ====== FINAL CTA — FULL WIDTH ====== -->
+    <section class="section-full section-full-dark" id="contact" style="border-top: none;">
+        <div class="container">
             <div class="section-header">
-                <span class="pill reveal">Get Started</span>
+                <span class="pill-dark reveal">Get Started</span>
                 <h2 class="section-title">Your Brand Deserves More Than <span class="highlight">Random Posts</span>.</h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Whether you're building a business or growing a personal brand, your content should work as hard as you do.</p>
             </div>
-
             <div class="contact-section">
                 <div class="contact-form reveal-left">
-                    <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 4px;">Send us a message.</h3>
-                    <p style="color: #4b5563; margin-bottom: 24px; font-size: 15px;">We read every message personally and reply within 24 hours (usually less).</p>
-
+                    <h3>Send us a message.</h3>
+                    <p>We read every message personally and reply within 24 hours (usually less).</p>
                     <form id="contactForm" onsubmit="handleSubmit(event)">
                         <input type="text" id="fullName" placeholder="Your Name" required />
                         <input type="email" id="email" placeholder="your@email.com" required />
                         <input type="text" id="budget" placeholder="Monthly Ad Budget" />
                         <textarea id="message" placeholder="Tell us about your offer and goals..." rows="4" required></textarea>
-                        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 4px;">Send a message</button>
+                        <button type="submit" class="btn-primary">Send a message</button>
                     </form>
                 </div>
-
                 <div class="contact-right reveal-right">
                     <h3>Book a Discovery Call</h3>
                     <p>Free 30-minute calls. We'll identify what's holding your content back and where your biggest opportunities are.</p>
@@ -1935,10 +2060,12 @@
                     </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ====== FOOTER ====== -->
-        <footer class="footer">
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding: 0 24px; max-width: 1200px;">
             <div>Framework Media — Content Growth Agency. 🇿🇦 SA-built</div>
             <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center;">
                 <a href="#">Privacy</a>
@@ -1950,9 +2077,8 @@
                     <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-        </footer>
-
-    </div>
+        </div>
+    </footer>
 
     <script>
         // ================================================
