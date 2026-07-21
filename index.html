@@ -100,7 +100,7 @@
             transition: all 0.3s ease;
             display: inline-block;
             text-decoration: none;
-            margin-top: 12px;
+            margin-top: 8px;
         }
         .btn-small:hover {
             background: #2a2a2a;
@@ -341,7 +341,7 @@
         }
 
         /* ================================================ */
-        /* ===== FULL-WIDTH SECTIONS WITH COLORS ===== */
+        /* ===== FULL-WIDTH SECTIONS ===== */
         /* ================================================ */
 
         .section-full {
@@ -728,146 +728,107 @@
         }
 
         /* ================================================ */
-        /* ===== SERVICES ===== */
+        /* ===== SERVICES — DROPDOWN STYLE ===== */
         /* ================================================ */
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 16px;
-        }
-        .service-card {
-            background: white;
-            padding: 28px 24px;
-            border-radius: 20px;
+        .service-dropdown {
             border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            background: #f9fafb;
             transition: all 0.3s ease;
-            text-align: center;
         }
-        .service-card:hover {
+        .service-dropdown:hover {
             border-color: var(--purple);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(139,92,246,0.08);
         }
-        .service-card .icon {
-            font-size: 28px;
-            margin-bottom: 8px;
-            display: block;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+
+        .service-dropdown-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 18px 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--black);
+            transition: all 0.3s ease;
+            text-align: left;
         }
-        .service-card h4 {
-            font-size: 18px;
+        .service-dropdown-btn:hover {
+            background: var(--gradient-subtle);
+        }
+        .service-dropdown-btn .dropdown-icon {
+            transition: transform 0.3s ease;
+            margin-right: 12px;
+            color: var(--purple);
+            font-size: 14px;
+        }
+        .service-dropdown-btn.active .dropdown-icon {
+            transform: rotate(90deg);
+        }
+        .service-dropdown-btn .dropdown-title {
+            flex: 1;
+        }
+        .service-dropdown-btn .dropdown-count {
+            font-size: 12px;
+            font-weight: 500;
+            color: #6b7280;
+            background: #e5e7eb;
+            padding: 2px 12px;
+            border-radius: 40px;
+        }
+
+        .service-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 0 24px;
+        }
+        .service-dropdown-content.open {
+            max-height: 2000px;
+            padding: 0 24px 20px;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #e5e7eb;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .service-item:last-child {
+            border-bottom: none;
+        }
+        .service-item-info {
+            flex: 1;
+            min-width: 200px;
+        }
+        .service-item-info h4 {
+            font-size: 16px;
             font-weight: 700;
             margin-bottom: 2px;
-            text-align: center;
         }
-        .service-card .price {
-            font-size: 18px;
+        .service-item-info .price {
+            font-size: 16px;
             font-weight: 700;
             color: var(--purple);
-            margin-bottom: 8px;
-            text-align: center;
+            margin-bottom: 4px;
         }
-        .service-card .description {
-            color: #4b5563;
+        .service-item-info .description {
             font-size: 14px;
-            line-height: 1.7;
-            text-align: center;
-        }
-
-        .service-group-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin: 48px 0 16px;
-            text-align: center;
-            position: relative;
-        }
-        .service-group-title::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 3px;
-            background: var(--gradient);
-            border-radius: 4px;
-            margin: 8px auto 0;
-        }
-
-        .service-group-sub {
-            text-align: center;
             color: #4b5563;
-            max-width: 600px;
-            margin: 0 auto 16px;
-            font-size: 15px;
+            line-height: 1.6;
         }
-
-        /* ================================================ */
-        /* ===== BUNDLES ===== */
-        /* ================================================ */
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-top: 16px;
-        }
-        .pricing-card {
-            background: white;
-            padding: 32px 24px;
-            border-radius: 32px;
-            border: 1px solid #e5e7eb;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .pricing-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(139,92,246,0.08);
-        }
-        .pricing-card.popular {
-            border: 2px solid var(--purple);
-            background: white;
-        }
-        .pricing-card h3 {
-            font-size: 24px;
-            font-weight: 700;
-            text-align: center;
-        }
-        .pricing-card .price-label {
-            font-size: 15px;
-            font-weight: 500;
-            color: #4b5563;
-            margin: 4px 0 8px;
-            text-align: center;
-        }
-        .pricing-card .subtitle {
-            font-size: 14px;
-            color: #6b7280;
-            font-style: italic;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-        .pricing-card ul {
-            list-style: none;
-            text-align: left;
-            margin: 12px 0 16px;
-            display: inline-block;
-            text-align: left;
-        }
-        .pricing-card ul li {
-            padding: 4px 0;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            font-size: 14px;
-            text-align: left;
-        }
-        .pricing-card ul li i {
-            color: var(--purple);
-            width: 18px;
-            font-size: 13px;
+        .service-item .btn-small {
+            flex-shrink: 0;
+            margin-top: 0;
         }
 
         /* ================================================ */
@@ -1366,7 +1327,6 @@
         @media (max-width: 992px) {
             .hero h1 { font-size: 48px; }
             .section-title { font-size: 36px; }
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
             .why-grid { grid-template-columns: repeat(2, 1fr); }
             .who-grid { grid-template-columns: 1fr; gap: 40px; }
             .showcase-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1376,7 +1336,6 @@
             .help-grid { grid-template-columns: repeat(2, 1fr); }
             .results-grid { grid-template-columns: repeat(2, 1fr); }
             .dont-grid { grid-template-columns: repeat(2, 1fr); }
-            .pricing-grid { grid-template-columns: 1fr 1fr; }
             .nav-links { gap: 20px; }
         }
 
@@ -1393,7 +1352,6 @@
             .hero-actions .btn-outline { width: 100%; max-width: 320px; text-align: center; padding: 16px 24px; font-size: 16px; }
             .section-title { font-size: 30px; }
             .section-full { padding: 50px 0 30px; }
-            .services-grid { grid-template-columns: 1fr; }
             .why-grid { grid-template-columns: 1fr; }
             .showcase-grid { grid-template-columns: 1fr; gap: 20px; }
             .contact-right { padding: 32px 20px; }
@@ -1408,7 +1366,6 @@
             .help-grid { grid-template-columns: 1fr 1fr; }
             .results-grid { grid-template-columns: 1fr; }
             .dont-grid { grid-template-columns: 1fr 1fr; }
-            .pricing-grid { grid-template-columns: 1fr; }
             .who-content p { text-align: center; }
             .logo img { height: 32px; }
             .contact-form h3,
@@ -1417,6 +1374,11 @@
             .contact-form input::placeholder,
             .contact-form textarea::placeholder { text-align: center; }
             .contact-right { padding: 32px 20px; }
+            .service-dropdown-btn { font-size: 14px; padding: 14px 16px; }
+            .service-item { flex-direction: column; align-items: flex-start; }
+            .service-item .btn-small { margin-top: 8px; }
+            .service-dropdown-content { padding: 0 16px; }
+            .service-dropdown-content.open { padding: 0 16px 16px; }
         }
 
         @media (max-width: 480px) {
@@ -1444,6 +1406,10 @@
             .logo img { height: 28px; }
             .contact-form .btn-primary { font-size: 14px; padding: 14px; }
             .contact-right .btn-primary { font-size: 14px; padding: 14px; }
+            .service-dropdown-btn { font-size: 13px; padding: 12px 14px; flex-wrap: wrap; gap: 8px; }
+            .service-item-info h4 { font-size: 15px; }
+            .service-item-info .price { font-size: 15px; }
+            .service-item-info .description { font-size: 13px; }
         }
     </style>
 </head>
@@ -1645,201 +1611,244 @@
         </div>
     </section>
 
-    <!-- ====== WHAT WE DO — FULL WIDTH ====== -->
+    <!-- ====== SERVICES — DROPDOWN STYLE ====== -->
     <section class="section-full section-full-white" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">What We Do</span>
+                <span class="pill reveal">Our Services</span>
                 <h2 class="section-title">Strategy. Production. <span class="highlight">Systems.</span></h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Four pillars of content that actually works.</p>
+                <p class="section-sub">Click on a category to explore the services we offer.</p>
             </div>
 
-            <!-- Growth Strategy -->
-            <div class="service-group-title">Growth Strategy</div>
-            <p class="service-group-sub">Every successful content system starts with a clear direction. Before creating anything, we define your business goals, audience, positioning, messaging, pillars, and growth opportunities.</p>
-            <div class="services-grid stagger">
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-compass"></i></span>
-                    <h4>Content Strategy</h4>
-                    <div class="price">R2,500</div>
-                    <div class="description">A complete roadmap for your content. We identify your audience, messaging, content pillars, posting strategy, and growth opportunities so every piece of content has a clear purpose.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-search"></i></span>
-                    <h4>Content Audit</h4>
-                    <div class="price">R1,500</div>
-                    <div class="description">A forensic review of your recent content. We analyse performance, identify weaknesses, and provide practical recommendations to improve reach, engagement, and consistency.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-bullseye"></i></span>
-                    <h4>Hook Diagnosis</h4>
-                    <div class="price">R200</div>
-                    <div class="description">The first three seconds determine whether people keep watching. We analyse your hook and rewrite it to maximise retention.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-comment-dots"></i></span>
-                    <h4>Brand Messaging</h4>
-                    <div class="price">R1,800</div>
-                    <div class="description">Clarify what your brand stands for and how it communicates. We help you develop messaging that is consistent, memorable, and aligned with your audience.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-road"></i></span>
-                    <h4>Creator Growth Roadmap</h4>
-                    <div class="price">R3,000</div>
-                    <div class="description">A personalised 90-day growth plan outlining what to create, when to publish, and how to position yourself for long-term growth.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-chart-line"></i></span>
-                    <h4>Monetisation Consulting</h4>
-                    <div class="price">R1,500</div>
-                    <div class="description">Build better partnerships and monetisation systems through pricing guidance, sponsorship strategy, and creator business consulting.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-brain"></i></span>
-                    <h4>Personal Brand Strategy</h4>
-                    <div class="price">R800</div>
-                    <div class="description">A one-on-one strategy session focused on positioning, messaging, and building a stronger personal brand.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-            </div>
-
-            <!-- Content Engine -->
-            <div class="service-group-title">Content Engine</div>
-            <p class="service-group-sub">Once the strategy is in place, we create content that earns attention and builds trust. Our production process is designed to support your brand—not simply increase your posting frequency.</p>
-            <div class="services-grid stagger">
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-pen-fancy"></i></span>
-                    <h4>Script Writing</h4>
-                    <div class="price">R350</div>
-                    <div class="description">High-converting scripts written using our proven Hook–Body–CTA framework, engineered to maximise retention and clarity.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-film"></i></span>
-                    <h4>Short-form Video Editing</h4>
-                    <div class="price">R600</div>
-                    <div class="description">Professional editing for TikTok, Instagram Reels, and YouTube Shorts, including pacing, captions, sound design, and retention-focused editing.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-video"></i></span>
-                    <h4>YouTube Editing</h4>
-                    <div class="price">R1,200</div>
-                    <div class="description">Long-form editing with storytelling, pacing, transitions, B-roll integration, captions, and thumbnail guidance.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-play-circle"></i></span>
-                    <h4>Full Production</h4>
-                    <div class="price">R1,000+</div>
-                    <div class="description">Complete production from strategy and scripting to editing and final delivery. Available for short-form and long-form content.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-sync-alt"></i></span>
-                    <h4>Content Repurposing</h4>
-                    <div class="price">R800</div>
-                    <div class="description">Turn one long-form video into multiple platform-specific short-form pieces for TikTok, Instagram Reels, YouTube Shorts, and LinkedIn.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-image"></i></span>
-                    <h4>Thumbnail Design</h4>
-                    <div class="price">R300</div>
-                    <div class="description">Professionally designed thumbnails focused on increasing click-through rates while maintaining a consistent visual identity.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
+            <!-- ====== GROWTH STRATEGY DROPDOWN ====== -->
+            <div class="service-dropdown">
+                <button class="service-dropdown-btn" onclick="toggleDropdown(this)">
+                    <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
+                    <span class="dropdown-title">Growth Strategy</span>
+                    <span class="dropdown-count">7 services</span>
+                </button>
+                <div class="service-dropdown-content">
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Content Strategy</h4>
+                            <div class="price">R2,500</div>
+                            <div class="description">A complete roadmap for your content. We identify your audience, messaging, content pillars, posting strategy, and growth opportunities so every piece of content has a clear purpose.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Content Audit</h4>
+                            <div class="price">R1,500</div>
+                            <div class="description">A forensic review of your recent content. We analyse performance, identify weaknesses, and provide practical recommendations to improve reach, engagement, and consistency.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Hook Diagnosis</h4>
+                            <div class="price">R200</div>
+                            <div class="description">The first three seconds determine whether people keep watching. We analyse your hook and rewrite it to maximise retention.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Brand Messaging</h4>
+                            <div class="price">R1,800</div>
+                            <div class="description">Clarify what your brand stands for and how it communicates. We help you develop messaging that is consistent, memorable, and aligned with your audience.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Creator Growth Roadmap</h4>
+                            <div class="price">R3,000</div>
+                            <div class="description">A personalised 90-day growth plan outlining what to create, when to publish, and how to position yourself for long-term growth.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Monetisation Consulting</h4>
+                            <div class="price">R1,500</div>
+                            <div class="description">Build better partnerships and monetisation systems through pricing guidance, sponsorship strategy, and creator business consulting.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Personal Brand Strategy</h4>
+                            <div class="price">R800</div>
+                            <div class="description">A one-on-one strategy session focused on positioning, messaging, and building a stronger personal brand.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Creative Assets -->
-            <div class="service-group-title">Creative Assets</div>
-            <p class="service-group-sub">Strong brands are consistent. We create the supporting assets that help your business look as professional as the service you provide.</p>
-            <div class="services-grid stagger">
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-palette"></i></span>
-                    <h4>Brand Guidelines</h4>
-                    <div class="price">R2,000</div>
-                    <div class="description">A professional guide covering colours, typography, visual identity, messaging, and content style.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-briefcase"></i></span>
-                    <h4>Creator Media Kits</h4>
-                    <div class="price">R1,200</div>
-                    <div class="description">A professionally designed media kit showcasing your audience, analytics, services, and partnership opportunities.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-presentation"></i></span>
-                    <h4>Presentation Design</h4>
-                    <div class="price">R1,500</div>
-                    <div class="description">Professional presentations for client pitches, workshops, proposals, investor meetings, and keynote presentations.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
-                </div>
-                <div class="service-card">
-                    <span class="icon"><i class="fas fa-th-large"></i></span>
-                    <h4>Social Media Templates</h4>
-                    <div class="price">R600</div>
-                    <div class="description">Custom-designed templates for social media posts, stories, and carousels that maintain brand consistency.</div>
-                    <a href="#contact" class="btn-small">Order Now</a>
+            <!-- ====== CONTENT ENGINE DROPDOWN ====== -->
+            <div class="service-dropdown">
+                <button class="service-dropdown-btn" onclick="toggleDropdown(this)">
+                    <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
+                    <span class="dropdown-title">Content Engine</span>
+                    <span class="dropdown-count">6 services</span>
+                </button>
+                <div class="service-dropdown-content">
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Script Writing</h4>
+                            <div class="price">R350</div>
+                            <div class="description">High-converting scripts written using our proven Hook–Body–CTA framework, engineered to maximise retention and clarity.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Short-form Video Editing</h4>
+                            <div class="price">R600</div>
+                            <div class="description">Professional editing for TikTok, Instagram Reels, and YouTube Shorts, including pacing, captions, sound design, and retention-focused editing.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>YouTube Editing</h4>
+                            <div class="price">R1,200</div>
+                            <div class="description">Long-form editing with storytelling, pacing, transitions, B-roll integration, captions, and thumbnail guidance.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Full Production</h4>
+                            <div class="price">R1,000+</div>
+                            <div class="description">Complete production from strategy and scripting to editing and final delivery. Available for short-form and long-form content.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Content Repurposing</h4>
+                            <div class="price">R800</div>
+                            <div class="description">Turn one long-form video into multiple platform-specific short-form pieces for TikTok, Instagram Reels, YouTube Shorts, and LinkedIn.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Thumbnail Design</h4>
+                            <div class="price">R300</div>
+                            <div class="description">Professionally designed thumbnails focused on increasing click-through rates while maintaining a consistent visual identity.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Growth Systems -->
-            <div class="service-group-title">Growth Systems</div>
-            <p class="service-group-sub">Need more than occasional content? We become your outsourced content department. From planning and scripting to production and optimisation, we build and manage a content system that grows with your business.</p>
-            <div class="pricing-grid stagger">
-                <div class="pricing-card">
-                    <h3>Starter</h3>
-                    <div class="price-label">15-Day Content Sprint</div>
-                    <p class="subtitle">Perfect for creators building consistency.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> 6–8 Short-form Scripts</li>
-                        <li><i class="fas fa-check"></i> 1–2 YouTube Scripts</li>
-                        <li><i class="fas fa-check"></i> Content Audit</li>
-                        <li><i class="fas fa-check"></i> Monthly Strategy Check-in</li>
-                    </ul>
-                    <a href="mailto:hello@frameworkmedia.co.za?subject=Starter Bundle Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Starter bundle (15-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small">Get Starter Quote</a>
+            <!-- ====== CREATIVE ASSETS DROPDOWN ====== -->
+            <div class="service-dropdown">
+                <button class="service-dropdown-btn" onclick="toggleDropdown(this)">
+                    <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
+                    <span class="dropdown-title">Creative Assets</span>
+                    <span class="dropdown-count">4 services</span>
+                </button>
+                <div class="service-dropdown-content">
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Brand Guidelines</h4>
+                            <div class="price">R2,000</div>
+                            <div class="description">A professional guide covering colours, typography, visual identity, messaging, and content style.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Creator Media Kits</h4>
+                            <div class="price">R1,200</div>
+                            <div class="description">A professionally designed media kit showcasing your audience, analytics, services, and partnership opportunities.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Presentation Design</h4>
+                            <div class="price">R1,500</div>
+                            <div class="description">Professional presentations for client pitches, workshops, proposals, investor meetings, and keynote presentations.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-info">
+                            <h4>Social Media Templates</h4>
+                            <div class="price">R600</div>
+                            <div class="description">Custom-designed templates for social media posts, stories, and carousels that maintain brand consistency.</div>
+                        </div>
+                        <a href="#contact" class="btn-small">Order Now</a>
+                    </div>
                 </div>
-                <div class="pricing-card popular">
-                    <h3>Growth</h3>
-                    <div style="background: var(--black); color: white; padding: 2px 12px; border-radius: 40px; font-size: 12px; display: inline-block; margin-bottom: 4px;">popular</div>
-                    <div class="price-label">21-Day Content System</div>
-                    <p class="subtitle">Ideal for creators and businesses ready to scale.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> 10–12 Short-form Scripts</li>
-                        <li><i class="fas fa-check"></i> Short-form Editing</li>
-                        <li><i class="fas fa-check"></i> 2–3 YouTube Scripts</li>
-                        <li><i class="fas fa-check"></i> YouTube Editing</li>
-                        <li><i class="fas fa-check"></i> Monthly Content Audit</li>
-                        <li><i class="fas fa-check"></i> Performance Review</li>
-                    </ul>
-                    <a href="mailto:hello@frameworkmedia.co.za?subject=Growth Bundle Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Growth bundle (21-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small">Get Growth Quote</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Full System</h3>
-                    <div class="price-label">30-Day Content Department</div>
-                    <p class="subtitle">Your complete outsourced content team.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Content Strategy</li>
-                        <li><i class="fas fa-check"></i> Monthly Planning</li>
-                        <li><i class="fas fa-check"></i> 15+ Short-form Videos</li>
-                        <li><i class="fas fa-check"></i> 4 YouTube Videos</li>
-                        <li><i class="fas fa-check"></i> Editing + Optimisation</li>
-                        <li><i class="fas fa-check"></i> Analytics Review</li>
-                        <li><i class="fas fa-check"></i> Strategy Calls</li>
-                        <li><i class="fas fa-check"></i> Monetisation Consulting</li>
-                        <li><i class="fas fa-check"></i> Priority Support</li>
-                        <li><i class="fas fa-check"></i> Monthly Content Management</li>
-                    </ul>
-                    <a href="mailto:hello@frameworkmedia.co.za?subject=Full System Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Full System bundle (30-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small">Get Full System Quote</a>
+            </div>
+
+            <!-- ====== GROWTH SYSTEMS DROPDOWN ====== -->
+            <div class="service-dropdown">
+                <button class="service-dropdown-btn" onclick="toggleDropdown(this)">
+                    <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
+                    <span class="dropdown-title">Growth Systems</span>
+                    <span class="dropdown-count">3 packages</span>
+                </button>
+                <div class="service-dropdown-content">
+                    <div class="service-item" style="flex-direction: column; align-items: stretch; gap: 8px;">
+                        <div class="service-item-info" style="text-align: center;">
+                            <h4 style="font-size: 18px;">Starter</h4>
+                            <div style="font-size: 14px; color: #6b7280; margin-bottom: 4px;">15-Day Content Sprint</div>
+                            <div style="font-size: 14px; color: #6b7280; font-style: italic; margin-bottom: 8px;">Perfect for creators building consistency.</div>
+                            <ul style="list-style: none; text-align: left; max-width: 400px; margin: 0 auto; font-size: 14px; color: #4b5563;">
+                                <li style="padding: 3px 0;">✓ 6–8 Short-form Scripts</li>
+                                <li style="padding: 3px 0;">✓ 1–2 YouTube Scripts</li>
+                                <li style="padding: 3px 0;">✓ Content Audit</li>
+                                <li style="padding: 3px 0;">✓ Monthly Strategy Check-in</li>
+                            </ul>
+                        </div>
+                        <a href="mailto:hello@frameworkmedia.co.za?subject=Starter Bundle Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Starter bundle (15-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small" style="align-self: center;">Get Starter Quote</a>
+                    </div>
+                    <div class="service-item" style="flex-direction: column; align-items: stretch; gap: 8px; border-top: 1px solid #e5e7eb; padding-top: 16px;">
+                        <div class="service-item-info" style="text-align: center;">
+                            <h4 style="font-size: 18px;">Growth</h4>
+                            <span style="background: var(--black); color: white; padding: 2px 12px; border-radius: 40px; font-size: 10px; display: inline-block; margin-bottom: 4px;">popular</span>
+                            <div style="font-size: 14px; color: #6b7280; margin-bottom: 4px;">21-Day Content System</div>
+                            <div style="font-size: 14px; color: #6b7280; font-style: italic; margin-bottom: 8px;">Ideal for creators and businesses ready to scale.</div>
+                            <ul style="list-style: none; text-align: left; max-width: 400px; margin: 0 auto; font-size: 14px; color: #4b5563;">
+                                <li style="padding: 3px 0;">✓ 10–12 Short-form Scripts</li>
+                                <li style="padding: 3px 0;">✓ Short-form Editing</li>
+                                <li style="padding: 3px 0;">✓ 2–3 YouTube Scripts</li>
+                                <li style="padding: 3px 0;">✓ YouTube Editing</li>
+                                <li style="padding: 3px 0;">✓ Monthly Content Audit</li>
+                                <li style="padding: 3px 0;">✓ Performance Review</li>
+                            </ul>
+                        </div>
+                        <a href="mailto:hello@frameworkmedia.co.za?subject=Growth Bundle Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Growth bundle (21-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small" style="align-self: center;">Get Growth Quote</a>
+                    </div>
+                    <div class="service-item" style="flex-direction: column; align-items: stretch; gap: 8px; border-top: 1px solid #e5e7eb; padding-top: 16px;">
+                        <div class="service-item-info" style="text-align: center;">
+                            <h4 style="font-size: 18px;">Full System</h4>
+                            <div style="font-size: 14px; color: #6b7280; margin-bottom: 4px;">30-Day Content Department</div>
+                            <div style="font-size: 14px; color: #6b7280; font-style: italic; margin-bottom: 8px;">Your complete outsourced content team.</div>
+                            <ul style="list-style: none; text-align: left; max-width: 400px; margin: 0 auto; font-size: 14px; color: #4b5563;">
+                                <li style="padding: 3px 0;">✓ Content Strategy</li>
+                                <li style="padding: 3px 0;">✓ Monthly Planning</li>
+                                <li style="padding: 3px 0;">✓ 15+ Short-form Videos</li>
+                                <li style="padding: 3px 0;">✓ 4 YouTube Videos</li>
+                                <li style="padding: 3px 0;">✓ Editing + Optimisation</li>
+                                <li style="padding: 3px 0;">✓ Analytics Review</li>
+                                <li style="padding: 3px 0;">✓ Strategy Calls</li>
+                                <li style="padding: 3px 0;">✓ Monetisation Consulting</li>
+                                <li style="padding: 3px 0;">✓ Priority Support</li>
+                                <li style="padding: 3px 0;">✓ Monthly Content Management</li>
+                            </ul>
+                        </div>
+                        <a href="mailto:hello@frameworkmedia.co.za?subject=Full System Quote Request&body=Hi Framework Media team,%0A%0AI'm interested in the Full System bundle (30-day cycle). Please send me a quote.%0A%0AThank you." class="btn-small" style="align-self: center;">Get Full System Quote</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2161,6 +2170,31 @@
                 button.classList.remove('active');
             } else {
                 answer.classList.add('open');
+                button.classList.add('active');
+            }
+        }
+
+        // ================================================
+        // ===== SERVICE DROPDOWN TOGGLE =====
+        // ================================================
+
+        function toggleDropdown(button) {
+            const content = button.nextElementSibling;
+            const isOpen = content.classList.contains('open');
+
+            // Close all other dropdowns
+            document.querySelectorAll('.service-dropdown-content').forEach(el => {
+                if (el !== content) {
+                    el.classList.remove('open');
+                    el.previousElementSibling.classList.remove('active');
+                }
+            });
+
+            if (isOpen) {
+                content.classList.remove('open');
+                button.classList.remove('active');
+            } else {
+                content.classList.add('open');
                 button.classList.add('active');
             }
         }
