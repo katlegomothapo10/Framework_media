@@ -106,6 +106,44 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
 
+        .btn-calendly {
+            background: var(--purple);
+            color: white;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-calendly:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-small-calendly {
+            background: var(--purple);
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-small-calendly:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.25);
+        }
+
         .pill {
             display: inline-block;
             background: var(--gradient-subtle);
@@ -221,7 +259,7 @@
             color: var(--black);
         }
 
-        /* ===== HERO — with background image ===== */
+        /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -701,7 +739,7 @@
             transform: scale(1.2);
         }
 
-        /* ===== SERVICES — DESCRIPTION IN HEADING (ALWAYS VISIBLE) ===== */
+        /* ===== SERVICES ===== */
         .service-category {
             border: 1px solid #e5e7eb;
             border-radius: 16px;
@@ -746,7 +784,6 @@
             transform: rotate(45deg);
         }
 
-        /* Heading area — description is always visible */
         .category-heading {
             padding: 0 24px 16px;
             display: block;
@@ -758,7 +795,6 @@
             line-height: 1.7;
         }
 
-        /* Service list — dropdown only */
         .service-list {
             padding: 0 24px 24px;
             display: none;
@@ -806,7 +842,7 @@
             margin-top: 2px;
         }
 
-        .service-item .btn-small {
+        .service-item .btn-small-calendly {
             flex-shrink: 0;
         }
 
@@ -889,6 +925,124 @@
             font-size: 10px;
             display: inline-block;
             margin-bottom: 4px;
+        }
+
+        /* ===== STRATEGY CALL SECTION ===== */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 16px;
+            align-items: center;
+        }
+
+        .strategy-content p {
+            color: #374151;
+            font-size: 17px;
+            line-height: 1.9;
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .strategy-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .strategy-content .highlight-text {
+            color: var(--purple);
+            font-weight: 600;
+        }
+
+        .strategy-benefits {
+            background: rgba(255,255,255,0.7);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid rgba(139,92,246,0.1);
+        }
+
+        .strategy-benefits h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .strategy-benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .strategy-benefits ul li {
+            padding: 10px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            font-size: 15px;
+            color: #374151;
+            border-bottom: 1px solid #f1f3f5;
+        }
+
+        .strategy-benefits ul li:last-child {
+            border-bottom: none;
+        }
+
+        .strategy-benefits ul li i {
+            color: var(--purple);
+            font-size: 18px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* ===== PROCESS ===== */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 16px;
+            position: relative;
+        }
+
+        .process-step {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 24px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(139,92,246,0.08);
+        }
+
+        .process-step .step-number {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+        }
+
+        .process-step h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .process-step p {
+            color: #4b5563;
+            font-size: 14px;
+            line-height: 1.7;
+            text-align: center;
         }
 
         /* ===== WHO WE HELP ===== */
@@ -1206,14 +1360,10 @@
             resize: vertical;
             text-align: left;
         }
-        .contact-form .btn-primary {
-            background: white;
-            color: var(--black);
+        .contact-form .btn-calendly {
             width: 100%;
             margin-top: 4px;
-        }
-        .contact-form .btn-primary:hover {
-            background: #f0f0f0;
+            text-align: center;
         }
 
         .contact-right {
@@ -1247,14 +1397,9 @@
             max-width: 400px;
             text-align: center;
         }
-        .contact-right .btn-primary {
+        .contact-right .btn-calendly {
             width: 100%;
             text-align: center;
-            background: white;
-            color: var(--black);
-        }
-        .contact-right .btn-primary:hover {
-            background: #f0f0f0;
         }
 
         /* ===== FOOTER ===== */
@@ -1359,6 +1504,7 @@
             .section-title { font-size: 36px; }
             .why-grid { grid-template-columns: repeat(2, 1fr); }
             .who-grid { grid-template-columns: 1fr; gap: 40px; }
+            .strategy-grid { grid-template-columns: 1fr; gap: 40px; }
             .showcase-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-section { grid-template-columns: 1fr; gap: 40px; }
             .problem-grid { grid-template-columns: 1fr; }
@@ -1368,6 +1514,8 @@
             .dont-grid { grid-template-columns: repeat(2, 1fr); }
             .nav-links { gap: 20px; }
             .cards-grid { grid-template-columns: 1fr 1fr; }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-arrow { display: none; }
         }
 
         @media (max-width: 768px) {
@@ -1407,10 +1555,12 @@
             .contact-right { padding: 32px 20px; }
             .category-btn { font-size: 16px; padding: 16px 20px; }
             .service-item { flex-direction: column; align-items: flex-start; }
-            .service-item .btn-small { margin-top: 6px; }
+            .service-item .btn-small-calendly { margin-top: 6px; }
             .service-list { padding: 0 20px 20px; }
             .category-heading { padding: 0 20px 12px; }
             .cards-grid { padding: 0 20px 20px; grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; }
+            .strategy-benefits { padding: 24px; }
         }
 
         @media (max-width: 480px) {
@@ -1436,8 +1586,8 @@
             .nav-links { gap: 10px; }
             .nav-links a { font-size: 11px; }
             .logo img { height: 28px; }
-            .contact-form .btn-primary { font-size: 14px; padding: 14px; }
-            .contact-right .btn-primary { font-size: 14px; padding: 14px; }
+            .contact-form .btn-calendly { font-size: 14px; padding: 14px; }
+            .contact-right .btn-calendly { font-size: 14px; padding: 14px; }
             .category-btn { font-size: 15px; padding: 14px 16px; }
             .service-item-info .name { font-size: 14px; }
             .service-item-info .desc { font-size: 13px; }
@@ -1445,6 +1595,7 @@
             .category-heading { padding: 0 16px 12px; }
             .cards-grid { padding: 0 16px 16px; }
             .card-pricing { padding: 20px 16px; }
+            .strategy-benefits { padding: 16px; }
         }
     </style>
 </head>
@@ -1458,14 +1609,15 @@
         <div class="nav-links">
             <a href="#who">Who We Are</a>
             <a href="#services">Services</a>
-            <a href="#process">How We Work</a>
+            <a href="#strategy">Why a Call</a>
+            <a href="#process">Our Process</a>
             <a href="#why">Why Us</a>
             <a href="#faq">FAQ</a>
             <a href="#contact">Contact</a>
         </div>
     </header>
 
-    <!-- ====== HERO (background image applied) ====== -->
+    <!-- ====== HERO ====== -->
     <section class="hero hero-reveal">
         <div class="orb-1"></div>
         <div class="orb-2"></div>
@@ -1473,10 +1625,10 @@
         <div class="hero-content">
             <span class="hero-tag">Content Growth Agency</span>
             <h1>Build a brand people notice.<br>Build a business <span class="highlight">people trust</span>.</h1>
-            <p>Framework Media helps service-based businesses, entrepreneurs, and creators build strategic content systems that increase visibility, establish authority, and create consistent opportunities for growth.</p>
+            <p>We build strategic content systems for service-based businesses, entrepreneurs, and creators — increasing visibility, authority, and sustainable growth.</p>
             <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Book a Discovery Call</a>
-                <a href="#services" class="btn-outline">View Our Services</a>
+                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly">Book a Free Strategy Call</a>
+                <a href="#services" class="btn-outline">Explore Our Services</a>
             </div>
         </div>
     </section>
@@ -1486,22 +1638,20 @@
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Who We Are</span>
-                <h2 class="section-title">Content isn't the goal. <span class="highlight">Growth is.</span></h2>
+                <h2 class="section-title">We don't sell content.<br>We solve <span class="highlight">business problems</span> through strategic content.</h2>
                 <div class="accent-line"></div>
             </div>
             <div class="who-grid">
                 <div class="who-content reveal-left">
-                    <p class="lead">Most businesses know they should be creating content.</p>
-                    <p>The problem is they don't have the time, the strategy, or the system to do it consistently.</p>
-                    <p><strong>Creators face a different challenge.</strong></p>
-                    <p>They've built an audience—but now they need content that builds a business, attracts partnerships, and supports long-term growth.</p>
-                    <p><strong>Framework Media</strong> bridges that gap.</p>
-                    <p>We combine strategy, production, and optimisation to build content systems that help businesses become more visible, creators become more valuable, and brands become impossible to ignore.</p>
+                    <p class="lead">Most businesses know they should be creating content. The problem is they don't have the time, the strategy, or the system to do it consistently.</p>
+                    <p><strong>We build strategic content systems.</strong> Not just videos or scripts — we build the infrastructure that turns content into visibility, authority, and sustainable business growth.</p>
+                    <p><strong>We don't ask how many videos you need. We ask what you're trying to achieve.</strong></p>
+                    <p>We recommend solutions, not services. And we believe strategy should come before execution.</p>
                 </div>
                 <div class="who-visual reveal-right">
                     <div class="icon-wrap"><i class="fas fa-arrow-trend-up"></i></div>
-                    <h3>Strategy → Content → Growth</h3>
-                    <p>Every piece of content is built to move your business forward.</p>
+                    <h3>Strategy → System → Growth</h3>
+                    <p>We don't create content for the sake of posting. We build systems that move your business forward.</p>
                 </div>
             </div>
         </div>
@@ -1575,7 +1725,7 @@
             <div class="showcase-cta">
                 <h3>Ready to build a content system that works?</h3>
                 <p>Let's talk about your goals and map a system that delivers.</p>
-                <a href="#contact" class="btn-primary">Book Your Discovery Call</a>
+                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly">Book a Free Strategy Call</a>
             </div>
         </div>
     </section>
@@ -1646,14 +1796,47 @@
         </div>
     </section>
 
-    <!-- ====== SERVICES — DESCRIPTION IN HEADING (always visible), DROPDOWN ONLY SERVICES ====== -->
+    <!-- ====== STRATEGY CALL SECTION ====== -->
+    <section class="section-full section-full-light-blue" id="strategy">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Start Here</span>
+                <h2 class="section-title">Why Every Project Starts With a <span class="highlight">Strategy Call</span></h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="strategy-grid">
+                <div class="strategy-content reveal-left">
+                    <p>Every business is different.</p>
+                    <p>Two businesses can ask for the exact same service while needing completely different solutions.</p>
+                    <p>One client may think they need video editing. Another may think they need more content.</p>
+                    <p>After understanding their business, we may discover the real issue is their messaging, positioning, content strategy or overall growth system.</p>
+                    <p><strong>Our goal isn't to sell you a service.</strong></p>
+                    <p><strong>Our goal is to recommend the right solution for your business.</strong></p>
+                    <p>That's why every project begins with a free Strategy Call.</p>
+                </div>
+                <div class="strategy-benefits reveal-right">
+                    <h3>What You'll Get</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Understand your business and goals.</li>
+                        <li><i class="fas fa-check-circle"></i> Review your current content.</li>
+                        <li><i class="fas fa-check-circle"></i> Identify opportunities for growth.</li>
+                        <li><i class="fas fa-check-circle"></i> Recommend the services that will have the biggest impact.</li>
+                        <li><i class="fas fa-check-circle"></i> Outline a clear next step.</li>
+                    </ul>
+                    <p style="text-align: center; margin-top: 16px; color: #6b7280; font-size: 14px; font-style: italic;">No obligation. No pressure. Just strategic guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== SERVICES ====== -->
     <section class="section-full section-full-white" id="services">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Our Services</span>
                 <h2 class="section-title">Strategy. Production. <span class="highlight">Systems.</span></h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Click on a category to expand the service list below its description.</p>
+                <p class="section-sub">Click on a category to explore our services. All services include pricing — except Growth Systems, which are custom-built for your needs.</p>
             </div>
 
             <!-- ====== GROWTH STRATEGY ====== -->
@@ -1663,19 +1846,17 @@
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
 
-                <!-- Heading space — description always visible -->
                 <div class="category-heading">
                     <div class="desc">Every successful content system begins with a clear strategy. Before creating content, we define your goals, audience, positioning, messaging, and content direction to ensure every piece of content serves a business objective.</div>
                 </div>
 
-                <!-- Dropdown — only services -->
                 <div class="service-list">
                     <div class="service-item">
                         <div class="service-item-info">
                             <div class="name">Content Strategy — <span class="price">R2,500</span></div>
                             <div class="desc">Build a roadmap for content that supports your business goals—not just your posting schedule.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1683,7 +1864,7 @@
                             <div class="name">Brand Positioning — <span class="price">R3,000</span></div>
                             <div class="desc">Clarify what makes your business different and why customers should choose you.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1691,7 +1872,7 @@
                             <div class="name">Brand Messaging — <span class="price">R2,000</span></div>
                             <div class="desc">Develop clear messaging that communicates your value consistently across every platform.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1699,7 +1880,7 @@
                             <div class="name">Content Audit — <span class="price">R1,500</span></div>
                             <div class="desc">Identify what's working, what's holding your content back, and where the biggest growth opportunities exist.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1707,7 +1888,7 @@
                             <div class="name">Hook Diagnosis — <span class="price">R200</span></div>
                             <div class="desc">The first three seconds determine whether people keep watching. We rewrite your hooks for maximum retention.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1715,7 +1896,7 @@
                             <div class="name">Creator Growth Roadmap — <span class="price">R3,000</span></div>
                             <div class="desc">A personalised 90-day plan outlining what to create, when to publish, and how to position yourself for growth.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1723,7 +1904,7 @@
                             <div class="name">Monetisation Consulting — <span class="price">R1,500</span></div>
                             <div class="desc">Build better partnerships through pricing guidance, sponsorship strategy, and creator business consulting.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1731,7 +1912,7 @@
                             <div class="name">Personal Brand Strategy — <span class="price">R800</span></div>
                             <div class="desc">One-on-one coaching focused on positioning, messaging, and building a stronger personal brand.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
                 </div>
             </div>
@@ -1753,7 +1934,7 @@
                             <div class="name">Script Writing — <span class="price">R350</span></div>
                             <div class="desc">High-converting scripts using our proven Hook–Body–CTA framework, engineered for retention.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1761,7 +1942,7 @@
                             <div class="name">Short-form Video Editing — <span class="price">R600</span></div>
                             <div class="desc">Professional editing for TikTok, Instagram Reels, and YouTube Shorts — pacing, captions, and sound design.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1769,7 +1950,7 @@
                             <div class="name">YouTube Editing — <span class="price">R1,200</span></div>
                             <div class="desc">Long-form editing with storytelling, pacing, transitions, B-roll, and thumbnail guidance.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1777,7 +1958,7 @@
                             <div class="name">Full Production — <span class="price">R1,000+</span></div>
                             <div class="desc">Complete production from strategy and scripting to editing and final delivery.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1785,7 +1966,7 @@
                             <div class="name">Content Repurposing — <span class="price">R800</span></div>
                             <div class="desc">Turn one long-form video into multiple platform-specific short-form pieces.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1793,7 +1974,7 @@
                             <div class="name">Thumbnail Design — <span class="price">R300</span></div>
                             <div class="desc">Professionally designed thumbnails focused on increasing click-through rates.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
                 </div>
             </div>
@@ -1815,7 +1996,7 @@
                             <div class="name">Brand Guidelines — <span class="price">R2,000</span></div>
                             <div class="desc">A professional guide covering colours, typography, visual identity, messaging, and content style.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1823,7 +2004,7 @@
                             <div class="name">Creator Media Kits — <span class="price">R1,200</span></div>
                             <div class="desc">A professionally designed media kit showcasing your audience, analytics, and partnership opportunities.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1831,7 +2012,7 @@
                             <div class="name">Presentation Design — <span class="price">R1,500</span></div>
                             <div class="desc">Professional presentations for client pitches, workshops, proposals, and investor meetings.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
                     <div class="service-item">
@@ -1839,12 +2020,12 @@
                             <div class="name">Social Media Templates — <span class="price">R600</span></div>
                             <div class="desc">Custom-designed templates for posts, stories, and carousels that maintain brand consistency.</div>
                         </div>
-                        <a href="#contact" class="btn-small">Order Now</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
                 </div>
             </div>
 
-            <!-- ====== GROWTH SYSTEMS — CARDS ====== -->
+            <!-- ====== GROWTH SYSTEMS — CARDS (no pricing) ====== -->
             <div class="service-category" style="border-color: var(--purple);">
                 <div style="padding: 20px 24px 0;">
                     <div style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">Growth Systems</div>
@@ -1852,7 +2033,6 @@
                 </div>
 
                 <div class="cards-grid">
-                    <!-- Starter -->
                     <div class="card-pricing">
                         <h3>Starter</h3>
                         <div class="price-label">15-Day Content Sprint</div>
@@ -1863,11 +2043,9 @@
                             <li><i class="fas fa-check"></i> Content Audit</li>
                             <li><i class="fas fa-check"></i> Monthly Strategy Check-in</li>
                         </ul>
-                        <div style="font-weight: 700; color: var(--purple); margin-bottom: 8px;">R6,000 – R8,500</div>
-                        <a href="#contact" class="btn-small">Get Quote</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
-                    <!-- Growth — Popular -->
                     <div class="card-pricing popular">
                         <span class="popular-badge">popular</span>
                         <h3>Growth</h3>
@@ -1881,11 +2059,9 @@
                             <li><i class="fas fa-check"></i> Monthly Content Audit</li>
                             <li><i class="fas fa-check"></i> Performance Review</li>
                         </ul>
-                        <div style="font-weight: 700; color: var(--purple); margin-bottom: 8px;">R16,000 – R24,000</div>
-                        <a href="#contact" class="btn-small">Get Quote</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
 
-                    <!-- Full System -->
                     <div class="card-pricing">
                         <h3>Full System</h3>
                         <div class="price-label">30-Day Content Department</div>
@@ -1902,9 +2078,42 @@
                             <li><i class="fas fa-check"></i> Priority Support</li>
                             <li><i class="fas fa-check"></i> Monthly Content Management</li>
                         </ul>
-                        <div style="font-weight: 700; color: var(--purple); margin-bottom: 8px;">R32,000 – R45,000</div>
-                        <a href="#contact" class="btn-small">Get Quote</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== PROCESS ====== -->
+    <section class="section-full section-full-light-purple" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Our Process</span>
+                <h2 class="section-title">From Strategy to <span class="highlight">Sustainable Growth</span></h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">A simple, proven framework that delivers results.</p>
+            </div>
+            <div class="process-grid stagger">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Strategy Call</h4>
+                    <p>We learn about your business, goals and current challenges.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Strategy</h4>
+                    <p>We develop a tailored content system aligned with your business objectives.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Create</h4>
+                    <p>We execute the agreed strategy with professional production and creative execution.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Grow</h4>
+                    <p>We optimise, refine and support your long-term growth.</p>
                 </div>
             </div>
         </div>
@@ -2062,35 +2271,35 @@
                         How is this different from a regular agency?
                         <span class="faq-toggle"><i class="fas fa-plus"></i></span>
                     </button>
-                    <div class="faq-answer">We use the exact system that grew our own audience. We're not guessing — we're repeating a proven process. And we actually understand the content landscape.</div>
+                    <div class="faq-answer">We use the exact system that grew our own audience. We're not guessing — we're repeating a proven process. And we actually understand the content landscape. We build systems, not just content.</div>
                 </div>
                 <div class="faq-item reveal">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         How long does it take to get started?
                         <span class="faq-toggle"><i class="fas fa-plus"></i></span>
                     </button>
-                    <div class="faq-answer">Most clients have their first batch of scripts or edits within 3–5 days of onboarding or video submissions.</div>
+                    <div class="faq-answer">After your Strategy Call, we typically deliver your first batch of scripts or edits within 3–5 days of onboarding or video submissions.</div>
                 </div>
                 <div class="faq-item reveal">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         Do I need to be on a retainer?
                         <span class="faq-toggle"><i class="fas fa-plus"></i></span>
                     </button>
-                    <div class="faq-answer">No. Single services are available as one-off purchases. Retainers just get you better rates and priority.</div>
+                    <div class="faq-answer">No. We offer one-off services as well as ongoing retainers. We recommend the solution that fits your business — not the one that locks you into a contract.</div>
                 </div>
                 <div class="faq-item reveal">
                     <button class="faq-question" onclick="toggleFAQ(this)">
-                        Can we guarantee results?
+                        What happens during the Strategy Call?
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">We'll learn about your business and goals, review your current content, identify opportunities for growth, recommend the services that will have the biggest impact, and outline a clear next step. No obligation. No pressure. Just strategic guidance.</div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can you guarantee results?
                         <span class="faq-toggle"><i class="fas fa-plus"></i></span>
                     </button>
                     <div class="faq-answer">We guarantee a system that works — the same one that grew our own audience and has been proven across multiple brands. We can't guarantee specific numbers, but we can guarantee that if you follow the system, you'll see measurable improvement in your content performance.</div>
-                </div>
-                <div class="faq-item reveal">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        What if I'm not happy?
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                    </button>
-                    <div class="faq-answer">We work in short, flexible terms. Your business is earned through results, not locked-in contracts.</div>
                 </div>
             </div>
         </div>
@@ -2114,14 +2323,14 @@
                         <input type="email" id="email" placeholder="your@email.com" required />
                         <input type="text" id="budget" placeholder="Monthly Ad Budget" />
                         <textarea id="message" placeholder="Tell us about your offer and goals..." rows="4" required></textarea>
-                        <button type="submit" class="btn-primary">Send a message</button>
+                        <button type="submit" class="btn-calendly" style="width: 100%;">Send a message</button>
                     </form>
                 </div>
                 <div class="contact-right reveal-right">
-                    <h3>Book a Discovery Call</h3>
+                    <h3>Book a Strategy Call</h3>
                     <p>Free 30-minute calls. We'll identify what's holding your content back and where your biggest opportunities are.</p>
-                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-primary">
-                        Book a Discovery Call <i class="fas fa-arrow-right"></i>
+                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly" style="width: 100%; text-align: center;">
+                        Book Your Free Strategy Call <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -2231,14 +2440,13 @@
         }
 
         // ================================================
-        // ===== SERVICES TOGGLE — only toggles the service list (dropdown) =====
+        // ===== SERVICES TOGGLE =====
         // ================================================
 
         function toggleServices(button) {
             const category = button.closest('.service-category');
             const isOpen = button.classList.contains('active');
 
-            // Close all other service lists (accordion behaviour)
             document.querySelectorAll('.service-category').forEach(el => {
                 if (el !== category) {
                     const btn = el.querySelector('.category-btn');
@@ -2248,7 +2456,6 @@
                 }
             });
 
-            // Toggle this service list
             if (isOpen) {
                 button.classList.remove('active');
                 category.querySelector('.service-list').classList.remove('open');
