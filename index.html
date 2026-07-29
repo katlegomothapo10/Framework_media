@@ -867,7 +867,7 @@
             text-align: center;
         }
 
-        /* Growth Partner tiers grid */
+        /* Tier grid for Content Management and Growth Partner */
         .tier-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -904,7 +904,7 @@
             list-style: none;
             text-align: left;
             padding: 0;
-            margin: 0 0 16px;
+            margin: 0 0 12px;
         }
         .tier-card ul li {
             padding: 4px 0;
@@ -920,6 +920,12 @@
             font-size: 12px;
             margin-top: 4px;
             flex-shrink: 0;
+        }
+        .tier-card .tier-best-for {
+            font-size: 13px;
+            color: #6b7280;
+            margin-top: 8px;
+            font-style: italic;
         }
 
         /* Creator services grid */
@@ -956,6 +962,24 @@
             font-size: 14px;
             color: #4b5563;
             line-height: 1.6;
+        }
+        .creator-card .creator-desc ul {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 0;
+            text-align: left;
+        }
+        .creator-card .creator-desc ul li {
+            padding: 2px 0;
+            font-size: 13px;
+            display: flex;
+            gap: 6px;
+            align-items: flex-start;
+        }
+        .creator-card .creator-desc ul li i {
+            color: var(--purple);
+            font-size: 11px;
+            margin-top: 4px;
         }
 
         /* ===== STRATEGY CALL SECTION ===== */
@@ -1850,15 +1874,17 @@
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Growth Strategy</span>
-                            <span class="service-price">R3,500</span>
+                            <span class="service-price">R4,500 (One-Time)</span>
                         </div>
-                        <div class="service-desc">Every successful brand starts with clarity. Before investing in content, we analyse your business, brand, audience, competitors and current online presence to develop a tailored strategy that shows exactly what to focus on over the next 90 days.</div>
+                        <div class="service-desc">Every successful brand starts with clarity. Before creating content, we analyse your business, audience, competitors and online presence to build a complete 90-day Growth Strategy tailored to your goals.</div>
                         <div class="service-details">
                             <div class="col">
                                 <h5>Includes</h5>
                                 <ul>
                                     <li><i class="fas fa-check"></i> Discovery Session</li>
-                                    <li><i class="fas fa-check"></i> Brand &amp; Content Audit</li>
+                                    <li><i class="fas fa-check"></i> Business Audit</li>
+                                    <li><i class="fas fa-check"></i> Brand Audit</li>
+                                    <li><i class="fas fa-check"></i> Content Audit</li>
                                     <li><i class="fas fa-check"></i> Competitor Analysis</li>
                                     <li><i class="fas fa-check"></i> Audience Analysis</li>
                                     <li><i class="fas fa-check"></i> Brand Identity</li>
@@ -1866,18 +1892,21 @@
                                     <li><i class="fas fa-check"></i> Brand Messaging</li>
                                     <li><i class="fas fa-check"></i> Platform Strategy</li>
                                     <li><i class="fas fa-check"></i> Content Pillars</li>
-                                    <li><i class="fas fa-check"></i> Content System</li>
-                                    <li><i class="fas fa-check"></i> Framework Media Growth Blueprint</li>
-                                    <li><i class="fas fa-check"></i> 90‑Day Growth Roadmap</li>
+                                    <li><i class="fas fa-check"></i> Framework Growth Blueprint</li>
+                                    <li><i class="fas fa-check"></i> 90-Day Growth Roadmap</li>
                                     <li><i class="fas fa-check"></i> Strategic Recommendations</li>
+                                    <li><i class="fas fa-check"></i> Follow-up Strategy Session</li>
                                 </ul>
                             </div>
                             <div class="col">
-                                <h5>Best for</h5>
+                                <h5>Deliverables</h5>
                                 <ul>
-                                    <li><i class="fas fa-check"></i> Businesses looking to grow online.</li>
-                                    <li><i class="fas fa-check"></i> Founders building a personal brand.</li>
-                                    <li><i class="fas fa-check"></i> Creators needing clarity before creating content.</li>
+                                    <li><i class="fas fa-file-alt"></i> 15–20 Page Growth Strategy Presentation</li>
+                                    <li><i class="fas fa-road"></i> 90-Day Implementation Roadmap</li>
+                                </ul>
+                                <h5 style="margin-top: 12px;">Best For</h5>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Businesses wanting clarity before investing in content or marketing.</li>
                                 </ul>
                             </div>
                         </div>
@@ -1888,85 +1917,69 @@
                 </div>
             </div>
 
-            <!-- ====== CREATIVE SERVICES ====== -->
+            <!-- ====== CONTENT MANAGEMENT ====== -->
             <div class="service-category">
                 <button class="category-btn" onclick="toggleServices(this)">
-                    Creative Services
+                    <span><i class="fas fa-star" style="color: var(--purple); margin-right: 8px;"></i> Content Management</span>
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="category-content">
-                    <div class="service-block">
-                        <div class="service-header">
-                            <span class="service-name">Creative Services</span>
-                            <span class="service-price">R2,500</span>
-                        </div>
-                        <div class="service-desc">A strategy is only valuable when it's executed well. We'll help transform your strategy into engaging content that's aligned with your brand and designed to achieve your goals.</div>
-                        <div class="service-details">
-                            <div class="col">
-                                <h5>Includes</h5>
-                                <ul>
-                                    <li><i class="fas fa-check"></i> Content Planning</li>
-                                    <li><i class="fas fa-check"></i> Scriptwriting</li>
-                                    <li><i class="fas fa-check"></i> Video Editing</li>
-                                    <li><i class="fas fa-check"></i> Caption Writing</li>
-                                    <li><i class="fas fa-check"></i> Thumbnail Design</li>
-                                    <li><i class="fas fa-check"></i> Creative Direction</li>
-                                    <li><i class="fas fa-check"></i> Repurposing Strategy</li>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <h5>Best for</h5>
-                                <ul>
-                                    <li><i class="fas fa-check"></i> Businesses creating their own content.</li>
-                                    <li><i class="fas fa-check"></i> Creators needing professional editing and strategy.</li>
-                                    <li><i class="fas fa-check"></i> Teams working with their own videographer.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="service-desc" style="margin-top: 12px; font-size: 14px; color: #6b7280; font-style: italic;">Why a fixed price? This works with a clear scope (e.g., a fixed number of edited videos, scripts, or deliverables). If the workload changes dramatically, we move to a custom quote.</div>
-                        <div class="service-cta">
-                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly" style="font-size: 14px; padding: 12px 28px;">Book a Free Strategy Call</a>
-                        </div>
+                    <div style="margin-bottom: 16px; color: #4b5563; font-size: 15px; line-height: 1.7;">
+                        Your outsourced content team. We plan, script, edit and optimise your content while you focus on running your business.
                     </div>
-                </div>
-            </div>
-
-            <!-- ====== SOCIAL MEDIA MANAGEMENT ====== -->
-            <div class="service-category">
-                <button class="category-btn" onclick="toggleServices(this)">
-                    Social Media Management
-                    <span class="cat-icon"><i class="fas fa-plus"></i></span>
-                </button>
-                <div class="category-content">
-                    <div class="service-block">
-                        <div class="service-header">
-                            <span class="service-name">Social Media Management</span>
-                            <span class="service-price">R5,000 / month</span>
+                    <div class="tier-grid">
+                        <div class="tier-card">
+                            <div class="tier-name">Essential</div>
+                            <div class="tier-price">R8,500 / month</div>
+                            <p style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">Perfect for businesses building consistency.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Monthly Strategy Call</li>
+                                <li><i class="fas fa-check"></i> Monthly Content Planning</li>
+                                <li><i class="fas fa-check"></i> 15 Content Ideas</li>
+                                <li><i class="fas fa-check"></i> 15 Scripts</li>
+                                <li><i class="fas fa-check"></i> 15 Edited Videos</li>
+                                <li><i class="fas fa-check"></i> 4 Carousel Designs</li>
+                                <li><i class="fas fa-check"></i> Captions</li>
+                                <li><i class="fas fa-check"></i> Thumbnail Designs</li>
+                                <li><i class="fas fa-check"></i> Monthly Analytics Report</li>
+                            </ul>
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
-                        <div class="service-desc">Consistency builds trust. We manage your online presence so you can focus on running your business.</div>
-                        <div class="service-details">
-                            <div class="col">
-                                <h5>Includes</h5>
-                                <ul>
-                                    <li><i class="fas fa-check"></i> Monthly Content Planning</li>
-                                    <li><i class="fas fa-check"></i> Content Scheduling</li>
-                                    <li><i class="fas fa-check"></i> Community Management</li>
-                                    <li><i class="fas fa-check"></i> Monthly Analytics</li>
-                                    <li><i class="fas fa-check"></i> Monthly Performance Reviews</li>
-                                    <li><i class="fas fa-check"></i> Continuous Optimisation</li>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <h5>Best for</h5>
-                                <ul>
-                                    <li><i class="fas fa-check"></i> Businesses wanting consistent online growth.</li>
-                                    <li><i class="fas fa-check"></i> Founders without time to manage social media.</li>
-                                    <li><i class="fas fa-check"></i> Brands needing an outsourced content team.</li>
-                                </ul>
-                            </div>
+                        <div class="tier-card popular">
+                            <div class="tier-name">Growth</div>
+                            <div class="tier-price">R15,000 / month</div>
+                            <p style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">Designed for businesses producing content consistently.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Everything in Essential</li>
+                                <li><i class="fas fa-check" style="color: var(--purple);"></i> <strong>PLUS</strong></li>
+                                <li><i class="fas fa-check"></i> 20 Content Ideas</li>
+                                <li><i class="fas fa-check"></i> 20 Scripts</li>
+                                <li><i class="fas fa-check"></i> 20 Edited Videos</li>
+                                <li><i class="fas fa-check"></i> 8 Carousel Designs</li>
+                                <li><i class="fas fa-check"></i> Repurposing Strategy</li>
+                                <li><i class="fas fa-check"></i> Monthly Performance Review</li>
+                                <li><i class="fas fa-check"></i> Priority Turnaround</li>
+                            </ul>
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
-                        <div class="service-cta">
-                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly" style="font-size: 14px; padding: 12px 28px;">Book a Free Strategy Call</a>
+                        <div class="tier-card">
+                            <div class="tier-name">Scale</div>
+                            <div class="tier-price">R22,500 / month</div>
+                            <p style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">Framework Media becomes your outsourced content department.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Everything in Growth</li>
+                                <li><i class="fas fa-check" style="color: var(--purple);"></i> <strong>PLUS</strong></li>
+                                <li><i class="fas fa-check"></i> 30+ Content Ideas</li>
+                                <li><i class="fas fa-check"></i> 30+ Scripts</li>
+                                <li><i class="fas fa-check"></i> 30+ Edited Videos</li>
+                                <li><i class="fas fa-check"></i> 12 Carousel Designs</li>
+                                <li><i class="fas fa-check"></i> Weekly Planning Session</li>
+                                <li><i class="fas fa-check"></i> Weekly Performance Reviews</li>
+                                <li><i class="fas fa-check"></i> Priority Support</li>
+                                <li><i class="fas fa-check"></i> Quarterly Strategy Review</li>
+                            </ul>
+                            <p style="font-size: 13px; color: #6b7280; margin-top: 8px;">Best for: Businesses wanting Framework Media to completely handle the content side of their business.</p>
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
                     </div>
                 </div>
@@ -1975,56 +1988,54 @@
             <!-- ====== GROWTH PARTNER ====== -->
             <div class="service-category">
                 <button class="category-btn" onclick="toggleServices(this)">
-                    Growth Partner
+                    <span><i class="fas fa-star" style="color: var(--purple); margin-right: 8px;"></i> Growth Partner</span>
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="category-content">
                     <div style="margin-bottom: 16px; color: #4b5563; font-size: 15px; line-height: 1.7;">
-                        This isn't social media management. This is ongoing strategic partnership. Framework Media becomes your outsourced Head of Growth. We continuously help you make better decisions, improve your content, refine your messaging and identify new opportunities as your business grows.
+                        Your outsourced Growth Strategist. This service is for businesses that need strategic guidance—not content production.
                     </div>
                     <div class="tier-grid">
                         <div class="tier-card">
-                            <div class="tier-name">Framework Essential</div>
-                            <div class="tier-price">R2,500 / month</div>
-                            <p style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">Monthly strategic guidance.</p>
+                            <div class="tier-name">Essential</div>
+                            <div class="tier-price">R4,000 / month</div>
                             <ul>
-                                <li><i class="fas fa-check"></i> 1 Monthly Strategy Session</li>
-                                <li><i class="fas fa-check"></i> Monthly Performance Review</li>
+                                <li><i class="fas fa-check"></i> Monthly Strategy Session</li>
+                                <li><i class="fas fa-check"></i> Business Growth Review</li>
+                                <li><i class="fas fa-check"></i> Marketing Recommendations</li>
                                 <li><i class="fas fa-check"></i> Email Support</li>
-                                <li><i class="fas fa-check"></i> Strategy Recommendations</li>
                             </ul>
-                            <p style="font-size: 13px; color: #6b7280; margin-top: 8px;">Best for: Businesses wanting accountability and expert guidance.</p>
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
                         <div class="tier-card popular">
-                            <div class="tier-name">Framework Growth</div>
-                            <div class="tier-price">R5,000 / month</div>
-                            <p style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">For businesses actively growing online.</p>
+                            <div class="tier-name">Growth</div>
+                            <div class="tier-price">R7,500 / month</div>
                             <ul>
-                                <li><i class="fas fa-check"></i> Everything in Essential, plus:</li>
-                                <li><i class="fas fa-check"></i> Monthly Content Direction</li>
-                                <li><i class="fas fa-check"></i> Script Reviews</li>
-                                <li><i class="fas fa-check"></i> Monthly Planning Session</li>
+                                <li><i class="fas fa-check"></i> Everything in Essential</li>
+                                <li><i class="fas fa-check" style="color: var(--purple);"></i> <strong>PLUS</strong></li>
+                                <li><i class="fas fa-check"></i> Monthly Marketing Planning</li>
+                                <li><i class="fas fa-check"></i> Offer Reviews</li>
+                                <li><i class="fas fa-check"></i> Campaign Strategy</li>
                                 <li><i class="fas fa-check"></i> Priority Support</li>
-                                <li><i class="fas fa-check"></i> Growth Reviews</li>
+                                <li><i class="fas fa-check"></i> Accountability Meetings</li>
                             </ul>
-                            <p style="font-size: 13px; color: #6b7280; margin-top: 8px;">Best for: Businesses consistently creating content and looking to scale.</p>
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
                         <div class="tier-card">
-                            <div class="tier-name">Framework Scale</div>
-                            <div class="tier-price">R8,500 / month</div>
-                            <p style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">Framework Media becomes part of your leadership team.</p>
+                            <div class="tier-name">Scale</div>
+                            <div class="tier-price">R12,500 / month</div>
                             <ul>
-                                <li><i class="fas fa-check"></i> Everything in Growth, plus:</li>
-                                <li><i class="fas fa-check"></i> Unlimited Strategy Support (Fair Use)</li>
+                                <li><i class="fas fa-check"></i> Everything in Growth</li>
+                                <li><i class="fas fa-check" style="color: var(--purple);"></i> <strong>PLUS</strong></li>
+                                <li><i class="fas fa-check"></i> Weekly Strategy Calls</li>
+                                <li><i class="fas fa-check"></i> Business Consulting</li>
+                                <li><i class="fas fa-check"></i> Launch Planning</li>
+                                <li><i class="fas fa-check"></i> Marketing Decision Support</li>
                                 <li><i class="fas fa-check"></i> Quarterly Growth Planning</li>
                                 <li><i class="fas fa-check"></i> WhatsApp Support</li>
-                                <li><i class="fas fa-check"></i> Business Consulting</li>
-                                <li><i class="fas fa-check"></i> Marketing Decision Support</li>
-                                <li><i class="fas fa-check"></i> Priority Turnaround</li>
+                                <li><i class="fas fa-check"></i> Highest Priority</li>
                             </ul>
-                            <p style="font-size: 13px; color: #6b7280; margin-top: 8px;">Best for: Businesses committed to long-term growth and scaling.</p>
+                            <p style="font-size: 13px; color: #6b7280; margin-top: 8px;">Best for: Businesses wanting an outsourced Head of Growth without hiring one full-time.</p>
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
                     </div>
@@ -2040,27 +2051,27 @@
                 <div class="category-content">
                     <div class="creator-grid">
                         <div class="creator-card">
-                            <div class="creator-name">Monetisation Consulting</div>
-                            <div class="creator-price">R1,500</div>
-                            <div class="creator-desc">Turn your audience into a business. Includes sponsorship strategy, pricing guidance, creator business systems, revenue opportunities, and partnership strategy.</div>
+                            <div class="creator-name">Strategy Session</div>
+                            <div class="creator-price">R1,000</div>
+                            <div class="creator-desc">A focused 60-minute strategy consultation. Perfect for creators needing direction on branding, content and growth.</div>
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
                         <div class="creator-card">
-                            <div class="creator-name">Strategy Session</div>
-                            <div class="creator-price">R750</div>
-                            <div class="creator-desc">A focused 60‑minute strategy consultation on personal branding, content direction, platform growth, business advice, creator feedback, or Q&amp;A.</div>
+                            <div class="creator-name">Monetisation Consulting</div>
+                            <div class="creator-price">R2,000</div>
+                            <div class="creator-desc">Turn your audience into a business. Includes sponsorship strategy, pricing guidance, revenue opportunities, partnership strategy, and creator business systems.</div>
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
                         <div class="creator-card">
                             <div class="creator-name">Profile Review</div>
-                            <div class="creator-price">R350</div>
-                            <div class="creator-desc">Receive detailed feedback on your profile and online presence: bio review, branding feedback, profile optimisation, and platform recommendations.</div>
+                            <div class="creator-price">R500</div>
+                            <div class="creator-desc">Professional review of your online presence. Includes profile audit, branding feedback, and optimisation recommendations.</div>
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
                         <div class="creator-card">
                             <div class="creator-name">Content Review</div>
-                            <div class="creator-price">R500</div>
-                            <div class="creator-desc">Professional feedback on up to 10 posts/videos — strengths, weaknesses, growth opportunities, and actionable recommendations.</div>
+                            <div class="creator-price">R750</div>
+                            <div class="creator-desc">Receive professional feedback on your content. Review of up to 10 pieces of content — strengths, weaknesses, growth opportunities, and actionable recommendations.</div>
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
                     </div>
