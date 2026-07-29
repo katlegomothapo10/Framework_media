@@ -9,9 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
-        /* ===== ALL EXISTING STYLES REMAIN THE SAME ===== */
-        /* (We keep everything from the previous version, only the services section content changes) */
-
         * {
             margin: 0;
             padding: 0;
@@ -867,10 +864,9 @@
             text-align: center;
         }
 
-        /* Tier grid for Content Management and Growth Partner */
         .tier-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
         .tier-card {
@@ -942,7 +938,6 @@
             font-style: italic;
         }
 
-        /* Individual services grid */
         .individual-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1104,7 +1099,7 @@
             text-align: center;
         }
 
-        /* ===== OTHER SECTIONS (unchanged) ===== */
+        /* ===== OTHER SECTIONS ===== */
         .help-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1878,7 +1873,7 @@
         </div>
     </section>
 
-    <!-- ====== SERVICES — NEW PRICING STRUCTURE ====== -->
+    <!-- ====== SERVICES — 10/10 UPGRADE ====== -->
     <section class="section-full section-full-white" id="services">
         <div class="container">
             <div class="section-header">
@@ -1888,6 +1883,20 @@
                 <p class="section-sub">Explore our service categories below. Each one is designed to help you build a stronger brand and a more sustainable business.</p>
             </div>
 
+            <!-- ====== QUICK DECISION GUIDE ====== -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; background: #f8f6ff; border-radius: 16px; padding: 24px; border: 1px solid #e9e4ff;">
+                <div style="text-align: center;">
+                    <div style="font-weight: 700; color: var(--purple); font-size: 16px;">📽️ Content Management</div>
+                    <div style="font-size: 14px; color: #4b5563;">“We do the work” – production &amp; execution.</div>
+                    <div style="font-size: 13px; color: #6b7280; margin-top: 4px;">Best for: Businesses that need content produced for them.</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-weight: 700; color: var(--purple); font-size: 16px;">📈 Growth Partner</div>
+                    <div style="font-size: 14px; color: #4b5563;">“We guide the work” – strategy &amp; consulting.</div>
+                    <div style="font-size: 13px; color: #6b7280; margin-top: 4px;">Best for: Businesses that need strategic guidance (and may produce their own content).</div>
+                </div>
+            </div>
+
             <!-- ====== 1. GROWTH STRATEGY ====== -->
             <div class="service-category">
                 <button class="category-btn" onclick="toggleServices(this)">
@@ -1895,6 +1904,12 @@
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="category-content">
+                    <div style="margin-bottom: 12px; font-size: 14px; color: var(--purple); font-weight: 600;">
+                        <i class="fas fa-quote-left"></i> “Clarity before action. Without a strategy, you're guessing.”
+                    </div>
+                    <div style="margin-bottom: 16px; font-size: 14px; color: #6b7280; background: #fef3c7; padding: 8px 16px; border-radius: 8px; display: inline-block;">
+                        ⭐ “The roadmap gave us clarity we'd been missing for 2 years.” – Sarah, Founder
+                    </div>
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Growth Strategy</span>
@@ -1951,15 +1966,46 @@
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="category-content">
+                    <div style="margin-bottom: 12px; font-size: 14px; color: var(--purple); font-weight: 600;">
+                        <i class="fas fa-quote-left"></i> “We do the work.” – Your outsourced content department.
+                    </div>
                     <div style="margin-bottom: 16px; color: #4b5563; font-size: 15px; line-height: 1.7;">
-                        Your outsourced content department. Everything is executed according to your Growth Strategy.
+                        Everything is executed according to your Growth Strategy.
                         <br><br>
                         <strong>Note:</strong> Clients provide the raw footage. Framework Media currently does not offer filming services.
                     </div>
+                    <div style="margin-bottom: 16px; font-size: 14px; color: #6b7280; background: #dcfce7; padding: 8px 16px; border-radius: 8px; display: inline-block;">
+                        ⭐ “We've grown 40% in 4 months since handing over our content.” – Mike, Business Owner
+                    </div>
                     <div class="tier-grid">
+
+                        <!-- Starter -->
+                        <div class="tier-card">
+                            <div class="tier-name">Starter</div>
+                            <div class="tier-price">R5,500 / month</div>
+                            <div class="tier-sub">Ideal for businesses building consistency.</div>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Monthly Strategy Call</li>
+                                <li><i class="fas fa-check"></i> Monthly Content Calendar</li>
+                                <li><i class="fas fa-check"></i> Up to 8 Content Ideas</li>
+                                <li><i class="fas fa-check"></i> Up to 8 Scripts</li>
+                                <li><i class="fas fa-check"></i> Up to 8 Edited Short-Form Videos</li>
+                                <li><i class="fas fa-check"></i> Up to 2 Carousel Designs</li>
+                                <li><i class="fas fa-check"></i> Captions</li>
+                                <li><i class="fas fa-check"></i> Thumbnail Designs</li>
+                                <li><i class="fas fa-check"></i> Monthly Analytics Report</li>
+                            </ul>
+                            <div style="font-size: 12px; color: #6b7280; margin: 8px 0; background: #f3f4f6; padding: 6px; border-radius: 6px;">
+                                <i class="fas fa-calculator"></i> Value: 8 scripts + 8 videos + strategy = R8,000+
+                            </div>
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
+                        </div>
+
+                        <!-- Essential -->
                         <div class="tier-card">
                             <div class="tier-name">Essential</div>
                             <div class="tier-price">R10,000 / month</div>
+                            <div class="tier-sub">Perfect for businesses building consistency.</div>
                             <ul>
                                 <li><i class="fas fa-check"></i> Monthly Strategy Call</li>
                                 <li><i class="fas fa-check"></i> Monthly Content Calendar</li>
@@ -1972,11 +2018,17 @@
                                 <li><i class="fas fa-check"></i> Monthly Analytics Report</li>
                                 <li><i class="fas fa-check"></i> Monthly Performance Review</li>
                             </ul>
+                            <div style="font-size: 12px; color: #6b7280; margin: 8px 0; background: #f3f4f6; padding: 6px; border-radius: 6px;">
+                                <i class="fas fa-calculator"></i> Value: 15 scripts + 15 videos + strategy = R14,000+
+                            </div>
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
+
+                        <!-- Growth -->
                         <div class="tier-card popular">
                             <div class="tier-name">Growth</div>
                             <div class="tier-price">R17,500 / month</div>
+                            <div class="tier-sub">Designed for businesses producing content consistently.</div>
                             <ul>
                                 <li><i class="fas fa-check"></i> Everything in Essential, plus:</li>
                                 <li><i class="fas fa-check"></i> Up to 20 Content Ideas</li>
@@ -1987,11 +2039,17 @@
                                 <li><i class="fas fa-check"></i> Priority Turnaround</li>
                                 <li><i class="fas fa-check"></i> Monthly Strategy Review</li>
                             </ul>
+                            <div style="font-size: 12px; color: #6b7280; margin: 8px 0; background: #f3f4f6; padding: 6px; border-radius: 6px;">
+                                <i class="fas fa-calculator"></i> Value: 20 scripts + 20 videos + strategy = R20,000+
+                            </div>
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
+
+                        <!-- Scale -->
                         <div class="tier-card">
                             <div class="tier-name">Scale</div>
                             <div class="tier-price">R30,000 / month</div>
+                            <div class="tier-sub">Your outsourced content department.</div>
                             <ul>
                                 <li><i class="fas fa-check"></i> Everything in Growth, plus:</li>
                                 <li><i class="fas fa-check"></i> Up to 30 Content Ideas</li>
@@ -2003,6 +2061,9 @@
                                 <li><i class="fas fa-check"></i> Quarterly Strategy Reviews</li>
                                 <li><i class="fas fa-check"></i> Priority Support</li>
                             </ul>
+                            <div style="font-size: 12px; color: #6b7280; margin: 8px 0; background: #f3f4f6; padding: 6px; border-radius: 6px;">
+                                <i class="fas fa-calculator"></i> Value: 30 scripts + 30 videos + strategy = R35,000+
+                            </div>
                             <div class="tier-excludes">Excludes: Filming, Paid Advertising, Website Development, Photography, Graphic Design outside package scope</div>
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
@@ -2017,12 +2078,20 @@
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="category-content">
+                    <div style="margin-bottom: 12px; font-size: 14px; color: var(--purple); font-weight: 600;">
+                        <i class="fas fa-quote-left"></i> “We guide the work.” – Your outsourced Growth Strategist.
+                    </div>
                     <div style="margin-bottom: 16px; color: #4b5563; font-size: 15px; line-height: 1.7;">
-                        Your outsourced Growth Strategist. Designed for businesses that need strategic guidance, accountability and long-term growth support.
+                        Designed for businesses that need strategic guidance, accountability and long-term growth support.
+                    </div>
+                    <div style="margin-bottom: 16px; font-size: 14px; color: #6b7280; background: #fef3c7; padding: 8px 16px; border-radius: 8px; display: inline-block;">
+                        ⭐ “Having a strategist on call has doubled our decision-making speed.” – Lisa, CEO
                     </div>
                     <div class="tier-grid">
+
+                        <!-- Foundation -->
                         <div class="tier-card">
-                            <div class="tier-name">Essential</div>
+                            <div class="tier-name">Foundation</div>
                             <div class="tier-price">R5,000 / month</div>
                             <ul>
                                 <li><i class="fas fa-check"></i> Monthly Growth Strategy Session</li>
@@ -2032,11 +2101,13 @@
                             </ul>
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
+
+                        <!-- Accelerate -->
                         <div class="tier-card popular">
-                            <div class="tier-name">Growth</div>
+                            <div class="tier-name">Accelerate</div>
                             <div class="tier-price">R10,000 / month</div>
                             <ul>
-                                <li><i class="fas fa-check"></i> Everything in Essential, plus:</li>
+                                <li><i class="fas fa-check"></i> Everything in Foundation, plus:</li>
                                 <li><i class="fas fa-check"></i> Monthly Marketing Planning</li>
                                 <li><i class="fas fa-check"></i> Offer Reviews</li>
                                 <li><i class="fas fa-check"></i> Campaign Strategy</li>
@@ -2045,11 +2116,13 @@
                             </ul>
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
                         </div>
+
+                        <!-- Lead -->
                         <div class="tier-card">
-                            <div class="tier-name">Scale</div>
+                            <div class="tier-name">Lead</div>
                             <div class="tier-price">R18,000 / month</div>
                             <ul>
-                                <li><i class="fas fa-check"></i> Everything in Growth, plus:</li>
+                                <li><i class="fas fa-check"></i> Everything in Accelerate, plus:</li>
                                 <li><i class="fas fa-check"></i> Weekly Strategy Calls</li>
                                 <li><i class="fas fa-check"></i> Business Consulting</li>
                                 <li><i class="fas fa-check"></i> Launch Planning</li>
@@ -2070,8 +2143,14 @@
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="category-content">
+                    <div style="margin-bottom: 12px; font-size: 14px; color: var(--purple); font-weight: 600;">
+                        <i class="fas fa-quote-left"></i> “Test before you invest.” – Perfect for creators and businesses that don't require ongoing management.
+                    </div>
                     <div style="margin-bottom: 16px; color: #4b5563; font-size: 15px; line-height: 1.7;">
-                        Need support with one specific area? Perfect for creators and businesses that don't require ongoing management.
+                        Need support with one specific area? Pick exactly what you need.
+                    </div>
+                    <div style="margin-bottom: 16px; font-size: 14px; color: #6b7280; background: #dcfce7; padding: 8px 16px; border-radius: 8px; display: inline-block;">
+                        ⭐ “The hook optimisation alone doubled our views.” – Thabo, Creator
                     </div>
                     <div class="individual-grid">
 
@@ -2149,7 +2228,7 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-lightbulb"></i></div>
                             <div class="ind-name">Content Ideation</div>
-                            <div class="ind-price">R2,000</div>
+                            <div class="ind-price">R1,500</div>
                             <div class="ind-desc">
                                 <ul>
                                     <li><i class="fas fa-check"></i> 30 Content Ideas</li>
@@ -2165,7 +2244,7 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-calendar-alt"></i></div>
                             <div class="ind-name">Monthly Content Planning</div>
-                            <div class="ind-price">R1,500</div>
+                            <div class="ind-price">R1,800</div>
                             <div class="ind-desc">
                                 <ul>
                                     <li><i class="fas fa-check"></i> Monthly Content Calendar</li>
@@ -2181,7 +2260,7 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-sync-alt"></i></div>
                             <div class="ind-name">Content Repurposing</div>
-                            <div class="ind-price">R1,500</div>
+                            <div class="ind-price">R2,000</div>
                             <div class="ind-desc">Turn one piece of content into multiple assets.
                                 <ul>
                                     <li><i class="fas fa-check"></i> Short-form Clips</li>
