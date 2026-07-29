@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
+        /* ===== ALL EXISTING STYLES REMAIN THE SAME ===== */
+        /* (We keep everything from the previous version, only the services section content changes) */
+
         * {
             margin: 0;
             padding: 0;
@@ -739,7 +742,7 @@
             transform: scale(1.2);
         }
 
-        /* ===== SERVICES ===== */
+        /* ===== NEW SERVICES STYLES ===== */
         .service-category {
             border: 1px solid #e5e7eb;
             border-radius: 16px;
@@ -748,7 +751,6 @@
             background: #f9fafb;
             transition: all 0.3s ease;
         }
-
         .service-category:hover {
             border-color: var(--purple);
         }
@@ -769,162 +771,191 @@
             transition: all 0.3s ease;
             text-align: left;
         }
-
         .category-btn:hover {
             background: var(--gradient-subtle);
         }
-
         .category-btn .cat-icon {
             transition: transform 0.3s ease;
             color: var(--purple);
             font-size: 18px;
         }
-
         .category-btn.active .cat-icon {
             transform: rotate(45deg);
         }
 
-        .category-heading {
-            padding: 0 24px 16px;
-            display: block;
-        }
-
-        .category-heading .desc {
-            color: #4b5563;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        .service-list {
+        .category-content {
             padding: 0 24px 24px;
             display: none;
         }
-
-        .service-list.open {
+        .category-content.open {
             display: block;
         }
 
-        .service-item {
+        .service-block {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border: 1px solid #e5e7eb;
+        }
+        .service-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-block .service-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 14px 0;
-            border-bottom: 1px solid #e5e7eb;
-            gap: 16px;
+            align-items: baseline;
             flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 8px;
         }
-
-        .service-item:last-child {
-            border-bottom: none;
-        }
-
-        .service-item-info {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .service-item-info .name {
-            font-size: 15px;
-            font-weight: 600;
+        .service-block .service-name {
+            font-size: 20px;
+            font-weight: 700;
             color: var(--black);
         }
-
-        .service-item-info .price {
+        .service-block .service-price {
+            font-size: 20px;
             font-weight: 700;
             color: var(--purple);
-            font-size: 15px;
         }
-
-        .service-item-info .desc {
-            font-size: 14px;
+        .service-block .service-desc {
             color: #4b5563;
-            line-height: 1.6;
-            margin-top: 2px;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 12px;
         }
-
-        .service-item .btn-small-calendly {
+        .service-block .service-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .service-block .service-details .col {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .service-block .service-details .col h5 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--black);
+        }
+        .service-block .service-details .col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .service-block .service-details .col ul li {
+            padding: 4px 0;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            font-size: 14px;
+            color: #374151;
+            line-height: 1.5;
+        }
+        .service-block .service-details .col ul li i {
+            color: var(--purple);
+            font-size: 12px;
+            margin-top: 4px;
             flex-shrink: 0;
         }
-
-        /* ===== GROWTH SYSTEMS — CARDS ===== */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+        .service-block .service-cta {
             margin-top: 16px;
-            padding: 0 24px 24px;
-        }
-
-        .card-pricing {
-            background: white;
-            padding: 28px 24px;
-            border-radius: 20px;
-            border: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
             text-align: center;
         }
 
-        .card-pricing:hover {
+        /* Growth Partner tiers grid */
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .tier-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .tier-card:hover {
             border-color: var(--purple);
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(139,92,246,0.08);
+            box-shadow: 0 8px 24px rgba(139,92,246,0.08);
         }
-
-        .card-pricing.popular {
+        .tier-card.popular {
             border: 2px solid var(--purple);
-            background: white;
         }
-
-        .card-pricing h3 {
-            font-size: 22px;
+        .tier-card .tier-name {
+            font-size: 18px;
             font-weight: 700;
             margin-bottom: 4px;
         }
-
-        .card-pricing .subtitle {
-            font-size: 14px;
-            color: #6b7280;
-            font-style: italic;
+        .tier-card .tier-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--purple);
             margin-bottom: 12px;
         }
-
-        .card-pricing .price-label {
-            font-size: 15px;
-            font-weight: 600;
-            color: #4b5563;
-            margin-bottom: 8px;
-        }
-
-        .card-pricing ul {
+        .tier-card ul {
             list-style: none;
             text-align: left;
-            margin: 12px 0 16px;
-            display: inline-block;
-            text-align: left;
+            padding: 0;
+            margin: 0 0 16px;
         }
-
-        .card-pricing ul li {
+        .tier-card ul li {
             padding: 4px 0;
             display: flex;
-            gap: 10px;
-            align-items: center;
+            gap: 8px;
+            align-items: flex-start;
             font-size: 14px;
+            color: #374151;
+            line-height: 1.5;
         }
-
-        .card-pricing ul li i {
+        .tier-card ul li i {
             color: var(--purple);
-            width: 18px;
-            font-size: 13px;
+            font-size: 12px;
+            margin-top: 4px;
+            flex-shrink: 0;
         }
 
-        .popular-badge {
-            background: var(--black);
-            color: white;
-            padding: 2px 12px;
-            border-radius: 40px;
-            font-size: 10px;
-            display: inline-block;
+        /* Creator services grid */
+        .creator-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .creator-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 16px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .creator-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(139,92,246,0.08);
+        }
+        .creator-card .creator-name {
+            font-size: 16px;
+            font-weight: 700;
             margin-bottom: 4px;
+        }
+        .creator-card .creator-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--purple);
+            margin-bottom: 8px;
+        }
+        .creator-card .creator-desc {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.6;
         }
 
         /* ===== STRATEGY CALL SECTION ===== */
@@ -935,7 +966,6 @@
             margin-top: 16px;
             align-items: center;
         }
-
         .strategy-content p {
             color: #374151;
             font-size: 17px;
@@ -943,35 +973,25 @@
             margin-bottom: 16px;
             text-align: left;
         }
-
         .strategy-content p:last-child {
             margin-bottom: 0;
         }
-
-        .strategy-content .highlight-text {
-            color: var(--purple);
-            font-weight: 600;
-        }
-
         .strategy-benefits {
             background: rgba(255,255,255,0.7);
             border-radius: 24px;
             padding: 40px;
             border: 1px solid rgba(139,92,246,0.1);
         }
-
         .strategy-benefits h3 {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 16px;
             text-align: center;
         }
-
         .strategy-benefits ul {
             list-style: none;
             padding: 0;
         }
-
         .strategy-benefits ul li {
             padding: 10px 0;
             display: flex;
@@ -981,11 +1001,9 @@
             color: #374151;
             border-bottom: 1px solid #f1f3f5;
         }
-
         .strategy-benefits ul li:last-child {
             border-bottom: none;
         }
-
         .strategy-benefits ul li i {
             color: var(--purple);
             font-size: 18px;
@@ -999,9 +1017,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 24px;
             margin-top: 16px;
-            position: relative;
         }
-
         .process-step {
             background: white;
             border-radius: 20px;
@@ -1009,15 +1025,12 @@
             border: 1px solid #e5e7eb;
             text-align: center;
             transition: all 0.3s ease;
-            position: relative;
         }
-
         .process-step:hover {
             border-color: var(--purple);
             transform: translateY(-4px);
             box-shadow: 0 12px 40px rgba(139,92,246,0.08);
         }
-
         .process-step .step-number {
             display: inline-block;
             background: var(--gradient);
@@ -1030,14 +1043,12 @@
             border-radius: 50%;
             margin-bottom: 12px;
         }
-
         .process-step h4 {
             font-size: 18px;
             font-weight: 700;
             margin-bottom: 8px;
             text-align: center;
         }
-
         .process-step p {
             color: #4b5563;
             font-size: 14px;
@@ -1045,7 +1056,7 @@
             text-align: center;
         }
 
-        /* ===== WHO WE HELP ===== */
+        /* ===== OTHER SECTIONS (unchanged) ===== */
         .help-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1071,7 +1082,6 @@
             transform: translateY(-2px);
         }
 
-        /* ===== WHY FRAMEWORK ===== */
         .why-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1113,7 +1123,6 @@
             text-align: center;
         }
 
-        /* ===== RESULTS ===== */
         .results-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1149,7 +1158,6 @@
             font-weight: 500;
         }
 
-        /* ===== WHAT WE DON'T DO ===== */
         .dont-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1183,7 +1191,6 @@
             color: #1f2937;
         }
 
-        /* ===== FOUNDER ===== */
         .founder-card {
             max-width: 800px;
             margin: 0 auto;
@@ -1246,7 +1253,6 @@
             transform: scale(1.1) translateY(-2px);
         }
 
-        /* ===== FAQ ===== */
         .faq-grid {
             display: flex;
             flex-direction: column;
@@ -1310,14 +1316,12 @@
             padding: 0 24px 20px;
         }
 
-        /* ===== CONTACT ===== */
         .contact-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             margin-top: 16px;
         }
-
         .contact-form h3 {
             font-size: 28px;
             font-weight: 700;
@@ -1402,7 +1406,6 @@
             text-align: center;
         }
 
-        /* ===== FOOTER ===== */
         .footer {
             border-top: 1px solid rgba(0,0,0,0.05);
             padding: 32px 0;
@@ -1431,7 +1434,6 @@
             display: inline-block;
         }
 
-        /* ===== ANIMATIONS ===== */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -1498,7 +1500,6 @@
             transform: scale(1) translateY(0);
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
             .hero h1 { font-size: 48px; }
             .section-title { font-size: 36px; }
@@ -1513,9 +1514,10 @@
             .results-grid { grid-template-columns: repeat(2, 1fr); }
             .dont-grid { grid-template-columns: repeat(2, 1fr); }
             .nav-links { gap: 20px; }
-            .cards-grid { grid-template-columns: 1fr 1fr; }
             .process-grid { grid-template-columns: repeat(2, 1fr); }
-            .process-arrow { display: none; }
+            .service-block .service-details { grid-template-columns: 1fr; }
+            .tier-grid { grid-template-columns: 1fr 1fr; }
+            .creator-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
@@ -1554,11 +1556,11 @@
             .contact-form textarea::placeholder { text-align: center; }
             .contact-right { padding: 32px 20px; }
             .category-btn { font-size: 16px; padding: 16px 20px; }
-            .service-item { flex-direction: column; align-items: flex-start; }
-            .service-item .btn-small-calendly { margin-top: 6px; }
-            .service-list { padding: 0 20px 20px; }
-            .category-heading { padding: 0 20px 12px; }
-            .cards-grid { padding: 0 20px 20px; grid-template-columns: 1fr; }
+            .category-content { padding: 0 20px 20px; }
+            .service-block { padding: 20px; }
+            .service-block .service-header { flex-direction: column; align-items: flex-start; }
+            .tier-grid { grid-template-columns: 1fr; }
+            .creator-grid { grid-template-columns: 1fr 1fr; }
             .process-grid { grid-template-columns: 1fr; }
             .strategy-benefits { padding: 24px; }
         }
@@ -1589,12 +1591,11 @@
             .contact-form .btn-calendly { font-size: 14px; padding: 14px; }
             .contact-right .btn-calendly { font-size: 14px; padding: 14px; }
             .category-btn { font-size: 15px; padding: 14px 16px; }
-            .service-item-info .name { font-size: 14px; }
-            .service-item-info .desc { font-size: 13px; }
-            .service-list { padding: 0 16px 16px; }
-            .category-heading { padding: 0 16px 12px; }
-            .cards-grid { padding: 0 16px 16px; }
-            .card-pricing { padding: 20px 16px; }
+            .category-content { padding: 0 16px 16px; }
+            .service-block { padding: 16px; }
+            .service-block .service-name { font-size: 17px; }
+            .service-block .service-price { font-size: 17px; }
+            .creator-grid { grid-template-columns: 1fr; }
             .strategy-benefits { padding: 16px; }
         }
     </style>
@@ -1829,259 +1830,243 @@
         </div>
     </section>
 
-    <!-- ====== SERVICES ====== -->
+    <!-- ====== SERVICES — NEW PRICING STRUCTURE ====== -->
     <section class="section-full section-full-white" id="services">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Our Services</span>
-                <h2 class="section-title">Strategy. Production. <span class="highlight">Systems.</span></h2>
+                <h2 class="section-title">Strategy. Production. <span class="highlight">Growth.</span></h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Click on a category to explore our services. All services include pricing — except Growth Systems, which are custom-built for your needs.</p>
+                <p class="section-sub">Explore our service categories below. Each one is designed to help you build a stronger brand and a more sustainable business.</p>
             </div>
 
             <!-- ====== GROWTH STRATEGY ====== -->
             <div class="service-category">
                 <button class="category-btn" onclick="toggleServices(this)">
-                    Growth Strategy
+                    <span><i class="fas fa-star" style="color: var(--purple); margin-right: 8px;"></i> Growth Strategy</span>
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
-
-                <div class="category-heading">
-                    <div class="desc">Every successful content system begins with a clear strategy. Before creating content, we define your goals, audience, positioning, messaging, and content direction to ensure every piece of content serves a business objective.</div>
-                </div>
-
-                <div class="service-list">
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Content Strategy — <span class="price">R2,500</span></div>
-                            <div class="desc">Build a roadmap for content that supports your business goals—not just your posting schedule.</div>
+                <div class="category-content">
+                    <div class="service-block">
+                        <div class="service-header">
+                            <span class="service-name">Growth Strategy</span>
+                            <span class="service-price">R3,500</span>
                         </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Brand Positioning — <span class="price">R3,000</span></div>
-                            <div class="desc">Clarify what makes your business different and why customers should choose you.</div>
+                        <div class="service-desc">Every successful brand starts with clarity. Before investing in content, we analyse your business, brand, audience, competitors and current online presence to develop a tailored strategy that shows exactly what to focus on over the next 90 days.</div>
+                        <div class="service-details">
+                            <div class="col">
+                                <h5>Includes</h5>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Discovery Session</li>
+                                    <li><i class="fas fa-check"></i> Brand &amp; Content Audit</li>
+                                    <li><i class="fas fa-check"></i> Competitor Analysis</li>
+                                    <li><i class="fas fa-check"></i> Audience Analysis</li>
+                                    <li><i class="fas fa-check"></i> Brand Identity</li>
+                                    <li><i class="fas fa-check"></i> Brand Positioning</li>
+                                    <li><i class="fas fa-check"></i> Brand Messaging</li>
+                                    <li><i class="fas fa-check"></i> Platform Strategy</li>
+                                    <li><i class="fas fa-check"></i> Content Pillars</li>
+                                    <li><i class="fas fa-check"></i> Content System</li>
+                                    <li><i class="fas fa-check"></i> Framework Media Growth Blueprint</li>
+                                    <li><i class="fas fa-check"></i> 90‑Day Growth Roadmap</li>
+                                    <li><i class="fas fa-check"></i> Strategic Recommendations</li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h5>Best for</h5>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Businesses looking to grow online.</li>
+                                    <li><i class="fas fa-check"></i> Founders building a personal brand.</li>
+                                    <li><i class="fas fa-check"></i> Creators needing clarity before creating content.</li>
+                                </ul>
+                            </div>
                         </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Brand Messaging — <span class="price">R2,000</span></div>
-                            <div class="desc">Develop clear messaging that communicates your value consistently across every platform.</div>
+                        <div class="service-cta">
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly" style="font-size: 14px; padding: 12px 28px;">Book a Free Strategy Call</a>
                         </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Content Audit — <span class="price">R1,500</span></div>
-                            <div class="desc">Identify what's working, what's holding your content back, and where the biggest growth opportunities exist.</div>
-                        </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Hook Diagnosis — <span class="price">R200</span></div>
-                            <div class="desc">The first three seconds determine whether people keep watching. We rewrite your hooks for maximum retention.</div>
-                        </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Creator Growth Roadmap — <span class="price">R3,000</span></div>
-                            <div class="desc">A personalised 90-day plan outlining what to create, when to publish, and how to position yourself for growth.</div>
-                        </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Monetisation Consulting — <span class="price">R1,500</span></div>
-                            <div class="desc">Build better partnerships through pricing guidance, sponsorship strategy, and creator business consulting.</div>
-                        </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Personal Brand Strategy — <span class="price">R800</span></div>
-                            <div class="desc">One-on-one coaching focused on positioning, messaging, and building a stronger personal brand.</div>
-                        </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
                 </div>
             </div>
 
-            <!-- ====== CONTENT ENGINE ====== -->
+            <!-- ====== CREATIVE SERVICES ====== -->
             <div class="service-category">
                 <button class="category-btn" onclick="toggleServices(this)">
-                    Content Engine
+                    Creative Services
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
-
-                <div class="category-heading">
-                    <div class="desc">Once the strategy is in place, we create content that earns attention and builds trust. Our production process is designed to support your brand—not simply increase your posting frequency.</div>
-                </div>
-
-                <div class="service-list">
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Script Writing — <span class="price">R350</span></div>
-                            <div class="desc">High-converting scripts using our proven Hook–Body–CTA framework, engineered for retention.</div>
+                <div class="category-content">
+                    <div class="service-block">
+                        <div class="service-header">
+                            <span class="service-name">Creative Services</span>
+                            <span class="service-price">R2,500</span>
                         </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Short-form Video Editing — <span class="price">R600</span></div>
-                            <div class="desc">Professional editing for TikTok, Instagram Reels, and YouTube Shorts — pacing, captions, and sound design.</div>
+                        <div class="service-desc">A strategy is only valuable when it's executed well. We'll help transform your strategy into engaging content that's aligned with your brand and designed to achieve your goals.</div>
+                        <div class="service-details">
+                            <div class="col">
+                                <h5>Includes</h5>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Content Planning</li>
+                                    <li><i class="fas fa-check"></i> Scriptwriting</li>
+                                    <li><i class="fas fa-check"></i> Video Editing</li>
+                                    <li><i class="fas fa-check"></i> Caption Writing</li>
+                                    <li><i class="fas fa-check"></i> Thumbnail Design</li>
+                                    <li><i class="fas fa-check"></i> Creative Direction</li>
+                                    <li><i class="fas fa-check"></i> Repurposing Strategy</li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h5>Best for</h5>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Businesses creating their own content.</li>
+                                    <li><i class="fas fa-check"></i> Creators needing professional editing and strategy.</li>
+                                    <li><i class="fas fa-check"></i> Teams working with their own videographer.</li>
+                                </ul>
+                            </div>
                         </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">YouTube Editing — <span class="price">R1,200</span></div>
-                            <div class="desc">Long-form editing with storytelling, pacing, transitions, B-roll, and thumbnail guidance.</div>
+                        <div class="service-desc" style="margin-top: 12px; font-size: 14px; color: #6b7280; font-style: italic;">Why a fixed price? This works with a clear scope (e.g., a fixed number of edited videos, scripts, or deliverables). If the workload changes dramatically, we move to a custom quote.</div>
+                        <div class="service-cta">
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly" style="font-size: 14px; padding: 12px 28px;">Book a Free Strategy Call</a>
                         </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Full Production — <span class="price">R1,000+</span></div>
-                            <div class="desc">Complete production from strategy and scripting to editing and final delivery.</div>
-                        </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Content Repurposing — <span class="price">R800</span></div>
-                            <div class="desc">Turn one long-form video into multiple platform-specific short-form pieces.</div>
-                        </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Thumbnail Design — <span class="price">R300</span></div>
-                            <div class="desc">Professionally designed thumbnails focused on increasing click-through rates.</div>
-                        </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
                 </div>
             </div>
 
-            <!-- ====== CREATIVE ASSETS ====== -->
+            <!-- ====== SOCIAL MEDIA MANAGEMENT ====== -->
             <div class="service-category">
                 <button class="category-btn" onclick="toggleServices(this)">
-                    Creative Assets
+                    Social Media Management
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
-
-                <div class="category-heading">
-                    <div class="desc">Strong brands are consistent. We create the supporting assets that help your business look as professional as the service you provide.</div>
-                </div>
-
-                <div class="service-list">
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Brand Guidelines — <span class="price">R2,000</span></div>
-                            <div class="desc">A professional guide covering colours, typography, visual identity, messaging, and content style.</div>
+                <div class="category-content">
+                    <div class="service-block">
+                        <div class="service-header">
+                            <span class="service-name">Social Media Management</span>
+                            <span class="service-price">R5,000 / month</span>
                         </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Creator Media Kits — <span class="price">R1,200</span></div>
-                            <div class="desc">A professionally designed media kit showcasing your audience, analytics, and partnership opportunities.</div>
+                        <div class="service-desc">Consistency builds trust. We manage your online presence so you can focus on running your business.</div>
+                        <div class="service-details">
+                            <div class="col">
+                                <h5>Includes</h5>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Monthly Content Planning</li>
+                                    <li><i class="fas fa-check"></i> Content Scheduling</li>
+                                    <li><i class="fas fa-check"></i> Community Management</li>
+                                    <li><i class="fas fa-check"></i> Monthly Analytics</li>
+                                    <li><i class="fas fa-check"></i> Monthly Performance Reviews</li>
+                                    <li><i class="fas fa-check"></i> Continuous Optimisation</li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h5>Best for</h5>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Businesses wanting consistent online growth.</li>
+                                    <li><i class="fas fa-check"></i> Founders without time to manage social media.</li>
+                                    <li><i class="fas fa-check"></i> Brands needing an outsourced content team.</li>
+                                </ul>
+                            </div>
                         </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Presentation Design — <span class="price">R1,500</span></div>
-                            <div class="desc">Professional presentations for client pitches, workshops, proposals, and investor meetings.</div>
+                        <div class="service-cta">
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly" style="font-size: 14px; padding: 12px 28px;">Book a Free Strategy Call</a>
                         </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="service-item">
-                        <div class="service-item-info">
-                            <div class="name">Social Media Templates — <span class="price">R600</span></div>
-                            <div class="desc">Custom-designed templates for posts, stories, and carousels that maintain brand consistency.</div>
-                        </div>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
                     </div>
                 </div>
             </div>
 
-            <!-- ====== GROWTH SYSTEMS — CARDS (no pricing) ====== -->
-            <div class="service-category" style="border-color: var(--purple);">
-                <div style="padding: 20px 24px 0;">
-                    <div style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">Growth Systems</div>
-                    <div style="color: #4b5563; font-size: 15px; line-height: 1.7;">For clients who want an ongoing content engine. We become your outsourced content department — one structured system instead of five freelancers.</div>
-                </div>
-
-                <div class="cards-grid">
-                    <div class="card-pricing">
-                        <h3>Starter</h3>
-                        <div class="price-label">15-Day Content Sprint</div>
-                        <div class="subtitle">Perfect for creators building consistency.</div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> 6–8 Short-form Scripts</li>
-                            <li><i class="fas fa-check"></i> 1–2 YouTube Scripts</li>
-                            <li><i class="fas fa-check"></i> Content Audit</li>
-                            <li><i class="fas fa-check"></i> Monthly Strategy Check-in</li>
-                        </ul>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
+            <!-- ====== GROWTH PARTNER ====== -->
+            <div class="service-category">
+                <button class="category-btn" onclick="toggleServices(this)">
+                    Growth Partner
+                    <span class="cat-icon"><i class="fas fa-plus"></i></span>
+                </button>
+                <div class="category-content">
+                    <div style="margin-bottom: 16px; color: #4b5563; font-size: 15px; line-height: 1.7;">
+                        This isn't social media management. This is ongoing strategic partnership. Framework Media becomes your outsourced Head of Growth. We continuously help you make better decisions, improve your content, refine your messaging and identify new opportunities as your business grows.
                     </div>
-
-                    <div class="card-pricing popular">
-                        <span class="popular-badge">popular</span>
-                        <h3>Growth</h3>
-                        <div class="price-label">21-Day Content System</div>
-                        <div class="subtitle">Ideal for creators and businesses ready to scale.</div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> 10–12 Short-form Scripts</li>
-                            <li><i class="fas fa-check"></i> Short-form Editing</li>
-                            <li><i class="fas fa-check"></i> 2–3 YouTube Scripts</li>
-                            <li><i class="fas fa-check"></i> YouTube Editing</li>
-                            <li><i class="fas fa-check"></i> Monthly Content Audit</li>
-                            <li><i class="fas fa-check"></i> Performance Review</li>
-                        </ul>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
-                    </div>
-
-                    <div class="card-pricing">
-                        <h3>Full System</h3>
-                        <div class="price-label">30-Day Content Department</div>
-                        <div class="subtitle">Your complete outsourced content team.</div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Content Strategy</li>
-                            <li><i class="fas fa-check"></i> Monthly Planning</li>
-                            <li><i class="fas fa-check"></i> 15+ Short-form Videos</li>
-                            <li><i class="fas fa-check"></i> 4 YouTube Videos</li>
-                            <li><i class="fas fa-check"></i> Editing + Optimisation</li>
-                            <li><i class="fas fa-check"></i> Analytics Review</li>
-                            <li><i class="fas fa-check"></i> Strategy Calls</li>
-                            <li><i class="fas fa-check"></i> Monetisation Consulting</li>
-                            <li><i class="fas fa-check"></i> Priority Support</li>
-                            <li><i class="fas fa-check"></i> Monthly Content Management</li>
-                        </ul>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly">Book a Free Strategy Call</a>
+                    <div class="tier-grid">
+                        <div class="tier-card">
+                            <div class="tier-name">Framework Essential</div>
+                            <div class="tier-price">R2,500 / month</div>
+                            <p style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">Monthly strategic guidance.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 1 Monthly Strategy Session</li>
+                                <li><i class="fas fa-check"></i> Monthly Performance Review</li>
+                                <li><i class="fas fa-check"></i> Email Support</li>
+                                <li><i class="fas fa-check"></i> Strategy Recommendations</li>
+                            </ul>
+                            <p style="font-size: 13px; color: #6b7280; margin-top: 8px;">Best for: Businesses wanting accountability and expert guidance.</p>
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
+                        </div>
+                        <div class="tier-card popular">
+                            <div class="tier-name">Framework Growth</div>
+                            <div class="tier-price">R5,000 / month</div>
+                            <p style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">For businesses actively growing online.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Everything in Essential, plus:</li>
+                                <li><i class="fas fa-check"></i> Monthly Content Direction</li>
+                                <li><i class="fas fa-check"></i> Script Reviews</li>
+                                <li><i class="fas fa-check"></i> Monthly Planning Session</li>
+                                <li><i class="fas fa-check"></i> Priority Support</li>
+                                <li><i class="fas fa-check"></i> Growth Reviews</li>
+                            </ul>
+                            <p style="font-size: 13px; color: #6b7280; margin-top: 8px;">Best for: Businesses consistently creating content and looking to scale.</p>
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
+                        </div>
+                        <div class="tier-card">
+                            <div class="tier-name">Framework Scale</div>
+                            <div class="tier-price">R8,500 / month</div>
+                            <p style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">Framework Media becomes part of your leadership team.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Everything in Growth, plus:</li>
+                                <li><i class="fas fa-check"></i> Unlimited Strategy Support (Fair Use)</li>
+                                <li><i class="fas fa-check"></i> Quarterly Growth Planning</li>
+                                <li><i class="fas fa-check"></i> WhatsApp Support</li>
+                                <li><i class="fas fa-check"></i> Business Consulting</li>
+                                <li><i class="fas fa-check"></i> Marketing Decision Support</li>
+                                <li><i class="fas fa-check"></i> Priority Turnaround</li>
+                            </ul>
+                            <p style="font-size: 13px; color: #6b7280; margin-top: 8px;">Best for: Businesses committed to long-term growth and scaling.</p>
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- ====== CREATOR SERVICES ====== -->
+            <div class="service-category">
+                <button class="category-btn" onclick="toggleServices(this)">
+                    Creator Services
+                    <span class="cat-icon"><i class="fas fa-plus"></i></span>
+                </button>
+                <div class="category-content">
+                    <div class="creator-grid">
+                        <div class="creator-card">
+                            <div class="creator-name">Monetisation Consulting</div>
+                            <div class="creator-price">R1,500</div>
+                            <div class="creator-desc">Turn your audience into a business. Includes sponsorship strategy, pricing guidance, creator business systems, revenue opportunities, and partnership strategy.</div>
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
+                        </div>
+                        <div class="creator-card">
+                            <div class="creator-name">Strategy Session</div>
+                            <div class="creator-price">R750</div>
+                            <div class="creator-desc">A focused 60‑minute strategy consultation on personal branding, content direction, platform growth, business advice, creator feedback, or Q&amp;A.</div>
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
+                        </div>
+                        <div class="creator-card">
+                            <div class="creator-name">Profile Review</div>
+                            <div class="creator-price">R350</div>
+                            <div class="creator-desc">Receive detailed feedback on your profile and online presence: bio review, branding feedback, profile optimisation, and platform recommendations.</div>
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
+                        </div>
+                        <div class="creator-card">
+                            <div class="creator-name">Content Review</div>
+                            <div class="creator-price">R500</div>
+                            <div class="creator-desc">Professional feedback on up to 10 posts/videos — strengths, weaknesses, growth opportunities, and actionable recommendations.</div>
+                            <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-small-calendly" style="margin-top: 12px;">Book a Free Strategy Call</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -2445,23 +2430,25 @@
 
         function toggleServices(button) {
             const category = button.closest('.service-category');
-            const isOpen = button.classList.contains('active');
+            const content = category.querySelector('.category-content');
+            const isOpen = content.classList.contains('open');
 
+            // Close all others
             document.querySelectorAll('.service-category').forEach(el => {
                 if (el !== category) {
                     const btn = el.querySelector('.category-btn');
                     if (btn) btn.classList.remove('active');
-                    const list = el.querySelector('.service-list');
-                    if (list) list.classList.remove('open');
+                    const c = el.querySelector('.category-content');
+                    if (c) c.classList.remove('open');
                 }
             });
 
             if (isOpen) {
                 button.classList.remove('active');
-                category.querySelector('.service-list').classList.remove('open');
+                content.classList.remove('open');
             } else {
                 button.classList.add('active');
-                category.querySelector('.service-list').classList.add('open');
+                content.classList.add('open');
             }
         }
 
