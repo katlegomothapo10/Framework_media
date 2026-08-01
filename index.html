@@ -178,6 +178,49 @@
             margin: 16px auto 0;
         }
 
+        /* ===== TESTIMONIAL CARD ===== */
+        .testimonial-card {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 32px 40px;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            border-color: var(--purple);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.08);
+        }
+        .testimonial-card .stars {
+            color: #f59e0b;
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .testimonial-card .quote {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #1f2937;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+        .testimonial-card .quote i {
+            color: var(--purple);
+            font-size: 14px;
+            opacity: 0.5;
+        }
+        .testimonial-card .author {
+            font-weight: 600;
+            color: var(--black);
+            font-size: 15px;
+        }
+        .testimonial-card .author-title {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
         /* ===== NAVBAR ===== */
         .navbar {
             display: flex;
@@ -388,6 +431,44 @@
             gap: 16px;
             flex-wrap: wrap;
             justify-content: center;
+        }
+
+        /* ===== FEATURED HERO TESTIMONIAL ===== */
+        .hero-testimonial {
+            max-width: 700px;
+            margin: 30px auto 0;
+            padding: 20px 24px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(4px);
+        }
+        .hero-testimonial .stars {
+            color: #f59e0b;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+        .hero-testimonial .quote {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #d1d5db;
+            font-style: italic;
+        }
+        .hero-testimonial .quote i {
+            color: var(--purple);
+            opacity: 0.5;
+            font-size: 12px;
+        }
+        .hero-testimonial .author {
+            color: #e5e7eb;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 6px;
+        }
+        .hero-testimonial .author-title {
+            color: #9ca3af;
+            font-size: 12px;
         }
 
         /* ===== FULL-WIDTH SECTIONS ===== */
@@ -776,6 +857,7 @@
             overflow: hidden;
             background: #f9fafb;
             transition: all 0.3s ease;
+            scroll-margin-top: 80px;
         }
         .service-category:hover {
             border-color: var(--purple);
@@ -1844,6 +1926,8 @@
             .faq-answer { text-align: center; }
             .back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
             .back-to-top i { font-size: 18px; }
+            .testimonial-card { padding: 24px 20px; }
+            .hero-testimonial { padding: 16px 18px; }
         }
 
         @media (max-width: 480px) {
@@ -1881,6 +1965,9 @@
             .package-grid { grid-template-columns: 1fr; }
             .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
             .back-to-top i { font-size: 16px; }
+            .testimonial-card { padding: 16px; }
+            .testimonial-card .quote { font-size: 15px; }
+            .hero-testimonial .quote { font-size: 14px; }
         }
     </style>
 </head>
@@ -1919,6 +2006,14 @@
             <div class="hero-actions">
                 <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly">Book a Free Strategy Call</a>
                 <a href="#services" class="btn-outline">Explore Our Services</a>
+            </div>
+
+            <!-- ====== FEATURED HERO TESTIMONIAL ====== -->
+            <div class="hero-testimonial">
+                <div class="stars">★★★★★</div>
+                <div class="quote"><i class="fas fa-quote-left"></i> Working with Framework Media on my content strategy gave me real clarity on how to position my personal brand. Their strategy was incredibly well structured, practical, and gave me a strong foundation for long-term growth. I'm already implementing the recommendations and can already see my brand taking shape. <i class="fas fa-quote-right"></i></div>
+                <div class="author">— Entle S.</div>
+                <div class="author-title">Personal Brand Creator</div>
             </div>
         </div>
     </section>
@@ -2131,7 +2226,7 @@
 
             <!-- ====== GROWTH STRATEGY ====== -->
             <div class="service-category">
-                <button class="category-btn" onclick="toggleServices(this)">
+                <button class="category-btn" onclick="toggleServices(this, event)">
                     <span><i class="fas fa-star" style="color: var(--purple); margin-right: 8px;"></i> Growth Strategy</span>
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
@@ -2139,6 +2234,17 @@
                     <div style="margin-bottom: 16px; color: #4b5563; font-size: 15px; line-height: 1.7; text-align: center;">
                         Every client starts here. You leave with absolute clarity on what to create, who you're speaking to and how to grow over the next 90 days.
                     </div>
+
+                    <!-- ====== STRATEGY TESTIMONIAL ====== -->
+                    <div style="margin-bottom: 20px; background: #f8f6ff; border-radius: 12px; padding: 16px 20px; border: 1px solid #e9e4ff;">
+                        <div style="color: #f59e0b; font-size: 14px; letter-spacing: 2px; text-align: center; margin-bottom: 4px;">★★★★★</div>
+                        <p style="font-size: 14px; line-height: 1.7; color: #374151; font-style: italic; text-align: center;">
+                            <i class="fas fa-quote-left" style="color: var(--purple); opacity: 0.4; font-size: 12px;"></i> The biggest takeaway for me wasn't that I needed to post more—it was understanding my brand, refining my content pillars, and creating a clear direction for where I want my personal brand to go. The strategy genuinely changed how I think about my content. <i class="fas fa-quote-right" style="color: var(--purple); opacity: 0.4; font-size: 12px;"></i>
+                        </p>
+                        <div style="text-align: center; font-weight: 600; font-size: 14px; color: var(--black); margin-top: 4px;">— Entle S.</div>
+                        <div style="text-align: center; font-size: 12px; color: #6b7280;">Personal Brand Creator</div>
+                    </div>
+
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Growth Strategy</span>
@@ -2187,12 +2293,22 @@
                             <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly" style="font-size: 14px; padding: 12px 28px;">Book a Free Strategy Call</a>
                         </div>
                     </div>
+
+                    <!-- ====== CASE STUDY TESTIMONIAL ====== -->
+                    <div style="margin-top: 20px; background: #f8f6ff; border-radius: 12px; padding: 16px 20px; border: 1px solid #e9e4ff;">
+                        <div style="color: #f59e0b; font-size: 14px; letter-spacing: 2px; text-align: center; margin-bottom: 4px;">★★★★★</div>
+                        <p style="font-size: 14px; line-height: 1.7; color: #374151; font-style: italic; text-align: center;">
+                            <i class="fas fa-quote-left" style="color: var(--purple); opacity: 0.4; font-size: 12px;"></i> The strategy opened my eyes to things I was completely missing. It gave me a much clearer understanding of what I should focus on now to build the personal brand I envision for the future. I'll definitely be implementing the recommendations. <i class="fas fa-quote-right" style="color: var(--purple); opacity: 0.4; font-size: 12px;"></i>
+                        </p>
+                        <div style="text-align: center; font-weight: 600; font-size: 14px; color: var(--black); margin-top: 4px;">— Josh G.</div>
+                        <div style="text-align: center; font-size: 12px; color: #6b7280;">Creator</div>
+                    </div>
                 </div>
             </div>
 
             <!-- ====== CONTENT MANAGEMENT ====== -->
             <div class="service-category">
-                <button class="category-btn" onclick="toggleServices(this)">
+                <button class="category-btn" onclick="toggleServices(this, event)">
                     <span><i class="fas fa-star" style="color: var(--purple); margin-right: 8px;"></i> Content Management</span>
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
@@ -2344,7 +2460,7 @@
 
             <!-- ====== GROWTH PARTNER ====== -->
             <div class="service-category">
-                <button class="category-btn" onclick="toggleServices(this)">
+                <button class="category-btn" onclick="toggleServices(this, event)">
                     <span><i class="fas fa-star" style="color: var(--purple); margin-right: 8px;"></i> Growth Partner</span>
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
@@ -2480,7 +2596,7 @@
 
             <!-- ====== INDIVIDUAL SERVICES ====== -->
             <div class="service-category">
-                <button class="category-btn" onclick="toggleServices(this)">
+                <button class="category-btn" onclick="toggleServices(this, event)">
                     <span><i class="fas fa-tools" style="color: var(--purple); margin-right: 8px;"></i> Individual Services</span>
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
@@ -2494,7 +2610,7 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-film"></i></div>
                             <div class="ind-name">Short-Form Video Editing</div>
-                            <div class="ind-price">R700 / video</div>
+                            <div class="ind-price">R500 / video</div>
                             <div class="ind-desc">Professional editing for TikTok, Reels, Shorts and Facebook Reels.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2511,7 +2627,7 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-video"></i></div>
                             <div class="ind-name">Long-Form YouTube Editing</div>
-                            <div class="ind-price">From R2,500 / video</div>
+                            <div class="ind-price">From R2,000 / video</div>
                             <div class="ind-desc">Multi-camera editing, motion graphics, audio enhancement, B-roll, chapters, end screens, CTAs.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2529,7 +2645,7 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-pen-fancy"></i></div>
                             <div class="ind-name">Scriptwriting</div>
-                            <div class="ind-price">R350 / script</div>
+                            <div class="ind-price">R250 / script</div>
                             <div class="ind-desc">Platform-specific scripts designed for retention and engagement.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2546,7 +2662,7 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-images"></i></div>
                             <div class="ind-name">Carousel Design</div>
-                            <div class="ind-price">R750 / carousel</div>
+                            <div class="ind-price">R350 / carousel</div>
                             <div class="ind-desc">Research, copywriting, design, and branding for educational carousels.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2684,7 +2800,7 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fab fa-youtube"></i></div>
                             <div class="ind-name">YouTube Channel Audit</div>
-                            <div class="ind-price">R3,000</div>
+                            <div class="ind-price">R2,000</div>
                             <div class="ind-desc">Complete review: branding, thumbnails, titles, SEO, retention analysis, publishing strategy.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2701,7 +2817,7 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-chart-line"></i></div>
                             <div class="ind-name">YouTube Strategy</div>
-                            <div class="ind-price">R4,000</div>
+                            <div class="ind-price">R2,000</div>
                             <div class="ind-desc">Channel positioning, content strategy, video structure, thumbnail strategy, SEO strategy, 90-day roadmap.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2735,7 +2851,7 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-money-bill-wave"></i></div>
                             <div class="ind-name">Monetisation Consulting</div>
-                            <div class="ind-price">R3,000</div>
+                            <div class="ind-price">R1,000</div>
                             <div class="ind-desc">Sponsorship strategy, pricing guidance, partnership strategy, revenue opportunities, creator business systems.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2770,7 +2886,7 @@
 
             <!-- ====== LAUNCH PACKAGES ====== -->
             <div class="service-category">
-                <button class="category-btn" onclick="toggleServices(this)">
+                <button class="category-btn" onclick="toggleServices(this, event)">
                     <span><i class="fas fa-rocket" style="color: var(--purple); margin-right: 8px;"></i> Launch Packages</span>
                     <span class="cat-icon"><i class="fas fa-plus"></i></span>
                 </button>
@@ -2900,6 +3016,17 @@
                 <div class="accent-line"></div>
                 <p class="section-sub">Anyone can create a video. Very few businesses have a repeatable system that consistently turns content into business growth.</p>
             </div>
+
+            <!-- ====== PROFESSIONALISM TESTIMONIAL ====== -->
+            <div style="max-width: 780px; margin: 0 auto 30px; padding: 20px 24px; background: #f8f6ff; border-radius: 12px; border: 1px solid #e9e4ff;">
+                <div style="color: #f59e0b; font-size: 14px; letter-spacing: 2px; text-align: center; margin-bottom: 4px;">★★★★★</div>
+                <p style="font-size: 14px; line-height: 1.7; color: #374151; font-style: italic; text-align: center;">
+                    <i class="fas fa-quote-left" style="color: var(--purple); opacity: 0.4; font-size: 12px;"></i> Framework Media is incredibly professional and genuinely takes the time to listen. They understood my concerns, explained everything clearly, and created a strategy that felt personalised rather than generic. <i class="fas fa-quote-right" style="color: var(--purple); opacity: 0.4; font-size: 12px;"></i>
+                </p>
+                <div style="text-align: center; font-weight: 600; font-size: 14px; color: var(--black); margin-top: 4px;">— Entle S.</div>
+                <div style="text-align: center; font-size: 12px; color: #6b7280;">Personal Brand Creator</div>
+            </div>
+
             <div class="why-grid stagger">
                 <div class="why-card">
                     <span class="icon"><i class="fas fa-bullseye"></i></span>
@@ -3063,6 +3190,17 @@
                 <div class="accent-line"></div>
                 <p class="section-sub">Whether you're building a business or growing a personal brand, your content should work as hard as you do.</p>
             </div>
+
+            <!-- ====== RESULTS-ORIENTED TESTIMONIAL ====== -->
+            <div style="max-width: 700px; margin: 0 auto 40px; padding: 20px 24px; background: rgba(255,255,255,0.06); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);">
+                <div style="color: #f59e0b; font-size: 14px; letter-spacing: 2px; text-align: center; margin-bottom: 4px;">★★★★★</div>
+                <p style="font-size: 14px; line-height: 1.7; color: #d1d5db; font-style: italic; text-align: center;">
+                    <i class="fas fa-quote-left" style="color: var(--purple); opacity: 0.4; font-size: 12px;"></i> I started implementing the recommendations immediately because they were practical and easy to apply. The strategy gave me a clear roadmap instead of leaving me wondering what to do next. <i class="fas fa-quote-right" style="color: var(--purple); opacity: 0.4; font-size: 12px;"></i>
+                </p>
+                <div style="text-align: center; font-weight: 600; font-size: 14px; color: #e5e7eb; margin-top: 4px;">— Lebo M.</div>
+                <div style="text-align: center; font-size: 12px; color: #9ca3af;">Creator</div>
+            </div>
+
             <div class="contact-section">
                 <div class="contact-form reveal-left">
                     <h3>Send us a message.</h3>
@@ -3152,6 +3290,52 @@
         });
 
         // ================================================
+        // ===== SERVICES TOGGLE - FIXED NO JUMP =====
+        // ================================================
+
+        function toggleServices(button, event) {
+            if (event) {
+                event.preventDefault();
+            }
+
+            const category = button.closest('.service-category');
+            const content = category.querySelector('.category-content');
+            const isOpen = content.classList.contains('open');
+
+            // Close all others
+            document.querySelectorAll('.service-category').forEach(el => {
+                if (el !== category) {
+                    const btn = el.querySelector('.category-btn');
+                    if (btn) btn.classList.remove('active');
+                    const c = el.querySelector('.category-content');
+                    if (c) c.classList.remove('open');
+                }
+            });
+
+            if (isOpen) {
+                button.classList.remove('active');
+                content.classList.remove('open');
+            } else {
+                button.classList.add('active');
+                content.classList.add('open');
+
+                // Smoothly adjust scroll position after expansion
+                setTimeout(() => {
+                    const rect = category.getBoundingClientRect();
+                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+                    const targetScroll = window.pageYOffset + rect.top - navbarHeight - 20;
+
+                    if (rect.top < navbarHeight + 20) {
+                        window.scrollTo({
+                            top: targetScroll,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 50);
+            }
+        }
+
+        // ================================================
         // ===== SCROLL ANIMATIONS =====
         // ================================================
 
@@ -3207,34 +3391,6 @@
             } else {
                 answer.classList.add('open');
                 button.classList.add('active');
-            }
-        }
-
-        // ================================================
-        // ===== SERVICES TOGGLE =====
-        // ================================================
-
-        function toggleServices(button) {
-            const category = button.closest('.service-category');
-            const content = category.querySelector('.category-content');
-            const isOpen = content.classList.contains('open');
-
-            // Close all others
-            document.querySelectorAll('.service-category').forEach(el => {
-                if (el !== category) {
-                    const btn = el.querySelector('.category-btn');
-                    if (btn) btn.classList.remove('active');
-                    const c = el.querySelector('.category-content');
-                    if (c) c.classList.remove('open');
-                }
-            });
-
-            if (isOpen) {
-                button.classList.remove('active');
-                content.classList.remove('open');
-            } else {
-                button.classList.add('active');
-                content.classList.add('open');
             }
         }
 
