@@ -2041,6 +2041,7 @@
                 padding: 10px 16px;
                 flex-direction: column;
                 gap: 6px;
+                margin-top: 80px; /* push down below fixed header */
             }
             .discount-banner .timer {
                 font-size: 18px;
@@ -2186,32 +2187,17 @@
         </div>
     </header>
 
-    <!-- ====== BACK TO TOP ====== -->
-    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-chevron-up"></i>
-    </a>
-
-    <!-- ====== MODAL ====== -->
-    <div class="modal-overlay" id="caseStudyModal">
-        <div class="modal">
-            <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
-
-            <div class="modal-icon"><i class="fas fa-file-pdf"></i></div>
-            <h3>Get the Case Study</h3>
-            <p>Enter your email to receive the full Framework Media Case Study PDF — showing exactly how we built a personal brand from 0 to 60K+ followers.</p>
-
-            <div class="modal-form" id="modalForm">
-                <input type="email" id="modalEmail" placeholder="your@email.com" required />
-                <button class="btn-primary" onclick="submitCaseStudy()">Send Me the Case Study</button>
-                <p style="font-size: 12px; color: #9ca3af; margin-top: 8px;">No spam. Unsubscribe anytime. We respect your privacy.</p>
-            </div>
-
-            <div class="modal-success" id="modalSuccess">
-                <div class="check"><i class="fas fa-check-circle"></i></div>
-                <h4>Check Your Inbox!</h4>
-                <p>We've sent the case study to your email. It should arrive within a few minutes.</p>
-                <p style="font-size: 13px; color: #6b7280; margin-top: 8px;">If you don't see it, check your spam folder.</p>
-            </div>
+    <!-- ====== DISCOUNT BANNER (directly under header) ====== -->
+    <div class="container" style="margin-top: 80px; position: relative; z-index: 5;">
+        <div class="discount-banner" id="discountBanner">
+            <span><span class="tag">🔥 FOUNDERS' DISCOUNT</span> 35% OFF ALL SERVICES</span>
+            <span class="timer" id="countdownTimer">
+                <span id="days">00</span><span class="colon">:</span>
+                <span id="hours">00</span><span class="colon">:</span>
+                <span id="minutes">00</span><span class="colon">:</span>
+                <span id="seconds">00</span>
+            </span>
+            <span style="font-size: 14px; font-weight: 500;">Offer ends in</span>
         </div>
     </div>
 
@@ -2238,20 +2224,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ====== DISCOUNT BANNER ====== -->
-    <div class="container" style="margin-top: -20px; position: relative; z-index: 5;">
-        <div class="discount-banner" id="discountBanner">
-            <span><span class="tag">🔥 FOUNDERS' DISCOUNT</span> 35% OFF ALL SERVICES</span>
-            <span class="timer" id="countdownTimer">
-                <span id="days">00</span><span class="colon">:</span>
-                <span id="hours">00</span><span class="colon">:</span>
-                <span id="minutes">00</span><span class="colon">:</span>
-                <span id="seconds">00</span>
-            </span>
-            <span style="font-size: 14px; font-weight: 500;">Offer ends in</span>
-        </div>
-    </div>
 
     <!-- ====== WHO WE ARE ====== -->
     <section class="section-full section-full-white" id="who">
