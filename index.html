@@ -20,9 +20,11 @@
             --pink: #ec4899;
             --purple: #8b5cf6;
             --blue: #3b82f6;
+            --gold: #f59e0b;
             --gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
             --gradient-hero: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
             --gradient-dark: linear-gradient(135deg, #1a1a2e, #16213e);
+            --gradient-sale: linear-gradient(135deg, #f59e0b, #ef4444, #ec4899);
             --gradient-subtle: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(139, 92, 246, 0.08), rgba(59, 130, 246, 0.08));
             --bg-light-purple: #f5f0ff;
             --bg-light-pink: #fdf2f8;
@@ -178,47 +180,53 @@
             margin: 16px auto 0;
         }
 
-        /* ===== TESTIMONIAL CARD ===== */
-        .testimonial-card {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 32px 40px;
-            background: white;
-            border-radius: 16px;
-            border: 1px solid #e5e7eb;
+        /* ===== SALE BANNER ===== */
+        .sale-banner {
+            background: var(--gradient-sale);
+            color: white;
+            padding: 12px 24px;
             text-align: center;
-            transition: all 0.3s ease;
-        }
-        .testimonial-card:hover {
-            border-color: var(--purple);
-            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.08);
-        }
-        .testimonial-card .stars {
-            color: #f59e0b;
-            font-size: 18px;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-        .testimonial-card .quote {
-            font-size: 17px;
-            line-height: 1.8;
-            color: #1f2937;
-            font-style: italic;
-            margin-bottom: 12px;
-        }
-        .testimonial-card .quote i {
-            color: var(--purple);
-            font-size: 14px;
-            opacity: 0.5;
-        }
-        .testimonial-card .author {
             font-weight: 600;
-            color: var(--black);
-            font-size: 15px;
+            font-size: 14px;
+            position: relative;
+            z-index: 1001;
+            margin-top: 80px;
         }
-        .testimonial-card .author-title {
-            font-size: 13px;
-            color: #6b7280;
+        .sale-banner .countdown {
+            display: inline-flex;
+            gap: 6px;
+            align-items: center;
+            background: rgba(255,255,255,0.15);
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-left: 12px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+        .sale-banner .countdown .time-block {
+            display: inline-flex;
+            gap: 2px;
+            align-items: center;
+        }
+        .sale-banner .countdown .time-block span {
+            font-weight: 800;
+            font-size: 18px;
+            min-width: 28px;
+            text-align: center;
+        }
+        .sale-banner .countdown .separator {
+            opacity: 0.5;
+            font-weight: 300;
+        }
+        .sale-banner .sale-tag {
+            background: white;
+            color: #dc2626;
+            padding: 2px 14px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-right: 8px;
+            text-transform: uppercase;
         }
 
         /* ===== NAVBAR ===== */
@@ -469,6 +477,36 @@
         .hero-testimonial .author-title {
             color: #9ca3af;
             font-size: 12px;
+        }
+
+        /* ===== SALE PRICE STYLING ===== */
+        .original-price {
+            text-decoration: line-through;
+            color: #9ca3af;
+            font-size: 16px;
+            font-weight: 400;
+            margin-right: 8px;
+        }
+        .sale-price {
+            color: #dc2626;
+            font-weight: 700;
+        }
+        .price-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .sale-badge {
+            background: #dc2626;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 40px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         /* ===== FULL-WIDTH SECTIONS ===== */
@@ -1016,6 +1054,7 @@
             text-align: center;
         }
 
+        /* ===== SERVICES STYLES (continued) ===== */
         .tier-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1876,6 +1915,9 @@
             .tier-grid { grid-template-columns: 1fr 1fr; }
             .individual-grid { grid-template-columns: repeat(2, 1fr); }
             .package-grid { grid-template-columns: 1fr; }
+            .sale-banner { font-size: 13px; padding: 10px 16px; }
+            .sale-banner .countdown { font-size: 13px; padding: 3px 12px; margin-left: 8px; }
+            .sale-banner .countdown .time-block span { font-size: 16px; min-width: 22px; }
         }
 
         @media (max-width: 768px) {
@@ -1928,6 +1970,10 @@
             .back-to-top i { font-size: 18px; }
             .testimonial-card { padding: 24px 20px; }
             .hero-testimonial { padding: 16px 18px; }
+            .sale-banner { font-size: 12px; padding: 8px 12px; }
+            .sale-banner .countdown { font-size: 12px; padding: 2px 10px; margin-left: 6px; flex-wrap: wrap; }
+            .sale-banner .countdown .time-block span { font-size: 14px; min-width: 18px; }
+            .sale-banner .sale-tag { font-size: 10px; padding: 1px 10px; }
         }
 
         @media (max-width: 480px) {
@@ -1968,10 +2014,28 @@
             .testimonial-card { padding: 16px; }
             .testimonial-card .quote { font-size: 15px; }
             .hero-testimonial .quote { font-size: 14px; }
+            .sale-banner { font-size: 11px; padding: 6px 10px; }
+            .sale-banner .countdown { font-size: 11px; padding: 2px 8px; margin-left: 4px; }
+            .sale-banner .countdown .time-block span { font-size: 12px; min-width: 14px; }
         }
     </style>
 </head>
 <body>
+
+    <!-- ====== SALE BANNER ====== -->
+    <div class="sale-banner" id="saleBanner">
+        <span class="sale-tag">🔥 Founder's Sale</span>
+        30% OFF all services — limited time only!
+        <span class="countdown" id="countdownTimer">
+            <span class="time-block"><span id="days">00</span>d</span>
+            <span class="separator">:</span>
+            <span class="time-block"><span id="hours">00</span>h</span>
+            <span class="separator">:</span>
+            <span class="time-block"><span id="minutes">00</span>m</span>
+            <span class="separator">:</span>
+            <span class="time-block"><span id="seconds">00</span>s</span>
+        </span>
+    </div>
 
     <!-- ====== NAVBAR ====== -->
     <header class="navbar" id="navbar">
@@ -2000,12 +2064,12 @@
         <div class="orb-2"></div>
         <div class="orb-3"></div>
         <div class="hero-content">
-            <span class="hero-tag">Content Growth Agency</span>
+            <span class="hero-tag">🔥 30% OFF — Founder's Sale</span>
             <h1>Build a brand people notice.<br>Build a business <span class="highlight">people trust</span>.</h1>
             <p>We build strategic content systems for service-based businesses, entrepreneurs, and creators — increasing visibility, authority, and sustainable growth.</p>
             <div class="hero-actions">
                 <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly">Book a Free Strategy Call</a>
-                <a href="#services" class="btn-outline">Explore Our Services</a>
+                <a href="#services" class="btn-outline">View Sale Services</a>
             </div>
 
             <!-- ====== FEATURED HERO TESTIMONIAL ====== -->
@@ -2218,10 +2282,10 @@
     <section class="section-full section-full-white" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">Our Services</span>
+                <span class="pill reveal">🔥 Founder's Sale — 30% OFF</span>
                 <h2 class="section-title">Strategy. Production. <span class="highlight">Growth.</span></h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">A clear path from clarity to execution to scale.</p>
+                <p class="section-sub">A clear path from clarity to execution to scale. All services are 30% off for a limited time.</p>
             </div>
 
             <!-- ====== GROWTH STRATEGY ====== -->
@@ -2235,7 +2299,6 @@
                         Every client starts here. You leave with absolute clarity on what to create, who you're speaking to and how to grow over the next 90 days.
                     </div>
 
-                    <!-- ====== STRATEGY TESTIMONIAL ====== -->
                     <div style="margin-bottom: 20px; background: #f8f6ff; border-radius: 12px; padding: 16px 20px; border: 1px solid #e9e4ff;">
                         <div style="color: #f59e0b; font-size: 14px; letter-spacing: 2px; text-align: center; margin-bottom: 4px;">★★★★★</div>
                         <p style="font-size: 14px; line-height: 1.7; color: #374151; font-style: italic; text-align: center;">
@@ -2248,7 +2311,13 @@
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Growth Strategy</span>
-                            <span class="service-price">R5,000 (One-Time)</span>
+                            <div class="service-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price">R5,000</span>
+                                    <span class="sale-price">R3,500</span>
+                                    <span class="sale-badge">30% OFF</span>
+                                </span>
+                            </div>
                         </div>
                         <div class="service-desc">Think of this as an investment, not an expense. You leave with absolute clarity on what to create, who you're speaking to and how to grow over the next 90 days.</div>
                         <div class="service-details">
@@ -2294,7 +2363,6 @@
                         </div>
                     </div>
 
-                    <!-- ====== CASE STUDY TESTIMONIAL ====== -->
                     <div style="margin-top: 20px; background: #f8f6ff; border-radius: 12px; padding: 16px 20px; border: 1px solid #e9e4ff;">
                         <div style="color: #f59e0b; font-size: 14px; letter-spacing: 2px; text-align: center; margin-bottom: 4px;">★★★★★</div>
                         <p style="font-size: 14px; line-height: 1.7; color: #374151; font-style: italic; text-align: center;">
@@ -2321,7 +2389,14 @@
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Starter</span>
-                            <span class="service-price">R12,500 / month</span>
+                            <div class="service-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price">R12,500</span>
+                                    <span class="sale-price">R8,750</span>
+                                    <span class="sale-badge">30% OFF</span>
+                                </span>
+                                <div style="font-size: 14px; color: #6b7280; margin-top: 2px;">/ month</div>
+                            </div>
                         </div>
                         <div class="service-desc">Perfect for businesses beginning to take content seriously.</div>
                         <div class="service-details">
@@ -2368,7 +2443,14 @@
                         <div style="display: inline-block; background: var(--purple); color: white; padding: 2px 16px; border-radius: 40px; font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Popular</div>
                         <div class="service-header">
                             <span class="service-name">Growth</span>
-                            <span class="service-price">R20,000 / month</span>
+                            <div class="service-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price">R20,000</span>
+                                    <span class="sale-price">R14,000</span>
+                                    <span class="sale-badge">30% OFF</span>
+                                </span>
+                                <div style="font-size: 14px; color: #6b7280; margin-top: 2px;">/ month</div>
+                            </div>
                         </div>
                         <div class="service-desc">Our most popular package. Designed for businesses producing content consistently.</div>
                         <div class="service-details">
@@ -2414,7 +2496,14 @@
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Scale</span>
-                            <span class="service-price">R35,000 / month</span>
+                            <div class="service-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price">R35,000</span>
+                                    <span class="sale-price">R24,500</span>
+                                    <span class="sale-badge">30% OFF</span>
+                                </span>
+                                <div style="font-size: 14px; color: #6b7280; margin-top: 2px;">/ month</div>
+                            </div>
                         </div>
                         <div class="service-desc">Your outsourced content department. Everything in Growth, plus more.</div>
                         <div class="service-details">
@@ -2473,7 +2562,14 @@
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Essential</span>
-                            <span class="service-price">R7,500 / month</span>
+                            <div class="service-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price">R7,500</span>
+                                    <span class="sale-price">R5,250</span>
+                                    <span class="sale-badge">30% OFF</span>
+                                </span>
+                                <div style="font-size: 14px; color: #6b7280; margin-top: 2px;">/ month</div>
+                            </div>
                         </div>
                         <div class="service-desc">Monthly strategic guidance for business owners needing direction.</div>
                         <div class="service-details">
@@ -2513,7 +2609,14 @@
                         <div style="display: inline-block; background: var(--purple); color: white; padding: 2px 16px; border-radius: 40px; font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Popular</div>
                         <div class="service-header">
                             <span class="service-name">Growth</span>
-                            <span class="service-price">R12,500 / month</span>
+                            <div class="service-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price">R12,500</span>
+                                    <span class="sale-price">R8,750</span>
+                                    <span class="sale-badge">30% OFF</span>
+                                </span>
+                                <div style="font-size: 14px; color: #6b7280; margin-top: 2px;">/ month</div>
+                            </div>
                         </div>
                         <div class="service-desc">For businesses actively scaling and launching new initiatives.</div>
                         <div class="service-details">
@@ -2554,7 +2657,14 @@
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Executive</span>
-                            <span class="service-price">R20,000 / month</span>
+                            <div class="service-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price">R20,000</span>
+                                    <span class="sale-price">R14,000</span>
+                                    <span class="sale-badge">30% OFF</span>
+                                </span>
+                                <div style="font-size: 14px; color: #6b7280; margin-top: 2px;">/ month</div>
+                            </div>
                         </div>
                         <div class="service-desc">Your outsourced Head of Growth. Full strategic partnership.</div>
                         <div class="service-details">
@@ -2602,7 +2712,7 @@
                 </button>
                 <div class="category-content">
                     <div style="margin-bottom: 16px; color: #4b5563; font-size: 15px; line-height: 1.7; text-align: center;">
-                        Need help with something specific? Pick exactly what you need.
+                        Need help with something specific? Pick exactly what you need. All services 30% off!
                     </div>
 
                     <div class="individual-grid">
@@ -2610,7 +2720,14 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-film"></i></div>
                             <div class="ind-name">Short-Form Video Editing</div>
-                            <div class="ind-price">R500 / video</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R700</span>
+                                    <span class="sale-price" style="font-size: 16px;">R490</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                                <div style="font-size: 12px; color: #6b7280;">/ video</div>
+                            </div>
                             <div class="ind-desc">Professional editing for TikTok, Reels, Shorts and Facebook Reels.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2627,7 +2744,14 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-video"></i></div>
                             <div class="ind-name">Long-Form YouTube Editing</div>
-                            <div class="ind-price">From R2,000 / video</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">From R2,500</span>
+                                    <span class="sale-price" style="font-size: 16px;">From R1,750</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                                <div style="font-size: 12px; color: #6b7280;">/ video</div>
+                            </div>
                             <div class="ind-desc">Multi-camera editing, motion graphics, audio enhancement, B-roll, chapters, end screens, CTAs.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2645,7 +2769,14 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-pen-fancy"></i></div>
                             <div class="ind-name">Scriptwriting</div>
-                            <div class="ind-price">R250 / script</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R350</span>
+                                    <span class="sale-price" style="font-size: 16px;">R245</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                                <div style="font-size: 12px; color: #6b7280;">/ script</div>
+                            </div>
                             <div class="ind-desc">Platform-specific scripts designed for retention and engagement.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2662,7 +2793,14 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-images"></i></div>
                             <div class="ind-name">Carousel Design</div>
-                            <div class="ind-price">R350 / carousel</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R750</span>
+                                    <span class="sale-price" style="font-size: 16px;">R525</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                                <div style="font-size: 12px; color: #6b7280;">/ carousel</div>
+                            </div>
                             <div class="ind-desc">Research, copywriting, design, and branding for educational carousels.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2679,7 +2817,13 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-image"></i></div>
                             <div class="ind-name">Thumbnail Design</div>
-                            <div class="ind-price">R350</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R350</span>
+                                    <span class="sale-price" style="font-size: 16px;">R245</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="ind-desc">Professional thumbnails for YouTube and social media.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2697,7 +2841,13 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-quote-right"></i></div>
                             <div class="ind-name">Caption Writing</div>
-                            <div class="ind-price">R200</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R200</span>
+                                    <span class="sale-price" style="font-size: 16px;">R140</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="ind-desc">Captions designed to increase engagement while matching your brand voice.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2714,7 +2864,13 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-podcast"></i></div>
                             <div class="ind-name">Podcast Editing</div>
-                            <div class="ind-price">From R2,000</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">From R2,000</span>
+                                    <span class="sale-price" style="font-size: 16px;">From R1,400</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="ind-desc">Audio clean-up, video edit, clips, and show notes.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2732,7 +2888,13 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-sync-alt"></i></div>
                             <div class="ind-name">Content Repurposing</div>
-                            <div class="ind-price">R2,000</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R2,000</span>
+                                    <span class="sale-price" style="font-size: 16px;">R1,400</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="ind-desc">Turn one long-form video into: 5 shorts, 1 carousel, quote graphics, social captions.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2749,7 +2911,13 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-calendar-alt"></i></div>
                             <div class="ind-name">Content Planning</div>
-                            <div class="ind-price">R1,500</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R1,500</span>
+                                    <span class="sale-price" style="font-size: 16px;">R1,050</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="ind-desc">Monthly content calendar, posting schedule, platform recommendations, content mix.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2766,7 +2934,13 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-lightbulb"></i></div>
                             <div class="ind-name">Content Ideation</div>
-                            <div class="ind-price">R1,000</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R1,000</span>
+                                    <span class="sale-price" style="font-size: 16px;">R700</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="ind-desc">30 content ideas, hook ideas, video concepts, carousel concepts.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2783,7 +2957,13 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-search"></i></div>
                             <div class="ind-name">Content Audit</div>
-                            <div class="ind-price">R2,500</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R2,500</span>
+                                    <span class="sale-price" style="font-size: 16px;">R1,750</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="ind-desc">Analyse your content and identify what's working, what's holding you back, and what to improve.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2800,7 +2980,13 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fab fa-youtube"></i></div>
                             <div class="ind-name">YouTube Channel Audit</div>
-                            <div class="ind-price">R2,000</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R3,000</span>
+                                    <span class="sale-price" style="font-size: 16px;">R2,100</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="ind-desc">Complete review: branding, thumbnails, titles, SEO, retention analysis, publishing strategy.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2817,7 +3003,13 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-chart-line"></i></div>
                             <div class="ind-name">YouTube Strategy</div>
-                            <div class="ind-price">R2,000</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R4,000</span>
+                                    <span class="sale-price" style="font-size: 16px;">R2,800</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="ind-desc">Channel positioning, content strategy, video structure, thumbnail strategy, SEO strategy, 90-day roadmap.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2834,7 +3026,13 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-user-tie"></i></div>
                             <div class="ind-name">Personal Brand Strategy</div>
-                            <div class="ind-price">R3,000</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R3,000</span>
+                                    <span class="sale-price" style="font-size: 16px;">R2,100</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="ind-desc">Build a personal brand people recognise, trust and remember.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2851,7 +3049,13 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-money-bill-wave"></i></div>
                             <div class="ind-name">Monetisation Consulting</div>
-                            <div class="ind-price">R1,000</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R3,000</span>
+                                    <span class="sale-price" style="font-size: 16px;">R2,100</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="ind-desc">Sponsorship strategy, pricing guidance, partnership strategy, revenue opportunities, creator business systems.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2868,7 +3072,13 @@
                         <div class="individual-card">
                             <div class="ind-icon"><i class="fas fa-comments"></i></div>
                             <div class="ind-name">Strategy Session</div>
-                            <div class="ind-price">R1,250</div>
+                            <div class="ind-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 14px;">R1,250</span>
+                                    <span class="sale-price" style="font-size: 16px;">R875</span>
+                                    <span class="sale-badge" style="font-size: 9px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="ind-desc">A focused 60-minute consultation on personal branding, business, platform growth, content direction, or creator coaching.</div>
                             <div class="ind-best-for">
                                 <h5><i class="fas fa-bullseye"></i> Best For</h5>
@@ -2892,13 +3102,19 @@
                 </button>
                 <div class="category-content">
                     <div style="margin-bottom: 16px; color: #4b5563; font-size: 15px; line-height: 1.7; text-align: center;">
-                        Perfect for creators and businesses just getting started. Everything you need to launch your content journey.
+                        Perfect for creators and businesses just getting started. Everything you need to launch your content journey. 30% off!
                     </div>
                     <div class="package-grid">
                         <!-- Creator Launch Package -->
                         <div class="package-card">
                             <div class="package-name">Creator Launch Package</div>
-                            <div class="package-price">R7,500</div>
+                            <div class="package-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 16px;">R7,500</span>
+                                    <span class="sale-price" style="font-size: 20px;">R5,250</span>
+                                    <span class="sale-badge" style="font-size: 10px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="tier-sub" style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">Perfect for new creators.</div>
                             <ul>
                                 <li><i class="fas fa-check"></i> Personal Brand Strategy</li>
@@ -2923,7 +3139,13 @@
                         <!-- Business Launch Package -->
                         <div class="package-card">
                             <div class="package-name">Business Launch Package</div>
-                            <div class="package-price">R12,500</div>
+                            <div class="package-price">
+                                <span class="price-wrapper">
+                                    <span class="original-price" style="font-size: 16px;">R12,500</span>
+                                    <span class="sale-price" style="font-size: 20px;">R8,750</span>
+                                    <span class="sale-badge" style="font-size: 10px;">30% OFF</span>
+                                </span>
+                            </div>
                             <div class="tier-sub" style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">Perfect for businesses starting content.</div>
                             <ul>
                                 <li><i class="fas fa-check"></i> Growth Strategy</li>
@@ -3247,6 +3469,63 @@
     </footer>
 
     <script>
+        // ================================================
+        // ===== 35-DAY COUNTDOWN TIMER =====
+        // ================================================
+
+        // Set sale end date (35 days from now)
+        // This will automatically reset after 35 days
+        function getSaleEndDate() {
+            const stored = localStorage.getItem('saleEndDate');
+            if (stored) {
+                const parsed = new Date(parsed);
+                // If the stored date is in the past, reset it
+                if (parsed < new Date()) {
+                    const newDate = new Date();
+                    newDate.setDate(newDate.getDate() + 35);
+                    localStorage.setItem('saleEndDate', newDate.toISOString());
+                    return newDate;
+                }
+                return parsed;
+            } else {
+                const newDate = new Date();
+                newDate.setDate(newDate.getDate() + 35);
+                localStorage.setItem('saleEndDate', newDate.toISOString());
+                return newDate;
+            }
+        }
+
+        let saleEndDate = getSaleEndDate();
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = saleEndDate - now;
+
+            if (diff <= 0) {
+                // Sale expired - reset for another 35 days
+                const newDate = new Date();
+                newDate.setDate(newDate.getDate() + 35);
+                saleEndDate = newDate;
+                localStorage.setItem('saleEndDate', newDate.toISOString());
+                updateCountdown();
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
         // ================================================
         // ===== HEADER HIDE ON SCROLL =====
         // ================================================
