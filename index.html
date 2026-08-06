@@ -1991,112 +1991,63 @@
             transform: scale(1) translateY(0);
         }
 
-        /* ===== DISCOUNT BANNER - Clean & Elegant ===== */
+        /* Discount Banner & Timer */
         .discount-banner {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            padding: 10px 0;
-            border-bottom: 2px solid var(--purple);
-            position: relative;
-            z-index: 5;
+            background: var(--gradient);
+            padding: 12px 20px;
             text-align: center;
-        }
-        .discount-banner-inner {
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            border-radius: 0 0 12px 12px;
+            margin: 0 auto 20px;
+            max-width: 900px;
+            box-shadow: 0 8px 24px rgba(139,92,246,0.25);
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             gap: 12px 24px;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-            color: white;
-            font-size: 15px;
-            font-weight: 500;
         }
-        .discount-banner-inner .tag {
-            background: var(--purple);
-            color: white;
-            padding: 3px 14px;
-            border-radius: 40px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-        .discount-banner-inner .offer-text {
-            font-weight: 600;
-            font-size: 16px;
-        }
-        .discount-banner-inner .offer-text strong {
-            color: #a78bfa;
-        }
-        .discount-timer {
+        .discount-banner .timer {
             display: flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 600;
-            font-size: 16px;
-            background: rgba(255,255,255,0.08);
+            gap: 4px;
+            font-size: 22px;
+            background: rgba(0,0,0,0.15);
             padding: 4px 16px;
             border-radius: 40px;
-            border: 1px solid rgba(255,255,255,0.06);
+            font-weight: 700;
+            letter-spacing: 1px;
         }
-        .discount-timer .time {
-            font-variant-numeric: tabular-nums;
-            letter-spacing: 0.5px;
-            min-width: 28px;
+        .discount-banner .timer span {
+            min-width: 30px;
             display: inline-block;
             text-align: center;
         }
-        .discount-timer .colon {
-            min-width: 4px;
-            text-align: center;
+        .discount-banner .timer .colon {
+            min-width: 8px;
         }
-        .discount-timer .label {
-            font-size: 12px;
-            font-weight: 400;
-            opacity: 0.7;
-            margin-left: 4px;
+        .discount-banner .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 600;
         }
 
         @media (max-width: 768px) {
-            .discount-banner-inner {
-                font-size: 13px;
-                gap: 8px 16px;
-                padding: 4px 16px;
+            .discount-banner {
+                font-size: 15px;
+                padding: 10px 16px;
+                flex-direction: column;
+                gap: 6px;
             }
-            .discount-banner-inner .offer-text {
-                font-size: 14px;
-            }
-            .discount-timer {
-                font-size: 14px;
+            .discount-banner .timer {
+                font-size: 18px;
                 padding: 2px 12px;
             }
-            .discount-timer .time {
+            .discount-banner .timer span {
                 min-width: 22px;
-            }
-            .discount-banner-inner .tag {
-                font-size: 10px;
-                padding: 2px 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .discount-banner-inner {
-                font-size: 12px;
-                gap: 6px 12px;
-                flex-direction: column;
-                padding: 6px 12px;
-            }
-            .discount-banner-inner .offer-text {
-                font-size: 13px;
-            }
-            .discount-timer {
-                font-size: 13px;
-                padding: 2px 10px;
-            }
-            .discount-timer .time {
-                min-width: 18px;
             }
         }
 
@@ -2235,18 +2186,32 @@
         </div>
     </header>
 
-    <!-- ====== DISCOUNT BANNER - Clean & Elegant ====== -->
-    <div class="discount-banner">
-        <div class="discount-banner-inner">
-            <span class="tag">🔥 Founder's Discount</span>
-            <span class="offer-text"><strong>35% OFF</strong> all services</span>
-            <span class="discount-timer">
-                <span class="time" id="days">00</span><span class="colon">:</span>
-                <span class="time" id="hours">00</span><span class="colon">:</span>
-                <span class="time" id="minutes">00</span><span class="colon">:</span>
-                <span class="time" id="seconds">00</span>
-                <span class="label">remaining</span>
-            </span>
+    <!-- ====== BACK TO TOP ====== -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- ====== MODAL ====== -->
+    <div class="modal-overlay" id="caseStudyModal">
+        <div class="modal">
+            <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
+
+            <div class="modal-icon"><i class="fas fa-file-pdf"></i></div>
+            <h3>Get the Case Study</h3>
+            <p>Enter your email to receive the full Framework Media Case Study PDF — showing exactly how we built a personal brand from 0 to 60K+ followers.</p>
+
+            <div class="modal-form" id="modalForm">
+                <input type="email" id="modalEmail" placeholder="your@email.com" required />
+                <button class="btn-primary" onclick="submitCaseStudy()">Send Me the Case Study</button>
+                <p style="font-size: 12px; color: #9ca3af; margin-top: 8px;">No spam. Unsubscribe anytime. We respect your privacy.</p>
+            </div>
+
+            <div class="modal-success" id="modalSuccess">
+                <div class="check"><i class="fas fa-check-circle"></i></div>
+                <h4>Check Your Inbox!</h4>
+                <p>We've sent the case study to your email. It should arrive within a few minutes.</p>
+                <p style="font-size: 13px; color: #6b7280; margin-top: 8px;">If you don't see it, check your spam folder.</p>
+            </div>
         </div>
     </div>
 
@@ -2273,6 +2238,20 @@
             </div>
         </div>
     </section>
+
+    <!-- ====== DISCOUNT BANNER ====== -->
+    <div class="container" style="margin-top: -20px; position: relative; z-index: 5;">
+        <div class="discount-banner" id="discountBanner">
+            <span><span class="tag">🔥 FOUNDERS' DISCOUNT</span> 35% OFF ALL SERVICES</span>
+            <span class="timer" id="countdownTimer">
+                <span id="days">00</span><span class="colon">:</span>
+                <span id="hours">00</span><span class="colon">:</span>
+                <span id="minutes">00</span><span class="colon">:</span>
+                <span id="seconds">00</span>
+            </span>
+            <span style="font-size: 14px; font-weight: 500;">Offer ends in</span>
+        </div>
+    </div>
 
     <!-- ====== WHO WE ARE ====== -->
     <section class="section-full section-full-white" id="who">
@@ -3516,10 +3495,7 @@
                 const distance = countdownDate.getTime() - now;
 
                 if (distance < 0) {
-                    document.getElementById('days').textContent = '00';
-                    document.getElementById('hours').textContent = '00';
-                    document.getElementById('minutes').textContent = '00';
-                    document.getElementById('seconds').textContent = '00';
+                    document.getElementById('countdownTimer').innerHTML = "🎉 Offer Expired";
                     return;
                 }
 
