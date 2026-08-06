@@ -494,7 +494,6 @@
             font-size: 12px;
         }
 
-        /* SECTION STYLES */
         .section-full {
             width: 100%;
             padding: 80px 0 60px;
@@ -2155,7 +2154,7 @@
         </div>
     </section>
 
-    <!-- THE PROBLEM -->
+    <!-- PROBLEM -->
     <section class="section-full section-full-light-purple" id="problem">
         <div class="container">
             <div class="section-header">
@@ -2772,7 +2771,7 @@
             localStorage.setItem('frameworkLeads', JSON.stringify(leads));
             document.getElementById('modalForm').classList.add('hidden');
             document.getElementById('modalSuccess').classList.add('active');
-            setTimeout(() => { closeModal(); }, 5000);
+            setTimeout(function() { closeModal(); }, 5000);
         }
         document.getElementById('modalEmail').addEventListener('keydown', function(e) {
             if (e.key === 'Enter') submitCaseStudy();
@@ -2781,14 +2780,14 @@
         // ===== SERVICES TOGGLE =====
         function toggleServices(button, event) {
             if (event) event.preventDefault();
-            const category = button.closest('.service-category');
-            const content = category.querySelector('.category-content');
-            const isOpen = content.classList.contains('open');
-            document.querySelectorAll('.service-category').forEach(el => {
+            var category = button.closest('.service-category');
+            var content = category.querySelector('.category-content');
+            var isOpen = content.classList.contains('open');
+            document.querySelectorAll('.service-category').forEach(function(el) {
                 if (el !== category) {
-                    const btn = el.querySelector('.category-btn');
+                    var btn = el.querySelector('.category-btn');
                     if (btn) btn.classList.remove('active');
-                    const c = el.querySelector('.category-content');
+                    var c = el.querySelector('.category-content');
                     if (c) c.classList.remove('open');
                 }
             });
@@ -2798,9 +2797,9 @@
             } else {
                 button.classList.add('active');
                 content.classList.add('open');
-                setTimeout(() => {
-                    const rect = category.getBoundingClientRect();
-                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+                setTimeout(function() {
+                    var rect = category.getBoundingClientRect();
+                    var navbarHeight = document.getElementById('navbar').offsetHeight;
                     if (rect.top < navbarHeight + 20) {
                         window.scrollTo({ top: window.pageYOffset + rect.top - navbarHeight - 20, behavior: 'smooth' });
                     }
@@ -2810,15 +2809,19 @@
 
         // ===== SCROLL ANIMATIONS =====
         (function() {
-            const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger, .hero-reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
+            var elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger, .hero-reveal');
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) entry.target.classList.add('is-visible');
+                });
             }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-            elements.forEach(el => { if (el) observer.observe(el); });
-            setTimeout(() => {
-                elements.forEach(el => {
+            elements.forEach(function(el) {
+                if (el) observer.observe(el);
+            });
+            setTimeout(function() {
+                elements.forEach(function(el) {
                     if (el) {
-                        const rect = el.getBoundingClientRect();
+                        var rect = el.getBoundingClientRect();
                         if (rect.top < window.innerHeight * 0.85) el.classList.add('is-visible');
                     }
                 });
@@ -2827,9 +2830,9 @@
 
         // ===== FAQ TOGGLE =====
         function toggleFAQ(button) {
-            const answer = button.nextElementSibling;
-            const isOpen = answer.classList.contains('open');
-            document.querySelectorAll('.faq-answer').forEach(el => {
+            var answer = button.nextElementSibling;
+            var isOpen = answer.classList.contains('open');
+            document.querySelectorAll('.faq-answer').forEach(function(el) {
                 if (el !== answer) {
                     el.classList.remove('open');
                     el.previousElementSibling.classList.remove('active');
@@ -2846,43 +2849,57 @@
 
         // ===== CAROUSEL =====
         (function() {
-            const track = document.getElementById('carouselTrack');
-            const slides = track.querySelectorAll('.carousel-slide');
-            const totalSlides = slides.length;
-            let currentIndex = 0, isTransitioning = false;
-            const dotsContainer = document.getElementById('dotsContainer');
+            var track = document.getElementById('carouselTrack');
+            var slides = track.querySelectorAll('.carousel-slide');
+            var totalSlides = slides.length;
+            var currentIndex = 0, isTransitioning = false;
+            var dotsContainer = document.getElementById('dotsContainer');
             if (dotsContainer) {
-                for (let i = 0; i < totalSlides; i++) {
-                    const dot = document.createElement('button');
+                for (var i = 0; i < totalSlides; i++) {
+                    var dot = document.createElement('button');
                     dot.className = 'dot' + (i === 0 ? ' active' : '');
                     dot.setAttribute('data-index', i);
-                    dot.addEventListener('click', function() { goToSlide(parseInt(this.getAttribute('data-index'))); });
+                    dot.addEventListener('click', function() {
+                        goToSlide(parseInt(this.getAttribute('data-index')));
+                    });
                     dotsContainer.appendChild(dot);
                 }
             }
-            const dots = dotsContainer ? dotsContainer.querySelectorAll('.dot') : [];
+            var dots = dotsContainer ? dotsContainer.querySelectorAll('.dot') : [];
             function goToSlide(index) {
                 if (isTransitioning || index === currentIndex) return;
                 isTransitioning = true;
                 currentIndex = index;
-                track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                dots.forEach((dot, i) => { dot.classList.toggle('active', i === currentIndex); });
-                setTimeout(() => { isTransitioning = false; }, 500);
+                track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+                dots.forEach(function(dot, i) {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+                setTimeout(function() {
+                    isTransitioning = false;
+                }, 500);
             }
-            function nextSlide() { goToSlide((currentIndex + 1) % totalSlides); }
-            function prevSlide() { goToSlide((currentIndex - 1 + totalSlides) % totalSlides); }
-            const nextBtn = document.getElementById('nextBtn');
-            const prevBtn = document.getElementById('prevBtn');
+            function nextSlide() {
+                goToSlide((currentIndex + 1) % totalSlides);
+            }
+            function prevSlide() {
+                goToSlide((currentIndex - 1 + totalSlides) % totalSlides);
+            }
+            var nextBtn = document.getElementById('nextBtn');
+            var prevBtn = document.getElementById('prevBtn');
             if (nextBtn && prevBtn) {
                 nextBtn.addEventListener('click', nextSlide);
                 prevBtn.addEventListener('click', prevSlide);
-                let autoplayInterval = setInterval(nextSlide, 6000);
-                const wrapper = document.querySelector('.carousel-wrapper');
+                var autoplayInterval = setInterval(nextSlide, 6000);
+                var wrapper = document.querySelector('.carousel-wrapper');
                 if (wrapper) {
-                    wrapper.addEventListener('mouseenter', () => { clearInterval(autoplayInterval); });
-                    wrapper.addEventListener('mouseleave', () => { autoplayInterval = setInterval(nextSlide, 6000); });
+                    wrapper.addEventListener('mouseenter', function() {
+                        clearInterval(autoplayInterval);
+                    });
+                    wrapper.addEventListener('mouseleave', function() {
+                        autoplayInterval = setInterval(nextSlide, 6000);
+                    });
                 }
-                document.addEventListener('keydown', (e) => {
+                document.addEventListener('keydown', function(e) {
                     if (e.key === 'ArrowRight') nextSlide();
                     if (e.key === 'ArrowLeft') prevSlide();
                 });
@@ -2892,24 +2909,24 @@
         // ===== FORM SUBMISSION =====
         function handleSubmit(event) {
             event.preventDefault();
-            const fullName = document.getElementById('fullName').value;
-            const email = document.getElementById('email').value;
-            const budget = document.getElementById('budget').value;
-            const message = document.getElementById('message').value;
+            var fullName = document.getElementById('fullName').value;
+            var email = document.getElementById('email').value;
+            var budget = document.getElementById('budget').value;
+            var message = document.getElementById('message').value;
             if (!fullName || !email || !message) {
                 alert('Please fill in your name, email, and message.');
                 return;
             }
-            const emailBody = `New Message from Framework Media:%0A%0AName: ${fullName}%0AEmail: ${email}%0ABudget: ${budget || 'Not specified'}%0AMessage: ${message}%0A%0APlease follow up within 24 hours.`;
-            window.location.href = `mailto:hello@frameworkmedia.co.za?subject=New Message from ${fullName}&body=${emailBody}`;
+            var emailBody = 'New Message from Framework Media:%0A%0AName: ' + fullName + '%0AEmail: ' + email + '%0ABudget: ' + (budget || 'Not specified') + '%0AMessage: ' + message + '%0A%0APlease follow up within 24 hours.';
+            window.location.href = 'mailto:hello@frameworkmedia.co.za?subject=New Message from ' + fullName + '&body=' + emailBody;
             alert('Thank you! We\'ll get back to you within 24 hours.');
             document.getElementById('contactForm').reset();
         }
 
         // ===== SMOOTH SCROLL =====
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
+        document.querySelectorAll('a[href^="#"]').forEach(function(link) {
             link.addEventListener('click', function(e) {
-                const target = document.querySelector(this.getAttribute('href'));
+                var target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
