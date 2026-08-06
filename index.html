@@ -20,7 +20,6 @@
             --pink: #ec4899;
             --purple: #8b5cf6;
             --blue: #3b82f6;
-            --gold: #f59e0b;
             --gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
             --gradient-hero: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
             --gradient-dark: linear-gradient(135deg, #1a1a2e, #16213e);
@@ -131,6 +130,26 @@
             box-shadow: 0 6px 20px rgba(139, 92, 246, 0.25);
         }
 
+        .btn-download {
+            background: var(--black);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-download:hover {
+            background: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
         .pill {
             display: inline-block;
             background: var(--gradient-subtle);
@@ -227,6 +246,49 @@
             font-weight: 700;
             margin-right: 8px;
             text-transform: uppercase;
+        }
+
+        /* ===== TESTIMONIAL CARD ===== */
+        .testimonial-card {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 32px 40px;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            border-color: var(--purple);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.08);
+        }
+        .testimonial-card .stars {
+            color: #f59e0b;
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .testimonial-card .quote {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #1f2937;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+        .testimonial-card .quote i {
+            color: var(--purple);
+            font-size: 14px;
+            opacity: 0.5;
+        }
+        .testimonial-card .author {
+            font-weight: 600;
+            color: var(--black);
+            font-size: 15px;
+        }
+        .testimonial-card .author-title {
+            font-size: 13px;
+            color: #6b7280;
         }
 
         /* ===== NAVBAR ===== */
@@ -477,36 +539,6 @@
         .hero-testimonial .author-title {
             color: #9ca3af;
             font-size: 12px;
-        }
-
-        /* ===== SALE PRICE STYLING ===== */
-        .original-price {
-            text-decoration: line-through;
-            color: #9ca3af;
-            font-size: 16px;
-            font-weight: 400;
-            margin-right: 8px;
-        }
-        .sale-price {
-            color: #dc2626;
-            font-weight: 700;
-        }
-        .price-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .sale-badge {
-            background: #dc2626;
-            color: white;
-            font-size: 10px;
-            font-weight: 700;
-            padding: 2px 10px;
-            border-radius: 40px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
         }
 
         /* ===== FULL-WIDTH SECTIONS ===== */
@@ -1052,6 +1084,119 @@
         .service-block .service-cta {
             margin-top: 16px;
             text-align: center;
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal {
+            background: white;
+            border-radius: 24px;
+            max-width: 480px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            animation: modalFadeIn 0.4s ease;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .modal .close-btn {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 24px;
+            color: #9ca3af;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.3s ease;
+        }
+        .modal .close-btn:hover {
+            color: var(--black);
+        }
+        .modal .modal-icon {
+            font-size: 48px;
+            color: var(--purple);
+            margin-bottom: 12px;
+        }
+        .modal h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .modal p {
+            color: #6b7280;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .modal .modal-form input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 16px;
+            margin-bottom: 12px;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+        .modal .modal-form input:focus {
+            border-color: var(--purple);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(139,92,246,0.1);
+        }
+        .modal .modal-form .btn-primary {
+            width: 100%;
+            background: var(--purple);
+            color: white;
+        }
+        .modal .modal-form .btn-primary:hover {
+            background: #7c3aed;
+        }
+        .modal .modal-success {
+            display: none;
+            padding: 20px 0;
+        }
+        .modal .modal-success.active {
+            display: block;
+        }
+        .modal .modal-success .check {
+            font-size: 56px;
+            color: #22c55e;
+            margin-bottom: 12px;
+        }
+        .modal .modal-success h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .modal .modal-success p {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+        .modal .modal-form.hidden {
+            display: none;
         }
 
         /* ===== SERVICES STYLES (continued) ===== */
@@ -1970,6 +2115,7 @@
             .back-to-top i { font-size: 18px; }
             .testimonial-card { padding: 24px 20px; }
             .hero-testimonial { padding: 16px 18px; }
+            .modal { padding: 28px 20px; }
             .sale-banner { font-size: 12px; padding: 8px 12px; }
             .sale-banner .countdown { font-size: 12px; padding: 2px 10px; margin-left: 6px; flex-wrap: wrap; }
             .sale-banner .countdown .time-block span { font-size: 14px; min-width: 18px; }
@@ -2014,6 +2160,8 @@
             .testimonial-card { padding: 16px; }
             .testimonial-card .quote { font-size: 15px; }
             .hero-testimonial .quote { font-size: 14px; }
+            .modal { padding: 24px 16px; }
+            .modal h3 { font-size: 20px; }
             .sale-banner { font-size: 11px; padding: 6px 10px; }
             .sale-banner .countdown { font-size: 11px; padding: 2px 8px; margin-left: 4px; }
             .sale-banner .countdown .time-block span { font-size: 12px; min-width: 14px; }
@@ -2058,6 +2206,30 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
+    <!-- ====== MODAL ====== -->
+    <div class="modal-overlay" id="caseStudyModal">
+        <div class="modal">
+            <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
+
+            <div class="modal-icon"><i class="fas fa-file-pdf"></i></div>
+            <h3>Get the Case Study</h3>
+            <p>Enter your email to receive the full Framework Media Case Study PDF — showing exactly how we built a personal brand from 0 to 60K+ followers.</p>
+
+            <div class="modal-form" id="modalForm">
+                <input type="email" id="modalEmail" placeholder="your@email.com" required />
+                <button class="btn-primary" onclick="submitCaseStudy()">Send Me the Case Study</button>
+                <p style="font-size: 12px; color: #9ca3af; margin-top: 8px;">No spam. Unsubscribe anytime. We respect your privacy.</p>
+            </div>
+
+            <div class="modal-success" id="modalSuccess">
+                <div class="check"><i class="fas fa-check-circle"></i></div>
+                <h4>Check Your Inbox!</h4>
+                <p>We've sent the case study to your email. It should arrive within a few minutes.</p>
+                <p style="font-size: 13px; color: #6b7280; margin-top: 8px;">If you don't see it, check your spam folder.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- ====== HERO ====== -->
     <section class="hero hero-reveal">
         <div class="orb-1"></div>
@@ -2069,7 +2241,7 @@
             <p>We build strategic content systems for service-based businesses, entrepreneurs, and creators — increasing visibility, authority, and sustainable growth.</p>
             <div class="hero-actions">
                 <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly">Book a Free Strategy Call</a>
-                <a href="#services" class="btn-outline">View Sale Services</a>
+                <a href="#" class="btn-outline" onclick="openModal(); return false;"><i class="fas fa-file-pdf"></i> Get Our Case Study</a>
             </div>
 
             <!-- ====== FEATURED HERO TESTIMONIAL ====== -->
@@ -2174,7 +2346,7 @@
             <div class="showcase-cta">
                 <h3>Ready to build a content system that works?</h3>
                 <p>Let's talk about your goals and map a system that delivers.</p>
-                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-calendly">Book a Free Strategy Call</a>
+                <a href="#" class="btn-primary" onclick="openModal(); return false;"><i class="fas fa-file-pdf"></i> Get the Full Case Study</a>
             </div>
         </div>
     </section>
@@ -2299,6 +2471,7 @@
                         Every client starts here. You leave with absolute clarity on what to create, who you're speaking to and how to grow over the next 90 days.
                     </div>
 
+                    <!-- ====== STRATEGY TESTIMONIAL ====== -->
                     <div style="margin-bottom: 20px; background: #f8f6ff; border-radius: 12px; padding: 16px 20px; border: 1px solid #e9e4ff;">
                         <div style="color: #f59e0b; font-size: 14px; letter-spacing: 2px; text-align: center; margin-bottom: 4px;">★★★★★</div>
                         <p style="font-size: 14px; line-height: 1.7; color: #374151; font-style: italic; text-align: center;">
@@ -2311,13 +2484,7 @@
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Growth Strategy</span>
-                            <div class="service-price">
-                                <span class="price-wrapper">
-                                    <span class="original-price">R5,000</span>
-                                    <span class="sale-price">R3,500</span>
-                                    <span class="sale-badge">30% OFF</span>
-                                </span>
-                            </div>
+                            <span class="service-price">R5,000 (One-Time)</span>
                         </div>
                         <div class="service-desc">Think of this as an investment, not an expense. You leave with absolute clarity on what to create, who you're speaking to and how to grow over the next 90 days.</div>
                         <div class="service-details">
@@ -2363,6 +2530,7 @@
                         </div>
                     </div>
 
+                    <!-- ====== CASE STUDY TESTIMONIAL ====== -->
                     <div style="margin-top: 20px; background: #f8f6ff; border-radius: 12px; padding: 16px 20px; border: 1px solid #e9e4ff;">
                         <div style="color: #f59e0b; font-size: 14px; letter-spacing: 2px; text-align: center; margin-bottom: 4px;">★★★★★</div>
                         <p style="font-size: 14px; line-height: 1.7; color: #374151; font-style: italic; text-align: center;">
@@ -2389,14 +2557,7 @@
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Starter</span>
-                            <div class="service-price">
-                                <span class="price-wrapper">
-                                    <span class="original-price">R12,500</span>
-                                    <span class="sale-price">R8,750</span>
-                                    <span class="sale-badge">30% OFF</span>
-                                </span>
-                                <div style="font-size: 14px; color: #6b7280; margin-top: 2px;">/ month</div>
-                            </div>
+                            <span class="service-price">R12,500 / month</span>
                         </div>
                         <div class="service-desc">Perfect for businesses beginning to take content seriously.</div>
                         <div class="service-details">
@@ -2443,14 +2604,7 @@
                         <div style="display: inline-block; background: var(--purple); color: white; padding: 2px 16px; border-radius: 40px; font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Popular</div>
                         <div class="service-header">
                             <span class="service-name">Growth</span>
-                            <div class="service-price">
-                                <span class="price-wrapper">
-                                    <span class="original-price">R20,000</span>
-                                    <span class="sale-price">R14,000</span>
-                                    <span class="sale-badge">30% OFF</span>
-                                </span>
-                                <div style="font-size: 14px; color: #6b7280; margin-top: 2px;">/ month</div>
-                            </div>
+                            <span class="service-price">R20,000 / month</span>
                         </div>
                         <div class="service-desc">Our most popular package. Designed for businesses producing content consistently.</div>
                         <div class="service-details">
@@ -2496,14 +2650,7 @@
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Scale</span>
-                            <div class="service-price">
-                                <span class="price-wrapper">
-                                    <span class="original-price">R35,000</span>
-                                    <span class="sale-price">R24,500</span>
-                                    <span class="sale-badge">30% OFF</span>
-                                </span>
-                                <div style="font-size: 14px; color: #6b7280; margin-top: 2px;">/ month</div>
-                            </div>
+                            <span class="service-price">R35,000 / month</span>
                         </div>
                         <div class="service-desc">Your outsourced content department. Everything in Growth, plus more.</div>
                         <div class="service-details">
@@ -2562,14 +2709,7 @@
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Essential</span>
-                            <div class="service-price">
-                                <span class="price-wrapper">
-                                    <span class="original-price">R7,500</span>
-                                    <span class="sale-price">R5,250</span>
-                                    <span class="sale-badge">30% OFF</span>
-                                </span>
-                                <div style="font-size: 14px; color: #6b7280; margin-top: 2px;">/ month</div>
-                            </div>
+                            <span class="service-price">R7,500 / month</span>
                         </div>
                         <div class="service-desc">Monthly strategic guidance for business owners needing direction.</div>
                         <div class="service-details">
@@ -2609,14 +2749,7 @@
                         <div style="display: inline-block; background: var(--purple); color: white; padding: 2px 16px; border-radius: 40px; font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Popular</div>
                         <div class="service-header">
                             <span class="service-name">Growth</span>
-                            <div class="service-price">
-                                <span class="price-wrapper">
-                                    <span class="original-price">R12,500</span>
-                                    <span class="sale-price">R8,750</span>
-                                    <span class="sale-badge">30% OFF</span>
-                                </span>
-                                <div style="font-size: 14px; color: #6b7280; margin-top: 2px;">/ month</div>
-                            </div>
+                            <span class="service-price">R12,500 / month</span>
                         </div>
                         <div class="service-desc">For businesses actively scaling and launching new initiatives.</div>
                         <div class="service-details">
@@ -2657,14 +2790,7 @@
                     <div class="service-block">
                         <div class="service-header">
                             <span class="service-name">Executive</span>
-                            <div class="service-price">
-                                <span class="price-wrapper">
-                                    <span class="original-price">R20,000</span>
-                                    <span class="sale-price">R14,000</span>
-                                    <span class="sale-badge">30% OFF</span>
-                                </span>
-                                <div style="font-size: 14px; color: #6b7280; margin-top: 2px;">/ month</div>
-                            </div>
+                            <span class="service-price">R20,000 / month</span>
                         </div>
                         <div class="service-desc">Your outsourced Head of Growth. Full strategic partnership.</div>
                         <div class="service-details">
@@ -3478,7 +3604,7 @@
         function getSaleEndDate() {
             const stored = localStorage.getItem('saleEndDate');
             if (stored) {
-                const parsed = new Date(parsed);
+                const parsed = new Date(stored);
                 // If the stored date is in the past, reset it
                 if (parsed < new Date()) {
                     const newDate = new Date();
@@ -3566,6 +3692,80 @@
         document.getElementById('backToTop').addEventListener('click', function(e) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ================================================
+        // ===== MODAL CONTROLS =====
+        // ================================================
+
+        function openModal() {
+            document.getElementById('caseStudyModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('modalForm').classList.remove('hidden');
+            document.getElementById('modalSuccess').classList.remove('active');
+            document.getElementById('modalEmail').value = '';
+        }
+
+        function closeModal() {
+            document.getElementById('caseStudyModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on overlay click
+        document.getElementById('caseStudyModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // ================================================
+        // ===== CASE STUDY SUBMISSION =====
+        // ================================================
+
+        function submitCaseStudy() {
+            const email = document.getElementById('modalEmail').value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Simulate sending email with the case study
+            // In production, this would connect to your email service
+            console.log('📧 Case Study requested for:', email);
+
+            // Store lead (simulated)
+            const leads = JSON.parse(localStorage.getItem('frameworkLeads') || '[]');
+            leads.push({
+                email: email,
+                timestamp: new Date().toISOString(),
+                source: 'Case Study Download'
+            });
+            localStorage.setItem('frameworkLeads', JSON.stringify(leads));
+
+            // Show success state
+            document.getElementById('modalForm').classList.add('hidden');
+            document.getElementById('modalSuccess').classList.add('active');
+
+            // Automatically close after 5 seconds
+            setTimeout(() => {
+                closeModal();
+            }, 5000);
+        }
+
+        // Allow Enter key to submit
+        document.getElementById('modalEmail').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                submitCaseStudy();
+            }
         });
 
         // ================================================
