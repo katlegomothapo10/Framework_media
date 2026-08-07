@@ -690,6 +690,29 @@
             margin: 0 auto;
         }
 
+        /* ===== SECTION IMAGE (like Who We Are but without overlay) ===== */
+        .section-image {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--bg-light-purple);
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .section-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .section-image-white {
+            background: #f9fafb;
+        }
+
         /* ===== PROBLEM ===== */
         .problem-wrapper {
             display: grid;
@@ -697,21 +720,6 @@
             gap: 40px;
             margin-top: 16px;
             align-items: center;
-        }
-        .problem-image {
-            background: var(--bg-light-purple);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            height: 350px;
-        }
-        .problem-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
         }
         .problem-grid {
             display: grid;
@@ -1148,23 +1156,6 @@
         .service-block .service-cta {
             margin-top: 16px;
             text-align: center;
-        }
-
-        /* ===== SERVICES HEADER IMAGE ===== */
-        .services-header-image {
-            max-width: 800px;
-            margin: 0 auto 30px;
-            border-radius: 16px;
-            overflow: hidden;
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
-        }
-        .services-header-image img {
-            width: 100%;
-            height: auto;
-            max-height: 250px;
-            object-fit: contain;
-            display: block;
         }
 
         /* ===== MODAL ===== */
@@ -1743,22 +1734,6 @@
             text-align: center;
         }
 
-        .why-visual {
-            max-width: 800px;
-            margin: 0 auto 30px;
-            border-radius: 16px;
-            overflow: hidden;
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-        }
-        .why-visual img {
-            width: 100%;
-            height: auto;
-            max-height: 250px;
-            object-fit: contain;
-            display: block;
-        }
-
         .results-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -2230,9 +2205,6 @@
             .problem-grid {
                 grid-template-columns: 1fr;
             }
-            .problem-image {
-                height: 200px;
-            }
             .showcase-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -2363,11 +2335,12 @@
             .who-visual .who-overlay h3 {
                 font-size: 22px;
             }
-            .why-visual img {
-                max-height: 180px;
+            .section-image {
+                aspect-ratio: 16 / 10;
+                margin-bottom: 24px;
             }
-            .services-header-image img {
-                max-height: 180px;
+            .section-image img {
+                max-height: 200px;
             }
         }
 
@@ -2520,17 +2493,6 @@
                 font-size: 20px;
             }
 
-            .why-visual img {
-                max-height: 150px;
-            }
-            .services-header-image img {
-                max-height: 150px;
-            }
-            .slide-item img,
-            .slide-item video {
-                max-height: 180px;
-            }
-
             .who-visual {
                 padding: 16px;
                 min-height: 150px;
@@ -2540,6 +2502,18 @@
             }
             .who-visual .who-overlay p {
                 font-size: 13px;
+            }
+            .section-image {
+                aspect-ratio: 16 / 11;
+                margin-bottom: 16px;
+                border-radius: 16px;
+            }
+            .section-image img {
+                max-height: 160px;
+            }
+            .slide-item img,
+            .slide-item video {
+                max-height: 180px;
             }
         }
     </style>
@@ -2657,10 +2631,13 @@
                 <div class="accent-line"></div>
                 <p class="section-sub">You don't need another video. You need a system.</p>
             </div>
+
+            <!-- ====== PROBLEM IMAGE (album cover, no overlay) ====== -->
+            <div class="section-image reveal">
+                <img src="images/struggle-visual.jpg" alt="Content struggle" />
+            </div>
+
             <div class="problem-wrapper">
-                <div class="problem-image reveal-left">
-                    <img src="images/struggle-visual.jpg" alt="Content struggle" />
-                </div>
                 <div class="problem-grid stagger">
                     <div class="problem-card">
                         <span class="icon"><i class="fas fa-calendar"></i></span>
@@ -2841,8 +2818,8 @@
                 <p class="section-sub">A clear path from clarity to execution to scale.</p>
             </div>
 
-            <!-- ====== SERVICES HEADER IMAGE ====== -->
-            <div class="services-header-image reveal">
+            <!-- ====== SERVICES HEADER IMAGE (album cover, no overlay) ====== -->
+            <div class="section-image section-image-white reveal">
                 <img src="images/strategy-deliverable.jpg" alt="Strategy deliverable" />
             </div>
 
@@ -3460,7 +3437,8 @@
                 <div class="author-title">Personal Brand Creator</div>
             </div>
 
-            <div class="why-visual reveal">
+            <!-- ====== CONTENT SYSTEM IMAGE (album cover, no overlay) ====== -->
+            <div class="section-image section-image-white reveal">
                 <img src="images/content-system.jpg" alt="Content system" />
             </div>
 
