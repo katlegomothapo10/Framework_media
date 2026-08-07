@@ -690,20 +690,20 @@
             margin: 0 auto;
         }
 
-        /* ===== SECTION IMAGE (like Who We Are but without overlay) ===== */
+        /* ===== SECTION IMAGE - 1:1 ALBUM COVER FRAME ===== */
         .section-image {
             width: 100%;
-            max-width: 900px;
+            max-width: 600px;
             margin: 0 auto 30px;
             border-radius: 24px;
             overflow: hidden;
             background: var(--bg-light-purple);
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 1 / 1;
         }
         .section-image img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             display: block;
         }
         .section-image-white {
@@ -2333,11 +2333,8 @@
                 font-size: 22px;
             }
             .section-image {
-                aspect-ratio: 16 / 10;
-                margin-bottom: 24px;
-            }
-            .section-image img {
-                max-height: 200px;
+                max-width: 400px;
+                margin-bottom: 20px;
             }
         }
 
@@ -2501,12 +2498,9 @@
                 font-size: 13px;
             }
             .section-image {
-                aspect-ratio: 16 / 11;
+                max-width: 320px;
                 margin-bottom: 16px;
                 border-radius: 16px;
-            }
-            .section-image img {
-                max-height: 160px;
             }
             .slide-item img,
             .slide-item video {
@@ -2629,7 +2623,7 @@
                 <p class="section-sub">You don't need another video. You need a system.</p>
             </div>
 
-            <!-- ====== PROBLEM IMAGE (album cover fit, no overlay) ====== -->
+            <!-- ====== PROBLEM IMAGE - 1:1 ALBUM COVER ====== -->
             <div class="section-image reveal">
                 <img src="images/struggle-visual.jpg" alt="Content struggle" />
             </div>
@@ -2815,7 +2809,7 @@
                 <p class="section-sub">A clear path from clarity to execution to scale.</p>
             </div>
 
-            <!-- ====== SERVICES HEADER IMAGE (album cover fit, no overlay) ====== -->
+            <!-- ====== SERVICES HEADER IMAGE - 1:1 ALBUM COVER ====== -->
             <div class="section-image section-image-white reveal">
                 <img src="images/strategy-deliverable.jpg" alt="Strategy deliverable" />
             </div>
@@ -3434,7 +3428,7 @@
                 <div class="author-title">Personal Brand Creator</div>
             </div>
 
-            <!-- ====== CONTENT SYSTEM IMAGE (album cover fit, no overlay) ====== -->
+            <!-- ====== CONTENT SYSTEM IMAGE - 1:1 ALBUM COVER ====== -->
             <div class="section-image section-image-white reveal">
                 <img src="images/content-system.jpg" alt="Content system" />
             </div>
