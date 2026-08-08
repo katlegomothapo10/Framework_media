@@ -64,7 +64,7 @@
             padding: 12px 24px;
             background: white;
             position: fixed;
-            top: 32px;
+            top: 34px;
             left: 0;
             right: 0;
             z-index: 1000;
@@ -139,7 +139,6 @@
             text-align: center;
             position: relative;
             padding: 140px 24px 80px;
-            margin-top: 0;
             background: linear-gradient(135deg, rgba(26, 26, 46, 0.82), rgba(22, 33, 62, 0.82)), url('images/hero-bg.png') center/cover no-repeat;
             overflow: hidden;
         }
@@ -276,6 +275,7 @@
         .badge-gold { background: #fef3c7; color: #d97706; }
         .badge-purple { background: #ede9fe; color: var(--purple); }
 
+        /* ===== FLAGSHIP SECTION ===== */
         .flagship-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -550,6 +550,7 @@
             border: 1px solid rgba(139,92,246,0.15);
         }
 
+        /* ===== FOOTER ===== */
         .footer {
             border-top: 1px solid rgba(0,0,0,0.05);
             padding: 48px 0 32px;
@@ -748,30 +749,10 @@
         }
 
         @media (max-width: 768px) {
-            .discount-banner {
-                font-size: 11px;
-                padding: 5px 10px;
-                top: 0;
-            }
-            .discount-banner .timer {
-                font-size: 12px;
-                padding: 2px 8px;
-                margin: 0 4px;
-            }
-            .discount-banner .timer span {
-                min-width: 14px;
-            }
-            .discount-banner .tag {
-                font-size: 9px;
-                padding: 2px 8px;
-            }
-
-            .navbar {
-                top: 30px;
-                padding: 10px 16px;
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
+            .discount-banner { font-size: 10px; padding: 4px 10px; top: 0; }
+            .discount-banner .timer { font-size: 10px; padding: 1px 6px; }
+            .discount-banner .timer span { min-width: 12px; }
+            .navbar { top: 28px; padding: 10px 16px; flex-wrap: wrap; justify-content: space-between; }
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -787,12 +768,9 @@
                 border-bottom: 1px solid rgba(0,0,0,0.05);
                 box-shadow: 0 8px 24px rgba(0,0,0,0.08);
             }
-            .nav-links.open {
-                display: flex;
-            }
-            .nav-links a {
-                font-size: 15px;
-            }
+            .nav-links.open { display: flex; }
+            .nav-links a { font-size: 15px; }
+            .nav-toggle { display: block; }
 
             .hero { padding: 110px 16px 60px; }
             .hero h1 { font-size: 32px; }
@@ -812,30 +790,14 @@
             .section-full { padding: 50px 0 30px; }
             .footer-grid { grid-template-columns: 1fr; gap: 24px; }
             .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
-            .nav-toggle { display: block; }
-            .nav-cta { display: inline-block; }
         }
 
         @media (max-width: 480px) {
-            .discount-banner {
-                font-size: 10px;
-                padding: 4px 8px;
-                top: 0;
-            }
-            .discount-banner .timer {
-                font-size: 11px;
-                padding: 2px 6px;
-                margin: 0 3px;
-            }
-            .discount-banner .timer span {
-                min-width: 12px;
-            }
-            .discount-banner .tag {
-                font-size: 8px;
-                padding: 1px 6px;
-            }
-
-            .navbar { top: 26px; padding: 8px 12px; }
+            .discount-banner { font-size: 8px; padding: 3px 6px; }
+            .discount-banner .timer { font-size: 8px; padding: 1px 4px; }
+            .discount-banner .timer span { min-width: 10px; }
+            .discount-banner .tag { font-size: 7px; padding: 1px 6px; }
+            .navbar { top: 24px; padding: 8px 12px; }
             .hero { padding: 90px 16px 40px; }
             .hero h1 { font-size: 28px; }
             .hero-tag { font-size: 10px; padding: 3px 12px; }
@@ -899,7 +861,7 @@
             </div>
             <div class="hero-stats">
                 <div class="stat">
-                    <div class="stat-number">250K+</div>
+                    <div class="stat-number">60K+</div>
                     <div class="stat-label">Followers Built</div>
                 </div>
                 <div class="stat">
@@ -969,7 +931,7 @@
                     <span class="flagship-badge">Featured</span>
                     <h2>Growth <span class="highlight">Strategy</span></h2>
                     <p>A complete roadmap for your brand's content growth — from positioning to 90-day action plan. This is the same system that grew our own brand to 60K+ followers.</p>
-                    <span class="savings-badge"> 35% Off — Founders' Discount</span>
+                    <span class="savings-badge">35% Off — Founders' Discount</span>
                     <div class="flagship-features">
                         <span><i class="fas fa-check"></i> Discovery Workshop</span>
                         <span><i class="fas fa-check"></i> Business & Brand Audit</span>
@@ -1198,7 +1160,6 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
-    <script src="js/main.js"></script>
     <script>
         // ================================================
         // ===== COUNTDOWN TIMER =====
@@ -1233,7 +1194,7 @@
         })();
 
         // ================================================
-        // ===== HAMBURGER MENU FIX =====
+        // ===== HAMBURGER MENU TOGGLE =====
         // ================================================
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
@@ -1250,7 +1211,7 @@
         }
 
         // ===== CLOSE MENU WHEN ANY LINK IS CLICKED =====
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
             link.addEventListener('click', function() {
                 if (navLinks.classList.contains('open')) {
                     navLinks.classList.remove('open');
@@ -1328,8 +1289,8 @@
         (function() {
             const elements = document.querySelectorAll('.reveal, .stagger');
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
                     }
@@ -1339,12 +1300,12 @@
                 rootMargin: '0px 0px -40px 0px'
             });
 
-            elements.forEach(el => {
+            elements.forEach(function(el) {
                 if (el) observer.observe(el);
             });
 
-            setTimeout(() => {
-                elements.forEach(el => {
+            setTimeout(function() {
+                elements.forEach(function(el) {
                     if (el) {
                         const rect = el.getBoundingClientRect();
                         const windowHeight = window.innerHeight;
