@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Product Services — Framework Media</title>
+    <meta name="description" content="Fixed price content services. Growth Strategy, Content Audit, YouTube Strategy, Editing, Scriptwriting, Carousel Design and more." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 120px 24px 60px;
+            background: var(--gradient-dark);
+            color: white;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 52px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            color: #d1d5db;
+            font-size: 18px;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .page-header .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-detail {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 32px;
+            transition: all 0.3s ease;
+            scroll-margin-top: 80px;
+        }
+        .service-detail:hover {
+            border-color: var(--purple);
+            box-shadow: var(--shadow-hover);
+        }
+        .service-detail .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .service-detail .service-header h3 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .service-detail .service-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--purple);
+        }
+        .service-detail .service-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .service-detail .service-meta .meta-item {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 12px 16px;
+            text-align: center;
+        }
+        .service-detail .service-meta .meta-item strong {
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6b7280;
+            font-weight: 600;
+        }
+        .service-detail .service-meta .meta-item span {
+            font-weight: 600;
+        }
+        .service-detail ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 16px;
+            margin: 16px 0;
+        }
+        .service-detail ul li {
+            padding: 4px 0;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 14px;
+            color: #374151;
+        }
+        .service-detail ul li i {
+            color: var(--purple);
+            font-size: 12px;
+        }
+        .service-detail .service-cta {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: var(--purple);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .service-detail { padding: 24px; }
+            .service-detail .service-header h3 { font-size: 22px; }
+            .service-detail .service-price { font-size: 22px; }
+            .service-detail ul { grid-template-columns: 1fr; }
+            .service-detail .service-header { flex-direction: column; }
+            .service-detail .service-meta { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Framework Media" />
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="launch.html">Launch</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="nav-cta">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ====== PAGE HEADER ====== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Product <span class="highlight">Services</span></h1>
+            <p>Fixed scope. Fixed price. Start immediately. Pick what you need and purchase directly.</p>
+        </div>
+    </section>
+
+    <!-- ====== SERVICES ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+
+            <a href="services.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Services</a>
+
+            <!-- Growth Strategy -->
+            <div class="service-detail reveal" id="growth-strategy">
+                <div class="service-header">
+                    <div>
+                        <span class="service-badge" style="background:#fef3c7;color:#d97706;font-size:11px;display:inline-block;padding:2px 12px;border-radius:40px;margin-bottom:8px;">Strategy</span>
+                        <h3>Growth Strategy</h3>
+                        <p style="color:#4b5563;font-size:16px;line-height:1.7;margin-top:4px;">The foundation of everything. Clarity before execution.</p>
+                    </div>
+                    <div class="service-price">R5,000</div>
+                </div>
+
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Problem Solved:</strong> You're posting content but not seeing results. You don't know what to create, who you're speaking to, or how to grow.</p>
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Who It's For:</strong> Businesses launching or repositioning, founders building a personal brand, anyone wanting a clear roadmap.</p>
+
+                <div class="service-meta">
+                    <div class="meta-item"><strong>Timeline</strong><span>2-3 Weeks</span></div>
+                    <div class="meta-item"><strong>Deliverables</strong><span>20+ Page Strategy</span></div>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> Discovery Workshop</li>
+                    <li><i class="fas fa-check"></i> Business & Brand Audit</li>
+                    <li><i class="fas fa-check"></i> Content & Competitor Audit</li>
+                    <li><i class="fas fa-check"></i> Audience Research</li>
+                    <li><i class="fas fa-check"></i> Brand Positioning</li>
+                    <li><i class="fas fa-check"></i> Content Pillars</li>
+                    <li><i class="fas fa-check"></i> 90-Day Growth Blueprint</li>
+                    <li><i class="fas fa-check"></i> Strategic Recommendations</li>
+                </ul>
+
+                <div class="service-cta">
+                    <a href="#" class="btn-primary">Purchase Now</a>
+                </div>
+            </div>
+
+            <!-- Content Audit -->
+            <div class="service-detail reveal" id="content-audit">
+                <div class="service-header">
+                    <div>
+                        <span class="service-badge" style="background:#dbeafe;color:#2563eb;font-size:11px;display:inline-block;padding:2px 12px;border-radius:40px;margin-bottom:8px;">Audit</span>
+                        <h3>Content Audit</h3>
+                        <p style="color:#4b5563;font-size:16px;line-height:1.7;margin-top:4px;">Understand what's working, what's holding you back, and what to improve.</p>
+                    </div>
+                    <div class="service-price">R2,500</div>
+                </div>
+
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Problem Solved:</strong> You're creating content but engagement is low. You don't know why your content isn't performing.</p>
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Who It's For:</strong> Businesses unsure why their content isn't performing, creators wanting objective feedback, brands looking to improve engagement.</p>
+
+                <div class="service-meta">
+                    <div class="meta-item"><strong>Timeline</strong><span>5-7 Days</span></div>
+                    <div class="meta-item"><strong>Deliverables</strong><span>15+ Page Audit Report</span></div>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> Content Review (30+ pieces)</li>
+                    <li><i class="fas fa-check"></i> Performance Analysis</li>
+                    <li><i class="fas fa-check"></i> Platform Assessment</li>
+                    <li><i class="fas fa-check"></i> Engagement Analysis</li>
+                    <li><i class="fas fa-check"></i> Visual & Copy Review</li>
+                    <li><i class="fas fa-check"></i> Competitive Benchmarking</li>
+                    <li><i class="fas fa-check"></i> Improvement Recommendations</li>
+                </ul>
+
+                <div class="service-cta">
+                    <a href="#" class="btn-primary">Purchase Now</a>
+                </div>
+            </div>
+
+            <!-- YouTube Strategy -->
+            <div class="service-detail reveal" id="youtube-strategy">
+                <div class="service-header">
+                    <div>
+                        <span class="service-badge" style="background:#fef3c7;color:#d97706;font-size:11px;display:inline-block;padding:2px 12px;border-radius:40px;margin-bottom:8px;">Strategy</span>
+                        <h3>YouTube Strategy</h3>
+                        <p style="color:#4b5563;font-size:16px;line-height:1.7;margin-top:4px;">A complete roadmap to grow your YouTube channel with intention.</p>
+                    </div>
+                    <div class="service-price">R4,000</div>
+                </div>
+
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Problem Solved:</strong> Your YouTube channel isn't growing. You don't have a clear plan for content, SEO, or audience growth.</p>
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Who It's For:</strong> Creators serious about YouTube, businesses building long-form authority, coaches and educators.</p>
+
+                <div class="service-meta">
+                    <div class="meta-item"><strong>Timeline</strong><span>2-3 Weeks</span></div>
+                    <div class="meta-item"><strong>Deliverables</strong><span>20+ Page YouTube Strategy</span></div>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> Channel Positioning</li>
+                    <li><i class="fas fa-check"></i> Content Strategy</li>
+                    <li><i class="fas fa-check"></i> Video Structure</li>
+                    <li><i class="fas fa-check"></i> Thumbnail Strategy</li>
+                    <li><i class="fas fa-check"></i> SEO Strategy</li>
+                    <li><i class="fas fa-check"></i> Publishing Calendar</li>
+                    <li><i class="fas fa-check"></i> Audience Growth Plan</li>
+                    <li><i class="fas fa-check"></i> Monetisation Pathways</li>
+                </ul>
+
+                <div class="service-cta">
+                    <a href="#" class="btn-primary">Purchase Now</a>
+                </div>
+            </div>
+
+            <!-- YouTube Audit -->
+            <div class="service-detail reveal" id="youtube-audit">
+                <div class="service-header">
+                    <div>
+                        <span class="service-badge" style="background:#dbeafe;color:#2563eb;font-size:11px;display:inline-block;padding:2px 12px;border-radius:40px;margin-bottom:8px;">Audit</span>
+                        <h3>YouTube Audit</h3>
+                        <p style="color:#4b5563;font-size:16px;line-height:1.7;margin-top:4px;">Actionable insights to turn your channel into a growth engine.</p>
+                    </div>
+                    <div class="service-price">R3,000</div>
+                </div>
+
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Problem Solved:</strong> You're uploading but not gaining subscribers or views. You don't know what to change.</p>
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Who It's For:</strong> New YouTubers, existing channels wanting more views, businesses investing in YouTube.</p>
+
+                <div class="service-meta">
+                    <div class="meta-item"><strong>Timeline</strong><span>5-7 Days</span></div>
+                    <div class="meta-item"><strong>Deliverables</strong><span>15+ Page Audit Report</span></div>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> Channel Review</li>
+                    <li><i class="fas fa-check"></i> Branding Assessment</li>
+                    <li><i class="fas fa-check"></i> Thumbnail Analysis</li>
+                    <li><i class="fas fa-check"></i> Title & Description Review</li>
+                    <li><i class="fas fa-check"></i> SEO Evaluation</li>
+                    <li><i class="fas fa-check"></i> Retention Analysis</li>
+                    <li><i class="fas fa-check"></i> Publishing Strategy</li>
+                    <li><i class="fas fa-check"></i> Improvement Recommendations</li>
+                </ul>
+
+                <div class="service-cta">
+                    <a href="#" class="btn-primary">Purchase Now</a>
+                </div>
+            </div>
+
+            <!-- Personal Brand Strategy -->
+            <div class="service-detail reveal" id="personal-brand">
+                <div class="service-header">
+                    <div>
+                        <span class="service-badge" style="background:#fef3c7;color:#d97706;font-size:11px;display:inline-block;padding:2px 12px;border-radius:40px;margin-bottom:8px;">Strategy</span>
+                        <h3>Personal Brand Strategy</h3>
+                        <p style="color:#4b5563;font-size:16px;line-height:1.7;margin-top:4px;">Build a personal brand people recognise, trust and remember.</p>
+                    </div>
+                    <div class="service-price">R3,000</div>
+                </div>
+
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Problem Solved:</strong> You know you need to build a personal brand but don't know where to start or how to differentiate yourself.</p>
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Who It's For:</strong> Founders, CEOs, professionals, coaches, speakers, creators, anyone building authority.</p>
+
+                <div class="service-meta">
+                    <div class="meta-item"><strong>Timeline</strong><span>2-3 Weeks</span></div>
+                    <div class="meta-item"><strong>Deliverables</strong><span>15+ Page Brand Strategy</span></div>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> Personal Brand Discovery</li>
+                    <li><i class="fas fa-check"></i> Positioning & Differentiation</li>
+                    <li><i class="fas fa-check"></i> Brand Narrative</li>
+                    <li><i class="fas fa-check"></i> Messaging Framework</li>
+                    <li><i class="fas fa-check"></i> Content Pillars</li>
+                    <li><i class="fas fa-check"></i> Platform Selection</li>
+                    <li><i class="fas fa-check"></i> Visual Identity (Light)</li>
+                    <li><i class="fas fa-check"></i> Content Strategy</li>
+                </ul>
+
+                <div class="service-cta">
+                    <a href="#" class="btn-primary">Purchase Now</a>
+                </div>
+            </div>
+
+            <!-- Video Editing -->
+            <div class="service-detail reveal" id="video-editing">
+                <div class="service-header">
+                    <div>
+                        <span class="service-badge" style="background:#dcfce7;color:#16a34a;font-size:11px;display:inline-block;padding:2px 12px;border-radius:40px;margin-bottom:8px;">Production</span>
+                        <h3>Video Editing</h3>
+                        <p style="color:#4b5563;font-size:16px;line-height:1.7;margin-top:4px;">Professional editing that makes your content stand out.</p>
+                    </div>
+                    <div class="service-price">R700 / video</div>
+                </div>
+
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Problem Solved:</strong> You're filming but editing takes too long or the quality is inconsistent.</p>
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Who It's For:</strong> Creators who don't enjoy editing, businesses needing polished content, agencies outsourcing editing.</p>
+
+                <div class="service-meta">
+                    <div class="meta-item"><strong>Timeline</strong><span>2-3 Days / video</span></div>
+                    <div class="meta-item"><strong>Deliverables</strong><span>Edited Video Files</span></div>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> Video Cleaning (Trim, Cut, Sync)</li>
+                    <li><i class="fas fa-check"></i> Motion Graphics (Text, Overlays)</li>
+                    <li><i class="fas fa-check"></i> Audio Enhancement</li>
+                    <li><i class="fas fa-check"></i> B-Roll Integration</li>
+                    <li><i class="fas fa-check"></i> Colour Grading</li>
+                    <li><i class="fas fa-check"></i> End Screens & CTAs</li>
+                </ul>
+
+                <div class="service-cta">
+                    <a href="#" class="btn-primary">Purchase Now</a>
+                </div>
+            </div>
+
+            <!-- Scriptwriting -->
+            <div class="service-detail reveal" id="scriptwriting">
+                <div class="service-header">
+                    <div>
+                        <span class="service-badge" style="background:#dcfce7;color:#16a34a;font-size:11px;display:inline-block;padding:2px 12px;border-radius:40px;margin-bottom:8px;">Production</span>
+                        <h3>Scriptwriting</h3>
+                        <p style="color:#4b5563;font-size:16px;line-height:1.7;margin-top:4px;">Scripts designed for retention, engagement and conversion.</p>
+                    </div>
+                    <div class="service-price">R350 / script</div>
+                </div>
+
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Problem Solved:</strong> You don't know what to say or how to structure your videos to keep people watching.</p>
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Who It's For:</strong> Creators who don't know what to say, businesses wanting professional messaging, founders building authority.</p>
+
+                <div class="service-meta">
+                    <div class="meta-item"><strong>Timeline</strong><span>1-2 Days</span></div>
+                    <div class="meta-item"><strong>Deliverables</strong><span>Script (1-2 Pages)</span></div>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> Platform-Specific Script</li>
+                    <li><i class="fas fa-check"></i> Hook & Intro</li>
+                    <li><i class="fas fa-check"></i> Body Structure</li>
+                    <li><i class="fas fa-check"></i> Engagement Triggers</li>
+                    <li><i class="fas fa-check"></i> Call to Action</li>
+                    <li><i class="fas fa-check"></i> Visual Notes</li>
+                </ul>
+
+                <div class="service-cta">
+                    <a href="#" class="btn-primary">Purchase Now</a>
+                </div>
+            </div>
+
+            <!-- Carousel Design -->
+            <div class="service-detail reveal" id="carousel-design">
+                <div class="service-header">
+                    <div>
+                        <span class="service-badge" style="background:#dcfce7;color:#16a34a;font-size:11px;display:inline-block;padding:2px 12px;border-radius:40px;margin-bottom:8px;">Design</span>
+                        <h3>Carousel Design</h3>
+                        <p style="color:#4b5563;font-size:16px;line-height:1.7;margin-top:4px;">Educational carousels that build authority and save time.</p>
+                    </div>
+                    <div class="service-price">R750 / carousel</div>
+                </div>
+
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Problem Solved:</strong> You know carousels perform well but creating them takes too long.</p>
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Who It's For:</strong> LinkedIn creators, Instagram educators, businesses sharing educational content.</p>
+
+                <div class="service-meta">
+                    <div class="meta-item"><strong>Timeline</strong><span>2-3 Days</span></div>
+                    <div class="meta-item"><strong>Deliverables</strong><span>Carousel Files (PNG/PDF)</span></div>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> Research</li>
+                    <li><i class="fas fa-check"></i> Copywriting</li>
+                    <li><i class="fas fa-check"></i> Design (5-10 Slides)</li>
+                    <li><i class="fas fa-check"></i> Branding</li>
+                    <li><i class="fas fa-check"></i> Formatting</li>
+                </ul>
+
+                <div class="service-cta">
+                    <a href="#" class="btn-primary">Purchase Now</a>
+                </div>
+            </div>
+
+            <!-- Thumbnail Design -->
+            <div class="service-detail reveal" id="thumbnail-design">
+                <div class="service-header">
+                    <div>
+                        <span class="service-badge" style="background:#dcfce7;color:#16a34a;font-size:11px;display:inline-block;padding:2px 12px;border-radius:40px;margin-bottom:8px;">Design</span>
+                        <h3>Thumbnail Design</h3>
+                        <p style="color:#4b5563;font-size:16px;line-height:1.7;margin-top:4px;">Thumbnails that stop the scroll and drive clicks.</p>
+                    </div>
+                    <div class="service-price">R350 / thumbnail</div>
+                </div>
+
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Problem Solved:</strong> Your thumbnails aren't getting clicks. You don't know how to design for YouTube's algorithm.</p>
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Who It's For:</strong> YouTubers, podcasts, educational channels.</p>
+
+                <div class="service-meta">
+                    <div class="meta-item"><strong>Timeline</strong><span>1-2 Days</span></div>
+                    <div class="meta-item"><strong>Deliverables</strong><span>Thumbnail Files</span></div>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> Concept Creation</li>
+                    <li><i class="fas fa-check"></i> Design</li>
+                    <li><i class="fas fa-check"></i> Text & Typography</li>
+                    <li><i class="fas fa-check"></i> Image Selection</li>
+                    <li><i class="fas fa-check"></i> Colour Grading</li>
+                    <li><i class="fas fa-check"></i> Formatting</li>
+                </ul>
+
+                <div class="service-cta">
+                    <a href="#" class="btn-primary">Purchase Now</a>
+                </div>
+            </div>
+
+            <!-- Content Planning -->
+            <div class="service-detail reveal" id="content-planning">
+                <div class="service-header">
+                    <div>
+                        <span class="service-badge" style="background:#fef3c7;color:#d97706;font-size:11px;display:inline-block;padding:2px 12px;border-radius:40px;margin-bottom:8px;">Planning</span>
+                        <h3>Content Planning</h3>
+                        <p style="color:#4b5563;font-size:16px;line-height:1.7;margin-top:4px;">A monthly roadmap that eliminates guesswork.</p>
+                    </div>
+                    <div class="service-price">R1,500 / month</div>
+                </div>
+
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Problem Solved:</strong> You're inconsistent with posting because you don't have a plan.</p>
+                <p style="color:#374151;font-size:15px;line-height:1.7;margin-bottom:12px;"><strong>Who It's For:</strong> Businesses wanting structure, creators struggling with consistency, teams needing a monthly roadmap.</p>
+
+                <div class="service-meta">
+                    <div class="meta-item"><strong>Timeline</strong><span>3-5 Days</span></div>
+                    <div class="meta-item"><strong>Deliverables</strong><span>1-Month Content Calendar</span></div>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> Monthly Content Calendar</li>
+                    <li><i class="fas fa-check"></i> Posting Schedule</li>
+                    <li><i class="fas fa-check"></i> Platform Recommendations</li>
+                    <li><i class="fas fa-check"></i> Content Mix</li>
+                    <li><i class="fas fa-check"></i> Topic Ideation</li>
+                </ul>
+
+                <div class="service-cta">
+                    <a href="#" class="btn-primary">Purchase Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== CTA ====== -->
+    <section class="section-full section-full-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Need something more <span class="highlight">custom</span>?</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Explore our retainer services for ongoing strategic support and partnership.</p>
+            </div>
+            <div style="text-align:center;">
+                <a href="retainer-services.html" class="btn-white">Explore Retainer Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="display:inline-block;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:36px;width:auto;" />
+                    </a>
+                    <p>Strategy-led content growth for businesses, founders, creators and personal brands.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="services.html">How We Help</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="launch.html">Launch Package</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
+                    <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
+                    <a href="disclaimer.pdf" target="_blank">Disclaimer</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Framework Media. All rights reserved.</span>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

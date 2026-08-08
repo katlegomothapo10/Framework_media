@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pricing — Framework Media</title>
+    <meta name="description" content="Complete list of Framework Media service pricing. Product, Retainer, and Launch services." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --pink: #ec4899;
+            --purple: #8b5cf6;
+            --blue: #3b82f6;
+            --gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e, #16213e);
+            --gradient-subtle: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(139, 92, 246, 0.08), rgba(59, 130, 246, 0.08));
+            --bg-light-purple: #f5f0ff;
+            --bg-light-pink: #fdf2f8;
+            --bg-light-blue: #eff6ff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-hover: 0 12px 40px rgba(139,92,246,0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary {
+            background: var(--black);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-primary:hover {
+            background: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .btn-purple {
+            background: var(--purple);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-purple:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139,92,246,0.3);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--black);
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 12px;
+            border-radius: 40px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--black);
+            border: 1.5px solid var(--black);
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-outline:hover {
+            background: var(--black);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ===== DISCOUNT BANNER ===== */
+        .discount-banner {
+            background: linear-gradient(135deg, #dc2626, #991b1b);
+            padding: 6px 16px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            font-size: 12px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1002;
+            box-shadow: 0 2px 12px rgba(220, 38, 38, 0.25);
+        }
+        .discount-banner .timer {
+            display: inline-flex;
+            gap: 2px;
+            font-weight: 700;
+            background: rgba(0,0,0,0.2);
+            padding: 1px 8px;
+            border-radius: 40px;
+            margin: 0 4px;
+            font-size: 12px;
+            font-variant-numeric: tabular-nums;
+        }
+        .discount-banner .timer span {
+            min-width: 16px;
+            display: inline-block;
+            text-align: center;
+        }
+        .discount-banner .timer .colon {
+            min-width: 3px;
+        }
+        .discount-banner .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 1px 8px;
+            border-radius: 40px;
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 4px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+            background: white;
+            position: fixed;
+            top: 34px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+        }
+        .navbar.hidden { transform: translateY(-100%); }
+        .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--black);
+        }
+        .logo img { height: 40px; width: auto; display: block; }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            font-weight: 500;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1f2937;
+            font-size: 14px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--black); }
+        .nav-links a.active { color: var(--black); }
+        .nav-links a.active::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--purple);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: #7c3aed; color: white !important; }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--black);
+            cursor: pointer;
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+        .section-title .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-sub {
+            font-size: 18px;
+            color: #4b5563;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 4px;
+            margin: 16px auto 0;
+        }
+
+        .section-full {
+            width: 100%;
+            padding: 80px 0 60px;
+        }
+        .section-full-white { background: #ffffff; }
+        .section-full-light-purple { background: var(--bg-light-purple); }
+        .section-full-light-pink { background: var(--bg-light-pink); }
+        .section-full-light-blue { background: var(--bg-light-blue); }
+        .section-full-dark {
+            background: var(--gradient-dark);
+            color: white;
+        }
+        .section-full-dark .section-title { color: white; }
+        .section-full-dark .section-sub { color: #d1d5db; }
+
+        .pill {
+            display: inline-block;
+            background: var(--gradient-subtle);
+            color: var(--black);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(139,92,246,0.15);
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            padding: 120px 24px 60px;
+            background: var(--gradient-dark);
+            color: white;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 52px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            color: #d1d5db;
+            font-size: 18px;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .page-header .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing-section {
+            margin-bottom: 60px;
+        }
+        .pricing-section .section-label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 14px;
+            border-radius: 40px;
+            margin-bottom: 8px;
+        }
+        .pricing-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+        .pricing-section .sub {
+            text-align: center;
+            color: #6b7280;
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        /* ===== FLAGSHIP — STANDALONE AT TOP ===== */
+        .flagship-standalone {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            background: linear-gradient(135deg, #faf5ff, #ffffff);
+            border-radius: 24px;
+            padding: 40px 48px;
+            border: 2px solid var(--purple);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .flagship-standalone:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 50px rgba(139, 92, 246, 0.25);
+        }
+        .flagship-standalone .flagship-badge {
+            position: absolute;
+            top: -10px;
+            left: 24px;
+            background: var(--gradient);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 16px;
+            border-radius: 40px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+        .flagship-standalone .flagship-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .flagship-standalone .flagship-header .badge {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 12px;
+            border-radius: 40px;
+            display: inline-block;
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .flagship-standalone .flagship-header h3 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .flagship-standalone .flagship-header .price {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--purple);
+        }
+        .flagship-standalone .flagship-header .price .original {
+            font-size: 18px;
+            color: #9ca3af;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-right: 8px;
+        }
+        .flagship-standalone .service-desc {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #374151;
+            margin: 8px 0 12px;
+        }
+        .flagship-standalone .service-desc strong {
+            color: var(--black);
+        }
+        .flagship-standalone .flagship-tag {
+            display: inline-block;
+            background: #fef3c7;
+            color: #d97706;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 40px;
+            margin-bottom: 8px;
+        }
+        .flagship-standalone .savings-badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #16a34a;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 40px;
+            margin-bottom: 8px;
+        }
+        .flagship-standalone .includes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 16px;
+            margin: 12px 0;
+            padding: 0;
+            list-style: none;
+        }
+        .flagship-standalone .includes li {
+            padding: 4px 0;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 14px;
+            color: #374151;
+        }
+        .flagship-standalone .includes li i {
+            color: var(--purple);
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        .flagship-standalone .service-cta {
+            margin-top: 12px;
+        }
+        .flagship-standalone .price-sub {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+
+        /* ===== PRODUCT GRID ===== */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px 20px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .pricing-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .pricing-card .badge {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 12px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 6px;
+            width: fit-content;
+        }
+        .pricing-card .price {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--purple);
+            margin: 6px 0 2px;
+        }
+        .pricing-card .price-sub {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 10px;
+        }
+        .pricing-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .pricing-card p {
+            color: #4b5563;
+            font-size: 13px;
+            line-height: 1.6;
+            flex: 1;
+        }
+        .pricing-card .service-cta {
+            margin-top: 12px;
+        }
+        .pricing-card .includes {
+            margin: 8px 0;
+            padding: 0;
+            list-style: none;
+            flex: 1;
+        }
+        .pricing-card .includes li {
+            padding: 2px 0;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            font-size: 12px;
+            color: #374151;
+            line-height: 1.4;
+        }
+        .pricing-card .includes li i {
+            color: var(--purple);
+            font-size: 10px;
+            flex-shrink: 0;
+        }
+
+        /* ===== RETAINER ===== */
+        .retainer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 800px;
+            margin: 20px auto 0;
+        }
+        .retainer-grid .pricing-card {
+            border-color: var(--purple);
+        }
+
+        /* ===== LAUNCH ===== */
+        .launch-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        .launch-grid .pricing-card .price .original {
+            font-size: 16px;
+            color: #9ca3af;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-right: 6px;
+        }
+        .launch-grid .pricing-card .savings {
+            display: inline-block;
+            background: #dcfce7;
+            color: #16a34a;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 40px;
+            margin-bottom: 6px;
+        }
+
+        /* ===== COMPARISON TABLE ===== */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            margin-top: 20px;
+        }
+        .compare-table th {
+            padding: 14px 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .compare-table td {
+            padding: 10px 20px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 14px;
+        }
+        .compare-table th:not(:first-child),
+        .compare-table td:not(:first-child) {
+            border-left: 1px solid #e5e7eb;
+            text-align: center;
+        }
+        .compare-table .product-header { background: #dcfce7; color: #16a34a; }
+        .compare-table .retainer-header { background: #fef3c7; color: #d97706; }
+        .compare-table .launch-header { background: #ede9fe; color: var(--purple); }
+        .compare-table .check { color: #16a34a; }
+        .compare-table .minus { color: #9ca3af; }
+        .compare-table tr:last-child td { border-top: 2px solid #e5e7eb; }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding: 48px 0 32px;
+            background: #fafafa;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+        .footer-brand p {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 320px;
+            margin-top: 8px;
+        }
+        .footer-col h4 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+        .footer-col a {
+            display: block;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+        }
+        .footer-col a:hover { color: var(--purple); }
+        .footer-bottom {
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: #9ca3af;
+            font-size: 13px;
+        }
+        .footer-bottom .social-icons {
+            display: flex;
+            gap: 16px;
+        }
+        .footer-bottom .social-icons a {
+            color: #6b7280;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .footer-bottom .social-icons a:hover { color: var(--purple); }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--purple);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(139,92,246,0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: #7c3aed;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(139,92,246,0.4);
+        }
+        .back-to-top i { font-size: 20px; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s ease;
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger > * {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        .stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+        .stagger.is-visible > *:nth-child(2) { transition-delay: 0.10s; opacity: 1; transform: translateY(0); }
+        .stagger.is-visible > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+        .stagger.is-visible > *:nth-child(4) { transition-delay: 0.20s; opacity: 1; transform: translateY(0); }
+        .stagger.is-visible > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+        .stagger.is-visible > *:nth-child(6) { transition-delay: 0.30s; opacity: 1; transform: translateY(0); }
+        .stagger.is-visible > *:nth-child(7) { transition-delay: 0.35s; opacity: 1; transform: translateY(0); }
+        .stagger.is-visible > *:nth-child(8) { transition-delay: 0.40s; opacity: 1; transform: translateY(0); }
+        .stagger.is-visible > *:nth-child(9) { transition-delay: 0.45s; opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 992px) {
+            .pricing-grid { grid-template-columns: 1fr 1fr; }
+            .retainer-grid { grid-template-columns: 1fr 1fr; max-width: 100%; }
+            .launch-grid { grid-template-columns: 1fr 1fr; max-width: 100%; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .footer-brand { grid-column: 1 / -1; }
+            .footer-brand p { max-width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 12px;
+                padding: 16px 0;
+                width: 100%;
+                text-align: center;
+                background: white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+            .nav-links.open { display: flex; }
+            .navbar { padding: 10px 16px; flex-wrap: wrap; }
+            .nav-links a { font-size: 14px; }
+
+            .discount-banner { font-size: 10px; padding: 4px 10px; }
+            .discount-banner .timer { font-size: 10px; padding: 1px 6px; }
+            .discount-banner .timer span { min-width: 12px; }
+            .navbar { top: 28px; }
+
+            .page-header h1 { font-size: 32px; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .retainer-grid { grid-template-columns: 1fr; max-width: 100%; }
+            .launch-grid { grid-template-columns: 1fr; max-width: 100%; }
+            .section-title { font-size: 30px; }
+            .section-full { padding: 50px 0 30px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+            .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+            .compare-table { font-size: 12px; }
+            .compare-table th, .compare-table td { padding: 8px 12px; }
+            .flagship-standalone { padding: 24px 20px; }
+            .flagship-standalone .flagship-badge { position: relative; top: 0; left: 0; display: inline-block; margin-bottom: 8px; }
+            .flagship-standalone .flagship-header { flex-direction: column; }
+            .flagship-standalone .includes { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .discount-banner { font-size: 8px; padding: 3px 6px; }
+            .discount-banner .timer { font-size: 8px; padding: 1px 4px; }
+            .discount-banner .timer span { min-width: 10px; }
+            .discount-banner .tag { font-size: 7px; padding: 1px 6px; }
+            .navbar { top: 24px; padding: 8px 12px; }
+
+            .logo img { height: 28px; }
+            .section-title { font-size: 26px; }
+            .page-header h1 { font-size: 28px; }
+            .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
+            .back-to-top i { font-size: 16px; }
+            .compare-table { font-size: 11px; }
+            .compare-table th, .compare-table td { padding: 6px 8px; }
+            .flagship-standalone { padding: 16px; }
+            .flagship-standalone .flagship-header h3 { font-size: 22px; }
+            .flagship-standalone .flagship-header .price { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== DISCOUNT BANNER ====== -->
+    <div class="discount-banner" id="discountBanner">
+        <span class="tag">Founders' Discount</span>
+        35% off Growth Strategy & Launch Packages
+        <span class="timer" id="countdownTimer">
+            <span id="days">00</span><span class="colon">:</span>
+            <span id="hours">00</span><span class="colon">:</span>
+            <span id="minutes">00</span><span class="colon">:</span>
+            <span id="seconds">00</span>
+        </span>
+        <span>Offer ends in</span>
+    </div>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Framework Media" />
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="services.html">Services</a>
+            <a href="pricing.html" class="active">Pricing</a>
+            <a href="launch.html">Launch</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html" class="nav-cta">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ====== PAGE HEADER ====== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Transparent <span class="highlight">Pricing</span></h1>
+            <p>All services listed by path. Pick what fits your business.</p>
+        </div>
+    </section>
+
+    <!-- ====== FLAGSHIP — STANDALONE AT TOP ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="flagship-standalone reveal">
+                <span class="flagship-badge">Flagship Offer</span>
+                <span class="savings-badge">🔥 35% Off — Founders' Discount</span>
+                <div class="flagship-header">
+                    <div>
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
+                        <h3>Growth Strategy</h3>
+                    </div>
+                    <div class="price">
+                        <span class="original">R5,000</span> R3,250
+                    </div>
+                </div>
+                <div class="service-desc">
+                    <strong>The foundation of everything.</strong> Clarity before execution. A complete roadmap for your brand's content growth — from positioning to 90-day action plan.
+                </div>
+                <span class="flagship-tag">Most Popular — Start Here</span>
+                <ul class="includes">
+                    <li><i class="fas fa-check"></i> Discovery Workshop</li>
+                    <li><i class="fas fa-check"></i> Business & Brand Audit</li>
+                    <li><i class="fas fa-check"></i> Content & Competitor Audit</li>
+                    <li><i class="fas fa-check"></i> Audience Research</li>
+                    <li><i class="fas fa-check"></i> Brand Positioning</li>
+                    <li><i class="fas fa-check"></i> Content Pillars</li>
+                    <li><i class="fas fa-check"></i> 90-Day Growth Blueprint</li>
+                    <li><i class="fas fa-check"></i> Strategic Recommendations</li>
+                </ul>
+                <div class="price-sub">one-time investment</div>
+                <div class="service-cta">
+                    <a href="product-services.html#growth-strategy" class="btn-purple">Purchase Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== PRODUCT SERVICES ====== -->
+    <section class="section-full section-full-light-purple" id="product">
+        <div class="container">
+            <div class="pricing-section">
+                <div style="text-align:center;">
+                    <span class="section-label" style="background:#dcfce7;color:#16a34a;">Fixed Price</span>
+                    <h2>Product Services</h2>
+                    <p class="sub">Fixed scope. Fixed price. Start immediately. Pick what you need.</p>
+                </div>
+
+                <div class="pricing-grid stagger">
+                    <!-- Content Audit -->
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#dbeafe;color:#2563eb;">Audit</span>
+                        <h4>Content Audit</h4>
+                        <p>Understand what's working, what's holding you back, and what to improve.</p>
+                        <div class="price">R2,500</div>
+                        <div class="price-sub">one-time</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Content Review (30+ pieces)</li>
+                            <li><i class="fas fa-check"></i> Performance Analysis</li>
+                            <li><i class="fas fa-check"></i> Platform Assessment</li>
+                            <li><i class="fas fa-check"></i> Engagement Analysis</li>
+                            <li><i class="fas fa-check"></i> Visual & Copy Review</li>
+                            <li><i class="fas fa-check"></i> Competitive Benchmarking</li>
+                            <li><i class="fas fa-check"></i> Improvement Recommendations</li>
+                        </ul>
+                        <a href="product-services.html#content-audit" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+
+                    <!-- YouTube Strategy -->
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
+                        <h4>YouTube Strategy</h4>
+                        <p>A complete roadmap to grow your YouTube channel with intention.</p>
+                        <div class="price">R4,000</div>
+                        <div class="price-sub">one-time</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Channel Positioning</li>
+                            <li><i class="fas fa-check"></i> Content Strategy</li>
+                            <li><i class="fas fa-check"></i> Video Structure</li>
+                            <li><i class="fas fa-check"></i> Thumbnail Strategy</li>
+                            <li><i class="fas fa-check"></i> SEO Strategy</li>
+                            <li><i class="fas fa-check"></i> Publishing Calendar</li>
+                            <li><i class="fas fa-check"></i> Audience Growth Plan</li>
+                        </ul>
+                        <a href="product-services.html#youtube-strategy" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+
+                    <!-- YouTube Audit -->
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#dbeafe;color:#2563eb;">Audit</span>
+                        <h4>YouTube Audit</h4>
+                        <p>Actionable insights to turn your channel into a growth engine.</p>
+                        <div class="price">R3,000</div>
+                        <div class="price-sub">one-time</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Channel Review</li>
+                            <li><i class="fas fa-check"></i> Branding Assessment</li>
+                            <li><i class="fas fa-check"></i> Thumbnail Analysis</li>
+                            <li><i class="fas fa-check"></i> Title & Description Review</li>
+                            <li><i class="fas fa-check"></i> SEO Evaluation</li>
+                            <li><i class="fas fa-check"></i> Retention Analysis</li>
+                            <li><i class="fas fa-check"></i> Improvement Recommendations</li>
+                        </ul>
+                        <a href="product-services.html#youtube-audit" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+
+                    <!-- Personal Brand Strategy -->
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
+                        <h4>Personal Brand Strategy</h4>
+                        <p>Build a personal brand people recognise, trust and remember.</p>
+                        <div class="price">R3,000</div>
+                        <div class="price-sub">one-time</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Personal Brand Discovery</li>
+                            <li><i class="fas fa-check"></i> Positioning & Differentiation</li>
+                            <li><i class="fas fa-check"></i> Brand Narrative</li>
+                            <li><i class="fas fa-check"></i> Messaging Framework</li>
+                            <li><i class="fas fa-check"></i> Content Pillars</li>
+                            <li><i class="fas fa-check"></i> Platform Selection</li>
+                            <li><i class="fas fa-check"></i> Content Strategy</li>
+                        </ul>
+                        <a href="product-services.html#personal-brand" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+
+                    <!-- Video Editing -->
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Production</span>
+                        <h4>Video Editing</h4>
+                        <p>Professional editing that makes your content stand out.</p>
+                        <div class="price">R700</div>
+                        <div class="price-sub">per video</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Video Cleaning (Trim, Cut, Sync)</li>
+                            <li><i class="fas fa-check"></i> Motion Graphics (Text, Overlays)</li>
+                            <li><i class="fas fa-check"></i> Audio Enhancement</li>
+                            <li><i class="fas fa-check"></i> B-Roll Integration</li>
+                            <li><i class="fas fa-check"></i> Colour Grading</li>
+                            <li><i class="fas fa-check"></i> End Screens & CTAs</li>
+                        </ul>
+                        <a href="product-services.html#video-editing" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+
+                    <!-- Scriptwriting -->
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Production</span>
+                        <h4>Scriptwriting</h4>
+                        <p>Scripts designed for retention, engagement and conversion.</p>
+                        <div class="price">R350</div>
+                        <div class="price-sub">per script</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Platform-Specific Script</li>
+                            <li><i class="fas fa-check"></i> Hook & Intro</li>
+                            <li><i class="fas fa-check"></i> Body Structure</li>
+                            <li><i class="fas fa-check"></i> Engagement Triggers</li>
+                            <li><i class="fas fa-check"></i> Call to Action</li>
+                            <li><i class="fas fa-check"></i> Visual Notes</li>
+                        </ul>
+                        <a href="product-services.html#scriptwriting" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+
+                    <!-- Carousel Design -->
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Design</span>
+                        <h4>Carousel Design</h4>
+                        <p>Educational carousels that build authority and save time.</p>
+                        <div class="price">R750</div>
+                        <div class="price-sub">per carousel</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Research</li>
+                            <li><i class="fas fa-check"></i> Copywriting</li>
+                            <li><i class="fas fa-check"></i> Design (5-10 Slides)</li>
+                            <li><i class="fas fa-check"></i> Branding</li>
+                            <li><i class="fas fa-check"></i> Formatting</li>
+                        </ul>
+                        <a href="product-services.html#carousel-design" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+
+                    <!-- Thumbnail Design -->
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Design</span>
+                        <h4>Thumbnail Design</h4>
+                        <p>Thumbnails that stop the scroll and drive clicks.</p>
+                        <div class="price">R350</div>
+                        <div class="price-sub">per thumbnail</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Concept Creation</li>
+                            <li><i class="fas fa-check"></i> Design</li>
+                            <li><i class="fas fa-check"></i> Text & Typography</li>
+                            <li><i class="fas fa-check"></i> Image Selection</li>
+                            <li><i class="fas fa-check"></i> Colour Grading</li>
+                            <li><i class="fas fa-check"></i> Formatting</li>
+                        </ul>
+                        <a href="product-services.html#thumbnail-design" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+
+                    <!-- Content Planning -->
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Planning</span>
+                        <h4>Content Planning</h4>
+                        <p>A monthly roadmap that eliminates guesswork.</p>
+                        <div class="price">R1,500</div>
+                        <div class="price-sub">per month</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Monthly Content Calendar</li>
+                            <li><i class="fas fa-check"></i> Posting Schedule</li>
+                            <li><i class="fas fa-check"></i> Platform Recommendations</li>
+                            <li><i class="fas fa-check"></i> Content Mix</li>
+                            <li><i class="fas fa-check"></i> Topic Ideation</li>
+                        </ul>
+                        <a href="product-services.html#content-planning" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== RETAINER SERVICES ====== -->
+    <section class="section-full section-full-white" id="retainer">
+        <div class="container">
+            <div class="pricing-section">
+                <div style="text-align:center;">
+                    <span class="section-label" style="background:#fef3c7;color:#d97706;">Custom Partnership</span>
+                    <h2>Retainer Services</h2>
+                    <p class="sub">Custom partnerships for businesses ready to scale with ongoing strategic support.</p>
+                </div>
+
+                <div class="retainer-grid">
+                    <div class="pricing-card">
+                        <span class="badge" style="background:var(--purple);color:white;">Popular</span>
+                        <h4>Content Department</h4>
+                        <p>Your outsourced content team. Strategy, production and consistency.</p>
+                        <div class="price" style="font-size:22px;">R12,500 – R35,000</div>
+                        <div class="price-sub">per month</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Monthly Strategy Call</li>
+                            <li><i class="fas fa-check"></i> Content Calendar</li>
+                            <li><i class="fas fa-check"></i> Content Production (Videos, Carousels, Captions)</li>
+                            <li><i class="fas fa-check"></i> Scriptwriting</li>
+                            <li><i class="fas fa-check"></i> Video Editing</li>
+                            <li><i class="fas fa-check"></i> Thumbnails</li>
+                            <li><i class="fas fa-check"></i> Analytics & Reporting</li>
+                            <li><i class="fas fa-check"></i> Ongoing Optimisation</li>
+                        </ul>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple btn-small service-cta">Book Discovery Call</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Executive</span>
+                        <h4>Growth Partner</h4>
+                        <p>Strategic partnership for business leaders building authority and revenue through content.</p>
+                        <div class="price" style="font-size:22px;">R7,500 – R20,000</div>
+                        <div class="price-sub">per month</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Monthly Strategy Meeting</li>
+                            <li><i class="fas fa-check"></i> Marketing Direction</li>
+                            <li><i class="fas fa-check"></i> Offer Reviews</li>
+                            <li><i class="fas fa-check"></i> Business Consulting</li>
+                            <li><i class="fas fa-check"></i> Accountability</li>
+                            <li><i class="fas fa-check"></i> WhatsApp Access</li>
+                            <li><i class="fas fa-check"></i> Priority Support</li>
+                        </ul>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple btn-small service-cta">Book Discovery Call</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== LAUNCH SERVICES ====== -->
+    <section class="section-full section-full-light-purple" id="launch">
+        <div class="container">
+            <div class="pricing-section">
+                <div style="text-align:center;">
+                    <span class="section-label" style="background:#ede9fe;color:var(--purple);">Best for Beginners</span>
+                    <h2>Launch Services</h2>
+                    <p class="sub">Everything you need to start. Strategy + content + visuals — all in one package.</p>
+                </div>
+
+                <div class="launch-grid">
+                    <div class="pricing-card" style="border-color:#fef3c7;">
+                        <span class="savings">Save 35%</span>
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Creator</span>
+                        <h4>Creator Launch</h4>
+                        <p>Perfect for individuals building a personal brand.</p>
+                        <div class="price">
+                            <span class="original">R7,500</span> R4,875
+                        </div>
+                        <div class="price-sub">one-time</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Personal Brand Strategy</li>
+                            <li><i class="fas fa-check"></i> Profile Optimisation</li>
+                            <li><i class="fas fa-check"></i> 30 Content Ideas</li>
+                            <li><i class="fas fa-check"></i> 10 Scripts</li>
+                            <li><i class="fas fa-check"></i> 10 Edited Videos</li>
+                            <li><i class="fas fa-check"></i> 2 Carousels</li>
+                        </ul>
+                        <a href="#" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+
+                    <div class="pricing-card" style="border-color:var(--purple);">
+                        <span class="savings">Save 35%</span>
+                        <span class="badge" style="background:var(--purple);color:white;">Popular</span>
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Business</span>
+                        <h4>Business Launch</h4>
+                        <p>Perfect for businesses starting their content journey.</p>
+                        <div class="price">
+                            <span class="original">R12,500</span> R8,125
+                        </div>
+                        <div class="price-sub">one-time</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Growth Strategy</li>
+                            <li><i class="fas fa-check"></i> Content Calendar</li>
+                            <li><i class="fas fa-check"></i> Brand Messaging</li>
+                            <li><i class="fas fa-check"></i> 10 Scripts</li>
+                            <li><i class="fas fa-check"></i> 10 Edited Videos</li>
+                            <li><i class="fas fa-check"></i> Analytics Setup</li>
+                        </ul>
+                        <a href="#" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== COMPARISON TABLE ====== -->
+    <section class="section-full section-full-light-blue">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Compare</span>
+                <h2 class="section-title">Which path is right for <span class="highlight">you</span>?</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div style="overflow-x:auto;">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th style="background:#f9fafb;">Feature</th>
+                            <th class="product-header">Product</th>
+                            <th class="retainer-header">Retainer</th>
+                            <th class="launch-header">Launch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Price Type</td>
+                            <td>Fixed</td>
+                            <td>Monthly Range</td>
+                            <td>Fixed</td>
+                        </tr>
+                        <tr>
+                            <td>Start Time</td>
+                            <td>Immediate</td>
+                            <td>After Call</td>
+                            <td>Immediate</td>
+                        </tr>
+                        <tr>
+                            <td>Strategy Included</td>
+                            <td class="check"><i class="fas fa-check"></i></td>
+                            <td class="check"><i class="fas fa-check"></i></td>
+                            <td class="check"><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Content Production</td>
+                            <td class="check"><i class="fas fa-check"></i></td>
+                            <td class="check"><i class="fas fa-check"></i></td>
+                            <td class="check"><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Ongoing Support</td>
+                            <td class="minus"><i class="fas fa-minus"></i></td>
+                            <td class="check"><i class="fas fa-check"></i></td>
+                            <td class="minus"><i class="fas fa-minus"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Strategic Partnership</td>
+                            <td class="minus"><i class="fas fa-minus"></i></td>
+                            <td class="check"><i class="fas fa-check"></i></td>
+                            <td class="minus"><i class="fas fa-minus"></i></td>
+                        </tr>
+                        <tr style="background:#f9fafb;font-weight:700;">
+                            <td>Best For</td>
+                            <td style="font-weight:400;">One-off needs<br>Fixed scope</td>
+                            <td style="font-weight:400;">Scaling businesses<br>Ongoing support</td>
+                            <td style="font-weight:400;">New brands<br>Everything included</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><a href="#product" class="btn-primary btn-small">View All</a></td>
+                            <td><a href="#retainer" class="btn-purple btn-small">View All</a></td>
+                            <td><a href="#launch" class="btn-primary btn-small">View All</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CTA ====== -->
+    <section class="section-full section-full-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Not sure which path is right for <span class="highlight">you</span>?</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Book a free Strategy Call and we'll recommend the right solution for your business.</p>
+            </div>
+            <div style="text-align:center;">
+                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-white">Book a Free Strategy Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="display:inline-block;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:36px;width:auto;" />
+                    </a>
+                    <p>Strategy-led content growth for businesses, founders, creators and personal brands.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="services.html">How We Help</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="launch.html">Launch Package</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
+                    <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
+                    <a href="disclaimer.pdf" target="_blank">Disclaimer</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Framework Media. All rights reserved.</span>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script>
+        // ================================================
+        // ===== NAVBAR TOGGLE (Mobile) =====
+        // ================================================
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('open');
+                const icon = this.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+        }
+
+        // ================================================
+        // ===== NAVBAR HIDE ON SCROLL =====
+        // ================================================
+        let lastScroll = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+            }
+
+            lastScroll = currentScroll;
+
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                if (currentScroll > 400) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
+        });
+
+        // ================================================
+        // ===== BACK TO TOP =====
+        // ================================================
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // ================================================
+        // ===== COUNTDOWN TIMER =====
+        // ================================================
+        (function() {
+            const countdownDate = new Date();
+            countdownDate.setDate(countdownDate.getDate() + 34);
+            countdownDate.setHours(23, 59, 59, 999);
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const distance = countdownDate.getTime() - now;
+
+                if (distance < 0) {
+                    document.getElementById('countdownTimer').innerHTML = "Offer Ended";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        })();
+
+        // ================================================
+        // ===== SCROLL ANIMATIONS =====
+        // ================================================
+        (function() {
+            const elements = document.querySelectorAll('.reveal, .stagger');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            elements.forEach(el => {
+                if (el) observer.observe(el);
+            });
+
+            setTimeout(() => {
+                elements.forEach(el => {
+                    if (el) {
+                        const rect = el.getBoundingClientRect();
+                        const windowHeight = window.innerHeight;
+                        if (rect.top < windowHeight * 0.85) {
+                            el.classList.add('is-visible');
+                        }
+                    }
+                });
+            }, 100);
+        })();
+
+        // ================================================
+        // ===== CLOSE MOBILE NAV ON LINK CLICK =====
+        // ================================================
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navLinks && navLinks.classList.contains('open')) {
+                    navLinks.classList.remove('open');
+                    const icon = navToggle?.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

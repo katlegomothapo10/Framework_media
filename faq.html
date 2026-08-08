@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FAQ — Framework Media</title>
+    <meta name="description" content="Frequently asked questions about Framework Media's strategy-led content services." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 120px 24px 60px;
+            background: var(--gradient-dark);
+            color: white;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 52px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            color: #d1d5db;
+            font-size: 18px;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .page-header .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .faq-category {
+            margin-bottom: 40px;
+        }
+        .faq-category h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--black);
+        }
+
+        .faq-grid-large {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item-large {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-item-large:hover { border-color: var(--purple); }
+        .faq-question-large {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 16px;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+            color: var(--black);
+        }
+        .faq-question-large:hover { background: var(--gradient-subtle); }
+        .faq-question-large .faq-toggle {
+            font-size: 20px;
+            color: var(--purple);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+        .faq-question-large.active .faq-toggle { transform: rotate(45deg); }
+        .faq-answer-large {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 24px;
+            color: #4b5563;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .faq-answer-large.open {
+            max-height: 400px;
+            padding: 0 24px 20px;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Framework Media" />
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="launch.html">Launch</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="nav-cta">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ====== PAGE HEADER ====== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Questions, <span class="highlight">answered</span>.</h1>
+            <p>Everything you need to know before getting started.</p>
+        </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+
+            <!-- General -->
+            <div class="faq-category reveal">
+                <h3>General</h3>
+                <div class="faq-grid-large">
+
+                    <div class="faq-item-large">
+                        <button class="faq-question-large" onclick="toggleFAQLarge(this)">
+                            Who is Framework Media for?
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-large">Service-based businesses, entrepreneurs, personal brands, creators, coaches, and consultants. If you're building an audience and need content that drives commercial outcomes, this is for you.</div>
+                    </div>
+
+                    <div class="faq-item-large">
+                        <button class="faq-question-large" onclick="toggleFAQLarge(this)">
+                            How is this different from a regular agency?
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-large">We use the exact system that grew our own audience. We're not guessing — we're repeating a proven process. We build systems, not just content.</div>
+                    </div>
+
+                    <div class="faq-item-large">
+                        <button class="faq-question-large" onclick="toggleFAQLarge(this)">
+                            Can you guarantee results?
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-large">We guarantee a system that works — the same one that grew our own audience. Follow the system and you'll see measurable improvement.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Product Services -->
+            <div class="faq-category reveal">
+                <h3>Product Services</h3>
+                <div class="faq-grid-large">
+
+                    <div class="faq-item-large">
+                        <button class="faq-question-large" onclick="toggleFAQLarge(this)">
+                            How long does it take to get started?
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-large">For product services, you can start immediately after purchase. We'll send you a brief to complete and then begin work within 1-2 business days.</div>
+                    </div>
+
+                    <div class="faq-item-large">
+                        <button class="faq-question-large" onclick="toggleFAQLarge(this)">
+                            What formats do you deliver in?
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-large">Strategies are delivered as PDF documents. Video files are delivered in MP4 format. Carousels are delivered as PNG/PDF files. Thumbnails are delivered as high-resolution PNG/JPG.</div>
+                    </div>
+
+                    <div class="faq-item-large">
+                        <button class="faq-question-large" onclick="toggleFAQLarge(this)">
+                            How do I get started?
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-large">Click "Purchase Now" on any product service. You'll be guided through the checkout process. After payment, we'll send you a brief to complete.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Retainer Services -->
+            <div class="faq-category reveal">
+                <h3>Retainer Services</h3>
+                <div class="faq-grid-large">
+
+                    <div class="faq-item-large">
+                        <button class="faq-question-large" onclick="toggleFAQLarge(this)">
+                            What happens during the Strategy Call?
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-large">We learn about your business, review your content, identify opportunities, and outline a clear next step. No pressure. Just guidance.</div>
+                    </div>
+
+                    <div class="faq-item-large">
+                        <button class="faq-question-large" onclick="toggleFAQLarge(this)">
+                            How long are retainers?
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-large">Retainers are month-to-month. We recommend a minimum of 3 months to see meaningful results, but there's no long-term lock-in.</div>
+                    </div>
+
+                    <div class="faq-item-large">
+                        <button class="faq-question-large" onclick="toggleFAQLarge(this)">
+                            What's the difference between Content Department and Growth Partner?
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-large">Content Department focuses on execution — strategy, production, and consistency. Growth Partner focuses on strategic guidance — business consulting, offer reviews, and marketing direction.</div>
+                    </div>
+
+                    <div class="faq-item-large">
+                        <button class="faq-question-large" onclick="toggleFAQLarge(this)">
+                            Can I start with a product service and upgrade to a retainer?
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer-large">Absolutely. Many clients start with a Growth Strategy or Content Audit to gain clarity, then move to a retainer for ongoing execution and support.</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== CTA ====== -->
+    <section class="section-full section-full-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Still have <span class="highlight">questions</span>?</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Book a free Strategy Call and we'll answer everything.</p>
+            </div>
+            <div style="text-align:center;">
+                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-white">Book a Strategy Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="display:inline-block;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:36px;width:auto;" />
+                    </a>
+                    <p>Strategy-led content growth for businesses, founders, creators and personal brands.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="services.html">How We Help</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="launch.html">Launch Package</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
+                    <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
+                    <a href="disclaimer.pdf" target="_blank">Disclaimer</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Framework Media. All rights reserved.</span>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script>
+        // ================================================
+        // ===== FAQ LARGE DROPDOWN =====
+        // ================================================
+        function toggleFAQLarge(button) {
+            const answer = button.nextElementSibling;
+            const isOpen = answer.classList.contains('open');
+
+            if (isOpen) {
+                answer.classList.remove('open');
+                button.classList.remove('active');
+            } else {
+                answer.classList.add('open');
+                button.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Case Studies — Framework Media</title>
+    <meta name="description" content="Real results from real brands. See how Framework Media has helped businesses, founders and creators grow through content." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 120px 24px 60px;
+            background: var(--gradient-dark);
+            color: white;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 52px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            color: #d1d5db;
+            font-size: 18px;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .page-header .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .case-detail {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 32px;
+            transition: all 0.3s ease;
+        }
+        .case-detail:hover {
+            border-color: var(--purple);
+            box-shadow: var(--shadow-hover);
+        }
+        .case-detail .case-header {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .case-detail .case-header .case-image-small {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: var(--gradient-subtle);
+        }
+        .case-detail .case-header .case-image-small img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .case-detail .case-header .case-info {
+            flex: 1;
+        }
+        .case-detail .case-header .case-info .badge {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 2px 12px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .case-detail .case-header .case-info h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .case-detail .case-header .case-info .result {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--purple);
+        }
+
+        .case-detail .case-body {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+        }
+        .case-detail .case-body .case-section h4 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+        .case-detail .case-body .case-section p {
+            color: #374151;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .case-detail .case-body .case-section .stats {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .case-detail .case-body .case-section .stats span {
+            background: #f3f4f6;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .case-detail { padding: 24px; }
+            .case-detail .case-header { flex-direction: column; align-items: center; text-align: center; }
+            .case-detail .case-header .case-image-small { width: 100px; height: 100px; }
+            .case-detail .case-body { grid-template-columns: 1fr; gap: 16px; }
+            .page-header h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Framework Media" />
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="launch.html">Launch</a>
+            <a href="case-studies.html" class="active">Case Studies</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="nav-cta">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ====== PAGE HEADER ====== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Real results. <span class="highlight">Real brands</span>.</h1>
+            <p>Transformations using the Framework system.</p>
+        </div>
+    </section>
+
+    <!-- ====== CASE STUDIES ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+
+            <!-- Case Study 1 -->
+            <div class="case-detail reveal">
+                <div class="case-header">
+                    <div class="case-image-small">
+                        <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered" />
+                    </div>
+                    <div class="case-info">
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Founder Case Study</span>
+                        <h3>Katlego Unfiltered</h3>
+                        <div class="result">60K+ Followers Across Instagram &amp; TikTok</div>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <div class="case-section">
+                        <h4>Challenge</h4>
+                        <p>Building a personal brand from scratch in a saturated market. No audience, no content system, no clear direction.</p>
+                    </div>
+                    <div class="case-section">
+                        <h4>Approach</h4>
+                        <p>Implemented the Framework system: strategy-led content pillars, consistent execution, and audience-first messaging.</p>
+                    </div>
+                    <div class="case-section">
+                        <h4>Result</h4>
+                        <p>60K+ followers across Instagram and TikTok. Published author. Speaking opportunities. Monetisation unlocked.</p>
+                        <div class="stats">
+                            <span><i class="fab fa-instagram"></i> 35K+</span>
+                            <span><i class="fab fa-tiktok"></i> 25K+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2 -->
+            <div class="case-detail reveal">
+                <div class="case-header">
+                    <div class="case-image-small">
+                        <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox" />
+                    </div>
+                    <div class="case-info">
+                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Brand Case Study</span>
+                        <h3>Our Goated Lunchbox</h3>
+                        <div class="result">150K+ Followers on TikTok</div>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <div class="case-section">
+                        <h4>Challenge</h4>
+                        <p>Growing a TikTok page in a competitive niche. Needed a content strategy that would cut through the noise.</p>
+                    </div>
+                    <div class="case-section">
+                        <h4>Approach</h4>
+                        <p>Developed a content strategy focused on street culture, lifestyle, and African youth content. Consistent posting cadence with high-retention hooks.</p>
+                    </div>
+                    <div class="case-section">
+                        <h4>Result</h4>
+                        <p>150K+ followers on TikTok. Became a recognised brand in the street culture space. Organic growth without paid ads.</p>
+                        <div class="stats">
+                            <span><i class="fab fa-tiktok"></i> 150K+</span>
+                            <span><i class="fas fa-heart" style="color:#dc2626;"></i> 5M+ Likes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 3 (Placeholder) -->
+            <div class="case-detail reveal" style="border-style:dashed;border-color:#d1d5db;">
+                <div class="case-header">
+                    <div class="case-image-small" style="background:var(--gradient-subtle);display:flex;align-items:center;justify-content:center;font-size:32px;color:var(--purple);">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="case-info">
+                        <span class="badge" style="background:#e5e7eb;color:#6b7280;">Coming Soon</span>
+                        <h3>Your Case Study</h3>
+                        <div class="result">Ready to be the next success story?</div>
+                        <p style="color:#4b5563;font-size:15px;margin-top:8px;">Let's build your brand using the Framework system.</p>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-primary btn-small" style="margin-top:8px;display:inline-block;">Book a Strategy Call</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== CTA ====== -->
+    <section class="section-full section-full-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ready to build your own <span class="highlight">case study</span>?</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Let's talk about your goals and map a system that delivers results.</p>
+            </div>
+            <div style="text-align:center;">
+                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-white">Book a Strategy Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="display:inline-block;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:36px;width:auto;" />
+                    </a>
+                    <p>Strategy-led content growth for businesses, founders, creators and personal brands.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="services.html">How We Help</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="launch.html">Launch Package</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
+                    <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
+                    <a href="disclaimer.pdf" target="_blank">Disclaimer</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Framework Media. All rights reserved.</span>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

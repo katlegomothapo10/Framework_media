@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Launch Package — Framework Media</title>
+    <meta name="description" content="Everything you need to launch your brand. Perfect for new creators, founders and businesses starting their content journey." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 120px 24px 60px;
+            background: var(--gradient-dark);
+            color: white;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 52px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            color: #d1d5db;
+            font-size: 18px;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .page-header .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .launch-hero {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .launch-hero .price-big {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--purple);
+        }
+        .launch-hero .price-sub {
+            font-size: 18px;
+            color: #6b7280;
+        }
+        .launch-hero .badge-save {
+            display: inline-block;
+            background: #dcfce7;
+            color: #16a34a;
+            font-weight: 700;
+            padding: 6px 20px;
+            border-radius: 40px;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .launch-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .launch-card {
+            background: white;
+            border-radius: 24px;
+            padding: 36px 32px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .launch-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .launch-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .launch-card .sub {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        .launch-card ul {
+            list-style: none;
+            margin: 12px 0;
+        }
+        .launch-card ul li {
+            padding: 6px 0;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 14px;
+            color: #374151;
+        }
+        .launch-card ul li i {
+            color: var(--purple);
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        .launch-card .price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--purple);
+            margin: 12px 0;
+        }
+        .launch-card .price .original {
+            font-size: 18px;
+            color: #9ca3af;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-right: 8px;
+        }
+        .launch-card .cta-wrap {
+            margin-top: 16px;
+        }
+
+        .launch-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .compare-item {
+            text-align: center;
+            padding: 16px;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+        }
+        .compare-item .icon {
+            font-size: 28px;
+            color: var(--purple);
+            display: block;
+            margin-bottom: 8px;
+        }
+        .compare-item h4 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .compare-item p {
+            font-size: 13px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
+
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 800px;
+            margin: 20px auto 0;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover { border-color: var(--purple); }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 16px;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+            color: var(--black);
+        }
+        .faq-question:hover { background: var(--gradient-subtle); }
+        .faq-question .faq-toggle {
+            font-size: 20px;
+            color: var(--purple);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+        .faq-question.active .faq-toggle { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 24px;
+            color: #4b5563;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .faq-answer.open {
+            max-height: 400px;
+            padding: 0 24px 20px;
+        }
+
+        @media (max-width: 768px) {
+            .launch-grid { grid-template-columns: 1fr; }
+            .launch-comparison { grid-template-columns: 1fr; }
+            .launch-hero .price-big { font-size: 40px; }
+            .page-header h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Framework Media" />
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="launch.html" class="active">Launch</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="nav-cta">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ====== PAGE HEADER ====== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Launch <span class="highlight">Package</span></h1>
+            <p>Everything you need to start your brand. Perfect for new creators, founders and businesses.</p>
+        </div>
+    </section>
+
+    <!-- ====== LAUNCH HERO ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="launch-hero reveal">
+                <span class="pill">Best Value</span>
+                <h2 style="font-size:38px;font-weight:800;margin-top:8px;">Start your brand <span class="highlight">the right way</span>.</h2>
+                <div class="price-big">R4,875</div>
+                <div class="price-sub">Regular price <span style="text-decoration:line-through;color:#9ca3af;">R7,500</span></div>
+                <span class="badge-save">🔥 Save 35% with Founders' Discount</span>
+                <p style="max-width:500px;margin:16px auto 0;color:#4b5563;font-size:16px;line-height:1.7;">Strategy + content + visuals — everything you need to launch with clarity and confidence.</p>
+                <a href="#packages" class="btn-purple" style="margin-top:20px;display:inline-block;">View Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== WHY LAUNCH ====== -->
+    <section class="section-full section-full-light-purple">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Why Launch</span>
+                <h2 class="section-title">Built for <span class="highlight">new brands</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Starting from scratch? We've got you covered.</p>
+            </div>
+
+            <div class="launch-comparison stagger">
+                <div class="compare-item">
+                    <span class="icon"><i class="fas fa-bullseye"></i></span>
+                    <h4>Strategy</h4>
+                    <p>Know exactly what to create, who you're speaking to, and how to grow.</p>
+                </div>
+                <div class="compare-item">
+                    <span class="icon"><i class="fas fa-video"></i></span>
+                    <h4>Content</h4>
+                    <p>Scripts and videos ready to publish. No guesswork.</p>
+                </div>
+                <div class="compare-item">
+                    <span class="icon"><i class="fas fa-images"></i></span>
+                    <h4>Visuals</h4>
+                    <p>Carousels and profile optimisation. Look like a pro from day one.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== PACKAGES ====== -->
+    <section class="section-full section-full-white" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Choose Your Path</span>
+                <h2 class="section-title">Two launch <span class="highlight">packages</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Pick the one that fits your goals.</p>
+            </div>
+
+            <div class="launch-grid stagger">
+                <div class="launch-card">
+                    <h3>Creator Launch</h3>
+                    <div class="sub">Perfect for individuals building a personal brand.</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Personal Brand Strategy</li>
+                        <li><i class="fas fa-check"></i> Profile Optimisation</li>
+                        <li><i class="fas fa-check"></i> 30 Content Ideas</li>
+                        <li><i class="fas fa-check"></i> 10 Scripts</li>
+                        <li><i class="fas fa-check"></i> 10 Edited Videos</li>
+                        <li><i class="fas fa-check"></i> 2 Carousels</li>
+                    </ul>
+                    <div class="price">
+                        <span class="original">R7,500</span> R4,875
+                    </div>
+                    <div class="cta-wrap">
+                        <a href="#" class="btn-primary" style="width:100%;text-align:center;">Purchase Now</a>
+                    </div>
+                    <p style="font-size:12px;color:#9ca3af;margin-top:8px;text-align:center;">One-time payment. Immediate start.</p>
+                </div>
+
+                <div class="launch-card" style="border-color:var(--purple);">
+                    <span style="display:inline-block;background:var(--purple);color:white;font-size:10px;font-weight:700;text-transform:uppercase;padding:2px 14px;border-radius:40px;margin-bottom:8px;">Popular</span>
+                    <h3>Business Launch</h3>
+                    <div class="sub">Perfect for businesses starting their content journey.</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Growth Strategy</li>
+                        <li><i class="fas fa-check"></i> Content Calendar</li>
+                        <li><i class="fas fa-check"></i> Brand Messaging</li>
+                        <li><i class="fas fa-check"></i> 10 Scripts</li>
+                        <li><i class="fas fa-check"></i> 10 Edited Videos</li>
+                        <li><i class="fas fa-check"></i> Analytics Setup</li>
+                    </ul>
+                    <div class="price">
+                        <span class="original">R12,500</span> R8,125
+                    </div>
+                    <div class="cta-wrap">
+                        <a href="#" class="btn-primary" style="width:100%;text-align:center;">Purchase Now</a>
+                    </div>
+                    <p style="font-size:12px;color:#9ca3af;margin-top:8px;text-align:center;">One-time payment. Immediate start.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== WHAT'S INCLUDED ====== -->
+    <section class="section-full section-full-light-blue">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">What You Get</span>
+                <h2 class="section-title">Everything you need to <span class="highlight">launch</span>.</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="services-grid" style="max-width:900px;margin:0 auto;">
+                <div class="service-card">
+                    <span class="icon" style="font-size:32px;color:var(--purple);text-align:center;display:block;margin-bottom:8px;"><i class="fas fa-bullseye"></i></span>
+                    <h4>Strategy</h4>
+                    <p>Know exactly what to create, who you're speaking to, and how to grow. No guesswork.</p>
+                </div>
+                <div class="service-card">
+                    <span class="icon" style="font-size:32px;color:var(--purple);text-align:center;display:block;margin-bottom:8px;"><i class="fas fa-pen-fancy"></i></span>
+                    <h4>Scripts</h4>
+                    <p>Platform-specific scripts designed for retention and engagement. Ready to film.</p>
+                </div>
+                <div class="service-card">
+                    <span class="icon" style="font-size:32px;color:var(--purple);text-align:center;display:block;margin-bottom:8px;"><i class="fas fa-film"></i></span>
+                    <h4>Videos</h4>
+                    <p>Professionally edited videos. Publish-ready. No editing skills required.</p>
+                </div>
+                <div class="service-card">
+                    <span class="icon" style="font-size:32px;color:var(--purple);text-align:center;display:block;margin-bottom:8px;"><i class="fas fa-images"></i></span>
+                    <h4>Visuals</h4>
+                    <p>Carousels and thumbnails that stop the scroll and build authority.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section class="section-full section-full-light-purple">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Launch FAQ</span>
+                <h2 class="section-title">Quick <span class="highlight">answers</span>.</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Who is the Launch Package for?
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">New creators, founders, and businesses just starting their content journey. If you're building from scratch, this is for you.</div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What's the difference between Creator and Business?
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">Creator focuses on personal brand with profile optimisation and carousels. Business includes a content calendar, analytics setup, and brand messaging.</div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How long does it take?
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">You'll receive your strategy within 2-3 weeks, with scripts and videos delivered shortly after.</div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I upgrade later?
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">Absolutely. Many clients start with a Launch Package and upgrade to a retainer for ongoing support.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CTA ====== -->
+    <section class="section-full section-full-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ready to <span class="highlight">launch</span> your brand?</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Start with clarity and confidence. Your brand deserves a strategy-led launch.</p>
+            </div>
+            <div style="text-align:center;">
+                <a href="#packages" class="btn-white">View Launch Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="display:inline-block;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:36px;width:auto;" />
+                    </a>
+                    <p>Strategy-led content growth for businesses, founders, creators and personal brands.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="services.html">How We Help</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="launch.html">Launch Package</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
+                    <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
+                    <a href="disclaimer.pdf" target="_blank">Disclaimer</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Framework Media. All rights reserved.</span>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

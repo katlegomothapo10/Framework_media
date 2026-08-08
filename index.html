@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Framework Media — Strategy-Led Content Growth Agency</title>
+    <meta name="description" content="Strategy-led content growth for businesses, founders, creators and personal brands. Build authority, trust and revenue through content." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ===== DISCOUNT BANNER ===== */
+        .discount-banner {
+            background: linear-gradient(135deg, #dc2626, #991b1b);
+            padding: 6px 16px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            font-size: 12px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1002;
+            box-shadow: 0 2px 12px rgba(220, 38, 38, 0.25);
+        }
+        .discount-banner .timer {
+            display: inline-flex;
+            gap: 2px;
+            font-weight: 700;
+            background: rgba(0,0,0,0.2);
+            padding: 1px 8px;
+            border-radius: 40px;
+            margin: 0 4px;
+            font-size: 12px;
+            font-variant-numeric: tabular-nums;
+        }
+        .discount-banner .timer span {
+            min-width: 16px;
+            display: inline-block;
+            text-align: center;
+        }
+        .discount-banner .timer .colon {
+            min-width: 3px;
+        }
+        .discount-banner .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 1px 8px;
+            border-radius: 40px;
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 4px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+            background: white;
+            position: fixed;
+            top: 34px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+        }
+        .navbar.hidden { transform: translateY(-100%); }
+        .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--black);
+        }
+        .logo img { height: 40px; width: auto; display: block; }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            font-weight: 500;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1f2937;
+            font-size: 14px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--black); }
+        .nav-links a.active { color: var(--black); }
+        .nav-links a.active::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--purple);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: #7c3aed; color: white !important; }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--black);
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 140px 24px 80px;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.82), rgba(22, 33, 62, 0.82)), url('images/hero-bg.png') center/cover no-repeat;
+            overflow: hidden;
+        }
+        .hero .orb-1 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--purple);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            filter: blur(80px);
+            opacity: 0.2;
+            z-index: 0;
+        }
+        .hero .orb-2 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--pink);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -50px;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            background: rgba(255,255,255,0.08);
+            color: #a78bfa;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 6px 18px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(167,139,250,0.2);
+            backdrop-filter: blur(4px);
+        }
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .hero h1 .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 20px;
+            color: #d1d5db;
+            max-width: 680px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .hero-stats .stat {
+            text-align: center;
+        }
+        .hero-stats .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+        }
+        .hero-stats .stat-label {
+            font-size: 14px;
+            color: #9ca3af;
+        }
+
+        .three-paths-home {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .path-card {
+            background: white;
+            border-radius: 24px;
+            padding: 32px 28px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .path-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .path-card .icon {
+            font-size: 36px;
+            color: var(--purple);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .path-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+        .path-card p { color: #4b5563; font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
+        .path-card .badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 14px;
+            border-radius: 40px;
+            margin-bottom: 10px;
+        }
+        .badge-green { background: #dcfce7; color: #16a34a; }
+        .badge-gold { background: #fef3c7; color: #d97706; }
+        .badge-purple { background: #ede9fe; color: var(--purple); }
+
+        /* ===== FLAGSHIP SECTION ===== */
+        .flagship-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: linear-gradient(135deg, #faf5ff, #ffffff);
+            border-radius: 24px;
+            padding: 40px;
+            border: 2px solid var(--purple);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.12);
+            margin-top: 20px;
+        }
+        .flagship-section .flagship-image img {
+            width: 100%;
+            border-radius: 16px;
+            display: block;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+        .flagship-section .flagship-content .flagship-badge {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 16px;
+            border-radius: 40px;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+        .flagship-section .flagship-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .flagship-section .flagship-content h2 .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .flagship-section .flagship-content p {
+            color: #4b5563;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .flagship-section .flagship-content .price {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--purple);
+        }
+        .flagship-section .flagship-content .price .original {
+            font-size: 18px;
+            color: #9ca3af;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-right: 8px;
+        }
+        .flagship-section .flagship-content .price-sub {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+        .flagship-section .flagship-content .flagship-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 12px;
+            margin: 12px 0;
+        }
+        .flagship-section .flagship-content .flagship-features span {
+            font-size: 13px;
+            color: #374151;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .flagship-section .flagship-content .flagship-features span i {
+            color: var(--purple);
+            font-size: 11px;
+        }
+        .flagship-section .flagship-content .savings-badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #16a34a;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 40px;
+            margin-top: 4px;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin: 20px auto 0;
+        }
+        .help-item {
+            background: rgba(255,255,255,0.7);
+            border-radius: 12px;
+            padding: 16px 12px;
+            border: 1px solid rgba(139,92,246,0.1);
+            text-align: center;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .help-item:hover {
+            border-color: var(--purple);
+            background: rgba(255,255,255,0.95);
+            transform: translateY(-2px);
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .case-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .case-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .case-card .case-image {
+            aspect-ratio: 1 / 1;
+            background: var(--gradient-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .case-card .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .case-card .case-content { padding: 24px; text-align: center; }
+        .case-card .case-content .badge { font-size: 11px; font-weight: 600; text-transform: uppercase; padding: 2px 12px; border-radius: 40px; display: inline-block; margin-bottom: 8px; }
+        .case-card .case-content h4 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+        .case-card .case-content p { color: #4b5563; font-size: 14px; line-height: 1.7; }
+        .case-card .case-content .stats { display: flex; gap: 12px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+        .case-card .case-content .stats span { background: #f3f4f6; padding: 4px 14px; border-radius: 40px; font-size: 13px; font-weight: 500; }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 24px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .testimonial-card .stars { color: #f59e0b; font-size: 18px; letter-spacing: 2px; margin-bottom: 8px; }
+        .testimonial-card .quote { font-size: 15px; line-height: 1.8; color: #1f2937; font-style: italic; margin-bottom: 12px; }
+        .testimonial-card .quote i { color: var(--purple); opacity: 0.3; font-size: 12px; }
+        .testimonial-card .author { font-weight: 700; color: var(--black); font-size: 15px; }
+        .testimonial-card .author-title { font-size: 13px; color: #6b7280; }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .process-step {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 24px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .process-step:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .process-step .step-number {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+        }
+        .process-step h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .process-step p { color: #4b5563; font-size: 14px; line-height: 1.7; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+        .section-title .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-sub {
+            font-size: 18px;
+            color: #4b5563;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 4px;
+            margin: 16px auto 0;
+        }
+
+        .section-full {
+            width: 100%;
+            padding: 80px 0 60px;
+        }
+        .section-full-white { background: #ffffff; }
+        .section-full-light-purple { background: var(--bg-light-purple); }
+        .section-full-light-pink { background: var(--bg-light-pink); }
+        .section-full-light-blue { background: var(--bg-light-blue); }
+        .section-full-dark {
+            background: var(--gradient-dark);
+            color: white;
+        }
+        .section-full-dark .section-title { color: white; }
+        .section-full-dark .section-sub { color: #d1d5db; }
+
+        .pill {
+            display: inline-block;
+            background: var(--gradient-subtle);
+            color: var(--black);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(139,92,246,0.15);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding: 48px 0 32px;
+            background: #fafafa;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+        .footer-brand p {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 320px;
+            margin-top: 8px;
+        }
+        .footer-col h4 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+        .footer-col a {
+            display: block;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+        }
+        .footer-col a:hover { color: var(--purple); }
+        .footer-bottom {
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: #9ca3af;
+            font-size: 13px;
+        }
+        .footer-bottom .social-icons {
+            display: flex;
+            gap: 16px;
+        }
+        .footer-bottom .social-icons a {
+            color: #6b7280;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .footer-bottom .social-icons a:hover { color: var(--purple); }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--purple);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(139,92,246,0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: #7c3aed;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(139,92,246,0.4);
+        }
+        .back-to-top i { font-size: 20px; }
+
+        .btn-primary {
+            background: var(--black);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-primary:hover {
+            background: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        .btn-purple {
+            background: var(--purple);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-purple:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139,92,246,0.3);
+        }
+        .btn-white {
+            background: white;
+            color: var(--black);
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 12px;
+            border-radius: 40px;
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--black);
+            border: 1.5px solid var(--black);
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-outline:hover {
+            background: var(--black);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s ease;
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger > * {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        .stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+        .stagger.is-visible > *:nth-child(2) { transition-delay: 0.10s; opacity: 1; transform: translateY(0); }
+        .stagger.is-visible > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 992px) {
+            .three-paths-home { grid-template-columns: 1fr 1fr; }
+            .flagship-section { grid-template-columns: 1fr; text-align: center; }
+            .flagship-section .flagship-content .flagship-features { grid-template-columns: 1fr 1fr; }
+            .help-grid { grid-template-columns: 1fr 1fr; }
+            .case-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+            .hero-stats { gap: 30px; flex-wrap: wrap; }
+        }
+
+        @media (max-width: 768px) {
+            .discount-banner { font-size: 10px; padding: 4px 10px; top: 0; }
+            .discount-banner .timer { font-size: 10px; padding: 1px 6px; }
+            .discount-banner .timer span { min-width: 12px; }
+            .navbar { top: 28px; padding: 10px 16px; flex-wrap: wrap; justify-content: center; gap: 6px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .nav-links a { font-size: 12px; }
+            .hero { padding: 110px 16px 60px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .hero-actions .btn-white,
+            .hero-actions .btn-purple { width: 100%; max-width: 320px; text-align: center; }
+            .three-paths-home { grid-template-columns: 1fr; }
+            .flagship-section { padding: 24px; }
+            .flagship-section .flagship-content h2 { font-size: 26px; }
+            .flagship-section .flagship-content .flagship-features { grid-template-columns: 1fr; }
+            .help-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; }
+            .hero-stats .stat-number { font-size: 24px; }
+            .section-title { font-size: 30px; }
+            .section-full { padding: 50px 0 30px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+            .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .discount-banner { font-size: 8px; padding: 3px 6px; }
+            .discount-banner .timer { font-size: 8px; padding: 1px 4px; }
+            .discount-banner .timer span { min-width: 10px; }
+            .discount-banner .tag { font-size: 7px; padding: 1px 6px; }
+            .navbar { top: 24px; padding: 8px 12px; }
+            .hero { padding: 90px 16px 40px; }
+            .hero h1 { font-size: 28px; }
+            .hero-tag { font-size: 10px; padding: 3px 12px; }
+            .hero-stats { gap: 20px; }
+            .hero-stats .stat-number { font-size: 20px; }
+            .flagship-section .flagship-content h2 { font-size: 22px; }
+            .flagship-section .flagship-content .price { font-size: 24px; }
+            .logo img { height: 28px; }
+            .section-title { font-size: 26px; }
+            .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
+            .back-to-top i { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== DISCOUNT BANNER ====== -->
+    <div class="discount-banner" id="discountBanner">
+        <span class="tag">Founders' Discount</span>
+        35% off Growth Strategy & Launch Packages
+        <span class="timer" id="countdownTimer">
+            <span id="days">00</span><span class="colon">:</span>
+            <span id="hours">00</span><span class="colon">:</span>
+            <span id="minutes">00</span><span class="colon">:</span>
+            <span id="seconds">00</span>
+        </span>
+        <span>Offer ends in</span>
+    </div>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Framework Media" />
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="launch.html">Launch</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html" class="nav-cta">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ====== HERO ====== -->
+    <section class="hero">
+        <div class="orb-1"></div>
+        <div class="orb-2"></div>
+        <div class="hero-content">
+            <span class="hero-tag">Strategy-Led Content Agency</span>
+            <h1>Build a brand people notice.<br>Build a business <span class="highlight">people trust</span>.</h1>
+            <p>Strategic content systems for businesses, founders, and creators who want to grow with intention — not noise.</p>
+            <div class="hero-actions">
+                <a href="services.html" class="btn-white">Explore Services</a>
+                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple">Book a Strategy Call</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">250K+</div>
+                    <div class="stat-label">Followers Built</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">150K+</div>
+                    <div class="stat-label">Client Reach</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== THREE PATHS ====== -->
+    <section class="section-full section-full-light-purple">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">How We Help</span>
+                <h2 class="section-title">Three ways to work with <span class="highlight">Framework Media</span>.</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="three-paths-home">
+                <div class="path-card reveal">
+                    <span class="icon"><i class="fas fa-box"></i></span>
+                    <span class="badge badge-green">Fixed Price</span>
+                    <h3>Product Services</h3>
+                    <p>Fixed scope. Fixed price. Start immediately.</p>
+                    <a href="pricing.html" class="btn-primary btn-small" style="width:100%;">View Pricing</a>
+                </div>
+
+                <div class="path-card reveal">
+                    <span class="icon"><i class="fas fa-handshake"></i></span>
+                    <span class="badge badge-gold">Custom Partnership</span>
+                    <h3>Retainer Services</h3>
+                    <p>Custom partnerships. Strategy-led. Long-term.</p>
+                    <a href="pricing.html" class="btn-purple btn-small" style="width:100%;">View Pricing</a>
+                </div>
+
+                <div class="path-card reveal" style="border-color:var(--purple);">
+                    <span class="icon"><i class="fas fa-rocket"></i></span>
+                    <span class="badge badge-purple">Best for Beginners</span>
+                    <h3>Launch Package</h3>
+                    <p>Everything you need to start. Strategy + content + visuals.</p>
+                    <a href="launch.html" class="btn-purple btn-small" style="width:100%;">View Launch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FLAGSHIP OFFER ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Flagship Offer</span>
+                <h2 class="section-title">Start with our <span class="highlight">most powerful</span> service.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">The foundation of everything. Clarity before execution.</p>
+            </div>
+
+            <div class="flagship-section reveal">
+                <div class="flagship-image">
+                    <img src="images/flagship.jpeg" alt="Growth Strategy" />
+                </div>
+                <div class="flagship-content">
+                    <span class="flagship-badge">Featured</span>
+                    <h2>Growth <span class="highlight">Strategy</span></h2>
+                    <p>A complete roadmap for your brand's content growth — from positioning to 90-day action plan. This is the same system that grew our own brand to 60K+ followers.</p>
+                    <span class="savings-badge">🔥 35% Off — Founders' Discount</span>
+                    <div class="flagship-features">
+                        <span><i class="fas fa-check"></i> Discovery Workshop</span>
+                        <span><i class="fas fa-check"></i> Business & Brand Audit</span>
+                        <span><i class="fas fa-check"></i> Content & Competitor Audit</span>
+                        <span><i class="fas fa-check"></i> Audience Research</span>
+                        <span><i class="fas fa-check"></i> Brand Positioning</span>
+                        <span><i class="fas fa-check"></i> Content Pillars</span>
+                        <span><i class="fas fa-check"></i> 90-Day Growth Blueprint</span>
+                        <span><i class="fas fa-check"></i> Strategic Recommendations</span>
+                    </div>
+                    <div class="price">
+                        <span class="original">R5,000</span> R3,250
+                    </div>
+                    <div class="price-sub">one-time investment</div>
+                    <a href="product-services.html#growth-strategy" class="btn-purple" style="display:inline-block;">Purchase Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== WHO WE HELP ====== -->
+    <section class="section-full section-full-light-blue">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Who We Help</span>
+                <h2 class="section-title">Built for brands that <span class="highlight">grow through trust</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">We work with people whose success depends on their reputation and expertise.</p>
+            </div>
+
+            <div class="help-grid stagger">
+                <div class="help-item">Service-Based Businesses</div>
+                <div class="help-item">Entrepreneurs</div>
+                <div class="help-item">Business Owners</div>
+                <div class="help-item">Personal Brands</div>
+                <div class="help-item">Content Creators</div>
+                <div class="help-item">Coaches</div>
+                <div class="help-item">Consultants</div>
+                <div class="help-item">Thought Leaders</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CASE STUDIES ====== -->
+    <section class="section-full section-full-light-pink">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Proof</span>
+                <h2 class="section-title">Real results. <span class="highlight">Real brands</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Transformations using the Framework system.</p>
+            </div>
+
+            <div class="case-grid">
+                <div class="case-card reveal-left">
+                    <div class="case-image">
+                        <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered" />
+                    </div>
+                    <div class="case-content">
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Founder Case Study</span>
+                        <h4>Katlego Unfiltered</h4>
+                        <p>Built a personal brand from 0 to 60K+ followers using the Framework system.</p>
+                        <div class="stats">
+                            <span><i class="fas fa-arrow-up" style="color:#16a34a;margin-right:4px;"></i> 60K+ Followers</span>
+                            <span><i class="fab fa-instagram" style="margin-right:4px;"></i> + <i class="fab fa-tiktok"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card reveal-right">
+                    <div class="case-image">
+                        <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox" />
+                    </div>
+                    <div class="case-content">
+                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Brand Case Study</span>
+                        <h4>Our Goated Lunchbox</h4>
+                        <p>A TikTok page focused on street culture — grown to 150K+ followers through content strategy.</p>
+                        <div class="stats">
+                            <span><i class="fas fa-arrow-up" style="color:#16a34a;margin-right:4px;"></i> 150K+ Followers</span>
+                            <span><i class="fab fa-tiktok"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:32px;">
+                <a href="case-studies.html" class="btn-outline">View All Case Studies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== TESTIMONIALS ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Testimonials</span>
+                <h2 class="section-title">What our <span class="highlight">clients</span> say.</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="testimonial-grid stagger">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.3;font-size:12px;"></i> The biggest takeaway wasn't that I needed to post more — it was understanding my brand, refining my content pillars, and creating a clear direction. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.3;font-size:12px;"></i></div>
+                    <div class="author">— Entle S.</div>
+                    <div class="author-title">Personal Brand Creator</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.3;font-size:12px;"></i> Framework Media is incredibly professional and genuinely takes the time to listen. They understood my concerns and created a strategy that felt personalised. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.3;font-size:12px;"></i></div>
+                    <div class="author">— Lebo M.</div>
+                    <div class="author-title">Creator</div>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:32px;">
+                <a href="testimonials.html" class="btn-outline">Read More Testimonials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== PROCESS ====== -->
+    <section class="section-full section-full-light-purple">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Our Process</span>
+                <h2 class="section-title">From strategy to <span class="highlight">sustainable growth</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">A simple, proven framework that delivers results.</p>
+            </div>
+
+            <div class="process-grid stagger">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Strategy Call</h4>
+                    <p>We learn about your business, goals and challenges.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Strategy</h4>
+                    <p>We develop a tailored content system for your objectives.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Create</h4>
+                    <p>We execute with professional production and creative execution.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Grow</h4>
+                    <p>We optimise, refine and support your long-term growth.</p>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:32px;">
+                <a href="services.html" class="btn-outline">Learn More About Our Process</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FINAL CTA ====== -->
+    <section class="section-full section-full-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Your brand deserves more than <span class="highlight">random posts</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Your content should work as hard as you do.</p>
+            </div>
+
+            <div style="text-align:center;">
+                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-white">Book a Strategy Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="display:inline-block;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:36px;width:auto;" />
+                    </a>
+                    <p>Strategy-led content growth for businesses, founders, creators and personal brands.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="services.html">How We Help</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="launch.html">Launch Package</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
+                    <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
+                    <a href="disclaimer.pdf" target="_blank">Disclaimer</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Framework Media. All rights reserved.</span>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script>
+        (function() {
+            const countdownDate = new Date();
+            countdownDate.setDate(countdownDate.getDate() + 34);
+            countdownDate.setHours(23, 59, 59, 999);
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const distance = countdownDate.getTime() - now;
+
+                if (distance < 0) {
+                    document.getElementById('countdownTimer').innerHTML = "Offer Ended";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        })();
+    </script>
+</body>
+</html>
