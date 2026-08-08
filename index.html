@@ -2016,32 +2016,100 @@
             text-align: center;
         }
 
+        /* ===== FOOTER - UPDATED WITH LEGAL SECTION ===== */
         .footer {
             border-top: 1px solid rgba(0,0,0,0.05);
-            padding: 32px 0;
+            padding: 48px 0 32px;
+            background: #fafafa;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .footer-brand p {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 320px;
+            margin-top: 8px;
+        }
+
+        .footer-col h4 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--purple);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 20px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 20px;
-            color: #6b7280;
-            font-size: 14px;
-            background: #ffffff;
+            gap: 16px;
+            color: #9ca3af;
+            font-size: 13px;
         }
-        .footer a {
-            color: #6b7280;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .footer a:hover {
-            color: var(--purple);
-        }
-        .footer .social-icons {
+
+        .footer-bottom .social-icons {
             display: flex;
             gap: 16px;
         }
-        .footer .social-icons a:hover {
-            transform: scale(1.1) translateY(-2px);
-            display: inline-block;
+
+        .footer-bottom .social-icons a {
+            color: #6b7280;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom .social-icons a:hover {
+            color: var(--purple);
+        }
+
+        /* ===== FOOTER RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+            .footer-brand p {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
         }
 
         .reveal {
@@ -2418,7 +2486,11 @@
                 font-size: 20px;
             }
 
-            .footer {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .footer-bottom {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
@@ -3621,18 +3693,43 @@
         </div>
     </section>
 
-    <!-- ====== FOOTER ====== -->
+    <!-- ====== FOOTER - UPDATED WITH LEGAL SECTION ====== -->
     <footer class="footer">
-        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding: 0 24px; max-width: 1200px;">
-            <div>Framework Media — Content Growth Agency. 🇿🇦 SA-built</div>
-            <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center;">
-                <a href="#who">Who We Are</a>
-                <a href="#services">Services</a>
-                <a href="#strategy">Why a Call</a>
-                <a href="#process">Our Process</a>
-                <a href="#why">Why Us</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="display:inline-block;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:36px; width:auto;" />
+                    </a>
+                    <p>Strategy-led content growth for businesses, founders, creators and personal brands.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="#services">Growth Strategy</a>
+                    <a href="#services">Content Department</a>
+                    <a href="#services">Growth Partner</a>
+                    <a href="#services">Individual Services</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#who">About</a>
+                    <a href="#showcase">Case Studies</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation Policy</a>
+                    <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
+                    <a href="disclaimer.pdf" target="_blank">Disclaimer</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Framework Media. All rights reserved.</span>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
