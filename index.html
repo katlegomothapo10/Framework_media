@@ -748,13 +748,29 @@
             .hero-stats { gap: 30px; flex-wrap: wrap; }
         }
 
+        /* ===== MOBILE NAV STYLES ===== */
         @media (max-width: 768px) {
             .discount-banner { font-size: 10px; padding: 4px 10px; top: 0; }
             .discount-banner .timer { font-size: 10px; padding: 1px 6px; }
             .discount-banner .timer span { min-width: 12px; }
-            .navbar { top: 28px; padding: 10px 16px; flex-wrap: wrap; justify-content: center; gap: 6px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
-            .nav-links a { font-size: 12px; }
+            .navbar { top: 28px; padding: 10px 16px; flex-wrap: wrap; }
+            .nav-toggle { display: block; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 16px;
+                padding: 20px 0;
+                width: 100%;
+                text-align: center;
+                background: white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a { font-size: 16px; }
             .hero { padding: 110px 16px 60px; }
             .hero h1 { font-size: 32px; }
             .hero p { font-size: 16px; }
@@ -908,7 +924,7 @@
 
             <div class="flagship-section reveal">
                 <div class="flagship-image">
-                    <img src="images/flagship.jpeg" alt="Growth Strategy" />
+                    <img src="images/flagship.jpg" alt="Growth Strategy" />
                 </div>
                 <div class="flagship-content">
                     <span class="flagship-badge">Featured</span>
