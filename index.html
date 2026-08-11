@@ -752,26 +752,9 @@
             .discount-banner { font-size: 10px; padding: 4px 10px; top: 0; }
             .discount-banner .timer { font-size: 10px; padding: 1px 6px; }
             .discount-banner .timer span { min-width: 12px; }
-            .navbar { top: 28px; padding: 10px 16px; flex-wrap: wrap; justify-content: space-between; }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                gap: 12px;
-                padding: 16px 20px 24px;
-                width: 100%;
-                text-align: center;
-                background: white;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                border-bottom: 1px solid rgba(0,0,0,0.05);
-                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            }
-            .nav-links.open { display: flex; }
-            .nav-links a { font-size: 15px; }
-            .nav-toggle { display: block; }
-
+            .navbar { top: 28px; padding: 10px 16px; flex-wrap: wrap; justify-content: center; gap: 6px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .nav-links a { font-size: 12px; }
             .hero { padding: 110px 16px 60px; }
             .hero h1 { font-size: 32px; }
             .hero p { font-size: 16px; }
@@ -861,7 +844,7 @@
             </div>
             <div class="hero-stats">
                 <div class="stat">
-                    <div class="stat-number">60K+</div>
+                    <div class="stat-number">250K+</div>
                     <div class="stat-label">Followers Built</div>
                 </div>
                 <div class="stat">
@@ -925,7 +908,7 @@
 
             <div class="flagship-section reveal">
                 <div class="flagship-image">
-                    <img src="images/flagship.jpg" alt="Growth Strategy" />
+                    <img src="images/flagship.jpeg" alt="Growth Strategy" />
                 </div>
                 <div class="flagship-content">
                     <span class="flagship-badge">Featured</span>
@@ -943,10 +926,10 @@
                         <span><i class="fas fa-check"></i> Strategic Recommendations</span>
                     </div>
                     <div class="price">
-                        <span class="original">R5,000</span> R3,250
+                        <span class="original">R4,999.99</span> R3,249.99
                     </div>
                     <div class="price-sub">one-time investment</div>
-                    <a href="product-services.html#growth-strategy" class="btn-purple" style="display:inline-block;">Purchase Now</a>
+                    <a href="https://paystack.com/buy/growth-strategy-chdkgf" target="_blank" class="btn-purple" style="display:inline-block;">Purchase Now</a>
                 </div>
             </div>
         </div>
@@ -1160,10 +1143,8 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
+    <script src="js/main.js"></script>
     <script>
-        // ================================================
-        // ===== COUNTDOWN TIMER =====
-        // ================================================
         (function() {
             const countdownDate = new Date();
             countdownDate.setDate(countdownDate.getDate() + 34);
@@ -1191,130 +1172,6 @@
 
             updateTimer();
             setInterval(updateTimer, 1000);
-        })();
-
-        // ================================================
-        // ===== HAMBURGER MENU TOGGLE =====
-        // ================================================
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        if (navToggle) {
-            navToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('open');
-                const icon = this.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                }
-            });
-        }
-
-        // ===== CLOSE MENU WHEN ANY LINK IS CLICKED =====
-        document.querySelectorAll('.nav-links a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                if (navLinks.classList.contains('open')) {
-                    navLinks.classList.remove('open');
-                    const icon = navToggle.querySelector('i');
-                    if (icon) {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                }
-            });
-        });
-
-        // ===== CLOSE MENU WHEN CLICKING OUTSIDE =====
-        document.addEventListener('click', function(e) {
-            if (navLinks.classList.contains('open')) {
-                const isClickInside = navLinks.contains(e.target) || navToggle.contains(e.target);
-                if (!isClickInside) {
-                    navLinks.classList.remove('open');
-                    const icon = navToggle.querySelector('i');
-                    if (icon) {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                }
-            }
-        });
-
-        // ================================================
-        // ===== NAVBAR HIDE ON SCROLL =====
-        // ================================================
-        let lastScroll = 0;
-        const navbar = document.getElementById('navbar');
-
-        window.addEventListener('scroll', function() {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 80) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                navbar.classList.add('hidden');
-            } else {
-                navbar.classList.remove('hidden');
-            }
-
-            lastScroll = currentScroll;
-
-            const backToTop = document.getElementById('backToTop');
-            if (backToTop) {
-                if (currentScroll > 400) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
-            }
-        });
-
-        // ================================================
-        // ===== BACK TO TOP =====
-        // ================================================
-        const backToTop = document.getElementById('backToTop');
-        if (backToTop) {
-            backToTop.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        }
-
-        // ================================================
-        // ===== SCROLL ANIMATIONS =====
-        // ================================================
-        (function() {
-            const elements = document.querySelectorAll('.reveal, .stagger');
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -40px 0px'
-            });
-
-            elements.forEach(function(el) {
-                if (el) observer.observe(el);
-            });
-
-            setTimeout(function() {
-                elements.forEach(function(el) {
-                    if (el) {
-                        const rect = el.getBoundingClientRect();
-                        const windowHeight = window.innerHeight;
-                        if (rect.top < windowHeight * 0.85) {
-                            el.classList.add('is-visible');
-                        }
-                    }
-                });
-            }, 100);
         })();
     </script>
 </body>
