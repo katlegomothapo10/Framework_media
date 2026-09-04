@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
     <style>
         /* ===== RESET & BASE ===== */
         * {
@@ -134,51 +135,6 @@
             transform: translateY(-2px);
         }
 
-        /* ===== DISCOUNT BANNER ===== */
-        .discount-banner {
-            background: linear-gradient(135deg, #dc2626, #991b1b);
-            padding: 6px 16px;
-            text-align: center;
-            color: white;
-            font-weight: 600;
-            font-size: 12px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1002;
-            box-shadow: 0 2px 12px rgba(220, 38, 38, 0.25);
-        }
-        .discount-banner .timer {
-            display: inline-flex;
-            gap: 2px;
-            font-weight: 700;
-            background: rgba(0,0,0,0.2);
-            padding: 1px 8px;
-            border-radius: 40px;
-            margin: 0 4px;
-            font-size: 12px;
-            font-variant-numeric: tabular-nums;
-        }
-        .discount-banner .timer span {
-            min-width: 16px;
-            display: inline-block;
-            text-align: center;
-        }
-        .discount-banner .timer .colon {
-            min-width: 3px;
-        }
-        .discount-banner .tag {
-            background: rgba(255,255,255,0.2);
-            padding: 1px 8px;
-            border-radius: 40px;
-            font-size: 9px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-right: 4px;
-        }
-
         /* ===== NAVBAR ===== */
         .navbar {
             display: flex;
@@ -187,7 +143,7 @@
             padding: 12px 24px;
             background: white;
             position: fixed;
-            top: 34px;
+            top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
@@ -434,6 +390,16 @@
             font-weight: 400;
             margin-right: 8px;
         }
+        .flagship-standalone .savings-badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #16a34a;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 40px;
+            margin-bottom: 8px;
+        }
         .flagship-standalone .service-desc {
             font-size: 16px;
             line-height: 1.8;
@@ -448,16 +414,6 @@
             background: #fef3c7;
             color: #d97706;
             font-size: 11px;
-            font-weight: 700;
-            padding: 2px 12px;
-            border-radius: 40px;
-            margin-bottom: 8px;
-        }
-        .flagship-standalone .savings-badge {
-            display: inline-block;
-            background: #dcfce7;
-            color: #16a34a;
-            font-size: 12px;
             font-weight: 700;
             padding: 2px 12px;
             border-radius: 40px;
@@ -786,11 +742,6 @@
             .navbar { padding: 10px 16px; flex-wrap: wrap; }
             .nav-links a { font-size: 14px; }
 
-            .discount-banner { font-size: 10px; padding: 4px 10px; }
-            .discount-banner .timer { font-size: 10px; padding: 1px 6px; }
-            .discount-banner .timer span { min-width: 12px; }
-            .navbar { top: 28px; }
-
             .page-header h1 { font-size: 32px; }
             .pricing-grid { grid-template-columns: 1fr; }
             .retainer-grid { grid-template-columns: 1fr; max-width: 100%; }
@@ -808,12 +759,7 @@
         }
 
         @media (max-width: 480px) {
-            .discount-banner { font-size: 8px; padding: 3px 6px; }
-            .discount-banner .timer { font-size: 8px; padding: 1px 4px; }
-            .discount-banner .timer span { min-width: 10px; }
-            .discount-banner .tag { font-size: 7px; padding: 1px 6px; }
-            .navbar { top: 24px; padding: 8px 12px; }
-
+            .navbar { padding: 8px 12px; }
             .logo img { height: 28px; }
             .section-title { font-size: 26px; }
             .page-header h1 { font-size: 28px; }
@@ -828,19 +774,6 @@
     </style>
 </head>
 <body>
-
-    <!-- ====== DISCOUNT BANNER ====== -->
-    <div class="discount-banner" id="discountBanner">
-        <span class="tag">Founders' Discount</span>
-        35% off Growth Strategy & Launch Packages
-        <span class="timer" id="countdownTimer">
-            <span id="days">00</span><span class="colon">:</span>
-            <span id="hours">00</span><span class="colon">:</span>
-            <span id="minutes">00</span><span class="colon">:</span>
-            <span id="seconds">00</span>
-        </span>
-        <span>Offer ends in</span>
-    </div>
 
     <!-- ====== NAVBAR ====== -->
     <header class="navbar" id="navbar">
@@ -875,14 +808,14 @@
         <div class="container">
             <div class="flagship-standalone reveal">
                 <span class="flagship-badge">Flagship Offer</span>
-                <span class="savings-badge">35% Off — Founders' Discount</span>
+                <span class="savings-badge">🔥 35% Off — Founders' Discount</span>
                 <div class="flagship-header">
                     <div>
                         <span class="badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
                         <h3>Growth Strategy</h3>
                     </div>
                     <div class="price">
-                        <span class="original">R4,999.99</span> R3,249.99
+                        <span class="original">R5,000</span> R3,249.99
                     </div>
                 </div>
                 <div class="service-desc">
@@ -1334,6 +1267,7 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
+    <script src="js/main.js"></script>
     <script>
         // ================================================
         // ===== NAVBAR TOGGLE (Mobile) =====
@@ -1395,38 +1329,6 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
-
-        // ================================================
-        // ===== COUNTDOWN TIMER =====
-        // ================================================
-        (function() {
-            const countdownDate = new Date();
-            countdownDate.setDate(countdownDate.getDate() + 34);
-            countdownDate.setHours(23, 59, 59, 999);
-
-            function updateTimer() {
-                const now = new Date().getTime();
-                const distance = countdownDate.getTime() - now;
-
-                if (distance < 0) {
-                    document.getElementById('countdownTimer').innerHTML = "Offer Ended";
-                    return;
-                }
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById('days').textContent = String(days).padStart(2, '0');
-                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-            }
-
-            updateTimer();
-            setInterval(updateTimer, 1000);
-        })();
 
         // ================================================
         // ===== SCROLL ANIMATIONS =====
