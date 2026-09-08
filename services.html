@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Services — Framework Media</title>
-    <meta name="description" content="Six ways to work with Framework Media — from a single diagnostic to an ongoing strategic partnership." />
+    <meta name="description" content="Choose the level of support you actually need. From a single audit to an ongoing strategic partnership." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,26 +96,25 @@
             border: 1px solid rgba(139,92,246,0.15);
         }
 
-        .services-detail-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            max-width: 900px;
-            margin: 20px auto 0;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            margin-top: 20px;
         }
-        .service-detail {
+        .service-card {
             background: white;
             border-radius: 20px;
-            padding: 32px 28px;
+            padding: 28px 24px;
             border: 1px solid #e5e7eb;
             transition: all 0.3s ease;
         }
-        .service-detail:hover {
+        .service-card:hover {
             border-color: var(--purple);
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
-        .service-detail .tag {
+        .service-card .tag {
             font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
@@ -124,21 +123,25 @@
             display: block;
             margin-bottom: 4px;
         }
-        .service-detail h3 {
-            font-size: 22px;
+        .service-card h4 {
+            font-size: 18px;
             font-weight: 700;
             margin-bottom: 4px;
         }
-        .service-detail .desc {
+        .service-card .desc {
             color: #4b5563;
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 4px;
         }
-        .service-detail .best-for {
-            font-size: 13px;
+        .service-card .price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--purple);
+        }
+        .service-card .price-sub {
+            font-size: 12px;
             color: #6b7280;
-            font-style: italic;
         }
 
         .btn-purple {
@@ -179,8 +182,17 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.1);
         }
 
+        .btn-small {
+            padding: 10px 24px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 992px) {
+            .services-grid { grid-template-columns: 1fr 1fr; }
+        }
+
         @media (max-width: 768px) {
-            .services-detail-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
             .page-header h1 { font-size: 32px; }
             .section-title { font-size: 30px; }
             .section-full { padding: 50px 0 30px; }
@@ -211,7 +223,7 @@
             <a href="work.html">Work</a>
             <a href="insights.html">Insights</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="nav-cta">Work with Framework</a>
+            <a href="contact.html" class="nav-cta">Work With Framework</a>
         </nav>
     </header>
 
@@ -219,60 +231,161 @@
     <section class="page-header">
         <div class="container">
             <h1>Our <span class="highlight">Services</span></h1>
-            <p>Six ways to work with Framework, from a single diagnostic to an ongoing strategic partnership.</p>
+            <p>Choose the level of support you actually need. Start where the problem is.</p>
         </div>
     </section>
 
     <!-- ====== SERVICES GRID ====== -->
     <section class="section-full section-full-white">
         <div class="container">
-            <div class="services-detail-grid stagger">
-                <div class="service-detail">
-                    <span class="tag">Diagnostic</span>
-                    <h3>Content Audit</h3>
-                    <p class="desc">A diagnostic engagement — what's working, what isn't, and what to change. Includes a content audit, positioning and messaging review, competitor analysis, and clear next steps.</p>
-                    <p class="best-for">Best for: anyone who wants clarity before committing to a bigger project.</p>
-                </div>
-
-                <div class="service-detail">
-                    <span class="tag">Strategy</span>
-                    <h3>Content Strategy</h3>
-                    <p class="desc">We build your full content system: positioning, audience, content pillars, messaging framework, formats, platform strategy, and a 30/60/90-day roadmap.</p>
-                    <p class="best-for">Best for: businesses and creators who need direction, not just more posts.</p>
-                </div>
-
-                <div class="service-detail">
-                    <span class="tag">Execution</span>
-                    <h3>Content Creation</h3>
-                    <p class="desc">Strategy turned into scripts, short-form video, carousels, copy and campaigns — built on the strategy, not instead of it.</p>
-                    <p class="best-for">Best for: clients who have (or are building) a strategy and need it made.</p>
-                </div>
-
-                <div class="service-detail">
-                    <span class="tag">Oversight</span>
-                    <h3>Content Direction</h3>
-                    <p class="desc">Weekly direction, briefs, script and creative feedback, and performance review — without full execution.</p>
-                    <p class="best-for">Best for: teams or creators who create their own content but want expert oversight.</p>
-                </div>
-
-                <div class="service-detail">
-                    <span class="tag">Full Execution</span>
-                    <h3>Content Management</h3>
-                    <p class="desc">We plan, produce, publish and report on your content day-to-day.</p>
-                    <p class="best-for">Best for: clients who want the system handled without becoming a day-to-day agency relationship.</p>
-                </div>
-
-                <div class="service-detail" style="border-color:var(--purple);">
-                    <span class="tag">Premium</span>
-                    <h3>Content Consultancy</h3>
-                    <p class="desc">Monthly strategy sessions, performance analysis, campaign planning and quarterly direction — we become part of your strategic team, not a vendor you brief.</p>
-                    <p class="best-for">Best for: businesses and creators who want a long-term strategic partner.</p>
-                </div>
+            <div class="section-header">
+                <span class="pill reveal">What We Offer</span>
+                <h2 class="section-title">Strategy. Audit. Creation. <span class="highlight">Direction. Consultancy.</span></h2>
+                <div class="accent-line"></div>
             </div>
 
-            <div style="text-align:center;margin-top:40px;">
-                <p style="color:#6b7280;font-size:16px;">Not sure where to start?</p>
-                <a href="contact.html" class="btn-purple" style="margin-top:8px;display:inline-block;">Book a Strategy Call</a>
+            <div class="services-grid stagger">
+
+                <!-- Growth Strategy -->
+                <div class="service-card" style="border-color:var(--purple);">
+                    <span class="tag">Strategy</span>
+                    <h4>Growth Strategy</h4>
+                    <p class="desc">A complete assessment of your current position, audience, content and opportunities — followed by a clear roadmap for what to do next.</p>
+                    <div class="price">R3,249.99</div>
+                    <div class="price-sub">One-time investment</div>
+                    <a href="https://paystack.com/buy/growth-strategy-chdkgf" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Get the Growth Strategy</a>
+                </div>
+
+                <!-- Content Audit -->
+                <div class="service-card">
+                    <span class="tag">Audit</span>
+                    <h4>Content Audit</h4>
+                    <p class="desc">A detailed review of your existing content, messaging, positioning and performance. Find out what's actually happening.</p>
+                    <div class="price">R2,499.99</div>
+                    <div class="price-sub">One-time investment</div>
+                    <a href="https://paystack.com/buy/content-audit-iogunq" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Get the Audit</a>
+                </div>
+
+                <!-- YouTube Audit -->
+                <div class="service-card">
+                    <span class="tag">Audit</span>
+                    <h4>YouTube Audit</h4>
+                    <p class="desc">A strategic review of your channel, content, thumbnails, titles, positioning and performance. Understand what's holding your channel back.</p>
+                    <div class="price">R2,999.99</div>
+                    <div class="price-sub">One-time investment</div>
+                    <a href="https://paystack.com/buy/youtube-audit-ttatvb" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Get the Audit</a>
+                </div>
+
+                <!-- YouTube Strategy -->
+                <div class="service-card">
+                    <span class="tag">Strategy</span>
+                    <h4>YouTube Strategy</h4>
+                    <p class="desc">Positioning, content structure, video strategy, thumbnail direction and a publishing roadmap. Build a channel with a reason to exist.</p>
+                    <div class="price">R3,999.99</div>
+                    <div class="price-sub">One-time investment</div>
+                    <a href="https://paystack.com/buy/youtube-strategy-xrcyrf" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Build Your Strategy</a>
+                </div>
+
+                <!-- Personal Brand Strategy -->
+                <div class="service-card">
+                    <span class="tag">Strategy</span>
+                    <h4>Personal Brand Strategy</h4>
+                    <p class="desc">Positioning, messaging, narrative, content pillars and platform strategy. Build a personal brand people can understand.</p>
+                    <div class="price">R2,999.99</div>
+                    <div class="price-sub">One-time investment</div>
+                    <a href="https://paystack.com/buy/personal-brand-strategy-vqgkog" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Build Your Brand</a>
+                </div>
+
+                <!-- Scriptwriting -->
+                <div class="service-card">
+                    <span class="tag">Creation</span>
+                    <h4>Scriptwriting</h4>
+                    <p class="desc">Platform-specific scripts built around a clear hook, structure, message and CTA. Turn your ideas into content worth watching.</p>
+                    <div class="price">R349.99 / script</div>
+                    <div class="price-sub">Per script</div>
+                    <a href="https://paystack.com/buy/scriptwriting-lvvihc" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Order Script</a>
+                </div>
+
+                <!-- Video Editing -->
+                <div class="service-card">
+                    <span class="tag">Creation</span>
+                    <h4>Video Editing</h4>
+                    <p class="desc">Clean, professional editing designed around the purpose of the content. Bring the strategy to life.</p>
+                    <div class="price">R699.99 / video</div>
+                    <div class="price-sub">Per video</div>
+                    <a href="https://paystack.com/buy/video-editing-kwcjus" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Order Edit</a>
+                </div>
+
+                <!-- Carousel Design -->
+                <div class="service-card">
+                    <span class="tag">Creation</span>
+                    <h4>Carousel Design</h4>
+                    <p class="desc">Research, copywriting and design for educational, authority-building carousels. Make complex ideas easier to understand.</p>
+                    <div class="price">R749.99 / carousel</div>
+                    <div class="price-sub">Per carousel</div>
+                    <a href="https://paystack.com/buy/carousel-design-qogyhc" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Order Carousel</a>
+                </div>
+
+                <!-- Thumbnail Design -->
+                <div class="service-card">
+                    <span class="tag">Creation</span>
+                    <h4>Thumbnail Design</h4>
+                    <p class="desc">Strategic thumbnail concepts designed around clarity and curiosity. Give the idea a reason to be clicked.</p>
+                    <div class="price">R349.99 / thumbnail</div>
+                    <div class="price-sub">Per thumbnail</div>
+                    <a href="https://paystack.com/buy/thumbnail-design-bmtnnr" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Order Thumbnail</a>
+                </div>
+
+                <!-- Content Planning -->
+                <div class="service-card">
+                    <span class="tag">Planning</span>
+                    <h4>Content Planning</h4>
+                    <p class="desc">A monthly content roadmap built around your positioning, audience and objectives. Stop wondering what to post next.</p>
+                    <div class="price">R1,499.99 / month</div>
+                    <div class="price-sub">Monthly</div>
+                    <a href="https://paystack.com/buy/content-planning-gsutup" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Get the Plan</a>
+                </div>
+
+                <!-- Content Department -->
+                <div class="service-card" style="border-color:var(--purple);">
+                    <span class="tag">Ongoing</span>
+                    <h4>Content Department</h4>
+                    <p class="desc">Ongoing strategy, planning, production and optimisation for businesses that need consistent content support. Your content function, without building the entire team.</p>
+                    <div class="price">R12,499.99 – R34,999.99</div>
+                    <div class="price-sub">Monthly</div>
+                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Book Discovery Call</a>
+                </div>
+
+                <!-- Growth Partner -->
+                <div class="service-card">
+                    <span class="tag">Premium</span>
+                    <h4>Growth Partner</h4>
+                    <p class="desc">A higher-level partnership focused on content direction, marketing thinking, offers, positioning and accountability. Strategic support for founders building through content.</p>
+                    <div class="price">R7,499.99 – R19,999.99</div>
+                    <div class="price-sub">Monthly</div>
+                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Book Discovery Call</a>
+                </div>
+
+                <!-- Creator Launch -->
+                <div class="service-card">
+                    <span class="tag">Launch</span>
+                    <h4>Creator Launch</h4>
+                    <p class="desc">A complete starting point for creators building their personal brand. Strategy, scripts, videos and carousels.</p>
+                    <div class="price">R4,874.99</div>
+                    <div class="price-sub">One-time investment</div>
+                    <a href="https://paystack.com/buy/creator-launch-ccvzak" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Start Creator Launch</a>
+                </div>
+
+                <!-- Business Launch -->
+                <div class="service-card">
+                    <span class="tag">Launch</span>
+                    <h4>Business Launch</h4>
+                    <p class="desc">A complete starting point for businesses building their content presence. Strategy, calendar, scripts and videos.</p>
+                    <div class="price">R8,124.99</div>
+                    <div class="price-sub">One-time investment</div>
+                    <a href="https://paystack.com/buy/business-launch-vmvsoy" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Start Business Launch</a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -281,12 +394,11 @@
     <section class="section-full section-full-dark">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Not sure which service is right for <span class="highlight">you</span>?</h2>
+                <h2 class="section-title">Don't know what you need? That's exactly what the <span class="highlight">first conversation is for</span>.</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Book a free consultation and we'll recommend the right solution for your business or brand.</p>
             </div>
             <div style="text-align:center;">
-                <a href="contact.html" class="btn-white">Start the Conversation →</a>
+                <a href="contact.html" class="btn-white">Start a Conversation →</a>
             </div>
         </div>
     </section>
@@ -300,30 +412,31 @@
                         <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;" />
                         Framework Media
                     </a>
-                    <p>A content consultancy for businesses and creators. Strategy behind the content.</p>
+                    <p>Content consultancy for businesses and creators. Strategy behind the content.</p>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Services</h4>
-                    <a href="services.html">All Services</a>
+                    <h4>Explore</h4>
                     <a href="businesses.html">For Businesses</a>
                     <a href="creators.html">For Creators</a>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
                     <a href="method.html">Method</a>
                     <a href="work.html">Work</a>
                     <a href="insights.html">Insights</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="about.html">About</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Work With Us</h4>
+                    <a href="contact.html">Start a Conversation</a>
+                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank">Book a Consultation</a>
                 </div>
 
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
-                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
                     <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
+                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
                 </div>
             </div>
 
