@@ -3,222 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Framework Media — Content Consultancy for Businesses and Creators</title>
-    <meta name="description" content="A content consultancy for businesses and creators. We help you turn what you know into content that builds attention, trust and growth." />
+    <title>Framework Media — Content Consultancy</title>
+    <meta name="description" content="Content consultancy for businesses and creators. Strategy behind the content." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* ===== RESET & BASE ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --black: #0a0a0a;
-            --white: #ffffff;
-            --gray-100: #f5f5f5;
-            --gray-200: #e5e5e5;
-            --gray-300: #d4d4d4;
-            --gray-400: #a3a3a3;
-            --gray-500: #737373;
-            --gray-600: #525252;
-            --gray-700: #404040;
-            --gray-800: #262626;
-            --gray-900: #171717;
-            --pink: #ec4899;
-            --purple: #8b5cf6;
-            --blue: #3b82f6;
-            --gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
-            --gradient-dark: linear-gradient(135deg, #1a1a2e, #16213e);
-            --gradient-subtle: linear-gradient(135deg, rgba(236,72,153,0.08), rgba(139,92,246,0.08), rgba(59,130,246,0.08));
-            --bg-light-purple: #f5f0ff;
-            --bg-light-pink: #fdf2f8;
-            --bg-light-blue: #eff6ff;
-            --shadow: 0 4px 20px rgba(0,0,0,0.06);
-            --shadow-hover: 0 12px 40px rgba(139,92,246,0.12);
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            background: #ffffff;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--black);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* ===== TYPOGRAPHY ===== */
-        .section-title {
-            font-size: 44px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-            margin-bottom: 12px;
-        }
-        .section-title .highlight {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .section-sub {
-            font-size: 18px;
-            color: #4b5563;
-            max-width: 640px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        .section-full {
-            width: 100%;
-            padding: 80px 0 60px;
-        }
-        .section-full-white { background: #ffffff; }
-        .section-full-light-purple { background: var(--bg-light-purple); }
-        .section-full-light-pink { background: var(--bg-light-pink); }
-        .section-full-light-blue { background: var(--bg-light-blue); }
-        .section-full-dark {
-            background: var(--gradient-dark);
-            color: white;
-        }
-        .section-full-dark .section-title { color: white; }
-        .section-full-dark .section-sub { color: #d1d5db; }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .accent-line {
-            width: 60px;
-            height: 3px;
-            background: var(--gradient);
-            border-radius: 4px;
-            margin: 16px auto 0;
-        }
-
-        .pill {
-            display: inline-block;
-            background: var(--gradient-subtle);
-            color: var(--black);
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            padding: 4px 16px;
-            border-radius: 40px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(139,92,246,0.15);
-        }
-
-        /* ===== BUTTONS ===== */
-        .btn-primary {
-            background: var(--black);
-            color: white;
-            border: none;
-            padding: 14px 36px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
-        }
-        .btn-primary:hover {
-            background: #2a2a2a;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        }
-
-        .btn-purple {
-            background: var(--purple);
-            color: white;
-            border: none;
-            padding: 14px 36px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
-        }
-        .btn-purple:hover {
-            background: #7c3aed;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(139,92,246,0.3);
-        }
-
-        .btn-white {
-            background: white;
-            color: var(--black);
-            border: none;
-            padding: 14px 36px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
-        }
-        .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--black);
-            border: 2px solid var(--black);
-            padding: 12px 34px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
-        }
-        .btn-outline:hover {
-            background: var(--black);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .btn-small {
-            padding: 10px 24px;
-            font-size: 13px;
-        }
-
-        .link-arrow {
-            color: var(--purple);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: gap 0.3s ease;
-        }
-        .link-arrow:hover { gap: 10px; }
-
         /* ===== NAVBAR ===== */
         .navbar {
             display: flex;
@@ -337,7 +129,7 @@
             max-width: 900px;
             margin: 0 auto;
         }
-        .hero-tag {
+        .hero-eyebrow {
             background: rgba(255,255,255,0.08);
             color: #a78bfa;
             font-weight: 600;
@@ -400,32 +192,175 @@
             color: #9ca3af;
         }
 
-        /* ===== PROBLEM SECTION ===== */
-        .problem-text {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+        /* ===== SECTION STYLES ===== */
+        .section-full {
+            width: 100%;
+            padding: 80px 0 60px;
         }
-        .problem-text p {
+        .section-full-white { background: #ffffff; }
+        .section-full-light-purple { background: var(--bg-light-purple); }
+        .section-full-light-pink { background: var(--bg-light-pink); }
+        .section-full-light-blue { background: var(--bg-light-blue); }
+        .section-full-dark {
+            background: var(--gradient-dark);
+            color: white;
+        }
+        .section-full-dark .section-title { color: white; }
+        .section-full-dark .section-sub { color: #d1d5db; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+        .section-title .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-sub {
             font-size: 18px;
-            line-height: 1.8;
             color: #4b5563;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 4px;
+            margin: 16px auto 0;
         }
 
-        /* ===== FRAMEWORK FLOW ===== */
-        .flow-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 8px 16px;
-            margin: 24px auto 0;
-            max-width: 900px;
+        .pill {
+            display: inline-block;
+            background: var(--gradient-subtle);
+            color: var(--black);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(139,92,246,0.15);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary {
+            background: var(--black);
+            color: white;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-primary:hover {
+            background: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .btn-purple {
+            background: var(--purple);
+            color: white;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-purple:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139,92,246,0.3);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--black);
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--black);
+            border: 2px solid var(--black);
+            padding: 12px 34px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-outline:hover {
+            background: var(--black);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .link-arrow {
+            color: var(--purple);
+            text-decoration: none;
             font-weight: 600;
             font-size: 14px;
-            color: #374151;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.3s ease;
         }
-        .flow-row .arrow {
+        .link-arrow:hover { gap: 10px; }
+
+        /* ===== TRUST STRIP ===== */
+        .trust-strip {
+            padding: 40px 0;
+            background: var(--gray-100);
+            text-align: center;
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .trust-strip p {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-600);
+            letter-spacing: 1px;
+        }
+        .trust-strip .highlight-text {
             color: var(--purple);
         }
 
@@ -467,7 +402,7 @@
             margin-bottom: 12px;
         }
 
-        /* ===== METHODOLOGY DIAGRAM ===== */
+        /* ===== METHODOLOGY GRID ===== */
         .method-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -832,7 +767,7 @@
             .navbar { padding: 8px 12px; }
             .hero { padding: 90px 16px 40px; }
             .hero h1 { font-size: 28px; }
-            .hero-tag { font-size: 10px; padding: 3px 12px; }
+            .hero-eyebrow { font-size: 10px; padding: 3px 12px; }
             .hero-stats { gap: 20px; }
             .hero-stats .stat-number { font-size: 20px; }
             .logo img { height: 28px; }
@@ -861,7 +796,7 @@
             <a href="work.html">Work</a>
             <a href="insights.html">Insights</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="nav-cta">Work with Framework</a>
+            <a href="contact.html" class="nav-cta">Work With Framework</a>
         </nav>
     </header>
 
@@ -870,12 +805,13 @@
         <div class="orb-1"></div>
         <div class="orb-2"></div>
         <div class="hero-content">
-            <span class="hero-tag">Content Consultancy</span>
-            <h1>Content Consultancy for <span class="highlight">Businesses and Creators</span></h1>
-            <p>We help you turn what you know into content that builds attention, trust and growth — starting with a clear strategy, not another random post.</p>
+            <span class="hero-eyebrow">Content Consultancy</span>
+            <h1>Your content should make your <span class="highlight">value obvious</span>.</h1>
+            <p>Framework Media helps businesses and creators turn their expertise, ideas and positioning into content with a clear purpose.</p>
+            <p style="font-size:16px;color:#a78bfa;margin-top:-20px;">Strategy first. Content second.</p>
             <div class="hero-actions">
-                <a href="contact.html" class="btn-white">Work with Framework</a>
-                <a href="method.html" class="btn-purple">See the Framework</a>
+                <a href="contact.html" class="btn-white">Work With Framework</a>
+                <a href="method.html" class="btn-purple">See Our Method</a>
             </div>
             <div class="hero-stats">
                 <div class="stat">
@@ -894,48 +830,73 @@
         </div>
     </section>
 
-    <!-- ====== THE PROBLEM ====== -->
+    <!-- ====== TRUST STRIP ====== -->
+    <section class="trust-strip">
+        <div class="container">
+            <p>Content is not the strategy. <span class="highlight-text">It's the output of one.</span></p>
+        </div>
+    </section>
+
+    <!-- ====== INTRODUCTION / PROBLEM ====== -->
     <section class="section-full section-full-light-purple">
         <div class="container">
-            <div class="problem-text">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <span class="pill reveal">The Problem</span>
-                <h2 class="section-title">Most people don't have a content problem.<br>They have a <span class="highlight">clarity problem</span>.</h2>
-                <p>Businesses and creators often know what they sell, what they know and what they want to achieve. But they don't know what to communicate, how to position it, what content to create or how to build a consistent system. That's where Framework comes in.</p>
+                <h2 class="section-title">You don't need more content. You need to know <span class="highlight">what the content is supposed to do</span>.</h2>
+                <p style="font-size:17px;line-height:1.8;color:#4b5563;">Most businesses and creators don't have an ideas problem. They have a clarity problem. They don't know what they should be known for, what they should be saying, who they should be saying it to, or how all of it should connect to the bigger picture. That's where Framework comes in.</p>
             </div>
         </div>
     </section>
 
-    <!-- ====== WHAT FRAMEWORK DOES ====== -->
+    <!-- ====== WHAT WE DO ====== -->
     <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">What Framework Does</span>
-                <h2 class="section-title">We connect the dots most content <span class="highlight">skips</span>.</h2>
+                <span class="pill reveal">What We Do</span>
+                <h2 class="section-title">From thinking to <span class="highlight">execution</span>.</h2>
+                <p class="section-sub">Framework works across the parts of content that actually matter.</p>
             </div>
 
-            <div class="flow-row">
-                <span>Business</span>
-                <span class="arrow">→</span>
-                <span>Audience</span>
-                <span class="arrow">→</span>
-                <span>Positioning</span>
-                <span class="arrow">→</span>
-                <span>Message</span>
-                <span class="arrow">→</span>
-                <span>Content</span>
-                <span class="arrow">→</span>
-                <span>Distribution</span>
-                <span class="arrow">→</span>
-                <span>Outcome</span>
+            <div class="services-grid stagger">
+                <div class="service-card">
+                    <span class="tag">Strategy</span>
+                    <h4>Strategy</h4>
+                    <p>Figure out what you should say, who you're saying it to and why it matters.</p>
+                </div>
+                <div class="service-card">
+                    <span class="tag">Positioning</span>
+                    <h4>Positioning</h4>
+                    <p>Define what you want to be known for and how you should be perceived.</p>
+                </div>
+                <div class="service-card">
+                    <span class="tag">Systems</span>
+                    <h4>Content Systems</h4>
+                    <p>Turn your ideas and expertise into repeatable content pillars, formats and workflows.</p>
+                </div>
+                <div class="service-card">
+                    <span class="tag">Creation</span>
+                    <h4>Creation</h4>
+                    <p>When you need execution, we can turn the strategy into scripts, videos, carousels and other content.</p>
+                </div>
+                <div class="service-card">
+                    <span class="tag">Direction</span>
+                    <h4>Direction</h4>
+                    <p>Already have a team? We can provide the thinking, direction and feedback they need to execute better.</p>
+                </div>
+                <div class="service-card" style="border-color:var(--purple);">
+                    <span class="tag">Consultancy</span>
+                    <h4>Consultancy</h4>
+                    <p>For businesses and creators who want an ongoing strategic partner behind their content.</p>
+                </div>
             </div>
 
-            <p style="max-width: 700px; margin: 32px auto 0; text-align: center; font-size: 17px; line-height: 1.8; color: #4b5563;">
-                We diagnose the actual problem, build the strategy, and either hand you the system or execute it with you. Content isn't decoration here — it's how you build authority, trust and a business people remember.
-            </p>
+            <div style="text-align:center;margin-top:32px;">
+                <a href="services.html" class="link-arrow">Explore Services →</a>
+            </div>
         </div>
     </section>
 
-    <!-- ====== TWO AUDIENCES ====== -->
+    <!-- ====== TWO PATHS ====== -->
     <section class="section-full section-full-light-blue">
         <div class="container">
             <div class="section-header">
@@ -947,15 +908,15 @@
                 <div class="path-card reveal">
                     <span class="icon"><i class="fas fa-building"></i></span>
                     <h3>For Businesses</h3>
-                    <p>Your business is good. Your content doesn't say so yet. We turn your expertise and offer into a content system that builds trust and brings in the right customers.</p>
-                    <a href="businesses.html" class="link-arrow">Explore for Businesses →</a>
+                    <p>Your business already has something worth saying. Your content should communicate it. We help businesses turn what they already know into content that builds understanding, credibility and trust.</p>
+                    <a href="businesses.html" class="link-arrow">Framework for Businesses →</a>
                 </div>
 
                 <div class="path-card reveal">
                     <span class="icon"><i class="fas fa-user"></i></span>
                     <h3>For Creators</h3>
-                    <p>You've got ideas, expertise, or an audience — but no repeatable system behind it. We help you build a clear, ownable content identity around what you actually do.</p>
-                    <a href="creators.html" class="link-arrow">Explore for Creators →</a>
+                    <p>Your audience should know why they should follow you. We help creators turn their expertise, personality and ideas into a body of content people can recognise and return to.</p>
+                    <a href="creators.html" class="link-arrow">Framework for Creators →</a>
                 </div>
             </div>
         </div>
@@ -966,32 +927,32 @@
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">The Framework Method</span>
-                <h2 class="section-title">Content needs a <span class="highlight">framework</span>.</h2>
-                <p class="section-sub">We don't start with what to post. We start with what the content needs to accomplish.</p>
+                <h2 class="section-title">We don't start with content. We start with <span class="highlight">understanding</span>.</h2>
+                <p class="section-sub">Before we tell you what to post, we want to understand the business, creator, audience, positioning and problem.</p>
             </div>
 
-            <!-- Diagram Placeholder — Replace with actual SVG -->
+            <!-- Diagram -->
             <div style="max-width: 900px; margin: 0 auto; background: white; border-radius: 24px; padding: 32px; border: 1px solid #e5e7eb;">
-                <img src="assets/diagrams/growth-strategy-diagram.svg" alt="Framework Media methodology diagram showing Audit → Position → Structure → Create → Distribute → Analyze → Scale" style="width:100%; height:auto; display:block;" />
+                <img src="icons/growth-strategy-diagram.png" alt="Framework Media methodology: Audit, Position, Structure, Create, Distribute, Analyze and Scale" style="width:100%; height:auto; display:block;" />
             </div>
 
             <div class="method-grid" style="margin-top: 24px;">
                 <div class="method-step">
                     <span class="step-num">01</span>
                     <h4>Audit</h4>
-                    <p>Understand the current state</p>
+                    <p>Understand what exists</p>
                 </div>
                 <div class="method-arrow">→</div>
                 <div class="method-step">
                     <span class="step-num">02</span>
                     <h4>Position</h4>
-                    <p>Define what to be known for</p>
+                    <p>Define what you should be known for</p>
                 </div>
                 <div class="method-arrow">→</div>
                 <div class="method-step">
                     <span class="step-num">03</span>
                     <h4>Structure</h4>
-                    <p>Build content pillars &amp; themes</p>
+                    <p>Build the content system</p>
                 </div>
                 <div class="method-arrow">→</div>
                 <div class="method-step">
@@ -1003,97 +964,65 @@
                 <div class="method-step">
                     <span class="step-num">05</span>
                     <h4>Distribute</h4>
-                    <p>Get content in front of audiences</p>
+                    <p>Put content in the right places</p>
                 </div>
                 <div class="method-arrow">→</div>
                 <div class="method-step">
                     <span class="step-num">06</span>
                     <h4>Analyze</h4>
-                    <p>Review performance &amp; refine</p>
+                    <p>Understand what's working</p>
                 </div>
                 <div class="method-arrow">→</div>
                 <div class="method-step">
                     <span class="step-num">07</span>
                     <h4>Scale</h4>
-                    <p>Double down on what works</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== SERVICES ====== -->
-    <section class="section-full section-full-white">
-        <div class="container">
-            <div class="section-header">
-                <span class="pill reveal">What We Do</span>
-                <h2 class="section-title">Six ways to work <span class="highlight">with us</span></h2>
-                <p class="section-sub">From a single diagnostic to an ongoing strategic partnership.</p>
-            </div>
-
-            <div class="services-grid stagger">
-                <div class="service-card">
-                    <span class="tag">Diagnostic</span>
-                    <h4>Content Audit</h4>
-                    <p>Know what's actually working, and what isn't. A full review of your content, positioning and messaging.</p>
-                </div>
-                <div class="service-card">
-                    <span class="tag">Strategy</span>
-                    <h4>Content Strategy</h4>
-                    <p>A full system: positioning, pillars, formats, calendar and a 30/60/90-day roadmap.</p>
-                </div>
-                <div class="service-card">
-                    <span class="tag">Execution</span>
-                    <h4>Content Creation</h4>
-                    <p>Strategy executed: scripts, video, copy, campaigns — built on the strategy, not instead of it.</p>
-                </div>
-                <div class="service-card">
-                    <span class="tag">Oversight</span>
-                    <h4>Content Direction</h4>
-                    <p>Strategic oversight for teams who create in-house. Briefs, feedback and performance review.</p>
-                </div>
-                <div class="service-card">
-                    <span class="tag">Full Execution</span>
-                    <h4>Content Management</h4>
-                    <p>We run the system day to day — planning, production, publishing and reporting.</p>
-                </div>
-                <div class="service-card" style="border-color: var(--purple);">
-                    <span class="tag">Premium</span>
-                    <h4>Content Consultancy</h4>
-                    <p>An ongoing strategic partner, not just a vendor. Monthly strategy sessions and quarterly direction.</p>
+                    <p>Improve the system</p>
                 </div>
             </div>
 
             <div style="text-align:center;margin-top:32px;">
-                <a href="services.html" class="link-arrow">See All Services →</a>
+                <a href="method.html" class="link-arrow">Explore the Framework Method →</a>
             </div>
         </div>
     </section>
 
     <!-- ====== WHY FRAMEWORK ====== -->
-    <section class="section-full section-full-light-blue">
+    <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">Why Framework</span>
-                <h2 class="section-title">Strategy + Execution. <span class="highlight">Not one or the other</span>.</h2>
+                <span class="pill reveal">What Makes Framework Different</span>
+                <h2 class="section-title">We care about the thinking <span class="highlight">behind the content</span>.</h2>
             </div>
 
             <div class="why-grid stagger">
                 <div class="why-item">
-                    <h4>Strategy + Execution</h4>
-                    <p>Most consultants only advise. Most agencies only produce. We do both.</p>
+                    <h4>Anyone can tell you to post more.</h4>
+                    <p>We ask: what should you be saying, and why should anyone care?</p>
                 </div>
                 <div class="why-item">
-                    <h4>We understand both worlds</h4>
-                    <p>Personal brands and traditional businesses speak differently. We know both languages.</p>
+                    <h4>Anyone can give you 30 content ideas.</h4>
+                    <p>We ask: what should you be known for, and how does the content support it?</p>
                 </div>
                 <div class="why-item">
-                    <h4>We only do content</h4>
-                    <p>Not a generalist marketing shop. This is the one thing we're deep in.</p>
+                    <h4>Anyone can make another reel.</h4>
+                    <p>We ask: what is this content supposed to accomplish for your business or brand?</p>
                 </div>
                 <div class="why-item">
-                    <h4>You leave with a system</h4>
-                    <p>The goal is a framework you can run, not an agency you can't leave.</p>
+                    <h4>Anyone can claim to be strategic.</h4>
+                    <p>We show it through the work: strategy that actually informs what we create.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== PHILOSOPHY ====== -->
+    <section class="section-full section-full-light-blue">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="pill reveal">Our Philosophy</span>
+                <h2 class="section-title">Content should have <span class="highlight">a job</span>.</h2>
+                <div class="accent-line"></div>
+                <p style="font-size:17px;line-height:1.8;color:#4b5563;margin-top:16px;">Every piece of content should exist for a reason. It might build awareness, demonstrate expertise, change perception, build trust, educate, create demand, or convert. But it shouldn't exist simply because <strong>"we haven't posted today."</strong></p>
             </div>
         </div>
     </section>
@@ -1103,19 +1032,19 @@
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Proof</span>
-                <h2 class="section-title">Real results. <span class="highlight">Real brands</span>.</h2>
-                <p class="section-sub">Transformations using the Framework system.</p>
+                <h2 class="section-title">What we've <span class="highlight">built</span>.</h2>
+                <p class="section-sub">Framework is built around practical experience. We've used content strategy to build audiences, develop personal brands and create systems around content.</p>
             </div>
 
             <div class="case-grid">
                 <div class="case-card reveal-left">
                     <div class="case-image">
-                        <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered" />
+                        <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered personal brand case study" />
                     </div>
                     <div class="case-content">
-                        <span class="badge" style="background:#fef3c7;color:#d97706;">Founder Case Study</span>
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Personal Brand</span>
                         <h4>Katlego Unfiltered</h4>
-                        <p>Built from 0 to 60K+ followers using the Framework system.</p>
+                        <p>Built from zero to 60K+ followers across Instagram and TikTok. The focus wasn't simply posting more — it was developing a clear identity, repeatable content pillars and a consistent point of view.</p>
                         <div class="stats">
                             <span><i class="fas fa-arrow-up" style="color:#16a34a;margin-right:4px;"></i> 60K+ Followers</span>
                             <span><i class="fab fa-instagram" style="margin-right:4px;"></i> + <i class="fab fa-tiktok"></i></span>
@@ -1125,12 +1054,12 @@
 
                 <div class="case-card reveal-right">
                     <div class="case-image">
-                        <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox" />
+                        <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox content case study" />
                     </div>
                     <div class="case-content">
-                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Brand Case Study</span>
+                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Content Brand</span>
                         <h4>Our Goated Lunchbox</h4>
-                        <p>A street-culture TikTok page grown to 150K+ followers through content strategy.</p>
+                        <p>Grown to 150K+ followers on TikTok. The strategy centred around clear positioning, audience understanding and content designed specifically for the culture and community it was speaking to.</p>
                         <div class="stats">
                             <span><i class="fas fa-arrow-up" style="color:#16a34a;margin-right:4px;"></i> 150K+ Followers</span>
                             <span><i class="fab fa-tiktok"></i></span>
@@ -1140,7 +1069,7 @@
             </div>
 
             <div style="text-align:center;margin-top:32px;">
-                <a href="work.html" class="link-arrow">View All Work →</a>
+                <a href="work.html" class="link-arrow">View Our Work →</a>
             </div>
         </div>
     </section>
@@ -1149,43 +1078,31 @@
     <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">What Clients Say</span>
-                <h2 class="section-title">Real <span class="highlight">feedback</span>.</h2>
+                <span class="pill reveal">Testimonials</span>
+                <h2 class="section-title">The strategy behind the content <span class="highlight">matters</span>.</h2>
             </div>
 
             <div class="testimonial-grid stagger">
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <div class="quote">"The biggest takeaway wasn't that I needed to post more — it was understanding my brand, refining my content pillars, and creating a clear direction."</div>
+                    <div class="quote">"Framework Media took the time to understand what I was trying to build. The strategy gave me a much clearer direction instead of making me feel like I simply needed to post more."</div>
                     <div class="author">Entle S.</div>
                     <div class="author-title">Personal Brand Creator</div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <div class="quote">"Framework Media is incredibly professional and genuinely takes the time to listen. They understood my concerns and created a strategy that felt personalised."</div>
+                    <div class="quote">"The strategy showed me things I hadn't considered before. I walked away with a much clearer understanding of what I should focus on and why."</div>
+                    <div class="author">Josh G.</div>
+                    <div class="author-title">Creator</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="quote">"I started implementing the recommendations immediately. Everything was practical, clear and gave me a roadmap for what to do next."</div>
                     <div class="author">Lebo M.</div>
                     <div class="author-title">Creator</div>
                 </div>
-            </div>
-
-            <div style="text-align:center;margin-top:32px;">
-                <a href="#" class="link-arrow">Read More Testimonials →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== INSIGHTS ====== -->
-    <section class="section-full section-full-light-purple">
-        <div class="container">
-            <div class="section-header">
-                <span class="pill reveal">Insights</span>
-                <h2 class="section-title">Thinking on content strategy, <span class="highlight">from the people building it</span>.</h2>
-                <p class="section-sub">We write about content strategy, positioning and what actually moves a brand forward — not just what's trending this week.</p>
-            </div>
-
-            <div style="text-align:center;margin-top:16px;">
-                <a href="insights.html" class="link-arrow">Read Insights →</a>
             </div>
         </div>
     </section>
@@ -1194,12 +1111,13 @@
     <section class="section-full section-full-dark">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Tell us what <span class="highlight">you're building</span>.</h2>
-                <p class="section-sub">Not a generic contact form — a real starting point. Tell us where you are, what's not working, and what you're trying to build. We'll tell you honestly whether we can help.</p>
+                <h2 class="section-title">Stop guessing what to post. Start building with <span class="highlight">a framework</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">If your content feels inconsistent, unclear or disconnected from the bigger picture, let's look at what's actually happening. We'll tell you what we see, what we think needs to change and where Framework can help.</p>
             </div>
 
             <div style="text-align:center;">
-                <a href="contact.html" class="btn-white">Start the Conversation →</a>
+                <a href="contact.html" class="btn-white">Work With Framework →</a>
             </div>
         </div>
     </section>
@@ -1213,30 +1131,31 @@
                         <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;" />
                         Framework Media
                     </a>
-                    <p>A content consultancy for businesses and creators. Strategy behind the content.</p>
+                    <p>Content consultancy for businesses and creators. Strategy behind the content.</p>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Services</h4>
-                    <a href="services.html">All Services</a>
+                    <h4>Explore</h4>
                     <a href="businesses.html">For Businesses</a>
                     <a href="creators.html">For Creators</a>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
                     <a href="method.html">Method</a>
                     <a href="work.html">Work</a>
                     <a href="insights.html">Insights</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="about.html">About</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Work With Us</h4>
+                    <a href="contact.html">Start a Conversation</a>
+                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank">Book a Consultation</a>
                 </div>
 
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
-                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
                     <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
+                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
                 </div>
             </div>
 
