@@ -108,6 +108,8 @@
             padding: 28px 24px;
             border: 1px solid #e5e7eb;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         .service-card:hover {
             border-color: var(--purple);
@@ -132,12 +134,14 @@
             color: #4b5563;
             font-size: 14px;
             line-height: 1.6;
-            margin-bottom: 4px;
+            margin-bottom: 8px;
+            flex: 1;
         }
         .service-card .price {
             font-size: 20px;
             font-weight: 700;
             color: var(--purple);
+            margin-top: 8px;
         }
         .service-card .price-sub {
             font-size: 12px;
@@ -148,10 +152,10 @@
             background: var(--purple);
             color: white;
             border: none;
-            padding: 14px 36px;
+            padding: 12px 24px;
             border-radius: 40px;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 14px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: inline-block;
@@ -183,8 +187,40 @@
         }
 
         .btn-small {
-            padding: 10px 24px;
-            font-size: 14px;
+            padding: 10px 20px;
+            font-size: 13px;
+            margin-top: 12px;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-outline-small {
+            background: transparent;
+            color: var(--purple);
+            border: 2px solid var(--purple);
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            margin-top: 12px;
+        }
+        .btn-outline-small:hover {
+            background: var(--purple);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .service-card .cta-wrap {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e5e7eb;
         }
 
         @media (max-width: 992px) {
@@ -253,7 +289,9 @@
                     <p class="desc">A complete assessment of your current position, audience, content and opportunities — followed by a clear roadmap for what to do next.</p>
                     <div class="price">R3,249.99</div>
                     <div class="price-sub">One-time investment</div>
-                    <a href="https://paystack.com/buy/growth-strategy-chdkgf" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Get the Growth Strategy</a>
+                    <div class="cta-wrap">
+                        <a href="https://paystack.com/buy/growth-strategy-chdkgf" target="_blank" class="btn-purple btn-small">Get the Growth Strategy</a>
+                    </div>
                 </div>
 
                 <!-- Content Audit -->
@@ -263,7 +301,9 @@
                     <p class="desc">A detailed review of your existing content, messaging, positioning and performance. Find out what's actually happening.</p>
                     <div class="price">R2,499.99</div>
                     <div class="price-sub">One-time investment</div>
-                    <a href="https://paystack.com/buy/content-audit-iogunq" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Get the Audit</a>
+                    <div class="cta-wrap">
+                        <a href="https://paystack.com/buy/content-audit-iogunq" target="_blank" class="btn-purple btn-small">Get the Audit</a>
+                    </div>
                 </div>
 
                 <!-- YouTube Audit -->
@@ -273,7 +313,9 @@
                     <p class="desc">A strategic review of your channel, content, thumbnails, titles, positioning and performance. Understand what's holding your channel back.</p>
                     <div class="price">R2,999.99</div>
                     <div class="price-sub">One-time investment</div>
-                    <a href="https://paystack.com/buy/youtube-audit-ttatvb" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Get the Audit</a>
+                    <div class="cta-wrap">
+                        <a href="https://paystack.com/buy/youtube-audit-ttatvb" target="_blank" class="btn-purple btn-small">Get the Audit</a>
+                    </div>
                 </div>
 
                 <!-- YouTube Strategy -->
@@ -283,7 +325,9 @@
                     <p class="desc">Positioning, content structure, video strategy, thumbnail direction and a publishing roadmap. Build a channel with a reason to exist.</p>
                     <div class="price">R3,999.99</div>
                     <div class="price-sub">One-time investment</div>
-                    <a href="https://paystack.com/buy/youtube-strategy-xrcyrf" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Build Your Strategy</a>
+                    <div class="cta-wrap">
+                        <a href="https://paystack.com/buy/youtube-strategy-xrcyrf" target="_blank" class="btn-purple btn-small">Build Your Strategy</a>
+                    </div>
                 </div>
 
                 <!-- Personal Brand Strategy -->
@@ -293,7 +337,9 @@
                     <p class="desc">Positioning, messaging, narrative, content pillars and platform strategy. Build a personal brand people can understand.</p>
                     <div class="price">R2,999.99</div>
                     <div class="price-sub">One-time investment</div>
-                    <a href="https://paystack.com/buy/personal-brand-strategy-vqgkog" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Build Your Brand</a>
+                    <div class="cta-wrap">
+                        <a href="https://paystack.com/buy/personal-brand-strategy-vqgkog" target="_blank" class="btn-purple btn-small">Build Your Brand</a>
+                    </div>
                 </div>
 
                 <!-- Scriptwriting -->
@@ -303,7 +349,9 @@
                     <p class="desc">Platform-specific scripts built around a clear hook, structure, message and CTA. Turn your ideas into content worth watching.</p>
                     <div class="price">R349.99 / script</div>
                     <div class="price-sub">Per script</div>
-                    <a href="https://paystack.com/buy/scriptwriting-lvvihc" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Order Script</a>
+                    <div class="cta-wrap">
+                        <a href="https://paystack.com/buy/scriptwriting-lvvihc" target="_blank" class="btn-purple btn-small">Order Script</a>
+                    </div>
                 </div>
 
                 <!-- Video Editing -->
@@ -313,7 +361,9 @@
                     <p class="desc">Clean, professional editing designed around the purpose of the content. Bring the strategy to life.</p>
                     <div class="price">R699.99 / video</div>
                     <div class="price-sub">Per video</div>
-                    <a href="https://paystack.com/buy/video-editing-kwcjus" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Order Edit</a>
+                    <div class="cta-wrap">
+                        <a href="https://paystack.com/buy/video-editing-kwcjus" target="_blank" class="btn-purple btn-small">Order Edit</a>
+                    </div>
                 </div>
 
                 <!-- Carousel Design -->
@@ -323,7 +373,9 @@
                     <p class="desc">Research, copywriting and design for educational, authority-building carousels. Make complex ideas easier to understand.</p>
                     <div class="price">R749.99 / carousel</div>
                     <div class="price-sub">Per carousel</div>
-                    <a href="https://paystack.com/buy/carousel-design-qogyhc" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Order Carousel</a>
+                    <div class="cta-wrap">
+                        <a href="https://paystack.com/buy/carousel-design-qogyhc" target="_blank" class="btn-purple btn-small">Order Carousel</a>
+                    </div>
                 </div>
 
                 <!-- Thumbnail Design -->
@@ -333,7 +385,9 @@
                     <p class="desc">Strategic thumbnail concepts designed around clarity and curiosity. Give the idea a reason to be clicked.</p>
                     <div class="price">R349.99 / thumbnail</div>
                     <div class="price-sub">Per thumbnail</div>
-                    <a href="https://paystack.com/buy/thumbnail-design-bmtnnr" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Order Thumbnail</a>
+                    <div class="cta-wrap">
+                        <a href="https://paystack.com/buy/thumbnail-design-bmtnnr" target="_blank" class="btn-purple btn-small">Order Thumbnail</a>
+                    </div>
                 </div>
 
                 <!-- Content Planning -->
@@ -343,7 +397,9 @@
                     <p class="desc">A monthly content roadmap built around your positioning, audience and objectives. Stop wondering what to post next.</p>
                     <div class="price">R1,499.99 / month</div>
                     <div class="price-sub">Monthly</div>
-                    <a href="https://paystack.com/buy/content-planning-gsutup" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Get the Plan</a>
+                    <div class="cta-wrap">
+                        <a href="https://paystack.com/buy/content-planning-gsutup" target="_blank" class="btn-purple btn-small">Get the Plan</a>
+                    </div>
                 </div>
 
                 <!-- Content Department -->
@@ -353,7 +409,9 @@
                     <p class="desc">Ongoing strategy, planning, production and optimisation for businesses that need consistent content support. Your content function, without building the entire team.</p>
                     <div class="price">R12,499.99 – R34,999.99</div>
                     <div class="price-sub">Monthly</div>
-                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Book Discovery Call</a>
+                    <div class="cta-wrap">
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-outline-small">Book Discovery Call</a>
+                    </div>
                 </div>
 
                 <!-- Growth Partner -->
@@ -363,29 +421,47 @@
                     <p class="desc">A higher-level partnership focused on content direction, marketing thinking, offers, positioning and accountability. Strategic support for founders building through content.</p>
                     <div class="price">R7,499.99 – R19,999.99</div>
                     <div class="price-sub">Monthly</div>
-                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Book Discovery Call</a>
+                    <div class="cta-wrap">
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-outline-small">Book Discovery Call</a>
+                    </div>
                 </div>
 
                 <!-- Creator Launch -->
                 <div class="service-card">
                     <span class="tag">Launch</span>
                     <h4>Creator Launch</h4>
-                    <p class="desc">A complete starting point for creators building their personal brand. Strategy, scripts, videos and carousels.</p>
+                    <p class="desc">A complete starting point for creators building their personal brand. Strategy, scripts, videos and carousels — everything you need to start.</p>
                     <div class="price">R4,874.99</div>
                     <div class="price-sub">One-time investment</div>
-                    <a href="https://paystack.com/buy/creator-launch-ccvzak" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Start Creator Launch</a>
+                    <div class="cta-wrap">
+                        <a href="https://paystack.com/buy/creator-launch-ccvzak" target="_blank" class="btn-purple btn-small">Start Creator Launch</a>
+                    </div>
                 </div>
 
                 <!-- Business Launch -->
                 <div class="service-card">
                     <span class="tag">Launch</span>
                     <h4>Business Launch</h4>
-                    <p class="desc">A complete starting point for businesses building their content presence. Strategy, calendar, scripts and videos.</p>
+                    <p class="desc">A complete starting point for businesses building their content presence. Strategy, calendar, scripts and videos — everything you need to establish credibility.</p>
                     <div class="price">R8,124.99</div>
                     <div class="price-sub">One-time investment</div>
-                    <a href="https://paystack.com/buy/business-launch-vmvsoy" target="_blank" class="btn-purple btn-small" style="margin-top:12px;display:inline-block;">Start Business Launch</a>
+                    <div class="cta-wrap">
+                        <a href="https://paystack.com/buy/business-launch-vmvsoy" target="_blank" class="btn-purple btn-small">Start Business Launch</a>
+                    </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== NOT SURE WHERE TO START ====== -->
+    <section class="section-full section-full-light-purple">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="pill reveal">Not Sure Where to Start?</span>
+                <h2 class="section-title">That's exactly what the <span class="highlight">first conversation is for</span>.</h2>
+                <p style="font-size:17px;line-height:1.8;color:#4b5563;">You don't need to arrive with the answer. We'll look at your situation and recommend the most appropriate next step. No pressure. No promises of overnight growth. Just an honest conversation about your content.</p>
+                <a href="contact.html" class="btn-purple" style="margin-top:20px;display:inline-block;">Start a Conversation →</a>
             </div>
         </div>
     </section>
