@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>About — Framework Media</title>
-    <meta name="description" content="Strategy-led content growth agency founded by Katlego Mothapo. Built from experience, guided by strategy." />
+    <meta name="description" content="Framework Media is a content consultancy for businesses and creators. We help you figure out what to say, who to say it to, and how to build a system around it." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +35,64 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .section-full {
+            padding: 80px 0 60px;
+        }
+        .section-full-white { background: #ffffff; }
+        .section-full-light-purple { background: var(--bg-light-purple); }
+        .section-full-dark {
+            background: var(--gradient-dark);
+            color: white;
+        }
+        .section-full-dark .section-title { color: white; }
+        .section-full-dark .section-sub { color: #d1d5db; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+        .section-title .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-sub {
+            font-size: 18px;
+            color: #4b5563;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 4px;
+            margin: 16px auto 0;
+        }
+
+        .pill {
+            display: inline-block;
+            background: var(--gradient-subtle);
+            color: var(--black);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(139,92,246,0.15);
         }
 
         .about-grid {
@@ -81,7 +139,7 @@
             box-shadow: var(--shadow-hover);
         }
         .philosophy-card .icon {
-            font-size: 36px;
+            font-size: 32px;
             color: var(--purple);
             margin-bottom: 12px;
             display: block;
@@ -97,49 +155,39 @@
             line-height: 1.7;
         }
 
-        .values-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 20px;
-        }
-        .values-grid .value-item {
+        .btn-white {
             background: white;
-            border-radius: 16px;
-            padding: 20px 24px;
-            border: 1px solid #e5e7eb;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            transition: all 0.3s ease;
-        }
-        .values-grid .value-item:hover {
-            border-color: var(--purple);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-        .values-grid .value-item i {
-            font-size: 24px;
-            color: var(--purple);
-        }
-        .values-grid .value-item strong {
-            display: block;
-            font-weight: 700;
             color: var(--black);
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
         }
-        .values-grid .value-item span {
-            font-size: 14px;
-            color: #6b7280;
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
         }
 
         @media (max-width: 992px) {
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .philosophy-grid { grid-template-columns: 1fr; }
-            .values-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
             .page-header h1 { font-size: 32px; }
+            .section-title { font-size: 30px; }
+            .section-full { padding: 50px 0 30px; }
+        }
+
+        @media (max-width: 480px) {
+            .section-title { font-size: 26px; }
+            .page-header h1 { font-size: 28px; }
         }
     </style>
 </head>
@@ -149,69 +197,81 @@
     <header class="navbar" id="navbar">
         <a href="index.html" class="logo">
             <img src="images/logo.png" alt="Framework Media" />
+            Framework Media
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
         <nav class="nav-links" id="navLinks">
+            <a href="businesses.html">For Businesses</a>
+            <a href="creators.html">For Creators</a>
             <a href="services.html">Services</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="launch.html">Launch</a>
-            <a href="case-studies.html">Case Studies</a>
-            <a href="testimonials.html">Testimonials</a>
+            <a href="method.html">Method</a>
+            <a href="work.html">Work</a>
+            <a href="insights.html">Insights</a>
             <a href="about.html" class="active">About</a>
-            <a href="contact.html" class="nav-cta">Contact</a>
+            <a href="contact.html" class="nav-cta">Work with Framework</a>
         </nav>
     </header>
 
     <!-- ====== PAGE HEADER ====== -->
     <section class="page-header">
         <div class="container">
-            <h1>Built from experience. <span class="highlight">Guided by strategy</span>.</h1>
-            <p>We don't sell content. We solve business problems through strategic content systems.</p>
+            <h1>About <span class="highlight">Framework</span></h1>
+            <p>A content consultancy for businesses and creators. Strategy behind the content.</p>
         </div>
     </section>
 
-    <!-- ====== FOUNDER ====== -->
+    <!-- ====== WHAT FRAMEWORK IS ====== -->
     <section class="section-full section-full-white">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image reveal-left">
-                    <img src="images/founder.png" alt="Katlego Mothapo — Founder & CEO" />
+                    <img src="images/founder.png" alt="Katlego Mothapo — Founder" />
                 </div>
                 <div class="about-content reveal-right">
-                    <span class="pill">Meet the Founder</span>
-                    <h3>Katlego Mothapo</h3>
-                    <p style="font-size:18px;font-weight:600;color:var(--black);">Founder &amp; CEO, Framework Media</p>
-                    <p>5+ years building personal brands. Built his own brand to 60K+ followers using the same system Framework Media runs for clients. Published author, Content Creator &amp; speaker.</p>
-                    <p>Katlego started Framework Media because he saw too many businesses and founders posting content without a strategy — creating noise instead of building authority.</p>
-                    <div style="display:flex;gap:16px;margin-top:16px;">
-                        <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank" style="color:var(--purple);font-size:24px;text-decoration:none;"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank" style="color:var(--purple);font-size:24px;text-decoration:none;"><i class="fab fa-tiktok"></i></a>
-                    </div>
+                    <span class="pill">What Framework Is</span>
+                    <h3>Content Consultancy for Businesses and Creators</h3>
+                    <p>Framework Media is a content consultancy for businesses and creators. We help you figure out what to say, who to say it to, and how to build a system around it — then, if you want us to, we build it with you.</p>
+                    <p>We don't start with content. We start with the problem.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== PHILOSOPHY ====== -->
+    <!-- ====== WHY WE EXIST ====== -->
     <section class="section-full section-full-light-purple">
         <div class="container">
             <div class="section-header">
+                <span class="pill reveal">Why We Exist</span>
+                <h2 class="section-title">Most content advice skips straight to tactics. We start with <span class="highlight">the actual question</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub" style="margin-top:16px;">What is this content supposed to do?</p>
+            </div>
+            <p style="max-width: 700px; margin: 20px auto 0; text-align: center; font-size: 17px; line-height: 1.8; color: #4b5563;">
+                We started Framework Media to answer that question first, every time. Content without a job wastes time and money. It's easy to confuse activity with progress — more posts, more platforms, more effort — without any of it adding up to a clearer brand or more business. We exist to stop that pattern.
+            </p>
+        </div>
+    </section>
+
+    <!-- ====== OUR PHILOSOPHY ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="section-header">
                 <span class="pill reveal">Our Philosophy</span>
-                <h2 class="section-title">Three principles that guide <span class="highlight">everything we do</span>.</h2>
+                <h2 class="section-title">Content should have <span class="highlight">a job</span>.</h2>
                 <div class="accent-line"></div>
             </div>
 
             <div class="philosophy-grid stagger">
                 <div class="philosophy-card">
                     <span class="icon"><i class="fas fa-bullseye"></i></span>
-                    <h4>Strategy Before Content</h4>
-                    <p>Every piece of content should support a clear business objective. We never create for the sake of posting.</p>
+                    <h4>Content with Purpose</h4>
+                    <p>Every piece should connect back to the business: who it's for, what it's building, and how you'll know it worked.</p>
                 </div>
                 <div class="philosophy-card">
                     <span class="icon"><i class="fas fa-crown"></i></span>
-                    <h4>Authority Before Virality</h4>
+                    <h4>Authority Over Virality</h4>
                     <p>We help you become known — not just noticed. Virality fades. Authority compounds.</p>
                 </div>
                 <div class="philosophy-card">
@@ -223,44 +283,24 @@
         </div>
     </section>
 
-    <!-- ====== WHY FRAMEWORK ====== -->
-    <section class="section-full section-full-white">
+    <!-- ====== WHO WE WORK WITH ====== -->
+    <section class="section-full section-full-light-purple">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">Why Framework Media</span>
-                <h2 class="section-title">What makes us <span class="highlight">different</span>.</h2>
+                <span class="pill reveal">Who We Work With</span>
+                <h2 class="section-title">Anyone with real expertise, a real offer, or a real audience who's ready to treat content as <span class="highlight">a system</span>.</h2>
                 <div class="accent-line"></div>
             </div>
 
-            <div class="values-grid stagger">
-                <div class="value-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div>
-                        <strong>Proven System</strong>
-                        <span>We use the exact system that grew our own audience to 60K+ followers.</span>
-                    </div>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div>
-                        <strong>Not Guessing</strong>
-                        <span>We're repeating a proven process — not experimenting with your brand.</span>
-                    </div>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div>
-                        <strong>Systems, Not Just Content</strong>
-                        <span>We build the infrastructure that turns content into business growth.</span>
-                    </div>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div>
-                        <strong>Partnership Over Projects</strong>
-                        <span>We become your long-term content partner, not just a one-time vendor.</span>
-                    </div>
-                </div>
+            <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center; max-width:800px; margin:20px auto 0;">
+                <span style="background:white; padding:8px 20px; border-radius:40px; border:1px solid #e5e7eb; font-size:14px; font-weight:500;">Service-Based Businesses</span>
+                <span style="background:white; padding:8px 20px; border-radius:40px; border:1px solid #e5e7eb; font-size:14px; font-weight:500;">Founders</span>
+                <span style="background:white; padding:8px 20px; border-radius:40px; border:1px solid #e5e7eb; font-size:14px; font-weight:500;">Professional Service Firms</span>
+                <span style="background:white; padding:8px 20px; border-radius:40px; border:1px solid #e5e7eb; font-size:14px; font-weight:500;">Coaches</span>
+                <span style="background:white; padding:8px 20px; border-radius:40px; border:1px solid #e5e7eb; font-size:14px; font-weight:500;">Consultants</span>
+                <span style="background:white; padding:8px 20px; border-radius:40px; border:1px solid #e5e7eb; font-size:14px; font-weight:500;">Content Creators</span>
+                <span style="background:white; padding:8px 20px; border-radius:40px; border:1px solid #e5e7eb; font-size:14px; font-weight:500;">Educators</span>
+                <span style="background:white; padding:8px 20px; border-radius:40px; border:1px solid #e5e7eb; font-size:14px; font-weight:500;">Thought Leaders</span>
             </div>
         </div>
     </section>
@@ -274,7 +314,7 @@
                 <p class="section-sub">Let's talk about your goals and map a system that delivers.</p>
             </div>
             <div style="text-align:center;">
-                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-white">Book a Strategy Call</a>
+                <a href="contact.html" class="btn-white">Start the Conversation →</a>
             </div>
         </div>
     </section>
@@ -284,24 +324,26 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" style="display:inline-block;">
-                        <img src="images/logo.png" alt="Framework Media" style="height:36px;width:auto;" />
+                    <a href="index.html" class="logo" style="display:inline-block;font-size:18px;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;" />
+                        Framework Media
                     </a>
-                    <p>Strategy-led content growth for businesses, founders, creators and personal brands.</p>
+                    <p>A content consultancy for businesses and creators. Strategy behind the content.</p>
                 </div>
 
                 <div class="footer-col">
                     <h4>Services</h4>
-                    <a href="services.html">How We Help</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="launch.html">Launch Package</a>
+                    <a href="services.html">All Services</a>
+                    <a href="businesses.html">For Businesses</a>
+                    <a href="creators.html">For Creators</a>
                 </div>
 
                 <div class="footer-col">
                     <h4>Company</h4>
                     <a href="about.html">About</a>
-                    <a href="case-studies.html">Case Studies</a>
-                    <a href="testimonials.html">Testimonials</a>
+                    <a href="method.html">Method</a>
+                    <a href="work.html">Work</a>
+                    <a href="insights.html">Insights</a>
                     <a href="contact.html">Contact</a>
                 </div>
 
@@ -310,7 +352,6 @@
                     <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
                     <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
                     <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
-                    <a href="disclaimer.pdf" target="_blank">Disclaimer</a>
                 </div>
             </div>
 
