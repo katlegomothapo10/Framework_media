@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>For Creators — Framework Media</title>
-    <meta name="description" content="Build a recognizable content system around your expertise, personality and goals — so your content compounds instead of resetting every week." />
+    <meta name="description" content="You don't need to become a content machine. You need to become recognizable. We help creators turn their expertise, personality and ideas into a clear content system." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,64 +97,61 @@
             border: 1px solid rgba(139,92,246,0.15);
         }
 
-        .services-grid {
+        .build-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 24px;
+            gap: 20px;
             margin-top: 20px;
         }
-        .service-card {
+        .build-card {
             background: white;
             border-radius: 20px;
             padding: 28px 24px;
             border: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
-        }
-        .service-card:hover {
-            border-color: var(--purple);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-        }
-        .service-card .tag {
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--purple);
-            display: block;
-            margin-bottom: 4px;
-        }
-        .service-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-        .service-card p { color: #4b5563; font-size: 14px; line-height: 1.6; }
-
-        .expect-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 24px;
-            max-width: 800px;
-            margin: 20px auto 0;
-        }
-        .expect-item {
             text-align: center;
-            padding: 24px;
-            background: white;
-            border-radius: 16px;
-            border: 1px solid #e5e7eb;
             transition: all 0.3s ease;
         }
-        .expect-item:hover {
+        .build-card:hover {
             border-color: var(--purple);
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
-        .expect-item .icon {
+        .build-card .icon {
             font-size: 28px;
             color: var(--purple);
             display: block;
             margin-bottom: 8px;
         }
-        .expect-item h4 { font-size: 16px; font-weight: 700; }
-        .expect-item p { font-size: 13px; color: #6b7280; margin-top: 4px; }
+        .build-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .build-card p { color: #4b5563; font-size: 13px; line-height: 1.6; }
+
+        .goal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        .goal-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .goal-item:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .goal-item .icon {
+            font-size: 24px;
+            color: var(--purple);
+            display: block;
+            margin-bottom: 6px;
+        }
+        .goal-item p { font-size: 14px; color: #4b5563; }
 
         .btn-purple {
             background: var(--purple);
@@ -195,12 +192,12 @@
         }
 
         @media (max-width: 992px) {
-            .services-grid { grid-template-columns: 1fr 1fr; }
-            .expect-grid { grid-template-columns: 1fr; }
+            .build-grid { grid-template-columns: 1fr 1fr; }
+            .goal-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            .services-grid { grid-template-columns: 1fr; }
+            .build-grid { grid-template-columns: 1fr; }
             .page-header h1 { font-size: 32px; }
             .section-title { font-size: 30px; }
             .section-full { padding: 50px 0 30px; }
@@ -231,7 +228,7 @@
             <a href="work.html">Work</a>
             <a href="insights.html">Insights</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="nav-cta">Work with Framework</a>
+            <a href="contact.html" class="nav-cta">Work With Framework</a>
         </nav>
     </header>
 
@@ -239,7 +236,7 @@
     <section class="page-header">
         <div class="container">
             <h1>For <span class="highlight">Creators</span></h1>
-            <p>"I have ideas, expertise or an audience — but no real content system."</p>
+            <p>You don't need to become a content machine. You need to become recognizable.</p>
         </div>
     </section>
 
@@ -248,123 +245,86 @@
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">The Problem</span>
-                <h2 class="section-title">You've got ideas, expertise or an audience — but <span class="highlight">no real content system</span>.</h2>
+                <h2 class="section-title">Having ideas isn't the same as having a <span class="highlight">content strategy</span>.</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub" style="margin-top:16px;">Inconsistent posting. A content plateau. Weak positioning. Too much dependence on trends, not enough on what actually makes you worth following.</p>
+                <p class="section-sub" style="margin-top:16px;">You might have 100 ideas, a decent audience, strong expertise, a great personality — and still feel like your content is going nowhere. Because without positioning and structure, every week starts from zero.</p>
             </div>
         </div>
     </section>
 
-    <!-- ====== OUR SOLUTION ====== -->
+    <!-- ====== WE HELP YOU BUILD ====== -->
     <section class="section-full section-full-light-pink">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">Our Solution</span>
-                <h2 class="section-title">Build a recognizable content system around your <span class="highlight">expertise, personality and goals</span>.</h2>
-                <div class="accent-line"></div>
-                <p class="section-sub">So your content compounds instead of resetting every week.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== WHAT WE DO FOR CREATORS ====== -->
-    <section class="section-full section-full-white">
-        <div class="container">
-            <div class="section-header">
-                <span class="pill reveal">What We Do</span>
-                <h2 class="section-title">Five ways we help <span class="highlight">creators</span>.</h2>
+                <span class="pill reveal">We Help You Build</span>
+                <h2 class="section-title">The foundation of a <span class="highlight">recognizable creator brand</span>.</h2>
                 <div class="accent-line"></div>
             </div>
 
-            <div class="services-grid stagger">
-                <div class="service-card">
-                    <span class="tag">Diagnostic</span>
-                    <h4>Content Audit</h4>
-                    <p>Where your content is losing people, and why.</p>
+            <div class="build-grid stagger">
+                <div class="build-card">
+                    <span class="icon"><i class="fas fa-flag"></i></span>
+                    <h4>Positioning</h4>
+                    <p>What should people associate with your name?</p>
                 </div>
-                <div class="service-card">
-                    <span class="tag">Strategy</span>
-                    <h4>Content Strategy</h4>
-                    <p>Positioning, pillars, storytelling and formats.</p>
+                <div class="build-card">
+                    <span class="icon"><i class="fas fa-columns"></i></span>
+                    <h4>Content Pillars</h4>
+                    <p>What subjects should you consistently own?</p>
                 </div>
-                <div class="service-card">
-                    <span class="tag">Execution</span>
-                    <h4>Content Creation</h4>
-                    <p>Scripts, short-form, carousels — executed for you.</p>
+                <div class="build-card">
+                    <span class="icon"><i class="fas fa-comment"></i></span>
+                    <h4>Messaging</h4>
+                    <p>How should you communicate your ideas?</p>
                 </div>
-                <div class="service-card">
-                    <span class="tag">Oversight</span>
-                    <h4>Content Direction</h4>
-                    <p>Weekly briefs and feedback if you create it yourself.</p>
+                <div class="build-card">
+                    <span class="icon"><i class="fas fa-film"></i></span>
+                    <h4>Formats</h4>
+                    <p>What types of content best communicate your ideas?</p>
                 </div>
-                <div class="service-card" style="border-color:var(--purple);">
-                    <span class="tag">Premium</span>
-                    <h4>Content Consultancy</h4>
-                    <p>Ongoing strategic partnership as you grow.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== HOW IT WORKS ====== -->
-    <section class="section-full section-full-light-blue">
-        <div class="container">
-            <div class="section-header">
-                <span class="pill reveal">How It Works</span>
-                <h2 class="section-title">Diagnose → Position → Strategize → <span class="highlight">Create → Optimize</span></h2>
-                <div class="accent-line"></div>
-                <p class="section-sub">Built around your voice, not a generic template.</p>
-            </div>
-
-            <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:12px; max-width:900px; margin:20px auto 0;">
-                <div style="text-align:center; background:white; border-radius:16px; padding:20px 12px; border:1px solid #e5e7eb;">
-                    <div style="background:var(--gradient); color:white; font-weight:700; font-size:14px; width:36px; height:36px; line-height:36px; border-radius:50%; margin:0 auto 8px;">1</div>
-                    <h4 style="font-size:14px; font-weight:700;">Diagnose</h4>
-                </div>
-                <div style="text-align:center; background:white; border-radius:16px; padding:20px 12px; border:1px solid #e5e7eb;">
-                    <div style="background:var(--gradient); color:white; font-weight:700; font-size:14px; width:36px; height:36px; line-height:36px; border-radius:50%; margin:0 auto 8px;">2</div>
-                    <h4 style="font-size:14px; font-weight:700;">Position</h4>
-                </div>
-                <div style="text-align:center; background:white; border-radius:16px; padding:20px 12px; border:1px solid #e5e7eb;">
-                    <div style="background:var(--gradient); color:white; font-weight:700; font-size:14px; width:36px; height:36px; line-height:36px; border-radius:50%; margin:0 auto 8px;">3</div>
-                    <h4 style="font-size:14px; font-weight:700;">Strategize</h4>
-                </div>
-                <div style="text-align:center; background:white; border-radius:16px; padding:20px 12px; border:1px solid #e5e7eb;">
-                    <div style="background:var(--gradient); color:white; font-weight:700; font-size:14px; width:36px; height:36px; line-height:36px; border-radius:50%; margin:0 auto 8px;">4</div>
-                    <h4 style="font-size:14px; font-weight:700;">Create</h4>
-                </div>
-                <div style="text-align:center; background:white; border-radius:16px; padding:20px 12px; border:1px solid #e5e7eb;">
-                    <div style="background:var(--gradient); color:white; font-weight:700; font-size:14px; width:36px; height:36px; line-height:36px; border-radius:50%; margin:0 auto 8px;">5</div>
-                    <h4 style="font-size:14px; font-weight:700;">Optimize</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== WHAT YOU CAN EXPECT ====== -->
-    <section class="section-full section-full-white">
-        <div class="container">
-            <div class="section-header">
-                <span class="pill reveal">What You Can Expect</span>
-                <h2 class="section-title">A clearer niche. A repeatable system. Content that <span class="highlight">actually reflects your value</span>.</h2>
-                <div class="accent-line"></div>
-            </div>
-
-            <div class="expect-grid stagger">
-                <div class="expect-item">
-                    <span class="icon"><i class="fas fa-bullseye"></i></span>
-                    <h4>Clearer Niche</h4>
-                    <p>Know exactly what you stand for and who you're speaking to.</p>
-                </div>
-                <div class="expect-item">
+                <div class="build-card">
                     <span class="icon"><i class="fas fa-sync-alt"></i></span>
-                    <h4>Repeatable System</h4>
-                    <p>Stop resetting every week. Build content that compounds.</p>
+                    <h4>Content Systems</h4>
+                    <p>How do you consistently turn ideas into output?</p>
                 </div>
-                <div class="expect-item">
-                    <span class="icon"><i class="fas fa-star"></i></span>
-                    <h4>Real Value</h4>
-                    <p>We won't promise guaranteed followers — we will help you build something that compounds.</p>
+                <div class="build-card" style="border-color:var(--purple);">
+                    <span class="icon"><i class="fas fa-chart-line"></i></span>
+                    <h4>Direction</h4>
+                    <p>How do you know what to improve?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== THE GOAL ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">The Goal</span>
+                <h2 class="section-title">Not just more followers. A <span class="highlight">stronger creator brand</span>.</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="goal-grid stagger">
+                <div class="goal-item">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <p>Who you are</p>
+                </div>
+                <div class="goal-item">
+                    <span class="icon"><i class="fas fa-lightbulb"></i></span>
+                    <p>What you know</p>
+                </div>
+                <div class="goal-item">
+                    <span class="icon"><i class="fas fa-flag"></i></span>
+                    <p>What you stand for</p>
+                </div>
+                <div class="goal-item">
+                    <span class="icon"><i class="fas fa-ear-listen"></i></span>
+                    <p>Why they should listen</p>
+                </div>
+                <div class="goal-item">
+                    <span class="icon"><i class="fas fa-box"></i></span>
+                    <p>What they can expect from you</p>
                 </div>
             </div>
         </div>
@@ -374,12 +334,11 @@
     <section class="section-full section-full-dark">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Ready to build a content system for <span class="highlight">your creator brand</span>?</h2>
+                <h2 class="section-title">Build something people can <span class="highlight">recognize</span>.</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Let's talk about your ideas, your audience and where you want to go.</p>
             </div>
             <div style="text-align:center;">
-                <a href="contact.html" class="btn-white">Start the Conversation →</a>
+                <a href="contact.html" class="btn-white">Work With Framework →</a>
             </div>
         </div>
     </section>
@@ -393,30 +352,31 @@
                         <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;" />
                         Framework Media
                     </a>
-                    <p>A content consultancy for businesses and creators. Strategy behind the content.</p>
+                    <p>Content consultancy for businesses and creators. Strategy behind the content.</p>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Services</h4>
-                    <a href="services.html">All Services</a>
+                    <h4>Explore</h4>
                     <a href="businesses.html">For Businesses</a>
                     <a href="creators.html">For Creators</a>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
                     <a href="method.html">Method</a>
                     <a href="work.html">Work</a>
                     <a href="insights.html">Insights</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="about.html">About</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Work With Us</h4>
+                    <a href="contact.html">Start a Conversation</a>
+                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank">Book a Consultation</a>
                 </div>
 
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
-                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
                     <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
+                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
                 </div>
             </div>
 
