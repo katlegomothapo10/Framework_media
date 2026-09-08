@@ -4,13 +4,231 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>For Businesses — Framework Media</title>
-    <meta name="description" content="Your business is more valuable than your content currently communicates. We help you turn your expertise into a content system built around trust, authority and commercial relevance." />
+    <meta name="description" content="The business is more capable than its content currently demonstrates. We build content systems for businesses." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        :root {
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --pink: #ec4899;
+            --purple: #8b5cf6;
+            --blue: #3b82f6;
+            --gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e, #16213e);
+            --gradient-subtle: linear-gradient(135deg, rgba(236,72,153,0.08), rgba(139,92,246,0.08), rgba(59,130,246,0.08));
+            --bg-light-purple: #f5f0ff;
+            --bg-light-pink: #fdf2f8;
+            --bg-light-blue: #eff6ff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-hover: 0 12px 40px rgba(139,92,246,0.12);
+            --font-serif: 'Source Serif 4', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: #ffffff;
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        .section-title {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 44px;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+        .section-title .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-sub {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 18px;
+            color: #4b5563;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .section-full {
+            width: 100%;
+            padding: 80px 0 60px;
+        }
+        .section-full-white { background: #ffffff; }
+        .section-full-light-purple { background: var(--bg-light-purple); }
+        .section-full-light-pink { background: var(--bg-light-pink); }
+        .section-full-light-blue { background: var(--bg-light-blue); }
+        .section-full-dark {
+            background: var(--gradient-dark);
+            color: white;
+        }
+        .section-full-dark .section-title { color: white; }
+        .section-full-dark .section-sub { color: #d1d5db; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 4px;
+            margin: 16px auto 0;
+        }
+
+        .pill {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: var(--gradient-subtle);
+            color: var(--black);
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(139,92,246,0.15);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary, .btn-purple, .btn-white, .btn-outline {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-primary { background: var(--black); color: white; }
+        .btn-primary:hover { background: var(--gray-800); transform: translateY(-2px); }
+        .btn-purple { background: var(--purple); color: white; }
+        .btn-purple:hover { background: #7c3aed; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,92,246,0.3); }
+        .btn-white { background: white; color: var(--black); }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .btn-outline { background: transparent; color: var(--black); border: 2px solid var(--black); }
+        .btn-outline:hover { background: var(--black); color: white; transform: translateY(-2px); }
+        .btn-small { padding: 10px 24px; font-size: 13px; }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+            font-family: var(--font-sans);
+        }
+        .navbar.hidden { transform: translateY(-100%); }
+        .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--black);
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .logo img { height: 36px; width: auto; display: block; }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            font-family: var(--font-sans);
+            font-weight: 500;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1f2937;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--black); }
+        .nav-links a.active { color: var(--black); }
+        .nav-links a.active::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--purple);
+            color: white !important;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: #7c3aed; color: white !important; }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--black);
+            cursor: pointer;
+        }
+
+        /* ===== PAGE HEADER ===== */
         .page-header {
             padding: 120px 24px 60px;
             background: var(--gradient-dark);
@@ -18,12 +236,15 @@
             text-align: center;
         }
         .page-header h1 {
+            font-family: var(--font-serif);
+            font-weight: 600;
             font-size: 52px;
-            font-weight: 800;
             letter-spacing: -0.02em;
             margin-bottom: 12px;
         }
         .page-header p {
+            font-family: var(--font-sans);
+            font-weight: 400;
             color: #d1d5db;
             font-size: 18px;
             max-width: 640px;
@@ -37,65 +258,7 @@
             background-clip: text;
         }
 
-        .section-full {
-            padding: 80px 0 60px;
-        }
-        .section-full-white { background: #ffffff; }
-        .section-full-light-purple { background: var(--bg-light-purple); }
-        .section-full-light-blue { background: var(--bg-light-blue); }
-        .section-full-dark {
-            background: var(--gradient-dark);
-            color: white;
-        }
-        .section-full-dark .section-title { color: white; }
-        .section-full-dark .section-sub { color: #d1d5db; }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .section-title {
-            font-size: 44px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-            margin-bottom: 12px;
-        }
-        .section-title .highlight {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .section-sub {
-            font-size: 18px;
-            color: #4b5563;
-            max-width: 640px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-        .accent-line {
-            width: 60px;
-            height: 3px;
-            background: var(--gradient);
-            border-radius: 4px;
-            margin: 16px auto 0;
-        }
-
-        .pill {
-            display: inline-block;
-            background: var(--gradient-subtle);
-            color: var(--black);
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            padding: 4px 16px;
-            border-radius: 40px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(139,92,246,0.15);
-        }
-
+        /* ===== SERVICES GRID ===== */
         .services-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -115,25 +278,38 @@
             box-shadow: var(--shadow-hover);
         }
         .service-card .tag {
+            font-family: var(--font-sans);
+            font-weight: 600;
             font-size: 10px;
-            font-weight: 700;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             color: var(--purple);
             display: block;
             margin-bottom: 4px;
         }
-        .service-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-        .service-card p { color: #4b5563; font-size: 14px; line-height: 1.6; }
+        .service-card h4 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+        .service-card p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: #4b5563;
+            font-size: 14px;
+            line-height: 1.6;
+        }
 
-        .change-grid {
+        /* ===== SHIFT GRID ===== */
+        .shift-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 32px;
             max-width: 700px;
             margin: 20px auto 0;
         }
-        .change-item {
+        .shift-item {
             text-align: center;
             padding: 24px;
             background: white;
@@ -141,68 +317,156 @@
             border: 1px solid #e5e7eb;
             transition: all 0.3s ease;
         }
-        .change-item:hover {
+        .shift-item:hover {
             border-color: var(--purple);
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
-        .change-item .from { font-size: 14px; color: #6b7280; }
-        .change-item .arrow { font-size: 24px; color: var(--purple); margin: 8px 0; display: block; }
-        .change-item .to { font-size: 16px; font-weight: 700; color: var(--black); }
+        .shift-item .from {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        .shift-item .arrow {
+            font-size: 24px;
+            color: var(--purple);
+            margin: 8px 0;
+            display: block;
+        }
+        .shift-item .to {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--black);
+        }
 
-        .btn-purple {
+        /* ===== FOOTER ===== */
+        .footer {
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding: 48px 0 32px;
+            background: #fafafa;
+            font-family: var(--font-sans);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+        .footer-brand p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 320px;
+            margin-top: 8px;
+        }
+        .footer-col h4 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+        .footer-col a {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            display: block;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+        }
+        .footer-col a:hover { color: var(--purple); }
+        .footer-bottom {
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: #9ca3af;
+            font-size: 13px;
+            font-family: var(--font-sans);
+            font-weight: 400;
+        }
+        .footer-bottom .social-icons { display: flex; gap: 16px; }
+        .footer-bottom .social-icons a { color: #6b7280; font-size: 18px; transition: color 0.3s ease; }
+        .footer-bottom .social-icons a:hover { color: var(--purple); }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
             background: var(--purple);
             color: white;
-            border: none;
-            padding: 14px 36px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
-            text-align: center;
-        }
-        .btn-purple:hover {
-            background: #7c3aed;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(139,92,246,0.3);
-        }
-        .btn-white {
-            background: white;
-            color: var(--black);
-            border: none;
-            padding: 14px 36px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(139,92,246,0.3);
             transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
         }
-        .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-        }
+        .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+        .back-to-top:hover { background: #7c3aed; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(139,92,246,0.4); }
+        .back-to-top i { font-size: 20px; }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 992px) {
             .services-grid { grid-template-columns: 1fr 1fr; }
-            .change-grid { grid-template-columns: 1fr; }
+            .shift-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .footer-brand { grid-column: 1 / -1; }
         }
 
         @media (max-width: 768px) {
-            .services-grid { grid-template-columns: 1fr; }
+            .navbar { padding: 10px 16px; flex-wrap: wrap; }
+            .nav-toggle { display: block; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 16px;
+                padding: 20px 0;
+                width: 100%;
+                text-align: center;
+                background: white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a { font-size: 16px; }
             .page-header h1 { font-size: 32px; }
             .section-title { font-size: 30px; }
             .section-full { padding: 50px 0 30px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+            .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
         }
 
         @media (max-width: 480px) {
             .section-title { font-size: 26px; }
             .page-header h1 { font-size: 28px; }
+            .navbar { padding: 8px 12px; }
+            .logo img { height: 28px; }
+            .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
+            .back-to-top i { font-size: 16px; }
         }
     </style>
 </head>
@@ -233,7 +497,7 @@
     <section class="page-header">
         <div class="container">
             <h1>For <span class="highlight">Businesses</span></h1>
-            <p>Your business is more valuable than your content currently communicates.</p>
+            <p>The business is more capable than its content currently demonstrates.</p>
         </div>
     </section>
 
@@ -242,17 +506,10 @@
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">The Problem</span>
-                <h2 class="section-title">Good businesses can still have <span class="highlight">weak content</span>.</h2>
+                <h2 class="section-title">Inconsistent publishing. Disconnected content. Founder expertise that never appears in the work. <span class="highlight">Uncertainty about what to say.</span></h2>
                 <div class="accent-line"></div>
+                <p class="section-sub" style="margin-top:16px;">None of these are publishing problems. They are strategy problems, and they require a strategic response.</p>
             </div>
-            <ul style="max-width:600px;margin:20px auto 0;list-style:none;text-align:center;font-size:16px;line-height:2;color:#4b5563;">
-                <li>Maybe your team posts inconsistently.</li>
-                <li>Maybe every post feels disconnected.</li>
-                <li>Maybe your founder knows exactly what they're talking about but never appears in the content.</li>
-                <li>Maybe your content gets attention but doesn't communicate what makes the business different.</li>
-                <li>Maybe you simply don't know what your business should be saying online.</li>
-            </ul>
-            <p style="max-width:600px;margin:24px auto 0;text-align:center;font-size:18px;font-weight:600;color:var(--purple);">These aren't posting problems. They're strategy problems.</p>
         </div>
     </section>
 
@@ -261,99 +518,100 @@
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">What We Do</span>
-                <h2 class="section-title">We turn business expertise into <span class="highlight">content</span>.</h2>
+                <h2 class="section-title">Content Audit · Strategy · Creation · Direction · <span class="highlight">Consultancy</span></h2>
                 <div class="accent-line"></div>
             </div>
 
             <div class="services-grid stagger">
                 <div class="service-card">
-                    <span class="tag">Diagnostic</span>
+                    <span class="tag">Audit</span>
                     <h4>Content Audit</h4>
-                    <p>Understand what your current content is communicating — and where it's falling short.</p>
+                    <p>An assessment of what current content communicates, and where it falls short.</p>
                 </div>
                 <div class="service-card">
                     <span class="tag">Strategy</span>
                     <h4>Content Strategy</h4>
-                    <p>Build your positioning, messaging, pillars, formats and content direction.</p>
+                    <p>Positioning, messaging, pillars, formats and direction, built as a system.</p>
                 </div>
                 <div class="service-card">
-                    <span class="tag">Execution</span>
+                    <span class="tag">Creation</span>
                     <h4>Content Creation</h4>
-                    <p>Turn the strategy into actual content when your team needs execution.</p>
+                    <p>Execution, when the team requires it.</p>
                 </div>
                 <div class="service-card">
                     <span class="tag">Direction</span>
                     <h4>Content Direction</h4>
-                    <p>Give your internal team the strategy, briefs and feedback they need to execute.</p>
+                    <p>Strategy, briefs and feedback for an existing internal team.</p>
                 </div>
                 <div class="service-card" style="border-color:var(--purple);">
-                    <span class="tag">Premium</span>
+                    <span class="tag">Consultancy</span>
                     <h4>Content Consultancy</h4>
-                    <p>Work with Framework as an ongoing strategic partner.</p>
+                    <p>An ongoing strategic partnership.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== WHAT CHANGES ====== -->
+    <!-- ====== THE SHIFT ====== -->
     <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">What Changes</span>
-                <h2 class="section-title">From <span class="highlight">random posts</span> to a <span class="highlight">recognizable system</span>.</h2>
+                <span class="pill reveal">The Shift</span>
+                <h2 class="section-title">From <span class="highlight">random posts</span> to a <span class="highlight">coherent system</span>.</h2>
                 <div class="accent-line"></div>
             </div>
 
-            <div class="change-grid stagger">
-                <div class="change-item">
+            <div class="shift-grid stagger">
+                <div class="shift-item">
                     <span class="from">From...</span>
-                    <span class="from" style="font-weight:600;color:#6b7280;">Posting because you need to post.</span>
+                    <span class="from" style="font-weight:600;color:#6b7280;">Publishing because a schedule demands it.</span>
                     <span class="arrow">↓</span>
-                    <span class="to">To... Creating because you know what the content needs to accomplish.</span>
+                    <span class="to">To... Publishing because the content has a defined job.</span>
                 </div>
-                <div class="change-item">
+                <div class="shift-item">
                     <span class="from">From...</span>
                     <span class="from" style="font-weight:600;color:#6b7280;">Generic industry content.</span>
                     <span class="arrow">↓</span>
-                    <span class="to">To... Content built around your expertise and differentiation.</span>
+                    <span class="to">To... Content built on specific expertise and differentiation.</span>
                 </div>
-                <div class="change-item">
+                <div class="shift-item">
                     <span class="from">From...</span>
-                    <span class="from" style="font-weight:600;color:#6b7280;">A collection of random posts.</span>
+                    <span class="from" style="font-weight:600;color:#6b7280;">A collection of posts.</span>
                     <span class="arrow">↓</span>
-                    <span class="to">To... A recognizable content system.</span>
+                    <span class="to">To... A coherent, recognizable system.</span>
                 </div>
-                <div class="change-item">
+                <div class="shift-item">
                     <span class="from">From...</span>
-                    <span class="from" style="font-weight:600;color:#6b7280;">Trying to become a content company.</span>
+                    <span class="from" style="font-weight:600;color:#6b7280;">Attempting to become a content company.</span>
                     <span class="arrow">↓</span>
-                    <span class="to">To... Using content to strengthen the company you already have.</span>
+                    <span class="to">To... Using content to strengthen the company that already exists.</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== WHO THIS IS FOR ====== -->
+    <!-- ====== WHO THIS SERVES ====== -->
     <section class="section-full section-full-light-blue">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">Who This Is For</span>
-                <h2 class="section-title">Framework works particularly well <span class="highlight">with</span>:</h2>
+                <span class="pill reveal">Who This Serves</span>
+                <h2 class="section-title">Service businesses · Professional firms · Founders · Consultants · Coaches · Real estate · Financial services · <span class="highlight">Law firms · Hospitality · Education</span></h2>
                 <div class="accent-line"></div>
             </div>
 
             <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:700px;margin:20px auto 0;">
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-size:14px;font-weight:500;">Service Businesses</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-size:14px;font-weight:500;">Professional Firms</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-size:14px;font-weight:500;">Founders</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-size:14px;font-weight:500;">Consultants</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-size:14px;font-weight:500;">Coaches</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-size:14px;font-weight:500;">Real Estate</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-size:14px;font-weight:500;">Financial Services</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-size:14px;font-weight:500;">Law Firms</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-size:14px;font-weight:500;">Fitness Businesses</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-size:14px;font-weight:500;">Hospitality Brands</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-size:14px;font-weight:500;">Founder-Led Companies</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Service Businesses</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Professional Firms</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Founders</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Consultants</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Coaches</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Real Estate</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Financial Services</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Law Firms</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Fitness Businesses</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Hospitality</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Education</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Founder-Led Companies</span>
             </div>
         </div>
     </section>
@@ -362,7 +620,7 @@
     <section class="section-full section-full-dark">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Your business already has the expertise. Let's build the <span class="highlight">content around it</span>.</h2>
+                <h2 class="section-title">A strategy problem requires a <span class="highlight">strategic response</span>.</h2>
                 <div class="accent-line"></div>
             </div>
             <div style="text-align:center;">
