@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>For Businesses — Framework Media</title>
+    <meta name="description" content="Turn your business expertise into a content system that builds trust and brings in the right customers." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 120px 24px 60px;
+            background: var(--gradient-dark);
+            color: white;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 52px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            color: #d1d5db;
+            font-size: 18px;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .page-header .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-full {
+            padding: 80px 0 60px;
+        }
+        .section-full-white { background: #ffffff; }
+        .section-full-light-purple { background: var(--bg-light-purple); }
+        .section-full-light-blue { background: var(--bg-light-blue); }
+        .section-full-dark {
+            background: var(--gradient-dark);
+            color: white;
+        }
+        .section-full-dark .section-title { color: white; }
+        .section-full-dark .section-sub { color: #d1d5db; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+        .section-title .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-sub {
+            font-size: 18px;
+            color: #4b5563;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 4px;
+            margin: 16px auto 0;
+        }
+
+        .pill {
+            display: inline-block;
+            background: var(--gradient-subtle);
+            color: var(--black);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(139,92,246,0.15);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 24px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .service-card .tag {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--purple);
+            display: block;
+            margin-bottom: 4px;
+        }
+        .service-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+        .service-card p { color: #4b5563; font-size: 14px; line-height: 1.6; }
+
+        .expect-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            max-width: 800px;
+            margin: 20px auto 0;
+        }
+        .expect-item {
+            text-align: center;
+            padding: 24px;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .expect-item:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .expect-item .icon {
+            font-size: 28px;
+            color: var(--purple);
+            display: block;
+            margin-bottom: 8px;
+        }
+        .expect-item h4 { font-size: 16px; font-weight: 700; }
+        .expect-item p { font-size: 13px; color: #6b7280; margin-top: 4px; }
+
+        .btn-purple {
+            background: var(--purple);
+            color: white;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-purple:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139,92,246,0.3);
+        }
+        .btn-white {
+            background: white;
+            color: var(--black);
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 992px) {
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .expect-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 32px; }
+            .section-title { font-size: 30px; }
+            .section-full { padding: 50px 0 30px; }
+        }
+
+        @media (max-width: 480px) {
+            .section-title { font-size: 26px; }
+            .page-header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Framework Media" />
+            Framework Media
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="businesses.html" class="active">For Businesses</a>
+            <a href="creators.html">For Creators</a>
+            <a href="services.html">Services</a>
+            <a href="method.html">Method</a>
+            <a href="work.html">Work</a>
+            <a href="insights.html">Insights</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="nav-cta">Work with Framework</a>
+        </nav>
+    </header>
+
+    <!-- ====== PAGE HEADER ====== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>For <span class="highlight">Businesses</span></h1>
+            <p>"Our business is good, but our content doesn't communicate that."</p>
+        </div>
+    </section>
+
+    <!-- ====== THE PROBLEM ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">The Problem</span>
+                <h2 class="section-title">Your business is good. Your content <span class="highlight">doesn't say so yet</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub" style="margin-top:16px;">Inconsistent posting. Generic messaging. Founder expertise that never makes it into the content. A team with no clear direction. Sound familiar?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== OUR SOLUTION ====== -->
+    <section class="section-full section-full-light-purple">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Our Solution</span>
+                <h2 class="section-title">Turn what your business actually knows and does into a <span class="highlight">content system</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Content that builds trust and brings in the right customers — not just more followers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== WHAT WE DO FOR BUSINESSES ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">What We Do</span>
+                <h2 class="section-title">Five ways we help <span class="highlight">businesses</span>.</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="services-grid stagger">
+                <div class="service-card">
+                    <span class="tag">Diagnostic</span>
+                    <h4>Content Audit</h4>
+                    <p>See what your current content is (and isn't) doing.</p>
+                </div>
+                <div class="service-card">
+                    <span class="tag">Strategy</span>
+                    <h4>Content Strategy</h4>
+                    <p>Positioning, pillars and a system your team can run.</p>
+                </div>
+                <div class="service-card">
+                    <span class="tag">Execution</span>
+                    <h4>Content Creation</h4>
+                    <p>We execute it, professionally.</p>
+                </div>
+                <div class="service-card">
+                    <span class="tag">Oversight</span>
+                    <h4>Content Direction</h4>
+                    <p>We guide an in-house team instead of replacing it.</p>
+                </div>
+                <div class="service-card" style="border-color:var(--purple);">
+                    <span class="tag">Premium</span>
+                    <h4>Content Consultancy</h4>
+                    <p>An ongoing strategic partner as the business grows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== HOW IT WORKS ====== -->
+    <section class="section-full section-full-light-blue">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">How It Works</span>
+                <h2 class="section-title">Diagnose → Position → Strategize → <span class="highlight">Create → Optimize</span></h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Same method, applied to your business's specific positioning, offer and audience.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:12px; max-width:900px; margin:20px auto 0;">
+                <div style="text-align:center; background:white; border-radius:16px; padding:20px 12px; border:1px solid #e5e7eb;">
+                    <div style="background:var(--gradient); color:white; font-weight:700; font-size:14px; width:36px; height:36px; line-height:36px; border-radius:50%; margin:0 auto 8px;">1</div>
+                    <h4 style="font-size:14px; font-weight:700;">Diagnose</h4>
+                </div>
+                <div style="text-align:center; background:white; border-radius:16px; padding:20px 12px; border:1px solid #e5e7eb;">
+                    <div style="background:var(--gradient); color:white; font-weight:700; font-size:14px; width:36px; height:36px; line-height:36px; border-radius:50%; margin:0 auto 8px;">2</div>
+                    <h4 style="font-size:14px; font-weight:700;">Position</h4>
+                </div>
+                <div style="text-align:center; background:white; border-radius:16px; padding:20px 12px; border:1px solid #e5e7eb;">
+                    <div style="background:var(--gradient); color:white; font-weight:700; font-size:14px; width:36px; height:36px; line-height:36px; border-radius:50%; margin:0 auto 8px;">3</div>
+                    <h4 style="font-size:14px; font-weight:700;">Strategize</h4>
+                </div>
+                <div style="text-align:center; background:white; border-radius:16px; padding:20px 12px; border:1px solid #e5e7eb;">
+                    <div style="background:var(--gradient); color:white; font-weight:700; font-size:14px; width:36px; height:36px; line-height:36px; border-radius:50%; margin:0 auto 8px;">4</div>
+                    <h4 style="font-size:14px; font-weight:700;">Create</h4>
+                </div>
+                <div style="text-align:center; background:white; border-radius:16px; padding:20px 12px; border:1px solid #e5e7eb;">
+                    <div style="background:var(--gradient); color:white; font-weight:700; font-size:14px; width:36px; height:36px; line-height:36px; border-radius:50%; margin:0 auto 8px;">5</div>
+                    <h4 style="font-size:14px; font-weight:700;">Optimize</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== WHAT YOU CAN EXPECT ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">What You Can Expect</span>
+                <h2 class="section-title">A clearer content direction. A system your team can <span class="highlight">actually follow</span>.</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="expect-grid stagger">
+                <div class="expect-item">
+                    <span class="icon"><i class="fas fa-flag"></i></span>
+                    <h4>Clear Direction</h4>
+                    <p>Content that's doing a specific job — not just filling the calendar.</p>
+                </div>
+                <div class="expect-item">
+                    <span class="icon"><i class="fas fa-sitemap"></i></span>
+                    <h4>A System You Can Run</h4>
+                    <p>Your team can actually follow it, even after we're gone.</p>
+                </div>
+                <div class="expect-item">
+                    <span class="icon"><i class="fas fa-chart-line"></i></span>
+                    <h4>Earned Attention</h4>
+                    <p>We don't promise guaranteed leads or virality — we promise a strategy that's built to earn attention honestly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CTA ====== -->
+    <section class="section-full section-full-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ready to build a content system for <span class="highlight">your business</span>?</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Let's talk about where you are and where you want to go.</p>
+            </div>
+            <div style="text-align:center;">
+                <a href="contact.html" class="btn-white">Start the Conversation →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="display:inline-block;font-size:18px;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;" />
+                        Framework Media
+                    </a>
+                    <p>A content consultancy for businesses and creators. Strategy behind the content.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="services.html">All Services</a>
+                    <a href="businesses.html">For Businesses</a>
+                    <a href="creators.html">For Creators</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="method.html">Method</a>
+                    <a href="work.html">Work</a>
+                    <a href="insights.html">Insights</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
+                    <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Framework Media. All rights reserved.</span>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
