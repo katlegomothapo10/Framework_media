@@ -123,7 +123,7 @@
             outline: none;
             box-shadow: 0 0 0 4px rgba(139,92,246,0.1);
         }
-        .contact-form textarea { min-height: 120px; resize: vertical; }
+        .contact-form textarea { min-height: 100px; resize: vertical; }
         .contact-form .btn-purple { width: 100%; margin-top: 4px; }
 
         .contact-right {
@@ -220,7 +220,7 @@
             <a href="work.html">Work</a>
             <a href="insights.html">Insights</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="nav-cta">Work with Framework</a>
+            <a href="contact.html" class="nav-cta">Work With Framework</a>
         </nav>
     </header>
 
@@ -228,7 +228,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Tell us what <span class="highlight">you're building</span>.</h1>
-            <p>Not a generic contact form — a real starting point. Tell us where you are, what's not working, and what you're trying to build. We'll tell you honestly whether we can help.</p>
+            <p>You don't need to know exactly what service you need. That's part of what we're here to figure out. Tell us where you are, what's not working and what you're trying to build. We'll tell you honestly whether Framework is the right fit.</p>
         </div>
     </section>
 
@@ -244,33 +244,27 @@
 
                     <form id="contactForm">
                         <input type="text" id="fullName" placeholder="Your Name" required />
+                        <input type="text" id="businessName" placeholder="Business / Creator Name" />
                         <input type="email" id="email" placeholder="your@email.com" required />
-                        <input type="text" id="company" placeholder="Company / Creator Name" />
                         <input type="url" id="website" placeholder="Website or Social Profile" />
                         <input type="text" id="whatYouDo" placeholder="What do you do?" />
-                        <textarea id="challenge" placeholder="What's your main challenge right now?" rows="3" required></textarea>
-                        <input type="text" id="need" placeholder="What do you think you need?" />
-                        <select id="budget">
-                            <option value="">Select a budget range (Optional)</option>
-                            <option value="under-5000">Under R5,000</option>
-                            <option value="5000-15000">R5,000 – R15,000</option>
-                            <option value="15000-30000">R15,000 – R30,000</option>
-                            <option value="30000-50000">R30,000 – R50,000</option>
-                            <option value="50000-plus">R50,000+</option>
+                        <textarea id="challenge" placeholder="What's happening with your content?" rows="3" required></textarea>
+                        <input type="text" id="goal" placeholder="What are you trying to achieve?" />
+                        <select id="need">
+                            <option value="">What do you think you need?</option>
+                            <option value="strategy">Strategy</option>
+                            <option value="creation">Content Creation</option>
+                            <option value="direction">Content Direction</option>
+                            <option value="consultancy">Ongoing Consultancy</option>
+                            <option value="not-sure">Not Sure Yet</option>
                         </select>
-                        <select id="timeline">
-                            <option value="">Select a timeline (Optional)</option>
-                            <option value="immediate">Immediate (within 2 weeks)</option>
-                            <option value="month">Within a month</option>
-                            <option value="quarter">Within 3 months</option>
-                            <option value="flexible">Flexible</option>
-                        </select>
-                        <button type="submit" class="btn-purple">Send It →</button>
+                        <button type="submit" class="btn-purple">Start the Conversation →</button>
                     </form>
 
-                    <p style="margin-top:16px;font-size:13px;color:#6b7280;text-align:center;font-style:italic;">
-                        We don't promise guaranteed followers, virality or leads. We promise an honest read on your content and, if it's a fit, a real strategy behind it.
-                    </p>
+                    <div style="margin-top:24px;padding-top:24px;border-top:1px solid #e5e7eb;">
+                        <h4 style="font-weight:700;font-size:16px;margin-bottom:4px;">Not sure what you need?</h4>
+                        <p style="font-size:14px;color:#6b7280;line-height:1.7;">That's okay. You don't need to arrive with the answer. We'll look at the situation with you and recommend the most appropriate next step. No pressure. No promises of overnight growth. Just an honest conversation about your content.</p>
+                    </div>
                 </div>
 
                 <!-- Column 2: Call -->
@@ -301,30 +295,31 @@
                         <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;" />
                         Framework Media
                     </a>
-                    <p>A content consultancy for businesses and creators. Strategy behind the content.</p>
+                    <p>Content consultancy for businesses and creators. Strategy behind the content.</p>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Services</h4>
-                    <a href="services.html">All Services</a>
+                    <h4>Explore</h4>
                     <a href="businesses.html">For Businesses</a>
                     <a href="creators.html">For Creators</a>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
                     <a href="method.html">Method</a>
                     <a href="work.html">Work</a>
                     <a href="insights.html">Insights</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="about.html">About</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Work With Us</h4>
+                    <a href="contact.html">Start a Conversation</a>
+                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank">Book a Consultation</a>
                 </div>
 
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
-                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
                     <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
+                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
                 </div>
             </div>
 
@@ -355,21 +350,20 @@
                 e.preventDefault();
 
                 const fullName = document.getElementById('fullName')?.value || '';
+                const businessName = document.getElementById('businessName')?.value || '';
                 const email = document.getElementById('email')?.value || '';
-                const company = document.getElementById('company')?.value || '';
                 const website = document.getElementById('website')?.value || '';
                 const whatYouDo = document.getElementById('whatYouDo')?.value || '';
                 const challenge = document.getElementById('challenge')?.value || '';
+                const goal = document.getElementById('goal')?.value || '';
                 const need = document.getElementById('need')?.value || '';
-                const budget = document.getElementById('budget')?.value || '';
-                const timeline = document.getElementById('timeline')?.value || '';
 
                 if (!fullName || !email || !challenge) {
-                    alert('Please fill in your name, email, and your main challenge.');
+                    alert('Please fill in your name, email, and tell us what\'s happening with your content.');
                     return;
                 }
 
-                const emailBody = `New Message from Framework Media:%0A%0A---%0A%0AName: ${fullName}%0AEmail: ${email}%0ACompany: ${company || 'Not specified'}%0AWebsite: ${website || 'Not specified'}%0AWhat they do: ${whatYouDo || 'Not specified'}%0A%0AMain Challenge: ${challenge}%0A%0AWhat they think they need: ${need || 'Not specified'}%0ABudget: ${budget || 'Not specified'}%0ATimeline: ${timeline || 'Not specified'}%0A%0A---%0A%0APlease follow up within 24 hours.`;
+                const emailBody = `New Message from Framework Media:%0A%0A---%0A%0AName: ${fullName}%0ABusiness/Creator: ${businessName || 'Not specified'}%0AEmail: ${email}%0AWebsite: ${website || 'Not specified'}%0AWhat they do: ${whatYouDo || 'Not specified'}%0A%0AChallenge: ${challenge}%0A%0AGoal: ${goal || 'Not specified'}%0AWhat they think they need: ${need || 'Not specified'}%0A%0A---%0A%0APlease follow up within 24 hours.`;
 
                 window.location.href = `mailto:hello@frameworkmedia.co.za?subject=New Message from ${fullName}&body=${emailBody}`;
 
