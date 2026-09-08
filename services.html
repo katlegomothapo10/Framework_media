@@ -4,13 +4,254 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Services — Framework Media</title>
-    <meta name="description" content="Choose the level of support you actually need. From a single audit to an ongoing strategic partnership." />
+    <meta name="description" content="Engagement is scoped to the actual problem. Strategy, audits, creation, direction and ongoing consultancy." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        :root {
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --pink: #ec4899;
+            --purple: #8b5cf6;
+            --blue: #3b82f6;
+            --gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e, #16213e);
+            --gradient-subtle: linear-gradient(135deg, rgba(236,72,153,0.08), rgba(139,92,246,0.08), rgba(59,130,246,0.08));
+            --bg-light-purple: #f5f0ff;
+            --bg-light-pink: #fdf2f8;
+            --bg-light-blue: #eff6ff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-hover: 0 12px 40px rgba(139,92,246,0.12);
+            --font-serif: 'Source Serif 4', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: #ffffff;
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        .section-title {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 44px;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+        .section-title .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-sub {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 18px;
+            color: #4b5563;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .section-full {
+            width: 100%;
+            padding: 80px 0 60px;
+        }
+        .section-full-white { background: #ffffff; }
+        .section-full-light-purple { background: var(--bg-light-purple); }
+        .section-full-light-pink { background: var(--bg-light-pink); }
+        .section-full-light-blue { background: var(--bg-light-blue); }
+        .section-full-dark {
+            background: var(--gradient-dark);
+            color: white;
+        }
+        .section-full-dark .section-title { color: white; }
+        .section-full-dark .section-sub { color: #d1d5db; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 4px;
+            margin: 16px auto 0;
+        }
+
+        .pill {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: var(--gradient-subtle);
+            color: var(--black);
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(139,92,246,0.15);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary, .btn-purple, .btn-white, .btn-outline {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-primary { background: var(--black); color: white; }
+        .btn-primary:hover { background: var(--gray-800); transform: translateY(-2px); }
+        .btn-purple { background: var(--purple); color: white; }
+        .btn-purple:hover { background: #7c3aed; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,92,246,0.3); }
+        .btn-white { background: white; color: var(--black); }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .btn-outline { background: transparent; color: var(--black); border: 2px solid var(--black); }
+        .btn-outline:hover { background: var(--black); color: white; transform: translateY(-2px); }
+        .btn-small { padding: 10px 24px; font-size: 13px; }
+
+        .btn-outline-small {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            background: transparent;
+            color: var(--purple);
+            border: 2px solid var(--purple);
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            margin-top: 12px;
+        }
+        .btn-outline-small:hover {
+            background: var(--purple);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+            font-family: var(--font-sans);
+        }
+        .navbar.hidden { transform: translateY(-100%); }
+        .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--black);
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .logo img { height: 36px; width: auto; display: block; }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            font-family: var(--font-sans);
+            font-weight: 500;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1f2937;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--black); }
+        .nav-links a.active { color: var(--black); }
+        .nav-links a.active::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--purple);
+            color: white !important;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: #7c3aed; color: white !important; }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--black);
+            cursor: pointer;
+        }
+
+        /* ===== PAGE HEADER ===== */
         .page-header {
             padding: 120px 24px 60px;
             background: var(--gradient-dark);
@@ -18,12 +259,15 @@
             text-align: center;
         }
         .page-header h1 {
+            font-family: var(--font-serif);
+            font-weight: 600;
             font-size: 52px;
-            font-weight: 800;
             letter-spacing: -0.02em;
             margin-bottom: 12px;
         }
         .page-header p {
+            font-family: var(--font-sans);
+            font-weight: 400;
             color: #d1d5db;
             font-size: 18px;
             max-width: 640px;
@@ -37,65 +281,7 @@
             background-clip: text;
         }
 
-        .section-full {
-            padding: 80px 0 60px;
-        }
-        .section-full-white { background: #ffffff; }
-        .section-full-light-purple { background: var(--bg-light-purple); }
-        .section-full-light-blue { background: var(--bg-light-blue); }
-        .section-full-dark {
-            background: var(--gradient-dark);
-            color: white;
-        }
-        .section-full-dark .section-title { color: white; }
-        .section-full-dark .section-sub { color: #d1d5db; }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .section-title {
-            font-size: 44px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-            margin-bottom: 12px;
-        }
-        .section-title .highlight {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .section-sub {
-            font-size: 18px;
-            color: #4b5563;
-            max-width: 640px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-        .accent-line {
-            width: 60px;
-            height: 3px;
-            background: var(--gradient);
-            border-radius: 4px;
-            margin: 16px auto 0;
-        }
-
-        .pill {
-            display: inline-block;
-            background: var(--gradient-subtle);
-            color: var(--black);
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            padding: 4px 16px;
-            border-radius: 40px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(139,92,246,0.15);
-        }
-
+        /* ===== SERVICES GRID ===== */
         .services-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -117,20 +303,24 @@
             box-shadow: var(--shadow-hover);
         }
         .service-card .tag {
+            font-family: var(--font-sans);
+            font-weight: 600;
             font-size: 10px;
-            font-weight: 700;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             color: var(--purple);
             display: block;
             margin-bottom: 4px;
         }
         .service-card h4 {
+            font-family: var(--font-serif);
+            font-weight: 600;
             font-size: 18px;
-            font-weight: 700;
             margin-bottom: 4px;
         }
         .service-card .desc {
+            font-family: var(--font-sans);
+            font-weight: 400;
             color: #4b5563;
             font-size: 14px;
             line-height: 1.6;
@@ -138,83 +328,17 @@
             flex: 1;
         }
         .service-card .price {
+            font-family: var(--font-sans);
+            font-weight: 600;
             font-size: 20px;
-            font-weight: 700;
             color: var(--purple);
             margin-top: 8px;
         }
         .service-card .price-sub {
+            font-family: var(--font-sans);
+            font-weight: 400;
             font-size: 12px;
             color: #6b7280;
-        }
-
-        .btn-purple {
-            background: var(--purple);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
-        }
-        .btn-purple:hover {
-            background: #7c3aed;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(139,92,246,0.3);
-        }
-        .btn-white {
-            background: white;
-            color: var(--black);
-            border: none;
-            padding: 14px 36px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
-        }
-        .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-        }
-
-        .btn-small {
-            padding: 10px 20px;
-            font-size: 13px;
-            margin-top: 12px;
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-        }
-
-        .btn-outline-small {
-            background: transparent;
-            color: var(--purple);
-            border: 2px solid var(--purple);
-            padding: 10px 20px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
-            width: 100%;
-            margin-top: 12px;
-        }
-        .btn-outline-small:hover {
-            background: var(--purple);
-            color: white;
-            transform: translateY(-2px);
         }
 
         .service-card .cta-wrap {
@@ -223,20 +347,131 @@
             border-top: 1px solid #e5e7eb;
         }
 
+        /* ===== FOOTER ===== */
+        .footer {
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding: 48px 0 32px;
+            background: #fafafa;
+            font-family: var(--font-sans);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+        .footer-brand p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 320px;
+            margin-top: 8px;
+        }
+        .footer-col h4 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+        .footer-col a {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            display: block;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+        }
+        .footer-col a:hover { color: var(--purple); }
+        .footer-bottom {
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: #9ca3af;
+            font-size: 13px;
+            font-family: var(--font-sans);
+            font-weight: 400;
+        }
+        .footer-bottom .social-icons { display: flex; gap: 16px; }
+        .footer-bottom .social-icons a { color: #6b7280; font-size: 18px; transition: color 0.3s ease; }
+        .footer-bottom .social-icons a:hover { color: var(--purple); }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--purple);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(139,92,246,0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+        .back-to-top:hover { background: #7c3aed; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(139,92,246,0.4); }
+        .back-to-top i { font-size: 20px; }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
         @media (max-width: 992px) {
             .services-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .footer-brand { grid-column: 1 / -1; }
         }
 
         @media (max-width: 768px) {
-            .services-grid { grid-template-columns: 1fr; }
+            .navbar { padding: 10px 16px; flex-wrap: wrap; }
+            .nav-toggle { display: block; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 16px;
+                padding: 20px 0;
+                width: 100%;
+                text-align: center;
+                background: white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a { font-size: 16px; }
             .page-header h1 { font-size: 32px; }
             .section-title { font-size: 30px; }
             .section-full { padding: 50px 0 30px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+            .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
         }
 
         @media (max-width: 480px) {
             .section-title { font-size: 26px; }
             .page-header h1 { font-size: 28px; }
+            .navbar { padding: 8px 12px; }
+            .logo img { height: 28px; }
+            .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
+            .back-to-top i { font-size: 16px; }
         }
     </style>
 </head>
@@ -267,7 +502,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Our <span class="highlight">Services</span></h1>
-            <p>Choose the level of support you actually need. Start where the problem is.</p>
+            <p>Engagement is scoped to the actual problem, not a fixed package.</p>
         </div>
     </section>
 
@@ -286,11 +521,11 @@
                 <div class="service-card" style="border-color:var(--purple);">
                     <span class="tag">Strategy</span>
                     <h4>Growth Strategy</h4>
-                    <p class="desc">A complete assessment of your current position, audience, content and opportunities — followed by a clear roadmap for what to do next.</p>
+                    <p class="desc">A full assessment of current position, audience, content and opportunity, followed by a defined roadmap.</p>
                     <div class="price">R3,249.99</div>
                     <div class="price-sub">One-time investment</div>
                     <div class="cta-wrap">
-                        <a href="https://paystack.com/buy/growth-strategy-chdkgf" target="_blank" class="btn-purple btn-small">Get the Growth Strategy</a>
+                        <a href="https://paystack.com/buy/growth-strategy-chdkgf" target="_blank" class="btn-purple btn-small" style="width:100%;">Get the Growth Strategy</a>
                     </div>
                 </div>
 
@@ -298,11 +533,11 @@
                 <div class="service-card">
                     <span class="tag">Audit</span>
                     <h4>Content Audit</h4>
-                    <p class="desc">A detailed review of your existing content, messaging, positioning and performance. Find out what's actually happening.</p>
+                    <p class="desc">A review of existing content, messaging, positioning and performance.</p>
                     <div class="price">R2,499.99</div>
                     <div class="price-sub">One-time investment</div>
                     <div class="cta-wrap">
-                        <a href="https://paystack.com/buy/content-audit-iogunq" target="_blank" class="btn-purple btn-small">Get the Audit</a>
+                        <a href="https://paystack.com/buy/content-audit-iogunq" target="_blank" class="btn-purple btn-small" style="width:100%;">Get the Audit</a>
                     </div>
                 </div>
 
@@ -310,11 +545,11 @@
                 <div class="service-card">
                     <span class="tag">Audit</span>
                     <h4>YouTube Audit</h4>
-                    <p class="desc">A strategic review of your channel, content, thumbnails, titles, positioning and performance. Understand what's holding your channel back.</p>
+                    <p class="desc">A strategic review of channel, content, thumbnails, titles, positioning and performance.</p>
                     <div class="price">R2,999.99</div>
                     <div class="price-sub">One-time investment</div>
                     <div class="cta-wrap">
-                        <a href="https://paystack.com/buy/youtube-audit-ttatvb" target="_blank" class="btn-purple btn-small">Get the Audit</a>
+                        <a href="https://paystack.com/buy/youtube-audit-ttatvb" target="_blank" class="btn-purple btn-small" style="width:100%;">Get the Audit</a>
                     </div>
                 </div>
 
@@ -322,11 +557,11 @@
                 <div class="service-card">
                     <span class="tag">Strategy</span>
                     <h4>YouTube Strategy</h4>
-                    <p class="desc">Positioning, content structure, video strategy, thumbnail direction and a publishing roadmap. Build a channel with a reason to exist.</p>
+                    <p class="desc">Positioning, content structure, thumbnail direction and a publishing roadmap.</p>
                     <div class="price">R3,999.99</div>
                     <div class="price-sub">One-time investment</div>
                     <div class="cta-wrap">
-                        <a href="https://paystack.com/buy/youtube-strategy-xrcyrf" target="_blank" class="btn-purple btn-small">Build Your Strategy</a>
+                        <a href="https://paystack.com/buy/youtube-strategy-xrcyrf" target="_blank" class="btn-purple btn-small" style="width:100%;">Build Your Strategy</a>
                     </div>
                 </div>
 
@@ -334,11 +569,11 @@
                 <div class="service-card">
                     <span class="tag">Strategy</span>
                     <h4>Personal Brand Strategy</h4>
-                    <p class="desc">Positioning, messaging, narrative, content pillars and platform strategy. Build a personal brand people can understand.</p>
+                    <p class="desc">Positioning, messaging, narrative, content pillars and platform strategy.</p>
                     <div class="price">R2,999.99</div>
                     <div class="price-sub">One-time investment</div>
                     <div class="cta-wrap">
-                        <a href="https://paystack.com/buy/personal-brand-strategy-vqgkog" target="_blank" class="btn-purple btn-small">Build Your Brand</a>
+                        <a href="https://paystack.com/buy/personal-brand-strategy-vqgkog" target="_blank" class="btn-purple btn-small" style="width:100%;">Build Your Brand</a>
                     </div>
                 </div>
 
@@ -346,11 +581,11 @@
                 <div class="service-card">
                     <span class="tag">Creation</span>
                     <h4>Scriptwriting</h4>
-                    <p class="desc">Platform-specific scripts built around a clear hook, structure, message and CTA. Turn your ideas into content worth watching.</p>
+                    <p class="desc">Platform-specific scripts built on hook, structure, message and call to action.</p>
                     <div class="price">R349.99 / script</div>
                     <div class="price-sub">Per script</div>
                     <div class="cta-wrap">
-                        <a href="https://paystack.com/buy/scriptwriting-lvvihc" target="_blank" class="btn-purple btn-small">Order Script</a>
+                        <a href="https://paystack.com/buy/scriptwriting-lvvihc" target="_blank" class="btn-purple btn-small" style="width:100%;">Order Script</a>
                     </div>
                 </div>
 
@@ -358,11 +593,11 @@
                 <div class="service-card">
                     <span class="tag">Creation</span>
                     <h4>Video Editing</h4>
-                    <p class="desc">Clean, professional editing designed around the purpose of the content. Bring the strategy to life.</p>
+                    <p class="desc">Editing built around the purpose of the content, not just the aesthetics.</p>
                     <div class="price">R699.99 / video</div>
                     <div class="price-sub">Per video</div>
                     <div class="cta-wrap">
-                        <a href="https://paystack.com/buy/video-editing-kwcjus" target="_blank" class="btn-purple btn-small">Order Edit</a>
+                        <a href="https://paystack.com/buy/video-editing-kwcjus" target="_blank" class="btn-purple btn-small" style="width:100%;">Order Edit</a>
                     </div>
                 </div>
 
@@ -370,11 +605,11 @@
                 <div class="service-card">
                     <span class="tag">Creation</span>
                     <h4>Carousel Design</h4>
-                    <p class="desc">Research, copywriting and design for educational, authority-building carousels. Make complex ideas easier to understand.</p>
+                    <p class="desc">Research, copy and design for authority-building, educational carousels.</p>
                     <div class="price">R749.99 / carousel</div>
                     <div class="price-sub">Per carousel</div>
                     <div class="cta-wrap">
-                        <a href="https://paystack.com/buy/carousel-design-qogyhc" target="_blank" class="btn-purple btn-small">Order Carousel</a>
+                        <a href="https://paystack.com/buy/carousel-design-qogyhc" target="_blank" class="btn-purple btn-small" style="width:100%;">Order Carousel</a>
                     </div>
                 </div>
 
@@ -382,11 +617,11 @@
                 <div class="service-card">
                     <span class="tag">Creation</span>
                     <h4>Thumbnail Design</h4>
-                    <p class="desc">Strategic thumbnail concepts designed around clarity and curiosity. Give the idea a reason to be clicked.</p>
+                    <p class="desc">Concepts built for clarity and curiosity, not noise.</p>
                     <div class="price">R349.99 / thumbnail</div>
                     <div class="price-sub">Per thumbnail</div>
                     <div class="cta-wrap">
-                        <a href="https://paystack.com/buy/thumbnail-design-bmtnnr" target="_blank" class="btn-purple btn-small">Order Thumbnail</a>
+                        <a href="https://paystack.com/buy/thumbnail-design-bmtnnr" target="_blank" class="btn-purple btn-small" style="width:100%;">Order Thumbnail</a>
                     </div>
                 </div>
 
@@ -394,11 +629,11 @@
                 <div class="service-card">
                     <span class="tag">Planning</span>
                     <h4>Content Planning</h4>
-                    <p class="desc">A monthly content roadmap built around your positioning, audience and objectives. Stop wondering what to post next.</p>
+                    <p class="desc">A monthly roadmap built on positioning, audience and objective.</p>
                     <div class="price">R1,499.99 / month</div>
                     <div class="price-sub">Monthly</div>
                     <div class="cta-wrap">
-                        <a href="https://paystack.com/buy/content-planning-gsutup" target="_blank" class="btn-purple btn-small">Get the Plan</a>
+                        <a href="https://paystack.com/buy/content-planning-gsutup" target="_blank" class="btn-purple btn-small" style="width:100%;">Get the Plan</a>
                     </div>
                 </div>
 
@@ -406,7 +641,7 @@
                 <div class="service-card" style="border-color:var(--purple);">
                     <span class="tag">Ongoing</span>
                     <h4>Content Department</h4>
-                    <p class="desc">Ongoing strategy, planning, production and optimisation for businesses that need consistent content support. Your content function, without building the entire team.</p>
+                    <p class="desc">Ongoing strategy, planning, production and optimization for businesses requiring consistent content infrastructure.</p>
                     <div class="price">R12,499.99 – R34,999.99</div>
                     <div class="price-sub">Monthly</div>
                     <div class="cta-wrap">
@@ -418,7 +653,7 @@
                 <div class="service-card">
                     <span class="tag">Premium</span>
                     <h4>Growth Partner</h4>
-                    <p class="desc">A higher-level partnership focused on content direction, marketing thinking, offers, positioning and accountability. Strategic support for founders building through content.</p>
+                    <p class="desc">A higher-level partnership covering content direction, offer and positioning, for founders building through content.</p>
                     <div class="price">R7,499.99 – R19,999.99</div>
                     <div class="price-sub">Monthly</div>
                     <div class="cta-wrap">
@@ -430,11 +665,11 @@
                 <div class="service-card">
                     <span class="tag">Launch</span>
                     <h4>Creator Launch</h4>
-                    <p class="desc">A complete starting point for creators building their personal brand. Strategy, scripts, videos and carousels — everything you need to start.</p>
+                    <p class="desc">A complete starting point for creators building or rebuilding a presence from the ground up.</p>
                     <div class="price">R4,874.99</div>
                     <div class="price-sub">One-time investment</div>
                     <div class="cta-wrap">
-                        <a href="https://paystack.com/buy/creator-launch-ccvzak" target="_blank" class="btn-purple btn-small">Start Creator Launch</a>
+                        <a href="https://paystack.com/buy/creator-launch-ccvzak" target="_blank" class="btn-purple btn-small" style="width:100%;">Start Creator Launch</a>
                     </div>
                 </div>
 
@@ -442,11 +677,11 @@
                 <div class="service-card">
                     <span class="tag">Launch</span>
                     <h4>Business Launch</h4>
-                    <p class="desc">A complete starting point for businesses building their content presence. Strategy, calendar, scripts and videos — everything you need to establish credibility.</p>
+                    <p class="desc">A complete starting point for businesses establishing a credible content presence from the start.</p>
                     <div class="price">R8,124.99</div>
                     <div class="price-sub">One-time investment</div>
                     <div class="cta-wrap">
-                        <a href="https://paystack.com/buy/business-launch-vmvsoy" target="_blank" class="btn-purple btn-small">Start Business Launch</a>
+                        <a href="https://paystack.com/buy/business-launch-vmvsoy" target="_blank" class="btn-purple btn-small" style="width:100%;">Start Business Launch</a>
                     </div>
                 </div>
 
@@ -459,22 +694,9 @@
         <div class="container">
             <div style="max-width: 700px; margin: 0 auto; text-align: center;">
                 <span class="pill reveal">Not Sure Where to Start?</span>
-                <h2 class="section-title">That's exactly what the <span class="highlight">first conversation is for</span>.</h2>
-                <p style="font-size:17px;line-height:1.8;color:#4b5563;">You don't need to arrive with the answer. We'll look at your situation and recommend the most appropriate next step. No pressure. No promises of overnight growth. Just an honest conversation about your content.</p>
+                <h2 class="section-title">Arriving with a fully defined need is not <span class="highlight">required</span>.</h2>
+                <p style="font-family:var(--font-sans);font-weight:400;font-size:17px;line-height:1.8;color:#4b5563;">That is part of what the first conversation establishes. Describe the current position, what isn't working, and the objective. An honest assessment of fit follows.</p>
                 <a href="contact.html" class="btn-purple" style="margin-top:20px;display:inline-block;">Start a Conversation →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== CTA ====== -->
-    <section class="section-full section-full-dark">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Don't know what you need? That's exactly what the <span class="highlight">first conversation is for</span>.</h2>
-                <div class="accent-line"></div>
-            </div>
-            <div style="text-align:center;">
-                <a href="contact.html" class="btn-white">Start a Conversation →</a>
             </div>
         </div>
     </section>
