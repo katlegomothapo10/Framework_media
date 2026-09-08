@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Contact — Framework Media</title>
-    <meta name="description" content="Book a free Strategy Call or send us a message. We'll get back to you within 24 hours." />
+    <meta name="description" content="Tell us what you're building. Not a generic contact form — a real starting point. We'll tell you honestly whether we can help." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,16 +37,74 @@
             background-clip: text;
         }
 
-        .contact-grid-full {
+        .section-full {
+            padding: 80px 0 60px;
+        }
+        .section-full-white { background: #ffffff; }
+        .section-full-light-purple { background: var(--bg-light-purple); }
+        .section-full-dark {
+            background: var(--gradient-dark);
+            color: white;
+        }
+        .section-full-dark .section-title { color: white; }
+        .section-full-dark .section-sub { color: #d1d5db; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+        .section-title .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-sub {
+            font-size: 18px;
+            color: #4b5563;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 4px;
+            margin: 16px auto 0;
+        }
+
+        .pill {
+            display: inline-block;
+            background: var(--gradient-subtle);
+            color: var(--black);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(139,92,246,0.15);
+        }
+
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             margin-top: 20px;
         }
 
-        .contact-form-full input,
-        .contact-form-full textarea,
-        .contact-form-full select {
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
             width: 100%;
             padding: 14px 18px;
             border: 1px solid #e5e7eb;
@@ -58,43 +116,43 @@
             background: white;
             color: var(--black);
         }
-        .contact-form-full input:focus,
-        .contact-form-full textarea:focus,
-        .contact-form-full select:focus {
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
             border-color: var(--purple);
             outline: none;
             box-shadow: 0 0 0 4px rgba(139,92,246,0.1);
         }
-        .contact-form-full textarea { min-height: 120px; resize: vertical; }
-        .contact-form-full .btn-purple { width: 100%; margin-top: 4px; }
+        .contact-form textarea { min-height: 120px; resize: vertical; }
+        .contact-form .btn-purple { width: 100%; margin-top: 4px; }
 
-        .contact-right-full {
+        .contact-right {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             background: var(--bg-light-purple);
-            border-radius: 32px;
+            border-radius: 24px;
             padding: 48px 40px;
             border: 1px solid rgba(139,92,246,0.1);
             transition: all 0.3s ease;
         }
-        .contact-right-full:hover {
+        .contact-right:hover {
             border-color: var(--purple);
             box-shadow: var(--shadow-hover);
             transform: translateY(-4px);
         }
-        .contact-right-full .icon {
+        .contact-right .icon {
             font-size: 48px;
             color: var(--purple);
             margin-bottom: 16px;
             display: block;
         }
-        .contact-right-full h3 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
-        .contact-right-full p { color: #4b5563; margin-bottom: 24px; font-size: 16px; max-width: 400px; line-height: 1.7; }
-        .contact-right-full .btn-purple { width: 100%; }
-        .contact-right-full .trust-badge {
+        .contact-right h3 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .contact-right p { color: #4b5563; margin-bottom: 24px; font-size: 16px; max-width: 400px; line-height: 1.7; }
+        .contact-right .btn-purple { width: 100%; }
+        .contact-right .trust-badge {
             display: flex;
             gap: 24px;
             margin-top: 20px;
@@ -103,16 +161,43 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-        .contact-right-full .trust-badge span { display: flex; align-items: center; gap: 6px; }
+        .contact-right .trust-badge span { display: flex; align-items: center; gap: 6px; }
+
+        .btn-purple {
+            background: var(--purple);
+            color: white;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-purple:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139,92,246,0.3);
+        }
 
         @media (max-width: 992px) {
-            .contact-grid-full { grid-template-columns: 1fr; gap: 40px; }
-            .contact-right-full { padding: 32px 24px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .contact-right { padding: 32px 24px; }
         }
 
         @media (max-width: 768px) {
             .page-header h1 { font-size: 32px; }
-            .contact-right-full .trust-badge { flex-direction: column; gap: 8px; }
+            .section-title { font-size: 30px; }
+            .section-full { padding: 50px 0 30px; }
+            .contact-right .trust-badge { flex-direction: column; gap: 8px; }
+        }
+
+        @media (max-width: 480px) {
+            .section-title { font-size: 26px; }
+            .page-header h1 { font-size: 28px; }
         }
     </style>
 </head>
@@ -122,73 +207,80 @@
     <header class="navbar" id="navbar">
         <a href="index.html" class="logo">
             <img src="images/logo.png" alt="Framework Media" />
+            Framework Media
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
         <nav class="nav-links" id="navLinks">
+            <a href="businesses.html">For Businesses</a>
+            <a href="creators.html">For Creators</a>
             <a href="services.html">Services</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="launch.html">Launch</a>
-            <a href="case-studies.html">Case Studies</a>
-            <a href="testimonials.html">Testimonials</a>
+            <a href="method.html">Method</a>
+            <a href="work.html">Work</a>
+            <a href="insights.html">Insights</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="nav-cta">Contact</a>
+            <a href="contact.html" class="nav-cta">Work with Framework</a>
         </nav>
     </header>
 
     <!-- ====== PAGE HEADER ====== -->
     <section class="page-header">
         <div class="container">
-            <h1>Let's talk about your <span class="highlight">brand</span>.</h1>
-            <p>Book a free Strategy Call or send us a message. We'll get back to you within 24 hours.</p>
+            <h1>Tell us what <span class="highlight">you're building</span>.</h1>
+            <p>Not a generic contact form — a real starting point. Tell us where you are, what's not working, and what you're trying to build. We'll tell you honestly whether we can help.</p>
         </div>
     </section>
 
     <!-- ====== CONTACT ====== -->
     <section class="section-full section-full-white">
         <div class="container">
-            <div class="contact-grid-full">
+            <div class="contact-grid">
 
                 <!-- Column 1: Form -->
-                <div class="contact-form-full reveal-left">
-                    <h3 style="font-size:24px;font-weight:700;margin-bottom:4px;">Send us a message.</h3>
-                    <p style="color:#4b5563;margin-bottom:20px;font-size:15px;">Fill in the form and we'll get back to you within 24 hours.</p>
+                <div class="contact-form reveal-left">
+                    <h3 style="font-size:24px;font-weight:700;margin-bottom:4px;">Tell us about your project.</h3>
+                    <p style="color:#4b5563;margin-bottom:20px;font-size:15px;">We'll get back to you within 24 hours.</p>
 
-                    <form id="contactFormFull">
-                        <input type="text" id="fullNameFull" placeholder="Your Name" required />
-                        <input type="email" id="emailFull" placeholder="your@email.com" required />
-                        <input type="tel" id="phoneFull" placeholder="Phone (Optional)" />
-                        <select id="serviceFull">
-                            <option value="">Select a service (Optional)</option>
-                            <option value="growth-strategy">Growth Strategy</option>
-                            <option value="content-audit">Content Audit</option>
-                            <option value="youtube-strategy">YouTube Strategy</option>
-                            <option value="youtube-audit">YouTube Audit</option>
-                            <option value="personal-brand">Personal Brand Strategy</option>
-                            <option value="video-editing">Video Editing</option>
-                            <option value="scriptwriting">Scriptwriting</option>
-                            <option value="carousel-design">Carousel Design</option>
-                            <option value="thumbnail-design">Thumbnail Design</option>
-                            <option value="content-planning">Content Planning</option>
-                            <option value="content-department">Content Department</option>
-                            <option value="growth-partner">Growth Partner</option>
-                            <option value="launch">Launch Package</option>
-                            <option value="other">Other</option>
+                    <form id="contactForm">
+                        <input type="text" id="fullName" placeholder="Your Name" required />
+                        <input type="email" id="email" placeholder="your@email.com" required />
+                        <input type="text" id="company" placeholder="Company / Creator Name" />
+                        <input type="url" id="website" placeholder="Website or Social Profile" />
+                        <input type="text" id="whatYouDo" placeholder="What do you do?" />
+                        <textarea id="challenge" placeholder="What's your main challenge right now?" rows="3" required></textarea>
+                        <input type="text" id="need" placeholder="What do you think you need?" />
+                        <select id="budget">
+                            <option value="">Select a budget range (Optional)</option>
+                            <option value="under-5000">Under R5,000</option>
+                            <option value="5000-15000">R5,000 – R15,000</option>
+                            <option value="15000-30000">R15,000 – R30,000</option>
+                            <option value="30000-50000">R30,000 – R50,000</option>
+                            <option value="50000-plus">R50,000+</option>
                         </select>
-                        <textarea id="messageFull" placeholder="Tell us about your goals and challenges..." rows="5" required></textarea>
-                        <button type="submit" class="btn-purple">Send Message</button>
+                        <select id="timeline">
+                            <option value="">Select a timeline (Optional)</option>
+                            <option value="immediate">Immediate (within 2 weeks)</option>
+                            <option value="month">Within a month</option>
+                            <option value="quarter">Within 3 months</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                        <button type="submit" class="btn-purple">Send It →</button>
                     </form>
+
+                    <p style="margin-top:16px;font-size:13px;color:#6b7280;text-align:center;font-style:italic;">
+                        We don't promise guaranteed followers, virality or leads. We promise an honest read on your content and, if it's a fit, a real strategy behind it.
+                    </p>
                 </div>
 
                 <!-- Column 2: Call -->
-                <div class="contact-right-full reveal-right">
+                <div class="contact-right reveal-right">
                     <span class="icon"><i class="fas fa-calendar-check"></i></span>
-                    <h3>Book a Strategy Call</h3>
-                    <p>Free 30-minute calls. We'll identify your biggest opportunities and recommend the right solution for your business.</p>
+                    <h3>Prefer to talk?</h3>
+                    <p>Book a free 30-minute consultation. We'll identify your biggest opportunities and recommend the right solution for your business.</p>
                     <p style="font-size:14px;color:#6b7280;font-style:italic;margin:-12px 0 20px;">No obligation. No pressure. Just guidance.</p>
                     <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple">
-                        Book Your Free Strategy Call <i class="fas fa-arrow-right"></i>
+                        Book a Free Call <i class="fas fa-arrow-right"></i>
                     </a>
                     <div class="trust-badge">
                         <span><i class="fas fa-reply" style="color:var(--purple);"></i> Reply within 24 hours</span>
@@ -205,24 +297,26 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" style="display:inline-block;">
-                        <img src="images/logo.png" alt="Framework Media" style="height:36px;width:auto;" />
+                    <a href="index.html" class="logo" style="display:inline-block;font-size:18px;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;" />
+                        Framework Media
                     </a>
-                    <p>Strategy-led content growth for businesses, founders, creators and personal brands.</p>
+                    <p>A content consultancy for businesses and creators. Strategy behind the content.</p>
                 </div>
 
                 <div class="footer-col">
                     <h4>Services</h4>
-                    <a href="services.html">How We Help</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="launch.html">Launch Package</a>
+                    <a href="services.html">All Services</a>
+                    <a href="businesses.html">For Businesses</a>
+                    <a href="creators.html">For Creators</a>
                 </div>
 
                 <div class="footer-col">
                     <h4>Company</h4>
                     <a href="about.html">About</a>
-                    <a href="case-studies.html">Case Studies</a>
-                    <a href="testimonials.html">Testimonials</a>
+                    <a href="method.html">Method</a>
+                    <a href="work.html">Work</a>
+                    <a href="insights.html">Insights</a>
                     <a href="contact.html">Contact</a>
                 </div>
 
@@ -231,7 +325,6 @@
                     <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
                     <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
                     <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
-                    <a href="disclaimer.pdf" target="_blank">Disclaimer</a>
                 </div>
             </div>
 
@@ -254,25 +347,29 @@
     <script src="js/main.js"></script>
     <script>
         // ================================================
-        // ===== CONTACT FORM FULL =====
+        // ===== CONTACT FORM =====
         // ================================================
-        const contactFormFull = document.getElementById('contactFormFull');
-        if (contactFormFull) {
-            contactFormFull.addEventListener('submit', function(e) {
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
-                const fullName = document.getElementById('fullNameFull')?.value || '';
-                const email = document.getElementById('emailFull')?.value || '';
-                const phone = document.getElementById('phoneFull')?.value || '';
-                const service = document.getElementById('serviceFull')?.value || '';
-                const message = document.getElementById('messageFull')?.value || '';
+                const fullName = document.getElementById('fullName')?.value || '';
+                const email = document.getElementById('email')?.value || '';
+                const company = document.getElementById('company')?.value || '';
+                const website = document.getElementById('website')?.value || '';
+                const whatYouDo = document.getElementById('whatYouDo')?.value || '';
+                const challenge = document.getElementById('challenge')?.value || '';
+                const need = document.getElementById('need')?.value || '';
+                const budget = document.getElementById('budget')?.value || '';
+                const timeline = document.getElementById('timeline')?.value || '';
 
-                if (!fullName || !email || !message) {
-                    alert('Please fill in your name, email, and message.');
+                if (!fullName || !email || !challenge) {
+                    alert('Please fill in your name, email, and your main challenge.');
                     return;
                 }
 
-                const emailBody = `New Message from Framework Media:%0A%0AName: ${fullName}%0AEmail: ${email}%0APhone: ${phone || 'Not specified'}%0AService: ${service || 'Not specified'}%0AMessage: ${message}%0A%0APlease follow up within 24 hours.`;
+                const emailBody = `New Message from Framework Media:%0A%0A---%0A%0AName: ${fullName}%0AEmail: ${email}%0ACompany: ${company || 'Not specified'}%0AWebsite: ${website || 'Not specified'}%0AWhat they do: ${whatYouDo || 'Not specified'}%0A%0AMain Challenge: ${challenge}%0A%0AWhat they think they need: ${need || 'Not specified'}%0ABudget: ${budget || 'Not specified'}%0ATimeline: ${timeline || 'Not specified'}%0A%0A---%0A%0APlease follow up within 24 hours.`;
 
                 window.location.href = `mailto:hello@frameworkmedia.co.za?subject=New Message from ${fullName}&body=${emailBody}`;
 
