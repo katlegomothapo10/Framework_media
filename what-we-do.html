@@ -24,7 +24,6 @@
             --purple: #A855F7;
             --blue: #3B82F6;
             --gradient: linear-gradient(135deg, #EC4899, #A855F7, #3B82F6);
-            --gradient-blue-purple: linear-gradient(135deg, #2563EB, #7C3AED);
             --gradient-subtle: linear-gradient(135deg, rgba(236,72,153,0.06), rgba(168,85,247,0.06), rgba(59,130,246,0.06));
             --gray-100: #f5f5f5;
             --gray-200: #e5e5e5;
@@ -39,6 +38,7 @@
             --shadow-hover: 0 12px 40px rgba(37,99,235,0.12);
             --font-serif: 'Source Serif 4', Georgia, serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --nav-height: 72px;
         }
 
         body {
@@ -48,12 +48,114 @@
             color: var(--framework-black);
             line-height: 1.6;
             overflow-x: hidden;
+            padding-top: var(--nav-height);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+            height: var(--nav-height);
+            background: rgba(255,255,255,0.97);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .navbar.hidden { transform: translateY(-100%); }
+        .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .logo img { height: 32px; width: auto; display: block; }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        .nav-links a:hover { color: var(--framework-black); }
+        .nav-links a.active { color: var(--framework-black); font-weight: 600; }
+
+        .nav-cta {
+            background: var(--framework-blue);
+            color: white !important;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+        .nav-cta:hover { background: #1d4ed8; color: white !important; }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--framework-black);
+            cursor: pointer;
+            padding: 4px;
+            z-index: 1001;
+        }
+
+        /* ===== MOBILE NAV ===== */
+        @media (max-width: 992px) {
+            .nav-toggle { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 80px 32px 32px;
+                gap: 20px;
+                transition: right 0.3s ease;
+                box-shadow: -4px 0 30px rgba(0,0,0,0.08);
+                overflow-y: auto;
+                align-items: flex-start;
+            }
+            .nav-links.open { right: 0; }
+            .nav-links a { font-size: 16px; }
+            .nav-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.3);
+                z-index: 999;
+            }
+            .nav-overlay.active { display: block; }
         }
 
         /* ===== TYPOGRAPHY ===== */
@@ -85,7 +187,7 @@
 
         .section-full {
             width: 100%;
-            padding: 100px 0 80px;
+            padding: 80px 0;
         }
         .section-full-white { background: var(--framework-off-white); }
         .section-full-light { background: #ffffff; }
@@ -105,6 +207,7 @@
             height: 3px;
             background: var(--gradient);
             margin: 16px auto 0;
+            border-radius: 4px;
         }
 
         .pill {
@@ -123,7 +226,7 @@
         }
 
         /* ===== BUTTONS ===== */
-        .btn-primary, .btn-outline, .btn-white, .btn-blue {
+        .btn-primary, .btn-outline, .btn-white {
             font-family: var(--font-sans);
             font-weight: 600;
             border: none;
@@ -142,10 +245,6 @@
         .btn-outline:hover { background: var(--framework-black); color: var(--framework-off-white); transform: translateY(-2px); }
         .btn-white { background: var(--framework-off-white); color: var(--framework-black); }
         .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
-        .btn-blue { background: var(--framework-blue); color: white; }
-        .btn-blue:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.3); }
-
-        .btn-small { padding: 10px 24px; font-size: 13px; }
 
         .link-arrow {
             font-family: var(--font-sans);
@@ -160,75 +259,9 @@
         }
         .link-arrow:hover { gap: 10px; }
 
-        /* ===== NAVBAR ===== */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 24px;
-            background: rgba(255,255,255,0.97);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.04);
-            transition: transform 0.4s ease, box-shadow 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        .navbar.hidden { transform: translateY(-100%); }
-        .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--framework-black);
-            font-family: var(--font-sans);
-            font-weight: 600;
-            font-size: 18px;
-        }
-        .logo img { height: 32px; width: auto; display: block; }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-            font-family: var(--font-sans);
-            font-weight: 500;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--gray-600);
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .nav-links a:hover { color: var(--framework-black); }
-        .nav-links a.active { color: var(--framework-black); font-weight: 600; }
-
-        .nav-cta {
-            background: var(--framework-blue);
-            color: white !important;
-            padding: 8px 24px;
-            border-radius: 40px;
-            font-weight: 600;
-        }
-        .nav-cta:hover { background: #1d4ed8; color: white !important; }
-
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: var(--framework-black);
-            cursor: pointer;
-        }
-
         /* ===== PAGE HEADER ===== */
         .page-header {
-            padding: 120px 24px 60px;
+            padding: 80px 0 40px;
             background: var(--framework-black);
             color: var(--framework-off-white);
             text-align: center;
@@ -249,8 +282,6 @@
             margin: 0 auto;
             line-height: 1.7;
         }
-        .page-header .highlight-blue { color: var(--framework-blue); }
-        .page-header .highlight-purple { color: var(--framework-purple); }
         .page-header .gradient-highlight {
             background: var(--gradient);
             -webkit-background-clip: text;
@@ -267,7 +298,7 @@
         }
         .service-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 32px 28px;
             border: 1px solid var(--gray-200);
             transition: all 0.3s ease;
@@ -358,6 +389,41 @@
             line-height: 1.6;
         }
 
+        /* ===== HIERARCHY ===== */
+        .hierarchy {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .hierarchy-item {
+            background: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+            width: 100%;
+            text-align: center;
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--framework-black);
+            transition: all 0.3s ease;
+        }
+        .hierarchy-item:hover {
+            border-color: var(--framework-blue);
+            transform: translateX(4px);
+        }
+        .hierarchy-item.bottom {
+            color: var(--framework-blue);
+            border-color: var(--framework-blue);
+        }
+        .hierarchy-arrow {
+            color: var(--gray-300);
+            font-size: 20px;
+        }
+
         /* ===== FOOTER ===== */
         .footer {
             border-top: 1px solid rgba(255,255,255,0.06);
@@ -365,7 +431,7 @@
             background: var(--framework-black);
             color: var(--framework-off-white);
         }
-        .footer a { color: var(--gray-400); }
+        .footer a { color: var(--gray-400); text-decoration: none; transition: color 0.3s ease; }
         .footer a:hover { color: var(--framework-blue); }
         .footer-grid {
             display: grid;
@@ -394,12 +460,9 @@
         .footer-col a {
             display: block;
             color: var(--gray-400);
-            text-decoration: none;
             font-size: 14px;
             padding: 4px 0;
-            transition: color 0.3s ease;
         }
-        .footer-col a:hover { color: var(--framework-blue); }
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.06);
             padding-top: 20px;
@@ -413,7 +476,7 @@
             font-weight: 400;
         }
         .footer-bottom .social-icons { display: flex; gap: 16px; }
-        .footer-bottom .social-icons a { color: var(--gray-500); font-size: 18px; transition: color 0.3s ease; }
+        .footer-bottom .social-icons a { color: var(--gray-500); font-size: 18px; }
         .footer-bottom .social-icons a:hover { color: var(--framework-blue); }
 
         .back-to-top {
@@ -443,50 +506,89 @@
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
         .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
+        /* ===== IMAGE PLACEHOLDER ===== */
+        .img-placeholder {
+            background: var(--gray-200);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-family: var(--font-sans);
+            font-size: 14px;
+            min-height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
             .services-grid { grid-template-columns: 1fr 1fr; }
             .engagement-grid { grid-template-columns: 1fr 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .footer-brand { grid-column: 1 / -1; }
+            .section-title { font-size: 36px; }
+            .page-header h1 { font-size: 40px; }
         }
 
         @media (max-width: 768px) {
-            .navbar { padding: 10px 16px; flex-wrap: wrap; }
+            .navbar { padding: 0 16px; }
             .nav-toggle { display: block; }
             .nav-links {
-                display: none;
-                flex-direction: column;
-                gap: 16px;
-                padding: 20px 0;
-                width: 100%;
-                text-align: center;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
                 background: white;
-                position: absolute;
-                top: 100%;
+                flex-direction: column;
+                padding: 80px 32px 32px;
+                gap: 20px;
+                transition: right 0.3s ease;
+                box-shadow: -4px 0 30px rgba(0,0,0,0.08);
+                overflow-y: auto;
+                align-items: flex-start;
+            }
+            .nav-links.open { right: 0; }
+            .nav-links a { font-size: 16px; }
+            .nav-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
                 left: 0;
                 right: 0;
-                border-bottom: 1px solid var(--gray-200);
+                bottom: 0;
+                background: rgba(0,0,0,0.3);
+                z-index: 999;
             }
-            .nav-links.open { display: flex; }
-            .nav-links a { font-size: 16px; }
+            .nav-overlay.active { display: block; }
 
-            .page-header h1 { font-size: 32px; }
-            .section-title { font-size: 30px; }
-            .section-full { padding: 60px 0 40px; }
             .services-grid { grid-template-columns: 1fr; }
             .engagement-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 30px; }
+            .section-full { padding: 60px 0; }
+            .page-header h1 { font-size: 32px; }
+            .page-header { padding: 60px 0 30px; }
             .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+            .hierarchy-item { font-size: 16px; padding: 14px 24px; }
         }
 
         @media (max-width: 480px) {
             .section-title { font-size: 26px; }
             .page-header h1 { font-size: 28px; }
-            .navbar { padding: 8px 12px; }
-            .logo img { height: 24px; }
+            .container { padding: 0 16px; }
+            .logo img { height: 28px; }
+            .nav-links { width: 100%; right: -100%; padding: 70px 24px 24px; }
             .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
             .back-to-top i { font-size: 16px; }
+            .service-card { padding: 24px 20px; }
         }
     </style>
 </head>
@@ -496,11 +598,14 @@
     <header class="navbar" id="navbar">
         <a href="index.html" class="logo">
             <img src="images/logo.png" alt="Framework Media" />
-            Framework Media
         </a>
+
+        <div class="nav-overlay" id="navOverlay"></div>
+
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
+
         <nav class="nav-links" id="navLinks">
             <a href="what-we-do.html" class="active">What We Do</a>
             <a href="businesses.html">For Businesses</a>
@@ -543,8 +648,8 @@
                 <p class="section-sub">From a single diagnostic to an ongoing strategic partnership.</p>
             </div>
 
-            <div class="services-grid stagger">
-                <div class="service-card">
+            <div class="services-grid">
+                <div class="service-card reveal">
                     <span class="icon"><i class="fas fa-search"></i></span>
                     <span class="tag">Diagnostic</span>
                     <h3>Content Audit</h3>
@@ -552,7 +657,7 @@
                     <div class="best-for">Best for: anyone who needs clarity before committing.</div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card reveal">
                     <span class="icon"><i class="fas fa-bullseye"></i></span>
                     <span class="tag">Strategy</span>
                     <h3>Content Strategy</h3>
@@ -560,7 +665,7 @@
                     <div class="best-for">Best for: businesses and creators who need direction.</div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card reveal">
                     <span class="icon"><i class="fas fa-film"></i></span>
                     <span class="tag">Execution</span>
                     <h3>Content Creation</h3>
@@ -568,7 +673,7 @@
                     <div class="best-for">Best for: clients with a strategy who need it made.</div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card reveal">
                     <span class="icon"><i class="fas fa-chess-queen"></i></span>
                     <span class="tag">Oversight</span>
                     <h3>Content Direction</h3>
@@ -576,7 +681,7 @@
                     <div class="best-for">Best for: teams who want expert guidance without full execution.</div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card reveal">
                     <span class="icon"><i class="fas fa-tasks"></i></span>
                     <span class="tag">Full Execution</span>
                     <h3>Content Management</h3>
@@ -584,7 +689,7 @@
                     <div class="best-for">Best for: clients who want the system managed without building a team.</div>
                 </div>
 
-                <div class="service-card" style="border-color:var(--framework-blue);">
+                <div class="service-card reveal" style="border-color:var(--framework-blue);">
                     <span class="icon"><i class="fas fa-handshake"></i></span>
                     <span class="tag">Premium</span>
                     <h3>Content Consultancy</h3>
@@ -605,23 +710,23 @@
                 <p class="section-sub">Different clients need different levels of support. We work across all of them.</p>
             </div>
 
-            <div class="engagement-grid stagger">
-                <div class="engagement-card">
+            <div class="engagement-grid">
+                <div class="engagement-card reveal">
                     <span class="icon"><i class="fas fa-lightbulb"></i></span>
                     <h4>Advisory</h4>
                     <p>Strategic direction for businesses and creators that already have execution capability.</p>
                 </div>
-                <div class="engagement-card">
+                <div class="engagement-card reveal">
                     <span class="icon"><i class="fas fa-sitemap"></i></span>
                     <h4>Strategy</h4>
                     <p>Deep strategic work around positioning, content and audience — the foundation of everything.</p>
                 </div>
-                <div class="engagement-card">
+                <div class="engagement-card reveal">
                     <span class="icon"><i class="fas fa-cogs"></i></span>
                     <h4>Content Systems</h4>
                     <p>Build the operating system behind your content — pillars, formats, workflows and metrics.</p>
                 </div>
-                <div class="engagement-card" style="border-color:var(--framework-blue);">
+                <div class="engagement-card reveal" style="border-color:var(--framework-blue);">
                     <span class="icon"><i class="fas fa-handshake"></i></span>
                     <h4>Content Partner</h4>
                     <p>Ongoing strategic and creative support — we become part of your extended team.</p>
@@ -637,16 +742,16 @@
                 <span class="pill reveal">The Hierarchy</span>
                 <h2 class="section-title">Consultancy. <span class="gradient-highlight">Not just agency.</span></h2>
                 <div class="accent-line"></div>
-                <div style="margin-top:24px; display:flex; flex-direction:column; gap:4px; align-items:center;">
-                    <div style="background:white; padding:16px 32px; border-radius:12px; border:1px solid var(--gray-200); max-width:400px; width:100%; font-family:var(--font-serif); font-weight:600; font-size:18px; color:var(--framework-black);">Strategy</div>
-                    <div style="color:var(--gray-300); font-size:20px;">↓</div>
-                    <div style="background:white; padding:16px 32px; border-radius:12px; border:1px solid var(--gray-200); max-width:400px; width:100%; font-family:var(--font-serif); font-weight:600; font-size:18px; color:var(--framework-black);">Positioning</div>
-                    <div style="color:var(--gray-300); font-size:20px;">↓</div>
-                    <div style="background:white; padding:16px 32px; border-radius:12px; border:1px solid var(--gray-200); max-width:400px; width:100%; font-family:var(--font-serif); font-weight:600; font-size:18px; color:var(--framework-black);">Content Systems</div>
-                    <div style="color:var(--gray-300); font-size:20px;">↓</div>
-                    <div style="background:white; padding:16px 32px; border-radius:12px; border:1px solid var(--gray-200); max-width:400px; width:100%; font-family:var(--font-serif); font-weight:600; font-size:18px; color:var(--framework-black);">Creative Execution</div>
-                    <div style="color:var(--gray-300); font-size:20px;">↓</div>
-                    <div style="background:white; padding:16px 32px; border-radius:12px; border:1px solid var(--gray-200); max-width:400px; width:100%; font-family:var(--font-serif); font-weight:600; font-size:18px; color:var(--framework-blue);">Production</div>
+                <div class="hierarchy" style="margin-top:24px;">
+                    <div class="hierarchy-item">Strategy</div>
+                    <div class="hierarchy-arrow">↓</div>
+                    <div class="hierarchy-item">Positioning</div>
+                    <div class="hierarchy-arrow">↓</div>
+                    <div class="hierarchy-item">Content Systems</div>
+                    <div class="hierarchy-arrow">↓</div>
+                    <div class="hierarchy-item">Creative Execution</div>
+                    <div class="hierarchy-arrow">↓</div>
+                    <div class="hierarchy-item bottom">Production</div>
                 </div>
                 <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-600); font-size:15px; line-height:1.7; margin-top:20px;">Strategy sits at the top. Production sits at the bottom. Everything in between is what Framework does.</p>
             </div>
@@ -672,9 +777,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" style="display:inline-block;font-size:18px;color:var(--framework-off-white);">
+                    <a href="index.html" class="logo" style="display:inline-flex;">
                         <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;filter:brightness(10);" />
-                        Framework Media
                     </a>
                     <p>Content consultancy for businesses and creators. Strategy behind the content.</p>
                 </div>
@@ -724,17 +828,32 @@
         // ================================================
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function toggleNav() {
+            const isOpen = navLinks.classList.toggle('open');
+            navOverlay.classList.toggle('active');
+            const icon = navToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
 
         if (navToggle) {
-            navToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('open');
-                const icon = this.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
+            navToggle.addEventListener('click', toggleNav);
+        }
+
+        if (navOverlay) {
+            navOverlay.addEventListener('click', toggleNav);
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navLinks.classList.contains('open')) {
+                    toggleNav();
                 }
             });
-        }
+        });
 
         // ================================================
         // ===== NAVBAR HIDE ON SCROLL =====
@@ -784,13 +903,12 @@
         // ===== SCROLL ANIMATIONS =====
         // ================================================
         (function() {
-            const elements = document.querySelectorAll('.reveal, .service-card, .engagement-card');
+            const elements = document.querySelectorAll('.reveal');
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.classList.add('is-visible');
                     }
                 });
             }, {
@@ -799,10 +917,7 @@
             });
 
             elements.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'all 0.7s ease';
-                observer.observe(el);
+                if (el) observer.observe(el);
             });
 
             setTimeout(() => {
@@ -810,28 +925,11 @@
                     const rect = el.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
                     if (rect.top < windowHeight * 0.85) {
-                        el.style.opacity = '1';
-                        el.style.transform = 'translateY(0)';
+                        el.classList.add('is-visible');
                     }
                 });
             }, 100);
         })();
-
-        // ================================================
-        // ===== CLOSE MOBILE NAV ON LINK CLICK =====
-        // ================================================
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                if (navLinks && navLinks.classList.contains('open')) {
-                    navLinks.classList.remove('open');
-                    const icon = navToggle?.querySelector('i');
-                    if (icon) {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                }
-            });
-        });
     </script>
 </body>
 </html>
