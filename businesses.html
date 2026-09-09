@@ -4,17 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>For Businesses — Framework Media</title>
-    <meta name="description" content="The business is more capable than its content currently demonstrates. We build content systems for businesses." />
+    <meta name="description" content="Your expertise is an asset. Your content should make it visible. We help businesses turn what they know into content that builds trust and demand." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
     <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
         :root {
-            --black: #0a0a0a;
-            --white: #ffffff;
+            --framework-black: #111111;
+            --framework-off-white: #F7F7F5;
+            --framework-blue: #2563EB;
+            --framework-purple: #7C3AED;
+            --pink: #EC4899;
+            --purple: #A855F7;
+            --blue: #3B82F6;
+            --gradient: linear-gradient(135deg, #EC4899, #A855F7, #3B82F6);
+            --gradient-blue-purple: linear-gradient(135deg, #2563EB, #7C3AED);
+            --gradient-subtle: linear-gradient(135deg, rgba(236,72,153,0.06), rgba(168,85,247,0.06), rgba(59,130,246,0.06));
             --gray-100: #f5f5f5;
             --gray-200: #e5e5e5;
             --gray-300: #d4d4d4;
@@ -24,29 +35,17 @@
             --gray-700: #404040;
             --gray-800: #262626;
             --gray-900: #171717;
-            --pink: #ec4899;
-            --purple: #8b5cf6;
-            --blue: #3b82f6;
-            --gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
-            --gradient-dark: linear-gradient(135deg, #1a1a2e, #16213e);
-            --gradient-subtle: linear-gradient(135deg, rgba(236,72,153,0.08), rgba(139,92,246,0.08), rgba(59,130,246,0.08));
-            --bg-light-purple: #f5f0ff;
-            --bg-light-pink: #fdf2f8;
-            --bg-light-blue: #eff6ff;
             --shadow: 0 4px 20px rgba(0,0,0,0.06);
-            --shadow-hover: 0 12px 40px rgba(139,92,246,0.12);
+            --shadow-hover: 0 12px 40px rgba(37,99,235,0.12);
             --font-serif: 'Source Serif 4', Georgia, serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
         body {
-            background: #ffffff;
+            background: var(--framework-off-white);
             font-family: var(--font-sans);
             font-weight: 400;
-            color: var(--black);
+            color: var(--framework-black);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -66,7 +65,9 @@
             line-height: 1.1;
             margin-bottom: 12px;
         }
-        .section-title .highlight {
+        .section-title .highlight-blue { color: var(--framework-blue); }
+        .section-title .highlight-purple { color: var(--framework-purple); }
+        .section-title .gradient-highlight {
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -76,7 +77,7 @@
             font-family: var(--font-sans);
             font-weight: 400;
             font-size: 18px;
-            color: #4b5563;
+            color: var(--gray-600);
             max-width: 640px;
             margin: 0 auto;
             line-height: 1.7;
@@ -84,28 +85,25 @@
 
         .section-full {
             width: 100%;
-            padding: 80px 0 60px;
+            padding: 100px 0 80px;
         }
-        .section-full-white { background: #ffffff; }
-        .section-full-light-purple { background: var(--bg-light-purple); }
-        .section-full-light-pink { background: var(--bg-light-pink); }
-        .section-full-light-blue { background: var(--bg-light-blue); }
+        .section-full-white { background: var(--framework-off-white); }
+        .section-full-light { background: #ffffff; }
         .section-full-dark {
-            background: var(--gradient-dark);
-            color: white;
+            background: var(--framework-black);
+            color: var(--framework-off-white);
         }
-        .section-full-dark .section-title { color: white; }
-        .section-full-dark .section-sub { color: #d1d5db; }
+        .section-full-dark .section-title { color: var(--framework-off-white); }
+        .section-full-dark .section-sub { color: var(--gray-400); }
 
         .section-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
         }
         .accent-line {
             width: 60px;
             height: 3px;
             background: var(--gradient);
-            border-radius: 4px;
             margin: 16px auto 0;
         }
 
@@ -117,15 +115,15 @@
             letter-spacing: 0.12em;
             text-transform: uppercase;
             background: var(--gradient-subtle);
-            color: var(--black);
+            color: var(--framework-blue);
             padding: 4px 16px;
             border-radius: 40px;
             margin-bottom: 12px;
-            border: 1px solid rgba(139,92,246,0.15);
+            border: 1px solid rgba(37,99,235,0.12);
         }
 
         /* ===== BUTTONS ===== */
-        .btn-primary, .btn-purple, .btn-white, .btn-outline {
+        .btn-primary, .btn-outline, .btn-white, .btn-blue {
             font-family: var(--font-sans);
             font-weight: 600;
             border: none;
@@ -138,31 +136,45 @@
             text-decoration: none;
             text-align: center;
         }
-        .btn-primary { background: var(--black); color: white; }
+        .btn-primary { background: var(--framework-black); color: var(--framework-off-white); }
         .btn-primary:hover { background: var(--gray-800); transform: translateY(-2px); }
-        .btn-purple { background: var(--purple); color: white; }
-        .btn-purple:hover { background: #7c3aed; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,92,246,0.3); }
-        .btn-white { background: white; color: var(--black); }
+        .btn-outline { background: transparent; color: var(--framework-black); border: 2px solid var(--framework-black); }
+        .btn-outline:hover { background: var(--framework-black); color: var(--framework-off-white); transform: translateY(-2px); }
+        .btn-white { background: var(--framework-off-white); color: var(--framework-black); }
         .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
-        .btn-outline { background: transparent; color: var(--black); border: 2px solid var(--black); }
-        .btn-outline:hover { background: var(--black); color: white; transform: translateY(-2px); }
+        .btn-blue { background: var(--framework-blue); color: white; }
+        .btn-blue:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.3); }
+
         .btn-small { padding: 10px 24px; font-size: 13px; }
+
+        .link-arrow {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: var(--framework-blue);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.3s ease;
+        }
+        .link-arrow:hover { gap: 10px; }
 
         /* ===== NAVBAR ===== */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 24px;
-            background: white;
+            padding: 16px 24px;
+            background: rgba(255,255,255,0.97);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
             transition: transform 0.4s ease, box-shadow 0.3s ease;
-            font-family: var(--font-sans);
+            backdrop-filter: blur(10px);
         }
         .navbar.hidden { transform: translateY(-100%); }
         .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
@@ -172,67 +184,53 @@
             align-items: center;
             gap: 10px;
             text-decoration: none;
-            color: var(--black);
+            color: var(--framework-black);
             font-family: var(--font-sans);
             font-weight: 600;
             font-size: 18px;
         }
-        .logo img { height: 36px; width: auto; display: block; }
+        .logo img { height: 32px; width: auto; display: block; }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 32px;
             align-items: center;
             font-family: var(--font-sans);
             font-weight: 500;
         }
         .nav-links a {
             text-decoration: none;
-            color: #1f2937;
+            color: var(--gray-600);
             font-size: 14px;
             font-weight: 500;
             transition: color 0.3s ease;
-            position: relative;
         }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: width 0.3s ease;
-        }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-links a:hover { color: var(--black); }
-        .nav-links a.active { color: var(--black); }
-        .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover { color: var(--framework-black); }
+        .nav-links a.active { color: var(--framework-black); font-weight: 600; }
 
         .nav-cta {
-            background: var(--purple);
+            background: var(--framework-blue);
             color: white !important;
             padding: 8px 24px;
             border-radius: 40px;
             font-weight: 600;
         }
-        .nav-cta::after { display: none !important; }
-        .nav-cta:hover { background: #7c3aed; color: white !important; }
+        .nav-cta:hover { background: #1d4ed8; color: white !important; }
 
         .nav-toggle {
             display: none;
             background: none;
             border: none;
             font-size: 24px;
-            color: var(--black);
+            color: var(--framework-black);
             cursor: pointer;
         }
 
         /* ===== PAGE HEADER ===== */
         .page-header {
             padding: 120px 24px 60px;
-            background: var(--gradient-dark);
-            color: white;
+            background: var(--framework-black);
+            color: var(--framework-off-white);
             text-align: center;
         }
         .page-header h1 {
@@ -245,17 +243,69 @@
         .page-header p {
             font-family: var(--font-sans);
             font-weight: 400;
-            color: #d1d5db;
+            color: var(--gray-400);
             font-size: 18px;
             max-width: 640px;
             margin: 0 auto;
             line-height: 1.7;
         }
-        .page-header .highlight {
+        .page-header .highlight-blue { color: var(--framework-blue); }
+        .page-header .gradient-highlight {
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        /* ===== BUSINESS GRID ===== */
+        .business-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        .business-image img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+        }
+        .business-text h2 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .business-text h2 .highlight-blue { color: var(--framework-blue); }
+        .business-text h2 .highlight-purple { color: var(--framework-purple); }
+        .business-text p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-600);
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .business-text ul {
+            list-style: none;
+            margin: 16px 0;
+        }
+        .business-text ul li {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-600);
+            font-size: 15px;
+            line-height: 1.8;
+            padding: 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .business-text ul li i {
+            color: var(--framework-blue);
+            font-size: 14px;
         }
 
         /* ===== SERVICES GRID ===== */
@@ -267,13 +317,14 @@
         }
         .service-card {
             background: white;
-            border-radius: 20px;
-            padding: 28px 24px;
-            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 32px 28px;
+            border: 1px solid var(--gray-200);
             transition: all 0.3s ease;
+            text-align: left;
         }
         .service-card:hover {
-            border-color: var(--purple);
+            border-color: var(--framework-blue);
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
@@ -283,7 +334,7 @@
             font-size: 10px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--purple);
+            color: var(--framework-blue);
             display: block;
             margin-bottom: 4px;
         }
@@ -296,7 +347,7 @@
         .service-card p {
             font-family: var(--font-sans);
             font-weight: 400;
-            color: #4b5563;
+            color: var(--gray-600);
             font-size: 14px;
             line-height: 1.6;
         }
@@ -313,12 +364,12 @@
             text-align: center;
             padding: 24px;
             background: white;
-            border-radius: 16px;
-            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
             transition: all 0.3s ease;
         }
         .shift-item:hover {
-            border-color: var(--purple);
+            border-color: var(--framework-blue);
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
@@ -326,11 +377,11 @@
             font-family: var(--font-sans);
             font-weight: 400;
             font-size: 14px;
-            color: #6b7280;
+            color: var(--gray-500);
         }
         .shift-item .arrow {
             font-size: 24px;
-            color: var(--purple);
+            color: var(--framework-blue);
             margin: 8px 0;
             display: block;
         }
@@ -338,16 +389,18 @@
             font-family: var(--font-serif);
             font-weight: 600;
             font-size: 16px;
-            color: var(--black);
+            color: var(--framework-black);
         }
 
         /* ===== FOOTER ===== */
         .footer {
-            border-top: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(255,255,255,0.06);
             padding: 48px 0 32px;
-            background: #fafafa;
-            font-family: var(--font-sans);
+            background: var(--framework-black);
+            color: var(--framework-off-white);
         }
+        .footer a { color: var(--gray-400); }
+        .footer a:hover { color: var(--framework-blue); }
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -357,7 +410,7 @@
         .footer-brand p {
             font-family: var(--font-sans);
             font-weight: 400;
-            color: #6b7280;
+            color: var(--gray-400);
             font-size: 14px;
             line-height: 1.8;
             max-width: 320px;
@@ -369,68 +422,69 @@
             font-size: 11px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--black);
+            color: var(--framework-off-white);
             margin-bottom: 12px;
         }
         .footer-col a {
-            font-family: var(--font-sans);
-            font-weight: 400;
             display: block;
-            color: #6b7280;
+            color: var(--gray-400);
             text-decoration: none;
             font-size: 14px;
             padding: 4px 0;
             transition: color 0.3s ease;
         }
-        .footer-col a:hover { color: var(--purple); }
+        .footer-col a:hover { color: var(--framework-blue); }
         .footer-bottom {
-            border-top: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(255,255,255,0.06);
             padding-top: 20px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 16px;
-            color: #9ca3af;
+            color: var(--gray-500);
             font-size: 13px;
             font-family: var(--font-sans);
             font-weight: 400;
         }
         .footer-bottom .social-icons { display: flex; gap: 16px; }
-        .footer-bottom .social-icons a { color: #6b7280; font-size: 18px; transition: color 0.3s ease; }
-        .footer-bottom .social-icons a:hover { color: var(--purple); }
+        .footer-bottom .social-icons a { color: var(--gray-500); font-size: 18px; transition: color 0.3s ease; }
+        .footer-bottom .social-icons a:hover { color: var(--framework-blue); }
 
         .back-to-top {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--purple);
+            background: var(--framework-blue);
             color: white;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: 0 4px 20px rgba(139,92,246,0.3);
+            border-radius: 50%;
             transition: all 0.3s ease;
             z-index: 999;
             opacity: 0;
             visibility: hidden;
             transform: translateY(20px);
+            box-shadow: 0 4px 20px rgba(37,99,235,0.3);
         }
         .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-        .back-to-top:hover { background: #7c3aed; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(139,92,246,0.4); }
-        .back-to-top i { font-size: 20px; }
+        .back-to-top:hover { background: #1d4ed8; transform: translateY(-3px); }
+        .back-to-top i { font-size: 18px; }
 
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
         .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
+            .business-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .services-grid { grid-template-columns: 1fr 1fr; }
             .shift-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .footer-brand { grid-column: 1 / -1; }
+            .business-text ul li { justify-content: center; }
         }
 
         @media (max-width: 768px) {
@@ -448,23 +502,25 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                border-bottom: 1px solid rgba(0,0,0,0.05);
+                border-bottom: 1px solid var(--gray-200);
             }
             .nav-links.open { display: flex; }
             .nav-links a { font-size: 16px; }
+
             .page-header h1 { font-size: 32px; }
             .section-title { font-size: 30px; }
-            .section-full { padding: 50px 0 30px; }
+            .section-full { padding: 60px 0 40px; }
             .services-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 24px; }
             .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+            .business-text h2 { font-size: 28px; }
         }
 
         @media (max-width: 480px) {
             .section-title { font-size: 26px; }
             .page-header h1 { font-size: 28px; }
             .navbar { padding: 8px 12px; }
-            .logo img { height: 28px; }
+            .logo img { height: 24px; }
             .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
             .back-to-top i { font-size: 16px; }
         }
@@ -482,71 +538,81 @@
             <i class="fas fa-bars"></i>
         </button>
         <nav class="nav-links" id="navLinks">
+            <a href="what-we-do.html">What We Do</a>
             <a href="businesses.html" class="active">For Businesses</a>
             <a href="creators.html">For Creators</a>
-            <a href="services.html">Services</a>
-            <a href="method.html">Method</a>
-            <a href="work.html">Work</a>
+            <a href="method.html">Our Method</a>
             <a href="insights.html">Insights</a>
+            <a href="case-studies.html">Case Studies</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="nav-cta">Work With Framework</a>
+            <a href="contact.html" class="nav-cta">Work With Us</a>
         </nav>
     </header>
 
     <!-- ====== PAGE HEADER ====== -->
     <section class="page-header">
         <div class="container">
-            <h1>For <span class="highlight">Businesses</span></h1>
-            <p>The business is more capable than its content currently demonstrates.</p>
+            <h1>For <span class="gradient-highlight">Businesses</span></h1>
+            <p>Your expertise is an asset. Your content should make it visible.</p>
         </div>
     </section>
 
     <!-- ====== THE PROBLEM ====== -->
     <section class="section-full section-full-white">
         <div class="container">
-            <div class="section-header">
-                <span class="pill reveal">The Problem</span>
-                <h2 class="section-title">Inconsistent publishing. Disconnected content. Founder expertise that never appears in the work. <span class="highlight">Uncertainty about what to say.</span></h2>
-                <div class="accent-line"></div>
-                <p class="section-sub" style="margin-top:16px;">None of these are publishing problems. They are strategy problems, and they require a strategic response.</p>
+            <div class="business-grid">
+                <div class="business-image reveal">
+                    <img src="images/business-consulting.jpg" alt="Business consulting and content strategy" />
+                </div>
+                <div class="business-text reveal">
+                    <span class="pill">The Problem</span>
+                    <h2>Your business is good. Your content <span class="highlight-blue">doesn't communicate that</span>.</h2>
+                    <p>Inconsistent publishing. Generic messaging. Founder expertise that never makes it into the content. A team with no clear direction. Sound familiar?</p>
+                    <p>These aren't publishing problems. They're strategy problems — and they require a strategic response.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Your business has value. Your content should reflect it.</li>
+                        <li><i class="fas fa-check-circle"></i> Expertise without visibility is invisible to the market.</li>
+                        <li><i class="fas fa-check-circle"></i> Content should work as hard as the business it represents.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ====== WHAT WE DO ====== -->
-    <section class="section-full section-full-light-purple">
+    <section class="section-full section-full-light">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">What We Do</span>
-                <h2 class="section-title">Content Audit · Strategy · Creation · Direction · <span class="highlight">Consultancy</span></h2>
+                <h2 class="section-title">Turn business expertise into <span class="gradient-highlight">content that works</span>.</h2>
                 <div class="accent-line"></div>
             </div>
 
             <div class="services-grid stagger">
                 <div class="service-card">
-                    <span class="tag">Audit</span>
+                    <span class="tag">Diagnostic</span>
                     <h4>Content Audit</h4>
-                    <p>An assessment of what current content communicates, and where it falls short.</p>
+                    <p>An assessment of what your current content communicates — and where it falls short.</p>
                 </div>
                 <div class="service-card">
                     <span class="tag">Strategy</span>
                     <h4>Content Strategy</h4>
-                    <p>Positioning, messaging, pillars, formats and direction, built as a system.</p>
+                    <p>Positioning, messaging, pillars, formats and direction — built as a system your team can run.</p>
                 </div>
                 <div class="service-card">
-                    <span class="tag">Creation</span>
+                    <span class="tag">Execution</span>
                     <h4>Content Creation</h4>
-                    <p>Execution, when the team requires it.</p>
+                    <p>Professional execution when your team needs it — strategy turned into scripts, video, copy and campaigns.</p>
                 </div>
                 <div class="service-card">
-                    <span class="tag">Direction</span>
+                    <span class="tag">Oversight</span>
                     <h4>Content Direction</h4>
-                    <p>Strategy, briefs and feedback for an existing internal team.</p>
+                    <p>Strategic guidance for your internal team — briefs, feedback and performance review.</p>
                 </div>
-                <div class="service-card" style="border-color:var(--purple);">
-                    <span class="tag">Consultancy</span>
+                <div class="service-card" style="border-color:var(--framework-blue);">
+                    <span class="tag">Premium</span>
                     <h4>Content Consultancy</h4>
-                    <p>An ongoing strategic partnership.</p>
+                    <p>An ongoing strategic partnership as your business grows — we become part of your team.</p>
                 </div>
             </div>
         </div>
@@ -557,32 +623,32 @@
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">The Shift</span>
-                <h2 class="section-title">From <span class="highlight">random posts</span> to a <span class="highlight">coherent system</span>.</h2>
+                <h2 class="section-title">From <span class="highlight-blue">random posts</span> to a <span class="highlight-purple">coherent system</span>.</h2>
                 <div class="accent-line"></div>
             </div>
 
             <div class="shift-grid stagger">
                 <div class="shift-item">
                     <span class="from">From...</span>
-                    <span class="from" style="font-weight:600;color:#6b7280;">Publishing because a schedule demands it.</span>
+                    <span class="from" style="font-weight:600;color:var(--gray-600);">Publishing because a schedule demands it.</span>
                     <span class="arrow">↓</span>
                     <span class="to">To... Publishing because the content has a defined job.</span>
                 </div>
                 <div class="shift-item">
                     <span class="from">From...</span>
-                    <span class="from" style="font-weight:600;color:#6b7280;">Generic industry content.</span>
+                    <span class="from" style="font-weight:600;color:var(--gray-600);">Generic industry content.</span>
                     <span class="arrow">↓</span>
                     <span class="to">To... Content built on specific expertise and differentiation.</span>
                 </div>
                 <div class="shift-item">
                     <span class="from">From...</span>
-                    <span class="from" style="font-weight:600;color:#6b7280;">A collection of posts.</span>
+                    <span class="from" style="font-weight:600;color:var(--gray-600);">A collection of disconnected posts.</span>
                     <span class="arrow">↓</span>
-                    <span class="to">To... A coherent, recognizable system.</span>
+                    <span class="to">To... A coherent, recognizable content system.</span>
                 </div>
                 <div class="shift-item">
                     <span class="from">From...</span>
-                    <span class="from" style="font-weight:600;color:#6b7280;">Attempting to become a content company.</span>
+                    <span class="from" style="font-weight:600;color:var(--gray-600);">Trying to become a content company.</span>
                     <span class="arrow">↓</span>
                     <span class="to">To... Using content to strengthen the company that already exists.</span>
                 </div>
@@ -591,27 +657,28 @@
     </section>
 
     <!-- ====== WHO THIS SERVES ====== -->
-    <section class="section-full section-full-light-blue">
+    <section class="section-full section-full-light">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Who This Serves</span>
-                <h2 class="section-title">Service businesses · Professional firms · Founders · Consultants · Coaches · Real estate · Financial services · <span class="highlight">Law firms · Hospitality · Education</span></h2>
+                <h2 class="section-title">We work with businesses that have <span class="highlight-blue">something worth saying</span>.</h2>
                 <div class="accent-line"></div>
+                <p class="section-sub">Service-based businesses, professional firms, founders, consultants, coaches, real estate, financial services, law firms, fitness, hospitality, education and founder-led companies generally.</p>
             </div>
 
             <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:700px;margin:20px auto 0;">
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Service Businesses</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Professional Firms</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Founders</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Consultants</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Coaches</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Real Estate</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Financial Services</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Law Firms</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Fitness Businesses</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Hospitality</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Education</span>
-                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid #e5e7eb;font-family:var(--font-sans);font-weight:400;font-size:14px;">Founder-Led Companies</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid var(--gray-200);font-family:var(--font-sans);font-weight:400;font-size:14px;">Service Businesses</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid var(--gray-200);font-family:var(--font-sans);font-weight:400;font-size:14px;">Professional Firms</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid var(--gray-200);font-family:var(--font-sans);font-weight:400;font-size:14px;">Founders</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid var(--gray-200);font-family:var(--font-sans);font-weight:400;font-size:14px;">Consultants</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid var(--gray-200);font-family:var(--font-sans);font-weight:400;font-size:14px;">Coaches</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid var(--gray-200);font-family:var(--font-sans);font-weight:400;font-size:14px;">Real Estate</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid var(--gray-200);font-family:var(--font-sans);font-weight:400;font-size:14px;">Financial Services</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid var(--gray-200);font-family:var(--font-sans);font-weight:400;font-size:14px;">Law Firms</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid var(--gray-200);font-family:var(--font-sans);font-weight:400;font-size:14px;">Fitness Businesses</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid var(--gray-200);font-family:var(--font-sans);font-weight:400;font-size:14px;">Hospitality</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid var(--gray-200);font-family:var(--font-sans);font-weight:400;font-size:14px;">Education</span>
+                <span style="background:white;padding:10px 24px;border-radius:40px;border:1px solid var(--gray-200);font-family:var(--font-sans);font-weight:400;font-size:14px;">Founder-Led Companies</span>
             </div>
         </div>
     </section>
@@ -619,12 +686,13 @@
     <!-- ====== CTA ====== -->
     <section class="section-full section-full-dark">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">A strategy problem requires a <span class="highlight">strategic response</span>.</h2>
-                <div class="accent-line"></div>
-            </div>
-            <div style="text-align:center;">
-                <a href="contact.html" class="btn-white">Start a Conversation →</a>
+            <div style="max-width:700px; margin:0 auto; text-align:center;">
+                <h2 class="section-title">A strategy problem requires a <span class="gradient-highlight">strategic response</span>.</h2>
+                <p class="section-sub" style="margin-bottom:24px;">Let's diagnose what's happening with your content and build the system that fixes it.</p>
+                <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+                    <a href="contact.html" class="btn-white">Start a Conversation →</a>
+                    <a href="what-we-do.html" class="btn-outline" style="border-color:var(--framework-off-white); color:var(--framework-off-white);">Explore Services</a>
+                </div>
             </div>
         </div>
     </section>
@@ -634,8 +702,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" style="display:inline-block;font-size:18px;">
-                        <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;" />
+                    <a href="index.html" class="logo" style="display:inline-block;font-size:18px;color:var(--framework-off-white);">
+                        <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;filter:brightness(10);" />
                         Framework Media
                     </a>
                     <p>Content consultancy for businesses and creators. Strategy behind the content.</p>
@@ -643,11 +711,15 @@
 
                 <div class="footer-col">
                     <h4>Explore</h4>
+                    <a href="what-we-do.html">What We Do</a>
                     <a href="businesses.html">For Businesses</a>
                     <a href="creators.html">For Creators</a>
-                    <a href="services.html">Services</a>
-                    <a href="method.html">Method</a>
-                    <a href="work.html">Work</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <a href="method.html">Our Method</a>
+                    <a href="case-studies.html">Case Studies</a>
                     <a href="insights.html">Insights</a>
                     <a href="about.html">About</a>
                 </div>
@@ -656,13 +728,7 @@
                     <h4>Work With Us</h4>
                     <a href="contact.html">Start a Conversation</a>
                     <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank">Book a Consultation</a>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Legal</h4>
                     <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
-                    <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
-                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
                 </div>
             </div>
 
@@ -682,6 +748,120 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
-    <script src="js/main.js"></script>
+    <script>
+        // ================================================
+        // ===== NAVBAR TOGGLE (Mobile) =====
+        // ================================================
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('open');
+                const icon = this.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+        }
+
+        // ================================================
+        // ===== NAVBAR HIDE ON SCROLL =====
+        // ================================================
+        let lastScroll = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+            }
+
+            lastScroll = currentScroll;
+
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                if (currentScroll > 400) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
+        });
+
+        // ================================================
+        // ===== BACK TO TOP =====
+        // ================================================
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // ================================================
+        // ===== SCROLL ANIMATIONS =====
+        // ================================================
+        (function() {
+            const elements = document.querySelectorAll('.reveal, .service-card, .shift-item');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            elements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.7s ease';
+                observer.observe(el);
+            });
+
+            setTimeout(() => {
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    if (rect.top < windowHeight * 0.85) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }
+                });
+            }, 100);
+        })();
+
+        // ================================================
+        // ===== CLOSE MOBILE NAV ON LINK CLICK =====
+        // ================================================
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navLinks && navLinks.classList.contains('open')) {
+                    navLinks.classList.remove('open');
+                    const icon = navToggle?.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
