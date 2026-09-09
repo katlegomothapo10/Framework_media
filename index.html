@@ -4,17 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Framework Media — Content Consultancy</title>
-    <meta name="description" content="Content consultancy for businesses and creators. Strategy behind the content." />
+    <meta name="description" content="Content consultancy helping businesses and creators turn expertise, ideas and positioning into content that builds authority, trust and demand." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
     <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
         :root {
-            --black: #0a0a0a;
-            --white: #ffffff;
+            --black: #111111;
+            --warm-white: #F7F7F5;
+            --deep-blue: #003B70;
+            --framework-blue: #1769AA;
             --gray-100: #f5f5f5;
             --gray-200: #e5e5e5;
             --gray-300: #d4d4d4;
@@ -28,22 +33,15 @@
             --purple: #8b5cf6;
             --blue: #3b82f6;
             --gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
-            --gradient-dark: linear-gradient(135deg, #1a1a2e, #16213e);
             --gradient-subtle: linear-gradient(135deg, rgba(236,72,153,0.08), rgba(139,92,246,0.08), rgba(59,130,246,0.08));
-            --bg-light-purple: #f5f0ff;
-            --bg-light-pink: #fdf2f8;
-            --bg-light-blue: #eff6ff;
             --shadow: 0 4px 20px rgba(0,0,0,0.06);
-            --shadow-hover: 0 12px 40px rgba(139,92,246,0.12);
+            --shadow-hover: 0 12px 40px rgba(23,105,170,0.12);
             --font-serif: 'Source Serif 4', Georgia, serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
         body {
-            background: #ffffff;
+            background: var(--warm-white);
             font-family: var(--font-sans);
             font-weight: 400;
             color: var(--black);
@@ -66,7 +64,8 @@
             line-height: 1.1;
             margin-bottom: 12px;
         }
-        .section-title .highlight {
+        .section-title .highlight { color: var(--framework-blue); }
+        .section-title .gradient-highlight {
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -76,7 +75,7 @@
             font-family: var(--font-sans);
             font-weight: 400;
             font-size: 18px;
-            color: #4b5563;
+            color: var(--gray-600);
             max-width: 640px;
             margin: 0 auto;
             line-height: 1.7;
@@ -84,28 +83,25 @@
 
         .section-full {
             width: 100%;
-            padding: 80px 0 60px;
+            padding: 100px 0 80px;
         }
-        .section-full-white { background: #ffffff; }
-        .section-full-light-purple { background: var(--bg-light-purple); }
-        .section-full-light-pink { background: var(--bg-light-pink); }
-        .section-full-light-blue { background: var(--bg-light-blue); }
+        .section-full-white { background: var(--warm-white); }
+        .section-full-light { background: #ffffff; }
         .section-full-dark {
-            background: var(--gradient-dark);
-            color: white;
+            background: var(--black);
+            color: var(--warm-white);
         }
-        .section-full-dark .section-title { color: white; }
-        .section-full-dark .section-sub { color: #d1d5db; }
+        .section-full-dark .section-title { color: var(--warm-white); }
+        .section-full-dark .section-sub { color: var(--gray-400); }
 
         .section-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
         }
         .accent-line {
             width: 60px;
             height: 3px;
             background: var(--gradient);
-            border-radius: 4px;
             margin: 16px auto 0;
         }
 
@@ -117,15 +113,15 @@
             letter-spacing: 0.12em;
             text-transform: uppercase;
             background: var(--gradient-subtle);
-            color: var(--black);
+            color: var(--framework-blue);
             padding: 4px 16px;
             border-radius: 40px;
             margin-bottom: 12px;
-            border: 1px solid rgba(139,92,246,0.15);
+            border: 1px solid rgba(23,105,170,0.15);
         }
 
         /* ===== BUTTONS ===== */
-        .btn-primary, .btn-purple, .btn-white, .btn-outline {
+        .btn-primary, .btn-outline, .btn-white {
             font-family: var(--font-sans);
             font-weight: 600;
             border: none;
@@ -138,20 +134,19 @@
             text-decoration: none;
             text-align: center;
         }
-        .btn-primary { background: var(--black); color: white; }
+        .btn-primary { background: var(--black); color: var(--warm-white); }
         .btn-primary:hover { background: var(--gray-800); transform: translateY(-2px); }
-        .btn-purple { background: var(--purple); color: white; }
-        .btn-purple:hover { background: #7c3aed; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,92,246,0.3); }
-        .btn-white { background: white; color: var(--black); }
-        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
         .btn-outline { background: transparent; color: var(--black); border: 2px solid var(--black); }
-        .btn-outline:hover { background: var(--black); color: white; transform: translateY(-2px); }
+        .btn-outline:hover { background: var(--black); color: var(--warm-white); transform: translateY(-2px); }
+        .btn-white { background: var(--warm-white); color: var(--black); }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+
         .btn-small { padding: 10px 24px; font-size: 13px; }
 
         .link-arrow {
             font-family: var(--font-sans);
             font-weight: 600;
-            color: var(--purple);
+            color: var(--framework-blue);
             text-decoration: none;
             font-size: 14px;
             display: inline-flex;
@@ -166,16 +161,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 24px;
-            background: white;
+            padding: 16px 24px;
+            background: rgba(255,255,255,0.97);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
             transition: transform 0.4s ease, box-shadow 0.3s ease;
-            font-family: var(--font-sans);
+            backdrop-filter: blur(10px);
         }
         .navbar.hidden { transform: translateY(-100%); }
         .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
@@ -190,47 +185,33 @@
             font-weight: 600;
             font-size: 18px;
         }
-        .logo img { height: 36px; width: auto; display: block; }
+        .logo img { height: 32px; width: auto; display: block; }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 32px;
             align-items: center;
             font-family: var(--font-sans);
             font-weight: 500;
         }
         .nav-links a {
             text-decoration: none;
-            color: #1f2937;
+            color: var(--gray-600);
             font-size: 14px;
             font-weight: 500;
             transition: color 0.3s ease;
-            position: relative;
         }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: width 0.3s ease;
-        }
-        .nav-links a:hover::after { width: 100%; }
         .nav-links a:hover { color: var(--black); }
-        .nav-links a.active { color: var(--black); }
-        .nav-links a.active::after { width: 100%; }
+        .nav-links a.active { color: var(--black); font-weight: 600; }
 
         .nav-cta {
-            background: var(--purple);
+            background: var(--framework-blue);
             color: white !important;
             padding: 8px 24px;
             border-radius: 40px;
             font-weight: 600;
         }
-        .nav-cta::after { display: none !important; }
-        .nav-cta:hover { background: #7c3aed; color: white !important; }
+        .nav-cta:hover { background: var(--deep-blue); color: white !important; }
 
         .nav-toggle {
             display: none;
@@ -244,59 +225,23 @@
         /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            padding: 140px 24px 80px;
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.82), rgba(22, 33, 62, 0.82)), url('images/hero-bg.png') center/cover no-repeat;
-            overflow: hidden;
+            padding: 120px 24px 80px;
+            background: var(--warm-white);
+            gap: 60px;
         }
-        .hero .orb-1 {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: var(--purple);
-            border-radius: 50%;
-            top: -100px;
-            right: -100px;
-            filter: blur(80px);
-            opacity: 0.2;
-            z-index: 0;
-        }
-        .hero .orb-2 {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: var(--pink);
-            border-radius: 50%;
-            bottom: -50px;
-            left: -50px;
-            filter: blur(80px);
-            opacity: 0.15;
-            z-index: 0;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        .hero-left { max-width: 600px; }
         .hero-eyebrow {
             font-family: var(--font-sans);
             font-weight: 600;
             font-size: 11px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            background: rgba(255,255,255,0.08);
-            color: #a78bfa;
-            padding: 6px 18px;
-            border-radius: 40px;
-            display: inline-block;
-            margin-bottom: 20px;
-            border: 1px solid rgba(167,139,250,0.2);
-            backdrop-filter: blur(4px);
+            color: var(--framework-blue);
+            display: block;
+            margin-bottom: 16px;
         }
         .hero h1 {
             font-family: var(--font-serif);
@@ -305,332 +250,395 @@
             letter-spacing: -0.03em;
             line-height: 1.05;
             margin-bottom: 20px;
-            color: white;
+            color: var(--black);
         }
-        .hero h1 .highlight {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        .hero h1 .highlight { color: var(--framework-blue); }
         .hero p {
-            font-family: var(--font-sans);
-            font-weight: 400;
-            font-size: 20px;
-            color: #d1d5db;
-            max-width: 680px;
-            margin: 0 auto 32px;
-            line-height: 1.7;
-        }
-        .hero-actions {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 48px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-        }
-        .hero-stats .stat { text-align: center; }
-        .hero-stats .stat-number {
-            font-family: var(--font-sans);
-            font-weight: 600;
-            font-size: 32px;
-            color: white;
-        }
-        .hero-stats .stat-label {
-            font-family: var(--font-sans);
-            font-weight: 400;
-            font-size: 14px;
-            color: #9ca3af;
-        }
-
-        /* ===== TRUST STRIP ===== */
-        .trust-strip {
-            padding: 32px 0;
-            background: var(--gray-100);
-            text-align: center;
-            border-top: 1px solid var(--gray-200);
-            border-bottom: 1px solid var(--gray-200);
-        }
-        .trust-strip p {
             font-family: var(--font-sans);
             font-weight: 400;
             font-size: 18px;
             color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+        .hero-right {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-image-wrapper {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+        .hero-graphic-overlay {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 200px;
+            height: 200px;
+            background: var(--gradient);
+            opacity: 0.08;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-graphic-overlay-2 {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 120px;
+            height: 120px;
+            background: var(--gradient);
+            opacity: 0.06;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-flow {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        .hero-flow span {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 13px;
+            color: var(--gray-600);
             letter-spacing: 0.5px;
         }
-        .trust-strip .highlight-text { color: var(--purple); font-weight: 600; }
+        .hero-flow .arrow { color: var(--framework-blue); font-weight: 600; }
 
-        /* ===== TWO PATHS ===== */
-        .two-paths {
+        /* ===== PROBLEM SECTION ===== */
+        .problem-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 20px;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
         }
-        .path-card {
-            background: white;
-            border-radius: 24px;
-            padding: 40px 32px;
-            border: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
-            text-align: left;
-        }
-        .path-card:hover {
-            border-color: var(--purple);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-        }
-        .path-card .icon { font-size: 32px; color: var(--purple); margin-bottom: 12px; display: block; }
-        .path-card h3 {
-            font-family: var(--font-serif);
-            font-weight: 600;
-            font-size: 22px;
-            margin-bottom: 6px;
-        }
-        .path-card p {
-            font-family: var(--font-sans);
-            font-weight: 400;
-            color: #4b5563;
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 12px;
-        }
-
-        /* ===== SERVICES ===== */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .service-card {
-            background: white;
-            border-radius: 20px;
-            padding: 28px 24px;
-            border: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
-        }
-        .service-card:hover {
-            border-color: var(--purple);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-        }
-        .service-card .tag {
-            font-family: var(--font-sans);
-            font-weight: 600;
-            font-size: 10px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--purple);
+        .problem-image img {
+            width: 100%;
+            border-radius: 12px;
             display: block;
-            margin-bottom: 4px;
         }
-        .service-card h4 {
+        .problem-text h2 {
             font-family: var(--font-serif);
             font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 4px;
+            font-size: 36px;
+            line-height: 1.1;
+            margin-bottom: 16px;
         }
-        .service-card p {
+        .problem-text h2 .highlight { color: var(--framework-blue); }
+        .problem-text p {
             font-family: var(--font-sans);
             font-weight: 400;
-            color: #4b5563;
-            font-size: 14px;
-            line-height: 1.6;
+            color: var(--gray-600);
+            font-size: 17px;
+            line-height: 1.8;
         }
 
-        /* ===== METHODOLOGY ===== */
+        /* ===== FRAMEWORK METHOD ===== */
         .method-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 8px;
-            margin-top: 24px;
+            margin-top: 32px;
         }
         .method-step {
             background: white;
             border-radius: 16px;
-            padding: 20px 12px;
-            border: 1px solid #e5e7eb;
+            padding: 24px 16px;
+            border: 1px solid var(--gray-200);
             text-align: center;
             transition: all 0.3s ease;
         }
         .method-step:hover {
-            border-color: var(--purple);
+            border-color: var(--framework-blue);
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
         .method-step .step-num {
             font-family: var(--font-sans);
             font-weight: 600;
-            font-size: 12px;
-            display: inline-block;
-            background: var(--gradient);
-            color: white;
-            width: 28px;
-            height: 28px;
-            line-height: 28px;
-            border-radius: 50%;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--framework-blue);
+            display: block;
             margin-bottom: 6px;
         }
         .method-step h4 {
             font-family: var(--font-sans);
             font-weight: 600;
             font-size: 14px;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
         .method-step p {
             font-family: var(--font-sans);
             font-weight: 400;
-            font-size: 11px;
-            color: #6b7280;
+            font-size: 12px;
+            color: var(--gray-500);
             line-height: 1.4;
         }
-        .method-arrow { display: flex; align-items: center; justify-content: center; color: var(--gray-300); font-size: 18px; }
+        .method-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-300);
+            font-size: 16px;
+        }
 
-        /* ===== WHY FRAMEWORK ===== */
-        .why-grid {
+        /* ===== BUSINESS / CREATOR SPLIT ===== */
+        .split-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            max-width: 800px;
-            margin: 20px auto 0;
+            gap: 40px;
+            margin-top: 20px;
         }
-        .why-item { padding: 20px 0; border-bottom: 1px solid #e5e7eb; }
-        .why-item h4 {
+        .split-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        .split-card:hover {
+            border-color: var(--framework-blue);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .split-card .icon { font-size: 28px; color: var(--framework-blue); display: block; margin-bottom: 12px; }
+        .split-card h3 {
             font-family: var(--font-serif);
             font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 4px;
+            font-size: 24px;
+            margin-bottom: 8px;
         }
-        .why-item p {
+        .split-card p {
             font-family: var(--font-sans);
             font-weight: 400;
-            color: #4b5563;
+            color: var(--gray-600);
             font-size: 15px;
             line-height: 1.7;
+            margin-bottom: 16px;
         }
+
+        /* ===== DATA VISUALIZATION ===== */
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .data-item {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--gray-200);
+        }
+        .data-item .label {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--gray-500);
+            display: block;
+            margin-bottom: 12px;
+        }
+        .data-item .bar-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .data-item .bar-label {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 13px;
+            width: 100px;
+            color: var(--black);
+        }
+        .data-item .bar-track {
+            flex: 1;
+            height: 8px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .data-item .bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: var(--gradient);
+        }
+        .data-item .bar-value {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--framework-blue);
+            width: 50px;
+            text-align: right;
+        }
+
+        .data-funnel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 20px 0;
+        }
+        .data-funnel .funnel-step {
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            background: var(--gradient-subtle);
+            border-radius: 8px;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--black);
+        }
+        .data-funnel .funnel-step:first-child { max-width: 90%; }
+        .data-funnel .funnel-step:nth-child(2) { max-width: 80%; }
+        .data-funnel .funnel-step:nth-child(3) { max-width: 70%; }
+        .data-funnel .funnel-step:nth-child(4) { max-width: 60%; }
+        .data-funnel .funnel-step:last-child { max-width: 50%; }
 
         /* ===== CASE STUDIES ===== */
         .case-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 40px;
+            margin-top: 20px;
         }
         .case-card {
             background: white;
-            border-radius: 24px;
-            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
             overflow: hidden;
             transition: all 0.3s ease;
         }
         .case-card:hover {
-            border-color: var(--purple);
+            border-color: var(--framework-blue);
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
         .case-card .case-image {
-            aspect-ratio: 1 / 1;
-            background: var(--gradient-subtle);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            aspect-ratio: 16/9;
+            background: var(--gray-100);
             overflow: hidden;
         }
-        .case-card .case-image img { width: 100%; height: 100%; object-fit: cover; }
-        .case-card .case-content { padding: 24px; text-align: center; }
-        .case-card .case-content .badge {
+        .case-card .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .case-card:hover .case-image img { transform: scale(1.02); }
+        .case-card .case-content { padding: 32px; }
+        .case-card .case-content .label {
             font-family: var(--font-sans);
             font-weight: 600;
             font-size: 11px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            padding: 2px 12px;
-            border-radius: 40px;
-            display: inline-block;
-            margin-bottom: 8px;
+            color: var(--framework-blue);
+            display: block;
+            margin-bottom: 6px;
         }
         .case-card .case-content h4 {
             font-family: var(--font-serif);
             font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 4px;
+            font-size: 22px;
+            margin-bottom: 8px;
         }
         .case-card .case-content p {
             font-family: var(--font-sans);
             font-weight: 400;
-            color: #4b5563;
-            font-size: 14px;
+            color: var(--gray-600);
+            font-size: 15px;
             line-height: 1.7;
+            margin-bottom: 16px;
         }
-        .case-card .case-content .stats { display: flex; gap: 12px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
-        .case-card .case-content .stats span {
+        .case-card .case-content .result {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .case-card .case-content .result span {
             font-family: var(--font-sans);
             font-weight: 500;
-            background: #f3f4f6;
-            padding: 4px 14px;
+            background: var(--gray-100);
+            padding: 4px 16px;
             border-radius: 40px;
             font-size: 13px;
         }
 
-        /* ===== TESTIMONIALS ===== */
-        .testimonial-grid {
+        /* ===== INSIGHTS ===== */
+        .insights-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 24px;
-            max-width: 700px;
-            margin: 0 auto;
+            margin-top: 20px;
         }
-        .testimonial-card {
+        .insight-card {
             background: white;
-            border-radius: 20px;
-            padding: 28px 24px;
-            border: 1px solid #e5e7eb;
-            text-align: center;
+            border-radius: 16px;
+            padding: 32px 28px;
+            border: 1px solid var(--gray-200);
             transition: all 0.3s ease;
         }
-        .testimonial-card:hover {
-            border-color: var(--purple);
+        .insight-card:hover {
+            border-color: var(--framework-blue);
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
-        .testimonial-card .stars { color: #f59e0b; font-size: 18px; letter-spacing: 2px; margin-bottom: 8px; }
-        .testimonial-card .quote {
-            font-family: var(--font-sans);
-            font-weight: 400;
-            font-size: 15px;
-            line-height: 1.8;
-            color: #1f2937;
-            font-style: italic;
-            margin-bottom: 12px;
-        }
-        .testimonial-card .author {
+        .insight-card .category {
             font-family: var(--font-sans);
             font-weight: 600;
-            color: var(--black);
-            font-size: 15px;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--framework-blue);
+            display: block;
+            margin-bottom: 6px;
         }
-        .testimonial-card .author-title {
+        .insight-card h4 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .insight-card p {
             font-family: var(--font-sans);
             font-weight: 400;
-            font-size: 13px;
-            color: #6b7280;
+            color: var(--gray-600);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 12px;
         }
 
         /* ===== FOOTER ===== */
         .footer {
-            border-top: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid var(--gray-200);
             padding: 48px 0 32px;
-            background: #fafafa;
-            font-family: var(--font-sans);
+            background: var(--black);
+            color: var(--warm-white);
         }
+        .footer a { color: var(--gray-400); }
+        .footer a:hover { color: var(--framework-blue); }
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -640,7 +648,7 @@
         .footer-brand p {
             font-family: var(--font-sans);
             font-weight: 400;
-            color: #6b7280;
+            color: var(--gray-400);
             font-size: 14px;
             line-height: 1.8;
             max-width: 320px;
@@ -652,73 +660,77 @@
             font-size: 11px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--black);
+            color: var(--warm-white);
             margin-bottom: 12px;
         }
         .footer-col a {
-            font-family: var(--font-sans);
-            font-weight: 400;
             display: block;
-            color: #6b7280;
+            color: var(--gray-400);
             text-decoration: none;
             font-size: 14px;
             padding: 4px 0;
             transition: color 0.3s ease;
         }
-        .footer-col a:hover { color: var(--purple); }
+        .footer-col a:hover { color: var(--framework-blue); }
         .footer-bottom {
-            border-top: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(255,255,255,0.06);
             padding-top: 20px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 16px;
-            color: #9ca3af;
+            color: var(--gray-500);
             font-size: 13px;
             font-family: var(--font-sans);
             font-weight: 400;
         }
         .footer-bottom .social-icons { display: flex; gap: 16px; }
-        .footer-bottom .social-icons a { color: #6b7280; font-size: 18px; transition: color 0.3s ease; }
-        .footer-bottom .social-icons a:hover { color: var(--purple); }
+        .footer-bottom .social-icons a { color: var(--gray-500); font-size: 18px; transition: color 0.3s ease; }
+        .footer-bottom .social-icons a:hover { color: var(--framework-blue); }
 
         .back-to-top {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--purple);
+            background: var(--framework-blue);
             color: white;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: 0 4px 20px rgba(139,92,246,0.3);
+            border-radius: 50%;
             transition: all 0.3s ease;
             z-index: 999;
             opacity: 0;
             visibility: hidden;
             transform: translateY(20px);
+            box-shadow: 0 4px 20px rgba(23,105,170,0.3);
         }
         .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-        .back-to-top:hover { background: #7c3aed; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(139,92,246,0.4); }
-        .back-to-top i { font-size: 20px; }
+        .back-to-top:hover { background: var(--deep-blue); transform: translateY(-3px); }
+        .back-to-top i { font-size: 18px; }
 
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
         .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
-            .two-paths { grid-template-columns: 1fr; }
-            .services-grid { grid-template-columns: 1fr 1fr; }
-            .method-grid { grid-template-columns: 1fr 1fr; }
+            .hero { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .hero-left { max-width: 100%; }
+            .hero p { max-width: 100%; margin: 0 auto 32px; }
+            .hero-actions { justify-content: center; }
+            .hero-flow { justify-content: center; }
+            .problem-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .split-grid { grid-template-columns: 1fr; }
+            .data-grid { grid-template-columns: 1fr; }
             .case-grid { grid-template-columns: 1fr; }
-            .why-grid { grid-template-columns: 1fr; }
-            .hero-stats { gap: 30px; flex-wrap: wrap; }
+            .insights-grid { grid-template-columns: 1fr 1fr; }
+            .method-grid { grid-template-columns: 1fr 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .footer-brand { grid-column: 1 / -1; }
+            .method-arrow { display: none; }
         }
 
         @media (max-width: 768px) {
@@ -736,42 +748,40 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                border-bottom: 1px solid rgba(0,0,0,0.05);
+                border-bottom: 1px solid var(--gray-200);
             }
             .nav-links.open { display: flex; }
             .nav-links a { font-size: 16px; }
-            .hero { padding: 110px 16px 60px; }
-            .hero h1 { font-size: 32px; }
+
+            .hero { padding: 100px 16px 60px; }
+            .hero h1 { font-size: 36px; }
             .hero p { font-size: 16px; }
             .hero-actions { flex-direction: column; align-items: center; }
-            .hero-actions .btn-white,
-            .hero-actions .btn-purple { width: 100%; max-width: 320px; text-align: center; }
-            .two-paths { grid-template-columns: 1fr; }
-            .services-grid { grid-template-columns: 1fr; }
-            .method-grid { grid-template-columns: 1fr; }
-            .testimonial-grid { grid-template-columns: 1fr; }
-            .hero-stats .stat-number { font-size: 24px; }
+            .hero-actions .btn-primary,
+            .hero-actions .btn-outline { width: 100%; max-width: 320px; text-align: center; }
+
             .section-title { font-size: 30px; }
-            .section-full { padding: 50px 0 30px; }
+            .section-full { padding: 60px 0 40px; }
+            .insights-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 24px; }
             .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+            .problem-text h2 { font-size: 28px; }
+            .method-grid { grid-template-columns: 1fr; }
+            .method-step { padding: 16px; }
         }
 
         @media (max-width: 480px) {
-            .navbar { padding: 8px 12px; }
-            .hero { padding: 90px 16px 40px; }
             .hero h1 { font-size: 28px; }
-            .hero-eyebrow { font-size: 10px; padding: 3px 12px; }
-            .hero-stats { gap: 20px; }
-            .hero-stats .stat-number { font-size: 20px; }
-            .logo img { height: 28px; }
             .section-title { font-size: 26px; }
+            .navbar { padding: 8px 12px; }
+            .logo img { height: 24px; }
             .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
             .back-to-top i { font-size: 16px; }
         }
     </style>
 </head>
 <body>
+
     <!-- ====== NAVBAR ====== -->
     <header class="navbar" id="navbar">
         <a href="index.html" class="logo">
@@ -782,114 +792,154 @@
             <i class="fas fa-bars"></i>
         </button>
         <nav class="nav-links" id="navLinks">
+            <a href="what-we-do.html">What We Do</a>
             <a href="businesses.html">For Businesses</a>
             <a href="creators.html">For Creators</a>
-            <a href="services.html">Services</a>
-            <a href="method.html">Method</a>
-            <a href="work.html">Work</a>
+            <a href="method.html">Our Method</a>
             <a href="insights.html">Insights</a>
+            <a href="case-studies.html">Case Studies</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="nav-cta">Work With Framework</a>
+            <a href="contact.html" class="nav-cta">Work With Us</a>
         </nav>
     </header>
 
     <!-- ====== HERO ====== -->
     <section class="hero">
-        <div class="orb-1"></div>
-        <div class="orb-2"></div>
-        <div class="hero-content">
+        <div class="hero-left">
             <span class="hero-eyebrow">Content Consultancy</span>
-            <h1>Content is not a marketing task. It's a <span class="highlight">business discipline</span>.</h1>
-            <p>Framework Media advises businesses and creators on what to say, who it's for, and how to build a system around it — then executes when execution is what's required.</p>
+            <h1>Content is becoming the <span class="highlight">competitive advantage</span>.</h1>
+            <p>Framework Media is a content consultancy helping businesses and creators turn expertise, ideas and positioning into content that builds authority, trust and demand.</p>
             <div class="hero-actions">
-                <a href="contact.html" class="btn-white">Work With Framework</a>
-                <a href="method.html" class="btn-purple">See Our Method</a>
+                <a href="case-studies.html" class="btn-outline">Explore our work →</a>
+                <a href="contact.html" class="btn-primary">Work With Framework →</a>
             </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">250K+</div>
-                    <div class="stat-label">Followers Built</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">60K+</div>
-                    <div class="stat-label">Founder's Personal Brand</div>
-                </div>
+            <div class="hero-flow">
+                <span>Strategy</span>
+                <span class="arrow">→</span>
+                <span>Positioning</span>
+                <span class="arrow">→</span>
+                <span>Content</span>
+                <span class="arrow">→</span>
+                <span>Distribution</span>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-image-wrapper">
+                <div class="hero-graphic-overlay"></div>
+                <div class="hero-graphic-overlay-2"></div>
+                <img src="images/hero-editorial.jpg" alt="Content strategy and consultancy" />
             </div>
         </div>
     </section>
 
-    <!-- ====== POSITIONING STRIP ====== -->
-    <section class="trust-strip">
+    <!-- ====== PROBLEM ====== -->
+    <section class="section-full section-full-light">
         <div class="container">
-            <p>Content is not the strategy. <span class="highlight-text">It is the output of one.</span></p>
-        </div>
-    </section>
-
-    <!-- ====== INTRODUCTION ====== -->
-    <section class="section-full section-full-light-purple">
-        <div class="container">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <span class="pill reveal">The Problem</span>
-                <h2 class="section-title">The problem is rarely a shortage of <span class="highlight">content</span>.</h2>
-                <p style="font-family:var(--font-sans);font-weight:400;font-size:17px;line-height:1.8;color:#4b5563;">Most organizations and creators we meet are not short on ideas. They are short on clarity — about what they should be known for, who needs to hear it, and how each piece of content serves the business behind it. Framework Media exists to resolve that before a single piece of content is produced.</p>
+            <div class="problem-grid">
+                <div class="problem-image reveal">
+                    <img src="images/problem-visual.jpg" alt="Content clarity problem" />
+                </div>
+                <div class="problem-text reveal">
+                    <span class="pill">The Problem</span>
+                    <h2>Most organizations don't have a <span class="highlight">content problem</span>.<br>They have a <span class="highlight">clarity problem</span>.</h2>
+                    <p>Businesses and creators often know what they sell, what they know and what they want to achieve. But they don't know what to communicate, how to position it, what content to create or how to build a consistent system. Framework exists to resolve that — before a single piece of content is produced.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== HOW WE HELP ====== -->
+    <!-- ====== WHAT WE DO ====== -->
     <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">How We Help</span>
-                <h2 class="section-title">Strategy. Positioning. Systems. Creation. <span class="highlight">Direction. Consultancy.</span></h2>
+                <span class="pill reveal">What We Do</span>
+                <h2 class="section-title">We turn expertise into <span class="gradient-highlight">content systems</span>.</h2>
                 <div class="accent-line"></div>
             </div>
 
-            <div class="services-grid stagger">
-                <div class="service-card">
-                    <span class="tag">Strategy</span>
-                    <h4>Strategy</h4>
-                    <p>Determine what should be said, to whom, and why it matters to the business.</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:20px; margin-top:20px;">
+                <div style="background:white; border-radius:12px; padding:24px; border:1px solid var(--gray-200); text-align:center;">
+                    <span style="font-size:28px; color:var(--framework-blue); display:block; margin-bottom:8px;">📋</span>
+                    <h4 style="font-family:var(--font-serif); font-weight:600; font-size:18px;">Strategy</h4>
+                    <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-600); font-size:14px; line-height:1.6;">Determine what should be said, to whom, and why it matters.</p>
                 </div>
-                <div class="service-card">
-                    <span class="tag">Positioning</span>
-                    <h4>Positioning</h4>
-                    <p>Define what the brand should be known for, and how it should be understood.</p>
+                <div style="background:white; border-radius:12px; padding:24px; border:1px solid var(--gray-200); text-align:center;">
+                    <span style="font-size:28px; color:var(--framework-blue); display:block; margin-bottom:8px;">🎯</span>
+                    <h4 style="font-family:var(--font-serif); font-weight:600; font-size:18px;">Positioning</h4>
+                    <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-600); font-size:14px; line-height:1.6;">Define what the brand should be known for, and how it should be understood.</p>
                 </div>
-                <div class="service-card">
-                    <span class="tag">Systems</span>
-                    <h4>Content Systems</h4>
-                    <p>Convert expertise into pillars, formats and workflows that hold up over time.</p>
+                <div style="background:white; border-radius:12px; padding:24px; border:1px solid var(--gray-200); text-align:center;">
+                    <span style="font-size:28px; color:var(--framework-blue); display:block; margin-bottom:8px;">📝</span>
+                    <h4 style="font-family:var(--font-serif); font-weight:600; font-size:18px;">Content</h4>
+                    <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-600); font-size:14px; line-height:1.6;">Turn strategy into content people actually want to consume.</p>
                 </div>
-                <div class="service-card">
-                    <span class="tag">Creation</span>
-                    <h4>Creation</h4>
-                    <p>Execute the strategy — scripts, video, editorial, campaigns.</p>
+                <div style="background:white; border-radius:12px; padding:24px; border:1px solid var(--gray-200); text-align:center;">
+                    <span style="font-size:28px; color:var(--framework-blue); display:block; margin-bottom:8px;">📤</span>
+                    <h4 style="font-family:var(--font-serif); font-weight:600; font-size:18px;">Distribution</h4>
+                    <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-600); font-size:14px; line-height:1.6;">Get the content in front of the right people, on the right platforms.</p>
                 </div>
-                <div class="service-card">
-                    <span class="tag">Direction</span>
-                    <h4>Direction</h4>
-                    <p>Provide strategic oversight to an existing internal team.</p>
-                </div>
-                <div class="service-card" style="border-color:var(--purple);">
-                    <span class="tag">Consultancy</span>
-                    <h4>Consultancy</h4>
-                    <p>An ongoing strategic partnership for organizations that treat content as core infrastructure, not a marketing add-on.</p>
-                </div>
-            </div>
-
-            <div style="text-align:center;margin-top:32px;">
-                <a href="services.html" class="link-arrow">Explore Services →</a>
             </div>
         </div>
     </section>
 
-    <!-- ====== TWO PATHS ====== -->
-    <section class="section-full section-full-light-blue">
+    <!-- ====== THE FRAMEWORK METHOD ====== -->
+    <section class="section-full section-full-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">The Framework Method</span>
+                <h2 class="section-title">Diagnose → Position → Structure → <span class="gradient-highlight">Create → Distribute → Measure → Compound</span></h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">We don't start with content. We start with the problem.</p>
+            </div>
+
+            <div class="method-grid">
+                <div class="method-step">
+                    <span class="step-num">01</span>
+                    <h4>Diagnose</h4>
+                    <p>What is happening?</p>
+                </div>
+                <div class="method-arrow">→</div>
+                <div class="method-step">
+                    <span class="step-num">02</span>
+                    <h4>Position</h4>
+                    <p>What should you be known for?</p>
+                </div>
+                <div class="method-arrow">→</div>
+                <div class="method-step">
+                    <span class="step-num">03</span>
+                    <h4>Structure</h4>
+                    <p>How should the content system work?</p>
+                </div>
+                <div class="method-arrow">→</div>
+                <div class="method-step">
+                    <span class="step-num">04</span>
+                    <h4>Create</h4>
+                    <p>What should be produced?</p>
+                </div>
+                <div class="method-arrow">→</div>
+                <div class="method-step">
+                    <span class="step-num">05</span>
+                    <h4>Distribute</h4>
+                    <p>Where should it go?</p>
+                </div>
+                <div class="method-arrow">→</div>
+                <div class="method-step">
+                    <span class="step-num">06</span>
+                    <h4>Measure</h4>
+                    <p>What is working?</p>
+                </div>
+                <div class="method-arrow">→</div>
+                <div class="method-step" style="border-color:var(--framework-blue);">
+                    <span class="step-num">07</span>
+                    <h4>Compound</h4>
+                    <p>What should happen next?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== BUSINESS / CREATOR SPLIT ====== -->
+    <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Who We Work With</span>
@@ -897,168 +947,164 @@
                 <div class="accent-line"></div>
             </div>
 
-            <div class="two-paths">
-                <div class="path-card reveal">
+            <div class="split-grid">
+                <div class="split-card reveal">
                     <span class="icon"><i class="fas fa-building"></i></span>
                     <h3>For Businesses</h3>
-                    <p>The business already has something worth saying. Expertise, track record and offer are rarely the constraint. The constraint is whether the content communicates any of it clearly enough to be believed.</p>
-                    <a href="businesses.html" class="link-arrow">Framework for Businesses →</a>
+                    <p>Your expertise is an asset. Your content should make it visible. We help businesses turn what they already know into content that builds understanding, credibility and trust.</p>
+                    <a href="businesses.html" class="link-arrow">Explore for Businesses →</a>
                 </div>
-
-                <div class="path-card reveal">
+                <div class="split-card reveal">
                     <span class="icon"><i class="fas fa-user"></i></span>
                     <h3>For Creators</h3>
-                    <p>Competence is not the same as recognition. A clear point of view and a consistent system are what turn expertise into a following worth having.</p>
-                    <a href="creators.html" class="link-arrow">Framework for Creators →</a>
+                    <p>Your audience isn't built by posting more. It's built by becoming recognizable. We help creators turn their expertise, personality and ideas into a body of content people can recognise and return to.</p>
+                    <a href="creators.html" class="link-arrow">Explore for Creators →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== THE FRAMEWORK METHOD ====== -->
-    <section class="section-full section-full-light-purple">
+    <!-- ====== DATA VISUALIZATION ====== -->
+    <section class="section-full section-full-light">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">The Framework Method</span>
-                <h2 class="section-title">We do not begin with content. We begin with the <span class="highlight">business, the audience and the problem</span> — then build outward.</h2>
+                <span class="pill reveal">What Changes</span>
+                <h2 class="section-title">What happens when <span class="highlight">strategy meets content</span>?</h2>
                 <div class="accent-line"></div>
             </div>
 
-            <div style="max-width: 900px; margin: 0 auto; background: white; border-radius: 24px; padding: 32px; border: 1px solid #e5e7eb;">
-                <img src="icons/growth-strategy-diagram.png" alt="Framework Media methodology: Audit, Position, Structure, Create, Distribute, Analyze and Scale" style="width:100%; height:auto; display:block;" />
-            </div>
-
-            <div class="method-grid" style="margin-top: 24px;">
-                <div class="method-step">
-                    <span class="step-num">01</span>
-                    <h4>Audit</h4>
-                    <p>Establish what exists</p>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="label">Content Performance</span>
+                    <div class="bar-container">
+                        <span class="bar-label">Reach</span>
+                        <div class="bar-track"><div class="bar-fill" style="width:45%;"></div></div>
+                        <span class="bar-value">+45%</span>
+                    </div>
+                    <div class="bar-container">
+                        <span class="bar-label">Authority</span>
+                        <div class="bar-track"><div class="bar-fill" style="width:78%;"></div></div>
+                        <span class="bar-value">+78%</span>
+                    </div>
+                    <div class="bar-container">
+                        <span class="bar-label">Consistency</span>
+                        <div class="bar-track"><div class="bar-fill" style="width:92%;"></div></div>
+                        <span class="bar-value">+92%</span>
+                    </div>
+                    <div class="bar-container">
+                        <span class="bar-label">Conversion</span>
+                        <div class="bar-track"><div class="bar-fill" style="width:63%;"></div></div>
+                        <span class="bar-value">+63%</span>
+                    </div>
                 </div>
-                <div class="method-arrow">→</div>
-                <div class="method-step">
-                    <span class="step-num">02</span>
-                    <h4>Position</h4>
-                    <p>Determine what to be known for</p>
+                <div class="data-item">
+                    <span class="label">The Content Funnel</span>
+                    <div class="data-funnel">
+                        <div class="funnel-step">Attention</div>
+                        <div class="funnel-step">Understanding</div>
+                        <div class="funnel-step">Trust</div>
+                        <div class="funnel-step">Demand</div>
+                        <div class="funnel-step">Action</div>
+                    </div>
                 </div>
-                <div class="method-arrow">→</div>
-                <div class="method-step">
-                    <span class="step-num">03</span>
-                    <h4>Structure</h4>
-                    <p>Build the content system</p>
-                </div>
-                <div class="method-arrow">→</div>
-                <div class="method-step">
-                    <span class="step-num">04</span>
-                    <h4>Create</h4>
-                    <p>Convert strategy to output</p>
-                </div>
-                <div class="method-arrow">→</div>
-                <div class="method-step">
-                    <span class="step-num">05</span>
-                    <h4>Distribute</h4>
-                    <p>Place work for the right audience</p>
-                </div>
-                <div class="method-arrow">→</div>
-                <div class="method-step">
-                    <span class="step-num">06</span>
-                    <h4>Analyze</h4>
-                    <p>Assess what works</p>
-                </div>
-                <div class="method-arrow">→</div>
-                <div class="method-step">
-                    <span class="step-num">07</span>
-                    <h4>Scale</h4>
-                    <p>Refine the system on evidence</p>
-                </div>
-            </div>
-
-            <div style="text-align:center;margin-top:32px;">
-                <a href="method.html" class="link-arrow">Explore the Framework Method →</a>
             </div>
         </div>
     </section>
 
-    <!-- ====== WHAT DIFFERENTIATES THE WORK ====== -->
+    <!-- ====== CASE STUDIES ====== -->
     <section class="section-full section-full-white">
-        <div class="container">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <span class="pill reveal">What Differentiates the Work</span>
-                <h2 class="section-title">Producing more content is not difficult. Determining what a brand should be <span class="highlight">known for</span> — that is the harder problem.</h2>
-                <p style="font-family:var(--font-sans);font-weight:400;font-size:17px;line-height:1.8;color:#4b5563;">Why an audience should care, and how each piece serves the business behind it — that is the harder and more valuable problem. It is the one we focus on.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== PHILOSOPHY ====== -->
-    <section class="section-full section-full-light-blue">
-        <div class="container">
-            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-                <span class="pill reveal">Philosophy</span>
-                <h2 class="section-title">Content should have a <span class="highlight">job</span>.</h2>
-                <div class="accent-line"></div>
-                <p style="font-family:var(--font-sans);font-weight:400;font-size:17px;line-height:1.8;color:#4b5563;margin-top:16px;">Every piece of content exists to do something specific: build awareness, demonstrate expertise, shift perception, build trust, create demand, or convert. It does not exist because a day has passed without a post.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== SELECTED WORK ====== -->
-    <section class="section-full section-full-light-pink">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Selected Work</span>
-                <h2 class="section-title">Framework Media's approach is grounded in direct experience building audiences and content systems — <span class="highlight">not theory</span>.</h2>
+                <h2 class="section-title">Real results. <span class="highlight">Real brands</span>.</h2>
                 <div class="accent-line"></div>
             </div>
 
             <div class="case-grid">
-                <div class="case-card reveal-left">
+                <div class="case-card reveal">
                     <div class="case-image">
-                        <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered personal brand case study" />
+                        <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered" />
                     </div>
                     <div class="case-content">
-                        <span class="badge" style="background:#fef3c7;color:#d97706;">Personal Brand</span>
+                        <span class="label">Founder Case Study</span>
                         <h4>Katlego Unfiltered</h4>
                         <p>Built from zero to 60K+ followers across Instagram and TikTok, on a foundation of clear identity and repeatable content pillars rather than posting volume.</p>
-                        <div class="stats">
-                            <span><i class="fas fa-arrow-up" style="color:#16a34a;margin-right:4px;"></i> 60K+ Followers</span>
-                            <span><i class="fab fa-instagram" style="margin-right:4px;"></i> + <i class="fab fa-tiktok"></i></span>
+                        <div class="result">
+                            <span>60K+ Followers</span>
+                            <span>Instagram + TikTok</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="case-card reveal-right">
+                <div class="case-card reveal">
                     <div class="case-image">
-                        <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox content case study" />
+                        <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox" />
                     </div>
                     <div class="case-content">
-                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Content Brand</span>
+                        <span class="label">Brand Case Study</span>
                         <h4>Our Goated Lunchbox</h4>
                         <p>Grown to 150K+ followers on TikTok through positioning and content built specifically for the culture and community it addressed.</p>
-                        <div class="stats">
-                            <span><i class="fas fa-arrow-up" style="color:#16a34a;margin-right:4px;"></i> 150K+ Followers</span>
-                            <span><i class="fab fa-tiktok"></i></span>
+                        <div class="result">
+                            <span>150K+ Followers</span>
+                            <span>TikTok</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div style="text-align:center;margin-top:32px;">
-                <a href="work.html" class="link-arrow">View Our Work →</a>
+            <div style="text-align:center;margin-top:40px;">
+                <a href="case-studies.html" class="link-arrow">View All Case Studies →</a>
             </div>
         </div>
     </section>
 
-    <!-- ====== CLOSING ====== -->
-    <section class="section-full section-full-dark">
+    <!-- ====== INSIGHTS ====== -->
+    <section class="section-full section-full-light">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Content built on a system outperforms content built on <span class="highlight">instinct</span>.</h2>
+                <span class="pill reveal">Insights</span>
+                <h2 class="section-title">Thinking about <span class="highlight">content</span>.</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">If the current output feels inconsistent or disconnected from the broader business, that is a strategy question before it is a content question. We will tell you plainly what we see and where Framework can help.</p>
+                <p class="section-sub">Practical thinking on content strategy, positioning and what actually moves a brand forward.</p>
             </div>
 
-            <div style="text-align:center;">
-                <a href="contact.html" class="btn-white">Work With Framework →</a>
+            <div class="insights-grid">
+                <div class="insight-card reveal">
+                    <span class="category">Strategy</span>
+                    <h4>Why most businesses build content in the wrong order</h4>
+                    <p>Most businesses start with "what should we post?" rather than "what does our content need to accomplish?"</p>
+                    <a href="#" class="link-arrow">Read More →</a>
+                </div>
+                <div class="insight-card reveal">
+                    <span class="category">Positioning</span>
+                    <h4>Weak positioning, not weak content, is usually the problem</h4>
+                    <p>When every competitor sounds the same, creating more content isn't the solution. The position needs to change first.</p>
+                    <a href="#" class="link-arrow">Read More →</a>
+                </div>
+                <div class="insight-card reveal">
+                    <span class="category">Systems</span>
+                    <h4>The distinction between content and a content system</h4>
+                    <p>Content is what you publish. A content system is how you decide what to publish, why it matters and how you improve it.</p>
+                    <a href="#" class="link-arrow">Read More →</a>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:40px;">
+                <a href="insights.html" class="link-arrow">View All Insights →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== ABOUT / FINAL CTA ====== -->
+    <section class="section-full section-full-dark">
+        <div class="container">
+            <div style="max-width:800px; margin:0 auto; text-align:center;">
+                <span class="pill" style="background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.1); color:var(--gray-300);">About Framework</span>
+                <h2 class="section-title">We think content deserves <span class="gradient-highlight">better thinking</span>.</h2>
+                <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-400); font-size:17px; line-height:1.8; max-width:600px; margin:0 auto 32px;">Framework Media is a content consultancy for businesses and creators. We help you figure out what to say, who to say it to, and how to build a system around it — then execute when execution is what's required.</p>
+                <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+                    <a href="about.html" class="btn-outline" style="border-color:var(--warm-white); color:var(--warm-white);">About Us</a>
+                    <a href="contact.html" class="btn-white">Work With Framework →</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1068,8 +1114,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" style="display:inline-block;font-size:18px;">
-                        <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;" />
+                    <a href="index.html" class="logo" style="display:inline-block;font-size:18px;color:var(--warm-white);">
+                        <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;filter:brightness(10);" />
                         Framework Media
                     </a>
                     <p>Content consultancy for businesses and creators. Strategy behind the content.</p>
@@ -1077,11 +1123,15 @@
 
                 <div class="footer-col">
                     <h4>Explore</h4>
+                    <a href="what-we-do.html">What We Do</a>
                     <a href="businesses.html">For Businesses</a>
                     <a href="creators.html">For Creators</a>
-                    <a href="services.html">Services</a>
-                    <a href="method.html">Method</a>
-                    <a href="work.html">Work</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <a href="method.html">Our Method</a>
+                    <a href="case-studies.html">Case Studies</a>
                     <a href="insights.html">Insights</a>
                     <a href="about.html">About</a>
                 </div>
@@ -1090,13 +1140,7 @@
                     <h4>Work With Us</h4>
                     <a href="contact.html">Start a Conversation</a>
                     <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank">Book a Consultation</a>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Legal</h4>
                     <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
-                    <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
-                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
                 </div>
             </div>
 
@@ -1116,6 +1160,120 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
-    <script src="js/main.js"></script>
+    <script>
+        // ================================================
+        // ===== NAVBAR TOGGLE (Mobile) =====
+        // ================================================
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('open');
+                const icon = this.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+        }
+
+        // ================================================
+        // ===== NAVBAR HIDE ON SCROLL =====
+        // ================================================
+        let lastScroll = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+            }
+
+            lastScroll = currentScroll;
+
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                if (currentScroll > 400) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
+        });
+
+        // ================================================
+        // ===== BACK TO TOP =====
+        // ================================================
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // ================================================
+        // ===== SCROLL ANIMATIONS =====
+        // ================================================
+        (function() {
+            const elements = document.querySelectorAll('.reveal, .method-step, .split-card, .case-card, .insight-card, .service-card');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            elements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.7s ease';
+                observer.observe(el);
+            });
+
+            setTimeout(() => {
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    if (rect.top < windowHeight * 0.85) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }
+                });
+            }, 100);
+        })();
+
+        // ================================================
+        // ===== CLOSE MOBILE NAV ON LINK CLICK =====
+        // ================================================
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navLinks && navLinks.classList.contains('open')) {
+                    navLinks.classList.remove('open');
+                    const icon = navToggle?.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
