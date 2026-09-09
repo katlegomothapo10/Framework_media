@@ -4,49 +4,302 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Case Studies — Framework Media</title>
-    <meta name="description" content="Real results from real brands. See how Framework Media has helped businesses, founders and creators grow through content." />
+    <meta name="description" content="Work assessed by what changed, not by isolated metrics. Case studies from real client engagements." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
     <style>
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        :root {
+            --framework-black: #111111;
+            --framework-off-white: #F7F7F5;
+            --framework-blue: #2563EB;
+            --framework-purple: #7C3AED;
+            --pink: #EC4899;
+            --purple: #A855F7;
+            --blue: #3B82F6;
+            --gradient: linear-gradient(135deg, #EC4899, #A855F7, #3B82F6);
+            --gradient-subtle: linear-gradient(135deg, rgba(236,72,153,0.06), rgba(168,85,247,0.06), rgba(59,130,246,0.06));
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-hover: 0 12px 40px rgba(37,99,235,0.12);
+            --font-serif: 'Source Serif 4', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --nav-height: 72px;
+        }
+
+        body {
+            background: var(--framework-off-white);
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--framework-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: var(--nav-height);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+            height: var(--nav-height);
+            background: rgba(255,255,255,0.97);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .navbar.hidden { transform: translateY(-100%); }
+        .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .logo img { height: 32px; width: auto; display: block; }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        .nav-links a:hover { color: var(--framework-black); }
+        .nav-links a.active { color: var(--framework-black); font-weight: 600; }
+
+        .nav-cta {
+            background: var(--framework-blue);
+            color: white !important;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+        .nav-cta:hover { background: #1d4ed8; color: white !important; }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--framework-black);
+            cursor: pointer;
+            padding: 4px;
+            z-index: 1001;
+        }
+
+        /* ===== MOBILE NAV ===== */
+        @media (max-width: 992px) {
+            .nav-toggle { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 80px 32px 32px;
+                gap: 20px;
+                transition: right 0.3s ease;
+                box-shadow: -4px 0 30px rgba(0,0,0,0.08);
+                overflow-y: auto;
+                align-items: flex-start;
+            }
+            .nav-links.open { right: 0; }
+            .nav-links a { font-size: 16px; }
+            .nav-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.3);
+                z-index: 999;
+            }
+            .nav-overlay.active { display: block; }
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        .section-title {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 44px;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+        .section-title .highlight-blue { color: var(--framework-blue); }
+        .section-title .highlight-purple { color: var(--framework-purple); }
+        .section-title .gradient-highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-sub {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 18px;
+            color: var(--gray-600);
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .section-full {
+            width: 100%;
+            padding: 80px 0;
+        }
+        .section-full-white { background: var(--framework-off-white); }
+        .section-full-light { background: #ffffff; }
+        .section-full-dark {
+            background: var(--framework-black);
+            color: var(--framework-off-white);
+        }
+        .section-full-dark .section-title { color: var(--framework-off-white); }
+        .section-full-dark .section-sub { color: var(--gray-400); }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            margin: 16px auto 0;
+            border-radius: 4px;
+        }
+
+        .pill {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: var(--gradient-subtle);
+            color: var(--framework-blue);
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(37,99,235,0.12);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary, .btn-outline, .btn-white {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-primary { background: var(--framework-black); color: var(--framework-off-white); }
+        .btn-primary:hover { background: var(--gray-800); transform: translateY(-2px); }
+        .btn-outline { background: transparent; color: var(--framework-black); border: 2px solid var(--framework-black); }
+        .btn-outline:hover { background: var(--framework-black); color: var(--framework-off-white); transform: translateY(-2px); }
+        .btn-white { background: var(--framework-off-white); color: var(--framework-black); }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+
+        .link-arrow {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: var(--framework-blue);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.3s ease;
+        }
+        .link-arrow:hover { gap: 10px; }
+
+        /* ===== PAGE HEADER ===== */
         .page-header {
-            padding: 120px 24px 60px;
-            background: var(--gradient-dark);
-            color: white;
+            padding: 80px 0 40px;
+            background: var(--framework-black);
+            color: var(--framework-off-white);
             text-align: center;
         }
         .page-header h1 {
+            font-family: var(--font-serif);
+            font-weight: 600;
             font-size: 52px;
-            font-weight: 800;
             letter-spacing: -0.02em;
             margin-bottom: 12px;
         }
         .page-header p {
-            color: #d1d5db;
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-400);
             font-size: 18px;
             max-width: 640px;
             margin: 0 auto;
             line-height: 1.7;
         }
-        .page-header .highlight {
+        .page-header .gradient-highlight {
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
+        /* ===== CASE STUDY DETAIL ===== */
         .case-detail {
             background: white;
-            border-radius: 24px;
+            border-radius: 12px;
             padding: 40px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid var(--gray-200);
             margin-bottom: 32px;
             transition: all 0.3s ease;
         }
         .case-detail:hover {
-            border-color: var(--purple);
+            border-color: var(--framework-blue);
             box-shadow: var(--shadow-hover);
         }
         .case-detail .case-header {
@@ -58,22 +311,22 @@
         .case-detail .case-header .case-image-small {
             width: 120px;
             height: 120px;
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
             flex-shrink: 0;
-            background: var(--gradient-subtle);
+            background: var(--gray-100);
         }
         .case-detail .case-header .case-image-small img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .case-detail .case-header .case-info {
-            flex: 1;
-        }
+        .case-detail .case-header .case-info { flex: 1; }
         .case-detail .case-header .case-info .badge {
-            font-size: 11px;
+            font-family: var(--font-sans);
             font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             padding: 2px 12px;
             border-radius: 40px;
@@ -81,34 +334,39 @@
             margin-bottom: 8px;
         }
         .case-detail .case-header .case-info h3 {
+            font-family: var(--font-serif);
+            font-weight: 600;
             font-size: 24px;
-            font-weight: 700;
             margin-bottom: 4px;
         }
         .case-detail .case-header .case-info .result {
+            font-family: var(--font-sans);
+            font-weight: 600;
             font-size: 18px;
-            font-weight: 700;
-            color: var(--purple);
+            color: var(--framework-blue);
         }
 
         .case-detail .case-body {
             margin-top: 20px;
             padding-top: 20px;
-            border-top: 1px solid #e5e7eb;
+            border-top: 1px solid var(--gray-200);
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 24px;
         }
         .case-detail .case-body .case-section h4 {
-            font-size: 14px;
-            font-weight: 700;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #6b7280;
+            color: var(--gray-500);
             margin-bottom: 8px;
         }
         .case-detail .case-body .case-section p {
-            color: #374151;
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-700);
             font-size: 15px;
             line-height: 1.7;
         }
@@ -119,19 +377,177 @@
             margin-top: 8px;
         }
         .case-detail .case-body .case-section .stats span {
-            background: #f3f4f6;
-            padding: 4px 14px;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            background: var(--gray-100);
+            padding: 4px 16px;
             border-radius: 40px;
             font-size: 13px;
-            font-weight: 500;
+        }
+
+        /* ===== IMAGE PLACEHOLDER ===== */
+        .img-placeholder {
+            background: var(--gray-200);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-family: var(--font-sans);
+            font-size: 14px;
+            min-height: 120px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 48px 0 32px;
+            background: var(--framework-black);
+            color: var(--framework-off-white);
+        }
+        .footer a { color: var(--gray-400); text-decoration: none; transition: color 0.3s ease; }
+        .footer a:hover { color: var(--framework-blue); }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+        .footer-brand p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-400);
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 320px;
+            margin-top: 8px;
+        }
+        .footer-col h4 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--framework-off-white);
+            margin-bottom: 12px;
+        }
+        .footer-col a {
+            display: block;
+            color: var(--gray-400);
+            font-size: 14px;
+            padding: 4px 0;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--gray-500);
+            font-size: 13px;
+            font-family: var(--font-sans);
+            font-weight: 400;
+        }
+        .footer-bottom .social-icons { display: flex; gap: 16px; }
+        .footer-bottom .social-icons a { color: var(--gray-500); font-size: 18px; }
+        .footer-bottom .social-icons a:hover { color: var(--framework-blue); }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--framework-blue);
+            color: white;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+        .back-to-top:hover { background: #1d4ed8; transform: translateY(-3px); }
+        .back-to-top i { font-size: 18px; }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .footer-brand { grid-column: 1 / -1; }
+            .section-title { font-size: 36px; }
+            .page-header h1 { font-size: 40px; }
         }
 
         @media (max-width: 768px) {
+            .navbar { padding: 0 16px; }
+            .nav-toggle { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 80px 32px 32px;
+                gap: 20px;
+                transition: right 0.3s ease;
+                box-shadow: -4px 0 30px rgba(0,0,0,0.08);
+                overflow-y: auto;
+                align-items: flex-start;
+            }
+            .nav-links.open { right: 0; }
+            .nav-links a { font-size: 16px; }
+            .nav-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.3);
+                z-index: 999;
+            }
+            .nav-overlay.active { display: block; }
+
             .case-detail { padding: 24px; }
             .case-detail .case-header { flex-direction: column; align-items: center; text-align: center; }
             .case-detail .case-header .case-image-small { width: 100px; height: 100px; }
             .case-detail .case-body { grid-template-columns: 1fr; gap: 16px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 30px; }
+            .section-full { padding: 60px 0; }
             .page-header h1 { font-size: 32px; }
+            .page-header { padding: 60px 0 30px; }
+            .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .section-title { font-size: 26px; }
+            .page-header h1 { font-size: 28px; }
+            .container { padding: 0 16px; }
+            .logo img { height: 28px; }
+            .nav-links { width: 100%; right: -100%; padding: 70px 24px 24px; }
+            .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
+            .back-to-top i { font-size: 16px; }
         }
     </style>
 </head>
@@ -142,56 +558,61 @@
         <a href="index.html" class="logo">
             <img src="images/logo.png" alt="Framework Media" />
         </a>
+
+        <div class="nav-overlay" id="navOverlay"></div>
+
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
+
         <nav class="nav-links" id="navLinks">
-            <a href="services.html">Services</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="launch.html">Launch</a>
+            <a href="what-we-do.html">What We Do</a>
+            <a href="businesses.html">For Businesses</a>
+            <a href="creators.html">For Creators</a>
+            <a href="method.html">Our Method</a>
+            <a href="insights.html">Insights</a>
             <a href="case-studies.html" class="active">Case Studies</a>
-            <a href="testimonials.html">Testimonials</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="nav-cta">Contact</a>
+            <a href="contact.html" class="nav-cta">Work With Us</a>
         </nav>
     </header>
 
     <!-- ====== PAGE HEADER ====== -->
     <section class="page-header">
         <div class="container">
-            <h1>Real results. <span class="highlight">Real brands</span>.</h1>
-            <p>Transformations using the Framework system.</p>
+            <h1>Our <span class="gradient-highlight">Work</span></h1>
+            <p>Work assessed by what changed, not by isolated metrics.</p>
         </div>
     </section>
 
-    <!-- ====== CASE STUDIES ====== -->
+    <!-- ====== CASE STUDY 1 ====== -->
     <section class="section-full section-full-white">
         <div class="container">
-
-            <!-- Case Study 1 -->
             <div class="case-detail reveal">
                 <div class="case-header">
                     <div class="case-image-small">
-                        <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered" />
+                        <div class="img-placeholder">
+                            <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered personal brand case study" />
+                        </div>
                     </div>
                     <div class="case-info">
-                        <span class="badge" style="background:#fef3c7;color:#d97706;">Founder Case Study</span>
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Personal Brand</span>
                         <h3>Katlego Unfiltered</h3>
-                        <div class="result">60K+ Followers Across Instagram &amp; TikTok</div>
+                        <div class="result">60K+ followers across Instagram and TikTok</div>
                     </div>
                 </div>
                 <div class="case-body">
                     <div class="case-section">
                         <h4>Challenge</h4>
-                        <p>Building a personal brand from scratch in a saturated market. No audience, no content system, no clear direction.</p>
+                        <p>Building a recognizable personal brand in a crowded category with no existing audience or content system.</p>
                     </div>
                     <div class="case-section">
                         <h4>Approach</h4>
-                        <p>Implemented the Framework system: strategy-led content pillars, consistent execution, and audience-first messaging.</p>
+                        <p>A defined point of view, repeatable content pillars, and a system refined against audience response over time.</p>
                     </div>
                     <div class="case-section">
-                        <h4>Result</h4>
-                        <p>60K+ followers across Instagram and TikTok. Published author. Speaking opportunities. Monetisation unlocked.</p>
+                        <h4>Outcome</h4>
+                        <p>60K+ followers, a published book, speaking engagements, and a monetized personal brand.</p>
                         <div class="stats">
                             <span><i class="fab fa-instagram"></i> 35K+</span>
                             <span><i class="fab fa-tiktok"></i> 25K+</span>
@@ -200,30 +621,32 @@
                 </div>
             </div>
 
-            <!-- Case Study 2 -->
+            <!-- ====== CASE STUDY 2 ====== -->
             <div class="case-detail reveal">
                 <div class="case-header">
                     <div class="case-image-small">
-                        <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox" />
+                        <div class="img-placeholder">
+                            <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox content case study" />
+                        </div>
                     </div>
                     <div class="case-info">
-                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Brand Case Study</span>
+                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Content Brand</span>
                         <h3>Our Goated Lunchbox</h3>
-                        <div class="result">150K+ Followers on TikTok</div>
+                        <div class="result">150K+ followers on TikTok</div>
                     </div>
                 </div>
                 <div class="case-body">
                     <div class="case-section">
                         <h4>Challenge</h4>
-                        <p>Growing a TikTok page in a competitive niche. Needed a content strategy that would cut through the noise.</p>
+                        <p>Building an audience within a competitive street-culture and lifestyle category.</p>
                     </div>
                     <div class="case-section">
                         <h4>Approach</h4>
-                        <p>Developed a content strategy focused on street culture, lifestyle, and African youth content. Consistent posting cadence with high-retention hooks.</p>
+                        <p>Defined content themes, audience-first messaging, and formats built specifically for the platform and community.</p>
                     </div>
                     <div class="case-section">
-                        <h4>Result</h4>
-                        <p>150K+ followers on TikTok. Became a recognised brand in the street culture space. Organic growth without paid ads.</p>
+                        <h4>Outcome</h4>
+                        <p>150K+ followers and more than 5M likes.</p>
                         <div class="stats">
                             <span><i class="fab fa-tiktok"></i> 150K+</span>
                             <span><i class="fas fa-heart" style="color:#dc2626;"></i> 5M+ Likes</span>
@@ -232,35 +655,25 @@
                 </div>
             </div>
 
-            <!-- Case Study 3 (Placeholder) -->
-            <div class="case-detail reveal" style="border-style:dashed;border-color:#d1d5db;">
+            <!-- ====== COMING SOON ====== -->
+            <div class="case-detail reveal" style="border-style:dashed;border-color:var(--gray-300);">
                 <div class="case-header">
-                    <div class="case-image-small" style="background:var(--gradient-subtle);display:flex;align-items:center;justify-content:center;font-size:32px;color:var(--purple);">
+                    <div class="case-image-small" style="background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:32px;color:var(--gray-400);">
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="case-info">
-                        <span class="badge" style="background:#e5e7eb;color:#6b7280;">Coming Soon</span>
-                        <h3>Your Case Study</h3>
-                        <div class="result">Ready to be the next success story?</div>
-                        <p style="color:#4b5563;font-size:15px;margin-top:8px;">Let's build your brand using the Framework system.</p>
-                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-primary btn-small" style="margin-top:8px;display:inline-block;">Book a Strategy Call</a>
+                        <span class="badge" style="background:var(--gray-200);color:var(--gray-500);">Coming Soon</span>
+                        <h3>Your Work</h3>
+                        <div class="result" style="color:var(--gray-600);">Ready to be the next case study?</div>
+                        <p style="font-family:var(--font-sans);font-weight:400;color:var(--gray-500);font-size:15px;margin-top:8px;">Let's understand what you're building and create a case study worth sharing.</p>
+                        <a href="contact.html" class="btn-primary btn-small" style="margin-top:12px;display:inline-block;">Discuss Your Brand</a>
                     </div>
                 </div>
             </div>
 
-        </div>
-    </section>
-
-    <!-- ====== CTA ====== -->
-    <section class="section-full section-full-dark">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Ready to build your own <span class="highlight">case study</span>?</h2>
-                <div class="accent-line"></div>
-                <p class="section-sub">Let's talk about your goals and map a system that delivers results.</p>
-            </div>
-            <div style="text-align:center;">
-                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-white">Book a Strategy Call</a>
+            <!-- ====== CTA ====== -->
+            <div style="text-align:center;margin-top:40px;">
+                <a href="contact.html" class="btn-outline">Work With Framework →</a>
             </div>
         </div>
     </section>
@@ -270,33 +683,32 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" style="display:inline-block;">
-                        <img src="images/logo.png" alt="Framework Media" style="height:36px;width:auto;" />
+                    <a href="index.html" class="logo" style="display:inline-flex;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;filter:brightness(10);" />
                     </a>
-                    <p>Strategy-led content growth for businesses, founders, creators and personal brands.</p>
+                    <p>Content consultancy for businesses and creators. Strategy behind the content.</p>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Services</h4>
-                    <a href="services.html">How We Help</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="launch.html">Launch Package</a>
+                    <h4>Explore</h4>
+                    <a href="what-we-do.html">What We Do</a>
+                    <a href="businesses.html">For Businesses</a>
+                    <a href="creators.html">For Creators</a>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="about.html">About</a>
+                    <h4>Learn</h4>
+                    <a href="method.html">Our Method</a>
                     <a href="case-studies.html">Case Studies</a>
-                    <a href="testimonials.html">Testimonials</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="insights.html">Insights</a>
+                    <a href="about.html">About</a>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Legal</h4>
+                    <h4>Work With Us</h4>
+                    <a href="contact.html">Start a Conversation</a>
+                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank">Book a Consultation</a>
                     <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
-                    <a href="refund-policy.pdf" target="_blank">Refund &amp; Cancellation</a>
-                    <a href="terms-conditions.pdf" target="_blank">Terms &amp; Conditions</a>
-                    <a href="disclaimer.pdf" target="_blank">Disclaimer</a>
                 </div>
             </div>
 
@@ -316,6 +728,114 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
-    <script src="js/main.js"></script>
+    <script>
+        // ================================================
+        // ===== NAVBAR TOGGLE (Mobile) =====
+        // ================================================
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function toggleNav() {
+            const isOpen = navLinks.classList.toggle('open');
+            navOverlay.classList.toggle('active');
+            const icon = navToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        if (navToggle) {
+            navToggle.addEventListener('click', toggleNav);
+        }
+
+        if (navOverlay) {
+            navOverlay.addEventListener('click', toggleNav);
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navLinks.classList.contains('open')) {
+                    toggleNav();
+                }
+            });
+        });
+
+        // ================================================
+        // ===== NAVBAR HIDE ON SCROLL =====
+        // ================================================
+        let lastScroll = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+            }
+
+            lastScroll = currentScroll;
+
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                if (currentScroll > 400) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
+        });
+
+        // ================================================
+        // ===== BACK TO TOP =====
+        // ================================================
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // ================================================
+        // ===== SCROLL ANIMATIONS =====
+        // ================================================
+        (function() {
+            const elements = document.querySelectorAll('.reveal');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            elements.forEach(el => {
+                if (el) observer.observe(el);
+            });
+
+            setTimeout(() => {
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    if (rect.top < windowHeight * 0.85) {
+                        el.classList.add('is-visible');
+                    }
+                });
+            }, 100);
+        })();
+    </script>
 </body>
 </html>
