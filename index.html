@@ -16,10 +16,16 @@
         html { scroll-behavior: smooth; }
 
         :root {
-            --black: #111111;
-            --warm-white: #F7F7F5;
-            --deep-blue: #003B70;
-            --framework-blue: #1769AA;
+            --framework-black: #111111;
+            --framework-off-white: #F7F7F5;
+            --framework-blue: #2563EB;
+            --framework-purple: #7C3AED;
+            --pink: #EC4899;
+            --purple: #A855F7;
+            --blue: #3B82F6;
+            --gradient: linear-gradient(135deg, #EC4899, #A855F7, #3B82F6);
+            --gradient-blue-purple: linear-gradient(135deg, #2563EB, #7C3AED);
+            --gradient-subtle: linear-gradient(135deg, rgba(236,72,153,0.06), rgba(168,85,247,0.06), rgba(59,130,246,0.06));
             --gray-100: #f5f5f5;
             --gray-200: #e5e5e5;
             --gray-300: #d4d4d4;
@@ -29,22 +35,17 @@
             --gray-700: #404040;
             --gray-800: #262626;
             --gray-900: #171717;
-            --pink: #ec4899;
-            --purple: #8b5cf6;
-            --blue: #3b82f6;
-            --gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
-            --gradient-subtle: linear-gradient(135deg, rgba(236,72,153,0.08), rgba(139,92,246,0.08), rgba(59,130,246,0.08));
             --shadow: 0 4px 20px rgba(0,0,0,0.06);
-            --shadow-hover: 0 12px 40px rgba(23,105,170,0.12);
+            --shadow-hover: 0 12px 40px rgba(37,99,235,0.12);
             --font-serif: 'Source Serif 4', Georgia, serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
-            background: var(--warm-white);
+            background: var(--framework-off-white);
             font-family: var(--font-sans);
             font-weight: 400;
-            color: var(--black);
+            color: var(--framework-black);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -64,7 +65,8 @@
             line-height: 1.1;
             margin-bottom: 12px;
         }
-        .section-title .highlight { color: var(--framework-blue); }
+        .section-title .highlight-blue { color: var(--framework-blue); }
+        .section-title .highlight-purple { color: var(--framework-purple); }
         .section-title .gradient-highlight {
             background: var(--gradient);
             -webkit-background-clip: text;
@@ -85,13 +87,13 @@
             width: 100%;
             padding: 100px 0 80px;
         }
-        .section-full-white { background: var(--warm-white); }
+        .section-full-white { background: var(--framework-off-white); }
         .section-full-light { background: #ffffff; }
         .section-full-dark {
-            background: var(--black);
-            color: var(--warm-white);
+            background: var(--framework-black);
+            color: var(--framework-off-white);
         }
-        .section-full-dark .section-title { color: var(--warm-white); }
+        .section-full-dark .section-title { color: var(--framework-off-white); }
         .section-full-dark .section-sub { color: var(--gray-400); }
 
         .section-header {
@@ -117,11 +119,11 @@
             padding: 4px 16px;
             border-radius: 40px;
             margin-bottom: 12px;
-            border: 1px solid rgba(23,105,170,0.15);
+            border: 1px solid rgba(37,99,235,0.12);
         }
 
         /* ===== BUTTONS ===== */
-        .btn-primary, .btn-outline, .btn-white {
+        .btn-primary, .btn-outline, .btn-white, .btn-blue {
             font-family: var(--font-sans);
             font-weight: 600;
             border: none;
@@ -134,12 +136,14 @@
             text-decoration: none;
             text-align: center;
         }
-        .btn-primary { background: var(--black); color: var(--warm-white); }
+        .btn-primary { background: var(--framework-black); color: var(--framework-off-white); }
         .btn-primary:hover { background: var(--gray-800); transform: translateY(-2px); }
-        .btn-outline { background: transparent; color: var(--black); border: 2px solid var(--black); }
-        .btn-outline:hover { background: var(--black); color: var(--warm-white); transform: translateY(-2px); }
-        .btn-white { background: var(--warm-white); color: var(--black); }
+        .btn-outline { background: transparent; color: var(--framework-black); border: 2px solid var(--framework-black); }
+        .btn-outline:hover { background: var(--framework-black); color: var(--framework-off-white); transform: translateY(-2px); }
+        .btn-white { background: var(--framework-off-white); color: var(--framework-black); }
         .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .btn-blue { background: var(--framework-blue); color: white; }
+        .btn-blue:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.3); }
 
         .btn-small { padding: 10px 24px; font-size: 13px; }
 
@@ -180,7 +184,7 @@
             align-items: center;
             gap: 10px;
             text-decoration: none;
-            color: var(--black);
+            color: var(--framework-black);
             font-family: var(--font-sans);
             font-weight: 600;
             font-size: 18px;
@@ -201,8 +205,8 @@
             font-weight: 500;
             transition: color 0.3s ease;
         }
-        .nav-links a:hover { color: var(--black); }
-        .nav-links a.active { color: var(--black); font-weight: 600; }
+        .nav-links a:hover { color: var(--framework-black); }
+        .nav-links a.active { color: var(--framework-black); font-weight: 600; }
 
         .nav-cta {
             background: var(--framework-blue);
@@ -211,14 +215,14 @@
             border-radius: 40px;
             font-weight: 600;
         }
-        .nav-cta:hover { background: var(--deep-blue); color: white !important; }
+        .nav-cta:hover { background: #1d4ed8; color: white !important; }
 
         .nav-toggle {
             display: none;
             background: none;
             border: none;
             font-size: 24px;
-            color: var(--black);
+            color: var(--framework-black);
             cursor: pointer;
         }
 
@@ -229,7 +233,7 @@
             grid-template-columns: 1fr 1fr;
             align-items: center;
             padding: 120px 24px 80px;
-            background: var(--warm-white);
+            background: var(--framework-off-white);
             gap: 60px;
         }
         .hero-left { max-width: 600px; }
@@ -250,9 +254,10 @@
             letter-spacing: -0.03em;
             line-height: 1.05;
             margin-bottom: 20px;
-            color: var(--black);
+            color: var(--framework-black);
         }
-        .hero h1 .highlight { color: var(--framework-blue); }
+        .hero h1 .highlight-blue { color: var(--framework-blue); }
+        .hero h1 .highlight-purple { color: var(--framework-purple); }
         .hero p {
             font-family: var(--font-sans);
             font-weight: 400;
@@ -340,7 +345,8 @@
             line-height: 1.1;
             margin-bottom: 16px;
         }
-        .problem-text h2 .highlight { color: var(--framework-blue); }
+        .problem-text h2 .highlight-blue { color: var(--framework-blue); }
+        .problem-text h2 .highlight-purple { color: var(--framework-purple); }
         .problem-text p {
             font-family: var(--font-sans);
             font-weight: 400;
@@ -468,7 +474,7 @@
             font-weight: 500;
             font-size: 13px;
             width: 100px;
-            color: var(--black);
+            color: var(--framework-black);
         }
         .data-item .bar-track {
             flex: 1;
@@ -507,7 +513,7 @@
             font-family: var(--font-sans);
             font-weight: 500;
             font-size: 14px;
-            color: var(--black);
+            color: var(--framework-black);
         }
         .data-funnel .funnel-step:first-child { max-width: 90%; }
         .data-funnel .funnel-step:nth-child(2) { max-width: 80%; }
@@ -632,10 +638,10 @@
 
         /* ===== FOOTER ===== */
         .footer {
-            border-top: 1px solid var(--gray-200);
+            border-top: 1px solid rgba(255,255,255,0.06);
             padding: 48px 0 32px;
-            background: var(--black);
-            color: var(--warm-white);
+            background: var(--framework-black);
+            color: var(--framework-off-white);
         }
         .footer a { color: var(--gray-400); }
         .footer a:hover { color: var(--framework-blue); }
@@ -660,7 +666,7 @@
             font-size: 11px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--warm-white);
+            color: var(--framework-off-white);
             margin-bottom: 12px;
         }
         .footer-col a {
@@ -706,10 +712,10 @@
             opacity: 0;
             visibility: hidden;
             transform: translateY(20px);
-            box-shadow: 0 4px 20px rgba(23,105,170,0.3);
+            box-shadow: 0 4px 20px rgba(37,99,235,0.3);
         }
         .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-        .back-to-top:hover { background: var(--deep-blue); transform: translateY(-3px); }
+        .back-to-top:hover { background: #1d4ed8; transform: translateY(-3px); }
         .back-to-top i { font-size: 18px; }
 
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
@@ -807,7 +813,7 @@
     <section class="hero">
         <div class="hero-left">
             <span class="hero-eyebrow">Content Consultancy</span>
-            <h1>Content is becoming the <span class="highlight">competitive advantage</span>.</h1>
+            <h1>Content is becoming the <span class="highlight-blue">competitive advantage</span>.</h1>
             <p>Framework Media is a content consultancy helping businesses and creators turn expertise, ideas and positioning into content that builds authority, trust and demand.</p>
             <div class="hero-actions">
                 <a href="case-studies.html" class="btn-outline">Explore our work →</a>
@@ -841,7 +847,7 @@
                 </div>
                 <div class="problem-text reveal">
                     <span class="pill">The Problem</span>
-                    <h2>Most organizations don't have a <span class="highlight">content problem</span>.<br>They have a <span class="highlight">clarity problem</span>.</h2>
+                    <h2>Most organizations don't have a <span class="highlight-blue">content problem</span>.<br>They have a <span class="highlight-purple">clarity problem</span>.</h2>
                     <p>Businesses and creators often know what they sell, what they know and what they want to achieve. But they don't know what to communicate, how to position it, what content to create or how to build a consistent system. Framework exists to resolve that — before a single piece of content is produced.</p>
                 </div>
             </div>
@@ -864,7 +870,7 @@
                     <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-600); font-size:14px; line-height:1.6;">Determine what should be said, to whom, and why it matters.</p>
                 </div>
                 <div style="background:white; border-radius:12px; padding:24px; border:1px solid var(--gray-200); text-align:center;">
-                    <span style="font-size:28px; color:var(--framework-blue); display:block; margin-bottom:8px;">🎯</span>
+                    <span style="font-size:28px; color:var(--framework-purple); display:block; margin-bottom:8px;">🎯</span>
                     <h4 style="font-family:var(--font-serif); font-weight:600; font-size:18px;">Positioning</h4>
                     <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-600); font-size:14px; line-height:1.6;">Define what the brand should be known for, and how it should be understood.</p>
                 </div>
@@ -874,7 +880,7 @@
                     <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-600); font-size:14px; line-height:1.6;">Turn strategy into content people actually want to consume.</p>
                 </div>
                 <div style="background:white; border-radius:12px; padding:24px; border:1px solid var(--gray-200); text-align:center;">
-                    <span style="font-size:28px; color:var(--framework-blue); display:block; margin-bottom:8px;">📤</span>
+                    <span style="font-size:28px; color:var(--framework-purple); display:block; margin-bottom:8px;">📤</span>
                     <h4 style="font-family:var(--font-serif); font-weight:600; font-size:18px;">Distribution</h4>
                     <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-600); font-size:14px; line-height:1.6;">Get the content in front of the right people, on the right platforms.</p>
                 </div>
@@ -943,7 +949,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Who We Work With</span>
-                <h2 class="section-title">For <span class="highlight">Businesses</span> &amp; <span class="highlight">Creators</span></h2>
+                <h2 class="section-title">For <span class="highlight-blue">Businesses</span> &amp; <span class="highlight-purple">Creators</span></h2>
                 <div class="accent-line"></div>
             </div>
 
@@ -969,7 +975,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">What Changes</span>
-                <h2 class="section-title">What happens when <span class="highlight">strategy meets content</span>?</h2>
+                <h2 class="section-title">What happens when <span class="highlight-blue">strategy meets content</span>?</h2>
                 <div class="accent-line"></div>
             </div>
 
@@ -1016,7 +1022,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Selected Work</span>
-                <h2 class="section-title">Real results. <span class="highlight">Real brands</span>.</h2>
+                <h2 class="section-title">Real results. <span class="gradient-highlight">Real brands</span>.</h2>
                 <div class="accent-line"></div>
             </div>
 
@@ -1062,7 +1068,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Insights</span>
-                <h2 class="section-title">Thinking about <span class="highlight">content</span>.</h2>
+                <h2 class="section-title">Thinking about <span class="gradient-highlight">content</span>.</h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Practical thinking on content strategy, positioning and what actually moves a brand forward.</p>
             </div>
@@ -1098,11 +1104,11 @@
     <section class="section-full section-full-dark">
         <div class="container">
             <div style="max-width:800px; margin:0 auto; text-align:center;">
-                <span class="pill" style="background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.1); color:var(--gray-300);">About Framework</span>
+                <span class="pill" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.1); color:var(--gray-300);">About Framework</span>
                 <h2 class="section-title">We think content deserves <span class="gradient-highlight">better thinking</span>.</h2>
                 <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-400); font-size:17px; line-height:1.8; max-width:600px; margin:0 auto 32px;">Framework Media is a content consultancy for businesses and creators. We help you figure out what to say, who to say it to, and how to build a system around it — then execute when execution is what's required.</p>
                 <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-                    <a href="about.html" class="btn-outline" style="border-color:var(--warm-white); color:var(--warm-white);">About Us</a>
+                    <a href="about.html" class="btn-outline" style="border-color:var(--framework-off-white); color:var(--framework-off-white);">About Us</a>
                     <a href="contact.html" class="btn-white">Work With Framework →</a>
                 </div>
             </div>
@@ -1114,7 +1120,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" style="display:inline-block;font-size:18px;color:var(--warm-white);">
+                    <a href="index.html" class="logo" style="display:inline-block;font-size:18px;color:var(--framework-off-white);">
                         <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;filter:brightness(10);" />
                         Framework Media
                     </a>
