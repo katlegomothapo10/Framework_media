@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Framework Media — Content Consultancy</title>
-    <meta name="description" content="Content consultancy helping businesses and creators turn expertise, ideas and positioning into content that builds authority, trust and demand." />
+    <title>Framework Media — Commercial Opportunities, Deliberately Developed</title>
+    <meta name="description" content="Framework develops commercial opportunities between brands, creators, events, organisations and audiences. Strategy. Partnerships. Commercialisation. Activation." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
     <style>
-        /* ===== RESET & BASE ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
 
@@ -24,7 +23,6 @@
             --purple: #A855F7;
             --blue: #3B82F6;
             --gradient: linear-gradient(135deg, #EC4899, #A855F7, #3B82F6);
-            --gradient-blue-purple: linear-gradient(135deg, #2563EB, #7C3AED);
             --gradient-subtle: linear-gradient(135deg, rgba(236,72,153,0.06), rgba(168,85,247,0.06), rgba(59,130,246,0.06));
             --gray-100: #f5f5f5;
             --gray-200: #e5e5e5;
@@ -50,12 +48,14 @@
             line-height: 1.6;
             overflow-x: hidden;
             padding-top: var(--nav-height);
+            text-align: center;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+            text-align: center;
         }
 
         /* ===== NAVBAR ===== */
@@ -83,14 +83,13 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: var(--framework-black);
             flex-shrink: 0;
         }
         .logo img { height: 32px; width: auto; display: block; }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 28px;
             align-items: center;
             font-family: var(--font-sans);
             font-weight: 500;
@@ -127,14 +126,13 @@
             z-index: 1001;
         }
 
-        /* ===== MOBILE NAV ===== */
-        @media (max-width: 992px) {
+        @media (max-width: 1100px) {
             .nav-toggle { display: block; }
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 300px;
+                width: 320px;
                 height: 100vh;
                 background: white;
                 flex-direction: column;
@@ -166,8 +164,9 @@
             font-weight: 600;
             font-size: 44px;
             letter-spacing: -0.02em;
-            line-height: 1.1;
-            margin-bottom: 12px;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            text-align: center;
         }
         .section-title .highlight-blue { color: var(--framework-blue); }
         .section-title .highlight-purple { color: var(--framework-purple); }
@@ -182,15 +181,13 @@
             font-weight: 400;
             font-size: 18px;
             color: var(--gray-600);
-            max-width: 640px;
-            margin: 0 auto;
-            line-height: 1.7;
+            max-width: 720px;
+            margin: 0 auto 24px;
+            line-height: 1.75;
+            text-align: center;
         }
 
-        .section-full {
-            width: 100%;
-            padding: 80px 0;
-        }
+        .section-full { width: 100%; padding: 100px 0; }
         .section-full-white { background: var(--framework-off-white); }
         .section-full-light { background: #ffffff; }
         .section-full-dark {
@@ -199,16 +196,14 @@
         }
         .section-full-dark .section-title { color: var(--framework-off-white); }
         .section-full-dark .section-sub { color: var(--gray-400); }
+        .section-full-dark p { color: var(--gray-400); }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
+        .section-header { text-align: center; margin-bottom: 56px; }
         .accent-line {
             width: 60px;
             height: 3px;
             background: var(--gradient);
-            margin: 16px auto 0;
+            margin: 20px auto 0;
             border-radius: 4px;
         }
 
@@ -217,13 +212,13 @@
             font-family: var(--font-sans);
             font-weight: 600;
             font-size: 11px;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             background: var(--gradient-subtle);
             color: var(--framework-blue);
-            padding: 4px 16px;
+            padding: 6px 18px;
             border-radius: 40px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             border: 1px solid rgba(37,99,235,0.12);
         }
 
@@ -232,7 +227,7 @@
             font-family: var(--font-sans);
             font-weight: 600;
             border: none;
-            padding: 14px 36px;
+            padding: 16px 40px;
             border-radius: 40px;
             font-size: 15px;
             cursor: pointer;
@@ -246,11 +241,9 @@
         .btn-outline { background: transparent; color: var(--framework-black); border: 2px solid var(--framework-black); }
         .btn-outline:hover { background: var(--framework-black); color: var(--framework-off-white); transform: translateY(-2px); }
         .btn-white { background: var(--framework-off-white); color: var(--framework-black); }
-        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
         .btn-blue { background: var(--framework-blue); color: white; }
         .btn-blue:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.3); }
-
-        .btn-small { padding: 10px 24px; font-size: 13px; }
 
         .link-arrow {
             font-family: var(--font-sans);
@@ -260,183 +253,218 @@
             font-size: 14px;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             transition: gap 0.3s ease;
+            justify-content: center;
         }
-        .link-arrow:hover { gap: 10px; }
+        .link-arrow:hover { gap: 12px; }
 
         /* ===== HERO ===== */
         .hero {
             min-height: calc(100vh - var(--nav-height));
             display: flex;
             align-items: center;
-            padding: 40px 0;
+            justify-content: center;
+            padding: 60px 0 80px;
             background: var(--framework-off-white);
+            position: relative;
+            overflow: hidden;
         }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+        .hero-bg-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.4;
         }
-        .hero-content { max-width: 600px; }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
         .hero-eyebrow {
             font-family: var(--font-sans);
             font-weight: 600;
-            font-size: 11px;
-            letter-spacing: 0.12em;
+            font-size: 12px;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
             color: var(--framework-blue);
             display: block;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
         }
         .hero h1 {
             font-family: var(--font-serif);
             font-weight: 600;
-            font-size: 56px;
+            font-size: 64px;
             letter-spacing: -0.03em;
             line-height: 1.05;
-            margin-bottom: 20px;
+            margin-bottom: 28px;
             color: var(--framework-black);
+            text-align: center;
         }
-        .hero h1 .highlight-blue { color: var(--framework-blue); }
-        .hero h1 .highlight-purple { color: var(--framework-purple); }
+        .hero h1 .gradient-highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         .hero p {
             font-family: var(--font-sans);
             font-weight: 400;
-            font-size: 18px;
+            font-size: 20px;
             color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 32px;
+            line-height: 1.75;
+            margin: 0 auto 40px;
+            max-width: 760px;
+            text-align: center;
         }
-        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-        .hero-image-wrapper {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
+        .hero-image-block {
+            max-width: 1000px;
+            margin: 72px auto 0;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-hover);
         }
-        .hero-image-wrapper img {
+        .hero-image-block img {
             width: 100%;
             height: auto;
-            border-radius: 12px;
             display: block;
-        }
-        .hero-image-wrapper .gradient-overlay {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 200px;
-            height: 200px;
-            background: var(--gradient);
-            opacity: 0.08;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .hero-image-wrapper .gradient-overlay-2 {
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            width: 120px;
-            height: 120px;
-            background: var(--gradient);
-            opacity: 0.06;
-            border-radius: 50%;
-            pointer-events: none;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
         }
 
-        .hero-flow {
-            display: flex;
-            gap: 12px;
-            margin-top: 16px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .hero-flow span {
-            font-family: var(--font-sans);
-            font-weight: 500;
-            font-size: 13px;
-            color: var(--gray-600);
-            letter-spacing: 0.5px;
-        }
-        .hero-flow .arrow { color: var(--framework-blue); font-weight: 600; }
-
-        /* ===== PROBLEM SECTION ===== */
-        .problem-grid {
+        /* ===== OPPORTUNITY BLOCK ===== */
+        .opportunity-list {
+            max-width: 900px;
+            margin: 40px auto 0;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            max-width: 1000px;
-            margin: 0 auto;
-            align-items: center;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
         }
-        .problem-image img {
-            width: 100%;
-            border-radius: 12px;
-            display: block;
-        }
-        .problem-text h2 {
-            font-family: var(--font-serif);
-            font-weight: 600;
-            font-size: 36px;
-            line-height: 1.1;
-            margin-bottom: 16px;
-        }
-        .problem-text p {
-            font-family: var(--font-sans);
-            font-weight: 400;
-            color: var(--gray-600);
-            font-size: 17px;
-            line-height: 1.8;
-        }
-
-        /* ===== WHAT WE DO CARDS ===== */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-top: 20px;
-        }
-        .service-card {
+        .opportunity-item {
             background: white;
             border-radius: 12px;
-            padding: 32px 24px;
+            padding: 24px 20px;
             border: 1px solid var(--gray-200);
             text-align: center;
             transition: all 0.3s ease;
         }
-        .service-card:hover {
+        .opportunity-item:hover {
+            border-color: var(--framework-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        .opportunity-item .has {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--framework-black);
+            display: block;
+            margin-bottom: 4px;
+        }
+        .opportunity-item .what {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        /* ===== WHAT WE DO GRID ===== */
+        .capability-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            margin-top: 40px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .capability-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 24px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .capability-card:hover {
             border-color: var(--framework-blue);
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
-        .service-card .icon {
-            font-size: 28px;
-            color: var(--framework-blue);
+        .capability-card .svg-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 20px;
             display: block;
-            margin-bottom: 12px;
         }
-        .service-card h4 {
+        .capability-card h3 {
             font-family: var(--font-serif);
             font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 8px;
+            font-size: 19px;
+            margin-bottom: 12px;
+            text-align: center;
         }
-        .service-card p {
+        .capability-card p {
             font-family: var(--font-sans);
             font-weight: 400;
             color: var(--gray-600);
             font-size: 14px;
-            line-height: 1.6;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* ===== FROM AUDIENCE TO VALUE ===== */
+        .value-chain {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+        .value-chain-item {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 40px;
+            padding: 14px 28px;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--framework-black);
+            transition: all 0.3s ease;
+        }
+        .value-chain-item:hover {
+            border-color: var(--framework-blue);
+            color: var(--framework-blue);
+            transform: translateY(-2px);
         }
 
         /* ===== METHOD STEPS ===== */
         .method-grid {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 8px;
-            margin-top: 32px;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 16px;
+            margin-top: 40px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .method-step {
             background: white;
@@ -455,249 +483,147 @@
             font-family: var(--font-sans);
             font-weight: 600;
             font-size: 11px;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             color: var(--framework-blue);
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
         .method-step h4 {
-            font-family: var(--font-sans);
+            font-family: var(--font-serif);
             font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 4px;
+            font-size: 16px;
+            margin-bottom: 6px;
+            text-align: center;
         }
         .method-step p {
             font-family: var(--font-sans);
             font-weight: 400;
             font-size: 12px;
             color: var(--gray-500);
-            line-height: 1.4;
-        }
-        .method-arrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-300);
-            font-size: 16px;
-        }
-
-        /* ===== SPLIT CARDS ===== */
-        .split-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 20px;
-        }
-        .split-card {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-            text-align: left;
-        }
-        .split-card:hover {
-            border-color: var(--framework-blue);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-        }
-        .split-card .icon {
-            font-size: 28px;
-            color: var(--framework-blue);
-            display: block;
-            margin-bottom: 12px;
-        }
-        .split-card h3 {
-            font-family: var(--font-serif);
-            font-weight: 600;
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
-        .split-card p {
-            font-family: var(--font-sans);
-            font-weight: 400;
-            color: var(--gray-600);
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-
-        /* ===== DATA VISUALIZATION ===== */
-        .data-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .data-item {
-            background: white;
-            border-radius: 12px;
-            padding: 36px 32px;
-            border: 1px solid var(--gray-200);
-        }
-        .data-item .label {
-            font-family: var(--font-sans);
-            font-weight: 600;
-            font-size: 15px;
-            color: var(--framework-black);
-            display: block;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-        }
-        .bar-container {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 14px;
-            padding: 4px 0;
-        }
-        .bar-label {
-            font-family: var(--font-sans);
-            font-weight: 500;
-            font-size: 14px;
-            width: 110px;
-            color: var(--framework-black);
-            flex-shrink: 0;
-        }
-        .bar-track {
-            flex: 1;
-            height: 12px;
-            background: var(--gray-200);
-            border-radius: 6px;
-            overflow: hidden;
-        }
-        .bar-fill {
-            height: 100%;
-            border-radius: 6px;
-            background: var(--gradient);
-            transition: width 1s ease;
-        }
-        .bar-value {
-            font-family: var(--font-sans);
-            font-weight: 600;
-            font-size: 15px;
-            color: var(--framework-blue);
-            width: 60px;
-            text-align: right;
-            flex-shrink: 0;
-        }
-
-        .funnel {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            padding: 10px 0;
-        }
-        .funnel-step {
-            width: 100%;
+            line-height: 1.6;
             text-align: center;
-            padding: 16px;
-            background: var(--gradient-subtle);
-            border-radius: 8px;
-            font-family: var(--font-sans);
-            font-weight: 500;
-            font-size: 16px;
-            color: var(--framework-black);
-            border-left: 3px solid var(--framework-blue);
-            transition: all 0.3s ease;
         }
-        .funnel-step:hover {
-            background: var(--gradient-subtle);
-            border-left-color: var(--framework-purple);
-        }
-        .funnel-step:first-child { max-width: 95%; }
-        .funnel-step:nth-child(2) { max-width: 85%; }
-        .funnel-step:nth-child(3) { max-width: 75%; }
-        .funnel-step:nth-child(4) { max-width: 65%; }
-        .funnel-step:last-child { max-width: 55%; }
 
-        /* ===== CASE STUDIES ===== */
-        .case-grid {
+        /* ===== WHO WE WORK WITH ===== */
+        .audience-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 20px;
+            gap: 24px;
+            max-width: 1000px;
+            margin: 40px auto 0;
         }
-        .case-card {
+        .audience-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 16px;
+            padding: 32px 28px;
             border: 1px solid var(--gray-200);
-            overflow: hidden;
+            text-align: center;
             transition: all 0.3s ease;
         }
-        .case-card:hover {
+        .audience-card:hover {
             border-color: var(--framework-blue);
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
-        .case-card .case-image {
-            aspect-ratio: 16/9;
-            background: var(--gray-100);
-            overflow: hidden;
-        }
-        .case-card .case-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-        .case-card:hover .case-image img { transform: scale(1.02); }
-        .case-card .case-content { padding: 32px; }
-        .case-card .case-content .label {
-            font-family: var(--font-sans);
-            font-weight: 600;
-            font-size: 11px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--framework-blue);
+        .audience-card .audience-svg {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 16px;
             display: block;
-            margin-bottom: 6px;
         }
-        .case-card .case-content h4 {
+        .audience-card h3 {
             font-family: var(--font-serif);
             font-weight: 600;
-            font-size: 22px;
-            margin-bottom: 8px;
+            font-size: 20px;
+            margin-bottom: 16px;
+            text-align: center;
         }
-        .case-card .case-content p {
+        .audience-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        .audience-card ul li {
             font-family: var(--font-sans);
             font-weight: 400;
+            font-size: 14px;
             color: var(--gray-600);
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-        .case-card .case-content .result {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .case-card .case-content .result span {
-            font-family: var(--font-sans);
-            font-weight: 500;
-            background: var(--gray-100);
-            padding: 4px 16px;
-            border-radius: 40px;
-            font-size: 13px;
+            line-height: 2;
+            text-align: center;
         }
 
-        /* ===== INSIGHTS ===== */
-        .insights-grid {
+        /* ===== BLUEPRINT BLOCK ===== */
+        .blueprint-block {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .blueprint-block h3 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: var(--framework-off-white);
+            text-align: center;
+        }
+        .blueprint-block .accent {
+            color: var(--framework-blue);
+        }
+        .blueprint-block p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-400);
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        /* ===== OPPORTUNITIES / SECTORS ===== */
+        .sectors-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 40px auto 0;
+        }
+        .sector-pill {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--framework-black);
+            background: white;
+            border: 1px solid var(--gray-200);
+            padding: 14px 32px;
+            border-radius: 40px;
+            transition: all 0.3s ease;
+        }
+        .sector-pill:hover {
+            border-color: var(--framework-blue);
+            color: var(--framework-blue);
+            transform: translateY(-2px);
+        }
+
+        /* ===== INSIGHTS PREVIEW ===== */
+        .insight-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 24px;
-            margin-top: 20px;
+            margin-top: 40px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .insight-card {
             background: white;
-            border-radius: 12px;
-            padding: 32px 28px;
+            border-radius: 16px;
+            padding: 32px 24px;
             border: 1px solid var(--gray-200);
+            text-align: center;
             transition: all 0.3s ease;
-            text-align: left;
         }
         .insight-card:hover {
             border-color: var(--framework-blue);
@@ -708,34 +634,59 @@
             font-family: var(--font-sans);
             font-weight: 600;
             font-size: 10px;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             color: var(--framework-blue);
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
         .insight-card h4 {
             font-family: var(--font-serif);
             font-weight: 600;
             font-size: 18px;
-            margin-bottom: 8px;
-            line-height: 1.3;
+            margin-bottom: 12px;
+            line-height: 1.35;
+            text-align: center;
         }
         .insight-card p {
             font-family: var(--font-sans);
             font-weight: 400;
             color: var(--gray-600);
             font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 12px;
+            line-height: 1.65;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta { max-width: 800px; margin: 0 auto; text-align: center; }
+        .final-cta h2 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 44px;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: var(--framework-off-white);
+            text-align: center;
+        }
+        .final-cta p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-400);
+            font-size: 18px;
+            line-height: 1.75;
+            margin-bottom: 32px;
+            text-align: center;
         }
 
         /* ===== FOOTER ===== */
         .footer {
             border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 48px 0 32px;
+            padding: 56px 0 32px;
             background: var(--framework-black);
             color: var(--framework-off-white);
+            text-align: center;
         }
         .footer a { color: var(--gray-400); text-decoration: none; transition: color 0.3s ease; }
         .footer a:hover { color: var(--framework-blue); }
@@ -743,45 +694,45 @@
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 40px;
-            margin-bottom: 32px;
+            margin-bottom: 40px;
+            text-align: center;
         }
+        .footer-brand { display: flex; flex-direction: column; align-items: center; }
         .footer-brand p {
             font-family: var(--font-sans);
             font-weight: 400;
             color: var(--gray-400);
             font-size: 14px;
             line-height: 1.8;
-            max-width: 320px;
-            margin-top: 8px;
+            max-width: 300px;
+            margin: 16px auto 0;
+            text-align: center;
         }
         .footer-col h4 {
             font-family: var(--font-sans);
             font-weight: 600;
             font-size: 11px;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             color: var(--framework-off-white);
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            text-align: center;
         }
-        .footer-col a {
-            display: block;
-            color: var(--gray-400);
-            font-size: 14px;
-            padding: 4px 0;
-        }
+        .footer-col a { display: block; color: var(--gray-400); font-size: 14px; padding: 5px 0; text-align: center; }
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.06);
-            padding-top: 20px;
+            padding-top: 24px;
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             gap: 16px;
             color: var(--gray-500);
             font-size: 13px;
             font-family: var(--font-sans);
             font-weight: 400;
         }
-        .footer-bottom .social-icons { display: flex; gap: 16px; }
+        .footer-bottom .social-icons { display: flex; gap: 20px; justify-content: center; }
         .footer-bottom .social-icons a { color: var(--gray-500); font-size: 18px; }
         .footer-bottom .social-icons a:hover { color: var(--framework-blue); }
 
@@ -812,94 +763,44 @@
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
         .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
-        /* ===== IMAGE PLACEHOLDER ===== */
-        .img-placeholder {
-            background: var(--gray-200);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-500);
-            font-family: var(--font-sans);
-            font-size: 14px;
-            min-height: 200px;
-            width: 100%;
-            overflow: hidden;
-        }
-        .img-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 1200px) {
-            .hero h1 { font-size: 48px; }
-            .method-grid { grid-template-columns: repeat(4, 1fr); }
-            .method-arrow { display: none; }
-        }
-
         @media (max-width: 992px) {
-            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-            .hero-content { max-width: 100%; margin: 0 auto; }
-            .hero p { margin: 0 auto 32px; }
-            .hero-actions { justify-content: center; }
-            .hero-flow { justify-content: center; }
-            .hero-image-wrapper { max-width: 500px; }
-
-            .problem-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-            .services-grid { grid-template-columns: 1fr 1fr; }
-            .split-grid { grid-template-columns: 1fr; }
-            .data-grid { grid-template-columns: 1fr; }
-            .case-grid { grid-template-columns: 1fr; }
-            .insights-grid { grid-template-columns: 1fr 1fr; }
-            .method-grid { grid-template-columns: 1fr 1fr; }
+            .hero h1 { font-size: 44px; }
+            .section-title { font-size: 34px; }
+            .capability-grid { grid-template-columns: 1fr 1fr; }
+            .method-grid { grid-template-columns: 1fr 1fr 1fr; }
+            .insight-grid { grid-template-columns: 1fr 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
-            .footer-brand { grid-column: 1 / -1; }
-            .section-title { font-size: 36px; }
-            .hero h1 { font-size: 40px; }
-            .problem-text h2 { font-size: 30px; }
+            .opportunity-list { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
-            .services-grid { grid-template-columns: 1fr; }
-            .insights-grid { grid-template-columns: 1fr; }
-            .method-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .section-title { font-size: 30px; }
-            .section-full { padding: 60px 0; }
+            .navbar { padding: 0 16px; }
             .hero h1 { font-size: 32px; }
-            .hero { padding: 20px 0; }
+            .hero p { font-size: 16px; }
             .hero-actions { flex-direction: column; align-items: center; }
             .hero-actions .btn-primary,
-            .hero-actions .btn-outline { width: 100%; max-width: 320px; text-align: center; }
-            .problem-text h2 { font-size: 26px; }
-            .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
-            .split-card { padding: 28px 24px; }
-            .case-card .case-content { padding: 24px; }
-            .insight-card { padding: 24px 20px; }
-            .data-item { padding: 24px 20px; }
-            .bar-label { width: 80px; font-size: 13px; }
-            .bar-container { gap: 12px; }
-            .bar-value { width: 50px; font-size: 13px; }
-            .funnel-step { font-size: 14px; padding: 12px; }
+            .hero-actions .btn-outline,
+            .hero-actions .btn-blue { width: 100%; max-width: 320px; }
+            .section-title { font-size: 28px; }
+            .section-full { padding: 64px 0; }
+            .capability-grid { grid-template-columns: 1fr; }
+            .method-grid { grid-template-columns: 1fr; }
+            .insight-grid { grid-template-columns: 1fr; }
+            .audience-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .final-cta h2 { font-size: 28px; }
+            .opportunity-list { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
-            .section-title { font-size: 26px; }
             .hero h1 { font-size: 28px; }
-            .hero p { font-size: 16px; }
+            .section-title { font-size: 24px; }
             .container { padding: 0 16px; }
-            .navbar { padding: 0 16px; }
             .logo img { height: 28px; }
             .nav-links { width: 100%; right: -100%; padding: 70px 24px 24px; }
             .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
             .back-to-top i { font-size: 16px; }
-            .bar-label { width: 70px; font-size: 12px; }
-            .bar-container { gap: 8px; }
-            .bar-value { width: 40px; font-size: 12px; }
-            .funnel-step { font-size: 13px; padding: 10px; }
         }
     </style>
 </head>
@@ -919,328 +820,463 @@
 
         <nav class="nav-links" id="navLinks">
             <a href="what-we-do.html">What We Do</a>
-            <a href="businesses.html">For Businesses</a>
+            <a href="framework.html">The Framework</a>
+            <a href="organisations.html">For Organisations</a>
+            <a href="brands.html">For Brands</a>
             <a href="creators.html">For Creators</a>
-            <a href="method.html">Our Method</a>
+            <a href="opportunities.html">Opportunities</a>
             <a href="insights.html">Insights</a>
-            <a href="case-studies.html">Case Studies</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="nav-cta">Work With Us</a>
+            <a href="contact.html" class="nav-cta">Start a conversation</a>
         </nav>
     </header>
 
     <!-- ====== HERO ====== -->
     <section class="hero">
+        <svg class="hero-bg-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+                <linearGradient id="heroGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#EC4899" stop-opacity="0.08"/>
+                    <stop offset="50%" stop-color="#A855F7" stop-opacity="0.08"/>
+                    <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.08"/>
+                </linearGradient>
+                <linearGradient id="heroGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#2563EB" stop-opacity="0.05"/>
+                    <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.05"/>
+                </linearGradient>
+            </defs>
+            <circle cx="150" cy="180" r="180" fill="url(#heroGrad1)"/>
+            <circle cx="1050" cy="620" r="220" fill="url(#heroGrad2)"/>
+            <circle cx="980" cy="150" r="90" fill="url(#heroGrad1)"/>
+            <circle cx="200" cy="650" r="120" fill="url(#heroGrad2)"/>
+        </svg>
+
         <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <span class="hero-eyebrow">Content Consultancy</span>
-                    <h1>Content is becoming the <span class="highlight-blue">competitive advantage</span>.</h1>
-                    <p>Framework Media is a content consultancy helping businesses and creators turn expertise, ideas and positioning into content that builds authority, trust and demand.</p>
-                    <div class="hero-actions">
-                        <a href="case-studies.html" class="btn-outline">Explore our work</a>
-                        <a href="contact.html" class="btn-primary">Work With Framework</a>
-                    </div>
-                    <div class="hero-flow">
-                        <span>Strategy</span>
-                        <span class="arrow">→</span>
-                        <span>Positioning</span>
-                        <span class="arrow">→</span>
-                        <span>Content</span>
-                        <span class="arrow">→</span>
-                        <span>Distribution</span>
-                    </div>
+            <div class="hero-content">
+                <span class="hero-eyebrow">Framework Media</span>
+                <h1><span class="gradient-highlight">Commercial opportunities</span>,<br>deliberately developed.</h1>
+                <p>Framework develops commercial opportunities between brands, creators, events, organisations and audiences.</p>
+                <p style="font-weight:500; color:var(--framework-black); margin-top:-20px;">We identify the opportunity, develop the proposition, connect the right parties and coordinate the path from partnership to activation.</p>
+                <div class="hero-actions">
+                    <a href="what-we-do.html" class="btn-outline">Explore what we do</a>
+                    <a href="contact.html" class="btn-blue">Start a conversation</a>
                 </div>
-                <div class="hero-image-wrapper">
-                    <div class="gradient-overlay"></div>
-                    <div class="gradient-overlay-2"></div>
-                    <div class="img-placeholder">
-                        <img src="images/hero-editorial.jpg" alt="Content strategy and consultancy" />
-                    </div>
+            </div>
+
+            <div class="hero-image-block reveal">
+                <img src="images/hero-editorial.jpg" alt="Framework Media — commercial opportunities" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== THE OPPORTUNITY ====== -->
+    <section class="section-full section-full-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">The Opportunity</span>
+                <h2 class="section-title">The opportunity is often <span class="gradient-highlight">already there</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">The challenge is seeing how those things can work together.</p>
+            </div>
+
+            <div class="opportunity-list">
+                <div class="opportunity-item reveal">
+                    <span class="has">An organisation</span>
+                    <span class="what">has an audience.</span>
+                </div>
+                <div class="opportunity-item reveal">
+                    <span class="has">An event</span>
+                    <span class="what">has attention.</span>
+                </div>
+                <div class="opportunity-item reveal">
+                    <span class="has">A creator</span>
+                    <span class="what">has influence.</span>
+                </div>
+                <div class="opportunity-item reveal">
+                    <span class="has">A brand</span>
+                    <span class="what">has a commercial objective.</span>
+                </div>
+                <div class="opportunity-item reveal">
+                    <span class="has">A community</span>
+                    <span class="what">has trust.</span>
+                </div>
+                <div class="opportunity-item reveal" style="border-color:var(--framework-blue);">
+                    <span class="has" style="color:var(--framework-blue);">Framework exists</span>
+                    <span class="what">to find that intersection.</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== PROBLEM ====== -->
-    <section class="section-full section-full-light">
+    <!-- ====== FROM AUDIENCE TO VALUE ====== -->
+    <section class="section-full section-full-white">
         <div class="container">
-            <div class="problem-grid">
-                <div class="problem-image reveal">
-                    <div class="img-placeholder">
-                        <img src="images/problem-visual.jpg" alt="Content clarity problem" />
-                    </div>
-                </div>
-                <div class="problem-text reveal">
-                    <span class="pill">The Problem</span>
-                    <h2>Most organizations don't have a <span class="highlight-blue">content problem</span>.<br>They have a <span class="highlight-purple">clarity problem</span>.</h2>
-                    <p>Businesses and creators often know what they sell, what they know and what they want to achieve. But they don't know what to communicate, how to position it, what content to create or how to build a consistent system. Framework exists to resolve that — before a single piece of content is produced.</p>
-                </div>
+            <div class="section-header">
+                <span class="pill reveal">From Audience to Value</span>
+                <h2 class="section-title">We help organisations understand what they <span class="highlight-blue">have</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">What it is worth, who it matters to, and how it can be developed into meaningful commercial opportunities.</p>
+            </div>
+
+            <div class="value-chain">
+                <span class="value-chain-item reveal">Audience</span>
+                <span class="value-chain-item reveal">Assets</span>
+                <span class="value-chain-item reveal">Value</span>
+                <span class="value-chain-item reveal">Fit</span>
+                <span class="value-chain-item reveal">Proposition</span>
+                <span class="value-chain-item reveal">Partnership</span>
+                <span class="value-chain-item reveal">Activation</span>
+                <span class="value-chain-item reveal">Economics</span>
+                <span class="value-chain-item reveal">Measurement</span>
             </div>
         </div>
     </section>
 
     <!-- ====== WHAT WE DO ====== -->
-    <section class="section-full section-full-white">
+    <section class="section-full section-full-light">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">What We Do</span>
-                <h2 class="section-title">We turn expertise into <span class="gradient-highlight">content systems</span>.</h2>
+                <h2 class="section-title">Six capabilities. <span class="gradient-highlight">One commercial system.</span></h2>
                 <div class="accent-line"></div>
             </div>
 
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <span class="icon"><i class="fas fa-pencil-ruler"></i></span>
-                    <h4>Strategy</h4>
-                    <p>Determine what should be said, to whom, and why it matters.</p>
+            <div class="capability-grid">
+
+                <div class="capability-card reveal">
+                    <svg class="svg-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="cap1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#2563EB"/>
+                                <stop offset="100%" stop-color="#7C3AED"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="24" cy="24" r="16" fill="none" stroke="url(#cap1)" stroke-width="2.5"/>
+                        <circle cx="24" cy="24" r="8" fill="none" stroke="url(#cap1)" stroke-width="2.5"/>
+                        <circle cx="24" cy="24" r="3" fill="url(#cap1)"/>
+                    </svg>
+                    <h3>Commercial Strategy</h3>
+                    <p>We identify and structure opportunities around audiences, organisations, events, creators and brands.</p>
                 </div>
-                <div class="service-card reveal">
-                    <span class="icon"><i class="fas fa-crosshairs"></i></span>
-                    <h4>Positioning</h4>
-                    <p>Define what the brand should be known for, and how it should be understood.</p>
+
+                <div class="capability-card reveal">
+                    <svg class="svg-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="cap2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#7C3AED"/>
+                                <stop offset="100%" stop-color="#EC4899"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="16" cy="24" r="7" fill="none" stroke="url(#cap2)" stroke-width="2.5"/>
+                        <circle cx="32" cy="24" r="7" fill="none" stroke="url(#cap2)" stroke-width="2.5"/>
+                        <line x1="22" y1="24" x2="26" y2="24" stroke="url(#cap2)" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Partnership Development</h3>
+                    <p>We identify relevant partners, develop the proposition and help build the relationship.</p>
                 </div>
-                <div class="service-card reveal">
-                    <span class="icon"><i class="fas fa-file-alt"></i></span>
-                    <h4>Content</h4>
-                    <p>Turn strategy into content people actually want to consume.</p>
+
+                <div class="capability-card reveal">
+                    <svg class="svg-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="cap3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#EC4899"/>
+                                <stop offset="100%" stop-color="#A855F7"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 34 L24 14 L36 34 Z" fill="none" stroke="url(#cap3)" stroke-width="2.5" stroke-linejoin="round"/>
+                        <line x1="18" y1="26" x2="30" y2="26" stroke="url(#cap3)" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Sponsorship Strategy</h3>
+                    <p>We transform sponsorship from a collection of logos and packages into a structured commercial proposition.</p>
                 </div>
-                <div class="service-card reveal">
-                    <span class="icon"><i class="fas fa-share-alt"></i></span>
-                    <h4>Distribution</h4>
-                    <p>Get the content in front of the right people, on the right platforms.</p>
+
+                <div class="capability-card reveal">
+                    <svg class="svg-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="cap4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#2563EB"/>
+                                <stop offset="100%" stop-color="#3B82F6"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="10" y="14" width="28" height="22" rx="3" fill="none" stroke="url(#cap4)" stroke-width="2.5"/>
+                        <line x1="10" y1="22" x2="38" y2="22" stroke="url(#cap4)" stroke-width="2"/>
+                        <circle cx="16" cy="30" r="2" fill="url(#cap4)"/>
+                        <circle cx="22" cy="30" r="2" fill="url(#cap4)"/>
+                    </svg>
+                    <h3>Event Commercialisation</h3>
+                    <p>We identify the commercial assets within an event and develop ways for relevant brands to participate.</p>
                 </div>
+
+                <div class="capability-card reveal">
+                    <svg class="svg-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="cap5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#A855F7"/>
+                                <stop offset="100%" stop-color="#7C3AED"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="24" cy="18" r="7" fill="none" stroke="url(#cap5)" stroke-width="2.5"/>
+                        <path d="M10 40 C10 30 16 26 24 26 C32 26 38 30 38 40" fill="none" stroke="url(#cap5)" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Creator Partnerships</h3>
+                    <p>We develop meaningful commercial relationships between creators and brands based on audience, relevance and strategic fit.</p>
+                </div>
+
+                <div class="capability-card reveal">
+                    <svg class="svg-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="cap6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#3B82F6"/>
+                                <stop offset="100%" stop-color="#2563EB"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M24 8 L32 18 L24 28 L16 18 Z" fill="none" stroke="url(#cap6)" stroke-width="2.5" stroke-linejoin="round"/>
+                        <circle cx="24" cy="40" r="4" fill="url(#cap6)"/>
+                        <line x1="24" y1="28" x2="24" y2="36" stroke="url(#cap6)" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Activation Strategy</h3>
+                    <p>We turn partnerships into experiences, content, campaigns and interactions that people can actually participate in.</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- ====== THE FRAMEWORK METHOD ====== -->
-    <section class="section-full section-full-light">
+    <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">The Framework Method</span>
-                <h2 class="section-title">Diagnose → Position → Structure → <span class="gradient-highlight">Create → Distribute → Measure → Compound</span></h2>
+                <h2 class="section-title">We don't start with the sponsor. <span class="gradient-highlight">We start with the opportunity.</span></h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">We don't start with content. We start with the problem.</p>
             </div>
 
             <div class="method-grid">
-                <div class="method-step">
+                <div class="method-step reveal">
                     <span class="step-num">01</span>
-                    <h4>Diagnose</h4>
-                    <p>What is happening?</p>
+                    <h4>Context</h4>
+                    <p>Understand the market, organisation, objectives and moment.</p>
                 </div>
-                <div class="method-arrow">→</div>
-                <div class="method-step">
+                <div class="method-step reveal">
                     <span class="step-num">02</span>
-                    <h4>Position</h4>
-                    <p>What should you be known for?</p>
+                    <h4>Audience</h4>
+                    <p>Understand who is present, what they care about and why they matter.</p>
                 </div>
-                <div class="method-arrow">→</div>
-                <div class="method-step">
+                <div class="method-step reveal">
                     <span class="step-num">03</span>
-                    <h4>Structure</h4>
-                    <p>How should the content system work?</p>
+                    <h4>Asset</h4>
+                    <p>Map the physical, digital, intellectual, human and experiential assets available.</p>
                 </div>
-                <div class="method-arrow">→</div>
-                <div class="method-step">
+                <div class="method-step reveal">
                     <span class="step-num">04</span>
-                    <h4>Create</h4>
-                    <p>What should be produced?</p>
+                    <h4>Value</h4>
+                    <p>Determine what makes those assets commercially meaningful.</p>
                 </div>
-                <div class="method-arrow">→</div>
-                <div class="method-step">
+                <div class="method-step reveal">
                     <span class="step-num">05</span>
-                    <h4>Distribute</h4>
-                    <p>Where should it go?</p>
+                    <h4>Fit</h4>
+                    <p>Identify the brands, organisations and partners with a legitimate reason to participate.</p>
                 </div>
-                <div class="method-arrow">→</div>
-                <div class="method-step">
+                <div class="method-step reveal">
                     <span class="step-num">06</span>
-                    <h4>Measure</h4>
-                    <p>What is working?</p>
+                    <h4>Proposition</h4>
+                    <p>Develop something the partner can actually buy.</p>
                 </div>
-                <div class="method-arrow">→</div>
-                <div class="method-step" style="border-color:var(--framework-blue);">
+                <div class="method-step reveal">
                     <span class="step-num">07</span>
-                    <h4>Compound</h4>
-                    <p>What should happen next?</p>
+                    <h4>Partnership</h4>
+                    <p>Structure the rights, relationship, responsibilities and economics.</p>
                 </div>
+                <div class="method-step reveal">
+                    <span class="step-num">08</span>
+                    <h4>Activation</h4>
+                    <p>Translate the partnership into a meaningful audience experience.</p>
+                </div>
+                <div class="method-step reveal">
+                    <span class="step-num">09</span>
+                    <h4>Economics</h4>
+                    <p>Build the commercial model around investment, value and delivery.</p>
+                </div>
+                <div class="method-step reveal" style="border-color:var(--framework-blue);">
+                    <span class="step-num">10</span>
+                    <h4>Measurement</h4>
+                    <p>Define how success will be demonstrated.</p>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:40px;">
+                <p style="font-family:var(--font-sans); font-weight:500; font-size:15px; color:var(--framework-blue);">Research → Intelligence → Strategy → Proposition → Partnership → Activation → Measurement</p>
             </div>
         </div>
     </section>
 
-    <!-- ====== BUSINESS / CREATOR SPLIT ====== -->
-    <section class="section-full section-full-white">
+    <!-- ====== WHO WE WORK WITH ====== -->
+    <section class="section-full section-full-light">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Who We Work With</span>
-                <h2 class="section-title">For <span class="highlight-blue">Businesses</span> &amp; <span class="highlight-purple">Creators</span></h2>
+                <h2 class="section-title">Across <span class="gradient-highlight">audiences, assets and brands</span>.</h2>
                 <div class="accent-line"></div>
             </div>
 
-            <div class="split-grid">
-                <div class="split-card reveal">
-                    <span class="icon"><i class="fas fa-building"></i></span>
-                    <h3>For Businesses</h3>
-                    <p>Your expertise is an asset. Your content should make it visible. We help businesses turn what they already know into content that builds understanding, credibility and trust.</p>
-                    <a href="businesses.html" class="link-arrow">Explore for Businesses →</a>
+            <div class="audience-grid">
+                <div class="audience-card reveal">
+                    <svg class="audience-svg" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect x="10" y="14" width="28" height="24" rx="3" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+                        <line x1="10" y1="22" x2="38" y2="22" stroke="#2563EB" stroke-width="2"/>
+                        <circle cx="16" cy="30" r="1.5" fill="#2563EB"/>
+                        <circle cx="22" cy="30" r="1.5" fill="#2563EB"/>
+                    </svg>
+                    <h3>Organisations</h3>
+                    <ul>
+                        <li>Universities</li>
+                        <li>Sports organisations</li>
+                        <li>Conferences</li>
+                        <li>Events</li>
+                        <li>Communities</li>
+                        <li>Cultural platforms</li>
+                        <li>Industry organisations</li>
+                    </ul>
                 </div>
-                <div class="split-card reveal">
-                    <span class="icon"><i class="fas fa-user-circle"></i></span>
-                    <h3>For Creators</h3>
-                    <p>Your audience isn't built by posting more. It's built by becoming recognizable. We help creators turn their expertise, personality and ideas into a body of content people can recognise and return to.</p>
-                    <a href="creators.html" class="link-arrow">Explore for Creators →</a>
+                <div class="audience-card reveal">
+                    <svg class="audience-svg" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 34 L24 12 L36 34 Z" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linejoin="round"/>
+                        <line x1="18" y1="26" x2="30" y2="26" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Brands</h3>
+                    <ul>
+                        <li>Consumer brands</li>
+                        <li>Technology</li>
+                        <li>Financial services</li>
+                        <li>Telecommunications</li>
+                        <li>Automotive</li>
+                        <li>FMCG</li>
+                        <li>Sports & lifestyle</li>
+                    </ul>
+                </div>
+                <div class="audience-card reveal">
+                    <svg class="audience-svg" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="24" cy="18" r="7" fill="none" stroke="#EC4899" stroke-width="2.5"/>
+                        <path d="M10 40 C10 30 16 26 24 26 C32 26 38 30 38 40" fill="none" stroke="#EC4899" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Creators</h3>
+                    <ul>
+                        <li>Creators</li>
+                        <li>Experts</li>
+                        <li>Athletes</li>
+                        <li>Thought leaders</li>
+                        <li>Media personalities</li>
+                    </ul>
+                </div>
+                <div class="audience-card reveal">
+                    <svg class="audience-svg" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="16" cy="24" r="7" fill="none" stroke="#3B82F6" stroke-width="2.5"/>
+                        <circle cx="32" cy="24" r="7" fill="none" stroke="#3B82F6" stroke-width="2.5"/>
+                        <line x1="22" y1="24" x2="26" y2="24" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Audience-Led Platforms</h3>
+                    <ul>
+                        <li>Communities</li>
+                        <li>Media platforms</li>
+                        <li>Digital platforms</li>
+                        <li>Cultural platforms</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== DATA VISUALIZATION ====== -->
-    <section class="section-full section-full-light">
-        <div class="container">
-            <div class="section-header">
-                <span class="pill reveal">What Changes</span>
-                <h2 class="section-title">What happens when <span class="highlight-blue">strategy meets content</span>?</h2>
-                <div class="accent-line"></div>
-            </div>
-
-            <div class="data-grid">
-                <div class="data-item">
-                    <span class="label">Content Performance</span>
-                    <div class="bar-container">
-                        <span class="bar-label">Reach</span>
-                        <div class="bar-track"><div class="bar-fill" style="width:45%;"></div></div>
-                        <span class="bar-value">+45%</span>
-                    </div>
-                    <div class="bar-container">
-                        <span class="bar-label">Authority</span>
-                        <div class="bar-track"><div class="bar-fill" style="width:78%;"></div></div>
-                        <span class="bar-value">+78%</span>
-                    </div>
-                    <div class="bar-container">
-                        <span class="bar-label">Consistency</span>
-                        <div class="bar-track"><div class="bar-fill" style="width:92%;"></div></div>
-                        <span class="bar-value">+92%</span>
-                    </div>
-                    <div class="bar-container">
-                        <span class="bar-label">Conversion</span>
-                        <div class="bar-track"><div class="bar-fill" style="width:63%;"></div></div>
-                        <span class="bar-value">+63%</span>
-                    </div>
-                </div>
-                <div class="data-item">
-                    <span class="label">The Content Funnel</span>
-                    <div class="funnel">
-                        <div class="funnel-step">Attention</div>
-                        <div class="funnel-step">Understanding</div>
-                        <div class="funnel-step">Trust</div>
-                        <div class="funnel-step">Demand</div>
-                        <div class="funnel-step">Action</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== CASE STUDIES ====== -->
+    <!-- ====== THE FRAMEWORK APPROACH ====== -->
     <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">Selected Work</span>
-                <h2 class="section-title">Real results. <span class="gradient-highlight">Real brands</span>.</h2>
+                <span class="pill reveal">The Framework Approach</span>
+                <h2 class="section-title">Strategy before <span class="highlight-blue">execution</span>.</h2>
                 <div class="accent-line"></div>
             </div>
 
-            <div class="case-grid">
-                <div class="case-card reveal">
-                    <div class="case-image">
-                        <div class="img-placeholder">
-                            <img src="images/katlego-unfiltered.png" alt="Katlego Unfiltered" />
-                        </div>
-                    </div>
-                    <div class="case-content">
-                        <span class="label">Founder Case Study</span>
-                        <h4>Katlego Unfiltered</h4>
-                        <p>Built from zero to 60K+ followers across Instagram and TikTok, on a foundation of clear identity and repeatable content pillars rather than posting volume.</p>
-                        <div class="result">
-                            <span>60K+ Followers</span>
-                            <span>Instagram + TikTok</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="case-card reveal">
-                    <div class="case-image">
-                        <div class="img-placeholder">
-                            <img src="images/goated-lunchbox.png" alt="Our Goated Lunchbox" />
-                        </div>
-                    </div>
-                    <div class="case-content">
-                        <span class="label">Brand Case Study</span>
-                        <h4>Our Goated Lunchbox</h4>
-                        <p>Grown to 150K+ followers on TikTok through positioning and content built specifically for the culture and community it addressed.</p>
-                        <div class="result">
-                            <span>150K+ Followers</span>
-                            <span>TikTok</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p class="section-sub">We don't begin with a predetermined list of deliverables. We begin by understanding the commercial problem.</p>
+            <p class="section-sub">Sometimes the answer is a partnership. Sometimes it is a sponsorship proposition. Sometimes it is an audience strategy. Sometimes it is an activation. Sometimes the opportunity does not exist yet — and needs to be developed.</p>
+            <p class="section-sub" style="font-weight:500; color:var(--framework-black);">Our role is to determine what should happen before deciding how it should be executed.</p>
+        </div>
+    </section>
 
-            <div style="text-align:center;margin-top:40px;">
-                <a href="case-studies.html" class="link-arrow">View All Case Studies →</a>
+    <!-- ====== BLUEPRINT BLOCK ====== -->
+    <section class="section-full section-full-dark">
+        <div class="container">
+            <div class="blueprint-block reveal">
+                <h3>Framework defines the blueprint.<br><span class="accent">Specialists help build the house.</span></h3>
+                <p>We remain strategically focused while working with specialist partners across production, creative, events, technology, content, experiential and activation.</p>
+                <p>We determine what needs to happen. The right specialists help make it happen.</p>
             </div>
         </div>
     </section>
 
-    <!-- ====== INSIGHTS ====== -->
+    <!-- ====== SELECTED OPPORTUNITIES ====== -->
     <section class="section-full section-full-light">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">Insights</span>
-                <h2 class="section-title">Thinking about <span class="gradient-highlight">content</span>.</h2>
+                <span class="pill reveal">Selected Opportunities</span>
+                <h2 class="section-title">Where we work. <span class="gradient-highlight">What we build.</span></h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Practical thinking on content strategy, positioning and what actually moves a brand forward.</p>
+                <p class="section-sub">We work on opportunities across a range of audience-led sectors.</p>
             </div>
 
-            <div class="insights-grid">
-                <div class="insight-card reveal">
-                    <span class="category">Strategy</span>
-                    <h4>Why most businesses build content in the wrong order</h4>
-                    <p>Most businesses start with "what should we post?" rather than "what does our content need to accomplish?"</p>
-                    <a href="#" class="link-arrow">Read More →</a>
-                </div>
-                <div class="insight-card reveal">
-                    <span class="category">Positioning</span>
-                    <h4>Weak positioning, not weak content, is usually the problem</h4>
-                    <p>When every competitor sounds the same, creating more content isn't the solution. The position needs to change first.</p>
-                    <a href="#" class="link-arrow">Read More →</a>
-                </div>
-                <div class="insight-card reveal">
-                    <span class="category">Systems</span>
-                    <h4>The distinction between content and a content system</h4>
-                    <p>Content is what you publish. A content system is how you decide what to publish, why it matters and how you improve it.</p>
-                    <a href="#" class="link-arrow">Read More →</a>
-                </div>
+            <div class="sectors-wrap">
+                <span class="sector-pill reveal">Sport</span>
+                <span class="sector-pill reveal">Education</span>
+                <span class="sector-pill reveal">Technology</span>
+                <span class="sector-pill reveal">Creators</span>
+                <span class="sector-pill reveal">Events</span>
+                <span class="sector-pill reveal">Culture</span>
+                <span class="sector-pill reveal">Communities</span>
+                <span class="sector-pill reveal">Business</span>
             </div>
 
-            <div style="text-align:center;margin-top:40px;">
-                <a href="insights.html" class="link-arrow">View All Insights →</a>
+            <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-500); font-size:15px; line-height:1.7; margin-top:32px;">Selected work and commercial opportunities will be published as they develop.</p>
+        </div>
+    </section>
+
+    <!-- ====== INSIGHTS PREVIEW ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Thinking</span>
+                <h2 class="section-title">Commercial strategy, partnerships <span class="gradient-highlight">and audiences</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">Framework publishes practical thinking because better partnerships begin with better thinking.</p>
+            </div>
+
+            <div class="insight-grid">
+                <div class="insight-card reveal">
+                    <span class="category">Partnership Strategy</span>
+                    <h4>The difference between finding sponsors and creating commercial partnerships</h4>
+                    <p>Asking a brand for money is fundamentally different from creating a proposition that solves a brand's objective.</p>
+                    <a href="insights.html" class="link-arrow">Read More →</a>
+                </div>
+                <div class="insight-card reveal">
+                    <span class="category">Event Commercialisation</span>
+                    <h4>Why events are undervalued as commercial opportunities</h4>
+                    <p>An event with the right audience is worth more than a media placement. But only if the partnership is designed around value, not exposure.</p>
+                    <a href="insights.html" class="link-arrow">Read More →</a>
+                </div>
+                <div class="insight-card reveal">
+                    <span class="category">Audience Intelligence</span>
+                    <h4>Your audience is not your business</h4>
+                    <p>An audience is an asset. The question is what you build around it.</p>
+                    <a href="insights.html" class="link-arrow">Read More →</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== ABOUT / FINAL CTA ====== -->
+    <!-- ====== FINAL CTA ====== -->
     <section class="section-full section-full-dark">
         <div class="container">
-            <div style="max-width:800px; margin:0 auto; text-align:center;">
-                <span class="pill" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.1); color:var(--gray-300);">About Framework</span>
-                <h2 class="section-title">We think content deserves <span class="gradient-highlight">better thinking</span>.</h2>
-                <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-400); font-size:17px; line-height:1.8; max-width:600px; margin:0 auto 32px;">Framework Media is a content consultancy for businesses and creators. We help you figure out what to say, who to say it to, and how to build a system around it — then execute when execution is what's required.</p>
-                <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-                    <a href="about.html" class="btn-outline" style="border-color:var(--framework-off-white); color:var(--framework-off-white);">About Us</a>
-                    <a href="contact.html" class="btn-white">Work With Framework →</a>
-                </div>
+            <div class="final-cta reveal">
+                <h2>Start with an <span class="gradient-highlight">opportunity</span>.</h2>
+                <p>Have an audience, event, organisation, creator platform or brand objective worth exploring?</p>
+                <a href="contact.html" class="btn-blue">Start a conversation →</a>
             </div>
         </div>
     </section>
@@ -1250,42 +1286,41 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" style="display:inline-flex;">
-                        <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;filter:brightness(10);" />
+                    <a href="index.html" class="logo" style="display:inline-flex;justify-content:center;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:32px;width:auto;filter:brightness(10);" />
                     </a>
-                    <p>Content consultancy for businesses and creators. Strategy behind the content.</p>
+                    <p>Commercial opportunities, deliberately developed. South Africa.</p>
                 </div>
 
                 <div class="footer-col">
                     <h4>Explore</h4>
                     <a href="what-we-do.html">What We Do</a>
-                    <a href="businesses.html">For Businesses</a>
+                    <a href="framework.html">The Framework</a>
+                    <a href="opportunities.html">Opportunities</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Who We Serve</h4>
+                    <a href="organisations.html">For Organisations</a>
+                    <a href="brands.html">For Brands</a>
                     <a href="creators.html">For Creators</a>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Learn</h4>
-                    <a href="method.html">Our Method</a>
-                    <a href="case-studies.html">Case Studies</a>
+                    <h4>Company</h4>
                     <a href="insights.html">Insights</a>
                     <a href="about.html">About</a>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Work With Us</h4>
                     <a href="contact.html">Start a Conversation</a>
-                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank">Book a Consultation</a>
-                    <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <span>&copy; 2026 Framework Media. All rights reserved.</span>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -1296,9 +1331,6 @@
     </a>
 
     <script>
-        // ================================================
-        // ===== NAVBAR TOGGLE (Mobile) =====
-        // ================================================
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
         const navOverlay = document.getElementById('navOverlay');
@@ -1312,58 +1344,32 @@
             document.body.style.overflow = isOpen ? 'hidden' : '';
         }
 
-        if (navToggle) {
-            navToggle.addEventListener('click', toggleNav);
-        }
-
-        if (navOverlay) {
-            navOverlay.addEventListener('click', toggleNav);
-        }
+        if (navToggle) navToggle.addEventListener('click', toggleNav);
+        if (navOverlay) navOverlay.addEventListener('click', toggleNav);
 
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function() {
-                if (navLinks.classList.contains('open')) {
-                    toggleNav();
-                }
+                if (navLinks.classList.contains('open')) toggleNav();
             });
         });
 
-        // ================================================
-        // ===== NAVBAR HIDE ON SCROLL =====
-        // ================================================
         let lastScroll = 0;
         const navbar = document.getElementById('navbar');
 
         window.addEventListener('scroll', function() {
             const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 80) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                navbar.classList.add('hidden');
-            } else {
-                navbar.classList.remove('hidden');
-            }
-
+            if (currentScroll > 80) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+            if (currentScroll > lastScroll && currentScroll > 100) navbar.classList.add('hidden');
+            else navbar.classList.remove('hidden');
             lastScroll = currentScroll;
-
             const backToTop = document.getElementById('backToTop');
             if (backToTop) {
-                if (currentScroll > 400) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
+                if (currentScroll > 400) backToTop.classList.add('visible');
+                else backToTop.classList.remove('visible');
             }
         });
 
-        // ================================================
-        // ===== BACK TO TOP =====
-        // ================================================
         const backToTop = document.getElementById('backToTop');
         if (backToTop) {
             backToTop.addEventListener('click', function(e) {
@@ -1372,34 +1378,19 @@
             });
         }
 
-        // ================================================
-        // ===== SCROLL ANIMATIONS =====
-        // ================================================
         (function() {
             const elements = document.querySelectorAll('.reveal');
-
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('is-visible');
                 });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -40px 0px'
-            });
-
-            elements.forEach(el => {
-                if (el) observer.observe(el);
-            });
-
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            elements.forEach(el => { if (el) observer.observe(el); });
             setTimeout(() => {
                 elements.forEach(el => {
                     const rect = el.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
-                    if (rect.top < windowHeight * 0.85) {
-                        el.classList.add('is-visible');
-                    }
+                    if (rect.top < windowHeight * 0.85) el.classList.add('is-visible');
                 });
             }, 100);
         })();
