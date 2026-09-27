@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Insights — Framework Media</title>
-    <meta name="description" content="Practical thinking on content, positioning, personal brands and business communication." />
+    <meta name="description" content="Thinking about commercial opportunity. Framework publishes research, analysis and practical thinking around brands, audiences, creators, events and organisations." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
     <style>
-        /* ===== RESET & BASE ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
 
@@ -49,12 +48,14 @@
             line-height: 1.6;
             overflow-x: hidden;
             padding-top: var(--nav-height);
+            text-align: center;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+            text-align: center;
         }
 
         /* ===== NAVBAR ===== */
@@ -66,9 +67,7 @@
             height: var(--nav-height);
             background: rgba(255,255,255,0.97);
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 1000;
             border-bottom: 1px solid rgba(0,0,0,0.04);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -78,17 +77,12 @@
         .navbar.hidden { transform: translateY(-100%); }
         .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
+        .logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
         .logo img { height: 32px; width: auto; display: block; }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 28px;
             align-items: center;
             font-family: var(--font-sans);
             font-weight: 500;
@@ -125,14 +119,13 @@
             z-index: 1001;
         }
 
-        /* ===== MOBILE NAV ===== */
-        @media (max-width: 992px) {
+        @media (max-width: 1100px) {
             .nav-toggle { display: block; }
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 300px;
+                width: 320px;
                 height: 100vh;
                 background: white;
                 flex-direction: column;
@@ -148,10 +141,7 @@
             .nav-overlay {
                 display: none;
                 position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
+                top: 0; left: 0; right: 0; bottom: 0;
                 background: rgba(0,0,0,0.3);
                 z-index: 999;
             }
@@ -164,11 +154,11 @@
             font-weight: 600;
             font-size: 44px;
             letter-spacing: -0.02em;
-            line-height: 1.1;
-            margin-bottom: 12px;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            text-align: center;
         }
         .section-title .highlight-blue { color: var(--framework-blue); }
-        .section-title .highlight-purple { color: var(--framework-purple); }
         .section-title .gradient-highlight {
             background: var(--gradient);
             -webkit-background-clip: text;
@@ -180,15 +170,13 @@
             font-weight: 400;
             font-size: 18px;
             color: var(--gray-600);
-            max-width: 640px;
-            margin: 0 auto;
-            line-height: 1.7;
+            max-width: 720px;
+            margin: 0 auto 24px;
+            line-height: 1.75;
+            text-align: center;
         }
 
-        .section-full {
-            width: 100%;
-            padding: 80px 0;
-        }
+        .section-full { width: 100%; padding: 100px 0; }
         .section-full-white { background: var(--framework-off-white); }
         .section-full-light { background: #ffffff; }
         .section-full-dark {
@@ -196,17 +184,14 @@
             color: var(--framework-off-white);
         }
         .section-full-dark .section-title { color: var(--framework-off-white); }
-        .section-full-dark .section-sub { color: var(--gray-400); }
+        .section-full-dark p { color: var(--gray-400); }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
+        .section-header { text-align: center; margin-bottom: 56px; }
         .accent-line {
             width: 60px;
             height: 3px;
             background: var(--gradient);
-            margin: 16px auto 0;
+            margin: 20px auto 0;
             border-radius: 4px;
         }
 
@@ -215,22 +200,22 @@
             font-family: var(--font-sans);
             font-weight: 600;
             font-size: 11px;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             background: var(--gradient-subtle);
             color: var(--framework-blue);
-            padding: 4px 16px;
+            padding: 6px 18px;
             border-radius: 40px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             border: 1px solid rgba(37,99,235,0.12);
         }
 
         /* ===== BUTTONS ===== */
-        .btn-primary, .btn-outline, .btn-white {
+        .btn-outline, .btn-blue, .btn-white {
             font-family: var(--font-sans);
             font-weight: 600;
             border: none;
-            padding: 14px 36px;
+            padding: 16px 40px;
             border-radius: 40px;
             font-size: 15px;
             cursor: pointer;
@@ -239,12 +224,12 @@
             text-decoration: none;
             text-align: center;
         }
-        .btn-primary { background: var(--framework-black); color: var(--framework-off-white); }
-        .btn-primary:hover { background: var(--gray-800); transform: translateY(-2px); }
         .btn-outline { background: transparent; color: var(--framework-black); border: 2px solid var(--framework-black); }
         .btn-outline:hover { background: var(--framework-black); color: var(--framework-off-white); transform: translateY(-2px); }
+        .btn-blue { background: var(--framework-blue); color: white; }
+        .btn-blue:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.3); }
         .btn-white { background: var(--framework-off-white); color: var(--framework-black); }
-        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
 
         .link-arrow {
             font-family: var(--font-sans);
@@ -254,33 +239,49 @@
             font-size: 14px;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             transition: gap 0.3s ease;
+            justify-content: center;
         }
-        .link-arrow:hover { gap: 10px; }
+        .link-arrow:hover { gap: 12px; }
 
         /* ===== PAGE HEADER ===== */
         .page-header {
-            padding: 80px 0 40px;
+            padding: 100px 0 60px;
             background: var(--framework-black);
             color: var(--framework-off-white);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header-svg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0.15;
+            pointer-events: none;
         }
         .page-header h1 {
             font-family: var(--font-serif);
             font-weight: 600;
             font-size: 52px;
             letter-spacing: -0.02em;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
         }
         .page-header p {
             font-family: var(--font-sans);
             font-weight: 400;
             color: var(--gray-400);
             font-size: 18px;
-            max-width: 640px;
+            max-width: 720px;
             margin: 0 auto;
-            line-height: 1.7;
+            line-height: 1.75;
+            text-align: center;
+            position: relative;
+            z-index: 2;
         }
         .page-header .gradient-highlight {
             background: var(--gradient);
@@ -289,114 +290,171 @@
             background-clip: text;
         }
 
-        /* ===== INSIGHTS GRID ===== */
-        .insights-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 24px;
-            margin-top: 20px;
-        }
-        .insight-card {
-            background: white;
-            border-radius: 12px;
-            padding: 32px 28px;
+        /* ===== HERO IMAGE ===== */
+        .hero-image {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            border-radius: 16px;
+            overflow: hidden;
             border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-            text-align: left;
+            box-shadow: var(--shadow);
         }
-        .insight-card:hover {
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        /* ===== INTRO ===== */
+        .intro-block {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .intro-block p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 17px;
+            color: var(--gray-600);
+            line-height: 1.9;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .subject-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .subject-pill {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 40px;
+            padding: 12px 32px;
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--framework-black);
+            transition: all 0.3s ease;
+        }
+        .subject-pill:hover {
+            border-color: var(--framework-blue);
+            color: var(--framework-blue);
+            transform: translateY(-2px);
+        }
+
+        /* ===== AREAS OF RESEARCH ===== */
+        .research-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 40px auto 0;
+        }
+        .research-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 24px;
+            border: 1px solid var(--gray-200);
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .research-card:hover {
             border-color: var(--framework-blue);
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
-        .insight-card .category {
-            font-family: var(--font-sans);
-            font-weight: 600;
-            font-size: 10px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--framework-blue);
-            display: block;
-            margin-bottom: 6px;
-        }
-        .insight-card h4 {
+        .research-card h4 {
             font-family: var(--font-serif);
             font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 8px;
-            line-height: 1.3;
+            font-size: 17px;
+            margin-bottom: 10px;
+            text-align: center;
         }
-        .insight-card p {
+        .research-card p {
             font-family: var(--font-sans);
             font-weight: 400;
             color: var(--gray-600);
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.6;
-            margin-bottom: 12px;
+            text-align: center;
+            flex: 1;
         }
-        .insight-card .meta {
+        .research-card .cat {
             font-family: var(--font-sans);
-            font-weight: 400;
-            font-size: 12px;
-            color: var(--gray-400);
-            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--framework-blue);
+            display: block;
+            margin-bottom: 10px;
         }
 
-        /* ===== FEATURED INSIGHT ===== */
-        .featured-insight {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            border: 1px solid var(--gray-200);
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+        /* ===== THE PRINCIPLE ===== */
+        .principle-block {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
-        .featured-insight:hover {
-            border-color: var(--framework-blue);
-            box-shadow: var(--shadow-hover);
-        }
-        .featured-insight .category {
-            font-family: var(--font-sans);
-            font-weight: 600;
-            font-size: 10px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--framework-blue);
-            display: block;
-            margin-bottom: 6px;
-        }
-        .featured-insight h3 {
-            font-family: var(--font-serif);
-            font-weight: 600;
-            font-size: 28px;
-            margin-bottom: 8px;
-            line-height: 1.2;
-        }
-        .featured-insight p {
+        .principle-block p {
             font-family: var(--font-sans);
             font-weight: 400;
+            font-size: 17px;
             color: var(--gray-600);
-            font-size: 16px;
-            line-height: 1.7;
+            line-height: 1.9;
+            text-align: center;
             margin-bottom: 16px;
         }
-        .featured-insight .meta {
+        .principle-block .principle-strong {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 24px;
+            color: var(--framework-off-white);
+            line-height: 1.4;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .principle-block .principle-strong .accent {
+            color: var(--framework-blue);
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta { max-width: 800px; margin: 0 auto; text-align: center; }
+        .final-cta h2 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 44px;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: var(--framework-off-white);
+            text-align: center;
+        }
+        .final-cta p {
             font-family: var(--font-sans);
             font-weight: 400;
-            font-size: 13px;
             color: var(--gray-400);
-            margin-bottom: 12px;
+            font-size: 18px;
+            line-height: 1.75;
+            margin-bottom: 32px;
+            text-align: center;
         }
 
         /* ===== FOOTER ===== */
         .footer {
             border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 48px 0 32px;
+            padding: 56px 0 32px;
             background: var(--framework-black);
             color: var(--framework-off-white);
+            text-align: center;
         }
         .footer a { color: var(--gray-400); text-decoration: none; transition: color 0.3s ease; }
         .footer a:hover { color: var(--framework-blue); }
@@ -404,45 +462,45 @@
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 40px;
-            margin-bottom: 32px;
+            margin-bottom: 40px;
+            text-align: center;
         }
+        .footer-brand { display: flex; flex-direction: column; align-items: center; }
         .footer-brand p {
             font-family: var(--font-sans);
             font-weight: 400;
             color: var(--gray-400);
             font-size: 14px;
             line-height: 1.8;
-            max-width: 320px;
-            margin-top: 8px;
+            max-width: 300px;
+            margin: 16px auto 0;
+            text-align: center;
         }
         .footer-col h4 {
             font-family: var(--font-sans);
             font-weight: 600;
             font-size: 11px;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             color: var(--framework-off-white);
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            text-align: center;
         }
-        .footer-col a {
-            display: block;
-            color: var(--gray-400);
-            font-size: 14px;
-            padding: 4px 0;
-        }
+        .footer-col a { display: block; color: var(--gray-400); font-size: 14px; padding: 5px 0; text-align: center; }
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.06);
-            padding-top: 20px;
+            padding-top: 24px;
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             gap: 16px;
             color: var(--gray-500);
             font-size: 13px;
             font-family: var(--font-sans);
             font-weight: 400;
         }
-        .footer-bottom .social-icons { display: flex; gap: 16px; }
+        .footer-bottom .social-icons { display: flex; gap: 20px; justify-content: center; }
         .footer-bottom .social-icons a { color: var(--gray-500); font-size: 18px; }
         .footer-bottom .social-icons a:hover { color: var(--framework-blue); }
 
@@ -452,17 +510,13 @@
             right: 30px;
             background: var(--framework-blue);
             color: white;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center;
             text-decoration: none;
             border-radius: 50%;
             transition: all 0.3s ease;
             z-index: 999;
-            opacity: 0;
-            visibility: hidden;
+            opacity: 0; visibility: hidden;
             transform: translateY(20px);
             box-shadow: 0 4px 20px rgba(37,99,235,0.3);
         }
@@ -475,66 +529,32 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
-            .insights-grid { grid-template-columns: 1fr 1fr; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .footer-brand { grid-column: 1 / -1; }
-            .section-title { font-size: 36px; }
             .page-header h1 { font-size: 40px; }
-            .featured-insight h3 { font-size: 24px; }
+            .section-title { font-size: 34px; }
+            .research-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
             .navbar { padding: 0 16px; }
-            .nav-toggle { display: block; }
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 300px;
-                height: 100vh;
-                background: white;
-                flex-direction: column;
-                padding: 80px 32px 32px;
-                gap: 20px;
-                transition: right 0.3s ease;
-                box-shadow: -4px 0 30px rgba(0,0,0,0.08);
-                overflow-y: auto;
-                align-items: flex-start;
-            }
-            .nav-links.open { right: 0; }
-            .nav-links a { font-size: 16px; }
-            .nav-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0,0,0,0.3);
-                z-index: 999;
-            }
-            .nav-overlay.active { display: block; }
-
-            .insights-grid { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 30px; }
+            .section-title { font-size: 26px; }
+            .section-full { padding: 64px 0; }
+            .final-cta h2 { font-size: 28px; }
+            .research-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
-            .section-title { font-size: 30px; }
-            .section-full { padding: 60px 0; }
-            .page-header h1 { font-size: 32px; }
-            .page-header { padding: 60px 0 30px; }
-            .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
-            .featured-insight { padding: 24px; }
-            .featured-insight h3 { font-size: 20px; }
+            .principle-block .principle-strong { font-size: 20px; }
         }
 
         @media (max-width: 480px) {
-            .section-title { font-size: 26px; }
-            .page-header h1 { font-size: 28px; }
+            .page-header h1 { font-size: 26px; }
+            .section-title { font-size: 24px; }
             .container { padding: 0 16px; }
             .logo img { height: 28px; }
             .nav-links { width: 100%; right: -100%; padding: 70px 24px 24px; }
             .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
             .back-to-top i { font-size: 16px; }
-            .insight-card { padding: 24px 20px; }
+            .subject-pill { font-size: 14px; padding: 10px 24px; }
         }
     </style>
 </head>
@@ -554,113 +574,155 @@
 
         <nav class="nav-links" id="navLinks">
             <a href="what-we-do.html">What We Do</a>
-            <a href="businesses.html">For Businesses</a>
+            <a href="framework.html">The Framework</a>
+            <a href="organisations.html">For Organisations</a>
+            <a href="brands.html">For Brands</a>
             <a href="creators.html">For Creators</a>
-            <a href="method.html">Our Method</a>
+            <a href="opportunities.html">Opportunities</a>
             <a href="insights.html" class="active">Insights</a>
-            <a href="case-studies.html">Case Studies</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="nav-cta">Work With Us</a>
+            <a href="contact.html" class="nav-cta">Start a conversation</a>
         </nav>
     </header>
 
     <!-- ====== PAGE HEADER ====== -->
     <section class="page-header">
+        <svg class="page-header-svg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+                <linearGradient id="insGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#2563EB" stop-opacity="0.4"/>
+                    <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.4"/>
+                </linearGradient>
+                <linearGradient id="insGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#EC4899" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="#A855F7" stop-opacity="0.3"/>
+                </linearGradient>
+            </defs>
+            <circle cx="200" cy="200" r="170" fill="url(#insGrad1)"/>
+            <circle cx="1000" cy="320" r="190" fill="url(#insGrad2)"/>
+            <circle cx="920" cy="100" r="90" fill="url(#insGrad1)"/>
+            <circle cx="280" cy="420" r="110" fill="url(#insGrad2)"/>
+        </svg>
+
         <div class="container">
             <h1><span class="gradient-highlight">Insights</span></h1>
-            <p>Practical thinking on content, positioning, personal brands and business communication — not trend commentary for its own sake.</p>
+            <p>Thinking about commercial opportunity.</p>
         </div>
     </section>
 
-    <!-- ====== FEATURED INSIGHT ====== -->
-    <section class="section-full section-full-white">
+    <!-- ====== HERO IMAGE ====== -->
+    <section class="section-full section-full-white" style="padding: 60px 0;">
         <div class="container">
-            <div class="featured-insight reveal">
-                <span class="category">Featured</span>
-                <h3>Why most businesses build content in the wrong order</h3>
-                <p class="meta">6 min read · Strategy</p>
-                <p>Most businesses start with "what should we post?" rather than "what does our content need to accomplish?" This fundamental inversion leads to content that fills calendars without building brands. The better question changes everything.</p>
-                <a href="#" class="link-arrow">Read Full Article →</a>
+            <div class="hero-image reveal">
+                <img src="images/insights-hero.jpg" alt="Framework Media — insights and thinking" />
             </div>
         </div>
     </section>
 
-    <!-- ====== INSIGHTS GRID ====== -->
+    <!-- ====== INTRO ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="intro-block reveal">
+                <p>Framework publishes research, analysis and practical thinking around the relationship between:</p>
+            </div>
+
+            <div class="subject-list reveal">
+                <span class="subject-pill">Brands</span>
+                <span class="subject-pill">Audiences</span>
+                <span class="subject-pill">Creators</span>
+                <span class="subject-pill">Events</span>
+                <span class="subject-pill">Organisations</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== AREAS OF RESEARCH ====== -->
     <section class="section-full section-full-light">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">All Insights</span>
-                <h2 class="section-title">Ideas worth <span class="gradient-highlight">examining</span>.</h2>
+                <span class="pill reveal">Areas of Research</span>
+                <h2 class="section-title">Eight areas of <span class="gradient-highlight">commercial thinking</span>.</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Practical thinking on content, positioning, personal brands and business communication.</p>
+                <p class="section-sub">Each area explores a different part of how commercial relationships work.</p>
             </div>
 
-            <div class="insights-grid">
-                <div class="insight-card reveal">
-                    <span class="category">Positioning</span>
-                    <h4>Weak positioning, not weak content, is usually the actual problem</h4>
-                    <p class="meta">4 min read · Positioning</p>
-                    <p>When every competitor sounds the same, creating more content isn't the solution. The position needs to change first.</p>
-                    <a href="#" class="link-arrow">Read More →</a>
+            <div class="research-grid">
+
+                <div class="research-card reveal">
+                    <span class="cat">Research</span>
+                    <h4>Partnership Strategy</h4>
+                    <p>How organisations and brands create meaningful commercial relationships.</p>
                 </div>
 
-                <div class="insight-card reveal">
-                    <span class="category">Strategy</span>
-                    <h4>Additional volume does not correct a message problem — it repeats it</h4>
-                    <p class="meta">5 min read · Strategy</p>
-                    <p>Volume doesn't solve a message problem. It amplifies it. If the foundation is weak, more content only makes the weakness more visible.</p>
-                    <a href="#" class="link-arrow">Read More →</a>
+                <div class="research-card reveal">
+                    <span class="cat">Research</span>
+                    <h4>Sponsorship</h4>
+                    <p>How sponsorship can move beyond visibility and logo placement.</p>
                 </div>
 
-                <div class="insight-card reveal">
-                    <span class="category">Systems</span>
-                    <h4>The distinction between content and a content system</h4>
-                    <p class="meta">7 min read · Systems</p>
-                    <p>Content is what you publish. A content system is how you decide what to publish, why it matters and how you improve it. One is output. The other is infrastructure.</p>
-                    <a href="#" class="link-arrow">Read More →</a>
+                <div class="research-card reveal">
+                    <span class="cat">Research</span>
+                    <h4>Audience Intelligence</h4>
+                    <p>Understanding the people behind the numbers.</p>
                 </div>
 
-                <div class="insight-card reveal">
-                    <span class="category">Creator Strategy</span>
-                    <h4>What a creator should establish before pursuing a larger audience</h4>
-                    <p class="meta">6 min read · Creator Strategy</p>
-                    <p>Before you chase an audience, give that audience a reason to remember you. Recognition precedes reach.</p>
-                    <a href="#" class="link-arrow">Read More →</a>
+                <div class="research-card reveal">
+                    <span class="cat">Research</span>
+                    <h4>Event Commercialisation</h4>
+                    <p>How events can develop stronger commercial models.</p>
                 </div>
 
-                <div class="insight-card reveal">
-                    <span class="category">Business Content</span>
-                    <h4>Expertise is the raw material; the discipline is extracting it well</h4>
-                    <p class="meta">5 min read · Business Content</p>
-                    <p>You don't necessarily need more ideas. You need a better way of extracting the ideas you already have.</p>
-                    <a href="#" class="link-arrow">Read More →</a>
+                <div class="research-card reveal">
+                    <span class="cat">Research</span>
+                    <h4>Creator Economy</h4>
+                    <p>How creators and brands can build more meaningful commercial relationships.</p>
                 </div>
 
-                <div class="insight-card reveal">
-                    <span class="category">Strategy</span>
-                    <h4>Why most content strategies fail at execution</h4>
-                    <p class="meta">8 min read · Strategy</p>
-                    <p>A strategy that looks good in a PDF but never gets implemented isn't a strategy. It's a document. Execution is where strategy proves its value.</p>
-                    <a href="#" class="link-arrow">Read More →</a>
+                <div class="research-card reveal">
+                    <span class="cat">Research</span>
+                    <h4>Activation</h4>
+                    <p>How partnerships become experiences.</p>
                 </div>
-            </div>
 
-            <div style="text-align:center;margin-top:40px;">
-                <a href="#" class="btn-outline">Load More Articles</a>
+                <div class="research-card reveal">
+                    <span class="cat">Research</span>
+                    <h4>Commercial Economics</h4>
+                    <p>How the money works behind partnerships.</p>
+                </div>
+
+                <div class="research-card reveal" style="border-color:var(--framework-blue);">
+                    <span class="cat">Research</span>
+                    <h4>Brand Strategy</h4>
+                    <p>How brands choose where and how to participate.</p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ====== CTA ====== -->
+    <!-- ====== THE PRINCIPLE ====== -->
     <section class="section-full section-full-dark">
         <div class="container">
-            <div style="max-width:700px; margin:0 auto; text-align:center;">
-                <h2 class="section-title">Follow the <span class="gradient-highlight">thinking</span>.</h2>
-                <p class="section-sub" style="margin-bottom:24px;">For more content strategy, positioning and creator insights.</p>
-                <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank" class="btn-white">Follow on Instagram →</a>
-                    <a href="contact.html" class="btn-outline" style="border-color:var(--framework-off-white); color:var(--framework-off-white);">Start a Conversation</a>
-                </div>
+            <div class="section-header">
+                <span class="pill reveal" style="background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.1); color:var(--gray-300);">The Principle</span>
+                <h2 class="section-title" style="color:var(--framework-off-white);">We don't publish for <span class="gradient-highlight">volume</span>.</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="principle-block reveal">
+                <p style="color:var(--gray-400);">We publish to develop a better understanding of how commercial relationships work.</p>
+                <p class="principle-strong">Because every piece of thinking should make <span class="accent">the next opportunity</span> easier to identify.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FINAL CTA ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="final-cta reveal">
+                <h2 style="color:var(--framework-black);">Want to talk through <span class="gradient-highlight">an idea</span>?</h2>
+                <p style="color:var(--gray-600);">If something here resonates with what you're building, we'd like to hear about it.</p>
+                <a href="contact.html" class="btn-blue">Start a conversation →</a>
             </div>
         </div>
     </section>
@@ -670,42 +732,41 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" style="display:inline-flex;">
-                        <img src="images/logo.png" alt="Framework Media" style="height:28px;width:auto;filter:brightness(10);" />
+                    <a href="index.html" class="logo" style="display:inline-flex;justify-content:center;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:32px;width:auto;filter:brightness(10);" />
                     </a>
-                    <p>Content consultancy for businesses and creators. Strategy behind the content.</p>
+                    <p>Commercial opportunities, deliberately developed. South Africa.</p>
                 </div>
 
                 <div class="footer-col">
                     <h4>Explore</h4>
                     <a href="what-we-do.html">What We Do</a>
-                    <a href="businesses.html">For Businesses</a>
+                    <a href="framework.html">The Framework</a>
+                    <a href="opportunities.html">Opportunities</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Who We Serve</h4>
+                    <a href="organisations.html">For Organisations</a>
+                    <a href="brands.html">For Brands</a>
                     <a href="creators.html">For Creators</a>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Learn</h4>
-                    <a href="method.html">Our Method</a>
-                    <a href="case-studies.html">Case Studies</a>
+                    <h4>Company</h4>
                     <a href="insights.html">Insights</a>
                     <a href="about.html">About</a>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Work With Us</h4>
                     <a href="contact.html">Start a Conversation</a>
-                    <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank">Book a Consultation</a>
-                    <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <span>&copy; 2026 Framework Media. All rights reserved.</span>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -716,9 +777,6 @@
     </a>
 
     <script>
-        // ================================================
-        // ===== NAVBAR TOGGLE (Mobile) =====
-        // ================================================
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
         const navOverlay = document.getElementById('navOverlay');
@@ -732,58 +790,32 @@
             document.body.style.overflow = isOpen ? 'hidden' : '';
         }
 
-        if (navToggle) {
-            navToggle.addEventListener('click', toggleNav);
-        }
-
-        if (navOverlay) {
-            navOverlay.addEventListener('click', toggleNav);
-        }
+        if (navToggle) navToggle.addEventListener('click', toggleNav);
+        if (navOverlay) navOverlay.addEventListener('click', toggleNav);
 
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function() {
-                if (navLinks.classList.contains('open')) {
-                    toggleNav();
-                }
+                if (navLinks.classList.contains('open')) toggleNav();
             });
         });
 
-        // ================================================
-        // ===== NAVBAR HIDE ON SCROLL =====
-        // ================================================
         let lastScroll = 0;
         const navbar = document.getElementById('navbar');
 
         window.addEventListener('scroll', function() {
             const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 80) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                navbar.classList.add('hidden');
-            } else {
-                navbar.classList.remove('hidden');
-            }
-
+            if (currentScroll > 80) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+            if (currentScroll > lastScroll && currentScroll > 100) navbar.classList.add('hidden');
+            else navbar.classList.remove('hidden');
             lastScroll = currentScroll;
-
             const backToTop = document.getElementById('backToTop');
             if (backToTop) {
-                if (currentScroll > 400) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
+                if (currentScroll > 400) backToTop.classList.add('visible');
+                else backToTop.classList.remove('visible');
             }
         });
 
-        // ================================================
-        // ===== BACK TO TOP =====
-        // ================================================
         const backToTop = document.getElementById('backToTop');
         if (backToTop) {
             backToTop.addEventListener('click', function(e) {
@@ -792,34 +824,19 @@
             });
         }
 
-        // ================================================
-        // ===== SCROLL ANIMATIONS =====
-        // ================================================
         (function() {
             const elements = document.querySelectorAll('.reveal');
-
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('is-visible');
                 });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -40px 0px'
-            });
-
-            elements.forEach(el => {
-                if (el) observer.observe(el);
-            });
-
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            elements.forEach(el => { if (el) observer.observe(el); });
             setTimeout(() => {
                 elements.forEach(el => {
                     const rect = el.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
-                    if (rect.top < windowHeight * 0.85) {
-                        el.classList.add('is-visible');
-                    }
+                    if (rect.top < windowHeight * 0.85) el.classList.add('is-visible');
                 });
             }, 100);
         })();
