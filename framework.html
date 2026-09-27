@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Framework — Framework Media</title>
+    <meta name="description" content="A commercial intelligence system for developing partnerships. The Framework Method: Context → Audience → Asset → Value → Fit → Proposition → Partnership → Activation → Economics → Measurement." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        :root {
+            --framework-black: #111111;
+            --framework-off-white: #F7F7F5;
+            --framework-blue: #2563EB;
+            --framework-purple: #7C3AED;
+            --pink: #EC4899;
+            --purple: #A855F7;
+            --blue: #3B82F6;
+            --gradient: linear-gradient(135deg, #EC4899, #A855F7, #3B82F6);
+            --gradient-subtle: linear-gradient(135deg, rgba(236,72,153,0.06), rgba(168,85,247,0.06), rgba(59,130,246,0.06));
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-hover: 0 12px 40px rgba(37,99,235,0.12);
+            --font-serif: 'Source Serif 4', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --nav-height: 72px;
+        }
+
+        body {
+            background: var(--framework-off-white);
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--framework-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: var(--nav-height);
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            text-align: center;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+            height: var(--nav-height);
+            background: rgba(255,255,255,0.97);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .navbar.hidden { transform: translateY(-100%); }
+        .navbar.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+        .logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+        .logo img { height: 32px; width: auto; display: block; }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        .nav-links a:hover { color: var(--framework-black); }
+        .nav-links a.active { color: var(--framework-black); font-weight: 600; }
+
+        .nav-cta {
+            background: var(--framework-blue);
+            color: white !important;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+        .nav-cta:hover { background: #1d4ed8; color: white !important; }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--framework-black);
+            cursor: pointer;
+            padding: 4px;
+            z-index: 1001;
+        }
+
+        @media (max-width: 1100px) {
+            .nav-toggle { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 320px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 80px 32px 32px;
+                gap: 20px;
+                transition: right 0.3s ease;
+                box-shadow: -4px 0 30px rgba(0,0,0,0.08);
+                overflow-y: auto;
+                align-items: flex-start;
+            }
+            .nav-links.open { right: 0; }
+            .nav-links a { font-size: 16px; }
+            .nav-overlay {
+                display: none;
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(0,0,0,0.3);
+                z-index: 999;
+            }
+            .nav-overlay.active { display: block; }
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        .section-title {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 44px;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .section-title .highlight-blue { color: var(--framework-blue); }
+        .section-title .highlight-purple { color: var(--framework-purple); }
+        .section-title .gradient-highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-sub {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 18px;
+            color: var(--gray-600);
+            max-width: 720px;
+            margin: 0 auto 24px;
+            line-height: 1.75;
+            text-align: center;
+        }
+
+        .section-full { width: 100%; padding: 100px 0; }
+        .section-full-white { background: var(--framework-off-white); }
+        .section-full-light { background: #ffffff; }
+        .section-full-dark {
+            background: var(--framework-black);
+            color: var(--framework-off-white);
+        }
+        .section-full-dark .section-title { color: var(--framework-off-white); }
+        .section-full-dark .section-sub { color: var(--gray-400); }
+        .section-full-dark p { color: var(--gray-400); }
+
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            margin: 20px auto 0;
+            border-radius: 4px;
+        }
+
+        .pill {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            background: var(--gradient-subtle);
+            color: var(--framework-blue);
+            padding: 6px 18px;
+            border-radius: 40px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(37,99,235,0.12);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-outline, .btn-blue, .btn-white {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 40px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-outline { background: transparent; color: var(--framework-black); border: 2px solid var(--framework-black); }
+        .btn-outline:hover { background: var(--framework-black); color: var(--framework-off-white); transform: translateY(-2px); }
+        .btn-blue { background: var(--framework-blue); color: white; }
+        .btn-blue:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.3); }
+        .btn-white { background: var(--framework-off-white); color: var(--framework-black); }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+
+        .link-arrow {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: var(--framework-blue);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s ease;
+            justify-content: center;
+        }
+        .link-arrow:hover { gap: 12px; }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            padding: 100px 0 60px;
+            background: var(--framework-black);
+            color: var(--framework-off-white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header-svg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .page-header h1 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 52px;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .page-header p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-400);
+            font-size: 18px;
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.75;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .page-header .gradient-highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== INTRO ===== */
+        .intro-question {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .intro-question .question-line {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 17px;
+            color: var(--gray-600);
+            line-height: 2;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+        .intro-question .question-line strong {
+            color: var(--framework-black);
+            font-weight: 600;
+        }
+        .intro-question .question-line.highlight {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 22px;
+            color: var(--framework-blue);
+            margin: 20px 0;
+        }
+
+        /* ===== METHOD STEPS ===== */
+        .method-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .method-step {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 40px;
+            align-items: flex-start;
+            padding: 40px 32px;
+            border-bottom: 1px solid var(--gray-200);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        .method-step:last-child { border-bottom: none; }
+        .method-step:hover { background: rgba(37,99,235,0.02); }
+        .method-step .step-icon-block { text-align: center; }
+        .method-step .step-svg {
+            width: 56px;
+            height: 56px;
+            display: block;
+            margin: 0 auto 12px;
+        }
+        .method-step .step-num {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--framework-blue);
+            display: block;
+        }
+        .method-step .step-content { text-align: left; }
+        .method-step h3 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 24px;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        .method-step .step-sub {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--framework-blue);
+            display: block;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+        .method-step p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-600);
+            font-size: 15px;
+            line-height: 1.8;
+            text-align: left;
+            margin-bottom: 12px;
+        }
+        .method-step ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0;
+        }
+        .method-step ul li {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 13px;
+            color: var(--gray-600);
+            background: var(--gray-100);
+            padding: 6px 14px;
+            border-radius: 40px;
+        }
+
+        /* ===== ACTIVATION FUNNEL ===== */
+        .activation-flow {
+            max-width: 700px;
+            margin: 40px auto 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+        .activation-step {
+            background: white;
+            border-radius: 12px;
+            padding: 20px 32px;
+            border: 1px solid var(--gray-200);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .activation-step:hover {
+            border-color: var(--framework-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        .activation-step h4 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+        .activation-step p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-500);
+            font-size: 14px;
+            text-align: center;
+        }
+        .activation-arrow {
+            color: var(--framework-blue);
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        /* ===== OUTPUT BLUEPRINT ===== */
+        .blueprint-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 56px 40px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(124,58,237,0.04));
+            border: 1px solid var(--gray-200);
+        }
+        .blueprint-section h3 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 28px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .blueprint-section .blueprint-sub {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--framework-blue);
+            display: block;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .blueprint-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            text-align: left;
+        }
+        .blueprint-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        .blueprint-item:hover {
+            border-color: var(--framework-blue);
+        }
+        .blueprint-item .bp-num {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 12px;
+            color: var(--framework-blue);
+            letter-spacing: 0.1em;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .blueprint-item .bp-label {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--framework-black);
+            line-height: 1.4;
+        }
+
+        /* ===== INTELLIGENCE BLOCK ===== */
+        .intelligence-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+        .intelligence-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px 24px;
+            border: 1px solid var(--gray-200);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .intelligence-card:hover {
+            border-color: var(--framework-blue);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .intelligence-card h4 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 17px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .intelligence-card p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-600);
+            font-size: 14px;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta { max-width: 800px; margin: 0 auto; text-align: center; }
+        .final-cta h2 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 44px;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: var(--framework-off-white);
+            text-align: center;
+        }
+        .final-cta p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-400);
+            font-size: 18px;
+            line-height: 1.75;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 56px 0 32px;
+            background: var(--framework-black);
+            color: var(--framework-off-white);
+            text-align: center;
+        }
+        .footer a { color: var(--gray-400); text-decoration: none; transition: color 0.3s ease; }
+        .footer a:hover { color: var(--framework-blue); }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .footer-brand { display: flex; flex-direction: column; align-items: center; }
+        .footer-brand p {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--gray-400);
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 300px;
+            margin: 16px auto 0;
+            text-align: center;
+        }
+        .footer-col h4 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--framework-off-white);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .footer-col a { display: block; color: var(--gray-400); font-size: 14px; padding: 5px 0; text-align: center; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            color: var(--gray-500);
+            font-size: 13px;
+            font-family: var(--font-sans);
+            font-weight: 400;
+        }
+        .footer-bottom .social-icons { display: flex; gap: 20px; justify-content: center; }
+        .footer-bottom .social-icons a { color: var(--gray-500); font-size: 18px; }
+        .footer-bottom .social-icons a:hover { color: var(--framework-blue); }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--framework-blue);
+            color: white;
+            width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 999;
+            opacity: 0; visibility: hidden;
+            transform: translateY(20px);
+            box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+        .back-to-top:hover { background: #1d4ed8; transform: translateY(-3px); }
+        .back-to-top i { font-size: 18px; }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .page-header h1 { font-size: 40px; }
+            .section-title { font-size: 34px; }
+            .method-step { grid-template-columns: 80px 1fr; gap: 24px; padding: 32px 20px; }
+            .blueprint-list { grid-template-columns: 1fr; }
+            .intelligence-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 0 16px; }
+            .page-header h1 { font-size: 30px; }
+            .section-title { font-size: 26px; }
+            .section-full { padding: 64px 0; }
+            .final-cta h2 { font-size: 28px; }
+            .method-step { grid-template-columns: 1fr; text-align: center; gap: 16px; }
+            .method-step .step-content,
+            .method-step h3,
+            .method-step .step-sub,
+            .method-step p { text-align: center; }
+            .method-step ul { justify-content: center; }
+            .blueprint-section { padding: 32px 24px; }
+            .blueprint-section h3 { font-size: 22px; }
+            .intelligence-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .intro-question .question-line.highlight { font-size: 18px; }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 { font-size: 26px; }
+            .section-title { font-size: 24px; }
+            .container { padding: 0 16px; }
+            .logo img { height: 28px; }
+            .nav-links { width: 100%; right: -100%; padding: 70px 24px 24px; }
+            .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
+            .back-to-top i { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Framework Media" />
+        </a>
+
+        <div class="nav-overlay" id="navOverlay"></div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="what-we-do.html">What We Do</a>
+            <a href="framework.html" class="active">The Framework</a>
+            <a href="organisations.html">For Organisations</a>
+            <a href="brands.html">For Brands</a>
+            <a href="creators.html">For Creators</a>
+            <a href="opportunities.html">Opportunities</a>
+            <a href="insights.html">Insights</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="nav-cta">Start a conversation</a>
+        </nav>
+    </header>
+
+    <!-- ====== PAGE HEADER ====== -->
+    <section class="page-header">
+        <svg class="page-header-svg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+                <linearGradient id="fwGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#2563EB" stop-opacity="0.4"/>
+                    <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.4"/>
+                </linearGradient>
+                <linearGradient id="fwGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#EC4899" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="#A855F7" stop-opacity="0.3"/>
+                </linearGradient>
+            </defs>
+            <circle cx="200" cy="220" r="170" fill="url(#fwGrad1)"/>
+            <circle cx="1000" cy="300" r="190" fill="url(#fwGrad2)"/>
+            <circle cx="920" cy="120" r="90" fill="url(#fwGrad1)"/>
+            <circle cx="280" cy="420" r="110" fill="url(#fwGrad2)"/>
+            <line x1="0" y1="250" x2="1200" y2="250" stroke="#2563EB" stroke-width="0.5" opacity="0.25"/>
+        </svg>
+
+        <div class="container">
+            <h1>The Framework</h1>
+            <p>A commercial intelligence system for developing partnerships.</p>
+        </div>
+    </section>
+
+    <!-- ====== INTRO ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="intro-question reveal">
+                <p class="question-line">Most organisations approach partnerships from the outside.</p>
+                <p class="question-line">They start with:</p>
+                <p class="question-line highlight">"Who can sponsor us?"</p>
+                <p class="question-line">Framework starts earlier.</p>
+                <p class="question-line" style="font-weight:600; color:var(--framework-black);">"What do we actually have?"</p>
+                <p class="question-line" style="font-weight:600; color:var(--framework-black);">"Who values it?"</p>
+                <p class="question-line" style="font-weight:600; color:var(--framework-black);">"Why?"</p>
+                <p class="question-line" style="font-weight:600; color:var(--framework-black);">"What could be built around it?"</p>
+                <p class="question-line" style="margin-top:24px;">The Framework Method is our proprietary approach to answering those questions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== THE TEN STEPS ====== -->
+    <section class="section-full section-full-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">The Framework Method</span>
+                <h2 class="section-title">Ten steps. <span class="gradient-highlight">One intelligence system.</span></h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">We start with understanding. We end with a commercial blueprint.</p>
+            </div>
+
+            <div class="method-steps">
+
+                <!-- 01 Context -->
+                <div class="method-step reveal">
+                    <div class="step-icon-block">
+                        <svg class="step-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="f1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#2563EB"/>
+                                    <stop offset="100%" stop-color="#7C3AED"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="28" cy="28" r="18" fill="none" stroke="url(#f1)" stroke-width="2.5"/>
+                            <path d="M28 14 L28 28 L38 34" fill="none" stroke="url(#f1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="step-num">01</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Context</h3>
+                        <span class="step-sub">Understand the environment.</span>
+                        <p>Before identifying an opportunity, we need to understand the environment in which it exists.</p>
+                        <ul>
+                            <li>Market</li>
+                            <li>Organisation</li>
+                            <li>Objectives</li>
+                            <li>Competition</li>
+                            <li>Timing</li>
+                            <li>Cultural and commercial context</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 02 Audience -->
+                <div class="method-step reveal">
+                    <div class="step-icon-block">
+                        <svg class="step-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="f2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#7C3AED"/>
+                                    <stop offset="100%" stop-color="#EC4899"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="20" cy="20" r="6" fill="none" stroke="url(#f2)" stroke-width="2.5"/>
+                            <circle cx="36" cy="20" r="6" fill="none" stroke="url(#f2)" stroke-width="2.5"/>
+                            <circle cx="28" cy="38" r="6" fill="none" stroke="url(#f2)" stroke-width="2.5"/>
+                        </svg>
+                        <span class="step-num">02</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Audience</h3>
+                        <span class="step-sub">Understand who actually matters.</span>
+                        <p>The objective is to understand the commercial architecture of the audience.</p>
+                        <ul>
+                            <li>Demographics</li>
+                            <li>Psychographics</li>
+                            <li>Behaviour</li>
+                            <li>Needs</li>
+                            <li>Attention</li>
+                            <li>Influence</li>
+                            <li>Purchasing behaviour</li>
+                            <li>Identity</li>
+                            <li>Access</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 03 Asset -->
+                <div class="method-step reveal">
+                    <div class="step-icon-block">
+                        <svg class="step-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="f3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#EC4899"/>
+                                    <stop offset="100%" stop-color="#A855F7"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="10" y="16" width="16" height="24" rx="2" fill="none" stroke="url(#f3)" stroke-width="2.5"/>
+                            <rect x="30" y="16" width="16" height="24" rx="2" fill="none" stroke="url(#f3)" stroke-width="2.5"/>
+                            <line x1="26" y1="28" x2="30" y2="28" stroke="url(#f3)" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="step-num">03</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Asset</h3>
+                        <span class="step-sub">Discover what actually exists.</span>
+                        <p>Many organisations underestimate the number of commercially relevant assets they already possess.</p>
+                        <ul>
+                            <li>Physical assets</li>
+                            <li>Digital assets</li>
+                            <li>Human assets</li>
+                            <li>Content assets</li>
+                            <li>Experiential assets</li>
+                            <li>Intellectual assets</li>
+                            <li>Access</li>
+                            <li>Distribution</li>
+                            <li>Timing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 04 Value -->
+                <div class="method-step reveal">
+                    <div class="step-icon-block">
+                        <svg class="step-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="f4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#2563EB"/>
+                                    <stop offset="100%" stop-color="#3B82F6"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M28 12 L34 24 L46 26 L38 34 L40 46 L28 40 L16 46 L18 34 L10 26 L22 24 Z" fill="none" stroke="url(#f4)" stroke-width="2.5" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="step-num">04</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Value</h3>
+                        <span class="step-sub">Determine why the asset matters.</span>
+                        <p>An asset only becomes valuable when we understand the value behind it.</p>
+                        <ul>
+                            <li>Reach</li>
+                            <li>Relevance</li>
+                            <li>Attention</li>
+                            <li>Trust</li>
+                            <li>Access</li>
+                            <li>Context</li>
+                            <li>Exclusivity</li>
+                            <li>Frequency</li>
+                            <li>Cultural relevance</li>
+                            <li>Commercial relevance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 05 Fit -->
+                <div class="method-step reveal">
+                    <div class="step-icon-block">
+                        <svg class="step-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="f5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#A855F7"/>
+                                    <stop offset="100%" stop-color="#7C3AED"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="18" cy="28" r="6" fill="none" stroke="url(#f5)" stroke-width="2.5"/>
+                            <circle cx="38" cy="28" r="6" fill="none" stroke="url(#f5)" stroke-width="2.5"/>
+                            <line x1="24" y1="28" x2="32" y2="28" stroke="url(#f5)" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="step-num">05</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Fit</h3>
+                        <span class="step-sub">Find the organisations that have a reason to care.</span>
+                        <p>The result is a <strong>Partner Fit Matrix</strong>, not a random list of brands.</p>
+                        <ul>
+                            <li>Audience relevance</li>
+                            <li>Brand alignment</li>
+                            <li>Strategic objectives</li>
+                            <li>Product relevance</li>
+                            <li>Distribution</li>
+                            <li>Activation potential</li>
+                            <li>Timing</li>
+                            <li>Geography</li>
+                            <li>Exclusivity</li>
+                            <li>Strategic value</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 06 Proposition -->
+                <div class="method-step reveal">
+                    <div class="step-icon-block">
+                        <svg class="step-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="f6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#3B82F6"/>
+                                    <stop offset="100%" stop-color="#2563EB"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="12" y="14" width="32" height="24" rx="3" fill="none" stroke="url(#f6)" stroke-width="2.5"/>
+                            <line x1="12" y1="22" x2="44" y2="22" stroke="url(#f6)" stroke-width="2"/>
+                            <line x1="20" y1="30" x2="36" y2="30" stroke="url(#f6)" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span class="step-num">06</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Proposition</h3>
+                        <span class="step-sub">Build something worth buying.</span>
+                        <p>We turn the opportunity into a commercial proposition.</p>
+                        <ul>
+                            <li>What is being offered?</li>
+                            <li>Why does it matter?</li>
+                            <li>Who is it for?</li>
+                            <li>What does participation look like?</li>
+                            <li>What does the audience receive?</li>
+                            <li>What does the organisation receive?</li>
+                            <li>Why should the partner invest?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 07 Partnership -->
+                <div class="method-step reveal">
+                    <div class="step-icon-block">
+                        <svg class="step-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="f7" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#7C3AED"/>
+                                    <stop offset="100%" stop-color="#EC4899"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="20" cy="28" r="8" fill="none" stroke="url(#f7)" stroke-width="2.5"/>
+                            <circle cx="36" cy="28" r="8" fill="none" stroke="url(#f7)" stroke-width="2.5"/>
+                            <line x1="28" y1="28" x2="28" y2="28" stroke="url(#f7)" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle cx="28" cy="28" r="2.5" fill="url(#f7)"/>
+                        </svg>
+                        <span class="step-num">07</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Partnership</h3>
+                        <span class="step-sub">Structure the relationship.</span>
+                        <p>The objective is a relationship that creates value for the relevant parties.</p>
+                        <ul>
+                            <li>Rights</li>
+                            <li>Access</li>
+                            <li>Exclusivity</li>
+                            <li>Integration</li>
+                            <li>Content</li>
+                            <li>Experience</li>
+                            <li>Distribution</li>
+                            <li>Data considerations</li>
+                            <li>Responsibilities</li>
+                            <li>Governance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 08 Activation -->
+                <div class="method-step reveal">
+                    <div class="step-icon-block">
+                        <svg class="step-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="f8" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#EC4899"/>
+                                    <stop offset="100%" stop-color="#2563EB"/>
+                                </linearGradient>
+                            </defs>
+                            <polygon points="28,10 36,22 28,34 20,22" fill="none" stroke="url(#f8)" stroke-width="2.5" stroke-linejoin="round"/>
+                            <circle cx="28" cy="44" r="4" fill="none" stroke="url(#f8)" stroke-width="2.5"/>
+                            <line x1="28" y1="34" x2="28" y2="40" stroke="url(#f8)" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="step-num">08</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Activation</h3>
+                        <span class="step-sub">Make the partnership tangible.</span>
+                        <p>We design the audience journey: discover → engage → experience → share → continue.</p>
+                        <ul>
+                            <li>Discover</li>
+                            <li>Engage</li>
+                            <li>Experience</li>
+                            <li>Share</li>
+                            <li>Continue</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 09 Economics -->
+                <div class="method-step reveal">
+                    <div class="step-icon-block">
+                        <svg class="step-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="f9" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#2563EB"/>
+                                    <stop offset="100%" stop-color="#7C3AED"/>
+                                </linearGradient>
+                            </defs>
+                            <line x1="16" y1="42" x2="16" y2="32" stroke="url(#f9)" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="26" y1="42" x2="26" y2="24" stroke="url(#f9)" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="36" y1="42" x2="36" y2="16" stroke="url(#f9)" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="46" y1="42" x2="46" y2="28" stroke="url(#f9)" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                        <span class="step-num">09</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Economics</h3>
+                        <span class="step-sub">Make the opportunity commercially viable.</span>
+                        <p>The question is not simply "What can we charge?" It is "What is the economic architecture of this opportunity?"</p>
+                        <ul>
+                            <li>Partner investment</li>
+                            <li>Asset value</li>
+                            <li>Activation cost</li>
+                            <li>Delivery cost</li>
+                            <li>Framework economics</li>
+                            <li>Organisation value</li>
+                            <li>Specialist costs</li>
+                            <li>Long-term potential</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 10 Measurement -->
+                <div class="method-step reveal">
+                    <div class="step-icon-block">
+                        <svg class="step-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="f10" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#7C3AED"/>
+                                    <stop offset="100%" stop-color="#3B82F6"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="28" cy="28" r="18" fill="none" stroke="url(#f10)" stroke-width="2.5"/>
+                            <path d="M20 28 L26 34 L38 22" fill="none" stroke="url(#f10)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="step-num">10</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Measurement</h3>
+                        <span class="step-sub">Define value before measuring it.</span>
+                        <p>The metric follows the objective.</p>
+                        <ul>
+                            <li>Reach</li>
+                            <li>Attention</li>
+                            <li>Engagement</li>
+                            <li>Participation</li>
+                            <li>Awareness</li>
+                            <li>Consideration</li>
+                            <li>Leads</li>
+                            <li>Trial</li>
+                            <li>Sales</li>
+                            <li>Revenue</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== ACTIVATION FUNNEL ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Activation</span>
+                <h2 class="section-title">The audience journey</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">We design the audience journey behind every partnership.</p>
+            </div>
+
+            <div class="activation-flow">
+                <div class="activation-step reveal">
+                    <h4>Discover</h4>
+                    <p>How does the audience encounter the partnership?</p>
+                </div>
+                <div class="activation-arrow">↓</div>
+                <div class="activation-step reveal">
+                    <h4>Engage</h4>
+                    <p>How do they interact?</p>
+                </div>
+                <div class="activation-arrow">↓</div>
+                <div class="activation-step reveal">
+                    <h4>Experience</h4>
+                    <p>What happens?</p>
+                </div>
+                <div class="activation-arrow">↓</div>
+                <div class="activation-step reveal">
+                    <h4>Share</h4>
+                    <p>What makes it worth extending?</p>
+                </div>
+                <div class="activation-arrow">↓</div>
+                <div class="activation-step reveal" style="border-color:var(--framework-blue);">
+                    <h4>Continue</h4>
+                    <p>What happens after the activation?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== OUTPUT BLUEPRINT ====== -->
+    <section class="section-full section-full-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">The Output</span>
+                <h2 class="section-title">A Framework engagement results in a <span class="gradient-highlight">Commercial Opportunity Blueprint</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">This is strategy designed to be acted upon. Not strategy designed to sit inside a PDF.</p>
+            </div>
+
+            <div class="blueprint-section reveal">
+                <span class="blueprint-sub">Commercial Opportunity Blueprint</span>
+                <h3 style="margin-bottom:32px;">14 components</h3>
+                <div class="blueprint-list">
+                    <div class="blueprint-item"><span class="bp-num">01</span><span class="bp-label">Executive Diagnosis</span></div>
+                    <div class="blueprint-item"><span class="bp-num">02</span><span class="bp-label">Commercial Context</span></div>
+                    <div class="blueprint-item"><span class="bp-num">03</span><span class="bp-label">Audience Intelligence</span></div>
+                    <div class="blueprint-item"><span class="bp-num">04</span><span class="bp-label">Commercial Asset Map</span></div>
+                    <div class="blueprint-item"><span class="bp-num">05</span><span class="bp-label">Value Assessment</span></div>
+                    <div class="blueprint-item"><span class="bp-num">06</span><span class="bp-label">Partnership Landscape</span></div>
+                    <div class="blueprint-item"><span class="bp-num">07</span><span class="bp-label">Opportunity Gaps</span></div>
+                    <div class="blueprint-item"><span class="bp-num">08</span><span class="bp-label">Partner Fit Matrix</span></div>
+                    <div class="blueprint-item"><span class="bp-num">09</span><span class="bp-label">Partnership Concepts</span></div>
+                    <div class="blueprint-item"><span class="bp-num">10</span><span class="bp-label">Activation Architecture</span></div>
+                    <div class="blueprint-item"><span class="bp-num">11</span><span class="bp-label">Commercial Model</span></div>
+                    <div class="blueprint-item"><span class="bp-num">12</span><span class="bp-label">Measurement Framework</span></div>
+                    <div class="blueprint-item"><span class="bp-num">13</span><span class="bp-label">Opportunity Prioritisation</span></div>
+                    <div class="blueprint-item"><span class="bp-num">14</span><span class="bp-label">90-Day Roadmap</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== INTELLIGENCE COMPOUNDS ====== -->
+    <section class="section-full section-full-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal" style="background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.1); color:var(--gray-300);">The Intelligence Compounds</span>
+                <h2 class="section-title" style="color:var(--framework-off-white);">Every engagement <span class="gradient-highlight">makes Framework better</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub" style="color:var(--gray-400);">We continuously build intelligence around audiences, assets, partners, activation, economics and outcomes.</p>
+            </div>
+
+            <div class="intelligence-grid">
+                <div class="intelligence-card reveal" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.08);">
+                    <h4 style="color:var(--framework-off-white);">Audiences</h4>
+                    <p style="color:var(--gray-400);">Who they are, what they value and how they behave.</p>
+                </div>
+                <div class="intelligence-card reveal" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.08);">
+                    <h4 style="color:var(--framework-off-white);">Assets</h4>
+                    <p style="color:var(--gray-400);">What different environments can commercialise.</p>
+                </div>
+                <div class="intelligence-card reveal" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.08);">
+                    <h4 style="color:var(--framework-off-white);">Partners</h4>
+                    <p style="color:var(--gray-400);">Which brands have strategic reasons to participate.</p>
+                </div>
+                <div class="intelligence-card reveal" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.08);">
+                    <h4 style="color:var(--framework-off-white);">Activation</h4>
+                    <p style="color:var(--gray-400);">What works in different environments.</p>
+                </div>
+                <div class="intelligence-card reveal" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.08);">
+                    <h4 style="color:var(--framework-off-white);">Economics</h4>
+                    <p style="color:var(--gray-400);">How partnerships are structured and valued.</p>
+                </div>
+                <div class="intelligence-card reveal" style="background:rgba(255,255,255,0.04); border-color:var(--framework-blue);">
+                    <h4 style="color:var(--framework-off-white);">Outcomes</h4>
+                    <p style="color:var(--gray-400);">What creates measurable value.</p>
+                </div>
+            </div>
+
+            <p style="font-family:var(--font-sans); font-weight:400; color:var(--gray-500); font-size:15px; line-height:1.7; margin-top:40px;">Over time, this intelligence becomes one of Framework's most valuable assets.</p>
+        </div>
+    </section>
+
+    <!-- ====== FINAL CTA ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="final-cta reveal">
+                <h2 style="color:var(--framework-black);">Ready to apply <span class="gradient-highlight">the Framework</span>?</h2>
+                <p style="color:var(--gray-600);">Tell us what exists. We'll determine what could be built around it.</p>
+                <a href="contact.html" class="btn-blue">Start a conversation →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="display:inline-flex;justify-content:center;">
+                        <img src="images/logo.png" alt="Framework Media" style="height:32px;width:auto;filter:brightness(10);" />
+                    </a>
+                    <p>Commercial opportunities, deliberately developed. South Africa.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="what-we-do.html">What We Do</a>
+                    <a href="framework.html">The Framework</a>
+                    <a href="opportunities.html">Opportunities</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Who We Serve</h4>
+                    <a href="organisations.html">For Organisations</a>
+                    <a href="brands.html">For Brands</a>
+                    <a href="creators.html">For Creators</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="insights.html">Insights</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Start a Conversation</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Framework Media. All rights reserved.</span>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/katlego_unfiltered/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@katlegounfiltered" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function toggleNav() {
+            const isOpen = navLinks.classList.toggle('open');
+            navOverlay.classList.toggle('active');
+            const icon = navToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        if (navToggle) navToggle.addEventListener('click', toggleNav);
+        if (navOverlay) navOverlay.addEventListener('click', toggleNav);
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navLinks.classList.contains('open')) toggleNav();
+            });
+        });
+
+        let lastScroll = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 80) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+            if (currentScroll > lastScroll && currentScroll > 100) navbar.classList.add('hidden');
+            else navbar.classList.remove('hidden');
+            lastScroll = currentScroll;
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                if (currentScroll > 400) backToTop.classList.add('visible');
+                else backToTop.classList.remove('visible');
+            }
+        });
+
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        (function() {
+            const elements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('is-visible');
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            elements.forEach(el => { if (el) observer.observe(el); });
+            setTimeout(() => {
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    if (rect.top < windowHeight * 0.85) el.classList.add('is-visible');
+                });
+            }, 100);
+        })();
+    </script>
+</body>
+</html>
